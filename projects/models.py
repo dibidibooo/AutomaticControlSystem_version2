@@ -572,6 +572,57 @@ class InputComponent45(models.Model):
         verbose_name_plural = 'Input | Компонент [4|5]'
 
 
+# МОС | Очистные сооружения поз.119. С колодца промстоков №1 (точка №4 вход)
+class InputComponent51(models.Model):
+    input_component1 = models.IntegerField('Нефтепродукт')
+    input_component2 = models.IntegerField('Взвешенные вещества')
+    input_component3 = models.IntegerField('Значение рН')
+    input_component4 = models.IntegerField('Химическая потребность в кислороде (ХПК)')
+    input_component5 = models.IntegerField('Поверхностно-активные вещества (АПАВ)')
+    input_component6 = models.IntegerField('Аммонийный азот')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [5|1]'
+        verbose_name_plural = 'Input | Компонент [5|1]'
+
+
+# БОС | Пробоотборник 001 перед БОС / А1 –SN -001
+class InputComponent61(models.Model):
+    input_component1 = models.IntegerField('Значение рН')
+    input_component2 = models.IntegerField('Взвешенные вещества')
+    input_component3 = models.IntegerField('Химическая потребность в кислороде (ХПК)')
+    input_component4 = models.IntegerField('Нефтепродукт')
+    input_component5 = models.IntegerField('Биологическая потребность в кислороде (БПК5)')
+    input_component6 = models.IntegerField('Фенолы')
+    input_component7 = models.IntegerField('Поверхностно-активные вещества  (АПАВ)')
+    input_component8 = models.IntegerField('Хлориды')
+    input_component9 = models.IntegerField('Сульфаты')
+    input_component10 = models.IntegerField('Железо')
+    input_component11 = models.IntegerField('Аммонийный азот')
+    input_component12 = models.IntegerField('Азот нитратов')
+    input_component13 = models.IntegerField('Азот нитритов')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [6|1]'
+        verbose_name_plural = 'Input | Компонент [6|1]'
+
+
+# БОС | Сточная вода после биологических очистных сооружений А1 –SN -009
+class InputComponent62(models.Model):
+    input_component1 = models.IntegerField('Щёлочность общая')
+    input_component2 = models.IntegerField('Жёсткость общая')
+    input_component3 = models.IntegerField('Окисляемость')
+    input_component4 = models.IntegerField('Солесодержание')
+    input_component5 = models.IntegerField('Остаточный хлор')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [6|2]'
+        verbose_name_plural = 'Input | Компонент [6|2]'
+
+
 
 
 

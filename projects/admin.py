@@ -7,7 +7,8 @@ from .models import Location, LocationPlace1, LocationPlace2, LocationPlace3, \
     InputComponent11, InputComponent12, InputComponent13, \
     InputComponent21, InputComponent22, InputComponent31, \
     InputComponent41, InputComponent42, InputComponent43, \
-    InputComponent44, InputComponent45
+    InputComponent44, InputComponent45, InputComponent51, \
+    InputComponent61, InputComponent62
 
 # Register your models here.
 admin.site.register(Location)
@@ -44,6 +45,9 @@ admin.site.register(InputComponent42)
 admin.site.register(InputComponent43)
 admin.site.register(InputComponent44)
 admin.site.register(InputComponent45)
+admin.site.register(InputComponent51)
+admin.site.register(InputComponent61)
+admin.site.register(InputComponent62)
 
 
 
