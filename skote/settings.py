@@ -110,12 +110,14 @@ WSGI_APPLICATION = 'skote.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-        
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'dmsdatabase',
+        'USER': 'postgres',
+        'PASSWORD': 'Alaska_71749809',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
@@ -139,7 +141,7 @@ DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
 
 TIME_ZONE = 'Asia/Kolkata'
 
