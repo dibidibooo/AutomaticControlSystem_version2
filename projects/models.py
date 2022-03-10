@@ -126,8 +126,8 @@ class Component11(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [1|1] | Словарь'
-        verbose_name_plural = 'Компоненты [1|1] | Словарь'
+        verbose_name = 'Словарь | Компоненты [1|1]'
+        verbose_name_plural = 'Словарь | Компоненты [1|1]'
 
 
 # Оборотное водоснабжение Водоблок-2 | Установка АВТ напротив погружного холодильника №42
@@ -145,8 +145,8 @@ class Component12(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [1|2] | Словарь'
-        verbose_name_plural = 'Компоненты [1|2] | Словарь'
+        verbose_name = 'Словарь | Компоненты [1|2]'
+        verbose_name_plural = 'Словарь | Компоненты [1|2]'
 
 
 # Оборотное водоснабжение Водоблок-2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12
@@ -164,8 +164,8 @@ class Component13(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [1|3] | Словарь'
-        verbose_name_plural = 'Компоненты [1|3] | Словарь'
+        verbose_name = 'Словарь | Компоненты [1|3]'
+        verbose_name_plural = 'Словарь | Компоненты [1|3]'
 
 
 # ПАУ БОВ-1 (титул 1026)/ПАУ БОВ-2 (титул 2602) | Аналитическая точка насосов Р-02А/В/С
@@ -183,8 +183,8 @@ class Component21(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [2|1] | Словарь'
-        verbose_name_plural = 'Компоненты [2|1] | Словарь'
+        verbose_name = 'Словарь | Компоненты [2|1]'
+        verbose_name_plural = 'Словарь | Компоненты [2|1]'
 
 
 # ПАУ БОВ-1 (титул 1026)/ПАУ БОВ-2 (титул 2602) | Аналитическая точка выкид насосов Р-01А/В/С/Д
@@ -202,8 +202,8 @@ class Component22(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [2|2] | Словарь'
-        verbose_name_plural = 'Компоненты [2|2] | Словарь'
+        verbose_name = 'Словарь | Компоненты [2|2]'
+        verbose_name_plural = 'Словарь | Компоненты [2|2]'
 
 
 # ПАУ БОВ-1 (титул 1026)/ПАУ БОВ-2 (титул 2602) | Аналитическая точка насосов Р-01А/В/С/Д
@@ -221,8 +221,8 @@ class Component31(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [3|1] | Словарь'
-        verbose_name_plural = 'Компоненты [3|1] | Словарь'
+        verbose_name = 'Словарь | Компоненты [3|1]'
+        verbose_name_plural = 'Словарь | Компоненты [3|1]'
 
 
 # УГОВ ТОО «Enertek» | Трубопровод подачи свежей воды из реки Урал (в районе клапанной сборки позиций 77-FV-203) 77-SN-001
@@ -240,8 +240,8 @@ class Component41(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [4|1] | Словарь'
-        verbose_name_plural = 'Компоненты [4|1] | Словарь'
+        verbose_name = 'Словарь | Компоненты [4|1]'
+        verbose_name_plural = 'Словарь | Компоненты [4|1]'
 
 
 # УГОВ ТОО «Enertek» | Выход из ёмкости 77-ТК-103 77-SN-004
@@ -259,8 +259,8 @@ class Component42(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [4|2] | Словарь'
-        verbose_name_plural = 'Компоненты [4|2] | Словарь'
+        verbose_name = 'Словарь | Компоненты [4|2]'
+        verbose_name_plural = 'Словарь | Компоненты [4|2]'
 
 
 # УГОВ ТОО «Enertek» | На входе в боковой фильтр позиции 77-Z-003 77-SN-006
@@ -278,8 +278,8 @@ class Component43(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [4|3] | Словарь'
-        verbose_name_plural = 'Компоненты [4|3] | Словарь'
+        verbose_name = 'Словарь | Компоненты [4|3]'
+        verbose_name_plural = 'Словарь | Компоненты [4|3]'
 
 
 # УГОВ ТОО «Enertek» | Подача на градирню в районе 77-ТI-205 77-SN-007
@@ -297,8 +297,8 @@ class Component44(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [4|4] | Словарь'
-        verbose_name_plural = 'Компоненты [4|4] | Словарь'
+        verbose_name = 'Словарь | Компоненты [4|4]'
+        verbose_name_plural = 'Словарь | Компоненты [4|4]'
 
 
 # УГОВ ТОО «Enertek» | На выходе с бокового фильтра 77-Z-003, 77-SN-008
@@ -316,8 +316,8 @@ class Component45(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [4|5] | Словарь'
-        verbose_name_plural = 'Компоненты [4|5] | Словарь'
+        verbose_name = 'Словарь | Компоненты [4|5]'
+        verbose_name_plural = 'Словарь | Компоненты [4|5]'
 
 
 # Механическая очистка | Очистные сооружения поз.119. С колодца промстоков №1 (точка №4 вход)
@@ -335,8 +335,8 @@ class Component51(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [5|1] | Словарь'
-        verbose_name_plural = 'Компоненты [5|1] | Словарь'
+        verbose_name = 'Словарь | Компоненты [5|1]'
+        verbose_name_plural = 'Словарь | Компоненты [5|1]'
 
 
 # Биологическая очистка | Пробоотборник 001 перед БОС / А1 –SN -001
@@ -354,8 +354,8 @@ class Component61(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [6|1] | Словарь'
-        verbose_name_plural = 'Компоненты [6|1] | Словарь'
+        verbose_name = 'Словарь | Компоненты [6|1]'
+        verbose_name_plural = 'Словарь | Компоненты [6|1]'
 
 
 # Биологическая очистка | Сточная вода после биологических очистных сооружений А1 –SN -009
@@ -373,8 +373,8 @@ class Component62(models.Model):
         return self.title_component
 
     class Meta:
-        verbose_name = 'Компоненты [6|2] | Словарь'
-        verbose_name_plural = 'Компоненты [6|2] | Словарь'
+        verbose_name = 'Словарь | Компоненты [6|2]'
+        verbose_name_plural = 'Словарь | Компоненты [6|2]'
 
 
 
@@ -382,23 +382,199 @@ class Component62(models.Model):
 
 
 # Оборотное водоснабжение Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
-# class InputComponent11(models.Model):
-#     input_component1 = models.IntegerField('Нефтепродукт')
-#     input_component2 = models.IntegerField('Значение рН')
-#     input_component3 = models.IntegerField('Общие взвешенные твердые частицы')
-#     input_component4 = models.IntegerField('Фосфор')
-#     input_component5 = models.IntegerField('Щелочность общая')
-#     input_component6 = models.IntegerField('Щелочность общая')
-#     input_component7 = models.IntegerField('Солесодержание')
-#     input_component8 = models.IntegerField('Хлориды')
-#     input_component9 = models.IntegerField('Сульфаты')
-#     input_component10 = models.IntegerField('Жесткость кальциевая')
-#     input_component12 = models.IntegerField('Жесткость магниевая')
-#     input_component13 = models.IntegerField('Железо')
-#     create_time = models.DateTimeField(auto_now=True)
-#
-#     class Meta:
-#         verbose_name = 'Input | Показатель [1|1]'
-#         verbose_name_plural = 'Input | Показатели [1|1]'
+class InputComponent11(models.Model):
+    input_component1 = models.IntegerField('Нефтепродукт')
+    input_component2 = models.IntegerField('Значение рН')
+    input_component3 = models.IntegerField('Общие взвешенные твердые частицы')
+    input_component4 = models.IntegerField('Фосфор')
+    input_component5 = models.IntegerField('Щелочность общая')
+    input_component6 = models.IntegerField('Жесткость  общая')
+    input_component7 = models.IntegerField('Солесодержание')
+    input_component8 = models.IntegerField('Хлориды')
+    input_component9 = models.IntegerField('Сульфаты')
+    input_component10 = models.IntegerField('Жесткость кальциевая')
+    input_component12 = models.IntegerField('Жесткость магниевая')
+    input_component13 = models.IntegerField('Железо')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [1|1]'
+        verbose_name_plural = 'Input | Компонент [1|1]'
+
+
+# Оборотное водоснабжение Водоблок - 2 | Установка АВТ напротив погружного холодильника №42
+class InputComponent12(models.Model):
+    input_component1 = models.IntegerField('Нефтепродукт')
+    input_component2 = models.IntegerField('Значение рН')
+    input_component3 = models.IntegerField('Общие взвешенные твердые частицы')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [1|2]'
+        verbose_name_plural = 'Input | Компонент [1|2]'
+
+
+# Оборотное водоснабжение Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12
+class InputComponent13(models.Model):
+    input_component1 = models.IntegerField('Взвешенные вещества')
+    input_component2 = models.IntegerField('Жесткость общая')
+    input_component3 = models.IntegerField('Железо')
+    input_component4 = models.IntegerField('Сухой остаток')
+    input_component5 = models.IntegerField('Щелочность общая')
+    input_component6 = models.IntegerField('Солесодержание')
+    input_component7 = models.IntegerField('Хлориды')
+    input_component8 = models.IntegerField('Сульфаты')
+    input_component9 = models.IntegerField('Жесткость кальциевая')
+    input_component10 = models.IntegerField('Жесткость магниевая')
+    input_component12 = models.IntegerField('Значение рН')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [1|3]'
+        verbose_name_plural = 'Input | Компонент [1|3]'
+
+
+# БОВ-1  | Аналитическая точка насосов Р-02А/В/С
+class InputComponent21(models.Model):
+    input_component1 = models.IntegerField('Общая жесткость')
+    input_component2 = models.IntegerField('Кальциевая жесткость')
+    input_component3 = models.IntegerField('Значение рН')
+    input_component4 = models.IntegerField('Общее солесодержание')
+    input_component5 = models.IntegerField('Содержание хлоридов')
+    input_component6 = models.IntegerField('Содержание сульфатов')
+    input_component7 = models.IntegerField('Содержание нефтепродуктов')
+    input_component8 = models.IntegerField('Общие взвешенные вещества')
+    input_component9 = models.IntegerField('Щелочность общая')
+    input_component10 = models.IntegerField('Железо')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [2|1]'
+        verbose_name_plural = 'Input | Компонент [2|1]'
+
+
+# БОВ-1  | Аналитическая точка выкид насосов Р-01А/В/С/Д
+class InputComponent22(models.Model):
+    input_component1 = models.IntegerField('Общая жесткость')
+    input_component2 = models.IntegerField('Кальциевая жесткость')
+    input_component3 = models.IntegerField('Значение рН')
+    input_component4 = models.IntegerField('Общее солесодержание')
+    input_component5 = models.IntegerField('Содержание хлоридов')
+    input_component6 = models.IntegerField('Содержание сульфатов')
+    input_component7 = models.IntegerField('Содержание нефтепродуктов')
+    input_component8 = models.IntegerField('Общие взвешенные вещества')
+    input_component9 = models.IntegerField('Щелочность общая')
+    input_component10 = models.IntegerField('Железо')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [2|2]'
+        verbose_name_plural = 'Input | Компонент [2|2]'
+
+
+# БОВ-1  | Аналитическая точка выкид насосов Р-01А/В/С/Д
+class InputComponent31(models.Model):
+    input_component1 = models.IntegerField('Общая жесткость')
+    input_component2 = models.IntegerField('Кальциевая жесткость')
+    input_component3 = models.IntegerField('Значение рН')
+    input_component4 = models.IntegerField('Общее солесодержание')
+    input_component5 = models.IntegerField('Содержание хлоридов')
+    input_component6 = models.IntegerField('Содержание сульфатов')
+    input_component7 = models.IntegerField('Содержание нефтепродуктов')
+    input_component8 = models.IntegerField('Общие взвешенные вещества')
+    input_component9 = models.IntegerField('Щелочность по фенолу')
+    input_component10 = models.IntegerField('Щелочность общая')
+    input_component11 = models.IntegerField('Железо')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [3|1]'
+        verbose_name_plural = 'Input | Компонент [3|1]'
+
+
+# УГОВ | Трубопровод подачи свежей воды из реки Урал (в районе клапанной сборки позиций 77-FV-203) 77-SN-001
+class InputComponent41(models.Model):
+    input_component1 = models.IntegerField('Общие взвешенные твердые частицы')
+    input_component2 = models.IntegerField('Хлориды')
+    input_component3 = models.IntegerField('Сульфаты')
+    input_component4 = models.IntegerField('Значение рН')
+    input_component5 = models.IntegerField('Щелочность общая')
+    input_component6 = models.IntegerField('Жесткость кальциевая (кальций, мг/л)')
+    input_component7 = models.IntegerField('Жесткость общая')
+    input_component8 = models.IntegerField('Железо общее')
+    input_component9 = models.IntegerField('Солесодержание')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [4|1]'
+        verbose_name_plural = 'Input | Компонент [4|1]'
+
+
+# УГОВ | Выход из ёмкости 77-ТК-103 77-SN-004
+class InputComponent42(models.Model):
+    input_component1 = models.IntegerField('Общие взвешенные твердые частицы')
+    input_component2 = models.IntegerField('Значение рН')
+    input_component3 = models.IntegerField('Хлориды')
+    input_component4 = models.IntegerField('Фосфор')
+    input_component5 = models.IntegerField('Нефтепродукт')
+    input_component6 = models.IntegerField('Щелочность общая')
+    input_component7 = models.IntegerField('Жесткость кальциевая (кальций, мг/л)')
+    input_component8 = models.IntegerField('Жесткость общая')
+    input_component9 = models.IntegerField('Железо общее')
+    input_component10 = models.IntegerField('Солесодержание')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [4|2]'
+        verbose_name_plural = 'Input | Компонент [4|2]'
+
+
+# УГОВ | На входе в боковой фильтр позиции 77-Z-003 77-SN-006
+class InputComponent43(models.Model):
+    input_component1 = models.IntegerField('Общие взвешенные твердые частицы')
+    input_component2 = models.IntegerField('Хлориды')
+    input_component3 = models.IntegerField('Сульфаты')
+    input_component4 = models.IntegerField('Значение рН')
+    input_component5 = models.IntegerField('Фосфор')
+    input_component6 = models.IntegerField('Щелочность')
+    input_component7 = models.IntegerField('Жесткость кальциевая (кальций, мг/л)')
+    input_component8 = models.IntegerField('Жесткость общая')
+    input_component9 = models.IntegerField('Железо общее')
+    input_component10 = models.IntegerField('Солесодержание')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [4|3]'
+        verbose_name_plural = 'Input | Компонент [4|3]'
+
+
+
+# УГОВ | Подача на градирню в районе 77-ТI-205 77-SN-007
+class InputComponent44(models.Model):
+    input_component1 = models.IntegerField('Остаточный хлор')
+    input_component2 = models.IntegerField('Нефтепродукт')
+    input_component3 = models.IntegerField('Солесодержание')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [4|4]'
+        verbose_name_plural = 'Input | Компонент [4|4]'
+
+
+
+# УГОВ | На выходе с бокового фильтра 77-Z-003, 77-SN-008
+class InputComponent45(models.Model):
+    input_component1 = models.IntegerField('Общие взвешенные твердые частицы')
+    create_time = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        verbose_name = 'Input | Компонент [4|5]'
+        verbose_name_plural = 'Input | Компонент [4|5]'
+
+
+
+
+
+
 
 
