@@ -2,318 +2,272 @@
 {% load static %}
 
 
+{% block extra_css %}
+{% endblock %}
 {% block contents %}
-                        <div class="row">
-                            <div class="col-lg-8">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0 me-4">
-                                                <img src="{% static 'images/companies/img-1.png'%}" alt="" class="avatar-sm">
-                                            </div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
 
-                                            <div class="flex-grow-1 overflow-hidden">
-                                                <h5 class="text-truncate font-size-15">Skote Dashboard UI</h5>
-                                                <p class="text-muted">Separate existence is a myth. For science, music, sport, etc.</p>
-                                            </div>
-                                        </div>
+                <h4 class="card-title">Пример таблицы</h4>
+                <p class="card-title-desc">Здесь вы можете просмотреть данные с таблицы, скачать их в формате excel и
+                    pdf. Есть режим поиска и сортировки,
+                    а также таблица разделена на страницы.
+                </p>
+                <form class="row gy-2 gx-3 align-items-center">
+                    <div class="col-lg-2">
+                        <label class="visually-hidden" for="autoSizingSelect"></label>
+                        <select class="form-select" id="autoSizingSelect">
+                            <option selected>Выберите год...</option>
+                            <option value="1">2022</option>
+                            <option value="2">2021</option>
+                            <option value="3">2020</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-2">
+                        <label class="visually-hidden" for="autoSizingSelect"></label>
+                        <select class="form-select" id="autoSizingSelect">
+                            <option selected>Выберите месяц...</option>
+                            <option value="1">Январь</option>
+                            <option value="1">Февраль</option>
+                            <option value="1">Март</option>
+                            <option value="1">Апрель</option>
+                            <option value="1">Май</option>
+                            <option value="1">Июнь</option>
+                            <option value="1">Июль</option>
+                            <option value="1">Август</option>
+                            <option value="1">Сентябрь</option>
+                            <option value="1">Октябрь</option>
+                            <option value="2">Ноябрь</option>
+                            <option value="3">Декабрь</option>
+                        </select>
+                    </div>
+                    <div class="col-lg-4">
+<!--                        <button id="datable1" type="submit" class="btn btn-primary w-md">Скачать Excel</button>-->
+                    </div>
+                </form>
+                <div class="mt-3">
+                    <table id="datatable-buttons" class="table text-center table-bordered dt-responsive nowrap w-100">
+                        <thead>
+                        <tr>
+                            <th>Места отбора анализов</th>
+                            <th>Контролируемая вода</th>
+                            <th>Контролируемые параметры и их единицы измерения</th>
+                            <th>Производные коэффициенты и метрики, полученные из анализов</th>
+                            <th>Задачи и рекомендации по нормализации качества воды</th>
+                            <th>Исполнители задач и сроки их выполнения</th>
+                            <th>Причины невыполнения задач</th>
+                            <th>Комментарии</th>
+                        </tr>
+                        </thead>
 
-                                        <h5 class="font-size-15 mt-4">Project Details :</h5>
 
-                                        <p class="text-muted">To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc,</p>
+                        <tbody>
+                        <tr>
+                            <td>На выходе с бокового фильтра 77-Z-003, 77-SN-008</td>
+                            <td>Оборотный</td>
+                            <td>12</td>
+                            <td id="area-sparkline-chart-4"
+                                class="apex-charts">
+                            </td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>Подача на градирню в районе 77-ТI-205 77-SN-007</td>
+                            <td>Приточный</td>
+                            <td>32</td>
+                            <td id="area-sparkline-chart-1"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>На входе в боковой фильтр позиции 77-Z-003 77-SN-006</td>
+                            <td>Оборотный</td>
+                            <td>46</td>
+                            <td id="area-sparkline-chart-2"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>Выход из ёмкости 77-ТК-103 77-SN-004</td>
+                            <td>Приточный</td>
+                            <td>64</td>
+                            <td id="area-sparkline-chart-3"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>Трубопровод подачи свежей воды из реки Урал (в районе клапанной сборки позиций
+                                77-FV-203) 77-SN-001
+                            </td>
+                            <td>Оборотный</td>
+                            <td>77</td>
+                            <td id="area-sparkline-chart-5"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>Аналитическая точка выкид насосов Р-01А/В/С/Д</td>
+                            <td>Приточный</td>
+                            <td>98</td>
+                            <td id="area-sparkline-chart-6"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>Аналитическая точка насосов Р-02А/В/С</td>
+                            <td>Оборотный</td>
+                            <td>17</td>
+                            <td id="area-sparkline-chart-7"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12</td>
+                            <td>Приточный</td>
+                            <td>82</td>
+                            <td id="area-sparkline-chart-8"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>Установка АВТ напротив погружного холодильника №42</td>
+                            <td>Оборотный</td>
+                            <td>93</td>
+                            <td id="area-sparkline-chart-9"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16</td>
+                            <td>Приточный</td>
+                            <td>41</td>
+                            <td id="area-sparkline-chart-10"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>На выходе с бокового фильтра 77-Z-003, 77-SN-008</td>
+                            <td>Приточный</td>
+                            <td>58</td>
+                            <td id="area-sparkline-chart-11"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>Подача на градирню в районе 77-ТI-205 77-SN-007</td>
+                            <td>Приточный</td>
+                            <td>63</td>
+                            <td id="area-sparkline-chart-12"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>На входе в боковой фильтр позиции 77-Z-003 77-SN-006</td>
+                            <td>Оборотный</td>
+                            <td>25</td>
+                            <td id="area-sparkline-chart-13"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>Выход из ёмкости 77-ТК-103 77-SN-004</td>
+                            <td>Приточный</td>
+                            <td>11</td>
+                            <td id="area-sparkline-chart-14"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
+                        <tr>
+                            <td>Трубопровод подачи свежей воды из реки Урал (в районе клапанной сборки позиций
+                                77-FV-203) 77-SN-001
+                            </td>
+                            <td>Оборотный</td>
+                            <td>95</td>
+                            <td id="area-sparkline-chart-15"
+                                class="apex-charts"></td>
+                            <td>Задачи и рекомендации по нормализации качества воды</td>
+                            <td>Исполнители задач и сроки их выполнения</td>
+                            <td>Причины невыполнения задач</td>
+                            <td>Комментарии</td>
+                        </tr>
 
-                                        <div class="text-muted mt-4">
-                                            <p><i class="mdi mdi-chevron-right text-primary me-1"></i> To achieve this, it would be necessary</p>
-                                            <p><i class="mdi mdi-chevron-right text-primary me-1"></i> Separate existence is a myth.</p>
-                                            <p><i class="mdi mdi-chevron-right text-primary me-1"></i> If several languages coalesce</p>
-                                        </div>
-                                        
-                                        <div class="row task-dates">
-                                            <div class="col-sm-4 col-6">
-                                                <div class="mt-4">
-                                                    <h5 class="font-size-14"><i class="bx bx-calendar me-1 text-primary"></i> Start Date</h5>
-                                                    <p class="text-muted mb-0">08 Sept, 2019</p>
-                                                </div>
-                                            </div>
-    
-                                            <div class="col-sm-4 col-6">
-                                                <div class="mt-4">
-                                                    <h5 class="font-size-14"><i class="bx bx-calendar-check me-1 text-primary"></i> Due Date</h5>
-                                                    <p class="text-muted mb-0">12 Oct, 2019</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end col -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div> <!-- end col -->
+</div> <!-- end row -->
 
-                            <div class="col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-4">Team Members</h4>
-
-                                        <div class="table-responsive">
-                                            <table class="table align-middle table-nowrap">
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="width: 50px;"><img src="{% static 'images/users/avatar-2.jpg'%}" class="rounded-circle avatar-xs" alt=""></td>
-                                                        <td><h5 class="font-size-14 m-0"><a href="javascript: void(0);" class="text-dark">Daniel Canales</a></h5></td>
-                                                        <td>
-                                                            <div>
-                                                                <a href="javascript: void(0);" class="badge bg-primary bg-soft text-primary font-size-11">Frontend</a>
-                                                                <a href="javascript: void(0);" class="badge bg-primary bg-soft text-primary font-size-11">UI</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><img src="{% static 'images/users/avatar-1.jpg'%}" class="rounded-circle avatar-xs" alt=""></td>
-                                                        <td><h5 class="font-size-14 m-0"><a href="javascript: void(0);" class="text-dark">Jennifer Walker</a></h5></td>
-                                                        <td>
-                                                            <div>
-                                                                <a href="javascript: void(0);" class="badge bg-primary bg-soft text-primary font-size-11">UI / UX</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="avatar-xs">
-                                                                <span class="avatar-title rounded-circle bg-primary text-white font-size-16">
-                                                                    C
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td><h5 class="font-size-14 m-0"><a href="javascript: void(0);" class="text-dark">Carl Mackay</a></h5></td>
-                                                        <td>
-                                                            <div>
-                                                                <a href="javascript: void(0);" class="badge bg-primary bg-soft text-primary font-size-11">Backend</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><img src="{% static 'images/users/avatar-4.jpg'%}" class="rounded-circle avatar-xs" alt=""></td>
-                                                        <td><h5 class="font-size-14 m-0"><a href="javascript: void(0);" class="text-dark">Janice Cole</a></h5></td>
-                                                        <td>
-                                                            <div>
-                                                                <a href="javascript: void(0);" class="badge bg-primary bg-soft text-primary font-size-11">Frontend</a>
-                                                                <a href="javascript: void(0);" class="badge bg-primary bg-soft text-primary font-size-11">UI</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="avatar-xs">
-                                                                <span class="avatar-title rounded-circle bg-primary text-white font-size-16">
-                                                                    T
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td><h5 class="font-size-14 m-0"><a href="javascript: void(0);" class="text-dark">Tony Brafford</a></h5></td>
-                                                        <td>
-                                                            <div>
-                                                                <a href="javascript: void(0);" class="badge bg-primary bg-soft text-primary font-size-11">Backend</a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-4">Overview</h4>
-
-                                        <div id="overview-chart" class="apex-charts" dir="ltr"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end col -->
-
-                            <div class="col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-4">Attached Files</h4>
-                                        <div class="table-responsive">
-                                            <table class="table table-nowrap align-middle table-hover mb-0">
-                                                <tbody>
-                                                    <tr>
-                                                        <td style="width: 45px;">
-                                                            <div class="avatar-sm">
-                                                                <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-24">
-                                                                    <i class="bx bxs-file-doc"></i>
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-size-14 mb-1"><a href="javascript: void(0);" class="text-dark">Skote Landing.Zip</a></h5>
-                                                            <small>Size : 3.25 MB</small>
-                                                        </td>
-                                                        <td>
-                                                            <div class="text-center">
-                                                                <a href="javascript: void(0);" class="text-dark"><i class="bx bx-download h3 m-0"></i></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="avatar-sm">
-                                                                <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-24">
-                                                                    <i class="bx bxs-file-doc"></i>
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-size-14 mb-1"><a href="javascript: void(0);" class="text-dark">Skote Admin.Zip</a></h5>
-                                                            <small>Size : 3.15 MB</small>
-                                                        </td>
-                                                        <td>
-                                                            <div class="text-center">
-                                                                <a href="javascript: void(0);" class="text-dark"><i class="bx bx-download h3 m-0"></i></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="avatar-sm">
-                                                                <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-24">
-                                                                    <i class="bx bxs-file-doc"></i>
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-size-14 mb-1"><a href="javascript: void(0);" class="text-dark">Skote Logo.Zip</a></h5>
-                                                            <small>Size : 2.02 MB</small>
-                                                        </td>
-                                                        <td>
-                                                            <div class="text-center">
-                                                                <a href="javascript: void(0);" class="text-dark"><i class="bx bx-download h3 m-0"></i></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td>
-                                                            <div class="avatar-sm">
-                                                                <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-24">
-                                                                    <i class="bx bxs-file-doc"></i>
-                                                                </span>
-                                                            </div>
-                                                        </td>
-                                                        <td>
-                                                            <h5 class="font-size-14"><a href="javascript: void(0);" class="text-dark">Veltrix admin.Zip</a></h5>
-                                                            <small>Size : 2.25 MB</small>
-                                                        </td>
-                                                        <td>
-                                                            <div class="text-center">
-                                                                <a href="javascript: void(0);" class="text-dark"><i class="bx bx-download h3 m-0"></i></a>
-                                                            </div>
-                                                        </td>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end col -->
-
-                            <div class="col-lg-4">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-4">Comments</h4>
-
-                                        <div class="d-flex mb-4">
-                                            <div class="flex-shrink-0 me-3">
-                                                <img class="d-flex-object rounded-circle avatar-xs" alt="" src="{% static 'images/users/avatar-2.jpg'%}">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h5 class="font-size-13 mb-1">David Lambert</h5>
-                                                <p class="text-muted mb-1">
-                                                    Separate existence is a myth.
-                                                </p>
-                                            </div>
-                                            <div class="ms-3">
-                                                <a href="javascript: void(0);" class="text-primary">Reply</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="d-flex mb-4">
-                                            <div class="flex-shrink-0 me-3">
-                                                <img class="d-flex-object rounded-circle avatar-xs" alt="" src="{% static 'images/users/avatar-3.jpg'%}">
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <h5 class="font-size-13 mb-1">Steve Foster</h5>
-                                                <p class="text-muted mb-1">
-                                                    <a href="javascript: void(0);" class="text-success">@Henry</a>
-                                                    To an English person it will like simplified
-                                                </p>
-                                                <div class="d-flex mt-3">
-                                                    <div class="flex-shrink-0 me-3">
-                                                        <div class="avatar-xs">
-                                                            <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-16">
-                                                                J
-                                                            </span>
-                                                        </div>
-                                                    </div>
-                                                    
-                                                    <div class="flex-grow-1">
-                                                        <h5 class="font-size-13 mb-1">Jeffrey Walker</h5>
-                                                        <p class="text-muted mb-1">
-                                                            as a skeptical Cambridge friend
-                                                        </p>
-                                                    </div>
-                                                    <div class="ms-3">
-                                                        <a href="javascript: void(0);" class="text-primary">Reply</a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="ms-3">
-                                                <a href="javascript: void(0);" class="text-primary">Reply</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="d-flex mb-4">
-                                            <div class="flex-shrink-0 me-3">
-                                                <div class="avatar-xs">
-                                                    <span class="avatar-title rounded-circle bg-primary bg-soft text-primary font-size-16">
-                                                        S
-                                                    </span>
-                                                </div>
-                                            </div>
-                                            
-                                            <div class="flex-grow-1">
-                                                <h5 class="font-size-13 mb-1">Steven Carlson</h5>
-                                                <p class="text-muted mb-1">
-                                                    Separate existence is a myth.
-                                                </p>
-                                            </div>
-                                            <div class="ms-3">
-                                                <a href="javascript: void(0);" class="text-primary">Reply</a>
-                                            </div>
-                                        </div>
-
-                                        <div class="text-center mt-4 pt-2">
-                                            <a href="javascript: void(0);" class="btn btn-primary btn-sm">View more</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- end col -->
-                        </div>
-                        <!-- end row -->
 {% endblock %}
 
 {% block extra_javascript %}
-        <!-- apexcharts -->
-        <script src="{% static 'libs/apexcharts/dist/apexcharts.min.js' %}"></script>
+<!-- apexcharts -->
+<script src="{% static 'libs/apexcharts/dist/apexcharts.min.js'%}"></script>
+<!-- crypto dash init js -->
+<script src="{% static 'js/pages/crypto-dashboard.init.js'%}"></script>
 
-        <script src="{% static 'js/pages/project-overview.init.js' %}"></script>
+<!-- Required datatable js -->
+<script src="{% static 'libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+<script src="{% static 'libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
+<!-- Buttons examples -->
+<script src="{% static 'libs/datatables.net-buttons/js/dataTables.buttons.min.js' %}"></script>
+<script src="{% static 'libs/datatables.net-buttons-bs4/js/buttons.bootstrap4.min.js' %}"></script>
+<script src="{% static 'libs/jszip/dist/jszip.min.js' %}"></script>
+<script src="{% static 'libs/pdfmake/build/pdfmake.min.js' %}"></script>
+<script src="{% static 'libs/pdfmake/build/vfs_fonts.js' %}"></script>
+<script src="{% static 'libs/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
+<script src="{% static 'libs/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
+<script src="{% static 'libs/datatables.net-buttons/js/buttons.colVis.min.js' %}"></script>
 
+<!-- Responsive examples -->
+<script src="{% static 'libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+<script src="{% static 'libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+
+<!-- Datatable init js -->
+<script src="{% static 'js/pages/datatables.init.js' %}"></script>
 {% endblock %}
