@@ -143,7 +143,7 @@ DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 
 LANGUAGE_CODE = 'ru-ru'
 
-TIME_ZONE = 'Asia/Kolkata'
+TIME_ZONE = 'Asia/Almaty'
 
 USE_I18N = True
 
