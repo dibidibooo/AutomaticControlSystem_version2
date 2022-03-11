@@ -42,17 +42,16 @@ $(document).ready(function () {
         $('#taskname').val('');
         $('#taskdesc').val('');
         $('#TaskStatus').val('');
-        $('#taskbudget').val('');
         $('#taskassignee input').prop("checked", false);
         taskid = id;
     });
 
     $("select#TaskStatus").change(function(){
-        selectedstatus = $(this).children("option:selected").val();  
+        selectedstatus = $(this).children("option:selected").val();
     });
 
     //Add New Task with Validation
-    
+
     $("#addtask").click(function(){
         $('#updatetaskdetail').css('display','none');
         $('#addtask').css('display','block');
@@ -69,7 +68,6 @@ $(document).ready(function () {
                 "<li class='py-1'>"+taskdesc+"</li>"+
             "</ul>"
         }
-        var taskbudget=$("#taskbudget").val();
         var taskassignee = new Array();
         var taskassigneevalue = new Array();
         var src = "";
@@ -93,12 +91,11 @@ $(document).ready(function () {
         else if(selectedstatus == "Pending"){
             statuscolor="badge-soft-warning";
         }
-        
-        if(taskname.length == 0 || taskbudget.length == 0 || selectedstatus.length == 0 || taskassignee.length == 0) {
+
+        if(taskname.length == 0 || selectedstatus.length == 0 || taskassignee.length == 0) {
             $("#NewtaskForm").validate().element("#taskname");
             $("#NewtaskForm").validate().element("#taskassignee input:checkbox");
             $("#NewtaskForm").validate().element("#TaskStatus");
-            $("#NewtaskForm").validate().element("#taskbudget");
         } else {
             $(taskid).append("<div class='card task-box' id='"+newtaskid+"'>"+
             "<div class='card-body'>"+
@@ -121,10 +118,6 @@ $(document).ready(function () {
                 newtaskdesc+
                 "<div class='avatar-group float-start task-assigne'>"+src+
                 "</div>"+
-                "<div class='text-end'>"+
-                    "<h5 class='font-size-15 mb-1' id='task-budget'>$ "+taskbudget+"</h5>"+
-                    "<p class='mb-0 text-muted'>Budget</p>"+
-                "</div>"+
             "</div>"+
         "</div>");
         $('#modalForm').modal('toggle');
@@ -135,13 +128,12 @@ $(document).ready(function () {
         var validator = $("#NewtaskForm").validate();
         $('#taskname').removeClass('error').next('label.error').remove();
         $('#TaskStatus').removeClass('error').next('label.error').remove();
-        $('#taskbudget').removeClass('error').next('label.error').remove();
         validator.resetForm();
     });
 
     //Update Task Details with Validation
 
-    $("#updatetaskdetail").click(function(){ 
+    $("#updatetaskdetail").click(function(){
         var statuscolor ;
         if(selectedstatus == "Waiting"){
             statuscolor="badge-soft-secondary";
@@ -159,9 +151,8 @@ $(document).ready(function () {
         var d = new Date();
         var strDate = d.getDate() + " " + (d.toLocaleString('default', { month: 'short' })) + ", " + d.getFullYear();
         var taskdesc=$("#taskdesc").val();
-        var taskbudget=$("#taskbudget").val();
-        var taskassignee = new Array();        
-        var taskassigneevalue = new Array();        
+        var taskassignee = new Array();
+        var taskassigneevalue = new Array();
 
         var src = "";
         $('#taskassignee input[type=checkbox]:checked').each(function() {
@@ -178,11 +169,10 @@ $(document).ready(function () {
                 "<li class='py-1'>"+taskdesc+"</li>"+
             "</ul>"
         }
-        if(taskname.length == 0 || taskbudget.length == 0 || selectedstatus.length == 0 || taskassignee.length == 0) {
+        if(taskname.length == 0 || selectedstatus.length == 0 || taskassignee.length == 0) {
             $("#NewtaskForm").validate().element("#taskname");
             $("#NewtaskForm").validate().element("#taskassignee input:checkbox");
             $("#NewtaskForm").validate().element("#TaskStatus");
-            $("#NewtaskForm").validate().element("#taskbudget");
         } else {
             $(updateid).html("<div class='card-body'>"+
             "<div class='dropdown float-end'>"+
@@ -204,10 +194,6 @@ $(document).ready(function () {
             newtaskdesc+
             "<div class='avatar-group float-start task-assigne'>"+src+
             "</div>"+
-            "<div class='text-end'>"+
-            "<h5 class='font-size-15 mb-1' id='task-budget'>$ "+taskbudget+"</h5>"+
-            "<p class='mb-0 text-muted'>Budget</p>"+
-            "</div>"+
             "</div>");
             $('#modalForm').modal('hide');
         }
@@ -215,7 +201,7 @@ $(document).ready(function () {
 
     //Edit Task Details with Validation
 
-    $('.main-content').on('click', '.edittask-details', function(event){ 
+    $('.main-content').on('click', '.edittask-details', function(event){
         var id= $(this).attr('data-id');
         updateid = id;
         var validator = $("#NewtaskForm").validate();
@@ -233,15 +219,14 @@ $(document).ready(function () {
             var assigneusers = $(this).attr('value');
             $("#"+assigneusers).prop("checked", true);
         });
-        $('#taskname').val(name); 
-        $('#taskdesc').val(desc); 
-        $('#taskbudget').val(budget);
+        $('#taskname').val(name);
+        $('#taskdesc').val(desc);
         $('#TaskStatus').val(status);
         selectedstatus=status;
     });
-    
+
     //Delete Task
-    $('.main-content').on('click', '.deletetask', function(event){  
+    $('.main-content').on('click', '.deletetask', function(event){
         var id= $(this).attr('data-id');
         console.log('Task Deleted Successfully');
         $(id).remove();
