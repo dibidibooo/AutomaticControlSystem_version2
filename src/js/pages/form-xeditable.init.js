@@ -19,7 +19,7 @@ $(function () {
         type: 'text',
         pk: 1,
         name: 'username',
-        title: 'Enter username',
+        title: 'Введите имя пользователя',
         mode: 'inline',
         inputclass: 'form-control-sm'
     });

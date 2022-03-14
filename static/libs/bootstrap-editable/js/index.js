@@ -2886,7 +2886,7 @@ Text input
 $(function(){
     $('#username').editable({
         url: '/post',
-        title: 'Enter username'
+        title: 'Введите имя пользователя'
     });
 });
 </script>
