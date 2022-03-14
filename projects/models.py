@@ -629,3 +629,27 @@ class InputComponent62(models.Model):
 
 
 
+
+# Оборотное водоснабжение Водоблок-2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
+class Component11(models.Model):
+    title_component = models.CharField('Название', max_length=50)
+    title1 = models.CharField('Единица измерения', max_length=50)
+
+    input_component1 = models.IntegerField('Щёлочность общая')
+
+    title2 = models.CharField('Допустимые нормы не более', max_length=50, blank=True)
+    title3 = models.CharField('Периодичность отбора', max_length=100, blank=True)
+    title4 = models.CharField('Наименование НД и методы испытаний', max_length=100, blank=True)
+    recommendation1 = models.CharField('Рекомендация выше нормы', max_length=100, blank=True)
+    recommendation2 = models.CharField('Рекомендация ниже нормы', max_length=100, blank=True)
+    key_component = models.ForeignKey(LocationPlace1, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return self.title_component
+
+    class Meta:
+        verbose_name = 'Словарь | Компоненты [1|1]'
+        verbose_name_plural = 'Словарь | Компоненты [1|1]'
+
+
+
