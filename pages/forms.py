@@ -8,8 +8,8 @@ class UserLoginForm(LoginForm):
     def __init__(self, *args, **kwargs):
         super(UserLoginForm, self).__init__(*args, **kwargs)
         self.helper = FormHelper(self)
-        self.fields['login'].widget = forms.TextInput(attrs={'class': 'form-control mb-2','placeholder':'Enter Username','id':'username'})
-        self.fields['password'].widget = forms.PasswordInput(attrs={'class': 'form-control mb-2','placeholder':'Enter Password','id':'password'})
+        self.fields['login'].widget = forms.TextInput(attrs={'class': 'form-control mb-2','placeholder':'Введите имя пользователя','id':'username'})
+        self.fields['password'].widget = forms.PasswordInput(attrs={'class': 'form-control mb-2','placeholder':'Введите пароль','id':'password'})
         self.fields['remember'].widget = forms.CheckboxInput(attrs={'class': 'form-check-input'})
 class UserRegistrationForm(SignupForm):
     def __init__(self, *args, **kwargs):
@@ -17,8 +17,8 @@ class UserRegistrationForm(SignupForm):
         self.helper = FormHelper(self)
         self.fields['email'].widget = forms.EmailInput(attrs={'class': 'form-control mb-1','placeholder':'Enter Email','id':'email'})
         self.fields['email'].label="Email"
-        self.fields['username'].widget = forms.TextInput(attrs={'class': 'form-control mb-1','placeholder':'Enter Username','id':'username1'})
-        self.fields['password1'].widget = forms.PasswordInput(attrs={'class': 'form-control mb-1','placeholder':'Enter Password','id':'password1'})
+        self.fields['username'].widget = forms.TextInput(attrs={'class': 'form-control mb-1','placeholder':'Введите имя пользователя','id':'username1'})
+        self.fields['password1'].widget = forms.PasswordInput(attrs={'class': 'form-control mb-1','placeholder':'Введите пароль','id':'password1'})
         self.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'form-control mb-1','placeholder':'Enter Confirm Password','id':'password2'})
         self.fields['password2'].label="Confirm Password"
 class PasswordChangeForm(ChangePasswordForm):

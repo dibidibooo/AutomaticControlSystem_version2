@@ -4241,8 +4241,22 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 	height: 300px;
 	border-radius: 50%
 }
+.auth-image{
+	background: url(../images/bg-auth-overlay.png);
+	background-color: rgba(85, 110, 230, .4);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center
+}
 
 .auth-full-bg .bg-overlay {
+	background: url(../images/bg-auth-overlay.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center
+}
+
+.overlay {
 	background: url(../images/bg-auth-overlay.png);
 	background-size: cover;
 	background-repeat: no-repeat;
