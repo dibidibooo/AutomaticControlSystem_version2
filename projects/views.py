@@ -5,28 +5,32 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 class ProjectsGridView(LoginRequiredMixin,View):
     def get(self , request):
-        greeting = {}
-        greeting['heading'] = "Projects Grid"
-        greeting['pageview'] = "Projects"
-        return render (request,'projects/projectsgrid.html',greeting)
+        context = {
+            'heading':"Загрузка анализов",
+            'pageview': "Projects"
+        }
+        return render (request,'projects/projectsgrid.html',context)
 
 class ProjectsListView(LoginRequiredMixin,View):
     def get(self , request):
-        greeting = {}
-        greeting['heading'] = "Projects List"
-        greeting['pageview'] = "Projects"
-        return render (request,'projects/projectslist.html',greeting)
+        context = {
+            'heading':"Projects List",
+            'pageview': "Projects"
+        }
+        return render (request,'projects/projectslist.html',context)
 
 class ProjectOverviewView(LoginRequiredMixin,View):
     def get(self , request):
-        greeting = {}
-        greeting['heading'] = "Project Overview"
-        greeting['pageview'] = "Projects"
-        return render (request,'projects/projectsoverview.html',greeting)
+        context = {
+            'heading':"Таблица",
+            'pageview': "Projects"
+        }
+        return render (request,'projects/projectsoverview.html',context)
 
 class CreateViewView(LoginRequiredMixin,View):
     def get(self , request):
-        greeting = {}
-        greeting['heading'] = "Create New Project"
-        greeting['pageview'] = "Projects"
-        return render (request,'projects/createnew.html',greeting)
+        context = {
+            'heading':"Результаты",
+            'pageview': "Projects"
+        }
+        return render (request,'projects/createnew.html',context)
