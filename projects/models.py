@@ -53,8 +53,8 @@ class Components(models.Model):
     limits = models.CharField(verbose_name='Допустимые нормы не более', max_length=50, blank=True)
     period = models.CharField(verbose_name='Периодичность отбора', max_length=100, blank=True)
     standards = models.CharField(verbose_name='Наименование НД и методы испытаний', max_length=100, blank=True)
-    recommendation1 = models.CharField(verbose_name='Рекомендация выше нормы', max_length=200, blank=True)
-    recommendation2 = models.CharField(verbose_name='Рекомендация ниже нормы', max_length=200, blank=True)
+    recommendation1 = models.CharField(verbose_name='Рекомендация выше нормы', max_length=200, null=True, blank=True)
+    recommendation2 = models.CharField(verbose_name='Рекомендация ниже нормы', max_length=200, null=True, blank=True)
 
     def __str__(self):
         return self.title

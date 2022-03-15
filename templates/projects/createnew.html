@@ -11,27 +11,24 @@
             <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="nav-link active" id="v-pills-shipping-tab" data-bs-toggle="pill" href="#v-pills-shipping"
                    role="tab" aria-controls="v-pills-shipping" aria-selected="true">
-                    <i class="d-block check-nav-icon mt-3 mb-2"></i>
-                    <p class="fw-bold">Оборотное водоснабжение Водоблок-2</p>
+                    <p class="fw-bold mt-3">Водоблок-2</p>
                 </a>
                 <a class="nav-link" id="v-pills-payment-tab" data-bs-toggle="pill" href="#v-pills-payment" role="tab"
                    aria-controls="v-pills-payment" aria-selected="false">
-                    <i class="d-block check-nav-icon mt-3 mb-2"></i>
-                    <p class="fw-bold">ПАУ БОВ-1 (титул 1026) / ПАУ БОВ-2 (титул 2602) </p>
+                    <p class="fw-bold mt-3">БОВ-1/БОВ-2</p>
                 </a>
                 <a class="nav-link" id="v-pills-confir-tab" data-bs-toggle="pill" href="#v-pills-confir" role="tab"
                    aria-controls="v-pills-confir" aria-selected="false">
-                    <i class="d-block check-nav-icon mt-3 mb-2"></i>
-                    <p class="fw-bold">УГОВ ТОО "Enertek"</p>
+                    <p class="fw-bold mt-3">УГОВ</p>
                 </a>
             </div>
         </div>
-        <div class="col-xl-6 col-sm-9">
+        <div class="col-xl-5 col-sm-9">
             <div class="row">
-            <div class="col-xl-12">
-            <div class="card">
-                <div class="card-body">
-                                                        <div class="row">
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
                                 <div class="col-lg-6">
                                     <div class="mb-3">
                                         <h4 class="card-title">Место отбора проб</h4>
@@ -71,457 +68,172 @@
                                 </div>
                             </div>
 
+                        </div>
+
+                    </div>
                 </div>
-
-            </div>
-            </div>
-            <div class="col-xl-12">
-            <div class="card">
-                <div class="card-body">
-                    <div class="tab-content" id="v-pills-tabContent">
-                        <div class="tab-pane fade show active" id="v-pills-shipping" role="tabpanel"
-                             aria-labelledby="v-pills-shipping-tab">
-                            <div class="mt-3">
-                                <div class="row">
-                                    <div class="col-xl-5">
-                                        <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc"></p>
-                                        <form class="needs-validation" novalidate>
-                                            <div class="row">
-                                                <div class="col-xl-12">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <p class="text-muted mb-4"><i
-                                                                    class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                Нефтепродукт
-                                                            </p>
-                                                            <div class="row">
-                                                                <div class="col-5">
-                                                                    <div>
-                                                                        <h5>9134.39</h5>
-                                                                        <p class="text-muted text-truncate mb-0">
-                                                                            мг/дм³<i
-                                                                                class="mdi mdi-arrow-up ms-1 text-success"></i>
-                                                                        </p>
+                <div class="col-xl-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="tab-content" id="v-pills-tabContent">
+                                <div class="tab-pane fade show active" id="v-pills-shipping" role="tabpanel"
+                                     aria-labelledby="v-pills-shipping-tab">
+                                    <div class="mt-3">
+                                        <div class="row">
+                                            <div class="col-xl-12">
+                                                <h4 class="card-title">Контролируемые показатели</h4>
+                                                <p class="card-title-desc"></p>
+                                                <form class="needs-validation" novalidate>
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p class="text-muted mb-4"><i
+                                                                            class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
+                                                                        Нефтепродукт
+                                                                    </p>
+                                                                    <div class="row">
+                                                                        <div class="col-5">
+                                                                            <div>
+                                                                                <h5>9134.39</h5>
+                                                                                <p class="text-muted text-truncate mb-0">
+                                                                                    мг/дм³<i
+                                                                                        class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-7">
+                                                                            <div>
+                                                                                <div id="area-sparkline-chart-1"
+                                                                                     class="apex-charts"></div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-7">
-                                                                    <div>
-                                                                        <div id="area-sparkline-chart-1"
-                                                                             class="apex-charts"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p class="text-muted mb-4"><i
+                                                                            class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                        Рекомендация
+                                                                    </p>
+                                                                    <div class="col-12">
+                                                                        <div>
+                                                                            <h5>Здесь будет написана та или иная
+                                                                                рекомендация по
+                                                                                контролируемым показателям</h5>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <p class="text-muted mb-4"><i
-                                                                    class="bx bx-copy-alt h2 text-primary align-middle mb-0 me-3"></i>
-                                                                Значение рН </p>
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p class="text-muted mb-4"><i
+                                                                            class="bx bx-copy-alt h2 text-primary align-middle mb-0 me-3"></i>
+                                                                        Значение рН </p>
 
-                                                            <div class="row">
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <h5>245.44</h5>
-                                                                        <p class="text-muted text-truncate mb-0">
-                                                                            мг/дм³<i
-                                                                                class="mdi mdi-arrow-down ms-1 text-danger"></i>
-                                                                        </p>
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <div>
+                                                                                <h5>245.44</h5>
+                                                                                <p class="text-muted text-truncate mb-0">
+                                                                                    мг/дм³<i
+                                                                                        class="mdi mdi-arrow-down ms-1 text-danger"></i>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div>
+                                                                                <div id="area-sparkline-chart-2"
+                                                                                     class="apex-charts"></div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <div id="area-sparkline-chart-2"
-                                                                             class="apex-charts"></div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-xl-6">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p class="text-muted mb-4"><i
+                                                                            class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                        Рекомендация
+                                                                    </p>
+                                                                    <div class="col-12">
+                                                                        <div>
+                                                                            <h5>Здесь будет написана та или иная
+                                                                                рекомендация по
+                                                                                контролируемым показателям</h5>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <p class="text-muted mb-4"><i
-                                                                    class="bx bx-copy-alt h2 text-info align-middle mb-0 me-3"></i>
-                                                                Общие взвешенные твердые частицы </p>
+                                                    <div class="row">
+                                                        <div class="col-xl-6">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p class="text-muted mb-4"><i
+                                                                            class="bx bx-copy-alt h2 text-info align-middle mb-0 me-3"></i>
+                                                                        Общие взвешенные твердые частицы </p>
 
-                                                            <div class="row">
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <h5>63.61</h5>
-                                                                        <p class="text-muted text-truncate mb-0">
-                                                                            мг/дм³<i
-                                                                                class="mdi mdi-arrow-up ms-1 text-success"></i>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <div id="area-sparkline-chart-3"
-                                                                             class="apex-charts"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <p class="text-muted mb-4"><i
-                                                                    class="bx bx-copy-alt h2 text-info align-middle mb-0 me-3"></i>
-                                                                Фосфор </p>
-
-                                                            <div class="row">
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <h5>63.61</h5>
-                                                                        <p class="text-muted text-truncate mb-0">
-                                                                            мг/дм³<i
-                                                                                class="mdi mdi-arrow-up ms-1 text-success"></i>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <div id="area-sparkline-chart-4"
-                                                                             class="apex-charts"></div>
+                                                                    <div class="row">
+                                                                        <div class="col-6">
+                                                                            <div>
+                                                                                <h5>63.61</h5>
+                                                                                <p class="text-muted text-truncate mb-0">
+                                                                                    мг/дм³<i
+                                                                                        class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-6">
+                                                                            <div>
+                                                                                <div id="area-sparkline-chart-3"
+                                                                                     class="apex-charts"></div>
+                                                                            </div>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-
                                                         </div>
-                                                    </div>
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <p class="text-muted mb-4"><i
-                                                                    class="bx bx-copy-alt h2 text-info align-middle mb-0 me-3"></i>
-                                                                Щелочность общая </p>
-
-                                                            <div class="row">
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <h5>63.61</h5>
-                                                                        <p class="text-muted text-truncate mb-0">
-                                                                            мг/дм³<i
-                                                                                class="mdi mdi-arrow-up ms-1 text-success"></i>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <div id="area-sparkline-chart-5"
-                                                                             class="apex-charts"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <p class="text-muted mb-4"><i
-                                                                    class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                Скорость
-                                                                коррозии
-                                                            </p>
-
-                                                            <div class="row">
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <h5>9134.39</h5>
-                                                                        <p class="text-muted text-truncate mb-0">+
-                                                                            0.0012 (0.2%)
-                                                                            <i
-                                                                                    class="mdi mdi-arrow-up ms-1 text-success"></i>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <div id="area-sparkline-chart-6"
-                                                                             class="apex-charts"></div>
+                                                        <div class="col-xl-6">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p class="text-muted mb-4"><i
+                                                                            class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                        Рекомендация
+                                                                    </p>
+                                                                    <div class="col-12">
+                                                                        <div>
+                                                                            <h5>Здесь будет написана та или иная
+                                                                                рекомендация по
+                                                                                контролируемым показателям</h5>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <p class="text-muted mb-4"><i
-                                                                    class="bx bx-copy-alt h2 text-primary align-middle mb-0 me-3"></i>
-                                                                Учтенные
-                                                                и
-                                                                неучтенные
-                                                                потери воды </p>
+                                                </form>
 
-                                                            <div class="row">
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <h5>245.44</h5>
-                                                                        <p class="text-muted text-truncate mb-0">- 4.102
-                                                                            (0.1%)
-                                                                            <i
-                                                                                    class="mdi mdi-arrow-down ms-1 text-danger"></i>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <div id="area-sparkline-chart-7"
-                                                                             class="apex-charts"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <p class="text-muted mb-4"><i
-                                                                    class="bx bx-copy-alt h2 text-info align-middle mb-0 me-3"></i>
-                                                                Коэффициент упаривания </p>
+                                            </div>
+                                        </div>
 
-                                                            <div class="row">
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <h5>63.61</h5>
-                                                                        <p class="text-muted text-truncate mb-0">+ 1.792
-                                                                            (0.1%)
-                                                                            <i
-                                                                                    class="mdi mdi-arrow-up ms-1 text-success"></i>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <div id="area-sparkline-chart-8"
-                                                                             class="apex-charts"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <p class="text-muted mb-4"><i
-                                                                    class="bx bx-copy-alt h2 text-info align-middle mb-0 me-3"></i>
-                                                                Транспорт кальция </p>
-
-                                                            <div class="row">
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <h5>63.61</h5>
-                                                                        <p class="text-muted text-truncate mb-0">+ 1.792
-                                                                            (0.1%)
-                                                                            <i
-                                                                                    class="mdi mdi-arrow-up ms-1 text-success"></i>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <div id="area-sparkline-chart-9"
-                                                                             class="apex-charts"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="col-sm-12">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <p class="text-muted mb-4"><i
-                                                                    class="bx bx-copy-alt h2 text-info align-middle mb-0 me-3"></i>
-                                                                Биологическое загрязнение </p>
-
-                                                            <div class="row">
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <h5>63.61</h5>
-                                                                        <p class="text-muted text-truncate mb-0">+ 1.792
-                                                                            (0.1%)
-                                                                            <i
-                                                                                    class="mdi mdi-arrow-up ms-1 text-success"></i>
-                                                                        </p>
-                                                                    </div>
-                                                                </div>
-                                                                <div class="col-6">
-                                                                    <div>
-                                                                        <div id="area-sparkline-chart-10"
-                                                                             class="apex-charts"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-
-                                    </div>
-                                    <div class="col-xl-7">
-                                        <h4 class="card-title mb-4">Рекомендации</h4>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p class="text-muted mb-4"><i
-                                                        class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
-                                                    Нефтепродукт
-                                                </p>
-                                                <div class="col-12">
-                                                    <div>
-                                                        <h5>Здесь будет написана та или иная рекомендация по
-                                                            контролируемым показателям</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p class="text-muted mb-4"><i
-                                                        class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
-                                                    Значение рН
-                                                </p>
-                                                <div class="col-12">
-                                                    <div>
-                                                        <h5>Здесь будет написана та или иная рекомендация по
-                                                            контролируемым показателям</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p class="text-muted mb-4"><i
-                                                        class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
-                                                    Общие взвешенные твердые частицы
-                                                </p>
-                                                <div class="col-12">
-                                                    <div>
-                                                        <h5>Здесь будет написана та или иная рекомендация по
-                                                            контролируемым показателям</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p class="text-muted mb-4"><i
-                                                        class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
-                                                    Фосфор
-                                                </p>
-                                                <div class="col-12">
-                                                    <div>
-                                                        <h5>Здесь будет написана та или иная рекомендация по
-                                                            контролируемым показателям</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p class="text-muted mb-4"><i
-                                                        class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
-                                                    Щелочность общая
-                                                </p>
-                                                <div class="col-12">
-                                                    <div>
-                                                        <h5>Здесь будет написана та или иная рекомендация по
-                                                            контролируемым показателям</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p class="text-muted mb-4"><i
-                                                        class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
-                                                    Скорость коррозии
-                                                </p>
-                                                <div class="col-12">
-                                                    <div>
-                                                        <h5>Здесь будет написана та или иная рекомендация по
-                                                            контролируемым показателям</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p class="text-muted mb-4"><i
-                                                        class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
-                                                    Учтенные и неучтенные потери воды
-                                                </p>
-                                                <div class="col-12">
-                                                    <div>
-                                                        <h5>Здесь будет написана та или иная рекомендация по
-                                                            контролируемым показателям</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p class="text-muted mb-4"><i
-                                                        class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
-                                                    Коэффициент упаривания
-                                                </p>
-                                                <div class="col-12">
-                                                    <div>
-                                                        <h5>Здесь будет написана та или иная рекомендация по
-                                                            контролируемым показателям</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p class="text-muted mb-4"><i
-                                                        class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
-                                                    Транспорт кальция
-                                                </p>
-                                                <div class="col-12">
-                                                    <div>
-                                                        <h5>Здесь будет написана та или иная рекомендация по
-                                                            контролируемым показателям</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="card">
-                                            <div class="card-body">
-                                                <p class="text-muted mb-4"><i
-                                                        class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
-                                                    Биологическое загрязнение
-                                                </p>
-                                                <div class="col-12">
-                                                    <div>
-                                                        <h5>Здесь будет написана та или иная рекомендация по
-                                                            контролируемым показателям</h5>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-                </div>
-                </div>
         </div>
         <div class="col-lg-3">
             <div class="card">
@@ -738,7 +450,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-xl-2">
+        <div class="col-xl-3">
             <div class="card">
                 <div class="card-body">
                     <div class="d-flex align-items-start">
@@ -870,6 +582,15 @@
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
 });
+
+
+
+
+
+
+
+
+
 
 
 

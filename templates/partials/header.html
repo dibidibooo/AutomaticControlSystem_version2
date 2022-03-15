@@ -75,17 +75,17 @@
 
                     {% if user.has_usable_password %}
                     <a class="dropdown-item" href="{% url 'account_change_password' %}"><i
-                            class="bx bx-key font-size-16 align-middle me-1"></i> Change Password</a>
+                            class="bx bx-key font-size-16 align-middle me-1"></i>Изменить пароль</a>
                     {% else %}
                     <a class="dropdown-item" href="{% url 'account_set_password' %}"><i
-                            class="bx bx-key font-size-16 align-middle me-1"></i> Set Password</a>
+                            class="bx bx-key font-size-16 align-middle me-1"></i>Установить пароль</a>
                     {% endif %}
                     <a class="dropdown-item text-danger"
                        href="{% url 'account_logout' %}?next={% url 'pages-logout' %}"><i
-                            class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>Log Out</a>
+                            class="bx bx-power-off font-size-16 align-middle me-1 text-danger"></i>Выйти</a>
                     {% else %}
                     <a class="dropdown-item" href="{% url 'account_login' %}"><i
-                            class="bx bx-log-in font-size-16 align-middle me-1 "></i> Log In</a>
+                            class="bx bx-log-in font-size-16 align-middle me-1 "></i>Авторизоваться</a>
                     {% endif %}
                 </div>
             </div>

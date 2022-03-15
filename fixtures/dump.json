@@ -1,0 +1,15 @@
+[
+{
+  "model": "projects.components",
+  "pk": 1,
+  "fields": {
+    "title": "Нефтепродукт",
+    "measurement": "мг/дм3",
+    "limits": "3500",
+    "period": "1 раз в сутки",
+    "standards": "ГОСТ 26449. 1-85",
+    "recommendation1": "1",
+    "recommendation2": "2"
+  }
+}
+]
