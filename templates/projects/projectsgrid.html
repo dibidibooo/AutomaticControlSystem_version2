@@ -2,14 +2,6 @@
 {% load static %}
 
 {% block extra_css %}
-<style>
-    .hidden {
-  display: none;
-}
-
-
-
-</style>
 <!-- Select-->
 <link href="{% static 'libs/select2/dist/css/select2.min.css' %}" rel="stylesheet" type="text/css"/>
 <!-- Sweet Alert-->
@@ -54,14 +46,14 @@
                                         <div class="col-lg-6">
                                             <div class="mb-3">
                                                 <h4 class="card-title">Место отбора проб</h4>
-                                                <select class="form-select" id="sel1">
+                                                <select class="form-select" >
                                                     <option selected>Выбрать..</option>
-                                                    <option>Установка оборотного водоснабжения «Водоблок-2» с дренажей
+                                                    <option value="1">Установка оборотного водоснабжения «Водоблок-2» с дренажей
                                                         насосов Н-14,15,16
                                                     </option>
-                                                    <option>Установка АВТ напротив погружного холодильника №42
+                                                    <option value="2">Установка АВТ напротив погружного холодильника №42
                                                     </option>
-                                                    <option>Установка оборотного водоснабжения «Водоблок-2» с дренажей
+                                                    <option value="3">Установка оборотного водоснабжения «Водоблок-2» с дренажей
                                                         насосов Н-5,11.12
                                                     </option>
                                                 </select>
@@ -78,15 +70,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="div1"></div>
-                                    <div id="div2" class="card-body hideable">
+                                    <div  class="card-body 1 box">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc"></p>
                                         <form class="needs-validation" novalidate>
                                             <div class="row">
-                                                {% for el in get_component11%}
                                                 <div class="mb-3">
-                                                    <label class="form-label">{{el.title_component}}</label>
+                                                    <label class="form-label"></label>
                                                     <div class="input-group">
                                                         <input data-parsley-type="number" type="text"
                                                                class="form-control"
@@ -94,11 +84,10 @@
                                                                placeholder="Введите.."/>
                                                         <div class="input-group-prepend">
                                                         <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
+                                                              id="#"></span>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {% endfor %}
                                             </div>
                                             <div>
                                                 <button type="submit"
@@ -108,7 +97,7 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div id="div3" class="card-body hideable">
+                                    <div  class="card-body 2 box">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc"></p>
                                         <form class="needs-validation" novalidate>
@@ -137,7 +126,7 @@
                                             </div>
                                         </form>
                                     </div>
-                                    <div id="div4" class="card-body hideable">
+                                    <div  class="card-body 3 box">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc"></p>
                                         <form class="needs-validation" novalidate>
@@ -167,304 +156,304 @@
                                         </form>
                                     </div>
                                 </div>
-                                <div class="tab-pane fade" id="location2" role="tabpanel"
-                                     aria-labelledby="location2-tab">
+<!--                                <div class="tab-pane fade" id="location2" role="tabpanel"-->
+<!--                                     aria-labelledby="location2-tab">-->
 
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <h4 class="card-title">Место отбора проб</h4>
-                                                <select class="form-select" id="sel2">
-                                                    <option selected>Выбрать..</option>
-                                                    <option>Аналитическая точка выкид насосов Р-01А/В/С/Д
-                                                    </option>
-                                                    <option>Аналитическая точка насосов Р-02А/В/С</option>
-                                                    <option>Аналитическая точка насосов Р-01А/В/С/Д</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <h4 class="card-title">Контролируемая вода</h4>
-                                                <select class="form-select">
-                                                    <option selected>Выбрать..</option>
-                                                    <option value="#">Оборотная</option>
-                                                    <option value="#">Приточная</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="divv1"></div>
-                                    <div id="divv2" class="card-body hideable">
-                                        <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc"></p>
-                                        <form class="needs-validation" novalidate>
-                                            <div class="row">
-                                                {% for el in get_component21%}
-                                                <div class="mb-3">
-                                                    <label class="form-label">{{el.title_component}}</label>
-                                                    <div class="input-group">
-                                                        <input data-parsley-type="number" type="text"
-                                                               class="form-control"
-                                                               required
-                                                               placeholder="Введите.."/>
-                                                        <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {% endfor %}
-                                            </div>
-                                            <div>
-                                                <button type="submit"
-                                                        class="btn btn-primary waves-effect waves-light"
-                                                        id="sa-custom">Отправить
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div id="divv3" class="card-body hideable">
-                                        <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc"></p>
-                                        <form class="needs-validation" novalidate>
-                                            <div class="row">
-                                                {% for el in get_component22%}
-                                                <div class="mb-3">
-                                                    <label class="form-label">{{el.title_component}}</label>
-                                                    <div class="input-group">
-                                                        <input data-parsley-type="number" type="text"
-                                                               class="form-control"
-                                                               required
-                                                               placeholder="Введите.."/>
-                                                        <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {% endfor %}
-                                            </div>
-                                            <div>
-                                                <button type="submit"
-                                                        class="btn btn-primary waves-effect waves-light"
-                                                        id="sa-custom">Отправить
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div id="divv4" class="card-body hideable">
-                                        <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc"></p>
-                                        <form class="needs-validation" novalidate>
-                                            <div class="row">
-                                                {% for el in get_component23%}
-                                                <div class="mb-3">
-                                                    <label class="form-label">{{el.title_component}}</label>
-                                                    <div class="input-group">
-                                                        <input data-parsley-type="number" type="text"
-                                                               class="form-control"
-                                                               required
-                                                               placeholder="Введите.."/>
-                                                        <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {% endfor %}
-                                            </div>
-                                            <div>
-                                                <button type="submit"
-                                                        class="btn btn-primary waves-effect waves-light"
-                                                        id="sa-custom">Отправить
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
-                                <div class="tab-pane fade" id="location3" role="tabpanel"
-                                     aria-labelledby="location3-tab">
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-lg-6">-->
+<!--                                            <div class="mb-3">-->
+<!--                                                <h4 class="card-title">Место отбора проб</h4>-->
+<!--                                                <select class="form-select" id="sel2">-->
+<!--                                                    <option selected>Выбрать..</option>-->
+<!--                                                    <option>Аналитическая точка выкид насосов Р-01А/В/С/Д-->
+<!--                                                    </option>-->
+<!--                                                    <option>Аналитическая точка насосов Р-02А/В/С</option>-->
+<!--                                                    <option>Аналитическая точка насосов Р-01А/В/С/Д</option>-->
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-lg-6">-->
+<!--                                            <div class="mb-3">-->
+<!--                                                <h4 class="card-title">Контролируемая вода</h4>-->
+<!--                                                <select class="form-select">-->
+<!--                                                    <option selected>Выбрать..</option>-->
+<!--                                                    <option value="#">Оборотная</option>-->
+<!--                                                    <option value="#">Приточная</option>-->
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div id="divv1"></div>-->
+<!--                                    <div id="divv2" class="card-body hideable">-->
+<!--                                        <h4 class="card-title">Контролируемые показатели</h4>-->
+<!--                                        <p class="card-title-desc"></p>-->
+<!--                                        <form class="needs-validation" novalidate>-->
+<!--                                            <div class="row">-->
+<!--                                                {% for el in get_component21%}-->
+<!--                                                <div class="mb-3">-->
+<!--                                                    <label class="form-label">{{el.title_component}}</label>-->
+<!--                                                    <div class="input-group">-->
+<!--                                                        <input data-parsley-type="number" type="text"-->
+<!--                                                               class="form-control"-->
+<!--                                                               required-->
+<!--                                                               placeholder="Введите.."/>-->
+<!--                                                        <div class="input-group-prepend">-->
+<!--                                                        <span class="input-group-text"-->
+<!--                                                              id="#">{{el.title1}}</span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                {% endfor %}-->
+<!--                                            </div>-->
+<!--                                            <div>-->
+<!--                                                <button type="submit"-->
+<!--                                                        class="btn btn-primary waves-effect waves-light"-->
+<!--                                                        id="sa-custom">Отправить-->
+<!--                                                </button>-->
+<!--                                            </div>-->
+<!--                                        </form>-->
+<!--                                    </div>-->
+<!--                                    <div id="divv3" class="card-body hideable">-->
+<!--                                        <h4 class="card-title">Контролируемые показатели</h4>-->
+<!--                                        <p class="card-title-desc"></p>-->
+<!--                                        <form class="needs-validation" novalidate>-->
+<!--                                            <div class="row">-->
+<!--                                                {% for el in get_component22%}-->
+<!--                                                <div class="mb-3">-->
+<!--                                                    <label class="form-label">{{el.title_component}}</label>-->
+<!--                                                    <div class="input-group">-->
+<!--                                                        <input data-parsley-type="number" type="text"-->
+<!--                                                               class="form-control"-->
+<!--                                                               required-->
+<!--                                                               placeholder="Введите.."/>-->
+<!--                                                        <div class="input-group-prepend">-->
+<!--                                                        <span class="input-group-text"-->
+<!--                                                              id="#">{{el.title1}}</span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                {% endfor %}-->
+<!--                                            </div>-->
+<!--                                            <div>-->
+<!--                                                <button type="submit"-->
+<!--                                                        class="btn btn-primary waves-effect waves-light"-->
+<!--                                                        id="sa-custom">Отправить-->
+<!--                                                </button>-->
+<!--                                            </div>-->
+<!--                                        </form>-->
+<!--                                    </div>-->
+<!--                                    <div id="divv4" class="card-body hideable">-->
+<!--                                        <h4 class="card-title">Контролируемые показатели</h4>-->
+<!--                                        <p class="card-title-desc"></p>-->
+<!--                                        <form class="needs-validation" novalidate>-->
+<!--                                            <div class="row">-->
+<!--                                                {% for el in get_component23%}-->
+<!--                                                <div class="mb-3">-->
+<!--                                                    <label class="form-label">{{el.title_component}}</label>-->
+<!--                                                    <div class="input-group">-->
+<!--                                                        <input data-parsley-type="number" type="text"-->
+<!--                                                               class="form-control"-->
+<!--                                                               required-->
+<!--                                                               placeholder="Введите.."/>-->
+<!--                                                        <div class="input-group-prepend">-->
+<!--                                                        <span class="input-group-text"-->
+<!--                                                              id="#">{{el.title1}}</span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                {% endfor %}-->
+<!--                                            </div>-->
+<!--                                            <div>-->
+<!--                                                <button type="submit"-->
+<!--                                                        class="btn btn-primary waves-effect waves-light"-->
+<!--                                                        id="sa-custom">Отправить-->
+<!--                                                </button>-->
+<!--                                            </div>-->
+<!--                                        </form>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="tab-pane fade" id="location3" role="tabpanel"-->
+<!--                                     aria-labelledby="location3-tab">-->
 
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <h4 class="card-title">Место отбора проб</h4>
-                                                <select class="form-select" id="sel3">
-                                                    <option selected>Выбрать..</option>
-                                                    <option>Трубопровод подачи свежей воды из реки Урал (в
-                                                        районе
-                                                        клапанной сборки позиций 77-FV-203) 77-SN-001
-                                                    </option>
-                                                    <option>Выход из ёмкости 77-ТК-103 77-SN-004</option>
-                                                    <option>На входе в боковой фильтр позиции 77-Z-003
-                                                        77-SN-006
-                                                    </option>
-                                                    <option>Подача на градирню в районе 77-ТI-205 77-SN-007
-                                                    </option>
-                                                    <option>На выходе с бокового фильтра 77-Z-003, 77-SN-008
-                                                    </option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <h4 class="card-title">Контролируемая вода</h4>
-                                                <select class="form-select">
-                                                    <option selected>Выбрать..</option>
-                                                    <option value="#">Оборотная</option>
-                                                    <option value="#">Приточная</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div id="divvv1"></div>
-                                    <div id="divvv2" class="card-body hideable">
-                                        <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc"></p>
-                                        <form class="needs-validation" novalidate>
-                                            <div class="row">
-                                                {% for el in get_component31%}
-                                                <div class="mb-3">
-                                                    <label class="form-label">{{el.title_component}}</label>
-                                                    <div class="input-group">
-                                                        <input data-parsley-type="number" type="text"
-                                                               class="form-control"
-                                                               required
-                                                               placeholder="Введите.."/>
-                                                        <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {% endfor %}
-                                            </div>
-                                            <div>
-                                                <button type="submit"
-                                                        class="btn btn-primary waves-effect waves-light"
-                                                        id="sa-custom">Отправить
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div id="divvv3" class="card-body hideable">
-                                        <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc"></p>
-                                        <form class="needs-validation" novalidate>
-                                            <div class="row">
-                                                {% for el in get_component32%}
-                                                <div class="mb-3">
-                                                    <label class="form-label">{{el.title_component}}</label>
-                                                    <div class="input-group">
-                                                        <input data-parsley-type="number" type="text"
-                                                               class="form-control"
-                                                               required
-                                                               placeholder="Введите.."/>
-                                                        <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {% endfor %}
-                                            </div>
-                                            <div>
-                                                <button type="submit"
-                                                        class="btn btn-primary waves-effect waves-light"
-                                                        id="sa-custom">Отправить
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div id="divvv4" class="card-body hideable">
-                                        <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc"></p>
-                                        <form class="needs-validation" novalidate>
-                                            <div class="row">
-                                                {% for el in get_component33%}
-                                                <div class="mb-3">
-                                                    <label class="form-label">{{el.title_component}}</label>
-                                                    <div class="input-group">
-                                                        <input data-parsley-type="number" type="text"
-                                                               class="form-control"
-                                                               required
-                                                               placeholder="Введите.."/>
-                                                        <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {% endfor %}
-                                            </div>
-                                            <div>
-                                                <button type="submit"
-                                                        class="btn btn-primary waves-effect waves-light"
-                                                        id="sa-custom">Отправить
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div id="divvv5" class="card-body hideable">
-                                        <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc"></p>
-                                        <form class="needs-validation" novalidate>
-                                            <div class="row">
-                                                {% for el in get_component34%}
-                                                <div class="mb-3">
-                                                    <label class="form-label">{{el.title_component}}</label>
-                                                    <div class="input-group">
-                                                        <input data-parsley-type="number" type="text"
-                                                               class="form-control"
-                                                               required
-                                                               placeholder="Введите.."/>
-                                                        <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {% endfor %}
-                                            </div>
-                                            <div>
-                                                <button type="submit"
-                                                        class="btn btn-primary waves-effect waves-light"
-                                                        id="sa-custom">Отправить
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div id="divvv6" class="card-body hideable">
-                                        <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc"></p>
-                                        <form class="needs-validation" novalidate>
-                                            <div class="row">
-                                                {% for el in get_component35%}
-                                                <div class="mb-3">
-                                                    <label class="form-label">{{el.title_component}}</label>
-                                                    <div class="input-group">
-                                                        <input data-parsley-type="number" type="text"
-                                                               class="form-control"
-                                                               required
-                                                               placeholder="Введите.."/>
-                                                        <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {% endfor %}
-                                            </div>
-                                            <div>
-                                                <button type="submit"
-                                                        class="btn btn-primary waves-effect waves-light"
-                                                        id="sa-custom">Отправить
-                                                </button>
-                                            </div>
-                                        </form>
-                                    </div>
-                                </div>
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-lg-6">-->
+<!--                                            <div class="mb-3">-->
+<!--                                                <h4 class="card-title">Место отбора проб</h4>-->
+<!--                                                <select class="form-select" id="sel3">-->
+<!--                                                    <option selected>Выбрать..</option>-->
+<!--                                                    <option>Трубопровод подачи свежей воды из реки Урал (в-->
+<!--                                                        районе-->
+<!--                                                        клапанной сборки позиций 77-FV-203) 77-SN-001-->
+<!--                                                    </option>-->
+<!--                                                    <option>Выход из ёмкости 77-ТК-103 77-SN-004</option>-->
+<!--                                                    <option>На входе в боковой фильтр позиции 77-Z-003-->
+<!--                                                        77-SN-006-->
+<!--                                                    </option>-->
+<!--                                                    <option>Подача на градирню в районе 77-ТI-205 77-SN-007-->
+<!--                                                    </option>-->
+<!--                                                    <option>На выходе с бокового фильтра 77-Z-003, 77-SN-008-->
+<!--                                                    </option>-->
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-lg-6">-->
+<!--                                            <div class="mb-3">-->
+<!--                                                <h4 class="card-title">Контролируемая вода</h4>-->
+<!--                                                <select class="form-select">-->
+<!--                                                    <option selected>Выбрать..</option>-->
+<!--                                                    <option value="#">Оборотная</option>-->
+<!--                                                    <option value="#">Приточная</option>-->
+<!--                                                </select>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div id="divvv1"></div>-->
+<!--                                    <div id="divvv2" class="card-body hideable">-->
+<!--                                        <h4 class="card-title">Контролируемые показатели</h4>-->
+<!--                                        <p class="card-title-desc"></p>-->
+<!--                                        <form class="needs-validation" novalidate>-->
+<!--                                            <div class="row">-->
+<!--                                                {% for el in get_component31%}-->
+<!--                                                <div class="mb-3">-->
+<!--                                                    <label class="form-label">{{el.title_component}}</label>-->
+<!--                                                    <div class="input-group">-->
+<!--                                                        <input data-parsley-type="number" type="text"-->
+<!--                                                               class="form-control"-->
+<!--                                                               required-->
+<!--                                                               placeholder="Введите.."/>-->
+<!--                                                        <div class="input-group-prepend">-->
+<!--                                                        <span class="input-group-text"-->
+<!--                                                              id="#">{{el.title1}}</span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                {% endfor %}-->
+<!--                                            </div>-->
+<!--                                            <div>-->
+<!--                                                <button type="submit"-->
+<!--                                                        class="btn btn-primary waves-effect waves-light"-->
+<!--                                                        id="sa-custom">Отправить-->
+<!--                                                </button>-->
+<!--                                            </div>-->
+<!--                                        </form>-->
+<!--                                    </div>-->
+<!--                                    <div id="divvv3" class="card-body hideable">-->
+<!--                                        <h4 class="card-title">Контролируемые показатели</h4>-->
+<!--                                        <p class="card-title-desc"></p>-->
+<!--                                        <form class="needs-validation" novalidate>-->
+<!--                                            <div class="row">-->
+<!--                                                {% for el in get_component32%}-->
+<!--                                                <div class="mb-3">-->
+<!--                                                    <label class="form-label">{{el.title_component}}</label>-->
+<!--                                                    <div class="input-group">-->
+<!--                                                        <input data-parsley-type="number" type="text"-->
+<!--                                                               class="form-control"-->
+<!--                                                               required-->
+<!--                                                               placeholder="Введите.."/>-->
+<!--                                                        <div class="input-group-prepend">-->
+<!--                                                        <span class="input-group-text"-->
+<!--                                                              id="#">{{el.title1}}</span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                {% endfor %}-->
+<!--                                            </div>-->
+<!--                                            <div>-->
+<!--                                                <button type="submit"-->
+<!--                                                        class="btn btn-primary waves-effect waves-light"-->
+<!--                                                        id="sa-custom">Отправить-->
+<!--                                                </button>-->
+<!--                                            </div>-->
+<!--                                        </form>-->
+<!--                                    </div>-->
+<!--                                    <div id="divvv4" class="card-body hideable">-->
+<!--                                        <h4 class="card-title">Контролируемые показатели</h4>-->
+<!--                                        <p class="card-title-desc"></p>-->
+<!--                                        <form class="needs-validation" novalidate>-->
+<!--                                            <div class="row">-->
+<!--                                                {% for el in get_component33%}-->
+<!--                                                <div class="mb-3">-->
+<!--                                                    <label class="form-label">{{el.title_component}}</label>-->
+<!--                                                    <div class="input-group">-->
+<!--                                                        <input data-parsley-type="number" type="text"-->
+<!--                                                               class="form-control"-->
+<!--                                                               required-->
+<!--                                                               placeholder="Введите.."/>-->
+<!--                                                        <div class="input-group-prepend">-->
+<!--                                                        <span class="input-group-text"-->
+<!--                                                              id="#">{{el.title1}}</span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                {% endfor %}-->
+<!--                                            </div>-->
+<!--                                            <div>-->
+<!--                                                <button type="submit"-->
+<!--                                                        class="btn btn-primary waves-effect waves-light"-->
+<!--                                                        id="sa-custom">Отправить-->
+<!--                                                </button>-->
+<!--                                            </div>-->
+<!--                                        </form>-->
+<!--                                    </div>-->
+<!--                                    <div id="divvv5" class="card-body hideable">-->
+<!--                                        <h4 class="card-title">Контролируемые показатели</h4>-->
+<!--                                        <p class="card-title-desc"></p>-->
+<!--                                        <form class="needs-validation" novalidate>-->
+<!--                                            <div class="row">-->
+<!--                                                {% for el in get_component34%}-->
+<!--                                                <div class="mb-3">-->
+<!--                                                    <label class="form-label">{{el.title_component}}</label>-->
+<!--                                                    <div class="input-group">-->
+<!--                                                        <input data-parsley-type="number" type="text"-->
+<!--                                                               class="form-control"-->
+<!--                                                               required-->
+<!--                                                               placeholder="Введите.."/>-->
+<!--                                                        <div class="input-group-prepend">-->
+<!--                                                        <span class="input-group-text"-->
+<!--                                                              id="#">{{el.title1}}</span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                {% endfor %}-->
+<!--                                            </div>-->
+<!--                                            <div>-->
+<!--                                                <button type="submit"-->
+<!--                                                        class="btn btn-primary waves-effect waves-light"-->
+<!--                                                        id="sa-custom">Отправить-->
+<!--                                                </button>-->
+<!--                                            </div>-->
+<!--                                        </form>-->
+<!--                                    </div>-->
+<!--                                    <div id="divvv6" class="card-body hideable">-->
+<!--                                        <h4 class="card-title">Контролируемые показатели</h4>-->
+<!--                                        <p class="card-title-desc"></p>-->
+<!--                                        <form class="needs-validation" novalidate>-->
+<!--                                            <div class="row">-->
+<!--                                                {% for el in get_component35%}-->
+<!--                                                <div class="mb-3">-->
+<!--                                                    <label class="form-label">{{el.title_component}}</label>-->
+<!--                                                    <div class="input-group">-->
+<!--                                                        <input data-parsley-type="number" type="text"-->
+<!--                                                               class="form-control"-->
+<!--                                                               required-->
+<!--                                                               placeholder="Введите.."/>-->
+<!--                                                        <div class="input-group-prepend">-->
+<!--                                                        <span class="input-group-text"-->
+<!--                                                              id="#">{{el.title1}}</span>-->
+<!--                                                        </div>-->
+<!--                                                    </div>-->
+<!--                                                </div>-->
+<!--                                                {% endfor %}-->
+<!--                                            </div>-->
+<!--                                            <div>-->
+<!--                                                <button type="submit"-->
+<!--                                                        class="btn btn-primary waves-effect waves-light"-->
+<!--                                                        id="sa-custom">Отправить-->
+<!--                                                </button>-->
+<!--                                            </div>-->
+<!--                                        </form>-->
+<!--                                    </div>-->
+<!--                                </div>-->
 
 
                             </div>
@@ -798,7 +787,19 @@
 {% block extra_javascript %}
 
 <script>
-
+$(document).ready(function(){
+    $("select").change(function(){
+        $(this).find("option:selected").each(function(){
+            var optionValue = $(this).attr("value");
+            if(optionValue){
+                $(".box").not("." + optionValue).hide();
+                $("." + optionValue).show();
+            } else{
+                $(".box").hide();
+            }
+        });
+    }).change();
+});
 </script>
 <!-- select -->
 <script src="{% static 'libs/select2/dist/js/select2.min.js' %}"></script>
