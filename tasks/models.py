@@ -1,8 +1,8 @@
 # from adminsortable.fields import SortableForeignKey
 # from adminsortable.models import SortableMixin
+# from model_utils.models import TimeStampedModel
 # from django.contrib.auth import get_user_model
 # from django.db import models
-# from model_utils.models import TimeStampedModel
 #
 # User = get_user_model()
 # # Create your models here.
@@ -16,9 +16,7 @@
 #     title = models.CharField(max_length=255)
 #     description = models.TextField(blank=True)
 #     assignees = models.ManyToManyField(User, related_name="tasks")
-#     priority = models.CharField(
-#         max_length=1, choices=Priority.choices, default=Priority.MEDIUM
-#     )
+#     priority = models.CharField(max_length=1, choices=Priority.choices, default=Priority.MEDIUM)
 #     task_order = models.PositiveIntegerField(default=0, editable=False, db_index=True)
 #
 #     def __str__(self):
