@@ -42,7 +42,12 @@ class CreateViewView(LoginRequiredMixin, View):
         return render(request, 'projects/projectsgrid_test.html', greeting)
 
     def post(self, request, *args, **kwargs):
+        greeting = {}
+        greeting['heading'] = "Create New Project"
+        greeting['pageview'] = "Projects"
         site1 = ComponentsSite1
+        site1.sampling_site.id
         site2 = ComponentsSite2
         site3 = ComponentsSite3
         site4 = ComponentsSite4
+        return render(request, 'projects/projectsgrid_test.html', greeting)
