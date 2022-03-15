@@ -1,32 +1,48 @@
 from django.shortcuts import render
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
-# Create your views here.
 
-class ProjectsGridView(LoginRequiredMixin,View):
-    def get(self , request):
+from projects.models import (
+    ComponentsSite1,
+    ComponentsSite2,
+    ComponentsSite3,
+    ComponentsSite4
+)
+
+
+class ProjectsGridView(LoginRequiredMixin, View):
+    def get(self, request):
         greeting = {}
         greeting['heading'] = "Projects Grid"
         greeting['pageview'] = "Projects"
-        return render (request,'projects/projectsgrid.html',greeting)
+        return render(request, 'projects/projectsgrid.html', greeting)
 
-class ProjectsListView(LoginRequiredMixin,View):
-    def get(self , request):
+
+class ProjectsListView(LoginRequiredMixin, View):
+    def get(self, request):
         greeting = {}
         greeting['heading'] = "Projects List"
         greeting['pageview'] = "Projects"
-        return render (request,'projects/projectslist.html',greeting)
+        return render(request, 'projects/projectslist.html', greeting)
 
-class ProjectOverviewView(LoginRequiredMixin,View):
-    def get(self , request):
+
+class ProjectOverviewView(LoginRequiredMixin, View):
+    def get(self, request):
         greeting = {}
         greeting['heading'] = "Project Overview"
         greeting['pageview'] = "Projects"
-        return render (request,'projects/projectsoverview.html',greeting)
+        return render(request, 'projects/projectsoverview.html', greeting)
 
-class CreateViewView(LoginRequiredMixin,View):
-    def get(self , request):
+
+class CreateViewView(LoginRequiredMixin, View):
+    def get(self, request):
         greeting = {}
         greeting['heading'] = "Create New Project"
         greeting['pageview'] = "Projects"
-        return render (request,'projects/createnew.html',greeting)
+        return render(request, 'projects/projectsgrid_test.html', greeting)
+
+    def post(self, request, *args, **kwargs):
+        site1 = ComponentsSite1
+        site2 = ComponentsSite2
+        site3 = ComponentsSite3
+        site4 = ComponentsSite4
