@@ -1,0 +1,1790 @@
+[
+{
+  "model": "projects.location",
+  "pk": 1,
+  "fields": {
+    "title_location": "Водоблок-2"
+  }
+},
+{
+  "model": "projects.location",
+  "pk": 2,
+  "fields": {
+    "title_location": "БОВ-1"
+  }
+},
+{
+  "model": "projects.location",
+  "pk": 3,
+  "fields": {
+    "title_location": "БОВ-2"
+  }
+},
+{
+  "model": "projects.location",
+  "pk": 4,
+  "fields": {
+    "title_location": "УГОВ"
+  }
+},
+{
+  "model": "projects.location",
+  "pk": 5,
+  "fields": {
+    "title_location": "МОС"
+  }
+},
+{
+  "model": "projects.location",
+  "pk": 6,
+  "fields": {
+    "title_location": "БОС"
+  }
+},
+{
+  "model": "projects.locationplace1",
+  "pk": 1,
+  "fields": {
+    "title_locationplace": "Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16",
+    "places": 1
+  }
+},
+{
+  "model": "projects.locationplace1",
+  "pk": 2,
+  "fields": {
+    "title_locationplace": "Установка АВТ напротив погружного холодильника №42",
+    "places": 1
+  }
+},
+{
+  "model": "projects.locationplace1",
+  "pk": 3,
+  "fields": {
+    "title_locationplace": "Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12",
+    "places": 1
+  }
+},
+{
+  "model": "projects.locationplace2",
+  "pk": 1,
+  "fields": {
+    "title_locationplace": "Аналитическая точка насосов Р-02А/В/С",
+    "places": 2
+  }
+},
+{
+  "model": "projects.locationplace2",
+  "pk": 2,
+  "fields": {
+    "title_locationplace": "Аналитическая точка выкид насосов Р-01А/В/С/Д",
+    "places": 2
+  }
+},
+{
+  "model": "projects.locationplace3",
+  "pk": 1,
+  "fields": {
+    "title_locationplace": "Аналитическая точка насосов Р-01А/В/С/Д",
+    "places": 3
+  }
+},
+{
+  "model": "projects.locationplace4",
+  "pk": 1,
+  "fields": {
+    "title_locationplace": "Трубопровод подачи свежей воды из реки Урал (в районе клапанной сборки позиций 77-FV-203) 77-SN-001",
+    "places": 4
+  }
+},
+{
+  "model": "projects.locationplace4",
+  "pk": 2,
+  "fields": {
+    "title_locationplace": "Выход из ёмкости          77-ТК-103 77-SN-004",
+    "places": 4
+  }
+},
+{
+  "model": "projects.locationplace4",
+  "pk": 3,
+  "fields": {
+    "title_locationplace": "На входе в боковой фильтр позиции 77-Z-003 77-SN-006",
+    "places": 4
+  }
+},
+{
+  "model": "projects.locationplace4",
+  "pk": 4,
+  "fields": {
+    "title_locationplace": "Подача на градирню в районе 77-ТI-205 77-SN-007",
+    "places": 4
+  }
+},
+{
+  "model": "projects.locationplace4",
+  "pk": 5,
+  "fields": {
+    "title_locationplace": "На выходе с бокового фильтра 77-Z-003, 77-SN-008",
+    "places": 4
+  }
+},
+{
+  "model": "projects.locationplace5",
+  "pk": 1,
+  "fields": {
+    "title_locationplace": "Очистные сооружения поз.119. С колодца промстоков №1 (точка №4 вход)",
+    "places": 5
+  }
+},
+{
+  "model": "projects.locationplace6",
+  "pk": 1,
+  "fields": {
+    "title_locationplace": "Пробоотборник 001 перед БОС / А1 –SN -001",
+    "places": 6
+  }
+},
+{
+  "model": "projects.locationplace6",
+  "pk": 2,
+  "fields": {
+    "title_locationplace": "Сточная вода после биологических очистных сооружений А1 –SN -009",
+    "places": 6
+  }
+},
+{
+  "model": "projects.component11",
+  "pk": 1,
+  "fields": {
+    "title_component": "Нефтепродукт",
+    "title1": "мг/дм³",
+    "title2": "25",
+    "title3": "1 раз в неделю воскресенье",
+    "title4": "ГОСТ 26449. 1-85 ПНДФ 14.1:2:4.128-98",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component11",
+  "pk": 2,
+  "fields": {
+    "title_component": "Значение рН",
+    "title1": "един",
+    "title2": "7-8,5",
+    "title3": "1 раз в неделю воскресенье",
+    "title4": "рН- метр ГОСТ 26449. 1-85",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component11",
+  "pk": 3,
+  "fields": {
+    "title_component": "Общие взвешенные твердые частицы",
+    "title1": "мг/дм³",
+    "title2": "25",
+    "title3": "1 раз в неделю воскресенье",
+    "title4": "ГОСТ 26449. 1-85 МВИ АРНА",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component11",
+  "pk": 4,
+  "fields": {
+    "title_component": "Фосфор",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю воскресенье",
+    "title4": "МВИ «Hach»",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component11",
+  "pk": 5,
+  "fields": {
+    "title_component": "Щелочность общая",
+    "title1": "мг/л-экв/л",
+    "title2": "3,5",
+    "title3": "Еженедельно по средам",
+    "title4": "РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component11",
+  "pk": 6,
+  "fields": {
+    "title_component": "Жесткость общая",
+    "title1": "мг/л-экв/л",
+    "title2": "",
+    "title3": "Еженедельно по средам",
+    "title4": "РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component11",
+  "pk": 7,
+  "fields": {
+    "title_component": "Солесодержание",
+    "title1": "мг/дм³",
+    "title2": "2000",
+    "title3": "Еженедельно по средам",
+    "title4": "кондуктометр РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component11",
+  "pk": 8,
+  "fields": {
+    "title_component": "Хлориды",
+    "title1": "мг/дм³",
+    "title2": "300",
+    "title3": "Еженедельно по средам",
+    "title4": "ГОСТ 26449.1",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component11",
+  "pk": 9,
+  "fields": {
+    "title_component": "Сульфаты",
+    "title1": "мг/дм³",
+    "title2": "500",
+    "title3": "Еженедельно по средам",
+    "title4": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component11",
+  "pk": 10,
+  "fields": {
+    "title_component": "Жесткость кальциевая",
+    "title1": "мг/л-экв/л",
+    "title2": "",
+    "title3": "Еженедельно по средам",
+    "title4": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component11",
+  "pk": 11,
+  "fields": {
+    "title_component": "Жесткость магниевая",
+    "title1": "мг/л-экв/л",
+    "title2": "",
+    "title3": "Еженедельно по средам",
+    "title4": "ГОСТ 26449.1",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component11",
+  "pk": 12,
+  "fields": {
+    "title_component": "Железо",
+    "title1": "мкг/л",
+    "title2": "",
+    "title3": "Еженедельно по средам",
+    "title4": "ГОСТ 26449.1-85 РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component12",
+  "pk": 1,
+  "fields": {
+    "title_component": "Нефтепродукты",
+    "title1": "мг/дм³",
+    "title2": "25",
+    "title3": "1 раз в неделю воскресенье",
+    "title4": "ГОСТ 26449. 1-85 ПНДФ 14.1: 2:4.128-98",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component12",
+  "pk": 2,
+  "fields": {
+    "title_component": "Значение рН",
+    "title1": "един",
+    "title2": "7-8,5",
+    "title3": "1 раз в неделю воскресенье",
+    "title4": "рН- метр ГОСТ 26449. 1-85",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component12",
+  "pk": 3,
+  "fields": {
+    "title_component": "Общие взвешенные твердые частицы",
+    "title1": "мг/дм³",
+    "title2": "25",
+    "title3": "1 раз в неделю воскресенье",
+    "title4": "ГОСТ 26449. 1-85 МВИ АРНА",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component13",
+  "pk": 1,
+  "fields": {
+    "title_component": "Взвешенные вещества",
+    "title1": "мг/дм³",
+    "title2": "25",
+    "title3": "Еженедельно по средам",
+    "title4": "ГОСТ 26449.1",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component13",
+  "pk": 2,
+  "fields": {
+    "title_component": "Жесткость общая",
+    "title1": "мг/л-экв/л",
+    "title2": "",
+    "title3": "Еженедельно по средам",
+    "title4": "РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component13",
+  "pk": 3,
+  "fields": {
+    "title_component": "Железо",
+    "title1": "мкг/л",
+    "title2": "",
+    "title3": "Еженедельно по средам",
+    "title4": "ГОСТ 26449.1-85 РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component13",
+  "pk": 4,
+  "fields": {
+    "title_component": "Сухой остаток",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "Еженедельно по средам",
+    "title4": "ГОСТ 26449.1",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component13",
+  "pk": 5,
+  "fields": {
+    "title_component": "Щелочность общая",
+    "title1": "мг/л-экв/л",
+    "title2": "3,5",
+    "title3": "Еженедельно по средам",
+    "title4": "РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component13",
+  "pk": 6,
+  "fields": {
+    "title_component": "Солесодержание",
+    "title1": "мг/дм³",
+    "title2": "2000",
+    "title3": "Еженедельно по средам",
+    "title4": "кондуктометр РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component13",
+  "pk": 7,
+  "fields": {
+    "title_component": "Хлориды",
+    "title1": "мг/дм³",
+    "title2": "300",
+    "title3": "Еженедельно по средам",
+    "title4": "ГОСТ 26449.1",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component13",
+  "pk": 8,
+  "fields": {
+    "title_component": "Сульфаты",
+    "title1": "мг/дм³",
+    "title2": "500",
+    "title3": "Еженедельно по средам",
+    "title4": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component13",
+  "pk": 9,
+  "fields": {
+    "title_component": "Жесткость кальциевая",
+    "title1": "мг/л-экв/л",
+    "title2": "",
+    "title3": "Еженедельно по средам",
+    "title4": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component13",
+  "pk": 10,
+  "fields": {
+    "title_component": "Жесткость магниевая",
+    "title1": "мг/л-экв/л",
+    "title2": "",
+    "title3": "Еженедельно по средам",
+    "title4": "ГОСТ 26449.1",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component13",
+  "pk": 11,
+  "fields": {
+    "title_component": "Значение рН",
+    "title1": "един",
+    "title2": "7- 8,5",
+    "title3": "Еженедельно по средам",
+    "title4": "рН метр ГОСТ 26449.1",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component21",
+  "pk": 1,
+  "fields": {
+    "title_component": "Общая жесткость",
+    "title1": "мг-экв/л",
+    "title2": "5-12",
+    "title3": "1 раз в неделю",
+    "title4": "РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component21",
+  "pk": 2,
+  "fields": {
+    "title_component": "Кальциевая жесткость",
+    "title1": "мг-экв/л",
+    "title2": "2-4,5",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component21",
+  "pk": 3,
+  "fields": {
+    "title_component": "Значение рН",
+    "title1": "един",
+    "title2": "7 -8,5",
+    "title3": "1 раз в неделю",
+    "title4": "рН- метр ГОСТ 26449. 1-85",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component21",
+  "pk": 4,
+  "fields": {
+    "title_component": "Общее солесодержание",
+    "title1": "мг/дм³",
+    "title2": "1000",
+    "title3": "1 раз в неделю",
+    "title4": "кондуктометр РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component21",
+  "pk": 5,
+  "fields": {
+    "title_component": "Содержание хлоридов",
+    "title1": "мг/дм³",
+    "title2": "200",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component21",
+  "pk": 6,
+  "fields": {
+    "title_component": "Содержание сульфатов",
+    "title1": "мг/дм³",
+    "title2": "120",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component21",
+  "pk": 7,
+  "fields": {
+    "title_component": "Содержание нефтепродуктов",
+    "title1": "мг/дм³",
+    "title2": "1,5",
+    "title3": "1 раз в неделю",
+    "title4": "ПНДФ 14.1: 2:4.128-98",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component21",
+  "pk": 8,
+  "fields": {
+    "title_component": "Общие взвешенные вещества",
+    "title1": "мг/дм³",
+    "title2": "15",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component21",
+  "pk": 9,
+  "fields": {
+    "title_component": "Щелочность общая",
+    "title1": "мг-экв/л",
+    "title2": "2,0-5,5",
+    "title3": "1 раза в неделю",
+    "title4": "РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component21",
+  "pk": 10,
+  "fields": {
+    "title_component": "Железо",
+    "title1": "мг/дм³",
+    "title2": "1.0",
+    "title3": "1 раз в месяц",
+    "title4": "ГОСТ 26449.1-85 РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component22",
+  "pk": 1,
+  "fields": {
+    "title_component": "Общая жесткость",
+    "title1": "мг-экв/л",
+    "title2": "5,0-20",
+    "title3": "2 раза в неделю",
+    "title4": "РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component22",
+  "pk": 2,
+  "fields": {
+    "title_component": "Кальциевая жесткость",
+    "title1": "мг-экв/л",
+    "title2": "3,5-9,0",
+    "title3": "2 раза в неделю",
+    "title4": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component22",
+  "pk": 3,
+  "fields": {
+    "title_component": "Значение рН",
+    "title1": "един",
+    "title2": "7-8,5",
+    "title3": "1 раз в неделю",
+    "title4": "рН- метр ГОСТ 26449. 1-85",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component22",
+  "pk": 4,
+  "fields": {
+    "title_component": "Общее солесодержание",
+    "title1": "мг/дм³",
+    "title2": "2000",
+    "title3": "1 раз в неделю",
+    "title4": "кондуктометр РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component22",
+  "pk": 5,
+  "fields": {
+    "title_component": "Содержание хлоридов",
+    "title1": "мг/дм³",
+    "title2": "300",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component22",
+  "pk": 6,
+  "fields": {
+    "title_component": "Содержание сульфатов",
+    "title1": "мг/дм³",
+    "title2": "500",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component22",
+  "pk": 7,
+  "fields": {
+    "title_component": "Содержание нефтепродуктов",
+    "title1": "мг/дм³",
+    "title2": "5,0",
+    "title3": "1 раз в неделю",
+    "title4": "ПНДФ 14.1: 2:4.128-98",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component22",
+  "pk": 8,
+  "fields": {
+    "title_component": "Общие взвешенные вещества",
+    "title1": "мг/дм³",
+    "title2": "10,0",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component22",
+  "pk": 9,
+  "fields": {
+    "title_component": "Щелочность общая",
+    "title1": "мг-экв/л",
+    "title2": "2,0-7,0",
+    "title3": "2 раза в неделю",
+    "title4": "РТМ 24.030.24-72",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component22",
+  "pk": 10,
+  "fields": {
+    "title_component": "Железо",
+    "title1": "мг/дм³",
+    "title2": "2,0",
+    "title3": "1 раз в месяц",
+    "title4": "ГОСТ 26449.1-85 РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component31",
+  "pk": 1,
+  "fields": {
+    "title_component": "Общая жесткость",
+    "title1": "мг-экв/л",
+    "title2": "5,0-20",
+    "title3": "1 раз в неделю",
+    "title4": "РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component31",
+  "pk": 2,
+  "fields": {
+    "title_component": "Кальциевая жесткость",
+    "title1": "мг-экв/л",
+    "title2": "3,5-9,0",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component31",
+  "pk": 3,
+  "fields": {
+    "title_component": "Значение рН",
+    "title1": "един",
+    "title2": "7-8,5",
+    "title3": "1 раз в неделю",
+    "title4": "рН- метр ГОСТ 26449. 1-85",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component31",
+  "pk": 4,
+  "fields": {
+    "title_component": "Общее солесодержание",
+    "title1": "мг/дм³",
+    "title2": "2000",
+    "title3": "1 раз в неделю",
+    "title4": "кондуктометр РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component31",
+  "pk": 5,
+  "fields": {
+    "title_component": "Содержание хлоридов",
+    "title1": "мг/дм³",
+    "title2": "300",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component31",
+  "pk": 6,
+  "fields": {
+    "title_component": "Содержание сульфатов",
+    "title1": "мг/дм³",
+    "title2": "500",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component31",
+  "pk": 7,
+  "fields": {
+    "title_component": "Содержание нефтепродуктов",
+    "title1": "мг/дм³",
+    "title2": "5,0",
+    "title3": "1 раз в неделю",
+    "title4": "ПНДФ 14.1: 2:4.128-98",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component31",
+  "pk": 8,
+  "fields": {
+    "title_component": "Общие взвешенные вещества",
+    "title1": "мг/дм³",
+    "title2": "10,0",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component31",
+  "pk": 9,
+  "fields": {
+    "title_component": "Щелочность по фенолу",
+    "title1": "мг-экв/л",
+    "title2": "2,0",
+    "title3": "1 раз в неделю",
+    "title4": "РТМ 24.030.24-72",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component31",
+  "pk": 10,
+  "fields": {
+    "title_component": "Щелочность общая",
+    "title1": "мг-экв/л",
+    "title2": "2,0-7,0",
+    "title3": "1 раз в неделю",
+    "title4": "РТМ 24.030.24-72",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component31",
+  "pk": 11,
+  "fields": {
+    "title_component": "Железо",
+    "title1": "мг/дм³",
+    "title2": "2,0",
+    "title3": "1 раз в месяц",
+    "title4": "ГОСТ 26449.1-85 РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component41",
+  "pk": 1,
+  "fields": {
+    "title_component": "Общие взвешенные твердые частицы",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "2 раза в неделю (вторник и четверг)",
+    "title4": "ГОСТ 26449.1-85 МВИ АРНА",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component41",
+  "pk": 2,
+  "fields": {
+    "title_component": "Хлориды",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю вторник",
+    "title4": "ГОСТ 26449.1-85 МВИ «Насh»",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component41",
+  "pk": 3,
+  "fields": {
+    "title_component": "Сульфаты",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю четверг",
+    "title4": "ГОСТ 26449.2-85 МВИ «Насh»",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component41",
+  "pk": 4,
+  "fields": {
+    "title_component": "Значение рН",
+    "title1": "един",
+    "title2": "",
+    "title3": "1 раз в неделю четверг",
+    "title4": "ГОСТ 26449.1-85",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component41",
+  "pk": 5,
+  "fields": {
+    "title_component": "Щелочность общая",
+    "title1": "мг-экв/л",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "РТМ 24.030.24-72.",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component41",
+  "pk": 6,
+  "fields": {
+    "title_component": "Жесткость кальциевая (кальций, мг/л)",
+    "title1": "мг-экв/л",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "ПНД Ф 14.1: 2.95-97",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component41",
+  "pk": 7,
+  "fields": {
+    "title_component": "Жесткость общая",
+    "title1": "мг-экв/л",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "РТМ 24.030.24-72",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component41",
+  "pk": 8,
+  "fields": {
+    "title_component": "Железо общее",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "РТМ 24.030.24-72 ПНД Ф 14.1: 2.50-96",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component41",
+  "pk": 9,
+  "fields": {
+    "title_component": "Солесодержание",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "Кондуктометр",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component42",
+  "pk": 1,
+  "fields": {
+    "title_component": "Общие взвешенные твердые частицы",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в сутки** 07.30",
+    "title4": "ГОСТ 26449.1-85 МВИ АРНА",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component42",
+  "pk": 2,
+  "fields": {
+    "title_component": "Значение рН",
+    "title1": "един",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1-85 МВИ АРНА",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component42",
+  "pk": 3,
+  "fields": {
+    "title_component": "Хлориды",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1-85",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component42",
+  "pk": 4,
+  "fields": {
+    "title_component": "Фосфор",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "МВИ «Hach»",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component42",
+  "pk": 5,
+  "fields": {
+    "title_component": "Нефтепродукт",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "ГОСТ 26449.1-85        ПНДФ 14.1: 2:4.128-98",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component42",
+  "pk": 6,
+  "fields": {
+    "title_component": "Щелочность общая",
+    "title1": "мг-экв/л",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "РТМ 24.030.24-72.",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component42",
+  "pk": 7,
+  "fields": {
+    "title_component": "Жесткость кальциевая (кальций, мг/л)",
+    "title1": "мг-экв/л",
+    "title2": "",
+    "title3": "По требованию",
+    "title4": "ПНД Ф 14.1: 2.95-97",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component42",
+  "pk": 8,
+  "fields": {
+    "title_component": "Жесткость общая",
+    "title1": "мг-экв/л",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "РТМ 24.030.24-72",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component42",
+  "pk": 9,
+  "fields": {
+    "title_component": "Железо общее",
+    "title1": "мкг/дм³",
+    "title2": "",
+    "title3": "По требованию",
+    "title4": "РТМ 24.030.24-72 ПНД Ф 14.1: 2.50-96",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component42",
+  "pk": 10,
+  "fields": {
+    "title_component": "Солесодержание",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "Кондуктометр",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component43",
+  "pk": 1,
+  "fields": {
+    "title_component": "Общие взвешенные твёрдые частицы",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю пятница",
+    "title4": "ГОСТ 26449.1-85        МВИ АРНА",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component43",
+  "pk": 2,
+  "fields": {
+    "title_component": "Хлориды",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю пятница",
+    "title4": "ГОСТ 26449.1-85            МВИ «Насh",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component43",
+  "pk": 3,
+  "fields": {
+    "title_component": "Сульфаты",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю пятница",
+    "title4": "ГОСТ 26449.2-85       МВИ «Насh»",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component43",
+  "pk": 4,
+  "fields": {
+    "title_component": "Значение рН",
+    "title1": "един",
+    "title2": "",
+    "title3": "1 раз в сутки** 07.30",
+    "title4": "рН-метр",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component43",
+  "pk": 5,
+  "fields": {
+    "title_component": "Фосфор",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю понедельник",
+    "title4": "МВИ «Насh»",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component43",
+  "pk": 6,
+  "fields": {
+    "title_component": "Щелочность",
+    "title1": "мг-экв/л",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "РТМ 24.030.24-72.",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component43",
+  "pk": 7,
+  "fields": {
+    "title_component": "Жесткость кальциевая (кальций, мг/л)",
+    "title1": "мг-экв/л",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "ПНД Ф 14.1: 2.95-97",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component43",
+  "pk": 8,
+  "fields": {
+    "title_component": "Жесткость общая",
+    "title1": "мг-экв/л",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "РТМ 24.030.24-72",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component43",
+  "pk": 9,
+  "fields": {
+    "title_component": "Железо общее",
+    "title1": "мкг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "РТМ 24.030.24-72 ПНД Ф 14.1: 2.50-96",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component43",
+  "pk": 10,
+  "fields": {
+    "title_component": "Солесодержание",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "Кондуктометр",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 3
+  }
+},
+{
+  "model": "projects.component44",
+  "pk": 1,
+  "fields": {
+    "title_component": "Остаточный хлор",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "МВИ «Насh»",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 4
+  }
+},
+{
+  "model": "projects.component44",
+  "pk": 2,
+  "fields": {
+    "title_component": "Нефтепродукт",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "2 раза в неделю вторник, пятница",
+    "title4": "ГОСТ 26449.1-85 ПНДФ 14.1: 2:4.128-98",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 4
+  }
+},
+{
+  "model": "projects.component44",
+  "pk": 3,
+  "fields": {
+    "title_component": "Солесодержание",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в неделю",
+    "title4": "Кондуктометр",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 4
+  }
+},
+{
+  "model": "projects.component45",
+  "pk": 1,
+  "fields": {
+    "title_component": "Общие взвешенные твёрдые частицы",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в сутки** 07.30",
+    "title4": "ГОСТ 26449.1-85         МВИ АРНА",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 5
+  }
+},
+{
+  "model": "projects.component51",
+  "pk": 1,
+  "fields": {
+    "title_component": "Нефтепродукт",
+    "title1": "мг/дм³",
+    "title2": "3500",
+    "title3": "1 раз в сутки 08:00",
+    "title4": "ГОСТ 26449. 1-85",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component51",
+  "pk": 2,
+  "fields": {
+    "title_component": "Взвешенные вещества",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в сутки 08:00",
+    "title4": "ГОСТ 26449. 1-85 МВИ АРНА",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component51",
+  "pk": 3,
+  "fields": {
+    "title_component": "Значение рН",
+    "title1": "един",
+    "title2": "",
+    "title3": "1 раз в сутки  08:00",
+    "title4": "рН- метр ГОСТ 26449. 1-85",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component51",
+  "pk": 4,
+  "fields": {
+    "title_component": "Химическая потребность в кислороде (ХПК)",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в сутки 08:00",
+    "title4": "ПНДФ 14.1: 2:4.190-03 МВИ «Hach»",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component51",
+  "pk": 5,
+  "fields": {
+    "title_component": "Поверхностно-активные вещества  (АПАВ)",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в сутки 08:00",
+    "title4": "ПНДФ 14.1:2:4.158-2000",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component51",
+  "pk": 6,
+  "fields": {
+    "title_component": "Аммонийный азот",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз сутки 08:00",
+    "title4": "ГОСТ 26449. 2-85 МВИ «Hach»",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component61",
+  "pk": 1,
+  "fields": {
+    "title_component": "Значение рН",
+    "title1": "един",
+    "title2": "",
+    "title3": "1 раз в сутки 07:30",
+    "title4": "рН- метр ГОСТ 26449. 1-85",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component61",
+  "pk": 2,
+  "fields": {
+    "title_component": "Взвешенные вещества",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в сутки 07:30",
+    "title4": "ГОСТ 26449. 1-85 МВИ АРНА",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component61",
+  "pk": 3,
+  "fields": {
+    "title_component": "Химическая потребность в кислороде (ХПК)",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в сутки 07:30",
+    "title4": "ПНДФ 14.1: 2:4.190-03 МВИ «Hach»",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component61",
+  "pk": 4,
+  "fields": {
+    "title_component": "Нефтепродукт",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "2 раза в сутки 07:30 и 13:00",
+    "title4": "ГОСТ 26449. 1-85 ПНДФ 14.1: 2:4.128-98",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component61",
+  "pk": 5,
+  "fields": {
+    "title_component": "Биологическая потребность в кислороде (БПК5)",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в декаду",
+    "title4": "РД 204.2.07-91 МВИ №АО-02-2004",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component61",
+  "pk": 6,
+  "fields": {
+    "title_component": "Фенолы",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в декаду",
+    "title4": "ГОСТ 26449. 1-85",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component61",
+  "pk": 7,
+  "fields": {
+    "title_component": "Поверхностно-активные вещества  (АПАВ)",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в декаду",
+    "title4": "ПНДФ 14.1:2:4.158-2000",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component61",
+  "pk": 8,
+  "fields": {
+    "title_component": "Хлориды",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в декаду",
+    "title4": "ГОСТ 26449. 1-85 СТ РК 1496-2006",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component61",
+  "pk": 9,
+  "fields": {
+    "title_component": "Сульфаты",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "2 раза в месяц 2,12",
+    "title4": "СТ РК 1015-2000 МВИ «Hach»",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component61",
+  "pk": 10,
+  "fields": {
+    "title_component": "Железо",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "2 раза в месяц 3,13",
+    "title4": "ГОСТ 26449. 1-85 МВИ «Hach»",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component61",
+  "pk": 11,
+  "fields": {
+    "title_component": "Аммонийный азот",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз сутки",
+    "title4": "ГОСТ 26449. 2-85 МВИ «Hach»",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component61",
+  "pk": 12,
+  "fields": {
+    "title_component": "Азот нитратов",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в декаду",
+    "title4": "ГОСТ 18826-73 СТ РК 7890-3-2006",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component61",
+  "pk": 13,
+  "fields": {
+    "title_component": "Азот нитритов",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в декаду",
+    "title4": "ПНДФ 14.1:2:4.26-95",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 1
+  }
+},
+{
+  "model": "projects.component62",
+  "pk": 1,
+  "fields": {
+    "title_component": "Щёлочность общая",
+    "title1": "мг-экв/л",
+    "title2": "",
+    "title3": "1 раз в декаду",
+    "title4": "РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component62",
+  "pk": 2,
+  "fields": {
+    "title_component": "Жёсткость общая",
+    "title1": "мг-экв/л",
+    "title2": "",
+    "title3": "1 раз в декаду",
+    "title4": "РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component62",
+  "pk": 3,
+  "fields": {
+    "title_component": "Окисляемость",
+    "title1": "мг О2/л",
+    "title2": "",
+    "title3": "1 раз в декаду",
+    "title4": "ГОСТ 26449.1 Методические рекомендации по эксплуатационному анализу воды и пара на тепловых электрос",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component62",
+  "pk": 4,
+  "fields": {
+    "title_component": "Солесодержание",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в декаду",
+    "title4": "кондуктометр РТМ 24.030.24",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.component62",
+  "pk": 5,
+  "fields": {
+    "title_component": "Остаточный хлор",
+    "title1": "мг/дм³",
+    "title2": "",
+    "title3": "1 раз в декаду",
+    "title4": "",
+    "recommendation1": "",
+    "recommendation2": "",
+    "key_component": 2
+  }
+},
+{
+  "model": "projects.inputcomponent11",
+  "pk": 2,
+  "fields": {
+    "input_component1": 20,
+    "input_component2": 20,
+    "input_component3": 20,
+    "input_component4": 20,
+    "input_component5": 20,
+    "input_component6": 20,
+    "input_component7": 20,
+    "input_component8": 20,
+    "input_component9": 20,
+    "input_component10": 20,
+    "input_component12": 20,
+    "input_component13": 20,
+    "create_time": "2022-03-14T12:41:16.420"
+  }
+},
+{
+  "model": "projects.inputcomponent11",
+  "pk": 3,
+  "fields": {
+    "input_component1": 20,
+    "input_component2": 20,
+    "input_component3": 20,
+    "input_component4": 20,
+    "input_component5": 20,
+    "input_component6": 20,
+    "input_component7": 20,
+    "input_component8": 20,
+    "input_component9": 20,
+    "input_component10": 20,
+    "input_component12": 20,
+    "input_component13": 20,
+    "create_time": "2022-03-14T12:41:21.563"
+  }
+}
+]
