@@ -12,7 +12,7 @@
 #     LOW = "L", "Low"
 #
 #
-# class Task(SortableMixin, TimeStampedModel):
+# class Task(models.Model):
 #     title = models.CharField(max_length=255)
 #     description = models.TextField(blank=True)
 #     assignees = models.ManyToManyField(User, related_name="tasks")
@@ -26,10 +26,11 @@
 #         ordering = ["task_order"]
 #
 #
-# class Comment(TimeStampedModel):
+# class Comment(models.Model):
 #     task = models.ForeignKey(Task, on_delete=models.CASCADE, related_name="comments")
 #     author = models.ForeignKey(User, on_delete=models.PROTECT, related_name="comments")
 #     text = models.TextField()
 #
 #     class Meta:
-#         ordering = ["created"]
+#         verbose_name_plural = 'Comments'
+

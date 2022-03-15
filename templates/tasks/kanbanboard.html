@@ -26,7 +26,7 @@
                 <h4 class="card-title mb-4">Запланировано</h4>
                 <div id="task-1">
                     <div id="upcoming-task" class="pb-1 task-list">
-                        {% for task in get_tasks %}
+                        {% for task in get_task %}
                         <div class="card task-box" id="intask-1">
                             <div class="card-body">
                                 <div class="dropdown float-end">
@@ -47,25 +47,19 @@
                                 <div>
                                     <h5 class="font-size-15"><a href="javascript: void(0);" class="text-dark"
                                                                 id="task-name"><b>{{task.title}}</b></a></h5>
-                                    <p class="text-muted">{{task.created_at}}</p>
+                                    <p class="text-muted"></p>
                                 </div>
 
 
                                 <ul class="ps-3 mb-4 text-muted" id="task-desc">
-                                    <li class="py-1"><b>{{task.text}}</b></li>
+                                    <li class="py-1"><b>{{task.description}}</b></li>
                                 </ul>
-
-                                <div class="text-end">
-                                    <h5 class="font-size-15 mb-1" id="task-budget">$ 132</h5>
-                                    <p class="mb-0 text-muted">Budget</p>
-                                </div>
                             </div>
 
                         </div>
                         {% endfor%}
 
                     </div>
-
                     <div class="text-center d-grid">
                         <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light addtask-btn"
                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg" data-id="#upcoming-task"><i
@@ -93,7 +87,7 @@
                 <h4 class="card-title mb-4">В работе</h4>
                 <div id="task-2">
                     <div id="inprogress-task" class="pb-1 task-list">
-
+                        <!-- task card -->
                         <div class="card task-box" id="intask-3">
                             <div class="card-body">
                                 <div class="dropdown float-end">
@@ -149,9 +143,7 @@
 
                         </div>
                         <!-- end task card -->
-
                     </div>
-
                     <div class="text-center d-grid">
                         <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light addtask-btn"
                            data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg" data-id="#inprogress-task"><i
