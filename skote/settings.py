@@ -111,7 +111,7 @@ WSGI_APPLICATION = 'skote.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dmsdatabase',
+        'NAME': 'dmsdatabase_ver2',
         'USER': 'postgres',
         'PASSWORD': 'Alaska_71749809',
         'HOST': 'localhost',
