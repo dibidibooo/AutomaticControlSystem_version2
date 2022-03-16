@@ -42,6 +42,7 @@ ALLOWED_HOSTS = ['127.0.0.1','localhost','2da188c804ec.ngrok.io']
 # Application definition
 
 INSTALLED_APPS = [
+    # 'admin_black.apps.AdminBlackConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
