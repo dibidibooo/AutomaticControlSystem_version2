@@ -231,7 +231,7 @@ class FormRepeaterView(LoginRequiredMixin,View):
 class FormWizardView(LoginRequiredMixin,View):
     def get(self , request):
         greeting = {}
-        greeting['heading'] = "Form Wizard"
+        greeting['heading'] = ""
         greeting['pageview'] = "Forms"
         return render (request,'components/forms/components-formrwizard.html',greeting)                  
         
