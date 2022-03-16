@@ -202,14 +202,17 @@
 
 
 <!-- NewCustomer Modal That Needed-->
-<div class="modal fade" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="newcustomerModalLabel"
+<div class="modal fade" data-bs-backdrop="static" id="customerModal" tabindex="-1" role="dialog"
+     aria-labelledby="newcustomerModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <form class="modal-content" method="POST" name="form">
+            <div class="modal-header border-bottom-0">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
             <!--                                    {% csrf_token %}-->
             <input type="hidden" name="page_number" value="{{page_obj.number}}">
             <div class="modal-body">
-                <h4 class="card-title mb-4">Добавить пользователя</h4>
                 <div id="basic-example">
                     <!-- Seller Details -->
                     <h3><b>Новый пользователь</b></h3>
@@ -329,10 +332,6 @@
                     </section>
                 </div>
             </div>
-            <!--            <div class="modal-footer">-->
-            <!--                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>-->
-            <!--                <button type="submit" class="btn btn-primary" name="addcustomer">Save</button>-->
-            <!--            </div>-->
         </form>
     </div>
 </div>
