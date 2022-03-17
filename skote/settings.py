@@ -54,8 +54,6 @@ INSTALLED_APPS = [
     'layout',
     'ecommerce',
     'crypto',
-    'e_mail',
-    'invoices',
     'projects',
     'tasks',
     'contacts',
