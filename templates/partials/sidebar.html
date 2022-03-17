@@ -123,25 +123,36 @@
                 <!--          </ul>-->
                 <!--        </li>-->
 
+
                 <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bx-briefcase-alt-2"></i>
-                        <span key="t-projects">Projects</span>
+                    <a href="{% url 'projects-projectsgrid' %}" key="t-p-grid">
+                        <i class="mdi mdi-file-download-outline"></i>
+                        <span key="t-ecommerce">Загрузка анализов</span>
                     </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li>
-                            <a href="{% url 'projects-projectsgrid' %}" key="t-p-grid">Загрузка анализов</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'tasks-kanbanboard' %}" key="t-kanban-board">Kanban доска</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'projects-projectoverview' %}" key="t-p-overview">Таблица</a>
-                        </li>
-                        <li>
-                            <a href="{% url 'projects-createview' %}" key="t-create-new">Результаты</a>
-                        </li>
-                    </ul>
+                </li>
+
+
+                <li>
+                    <a href="{% url 'tasks-kanbanboard' %}" key="t-kanban-board">
+                        <i class="mdi mdi-trello"></i>
+                        <span key="t-ecommerce">Kanban доска</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="{% url 'projects-projectoverview' %}" key="t-p-overview">
+                        <i class="mdi mdi-table-arrow-down"></i>
+                        <span key="t-ecommerce">Таблица</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="{% url 'projects-createview' %}" key="t-create-new">
+                        <i class="mdi mdi-beaker-check-outline"></i>
+                        <span key="t-ecommerce">Результаты</span>
+                    </a>
                 </li>
 
                 <!--        <li>-->
@@ -316,11 +327,11 @@
                 <li>
                     <a href="javascript: void(0);" class="has-arrow waves-effect">
                         <i class="bx bxs-bar-chart-alt-2"></i>
-                        <span key="t-charts">Charts</span>
+                        <span key="t-charts">Графики</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
                         <li>
-                            <a href="{% url 'charts-apexcharts' %}" key="t-apex-charts">Charts</a>
+                            <a href="{% url 'charts-apexcharts' %}" key="t-apex-charts">Графики</a>
                         </li>
                         <!--            <li>-->
                         <!--              <a href="{% url 'charts-echarts' %}" key="t-e-charts">E Charts</a>-->
@@ -353,33 +364,33 @@
                 </li>
 
 
-<!--                <li>-->
-<!--                    <a href="javascript: void(0);" class="has-arrow waves-effect">-->
-<!--                        <i class="bx bxs-user-detail"></i>-->
-<!--                        <span key="t-ecommerce">Ecommerce</span>-->
-<!--                    </a>-->
-<!--                    <ul class="sub-menu" aria-expanded="false">-->
-<!--                        <li>-->
-<!--                            <a href="{% url 'ecommerce-products' %}" key="t-products">Products</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="{% url 'ecommerce-productdetail' %}" key="t-product-detail">Product Detail</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="{% url 'ecommerce-orders' %}" key="t-orders">Orders</a>-->
-<!--                        </li>-->
-<!--                        <li><a href="{% url 'ecommerce-cart' %}" key="t-cart">Cart</a></li>-->
-<!--                        <li>-->
-<!--                            <a href="{% url 'ecommerce-checkout' %}" key="t-checkout">Checkout</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="{% url 'ecommerce-shops' %}" key="t-shops">Shops</a>-->
-<!--                        </li>-->
-<!--                        <li>-->
-<!--                            <a href="{% url 'ecommerce-addproduct' %}" key="t-add-product">Add Product</a>-->
-<!--                        </li>-->
-<!--                    </ul>-->
-<!--                </li>-->
+                <!--                <li>-->
+                <!--                    <a href="javascript: void(0);" class="has-arrow waves-effect">-->
+                <!--                        <i class="bx bxs-user-detail"></i>-->
+                <!--                        <span key="t-ecommerce">Ecommerce</span>-->
+                <!--                    </a>-->
+                <!--                    <ul class="sub-menu" aria-expanded="false">-->
+                <!--                        <li>-->
+                <!--                            <a href="{% url 'ecommerce-products' %}" key="t-products">Products</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="{% url 'ecommerce-productdetail' %}" key="t-product-detail">Product Detail</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="{% url 'ecommerce-orders' %}" key="t-orders">Orders</a>-->
+                <!--                        </li>-->
+                <!--                        <li><a href="{% url 'ecommerce-cart' %}" key="t-cart">Cart</a></li>-->
+                <!--                        <li>-->
+                <!--                            <a href="{% url 'ecommerce-checkout' %}" key="t-checkout">Checkout</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="{% url 'ecommerce-shops' %}" key="t-shops">Shops</a>-->
+                <!--                        </li>-->
+                <!--                        <li>-->
+                <!--                            <a href="{% url 'ecommerce-addproduct' %}" key="t-add-product">Add Product</a>-->
+                <!--                        </li>-->
+                <!--                    </ul>-->
+                <!--                </li>-->
 
 
                 <!--                <li>-->
