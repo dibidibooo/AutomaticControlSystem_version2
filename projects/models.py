@@ -114,4 +114,3 @@ class ComponentsSite4(models.Model):
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
     sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component4')
     water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component4')
-# ------------------------------------------

@@ -1,37 +1,14 @@
-from datetime import datetime
-
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
-from django.urls import reverse_lazy, reverse
+from django.urls import reverse_lazy
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 
 from .forms import Site1Form, Site2Form
 from .models import (
-    ComponentsSite1
+    ComponentsSite1, ComponentsSite2
 )
 from .multiforms import MultiFormsView
-
-
-def form_redir(request):
-    return render(request, 'pages/form_redirect.html')
-
-
-def multiple_forms(request):
-    if request.method == 'POST':
-        site1_form = Site1Form(request.POST)
-        site2_form = Site2Form(request.POST)
-        if site1_form.is_valid() or site2_form.is_valid():
-            print(777888)
-            return HttpResponseRedirect(reverse('projects-createview'))
-    else:
-        site1_form = Site1Form()
-        site2_form = Site2Form()
-
-    return render(request, 'projects/multiple_forms.html', {
-        'site1_form': site1_form,
-        'site2_form': site2_form,
-    })
 
 
 class MultipleFormsDemoView(MultiFormsView):
@@ -46,6 +23,7 @@ class MultipleFormsDemoView(MultiFormsView):
     }
 
     def site1_form_valid(self, form):
+        print(self.request.POST.get('water_type'))
         oil_prod = form.cleaned_data.get('oil_prod')
         suspended_subst = form.cleaned_data.get('suspended_subst')
         ph = form.cleaned_data.get('ph')
@@ -60,8 +38,8 @@ class MultipleFormsDemoView(MultiFormsView):
             oxygen_chem=oxygen_chem,
             active_subst=active_subst,
             ammonium=ammonium,
-            sampling_site_id=1,
-            water_type_id=1
+            sampling_site_id=self.request.POST.get('plant_unit'),
+            water_type_id=self.request.POST.get('water_type')
         )
         return HttpResponseRedirect(self.get_success_url(form_name))
 
@@ -80,6 +58,23 @@ class MultipleFormsDemoView(MultiFormsView):
         nitrate = form.cleaned_data.get('nitrate')
         nitrite = form.cleaned_data.get('nitrite')
         form_name = form.cleaned_data.get('action')
+        ComponentsSite2.objects.create(
+            oil_prod=oil_prod,
+            suspended_subst=suspended_subst,
+            ph=ph,
+            oxygen_chem=oxygen_chem,
+            active_subst=active_subst,
+            ammonium=ammonium,
+            oxygen_bio=oxygen_bio,
+            phenols=phenols,
+            chlorides=chlorides,
+            sulfates=sulfates,
+            iron=iron,
+            nitrate=nitrate,
+            nitrite=nitrite,
+            sampling_site_id=1,
+            water_type_id=1
+        )
         return HttpResponseRedirect(self.get_success_url(form_name))
 
 
