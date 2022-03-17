@@ -1,6 +1,6 @@
 from django.contrib import admin
-from .models import PlantUnit, SamplingSite, WaterType, \
-    Components, ComponentsSite1, ComponentsSite2, ComponentsSite3, ComponentsSite4
+# from .models import PlantUnit, SamplingSite, WaterType, \
+#     Components, ComponentsSite1, ComponentsSite2, ComponentsSite3, ComponentsSite4
     # Location, LocationPlace1, LocationPlace2, LocationPlace3, \
     # LocationPlace4, LocationPlace5, LocationPlace6, \
     # Component11, Component12, Component13, Component21, Component22, Component31, \
@@ -13,14 +13,14 @@ from .models import PlantUnit, SamplingSite, WaterType, \
     # InputComponent61, InputComponent62
 
 
-admin.site.register(PlantUnit)
-admin.site.register(SamplingSite)
-admin.site.register(WaterType)
-admin.site.register(Components)
-admin.site.register(ComponentsSite1)
-admin.site.register(ComponentsSite2)
-admin.site.register(ComponentsSite3)
-admin.site.register(ComponentsSite4)
+# admin.site.register(PlantUnit)
+# admin.site.register(SamplingSite)
+# admin.site.register(WaterType)
+# admin.site.register(Components)
+# admin.site.register(ComponentsSite1)
+# admin.site.register(ComponentsSite2)
+# admin.site.register(ComponentsSite3)
+# admin.site.register(ComponentsSite4)
 
 # admin.site.register(Location)
 # admin.site.register(LocationPlace1)

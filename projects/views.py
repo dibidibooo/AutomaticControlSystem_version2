@@ -2,12 +2,12 @@ from django.shortcuts import render
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 
-from projects.models import (
-    ComponentsSite1,
-    ComponentsSite2,
-    ComponentsSite3,
-    ComponentsSite4
-)
+# from projects.models import (
+#     ComponentsSite1,
+#     ComponentsSite2,
+#     ComponentsSite3,
+#     ComponentsSite4
+# )
 
 
 class ProjectsGridView(LoginRequiredMixin, View):
@@ -49,9 +49,9 @@ class CreateViewView(LoginRequiredMixin, View):
         greeting = {}
         greeting['heading'] = "Create New Project"
         greeting['pageview'] = "Projects"
-        site1 = ComponentsSite1
-        site1.sampling_site.id
-        site2 = ComponentsSite2
-        site3 = ComponentsSite3
-        site4 = ComponentsSite4
+        # site1 = ComponentsSite1
+        # site1.sampling_site.id
+        # site2 = ComponentsSite2
+        # site3 = ComponentsSite3
+        # site4 = ComponentsSite4
         return render(request, 'projects/projectsgrid_test.html', greeting)
