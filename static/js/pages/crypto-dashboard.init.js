@@ -195,7 +195,7 @@ var walletOptions = {
 (chart = new ApexCharts(document.querySelector("#wallet-balance-chart"), walletOptions)).render();
 options = {
     series: [{
-        name: "BTC",
+        name: "Компонент",
         data: [
             [13273596e5, 30.95],
             [1327446e6, 31.34],
