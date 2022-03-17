@@ -57,7 +57,6 @@ INSTALLED_APPS = [
     'projects',
     'tasks',
     'contacts',
-    'blog',
     'pages',
     'components',
     # Third Party App
