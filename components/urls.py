@@ -60,9 +60,5 @@ urlpatterns = [
     path('dripicons',views.DripIconsView.as_view(),name='icons-dripicons'),
     path('fontawesome',views.FontAwesomeView.as_view(),name='icons-fontawesome'),
 
-    #Maps
-    path('googlemaps',views.GoogleMapsView.as_view(),name='maps-googlemaps'),
-    path('vectormaps',views.VectorMapsView.as_view(),name='maps-vectormaps'),
-    path('leafletmaps',views.LeafletMapsView.as_view(),name='maps-leafletmaps'),
 
 ]

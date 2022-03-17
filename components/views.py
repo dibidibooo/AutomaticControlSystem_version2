@@ -356,25 +356,4 @@ class FontAwesomeView(LoginRequiredMixin,View):
         greeting['pageview'] = "Icons"
         return render (request,'components/icons/components-fontawesome.html',greeting)                     
 
-#Maps
-class GoogleMapsView(LoginRequiredMixin,View):
-    def get(self , request):
-        greeting = {}
-        greeting['heading'] = "Google Maps"
-        greeting['pageview'] = "Maps"
-        return render (request,'components/maps/components-googlemaps.html',greeting) 
-
-class VectorMapsView(LoginRequiredMixin,View):
-    def get(self , request):
-        greeting = {}
-        greeting['heading'] = "Vector Maps"
-        greeting['pageview'] = "Maps"
-        return render (request,'components/maps/components-vectormaps.html',greeting)      
-
-class LeafletMapsView(LoginRequiredMixin,View):
-    def get(self , request):
-        greeting = {}
-        greeting['heading'] = "Leaflet Maps"
-        greeting['pageview'] = "Maps"
-        return render (request,'components/maps/components-leafletmaps.html',greeting)            
         

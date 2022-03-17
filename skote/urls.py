@@ -41,10 +41,6 @@ urlpatterns = [
     path('ecommerce/', include("ecommerce.urls")),
     # Crypto
     path('crypto/', include('crypto.urls')),
-    # Email
-    path("email/", include("e_mail.urls")),
-    # Invoices
-    path('invoices/', include('invoices.urls')),
     # Projects
     path('projects/', include('projects.urls')),
     # Tasks
