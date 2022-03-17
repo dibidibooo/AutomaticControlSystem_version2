@@ -16,3 +16,4 @@ admin.site.register(ComponentsSite1)
 admin.site.register(ComponentsSite2)
 admin.site.register(ComponentsSite3)
 admin.site.register(ComponentsSite4)
+

@@ -63,3 +63,4 @@ class Site2Form(MultipleForm):
 #     iron = forms.IntegerField(widget=forms.IntegerField)
 #     hardness_calcium = forms.IntegerField(widget=forms.IntegerField)
 #     hardness_magnesium = forms.IntegerField(widget=forms.IntegerField)
+
