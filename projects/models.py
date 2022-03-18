@@ -45,18 +45,174 @@ class Component(models.Model):
         return self.title
 
 
-# class Result(models.Model):
-#     component = models.ForeignKey('projects.Component', on_delete=models.CASCADE, related_name='result')
-#     value = models.IntegerField(null=True, blank=True, verbose_name='Показатель')
-#
-#
-# class Sample(models.Model):
-#     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время анализа')
-#     sampling_site = models.ForeignKey('projects.SamplingSite', related_name='sample', on_delete=models.CASCADE)
-#     result = models.ForeignKey('projects.Result', related_name='sample', on_delete=models.CASCADE)
-
-
+# Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
 class ComponentsSite1(models.Model):
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
+    suspended_solids = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные твердые частицы')
+    ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
+    phosphorus = models.IntegerField(null=True, blank=True, verbose_name='Фосфор')
+    alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
+    hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')
+    salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
+    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
+    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Сульфаты')
+    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость кальциевая')
+    hardness_magnesium = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость магниевая')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component1')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component1')
+
+
+# Водоблок - 2 | Установка АВТ напротив погружного холодильника №42
+class ComponentsSite2(models.Model):
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
+    ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
+    suspended_solids = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные твердые частицы')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component2')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component2')
+
+
+# Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12
+class ComponentsSite3(models.Model):
+    suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Взвешенные вещества')
+    hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')
+    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо')
+    dry_residue = models.IntegerField(null=True, blank=True, verbose_name='Сухой остаток')
+    alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
+    salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
+    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
+    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Сульфаты')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость кальциевая')
+    hardness_magnesium = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость магниевая')
+    ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component3')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component3')
+
+
+# БОВ-1 | Аналитическая точка насосов Р-02А/В/С
+class ComponentsSite4(models.Model):
+    hardness = models.IntegerField(null=True, blank=True, verbose_name='Общая жесткость')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Кальциевая жесткость')
+    ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
+    salt = models.IntegerField(null=True, blank=True, verbose_name='Общее солесодержание')
+    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Содержание хлоридов')
+    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Содержание сульфатов')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Содержание нефтепродуктов')
+    suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Общие Взвешенные вещества')
+    alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
+    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component4')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component4')
+
+
+# БОВ-1 | Аналитическая точка выкид насосов Р-01А/В/С/Д
+class ComponentsSite5(models.Model):
+    hardness = models.IntegerField(null=True, blank=True, verbose_name='Общая жесткость')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Кальциевая жесткость')
+    ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
+    salt = models.IntegerField(null=True, blank=True, verbose_name='Общее солесодержание')
+    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Содержание хлоридов')
+    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Содержание сульфатов')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Содержание нефтепродуктов')
+    suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Общие Взвешенные вещества')
+    alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
+    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component5')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component5')
+
+
+# БОВ-2 | Аналитическая точка насосов Р-01А/В/С/Д
+class ComponentsSite6(models.Model):
+    hardness = models.IntegerField(null=True, blank=True, verbose_name='Общая жесткость')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Кальциевая жесткость')
+    ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
+    salt = models.IntegerField(null=True, blank=True, verbose_name='Общее солесодержание')
+    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Содержание хлоридов')
+    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Содержание сульфатов')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Содержание нефтепродуктов')
+    suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Общие Взвешенные вещества')
+    alkalinity_phenols = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность по фенолу')
+    alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
+    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component6')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component6')
+
+
+# УГОВ | Аналитическая точка насосов Р-01А/В/С/Д
+class ComponentsSite7(models.Model):
+    suspended_solids = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные твердые частицы')
+    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
+    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Сульфаты')
+    ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
+    alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Кальциевая жесткость (кальций, мг/л)')
+    hardness = models.IntegerField(null=True, blank=True, verbose_name='Жесткость общая')
+    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо общее')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component7')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component7')
+
+
+# УГОВ | Выход из ёмкости 77-ТК-103 77-SN-004
+class ComponentsSite8(models.Model):
+    suspended_solids = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные твердые частицы')
+    ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
+    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
+    phosphorus = models.IntegerField(null=True, blank=True, verbose_name='Фосфор')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
+    alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Кальциевая жесткость (кальций, мг/л)')
+    hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')
+    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо общее')
+    salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component8')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component8')
+
+
+# УГОВ | На входе в боковой фильтр позиции 77-Z-003 77-SN-006
+class ComponentsSite9(models.Model):
+    suspended_solids = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные твердые частицы')
+    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
+    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Сульфаты')
+    ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
+    phosphorus = models.IntegerField(null=True, blank=True, verbose_name='Фосфор')
+    alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Кальциевая жесткость (кальций, мг/л)')
+    hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')
+    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо общее')
+    salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component9')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component9')
+
+
+# УГОВ | Подача на градирню в районе 77-ТI-205 77-SN-007
+class ComponentsSite10(models.Model):
+    chlorine = models.IntegerField(null=True, blank=True, verbose_name='Остаточный хлор')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
+    salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component10')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component10')
+
+
+# УГОВ | На выходе с бокового фильтра 77-Z-003, 77-SN-008
+class ComponentsSite11(models.Model):
+    suspended_solids = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные твердые частицы')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component11')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component11')
+
+
+# МОС -> Очистные сооружения поз.119. С колодца промстоков №1 (точка №4 вход)
+class ComponentsSite12(models.Model):
     oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
     suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Взвешенные вещества')
     ph = models.IntegerField(null=True, blank=True, verbose_name='pH')
@@ -64,11 +220,12 @@ class ComponentsSite1(models.Model):
     active_subst = models.IntegerField(null=True, blank=True, verbose_name='Поверхностно-активные вещества (АПАВ)')
     ammonium = models.IntegerField(null=True, blank=True, verbose_name='Аммонийный азот')
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
-    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component1')
-    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component1')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component12')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component12')
 
 
-class ComponentsSite2(models.Model):
+# БОС -> Пробоотборник 001 перед БОС / А1 –SN -001
+class ComponentsSite13(models.Model):
     oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
     suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Взвешенные вещества')
     ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
@@ -83,34 +240,17 @@ class ComponentsSite2(models.Model):
     nitrate = models.IntegerField(null=True, blank=True, verbose_name='Азот нитратов')
     nitrite = models.IntegerField(null=True, blank=True, verbose_name='Азот нитритов')
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
-    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component2')
-    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component2')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component13')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component13')
 
 
-class ComponentsSite3(models.Model):
+# БОС -> Сточная вода после биологических очистных сооружений А1 –SN -009
+class ComponentsSite14(models.Model):
     alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
     hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')
     oxidability = models.IntegerField(null=True, blank=True, verbose_name='Окисляемость')
     salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
     chlorine = models.IntegerField(null=True, blank=True, verbose_name='Остаточный хлор')
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
-    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component3')
-    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component3')
-
-
-class ComponentsSite4(models.Model):
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
-    suspended_solids = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные твердые частицы')
-    ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
-    phosphorus = models.IntegerField(null=True, blank=True, verbose_name='Фосфор')
-    alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
-    hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')
-    salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
-    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
-    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Сульфаты')
-    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо')
-    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость кальциевая')
-    hardness_magnesium = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость магниевая')
-    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
-    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component4')
-    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component4')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component14')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component14')
