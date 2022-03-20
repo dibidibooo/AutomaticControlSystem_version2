@@ -86,31 +86,77 @@
                                                 <form class="needs-validation" novalidate>
                                                     <div class="row">
                                                         <div class="col-xl-6">
-                                                            <div class="card">
-                                                                <div class="card-body">
-                                                                    <p class="text-muted mb-4"><i
-                                                                            class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                        Нефтепродукт
-                                                                    </p>
-                                                                    <div class="row">
-                                                                        <div class="col-5">
-                                                                            <div>
-                                                                                <h5>9134.39</h5>
-                                                                                <p class="text-muted text-truncate mb-0">
-                                                                                    мг/дм³<i
-                                                                                        class="mdi mdi-arrow-up ms-1 text-success"></i>
-                                                                                </p>
+                                                            <a data-bs-toggle="modal"
+                                                               data-bs-target=".bs-example-modal-center">
+                                                                <div class="card">
+                                                                    <div class="card-body">
+                                                                        <p class="text-muted mb-4"><i
+                                                                                class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            Нефтепродукт
+                                                                        </p>
+                                                                        <div class="row">
+                                                                            <div class="col-5">
+                                                                                <div>
+                                                                                    <h5>9134.39</h5>
+                                                                                    <p class="text-muted text-truncate mb-0">
+                                                                                        мг/дм³<i
+                                                                                            class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                    </p>
+                                                                                </div>
                                                                             </div>
-                                                                        </div>
-                                                                        <div class="col-7">
-                                                                            <div>
-                                                                                <div id="area-sparkline-chart-1"
-                                                                                     class="apex-charts"></div>
+                                                                            <div class="col-7">
+                                                                                <div>
+                                                                                    <div id="area-sparkline-chart-1"
+                                                                                         class="apex-charts"></div>
+                                                                                </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
-                                                            </div>
+                                                            </a>
+                                                            <div class="modal fade bs-example-modal-center"
+                                                                 tabindex="-1" role="dialog" aria-hidden="true">
+                                                                <div class="modal-dialog modal-dialog-centered">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <h5 class="modal-title">Нефтепродукт</h5>
+                                                                            <button type="button" class="btn-close"
+                                                                                    data-bs-dismiss="modal"
+                                                                                    aria-label="Close"></button>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <div>
+                                                                                <div id="overview-chart"
+                                                                                     class="apex-charts" dir="ltr">
+                                                                                    <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                                                                        <button type="button"
+                                                                                                class="btn btn-light btn-sm"
+                                                                                                id="one_month">
+                                                                                            1 месяц
+                                                                                        </button>
+                                                                                        <button type="button"
+                                                                                                class="btn btn-light btn-sm"
+                                                                                                id="six_months">
+                                                                                            6 месяцев
+                                                                                        </button>
+                                                                                        <button type="button"
+                                                                                                class="btn btn-light btn-sm active"
+                                                                                                id="one_year">
+                                                                                            1 год
+                                                                                        </button>
+                                                                                        <button type="button"
+                                                                                                class="btn btn-light btn-sm"
+                                                                                                id="all">
+                                                                                            Все время
+                                                                                        </button>
+                                                                                    </div>
+                                                                                    <div id="overview-chart-timeline"></div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div><!-- /.modal-content -->
+                                                                </div><!-- /.modal-dialog -->
+                                                            </div><!-- /.modal -->
                                                         </div>
                                                         <div class="col-xl-6">
                                                             <div class="card">
@@ -582,27 +628,12 @@
 $(document).ready(function(){
   $('[data-toggle="tooltip"]').tooltip();
 });
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
-
-
-<!-- apexcharts -->
-<script src="{% static 'libs/apexcharts/dist/apexcharts.min.js'%}"></script>
-
+<script src="{% static 'libs/apexcharts/dist/apexcharts.min.js' %}"></script>
+<!-- apexcharts init -->
+<script src="{% static 'js/pages/apexcharts.init.js' %}"></script>
 <!-- crypto dash init js -->
 <script src="{% static 'js/pages/crypto-dashboard.init.js'%}"></script>
-
 <!-- Saas dashboard init -->
 <script src="{% static 'js/pages/saas-dashboard.init.js'%}"></script>
 {% endblock %}

@@ -68,8 +68,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
     def site1_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         oil_prod = form.cleaned_data.get('oil_prod')
         suspended_solids = form.cleaned_data.get('suspended_solids')
         ph = form.cleaned_data.get('ph')
@@ -104,8 +102,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # Водоблок - 2 | Установка АВТ напротив погружного холодильника №42
     def site2_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         oil_prod = form.cleaned_data.get('oil_prod')
         ph = form.cleaned_data.get('ph')
         suspended_solids = form.cleaned_data.get('suspended_solids')
@@ -122,8 +118,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12
     def site3_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         suspended_subst = form.cleaned_data.get('suspended_subst')
         hardness = form.cleaned_data.get('hardness')
         iron = form.cleaned_data.get('iron')
@@ -156,8 +150,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # БОВ-1 | Аналитическая точка насосов Р-02А/В/С
     def site4_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         hardness = form.cleaned_data.get('hardness')
         hardness_calcium = form.cleaned_data.get('hardness_calcium')
         ph = form.cleaned_data.get('ph')
@@ -188,8 +180,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # БОВ-1 | Аналитическая точка выкид насосов Р-01А/В/С/Д
     def site5_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         hardness = form.cleaned_data.get('hardness')
         hardness_calcium = form.cleaned_data.get('hardness_calcium')
         ph = form.cleaned_data.get('ph')
@@ -220,8 +210,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # БОВ-2 | Аналитическая точка насосов Р-01А/В/С/Д
     def site6_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         hardness = form.cleaned_data.get('hardness')
         hardness_calcium = form.cleaned_data.get('hardness_calcium')
         ph = form.cleaned_data.get('ph')
@@ -254,8 +242,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # УГОВ | Аналитическая точка насосов Р-01А/В/С/Д
     def site7_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         suspended_solids = form.cleaned_data.get('suspended_solids')
         chlorides = form.cleaned_data.get('chlorides')
         sulfates = form.cleaned_data.get('sulfates')
@@ -282,8 +268,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # УГОВ | Выход из ёмкости 77-ТК-103 77-SN-004
     def site8_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         suspended_solids = form.cleaned_data.get('suspended_solids')
         ph = form.cleaned_data.get('ph')
         chlorides = form.cleaned_data.get('chlorides')
@@ -314,8 +298,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # УГОВ | На входе в боковой фильтр позиции 77-Z-003 77-SN-006
     def site9_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         suspended_solids = form.cleaned_data.get('suspended_solids')
         chlorides = form.cleaned_data.get('chlorides')
         sulfates = form.cleaned_data.get('sulfates')
@@ -346,8 +328,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # УГОВ | Подача на градирню в районе 77-ТI-205 77-SN-007
     def site10_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         chlorine = form.cleaned_data.get('chlorine')
         oil_prod = form.cleaned_data.get('oil_prod')
         salt = form.cleaned_data.get('salt')
@@ -364,8 +344,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # УГОВ | На выходе с бокового фильтра 77-Z-003, 77-SN-008
     def site11_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         suspended_solids = form.cleaned_data.get('suspended_solids')
         form_name = form.cleaned_data.get('action')
 
@@ -378,8 +356,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # МОС -> Очистные сооружения поз.119. С колодца промстоков №1 (точка №4 вход)
     def site12_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         oil_prod = form.cleaned_data.get('oil_prod')
         suspended_subst = form.cleaned_data.get('suspended_subst')
         ph = form.cleaned_data.get('ph')
@@ -402,8 +378,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # БОС -> Пробоотборник 001 перед БОС / А1 –SN -001
     def site13_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         oil_prod = form.cleaned_data.get('oil_prod')
         suspended_subst = form.cleaned_data.get('suspended_subst')
         ph = form.cleaned_data.get('ph')
@@ -440,8 +414,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # БОС -> Сточная вода после биологических очистных сооружений А1 –SN -009
     def site14_form_valid(self, form):
-        print(self.request.POST.get('plant_unit'))
-        print(self.request.POST.get('water_type'))
         alkalinity = form.cleaned_data.get('alkalinity')
         hardness = form.cleaned_data.get('hardness')
         oxidability = form.cleaned_data.get('oxidability')
