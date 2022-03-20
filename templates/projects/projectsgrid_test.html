@@ -62,16 +62,19 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
-                                                    <select class="form-select" name="plant_unit">
+                                                    <select class="form-select" id="plant_unit1" name="plant_unit1">
                                                         <option selected>Выбрать..</option>
-                                                        <option value="1">Установка оборотного водоснабжения
+                                                        <option name="selectcomp1" value="1">Установка оборотного
+                                                            водоснабжения
                                                             «Водоблок-2» с дренажей
                                                             насосов Н-14,15,16
                                                         </option>
-                                                        <option value="2">Установка АВТ напротив погружного холодильника
+                                                        <option name="selectcomp2" value="2">Установка АВТ напротив
+                                                            погружного холодильника
                                                             №42
                                                         </option>
-                                                        <option value="3">Установка оборотного водоснабжения
+                                                        <option name="selectcomp3" value="3">Установка оборотного
+                                                            водоснабжения
                                                             «Водоблок-2» с дренажей
                                                             насосов Н-5,11.12
                                                         </option>
@@ -81,7 +84,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Контролируемая вода</h4>
-                                                    <select class="form-select" name="water_type">
+                                                    <select class="form-select" name="water_type1">
                                                         <option selected>Выбрать..</option>
                                                         <option value="1">Оборотная</option>
                                                         <option value="2">Приточная</option>
@@ -89,49 +92,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body 1 box">
+
+                                        <div id="componentcard11" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate action="" method="POST">
                                                 {% csrf_token %}
                                                 {{ forms.site1 }}
-
-                                                {# {% for component in components %}#}
-                                                {# {% if component.pk == 1 %}#}
-                                                {#
-                                                <div class="row">#}
-                                                    {#
-                                                    <div class="mb-3">#}
-                                                        {# <label class="form-label" id="oil_product">{{ component.title
-                                                            }}</label>#}
-                                                        {#
-                                                        <div class="input-group">#}
-                                                            {# <label>#}
-                                                                {# <input data-parsley-type="number" type="number" #}
-                                                                          {# class="form-control" #}
-                                                                          {# required#}
-                                                                          {# placeholder="Введите значение" #}
-                                                                          {# name="value">#}
-                                                                {# </label>#}
-                                                            {#
-                                                            <div class="input-group-prepend">#}
-                                                                {# <span class="input-group-text" #}
-                                                                         {# id="#">{{ component.measurement }}</span>#}
-                                                                {#
-                                                            </div>
-                                                            #}
-                                                            {#
-                                                        </div>
-                                                        #}
-                                                        {#
-                                                    </div>
-                                                    #}
-                                                    {#
-                                                </div>
-                                                #}
-                                                {# {% endif %}#}
-                                                {# {% endfor %}#}
-
                                                 <div>
                                                     <button type="submit"
                                                             class="btn btn-primary waves-effect waves-light"
@@ -141,42 +108,12 @@
                                             </form>
                                         </div>
 
-                                        <div class="card-body 2 box">
+                                        <div id="componentcard12" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <p class="card-title-desc"></p>
-                                            <form class="needs-validation" novalidate method="POST">
+                                            <form class="needs-validation" novalidate action="" method="POST">
                                                 {% csrf_token %}
-                                                {{ forms.site1 }}
-
-                                                {#
-                                                <div class="row">#}
-                                                    {# {% for el in get_component12 %}#}
-                                                    {#
-                                                    <div class="mb-3">#}
-                                                        {# <label class="form-label">{{el.title_component}}</label>#}
-                                                        {#
-                                                        <div class="input-group">#}
-                                                            {# <input data-parsley-type="number" type="text" #}
-                                                                      {# class="form-control" #}
-                                                                      {# required#}
-                                                                      {# placeholder="Введите.."/>#}
-                                                            {#
-                                                            <div class="input-group-prepend">#}
-                                                                {# <span class="input-group-text" #}
-                                                                         {# id="#">{{el.title1}}</span>#}
-                                                                {#
-                                                            </div>
-                                                            #}
-                                                            {#
-                                                        </div>
-                                                        #}
-                                                        {#
-                                                    </div>
-                                                    #}
-                                                    {# {% endfor %}#}
-                                                    {#
-                                                </div>
-                                                #}
+                                                {{ forms.site2 }}
                                                 <div>
                                                     <button type="submit"
                                                             class="btn btn-primary waves-effect waves-light"
@@ -186,63 +123,12 @@
                                             </form>
                                         </div>
 
-                                        <div class="card-body 3 box">
+                                        <div id="componentcard13" class="card-body ">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <p class="card-title-desc"></p>
-                                            <form class="needs-validation" novalidate method="POST">
+                                            <form class="needs-validation" novalidate action="" method="POST">
                                                 {% csrf_token %}
-                                                {{ forms.site1 }}
-
-                                                <div class="row">
-                                                    {% for el in get_component13%}
-                                                    <div class="mb-3">
-                                                        <label class="form-label">{{el.title_component}}</label>
-                                                        <div class="input-group">
-                                                            <input data-parsley-type="number" type="text"
-                                                                   class="form-control"
-                                                                   required
-                                                                   placeholder="Введите.."/>
-                                                            <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {% endfor %}
-                                                </div>
-                                                <div>
-                                                    <button type="submit"
-                                                            class="btn btn-primary waves-effect waves-light"
-                                                            id="sa-custom">Отправить
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
-
-                                        <div class="card-body 4 box">
-                                            <h4 class="card-title">Контролируемые показатели</h4>
-                                            <p class="card-title-desc"></p>
-                                            <form class="needs-validation" novalidate method="POST">
-                                                {% csrf_token %}
-                                                {{ forms.site1 }}
-
-                                                <div class="row">
-                                                    {% for el in get_component13%}
-                                                    <div class="mb-3">
-                                                        <label class="form-label">{{el.title_component}}</label>
-                                                        <div class="input-group">
-                                                            <input data-parsley-type="number" type="text"
-                                                                   class="form-control"
-                                                                   required
-                                                                   placeholder="Введите.."/>
-                                                            <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {% endfor %}
-                                                </div>
+                                                {{ forms.site3 }}
                                                 <div>
                                                     <button type="submit"
                                                             class="btn btn-primary waves-effect waves-light"
@@ -261,9 +147,10 @@
                                                     <h4 class="card-title">Место отбора проб</h4>
                                                     <select class="form-select" name="plant_unit">
                                                         <option selected>Выбрать..</option>
-                                                        <option value="1">Аналитическая точка насосов Р-02А/В/С
+                                                        <option value="4">Аналитическая точка насосов Р-02А/В/С
                                                         </option>
-                                                        <option value="2">Аналитическая точка выкид насосов Р-01А/В/С/Д
+                                                        <option value="5">Аналитическая точка выкидных насосов
+                                                            Р-01А/В/С/Д
                                                         </option>
                                                     </select>
                                                 </div>
@@ -279,48 +166,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body 1 box">
+                                        <div class="card-body 4 box">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate action="" method="POST">
                                                 {% csrf_token %}
-                                                {{ forms.site1 }}
-
-                                                {# {% for component in components %}#}
-                                                {# {% if component.pk == 1 %}#}
-                                                {#
-                                                <div class="row">#}
-                                                    {#
-                                                    <div class="mb-3">#}
-                                                        {# <label class="form-label" id="oil_product">{{ component.title
-                                                            }}</label>#}
-                                                        {#
-                                                        <div class="input-group">#}
-                                                            {# <label>#}
-                                                                {# <input data-parsley-type="number" type="number" #}
-                                                                          {# class="form-control" #}
-                                                                          {# required#}
-                                                                          {# placeholder="Введите значение" #}
-                                                                          {# name="value">#}
-                                                                {# </label>#}
-                                                            {#
-                                                            <div class="input-group-prepend">#}
-                                                                {# <span class="input-group-text" #}
-                                                                         {# id="#">{{ component.measurement }}</span>#}
-                                                                {#
-                                                            </div>
-                                                            #}
-                                                            {#
-                                                        </div>
-                                                        #}
-                                                        {#
-                                                    </div>
-                                                    #}
-                                                    {#
-                                                </div>
-                                                #}
-                                                {# {% endif %}#}
-                                                {# {% endfor %}#}
+                                                {{ forms.site4 }}
 
                                                 <div>
                                                     <button type="submit"
@@ -330,42 +181,14 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="card-body 2 box">
+
+                                        <div class="card-body 5 box">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate method="POST">
                                                 {% csrf_token %}
-                                                {{ forms.site1 }}
+                                                {{ forms.site5 }}
 
-                                                {#
-                                                <div class="row">#}
-                                                    {# {% for el in get_component12 %}#}
-                                                    {#
-                                                    <div class="mb-3">#}
-                                                        {# <label class="form-label">{{el.title_component}}</label>#}
-                                                        {#
-                                                        <div class="input-group">#}
-                                                            {# <input data-parsley-type="number" type="text" #}
-                                                                      {# class="form-control" #}
-                                                                      {# required#}
-                                                                      {# placeholder="Введите.."/>#}
-                                                            {#
-                                                            <div class="input-group-prepend">#}
-                                                                {# <span class="input-group-text" #}
-                                                                         {# id="#">{{el.title1}}</span>#}
-                                                                {#
-                                                            </div>
-                                                            #}
-                                                            {#
-                                                        </div>
-                                                        #}
-                                                        {#
-                                                    </div>
-                                                    #}
-                                                    {# {% endfor %}#}
-                                                    {#
-                                                </div>
-                                                #}
                                                 <div>
                                                     <button type="submit"
                                                             class="btn btn-primary waves-effect waves-light"
@@ -381,9 +204,9 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
-                                                    <select class="form-select" name="plant_unit">
+                                                    <select class="form-select" name="plant_unit3">
                                                         <option selected>Выбрать..</option>
-                                                        <option value="1">Аналитическая точка насосов Р-01А/В/С/Д
+                                                        <option value="6">Аналитическая точка насосов Р-01А/В/С/Д
                                                         </option>
                                                     </select>
                                                 </div>
@@ -391,7 +214,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Контролируемая вода</h4>
-                                                    <select class="form-select" name="water_type">
+                                                    <select class="form-select" name="water_type3">
                                                         <option selected>Выбрать..</option>
                                                         <option value="1">Оборотная</option>
                                                         <option value="2">Приточная</option>
@@ -399,48 +222,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body 1 box">
+                                        <div class="card-body 6 box">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate action="" method="POST">
                                                 {% csrf_token %}
-                                                {{ forms.site1 }}
-
-                                                {# {% for component in components %}#}
-                                                {# {% if component.pk == 1 %}#}
-                                                {#
-                                                <div class="row">#}
-                                                    {#
-                                                    <div class="mb-3">#}
-                                                        {# <label class="form-label" id="oil_product">{{ component.title
-                                                            }}</label>#}
-                                                        {#
-                                                        <div class="input-group">#}
-                                                            {# <label>#}
-                                                                {# <input data-parsley-type="number" type="number" #}
-                                                                          {# class="form-control" #}
-                                                                          {# required#}
-                                                                          {# placeholder="Введите значение" #}
-                                                                          {# name="value">#}
-                                                                {# </label>#}
-                                                            {#
-                                                            <div class="input-group-prepend">#}
-                                                                {# <span class="input-group-text" #}
-                                                                         {# id="#">{{ component.measurement }}</span>#}
-                                                                {#
-                                                            </div>
-                                                            #}
-                                                            {#
-                                                        </div>
-                                                        #}
-                                                        {#
-                                                    </div>
-                                                    #}
-                                                    {#
-                                                </div>
-                                                #}
-                                                {# {% endif %}#}
-                                                {# {% endfor %}#}
+                                                {{ forms.site6 }}
 
                                                 <div>
                                                     <button type="submit"
@@ -457,19 +244,19 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
-                                                    <select class="form-select" name="plant_unit">
+                                                    <select class="form-select" name="plant_unit4">
                                                         <option selected>Выбрать..</option>
-                                                        <option value="1">Трубопровод Урал (в районе клапанной сборки
+                                                        <option value="7">Трубопровод Урал (в районе клапанной сборки
                                                             позиций 77-FV-203) 77-SN-001
                                                         </option>
-                                                        <option value="2">Выход из ёмкости 77-ТК-103 77-SN-004</option>
-                                                        <option value="3">На входе в боковой фильтр позиции
+                                                        <option value="8">Выход из ёмкости 77-ТК-103 77-SN-004</option>
+                                                        <option value="9">На входе в боковой фильтр позиции
                                                             77-Z-003 77-SN-006
                                                         </option>
-                                                        <option value="4">Подача на градирню в районе 77-ТI-205
+                                                        <option value="10">Подача на градирню в районе 77-ТI-205
                                                             77-SN-007
                                                         </option>
-                                                        <option value="5">На выходе с бокового фильтра 77-Z-003,
+                                                        <option value="11">На выходе с бокового фильтра 77-Z-003,
                                                             77-SN-008
                                                         </option>
                                                     </select>
@@ -478,7 +265,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Контролируемая вода</h4>
-                                                    <select class="form-select" name="water_type">
+                                                    <select class="form-select" name="water_type4">
                                                         <option selected>Выбрать..</option>
                                                         <option value="1">Оборотная</option>
                                                         <option value="2">Приточная</option>
@@ -486,48 +273,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body 1 box">
+                                        <div class="card-body 7 box">
                                             <h4 class="card-title">Контролируемые показатели 1</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate action="" method="POST">
                                                 {% csrf_token %}
-                                                {{ forms.site1 }}
-
-                                                {# {% for component in components %}#}
-                                                {# {% if component.pk == 1 %}#}
-                                                {#
-                                                <div class="row">#}
-                                                    {#
-                                                    <div class="mb-3">#}
-                                                        {# <label class="form-label" id="oil_product">{{ component.title
-                                                            }}</label>#}
-                                                        {#
-                                                        <div class="input-group">#}
-                                                            {# <label>#}
-                                                                {# <input data-parsley-type="number" type="number" #}
-                                                                          {# class="form-control" #}
-                                                                          {# required#}
-                                                                          {# placeholder="Введите значение" #}
-                                                                          {# name="value">#}
-                                                                {# </label>#}
-                                                            {#
-                                                            <div class="input-group-prepend">#}
-                                                                {# <span class="input-group-text" #}
-                                                                         {# id="#">{{ component.measurement }}</span>#}
-                                                                {#
-                                                            </div>
-                                                            #}
-                                                            {#
-                                                        </div>
-                                                        #}
-                                                        {#
-                                                    </div>
-                                                    #}
-                                                    {#
-                                                </div>
-                                                #}
-                                                {# {% endif %}#}
-                                                {# {% endfor %}#}
+                                                {{ forms.site7 }}
 
                                                 <div>
                                                     <button type="submit"
@@ -538,16 +289,78 @@
                                             </form>
                                         </div>
 
-                                        <div class="card-body 2 box">
+                                        <div class="card-body 8 box">
                                             <h4 class="card-title">Контролируемые показатели 2</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate method="POST">
                                                 {% csrf_token %}
-                                                {{ forms.site1 }}
+                                                {{ forms.site8 }}
+
+                                                <div>
+                                                    <button type="submit"
+                                                            class="btn btn-primary waves-effect waves-light"
+                                                            id="sa-custom">Отправить
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="card-body 9 box">
+                                            <h4 class="card-title">Контролируемые показатели 3</h4>
+                                            <p class="card-title-desc"></p>
+                                            <form class="needs-validation" novalidate method="POST">
+                                                {% csrf_token %}
+                                                {{ forms.site9 }}
 
                                                 {#
                                                 <div class="row">#}
-                                                    {# {% for el in get_component12 %}#}
+                                                    {# {% for el in get_component13%}#}
+                                                    {#
+                                                    <div class="mb-3">#}
+                                                        {# <label class="form-label">{{el.title_component}}</label>#}
+                                                        {#
+                                                        <div class="input-group">#}
+                                                            {# <input data-parsley-type="number" type="text" #}
+                                                                      {# class="form-control" #}
+                                                                      {# required#}
+                                                                      {# placeholder="Введите.."/>#}
+                                                            {#
+                                                            <div class="input-group-prepend">#}
+                                                                {# <span class="input-group-text" #}
+                                                                         {# id="#">{{el.title1}}</span>#}
+                                                                {#
+                                                            </div>
+                                                            #}
+                                                            {#
+                                                        </div>
+                                                        #}
+                                                        {#
+                                                    </div>
+                                                    #}
+                                                    {# {% endfor %}#}
+                                                    {#
+                                                </div>
+                                                #}
+
+                                                <div>
+                                                    <button type="submit"
+                                                            class="btn btn-primary waves-effect waves-light"
+                                                            id="sa-custom">Отправить
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+
+                                        <div class="card-body 10 box">
+                                            <h4 class="card-title">Контролируемые показатели 4</h4>
+                                            <p class="card-title-desc"></p>
+                                            <form class="needs-validation" novalidate method="POST">
+                                                {% csrf_token %}
+                                                {{ forms.site10 }}
+
+                                                {#
+                                                <div class="row">#}
+                                                    {# {% for el in get_component13%}#}
                                                     {#
                                                     <div class="mb-3">#}
                                                         {# <label class="form-label">{{el.title_component}}</label>#}
@@ -583,96 +396,13 @@
                                             </form>
                                         </div>
 
-                                        <div class="card-body 3 box">
-                                            <h4 class="card-title">Контролируемые показатели 3</h4>
-                                            <p class="card-title-desc"></p>
-                                            <form class="needs-validation" novalidate method="POST">
-                                                {% csrf_token %}
-                                                {{ forms.site1 }}
-
-                                                <div class="row">
-                                                    {% for el in get_component13%}
-                                                    <div class="mb-3">
-                                                        <label class="form-label">{{el.title_component}}</label>
-                                                        <div class="input-group">
-                                                            <input data-parsley-type="number" type="text"
-                                                                   class="form-control"
-                                                                   required
-                                                                   placeholder="Введите.."/>
-                                                            <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {% endfor %}
-                                                </div>
-                                                <div>
-                                                    <button type="submit"
-                                                            class="btn btn-primary waves-effect waves-light"
-                                                            id="sa-custom">Отправить
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
-
-                                        <div class="card-body 4 box">
-                                            <h4 class="card-title">Контролируемые показатели 4</h4>
-                                            <p class="card-title-desc"></p>
-                                            <form class="needs-validation" novalidate method="POST">
-                                                {% csrf_token %}
-                                                {{ forms.site1 }}
-
-                                                <div class="row">
-                                                    {% for el in get_component13%}
-                                                    <div class="mb-3">
-                                                        <label class="form-label">{{el.title_component}}</label>
-                                                        <div class="input-group">
-                                                            <input data-parsley-type="number" type="text"
-                                                                   class="form-control"
-                                                                   required
-                                                                   placeholder="Введите.."/>
-                                                            <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {% endfor %}
-                                                </div>
-                                                <div>
-                                                    <button type="submit"
-                                                            class="btn btn-primary waves-effect waves-light"
-                                                            id="sa-custom">Отправить
-                                                    </button>
-                                                </div>
-                                            </form>
-                                        </div>
-
-                                        <div class="card-body 5 box">
+                                        <div class="card-body 11 box">
                                             <h4 class="card-title">Контролируемые показатели 5</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate method="POST">
                                                 {% csrf_token %}
-                                                {{ forms.site1 }}
+                                                {{ forms.site11 }}
 
-                                                <div class="row">
-                                                    {% for el in get_component13%}
-                                                    <div class="mb-3">
-                                                        <label class="form-label">{{el.title_component}}</label>
-                                                        <div class="input-group">
-                                                            <input data-parsley-type="number" type="text"
-                                                                   class="form-control"
-                                                                   required
-                                                                   placeholder="Введите.."/>
-                                                            <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    {% endfor %}
-                                                </div>
                                                 <div>
                                                     <button type="submit"
                                                             class="btn btn-primary waves-effect waves-light"
@@ -689,9 +419,9 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
-                                                    <select class="form-select" name="plant_unit">
+                                                    <select class="form-select" name="plant_unit5">
                                                         <option selected>Выбрать..</option>
-                                                        <option value="1">Очистные сооружения поз.119. С колодца
+                                                        <option value="12">Очистные сооружения поз.119. С колодца
                                                             промстоков №1 (точка №4 вход)
                                                         </option>
                                                     </select>
@@ -700,7 +430,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Контролируемая вода</h4>
-                                                    <select class="form-select" name="water_type">
+                                                    <select class="form-select" name="water_type5">
                                                         <option selected>Выбрать..</option>
                                                         <option value="1">Оборотная</option>
                                                         <option value="2">Приточная</option>
@@ -708,48 +438,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body 1 box">
+                                        <div class="card-body 12 box">
                                             <h4 class="card-title">Контролируемые показатели МОС 1</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate action="" method="POST">
                                                 {% csrf_token %}
-                                                {{ forms.site1 }}
-
-                                                {# {% for component in components %}#}
-                                                {# {% if component.pk == 1 %}#}
-                                                {#
-                                                <div class="row">#}
-                                                    {#
-                                                    <div class="mb-3">#}
-                                                        {# <label class="form-label" id="oil_product">{{ component.title
-                                                            }}</label>#}
-                                                        {#
-                                                        <div class="input-group">#}
-                                                            {# <label>#}
-                                                                {# <input data-parsley-type="number" type="number" #}
-                                                                          {# class="form-control" #}
-                                                                          {# required#}
-                                                                          {# placeholder="Введите значение" #}
-                                                                          {# name="value">#}
-                                                                {# </label>#}
-                                                            {#
-                                                            <div class="input-group-prepend">#}
-                                                                {# <span class="input-group-text" #}
-                                                                         {# id="#">{{ component.measurement }}</span>#}
-                                                                {#
-                                                            </div>
-                                                            #}
-                                                            {#
-                                                        </div>
-                                                        #}
-                                                        {#
-                                                    </div>
-                                                    #}
-                                                    {#
-                                                </div>
-                                                #}
-                                                {# {% endif %}#}
-                                                {# {% endfor %}#}
+                                                {{ forms.site12 }}
 
                                                 <div>
                                                     <button type="submit"
@@ -766,11 +460,11 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
-                                                    <select class="form-select" name="plant_unit">
+                                                    <select class="form-select" name="plant_unit6">
                                                         <option selected>Выбрать..</option>
-                                                        <option value="1">Пробоотборник 001 перед БОС / А1 –SN -001
+                                                        <option value="13">Пробоотборник 001 перед БОС / А1 –SN -001
                                                         </option>
-                                                        <option value="2">Сточная вода после биологических очистных
+                                                        <option value="14">Сточная вода после биологических очистных
                                                             сооружений А1 –SN -009
                                                         </option>
                                                     </select>
@@ -779,7 +473,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Контролируемая вода</h4>
-                                                    <select class="form-select" name="water_type">
+                                                    <select class="form-select" name="water_type6">
                                                         <option selected>Выбрать..</option>
                                                         <option value="1">Оборотная</option>
                                                         <option value="2">Приточная</option>
@@ -787,48 +481,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body 1 box">
+                                        <div class="card-body 13 box">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate action="" method="POST">
                                                 {% csrf_token %}
-                                                {{ forms.site1 }}
-
-                                                {# {% for component in components %}#}
-                                                {# {% if component.pk == 1 %}#}
-                                                {#
-                                                <div class="row">#}
-                                                    {#
-                                                    <div class="mb-3">#}
-                                                        {# <label class="form-label" id="oil_product">{{ component.title
-                                                            }}</label>#}
-                                                        {#
-                                                        <div class="input-group">#}
-                                                            {# <label>#}
-                                                                {# <input data-parsley-type="number" type="number" #}
-                                                                          {# class="form-control" #}
-                                                                          {# required#}
-                                                                          {# placeholder="Введите значение" #}
-                                                                          {# name="value">#}
-                                                                {# </label>#}
-                                                            {#
-                                                            <div class="input-group-prepend">#}
-                                                                {# <span class="input-group-text" #}
-                                                                         {# id="#">{{ component.measurement }}</span>#}
-                                                                {#
-                                                            </div>
-                                                            #}
-                                                            {#
-                                                        </div>
-                                                        #}
-                                                        {#
-                                                    </div>
-                                                    #}
-                                                    {#
-                                                </div>
-                                                #}
-                                                {# {% endif %}#}
-                                                {# {% endfor %}#}
+                                                {{ forms.site13 }}
 
                                                 <div>
                                                     <button type="submit"
@@ -838,42 +496,13 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="card-body 2 box">
+                                        <div class="card-body 14 box">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate method="POST">
                                                 {% csrf_token %}
-                                                {{ forms.site1 }}
+                                                {{ forms.site14 }}
 
-                                                {#
-                                                <div class="row">#}
-                                                    {# {% for el in get_component12 %}#}
-                                                    {#
-                                                    <div class="mb-3">#}
-                                                        {# <label class="form-label">{{el.title_component}}</label>#}
-                                                        {#
-                                                        <div class="input-group">#}
-                                                            {# <input data-parsley-type="number" type="text" #}
-                                                                      {# class="form-control" #}
-                                                                      {# required#}
-                                                                      {# placeholder="Введите.."/>#}
-                                                            {#
-                                                            <div class="input-group-prepend">#}
-                                                                {# <span class="input-group-text" #}
-                                                                         {# id="#">{{el.title1}}</span>#}
-                                                                {#
-                                                            </div>
-                                                            #}
-                                                            {#
-                                                        </div>
-                                                        #}
-                                                        {#
-                                                    </div>
-                                                    #}
-                                                    {# {% endfor %}#}
-                                                    {#
-                                                </div>
-                                                #}
                                                 <div>
                                                     <button type="submit"
                                                             class="btn btn-primary waves-effect waves-light"
@@ -892,6 +521,7 @@
             </div>
         </div>
     </div>
+
 
     <div class="col-xl-3">
         <div class="col-lg-12">
@@ -1215,20 +845,66 @@
 {% endblock %}
 {% block extra_javascript %}
 
+<!--<script>-->
+<!--$(document).ready(function(){-->
+<!--    $("select").change(function(){-->
+<!--        $(this).find("option:selected").each(function(){-->
+<!--            var optionValue = $(this).attr("value");-->
+<!--            if(optionValue){-->
+<!--                $(".box").not("." + optionValue).hide();-->
+<!--                $("." + optionValue).show();-->
+<!--            } else{-->
+<!--                $(".box").hide();-->
+<!--            }-->
+<!--        });-->
+<!--    }).change();-->
+<!--});-->
+<!--</script>-->
+
+
 <script>
-$(document).ready(function(){
-    $("select").change(function(){
-        $(this).find("option:selected").each(function(){
-            var optionValue = $(this).attr("value");
-            if(optionValue){
-                $(".box").not("." + optionValue).hide();
-                $("." + optionValue).show();
-            } else{
-                $(".box").hide();
-            }
-        });
-    }).change();
+    $(function() {
+    $('#componentcard11').hide();
+    $('#plant_unit1').change(function(){
+        if($('#plant_unit1').val() == '1') {
+            $('#componentcard11').show();
+        } else {
+            $('#componentcard11').hide();
+        }
+    });
 });
+
+
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard12').hide();
+    $('#plant_unit1').change(function(){
+        if($('#plant_unit1').val() == '2') {
+            $('#componentcard12').show();
+        } else {
+            $('#componentcard12').hide();
+        }
+    });
+});
+
+
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard13').hide();
+    $('#plant_unit1').change(function(){
+        if($('#plant_unit1').val() == '3') {
+            $('#componentcard13').show();
+        } else {
+            $('#componentcard13').hide();
+        }
+    });
+});
+
+
 </script>
 <!-- select -->
 <script src="{% static 'libs/select2/dist/js/select2.min.js' %}"></script>

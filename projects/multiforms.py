@@ -1,12 +1,11 @@
 from django.http import HttpResponseRedirect, HttpResponseForbidden
 from django.views.generic.base import ContextMixin, TemplateResponseMixin
-from django.views.generic.edit import ProcessFormView, FormView
+from django.views.generic.edit import ProcessFormView
 
 
 class MultiFormMixin(ContextMixin):
     form_classes = {}
     prefixes = {}
-    success_urls = {}
 
     initial = {}
     prefix = None
@@ -35,7 +34,7 @@ class MultiFormMixin(ContextMixin):
         if hasattr(self, form_valid_method):
             return getattr(self, form_valid_method)(forms[form_name])
         else:
-            return HttpResponseRedirect(self.get_success_url(form_name))
+            return HttpResponseRedirect(self.success_url)
 
     def forms_invalid(self, forms):
         return self.render_to_response(self.get_context_data(forms=forms))
@@ -61,9 +60,6 @@ class MultiFormMixin(ContextMixin):
     def get_prefix(self, form_name):
         return self.prefixes.get(form_name, self.prefix)
 
-    def get_success_url(self, form_name=None):
-        return self.success_urls.get(form_name, self.success_url)
-
     def _create_form(self, form_name, form_class):
         form_kwargs = self.get_form_kwargs(form_name)
         form = form_class(**form_kwargs)
@@ -71,7 +67,6 @@ class MultiFormMixin(ContextMixin):
 
 
 class ProcessMultipleFormsView(ProcessFormView):
-
     def get(self, request, *args, **kwargs):
         form_classes = self.get_form_classes()
         forms = self.get_forms(form_classes)
