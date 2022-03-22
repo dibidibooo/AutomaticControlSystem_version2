@@ -95,8 +95,8 @@ class AnalysisCreateView(MultiFormsView):
             iron=iron,
             hardness_calcium=hardness_calcium,
             hardness_magnesium=hardness_magnesium,
-            sampling_site_id=self.request.POST.get('plant_unit'),
-            water_type_id=self.request.POST.get('water_type')
+            sampling_site_id=1,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -111,8 +111,8 @@ class AnalysisCreateView(MultiFormsView):
             oil_prod=oil_prod,
             ph=ph,
             suspended_solids=suspended_solids,
-            sampling_site_id=self.request.POST.get('plant_unit'),
-            water_type_id=self.request.POST.get('water_type')
+            sampling_site_id=2,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -143,8 +143,8 @@ class AnalysisCreateView(MultiFormsView):
             hardness_calcium=hardness_calcium,
             hardness_magnesium=hardness_magnesium,
             ph=ph,
-            sampling_site_id=self.request.POST.get('plant_unit'),
-            water_type_id=self.request.POST.get('water_type')
+            sampling_site_id=3,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -173,7 +173,7 @@ class AnalysisCreateView(MultiFormsView):
             suspended_subst=suspended_subst,
             alkalinity=alkalinity,
             iron=iron,
-            sampling_site_id=self.request.POST.get('plant_unit'),
+            sampling_site_id=4,
             water_type_id=self.request.POST.get('water_type')
         )
         return HttpResponseRedirect(self.success_url)
@@ -203,7 +203,7 @@ class AnalysisCreateView(MultiFormsView):
             suspended_subst=suspended_subst,
             alkalinity=alkalinity,
             iron=iron,
-            sampling_site_id=self.request.POST.get('plant_unit'),
+            sampling_site_id=5,
             water_type_id=self.request.POST.get('water_type')
         )
         return HttpResponseRedirect(self.success_url)
@@ -235,8 +235,8 @@ class AnalysisCreateView(MultiFormsView):
             alkalinity_phenols=alkalinity_phenols,
             alkalinity=alkalinity,
             iron=iron,
-            sampling_site_id=self.request.POST.get('plant_unit3'),
-            water_type_id=self.request.POST.get('water_type3')
+            sampling_site_id=6,
+            water_type_id=self.request.POST.get('water_type')
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -261,8 +261,8 @@ class AnalysisCreateView(MultiFormsView):
             hardness_calcium=hardness_calcium,
             hardness=hardness,
             iron=iron,
-            sampling_site_id=self.request.POST.get('plant_unit4'),
-            water_type_id=self.request.POST.get('water_type4')
+            sampling_site_id=7,
+            water_type_id=self.request.POST.get('water_type')
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -291,8 +291,8 @@ class AnalysisCreateView(MultiFormsView):
             hardness=hardness,
             iron=iron,
             salt=salt,
-            sampling_site_id=self.request.POST.get('plant_unit4'),
-            water_type_id=self.request.POST.get('water_type4')
+            sampling_site_id=8,
+            water_type_id=self.request.POST.get('water_type')
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -321,8 +321,8 @@ class AnalysisCreateView(MultiFormsView):
             hardness=hardness,
             iron=iron,
             salt=salt,
-            sampling_site_id=self.request.POST.get('plant_unit4'),
-            water_type_id=self.request.POST.get('water_type4')
+            sampling_site_id=9,
+            water_type_id=self.request.POST.get('water_type')
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -337,8 +337,8 @@ class AnalysisCreateView(MultiFormsView):
             chlorine=chlorine,
             oil_prod=oil_prod,
             salt=salt,
-            sampling_site_id=self.request.POST.get('plant_unit4'),
-            water_type_id=self.request.POST.get('water_type4')
+            sampling_site_id=10,
+            water_type_id=self.request.POST.get('water_type')
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -349,8 +349,8 @@ class AnalysisCreateView(MultiFormsView):
 
         ComponentsSite11.objects.create(
             suspended_solids=suspended_solids,
-            sampling_site_id=self.request.POST.get('plant_unit4'),
-            water_type_id=self.request.POST.get('water_type4')
+            sampling_site_id=11,
+            water_type_id=self.request.POST.get('water_type')
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -371,8 +371,8 @@ class AnalysisCreateView(MultiFormsView):
             oxygen_chem=oxygen_chem,
             active_subst=active_subst,
             ammonium=ammonium,
-            sampling_site_id=self.request.POST.get('plant_unit5'),
-            water_type_id=self.request.POST.get('water_type5')
+            sampling_site_id=12,
+            water_type_id=self.request.POST.get('water_type')
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -407,8 +407,8 @@ class AnalysisCreateView(MultiFormsView):
             iron=iron,
             nitrate=nitrate,
             nitrite=nitrite,
-            sampling_site_id=self.request.POST.get('plant_unit6'),
-            water_type_id=self.request.POST.get('water_type6')
+            sampling_site_id=13,
+            water_type_id=self.request.POST.get('water_type')
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -427,8 +427,8 @@ class AnalysisCreateView(MultiFormsView):
             oxidability=oxidability,
             salt=salt,
             chlorine=chlorine,
-            sampling_site_id=self.request.POST.get('plant_unit6'),
-            water_type_id=self.request.POST.get('water_type6')
+            sampling_site_id=14,
+            water_type_id=self.request.POST.get('water_type')
         )
         return HttpResponseRedirect(self.success_url)
 
