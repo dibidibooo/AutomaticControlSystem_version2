@@ -81,6 +81,7 @@ class AnalysisCreateView(MultiFormsView):
         hardness_calcium = form.cleaned_data.get('hardness_calcium')
         hardness_magnesium = form.cleaned_data.get('hardness_magnesium')
         form_name = form.cleaned_data.get('action')
+        print(form_name)
 
         ComponentsSite1.objects.create(
             oil_prod=oil_prod,
