@@ -86,7 +86,6 @@
                                         <p class="card-title-desc">Оборотная вода</p>
                                         <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %}
-
                                             {% for field in forms.site1 %}
                                                 {% if field.name == 'action' %}
                                                     <input type="hidden" name="action" value="{{ forms.site1.action.value }}" id="id_action">
