@@ -19,13 +19,11 @@ class MultiFormMixin(ContextMixin):
 
     def get_form_kwargs(self, form_name):
         kwargs = {}
-        # kwargs.update({'instance': self.get_instance(form_name)})
         kwargs.update({'initial': self.get_initial(form_name)})
         kwargs.update({'prefix': self.get_prefix(form_name)})
         if self.request.method in ('POST', 'PUT'):
             kwargs.update({
                 'data': self.request.POST,
-                'files': self.request.FILES,
             })
         return kwargs
 
@@ -38,15 +36,6 @@ class MultiFormMixin(ContextMixin):
 
     def forms_invalid(self, forms):
         return self.render_to_response(self.get_context_data(forms=forms))
-
-    # def get_instance(self, form_name):
-    #     instance_method = 'get_%s_instance' % form_name
-    #     if hasattr(self, instance_method):
-    #         attrs = getattr(self, instance_method)()
-    #         attrs['action'] = form_name
-    #         return attrs
-    #     else:
-    #         return None
 
     def get_initial(self, form_name):
         initial_method = 'get_%s_initial' % form_name

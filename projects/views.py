@@ -68,7 +68,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
     def site1_form_valid(self, form):
-        print(self.request.POST.getlist('water_type1'))
         oil_prod = form.cleaned_data.get('oil_prod')
         suspended_solids = form.cleaned_data.get('suspended_solids')
         ph = form.cleaned_data.get('ph')
@@ -82,6 +81,7 @@ class AnalysisCreateView(MultiFormsView):
         hardness_calcium = form.cleaned_data.get('hardness_calcium')
         hardness_magnesium = form.cleaned_data.get('hardness_magnesium')
         form_name = form.cleaned_data.get('action')
+        print(form_name)
 
         ComponentsSite1.objects.create(
             oil_prod=oil_prod,
@@ -96,14 +96,13 @@ class AnalysisCreateView(MultiFormsView):
             iron=iron,
             hardness_calcium=hardness_calcium,
             hardness_magnesium=hardness_magnesium,
-            sampling_site_id=self.request.POST.get('plant_unit1'),
-            water_type_id=self.request.POST.get('water_type1')
+            sampling_site_id=1,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
     # Водоблок - 2 | Установка АВТ напротив погружного холодильника №42
     def site2_form_valid(self, form):
-        print(self.request.POST.getlist('water_type1'))
         oil_prod = form.cleaned_data.get('oil_prod')
         ph = form.cleaned_data.get('ph')
         suspended_solids = form.cleaned_data.get('suspended_solids')
@@ -113,14 +112,13 @@ class AnalysisCreateView(MultiFormsView):
             oil_prod=oil_prod,
             ph=ph,
             suspended_solids=suspended_solids,
-            sampling_site_id=self.request.POST.get('plant_unit1'),
-            water_type_id=self.request.POST.get('water_type1')
+            sampling_site_id=2,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
     # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12
     def site3_form_valid(self, form):
-        print(self.request.POST.getlist('water_type1'))
         suspended_subst = form.cleaned_data.get('suspended_subst')
         hardness = form.cleaned_data.get('hardness')
         iron = form.cleaned_data.get('iron')
@@ -146,14 +144,13 @@ class AnalysisCreateView(MultiFormsView):
             hardness_calcium=hardness_calcium,
             hardness_magnesium=hardness_magnesium,
             ph=ph,
-            sampling_site_id=self.request.POST.get('plant_unit1'),
-            water_type_id=self.request.POST.get('water_type1')
+            sampling_site_id=3,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
     # БОВ-1 | Аналитическая точка насосов Р-02А/В/С
     def site4_form_valid(self, form):
-        print(self.request.POST.getlist('water_type'))
         hardness = form.cleaned_data.get('hardness')
         hardness_calcium = form.cleaned_data.get('hardness_calcium')
         ph = form.cleaned_data.get('ph')
@@ -177,8 +174,8 @@ class AnalysisCreateView(MultiFormsView):
             suspended_subst=suspended_subst,
             alkalinity=alkalinity,
             iron=iron,
-            sampling_site_id=self.request.POST.get('plant_unit2'),
-            water_type_id=self.request.POST.get('water_type2')
+            sampling_site_id=4,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -207,8 +204,8 @@ class AnalysisCreateView(MultiFormsView):
             suspended_subst=suspended_subst,
             alkalinity=alkalinity,
             iron=iron,
-            sampling_site_id=self.request.POST.get('plant_unit2'),
-            water_type_id=self.request.POST.get('water_type2')
+            sampling_site_id=5,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -239,8 +236,8 @@ class AnalysisCreateView(MultiFormsView):
             alkalinity_phenols=alkalinity_phenols,
             alkalinity=alkalinity,
             iron=iron,
-            sampling_site_id=self.request.POST.get('plant_unit3'),
-            water_type_id=self.request.POST.get('water_type3')
+            sampling_site_id=6,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -265,8 +262,8 @@ class AnalysisCreateView(MultiFormsView):
             hardness_calcium=hardness_calcium,
             hardness=hardness,
             iron=iron,
-            sampling_site_id=self.request.POST.get('plant_unit4'),
-            water_type_id=self.request.POST.get('water_type4')
+            sampling_site_id=7,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -295,8 +292,8 @@ class AnalysisCreateView(MultiFormsView):
             hardness=hardness,
             iron=iron,
             salt=salt,
-            sampling_site_id=self.request.POST.get('plant_unit4'),
-            water_type_id=self.request.POST.get('water_type4')
+            sampling_site_id=8,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -325,8 +322,8 @@ class AnalysisCreateView(MultiFormsView):
             hardness=hardness,
             iron=iron,
             salt=salt,
-            sampling_site_id=self.request.POST.get('plant_unit4'),
-            water_type_id=self.request.POST.get('water_type4')
+            sampling_site_id=9,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -341,8 +338,8 @@ class AnalysisCreateView(MultiFormsView):
             chlorine=chlorine,
             oil_prod=oil_prod,
             salt=salt,
-            sampling_site_id=self.request.POST.get('plant_unit4'),
-            water_type_id=self.request.POST.get('water_type4')
+            sampling_site_id=10,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -353,8 +350,8 @@ class AnalysisCreateView(MultiFormsView):
 
         ComponentsSite11.objects.create(
             suspended_solids=suspended_solids,
-            sampling_site_id=self.request.POST.get('plant_unit4'),
-            water_type_id=self.request.POST.get('water_type4')
+            sampling_site_id=11,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -375,8 +372,8 @@ class AnalysisCreateView(MultiFormsView):
             oxygen_chem=oxygen_chem,
             active_subst=active_subst,
             ammonium=ammonium,
-            sampling_site_id=self.request.POST.get('plant_unit5'),
-            water_type_id=self.request.POST.get('water_type5')
+            sampling_site_id=12,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -411,8 +408,8 @@ class AnalysisCreateView(MultiFormsView):
             iron=iron,
             nitrate=nitrate,
             nitrite=nitrite,
-            sampling_site_id=self.request.POST.get('plant_unit6'),
-            water_type_id=self.request.POST.get('water_type6')
+            sampling_site_id=13,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 
@@ -431,8 +428,8 @@ class AnalysisCreateView(MultiFormsView):
             oxidability=oxidability,
             salt=salt,
             chlorine=chlorine,
-            sampling_site_id=self.request.POST.get('plant_unit6'),
-            water_type_id=self.request.POST.get('water_type6')
+            sampling_site_id=14,
+            water_type_id=1
         )
         return HttpResponseRedirect(self.success_url)
 

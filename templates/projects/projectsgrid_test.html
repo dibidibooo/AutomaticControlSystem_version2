@@ -145,7 +145,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
-                                                    <select class="form-select" name="plant_unit">
+                                                    <select class="form-select" id="plant_unit2" name="plant_unit2">
                                                         <option selected>Выбрать..</option>
                                                         <option value="4">Аналитическая точка насосов Р-02А/В/С
                                                         </option>
@@ -158,7 +158,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Контролируемая вода</h4>
-                                                    <select class="form-select" name="water_type">
+                                                    <select class="form-select" name="water_type1">
                                                         <option selected>Выбрать..</option>
                                                         <option value="1">Оборотная</option>
                                                         <option value="2">Приточная</option>
@@ -166,13 +166,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body 4 box">
+                                        <div id="componentcard21" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate action="" method="POST">
                                                 {% csrf_token %}
                                                 {{ forms.site4 }}
-
                                                 <div>
                                                     <button type="submit"
                                                             class="btn btn-primary waves-effect waves-light"
@@ -182,13 +181,12 @@
                                             </form>
                                         </div>
 
-                                        <div class="card-body 5 box">
+                                        <div id="componentcard22" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate method="POST">
                                                 {% csrf_token %}
                                                 {{ forms.site5 }}
-
                                                 <div>
                                                     <button type="submit"
                                                             class="btn btn-primary waves-effect waves-light"
@@ -204,7 +202,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
-                                                    <select class="form-select" name="plant_unit3">
+                                                    <select class="form-select" id="plant_unit3" name="plant_unit3">
                                                         <option selected>Выбрать..</option>
                                                         <option value="6">Аналитическая точка насосов Р-01А/В/С/Д
                                                         </option>
@@ -222,7 +220,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body 6 box">
+                                        <div id="componentcard31" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate action="" method="POST">
@@ -244,7 +242,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
-                                                    <select class="form-select" name="plant_unit4">
+                                                    <select class="form-select" id="plant_unit4" name="plant_unit4">
                                                         <option selected>Выбрать..</option>
                                                         <option value="7">Трубопровод Урал (в районе клапанной сборки
                                                             позиций 77-FV-203) 77-SN-001
@@ -273,13 +271,12 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body 7 box">
+                                        <div id="componentcard41" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели 1</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate action="" method="POST">
                                                 {% csrf_token %}
                                                 {{ forms.site7 }}
-
                                                 <div>
                                                     <button type="submit"
                                                             class="btn btn-primary waves-effect waves-light"
@@ -289,13 +286,12 @@
                                             </form>
                                         </div>
 
-                                        <div class="card-body 8 box">
+                                        <div id="componentcard42" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели 2</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate method="POST">
                                                 {% csrf_token %}
                                                 {{ forms.site8 }}
-
                                                 <div>
                                                     <button type="submit"
                                                             class="btn btn-primary waves-effect waves-light"
@@ -305,43 +301,12 @@
                                             </form>
                                         </div>
 
-                                        <div class="card-body 9 box">
+                                        <div id="componentcard43" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели 3</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate method="POST">
                                                 {% csrf_token %}
                                                 {{ forms.site9 }}
-
-                                                {#
-                                                <div class="row">#}
-                                                    {# {% for el in get_component13%}#}
-                                                    {#
-                                                    <div class="mb-3">#}
-                                                        {# <label class="form-label">{{el.title_component}}</label>#}
-                                                        {#
-                                                        <div class="input-group">#}
-                                                            {# <input data-parsley-type="number" type="text" #}
-                                                                      {# class="form-control" #}
-                                                                      {# required#}
-                                                                      {# placeholder="Введите.."/>#}
-                                                            {#
-                                                            <div class="input-group-prepend">#}
-                                                                {# <span class="input-group-text" #}
-                                                                         {# id="#">{{el.title1}}</span>#}
-                                                                {#
-                                                            </div>
-                                                            #}
-                                                            {#
-                                                        </div>
-                                                        #}
-                                                        {#
-                                                    </div>
-                                                    #}
-                                                    {# {% endfor %}#}
-                                                    {#
-                                                </div>
-                                                #}
-
                                                 <div>
                                                     <button type="submit"
                                                             class="btn btn-primary waves-effect waves-light"
@@ -351,42 +316,12 @@
                                             </form>
                                         </div>
 
-                                        <div class="card-body 10 box">
+                                        <div id="componentcard44" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели 4</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate method="POST">
                                                 {% csrf_token %}
                                                 {{ forms.site10 }}
-
-                                                {#
-                                                <div class="row">#}
-                                                    {# {% for el in get_component13%}#}
-                                                    {#
-                                                    <div class="mb-3">#}
-                                                        {# <label class="form-label">{{el.title_component}}</label>#}
-                                                        {#
-                                                        <div class="input-group">#}
-                                                            {# <input data-parsley-type="number" type="text" #}
-                                                                      {# class="form-control" #}
-                                                                      {# required#}
-                                                                      {# placeholder="Введите.."/>#}
-                                                            {#
-                                                            <div class="input-group-prepend">#}
-                                                                {# <span class="input-group-text" #}
-                                                                         {# id="#">{{el.title1}}</span>#}
-                                                                {#
-                                                            </div>
-                                                            #}
-                                                            {#
-                                                        </div>
-                                                        #}
-                                                        {#
-                                                    </div>
-                                                    #}
-                                                    {# {% endfor %}#}
-                                                    {#
-                                                </div>
-                                                #}
                                                 <div>
                                                     <button type="submit"
                                                             class="btn btn-primary waves-effect waves-light"
@@ -396,13 +331,12 @@
                                             </form>
                                         </div>
 
-                                        <div class="card-body 11 box">
+                                        <div id="componentcard45" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели 5</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate method="POST">
                                                 {% csrf_token %}
                                                 {{ forms.site11 }}
-
                                                 <div>
                                                     <button type="submit"
                                                             class="btn btn-primary waves-effect waves-light"
@@ -419,7 +353,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
-                                                    <select class="form-select" name="plant_unit5">
+                                                    <select class="form-select" id="plant_unit5" name="plant_unit5">
                                                         <option selected>Выбрать..</option>
                                                         <option value="12">Очистные сооружения поз.119. С колодца
                                                             промстоков №1 (точка №4 вход)
@@ -438,7 +372,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body 12 box">
+                                        <div id="componentcard51" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели МОС 1</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate action="" method="POST">
@@ -460,7 +394,7 @@
                                             <div class="col-lg-6">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
-                                                    <select class="form-select" name="plant_unit6">
+                                                    <select class="form-select" id="plant_unit6" name="plant_unit6">
                                                         <option selected>Выбрать..</option>
                                                         <option value="13">Пробоотборник 001 перед БОС / А1 –SN -001
                                                         </option>
@@ -481,7 +415,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="card-body 13 box">
+                                        <div id="componentcard61" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate action="" method="POST">
@@ -496,7 +430,7 @@
                                                 </div>
                                             </form>
                                         </div>
-                                        <div class="card-body 14 box">
+                                        <div id="componentcard62" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate method="POST">
@@ -873,8 +807,6 @@
         }
     });
 });
-
-
 </script>
 
 <script>
@@ -888,8 +820,6 @@
         }
     });
 });
-
-
 </script>
 
 <script>
@@ -903,9 +833,152 @@
         }
     });
 });
-
-
 </script>
+
+<script>
+    $(function() {
+    $('#componentcard21').hide();
+    $('#plant_unit2').change(function(){
+        if($('#plant_unit2').val() == '4') {
+            $('#componentcard21').show();
+        } else {
+            $('#componentcard21').hide();
+        }
+    });
+});
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard22').hide();
+    $('#plant_unit2').change(function(){
+        if($('#plant_unit2').val() == '5') {
+            $('#componentcard22').show();
+        } else {
+            $('#componentcard22').hide();
+        }
+    });
+});
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard31').hide();
+    $('#plant_unit3').change(function(){
+        if($('#plant_unit3').val() == '6') {
+            $('#componentcard31').show();
+        } else {
+            $('#componentcard31').hide();
+        }
+    });
+});
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard41').hide();
+    $('#plant_unit4').change(function(){
+        if($('#plant_unit4').val() == '7') {
+            $('#componentcard41').show();
+        } else {
+            $('#componentcard41').hide();
+        }
+    });
+});
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard42').hide();
+    $('#plant_unit4').change(function(){
+        if($('#plant_unit4').val() == '8') {
+            $('#componentcard42').show();
+        } else {
+            $('#componentcard42').hide();
+        }
+    });
+});
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard43').hide();
+    $('#plant_unit4').change(function(){
+        if($('#plant_unit4').val() == '9') {
+            $('#componentcard43').show();
+        } else {
+            $('#componentcard43').hide();
+        }
+    });
+});
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard44').hide();
+    $('#plant_unit4').change(function(){
+        if($('#plant_unit4').val() == '10') {
+            $('#componentcard44').show();
+        } else {
+            $('#componentcard44').hide();
+        }
+    });
+});
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard45').hide();
+    $('#plant_unit4').change(function(){
+        if($('#plant_unit4').val() == '11') {
+            $('#componentcard45').show();
+        } else {
+            $('#componentcard45').hide();
+        }
+    });
+});
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard51').hide();
+    $('#plant_unit5').change(function(){
+        if($('#plant_unit5').val() == '12') {
+            $('#componentcard51').show();
+        } else {
+            $('#componentcard51').hide();
+        }
+    });
+});
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard61').hide();
+    $('#plant_unit6').change(function(){
+        if($('#plant_unit6').val() == '13') {
+            $('#componentcard61').show();
+        } else {
+            $('#componentcard61').hide();
+        }
+    });
+});
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard62').hide();
+    $('#plant_unit6').change(function(){
+        if($('#plant_unit6').val() == '14') {
+            $('#componentcard62').show();
+        } else {
+            $('#componentcard62').hide();
+        }
+    });
+});
+</script>
+
+
 <!-- select -->
 <script src="{% static 'libs/select2/dist/js/select2.min.js' %}"></script>
 <script src="{% static 'js/pages/ecommerce-select2.init.js' %}"></script>
