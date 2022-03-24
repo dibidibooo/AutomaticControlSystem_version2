@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth import get_user_model
 
 class PlantUnit(models.Model):
     title = models.CharField(verbose_name='Название установки', max_length=50)
@@ -254,3 +254,18 @@ class ComponentsSite14(models.Model):
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
     sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component14')
     water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component14')
+
+
+class Tasks(models.Model):
+    title = models.CharField(max_length=100, verbose_name='Название задачи')
+    description = models.TextField(max_length=1000, verbose_name='Описание задачи')
+
+    def __str__(self):
+        return self.title
+
+
+class TaskAssign(models.Model):
+    task = models.ForeignKey('projects.Tasks', related_name='assign', on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), related_name='assign', on_delete=models.CASCADE)
+    start_date = models.DateTimeField(verbose_name='Дата назначения задачи')
+    deadline = models.DateTimeField(verbose_name='Срок выполнения задачи')
