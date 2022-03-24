@@ -66,7 +66,6 @@
                                 </div>
                             </div>
                         </div>
-
                     </div>
                 </div>
                 <div class="col-xl-12">
@@ -81,196 +80,204 @@
                                                 <h4 class="card-title">Контролируемые показатели</h4>
                                                 <p class="card-title-desc"></p>
                                                 <form class="needs-validation" novalidate>
-                                                    {% for key, value in results1.items %}
-                                                        <div class="row">
-                                                            <div class="col-xl-6">
-                                                                <a data-bs-toggle="modal"
-                                                                   data-bs-target=".bs-example-modal-center">
+                                                    {% for component in components %}
+                                                        {% if component.title == 'Нефтепродукт' %}
+                                                            <div class="row">
+                                                                <div class="col-xl-6">
+                                                                    <a data-bs-toggle="modal"
+                                                                       data-bs-target=".bs-example-modal-center">
+                                                                        <div class="card">
+                                                                            <div class="card-body">
+                                                                                <p class="text-muted mb-4">
+                                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
+                                                                                    Нефтепродукт
+                                                                                </p>
+                                                                                <div class="row">
+                                                                                    <div class="col-5">
+                                                                                        <div>
+                                                                                            <h5>{{ results1.oil_prod }}</h5>
+                                                                                            <p class="text-muted text-truncate mb-0">
+                                                                                                {{ component.measurement }}
+                                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                            </p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-7">
+                                                                                        <div>
+                                                                                            <div id="area-sparkline-chart-1"
+                                                                                                 class="apex-charts">
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </a>
+                                                                    <div class="modal fade bs-example-modal-center"
+                                                                         tabindex="-1" role="dialog" aria-hidden="true">
+                                                                        <div class="modal-dialog modal-dialog-centered">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <h5 class="modal-title">Нефтепродукт</h5>
+                                                                                    <button type="button" class="btn-close"
+                                                                                            data-bs-dismiss="modal"
+                                                                                            aria-label="Close"></button>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                    <div>
+                                                                                        <div id="overview-chart"
+                                                                                             class="apex-charts" dir="ltr">
+                                                                                            <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                                                                                <button type="button"
+                                                                                                        class="btn btn-light btn-sm"
+                                                                                                        id="one_month">
+                                                                                                    1 месяц
+                                                                                                </button>
+                                                                                                <button type="button"
+                                                                                                        class="btn btn-light btn-sm"
+                                                                                                        id="six_months">
+                                                                                                    6 месяцев
+                                                                                                </button>
+                                                                                                <button type="button"
+                                                                                                        class="btn btn-light btn-sm active"
+                                                                                                        id="one_year">
+                                                                                                    1 год
+                                                                                                </button>
+                                                                                                <button type="button"
+                                                                                                        class="btn btn-light btn-sm"
+                                                                                                        id="all">
+                                                                                                    Все время
+                                                                                                </button>
+                                                                                            </div>
+                                                                                            <div id="overview-chart-timeline"></div>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div><!-- /.modal-content -->
+                                                                        </div><!-- /.modal-dialog -->
+                                                                    </div><!-- /.modal -->
+                                                                </div>
+                                                                <div class="col-xl-6">
                                                                     <div class="card">
                                                                         <div class="card-body">
                                                                             <p class="text-muted mb-4">
-                                                                                <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                                {{ key }}
+                                                                                <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                                Рекомендация
                                                                             </p>
+                                                                            <div class="col-12">
+                                                                                <div>
+                                                                                    <h5>
+                                                                                        {{ component.recommendation1 }}
+                                                                                    </h5>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+
+                                                        {% if component.title == 'Общие взвешенные твердые частицы' %}
+                                                            <div class="row">
+                                                                <div class="col-xl-6">
+                                                                    <div class="card">
+                                                                        <div class="card-body">
+                                                                            <p class="text-muted mb-4">
+                                                                                <i class="bx bx-copy-alt h2 text-primary align-middle mb-0 me-3"></i>
+                                                                                Общие взвешенные твердые частицы</p>
                                                                             <div class="row">
-                                                                                <div class="col-5">
+                                                                                <div class="col-6">
                                                                                     <div>
-                                                                                        <h5>{{ value }}</h5>
+                                                                                        <h5>{{ results1.suspended_solids }}</h5>
                                                                                         <p class="text-muted text-truncate mb-0">
-                                                                                            мг/дм³
+                                                                                            {{ component.measurement }}
+                                                                                            <i class="mdi mdi-arrow-down ms-1 text-danger"></i>
+                                                                                        </p>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="col-6">
+                                                                                    <div>
+                                                                                        <div id="area-sparkline-chart-2"
+                                                                                             class="apex-charts"></div>
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-xl-6">
+                                                                    <div class="card">
+                                                                        <div class="card-body">
+                                                                            <p class="text-muted mb-4">
+                                                                                <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                                Рекомендация
+                                                                            </p>
+                                                                            <div class="col-12">
+                                                                                <div>
+                                                                                    <h5>
+                                                                                        Здесь будет написана та или иная
+                                                                                        рекомендация по
+                                                                                        контролируемым показателям
+                                                                                    </h5>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        {% endif %}
+
+                                                        {% if component.title == 'pH' %}
+                                                            <div class="row">
+                                                                <div class="col-xl-6">
+                                                                    <div class="card">
+                                                                        <div class="card-body">
+                                                                            <p class="text-muted mb-4">
+                                                                                <i class="bx bx-copy-alt h2 text-info align-middle mb-0 me-3"></i>
+                                                                                Значение рН</p>
+                                                                            <div class="row">
+                                                                                <div class="col-6">
+                                                                                    <div>
+                                                                                        <h5>{{ results1.ph }}</h5>
+                                                                                        <p class="text-muted text-truncate mb-0">
+                                                                                            {{ component.measurement }}
                                                                                             <i class="mdi mdi-arrow-up ms-1 text-success"></i>
                                                                                         </p>
                                                                                     </div>
                                                                                 </div>
-                                                                                <div class="col-7">
+                                                                                <div class="col-6">
                                                                                     <div>
-                                                                                        <div id="area-sparkline-chart-1"
-                                                                                             class="apex-charts">
-                                                                                        </div>
+                                                                                        <div id="area-sparkline-chart-3"
+                                                                                             class="apex-charts"></div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
                                                                     </div>
-                                                                </a>
-                                                                <div class="modal fade bs-example-modal-center"
-                                                                     tabindex="-1" role="dialog" aria-hidden="true">
-                                                                    <div class="modal-dialog modal-dialog-centered">
-                                                                        <div class="modal-content">
-                                                                            <div class="modal-header">
-                                                                                <h5 class="modal-title">Нефтепродукт</h5>
-                                                                                <button type="button" class="btn-close"
-                                                                                        data-bs-dismiss="modal"
-                                                                                        aria-label="Close"></button>
-                                                                            </div>
-                                                                            <div class="modal-body">
+                                                                </div>
+                                                                <div class="col-xl-6">
+                                                                    <div class="card">
+                                                                        <div class="card-body">
+                                                                            <p class="text-muted mb-4">
+                                                                                <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                                Рекомендация
+                                                                            </p>
+                                                                            <div class="col-12">
                                                                                 <div>
-                                                                                    <div id="overview-chart"
-                                                                                         class="apex-charts" dir="ltr">
-                                                                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
-                                                                                            <button type="button"
-                                                                                                    class="btn btn-light btn-sm"
-                                                                                                    id="one_month">
-                                                                                                1 месяц
-                                                                                            </button>
-                                                                                            <button type="button"
-                                                                                                    class="btn btn-light btn-sm"
-                                                                                                    id="six_months">
-                                                                                                6 месяцев
-                                                                                            </button>
-                                                                                            <button type="button"
-                                                                                                    class="btn btn-light btn-sm active"
-                                                                                                    id="one_year">
-                                                                                                1 год
-                                                                                            </button>
-                                                                                            <button type="button"
-                                                                                                    class="btn btn-light btn-sm"
-                                                                                                    id="all">
-                                                                                                Все время
-                                                                                            </button>
-                                                                                        </div>
-                                                                                        <div id="overview-chart-timeline"></div>
-                                                                                    </div>
+                                                                                    <h5>
+                                                                                        Здесь будет написана та или иная
+                                                                                        рекомендация по
+                                                                                        контролируемым показателям
+                                                                                    </h5>
                                                                                 </div>
                                                                             </div>
-                                                                        </div><!-- /.modal-content -->
-                                                                    </div><!-- /.modal-dialog -->
-                                                                </div><!-- /.modal -->
-                                                            </div>
-                                                            <div class="col-xl-6">
-                                                                <div class="card">
-                                                                    <div class="card-body">
-                                                                        <p class="text-muted mb-4"><i
-                                                                                class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
-                                                                            Рекомендация
-                                                                        </p>
-                                                                        <div class="col-12">
-                                                                            <div>
-                                                                                <h5>Здесь будет написана та или иная
-                                                                                    рекомендация по
-                                                                                    контролируемым показателям</h5>
-                                                                            </div>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
-                                                        </div>
+                                                        {% endif %}
                                                     {% endfor %}
-
-                                                    <div class="row">
-                                                        <div class="col-xl-6">
-                                                            <div class="card">
-                                                                <div class="card-body">
-                                                                    <p class="text-muted mb-4"><i
-                                                                            class="bx bx-copy-alt h2 text-primary align-middle mb-0 me-3"></i>
-                                                                        Значение рН </p>
-
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            <div>
-                                                                                <h5>245.44</h5>
-                                                                                <p class="text-muted text-truncate mb-0">
-                                                                                    мг/дм³<i
-                                                                                        class="mdi mdi-arrow-down ms-1 text-danger"></i>
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            <div>
-                                                                                <div id="area-sparkline-chart-2"
-                                                                                     class="apex-charts"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xl-6">
-                                                            <div class="card">
-                                                                <div class="card-body">
-                                                                    <p class="text-muted mb-4"><i
-                                                                            class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
-                                                                        Рекомендация
-                                                                    </p>
-                                                                    <div class="col-12">
-                                                                        <div>
-                                                                            <h5>Здесь будет написана та или иная
-                                                                                рекомендация по
-                                                                                контролируемым показателям</h5>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-xl-6">
-                                                            <div class="card">
-                                                                <div class="card-body">
-                                                                    <p class="text-muted mb-4"><i
-                                                                            class="bx bx-copy-alt h2 text-info align-middle mb-0 me-3"></i>
-                                                                        Общие взвешенные твердые частицы </p>
-
-                                                                    <div class="row">
-                                                                        <div class="col-6">
-                                                                            <div>
-                                                                                <h5>63.61</h5>
-                                                                                <p class="text-muted text-truncate mb-0">
-                                                                                    мг/дм³<i
-                                                                                        class="mdi mdi-arrow-up ms-1 text-success"></i>
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-6">
-                                                                            <div>
-                                                                                <div id="area-sparkline-chart-3"
-                                                                                     class="apex-charts"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-xl-6">
-                                                            <div class="card">
-                                                                <div class="card-body">
-                                                                    <p class="text-muted mb-4"><i
-                                                                            class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
-                                                                        Рекомендация
-                                                                    </p>
-                                                                    <div class="col-12">
-                                                                        <div>
-                                                                            <h5>Здесь будет написана та или иная
-                                                                                рекомендация по
-                                                                                контролируемым показателям</h5>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                    </div>
                                                 </form>
-
                                             </div>
                                         </div>
 

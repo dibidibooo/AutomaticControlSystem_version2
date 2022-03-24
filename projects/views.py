@@ -453,6 +453,7 @@ class ProjectOverviewView(LoginRequiredMixin, View):
 
 class ResultsView(LoginRequiredMixin, View):
     def get(self, request):
+        components = Component.objects.all()
         results_site1 = self.get_results1()
         results_site2 = self.get_results2()
         results_site3 = self.get_results3()
@@ -471,6 +472,7 @@ class ResultsView(LoginRequiredMixin, View):
         context = {
             'heading': "Результаты",
             'pageview': "Projects",
+            'components': components,
             'results1': results_site1,
             'results2': results_site2,
             'results3': results_site3,
