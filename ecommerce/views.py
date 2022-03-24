@@ -37,7 +37,7 @@ class CustomersView(LoginRequiredMixin,View):
             page = int(1)
         page_obj = p.get_page(page)
         greeting = {}
-        greeting['heading'] = "Customers"
+        greeting['heading'] = "Новый пользователь"
         greeting['pageview'] = "Ecommerce"
         greeting['page_obj'] = page_obj
         greeting['form'] = form

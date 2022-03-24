@@ -2,11 +2,6 @@
 {% load static %}
 
 {% block extra_css %}
-<style>
-    .hidden {
-  display: none;
-}
-</style>
 <!-- Select-->
 <link href="{% static 'libs/select2/dist/css/select2.min.css' %}" rel="stylesheet" type="text/css"/>
 <!-- Sweet Alert-->
@@ -16,100 +11,576 @@
 
 
 {% block contents %}
+    <!-- kairat -->
 <div class="row">
     <div class="col-xl-6">
         <div class="checkout-tabs">
             <div class="row">
-                <div class="col-xl-4 col-sm-3 mb-3">
+                <!-- Вкладки Установок -->
+                <div class="col-xl-2 col-sm-3 mb-3">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="location1-tab" data-bs-toggle="pill"
                            href="#location1"
                            role="tab" aria-controls="location1" aria-selected="true">
-                            <i class="bx bx-building-house d-block check-nav-icon mt-3 mb-2"></i>
-                            <p class="fw-bold">Оборотное водоснабжение Водоблок-2*</p>
+                            <p class="fw-bold mt-3">Водоблок-2</p>
                         </a>
                         <a class="nav-link" id="location2-tab" data-bs-toggle="pill" href="#location2"
                            role="tab"
                            aria-controls="location2" aria-selected="false">
-                            <i class="bx bx-buildings d-block check-nav-icon mt-3 mb-2"></i>
-                            <p class="fw-bold">ПАУ БОВ-1 (титул 1026) / ПАУ БОВ-2 (титул 2602) </p>
+                            <p class="fw-bold mt-3">БОВ-1</p>
                         </a>
                         <a class="nav-link" id="location3-tab" data-bs-toggle="pill" href="#location3"
                            role="tab"
                            aria-controls="location3" aria-selected="false">
-                            <i class="bx bx-building d-block check-nav-icon mt-3 mb-2"></i>
-                            <p class="fw-bold">УГОВ ТОО "Enertek"</p>
+                            <p class="fw-bold mt-3">БОВ-2</p>
+                        </a>
+                        <a class="nav-link" id="location4-tab" data-bs-toggle="pill" href="#location4"
+                           role="tab"
+                           aria-controls="location4" aria-selected="false">
+                            <p class="fw-bold mt-3">УГОВ</p>
+                        </a>
+                        <a class="nav-link" id="location5-tab" data-bs-toggle="pill" href="#location5"
+                           role="tab"
+                           aria-controls="location5" aria-selected="false">
+                            <p class="fw-bold mt-3">МОС</p>
+                        </a>
+                        <a class="nav-link" id="location6-tab" data-bs-toggle="pill" href="#location6"
+                           role="tab"
+                           aria-controls="location6" aria-selected="false">
+                            <p class="fw-bold mt-3">БОС</p>
                         </a>
                     </div>
                 </div>
-                <div class="col-xl-8 col-sm-9">
+
+                <div class="col-xl-10 col-sm-9">
                     <div class="card">
                         <div class="card-body">
                             <div class="tab-content" id="v-pills-tabContent">
 
+                                <!-- МОП Установка 1 -->
                                 <div class="tab-pane fade show active" id="location1" role="tabpanel"
                                      aria-labelledby="location1-tab">
                                     <div class="row">
                                         <div class="col-lg-6">
                                             <div class="mb-3">
-                                                <h4 class="card-title">Контролируемая вода</h4>
-                                                <select class="form-select">
-                                                    <option selected>Выбрать..</option>
-                                                    <option value="recycled">Оборотная</option>
-                                                    <option value="supply">Приточная</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
                                                 <h4 class="card-title">Место отбора проб</h4>
-                                                <select class="form-select" id="sel1">
+                                                <select class="form-select" name="plant_unit" id="plant_unit">
                                                     <option selected>Выбрать..</option>
-                                                    <option>Установка оборотного водоснабжения «Водоблок-2» с дренажей
-                                                        насосов Н-14,15,16
+                                                    <option name="selectcomp1" value="1">
+                                                        Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
                                                     </option>
-                                                    <option>Установка АВТ напротив погружного холодильника №42
+                                                    <option name="selectcomp2" value="2">
+                                                        Установка АВТ напротив погружного холодильника №42
                                                     </option>
-                                                    <option>Установка оборотного водоснабжения «Водоблок-2» с дренажей
-                                                        насосов Н-5,11.12
+                                                    <option name="selectcomp3" value="3">
+                                                        Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12
                                                     </option>
                                                 </select>
                                             </div>
                                         </div>
                                     </div>
-                                    <div id="div1"></div>
-                                    <div id="div2" class="card-body hideable">
+
+                                    <!-- МОП 1 -->
+                                    <div id="componentcard1" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc"></p>
-                                        <form class="needs-validation" novalidate method="POST">
+                                        <p class="card-title-desc">Оборотная вода</p>
+                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %}
-                                            <div class="row">
-                                                {% for el in get_component11%}
-                                                <div class="mb-3">
-                                                    <label class="form-label">{{el.title_component}}</label>
-                                                    <div class="input-group">
-                                                        <input data-parsley-type="number" type="text"
-                                                               class="form-control"
-                                                               required
-                                                               placeholder="Введите.."/>
-                                                        <div class="input-group-prepend">
-                                                        <span class="input-group-text"
-                                                              id="#">{{el.title1}}</span>
-                                                        </div>
+                                            {% for field in forms.site1 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site1.action.value }}" id="id_action">
+                                                {% else %}
+                                                    <div class="mb-3" style="display: flex; align-items: center;">
+                                                        <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
                                                     </div>
-                                                </div>
-                                                {% endfor %}
-                                            </div>
-                                            <div>
-                                                <button type="submit"
-                                                        class="btn btn-primary waves-effect waves-light"
-                                                        id="sa-custom">Отправить
-                                                </button>
-                                            </div>
+                                                {% endif %}
+                                            {% endfor %}
+
+                                            <button type="submit"
+                                                    class="btn btn-primary waves-effect waves-light mt-2"
+                                                    id="sa-custom">Отправить
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                    <!-- МОП 2 -->
+                                    <div id="componentcard2" class="card-body">
+                                        <h4 class="card-title">Контролируемые показатели</h4>
+                                        <p class="card-title-desc">Оборотная вода</p>
+                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                            {% csrf_token %}
+                                            {% for field in forms.site2 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site2.action.value }}" id="id_action">
+                                                {% else %}
+                                                    <div class="mb-3" style="display: flex; align-items: center;">
+                                                        <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit"
+                                                    class="btn btn-primary waves-effect waves-light mt-2"
+                                                    id="sa-custom">Отправить
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                    <!-- МОП 3 -->
+                                    <div id="componentcard3" class="card-body">
+                                        <h4 class="card-title">Контролируемые показатели</h4>
+                                        <p class="card-title-desc">Оборотная вода</p>
+                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                            {% csrf_token %}
+                                            {% for field in forms.site3 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site3.action.value }}" id="id_action">
+                                                {% else %}
+                                                    <div class="mb-3" style="display: flex; align-items: center;">
+                                                        <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit"
+                                                    class="btn btn-primary waves-effect waves-light mt-2"
+                                                    id="sa-custom">Отправить
+                                            </button>
                                         </form>
                                     </div>
                                 </div>
 
+                                <!-- МОП Установка 2 -->
+                                <div class="tab-pane fade show active" id="location2" role="tabpanel"
+                                     aria-labelledby="location2-tab">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-3">
+                                            <h4 class="card-title" for="plant_unit">Место отбора проб</h4>
+                                            <select class="form-select" name="plant_unit" id="plant_unit">
+                                                <option selected>Выбрать..</option>
+                                                <option name="selectcomp4" value="4">Аналитическая точка насосов Р-02А/В/С
+                                                </option>
+                                                <option name="selectcomp5" value="5">Аналитическая точка выкидных насосов Р-01А/В/С/Д
+                                                </option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- МОП 4 -->
+                                    <div id="componentcard4" class="card-body">
+                                        <h4 class="card-title">Контролируемые показатели</h4>
+                                        <p class="card-title-desc">Подпиточная вода</p>
+                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                            {% csrf_token %}
+                                            {{ forms.site4 }}
+                                            <button type="submit"
+                                                    class="btn btn-primary waves-effect waves-light mt-2"
+                                                    id="sa-custom">Отправить
+                                            </button>
+                                        </form>
+                                    </div>
+
+                                    <!-- МОП 5 -->
+                                    <div id="componentcard5" class="card-body">
+                                        <h4 class="card-title">Контролируемые показатели</h4>
+                                        <p class="card-title-desc">Оборотная вода</p>
+                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                            {% csrf_token %}
+                                            {{ forms.site5 }}
+                                            <button type="submit"
+                                                    class="btn btn-primary waves-effect waves-light mt-2"
+                                                    id="sa-custom">Отправить
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!-- МОП Установка 3 -->
+                                <div class="tab-pane fade show active" id="location3" role="tabpanel"
+                                     aria-labelledby="location3-tab">
+                                    <div class="row">
+                                        <div class="col-lg-6 mb-3">
+                                            <h4 class="card-title">Место отбора проб</h4>
+                                            <select class="form-select" name="plant_unit" id="plant_unit">
+                                                <option selected>Выбрать..</option>
+                                                <option name="selectcomp6" value="6">Аналитическая точка насосов Р-01А/В/С/Д</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <!-- МОП 6 -->
+                                    <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        {% csrf_token %}
+                                        <div class="row">
+                                            <div class="col-lg-6 mb-3">
+                                                <label for="water_type">Контролируемая вода</label>
+                                                <select class="form-select" name="water_type" id="water_type">
+                                                    <option selected>Выбрать..</option>
+                                                    <option value="1">Оборотная</option>
+                                                    <option value="2">Приточная</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div id="componentcard6" class="card-body">
+                                        <h4 class="card-title">Контролируемые показатели</h4>
+                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                            {% csrf_token %}
+                                            {{ forms.site6 }}
+                                            <button type="submit"
+                                                    class="btn btn-primary waves-effect waves-light mt-2"
+                                                    id="sa-custom">Отправить
+                                            </button>
+                                        </form>
+                                    </div>
+                                    </form>
+                                </div>
+{##}
+{#                                <!-- МОП Установка 4 -->#}
+{#                                <div class="tab-pane fade show active" id="location4" role="tabpanel"#}
+{#                                     aria-labelledby="location4-tab">#}
+{#                                    <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">#}
+{#                                        {% csrf_token %}#}
+{#                                        <div class="row">#}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="plant_unit">Место отбора проб</label>#}
+{#                                                <select class="form-select" name="plant_unit" id="plant_unit">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="7">Трубопровод Урал (в районе клапанной сборки#}
+{#                                                        позиций 77-FV-203) 77-SN-001#}
+{#                                                    </option>#}
+{#                                                    <option value="8">Выход из ёмкости 77-ТК-103 77-SN-004</option>#}
+{#                                                    <option value="9">На входе в боковой фильтр позиции#}
+{#                                                        77-Z-003 77-SN-006#}
+{#                                                    </option>#}
+{#                                                    <option value="10">Подача на градирню в районе 77-ТI-205#}
+{#                                                        77-SN-007#}
+{#                                                    </option>#}
+{#                                                    <option value="11">На выходе с бокового фильтра 77-Z-003,#}
+{#                                                        77-SN-008#}
+{#                                                    </option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{##}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="water_type">Контролируемая вода</label>#}
+{#                                                <select class="form-select" name="water_type" id="water_type">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="1">Оборотная</option>#}
+{#                                                    <option value="2">Приточная</option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{##}
+{#                                        <div id="componentcard7" class="card-body">#}
+{#                                            <h4 class="card-title">Контролируемые показатели</h4>#}
+{#                                            <h5>Оборотная вода</h5>#}
+{#                                            {{ forms.site7 }}#}
+{#                                        </div>#}
+{#                                        <button type="submit"#}
+{#                                                class="btn btn-primary waves-effect waves-light mt-2"#}
+{#                                                id="sa-custom">Отправить#}
+{#                                        </button>#}
+{#                                    </form>#}
+{##}
+{#                                    <br>#}
+{#                                    <hr>#}
+{#                                    <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">#}
+{#                                        {% csrf_token %}#}
+{#                                        <div class="row">#}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="plant_unit">Место отбора проб Установка 4</label>#}
+{#                                                <select class="form-select" name="plant_unit" id="plant_unit">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="7">Трубопровод Урал (в районе клапанной сборки#}
+{#                                                        позиций 77-FV-203) 77-SN-001#}
+{#                                                    </option>#}
+{#                                                    <option value="8">Выход из ёмкости 77-ТК-103 77-SN-004</option>#}
+{#                                                    <option value="9">На входе в боковой фильтр позиции#}
+{#                                                        77-Z-003 77-SN-006#}
+{#                                                    </option>#}
+{#                                                    <option value="10">Подача на градирню в районе 77-ТI-205#}
+{#                                                        77-SN-007#}
+{#                                                    </option>#}
+{#                                                    <option value="11">На выходе с бокового фильтра 77-Z-003,#}
+{#                                                        77-SN-008#}
+{#                                                    </option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{##}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="water_type">Контролируемая вода</label>#}
+{#                                                <select class="form-select" name="water_type" id="water_type">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="1">Оборотная</option>#}
+{#                                                    <option value="2">Приточная</option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{##}
+{#                                        <div id="componentcard8" class="card-body">#}
+{#                                            <h4 class="card-title">Контролируемые показатели</h4>#}
+{#                                            <h5>Оборотная вода</h5>#}
+{#                                            {{ forms.site8 }}#}
+{#                                        </div>#}
+{#                                        <button type="submit"#}
+{#                                                class="btn btn-primary waves-effect waves-light mt-2"#}
+{#                                                id="sa-custom">Отправить#}
+{#                                        </button>#}
+{#                                    </form>#}
+{##}
+{#                                    <br>#}
+{#                                    <hr>#}
+{#                                    <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">#}
+{#                                        {% csrf_token %}#}
+{#                                        <div class="row">#}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="plant_unit">Место отбора проб Установка 4</label>#}
+{#                                                <select class="form-select" name="plant_unit" id="plant_unit">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="7">Трубопровод Урал (в районе клапанной сборки#}
+{#                                                        позиций 77-FV-203) 77-SN-001#}
+{#                                                    </option>#}
+{#                                                    <option value="8">Выход из ёмкости 77-ТК-103 77-SN-004</option>#}
+{#                                                    <option value="9">На входе в боковой фильтр позиции#}
+{#                                                        77-Z-003 77-SN-006#}
+{#                                                    </option>#}
+{#                                                    <option value="10">Подача на градирню в районе 77-ТI-205#}
+{#                                                        77-SN-007#}
+{#                                                    </option>#}
+{#                                                    <option value="11">На выходе с бокового фильтра 77-Z-003,#}
+{#                                                        77-SN-008#}
+{#                                                    </option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{##}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="water_type">Контролируемая вода</label>#}
+{#                                                <select class="form-select" name="water_type" id="water_type">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="1">Оборотная</option>#}
+{#                                                    <option value="2">Приточная</option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{##}
+{#                                        <div id="componentcard9" class="card-body">#}
+{#                                            <h4 class="card-title">Контролируемые показатели</h4>#}
+{#                                            <h5>Оборотная вода</h5>#}
+{#                                            {{ forms.site9 }}#}
+{#                                        </div>#}
+{#                                        <button type="submit"#}
+{#                                                class="btn btn-primary waves-effect waves-light mt-2"#}
+{#                                                id="sa-custom">Отправить#}
+{#                                        </button>#}
+{#                                    </form>#}
+{##}
+{#                                    <br>#}
+{#                                    <hr>#}
+{#                                    <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">#}
+{#                                        {% csrf_token %}#}
+{#                                        <div class="row">#}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="plant_unit">Место отбора проб Установка 4</label>#}
+{#                                                <select class="form-select" name="plant_unit" id="plant_unit">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="7">Трубопровод Урал (в районе клапанной сборки#}
+{#                                                        позиций 77-FV-203) 77-SN-001#}
+{#                                                    </option>#}
+{#                                                    <option value="8">Выход из ёмкости 77-ТК-103 77-SN-004</option>#}
+{#                                                    <option value="9">На входе в боковой фильтр позиции#}
+{#                                                        77-Z-003 77-SN-006#}
+{#                                                    </option>#}
+{#                                                    <option value="10">Подача на градирню в районе 77-ТI-205#}
+{#                                                        77-SN-007#}
+{#                                                    </option>#}
+{#                                                    <option value="11">На выходе с бокового фильтра 77-Z-003,#}
+{#                                                        77-SN-008#}
+{#                                                    </option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{##}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="water_type">Контролируемая вода</label>#}
+{#                                                <select class="form-select" name="water_type" id="water_type">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="1">Оборотная</option>#}
+{#                                                    <option value="2">Приточная</option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{##}
+{#                                        <div id="componentcard10" class="card-body">#}
+{#                                            <h4 class="card-title">Контролируемые показатели</h4>#}
+{#                                            <h5>Оборотная вода</h5>#}
+{#                                            {{ forms.site10 }}#}
+{#                                        </div>#}
+{#                                        <button type="submit"#}
+{#                                                class="btn btn-primary waves-effect waves-light mt-2"#}
+{#                                                id="sa-custom">Отправить#}
+{#                                        </button>#}
+{#                                    </form>#}
+{##}
+{#                                    <br>#}
+{#                                    <hr>#}
+{#                                    <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">#}
+{#                                        {% csrf_token %}#}
+{#                                        <div class="row">#}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="plant_unit">Место отбора проб Установка 4</label>#}
+{#                                                <select class="form-select" name="plant_unit" id="plant_unit">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="7">Трубопровод Урал (в районе клапанной сборки#}
+{#                                                        позиций 77-FV-203) 77-SN-001#}
+{#                                                    </option>#}
+{#                                                    <option value="8">Выход из ёмкости 77-ТК-103 77-SN-004</option>#}
+{#                                                    <option value="9">На входе в боковой фильтр позиции#}
+{#                                                        77-Z-003 77-SN-006#}
+{#                                                    </option>#}
+{#                                                    <option value="10">Подача на градирню в районе 77-ТI-205#}
+{#                                                        77-SN-007#}
+{#                                                    </option>#}
+{#                                                    <option value="11">На выходе с бокового фильтра 77-Z-003,#}
+{#                                                        77-SN-008#}
+{#                                                    </option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{##}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="water_type">Контролируемая вода</label>#}
+{#                                                <select class="form-select" name="water_type" id="water_type">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="1">Оборотная</option>#}
+{#                                                    <option value="2">Приточная</option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{##}
+{#                                        <div id="componentcard11" class="card-body">#}
+{#                                            <h4 class="card-title">Контролируемые показатели</h4>#}
+{#                                            <h5>Оборотная вода</h5>#}
+{#                                            {{ forms.site11 }}#}
+{#                                        </div>#}
+{#                                        <button type="submit"#}
+{#                                                class="btn btn-primary waves-effect waves-light mt-2"#}
+{#                                                id="sa-custom">Отправить#}
+{#                                        </button>#}
+{#                                    </form>#}
+{#                                </div>#}
+{##}
+{#                                <!-- МОП Установка 5 -->#}
+{#                                <div class="tab-pane fade show active" id="location5" role="tabpanel"#}
+{#                                     aria-labelledby="location5-tab">#}
+{#                                    <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">#}
+{#                                        {% csrf_token %}#}
+{#                                        <div class="row">#}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="plant_unit">Место отбора проб</label>#}
+{#                                                <select class="form-select" name="plant_unit" id="plant_unit">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="12">Очистные сооружения поз.119. С колодца промстоков №1 (точка №4 вход)#}
+{#                                                    </option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{##}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="water_type">Контролируемая вода</label>#}
+{#                                                <select class="form-select" name="water_type" id="water_type">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="1">Оборотная</option>#}
+{#                                                    <option value="2">Приточная</option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{##}
+{#                                        <div id="componentcard12" class="card-body">#}
+{#                                            <h4 class="card-title">Контролируемые показатели</h4>#}
+{#                                            <h5>Оборотная вода</h5>#}
+{#                                            {{ forms.site12 }}#}
+{#                                        </div>#}
+{#                                        <button type="submit"#}
+{#                                                class="btn btn-primary waves-effect waves-light mt-2"#}
+{#                                                id="sa-custom">Отправить#}
+{#                                        </button>#}
+{#                                    </form>#}
+{#                                </div>#}
+{##}
+{#                                <!-- МОП Установка 6 -->#}
+{#                                <div class="tab-pane fade show active" id="location6" role="tabpanel"#}
+{#                                     aria-labelledby="location6-tab">#}
+{#                                    <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">#}
+{#                                        {% csrf_token %}#}
+{#                                        <div class="row">#}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="plant_unit">Место отбора проб</label>#}
+{#                                                <select class="form-select" name="plant_unit" id="plant_unit">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="13">Пробоотборник 001 перед БОС / А1 –SN -001#}
+{#                                                    </option>#}
+{#                                                    <option value="14">Сточная вода после биологических очистных#}
+{#                                                        сооружений А1 –SN -009#}
+{#                                                    </option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{##}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="water_type">Контролируемая вода</label>#}
+{#                                                <select class="form-select" name="water_type" id="water_type">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="1">Оборотная</option>#}
+{#                                                    <option value="2">Приточная</option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{##}
+{#                                        <div id="componentcard13" class="card-body">#}
+{#                                            <h4 class="card-title">Контролируемые показатели</h4>#}
+{#                                            <h5>Оборотная вода</h5>#}
+{#                                            {{ forms.site13 }}#}
+{#                                        </div>#}
+{#                                        <button type="submit"#}
+{#                                                class="btn btn-primary waves-effect waves-light mt-2"#}
+{#                                                id="sa-custom">Отправить#}
+{#                                        </button>#}
+{#                                    </form>#}
+{##}
+{#                                    <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">#}
+{#                                        {% csrf_token %}#}
+{#                                        <div class="row">#}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="plant_unit">Место отбора проб Установка 6</label>#}
+{#                                                <select class="form-select" name="plant_unit" id="plant_unit">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="13">Пробоотборник 001 перед БОС / А1 –SN -001#}
+{#                                                    </option>#}
+{#                                                    <option value="14">Сточная вода после биологических очистных#}
+{#                                                        сооружений А1 –SN -009#}
+{#                                                    </option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{##}
+{#                                            <div class="col-lg-6 mb-3">#}
+{#                                                <label for="water_type">Контролируемая вода</label>#}
+{#                                                <select class="form-select" name="water_type" id="water_type">#}
+{#                                                    <option selected>Выбрать..</option>#}
+{#                                                    <option value="1">Оборотная</option>#}
+{#                                                    <option value="2">Приточная</option>#}
+{#                                                </select>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{##}
+{#                                        <div id="componentcard14" class="card-body">#}
+{#                                            <h4 class="card-title">Контролируемые показатели</h4>#}
+{#                                            <h5>Оборотная вода</h5>#}
+{#                                            {{ forms.site14 }}#}
+{#                                        </div>#}
+{#                                        <button type="submit"#}
+{#                                                class="btn btn-primary waves-effect waves-light mt-2"#}
+{#                                                id="sa-custom">Отправить#}
+{#                                        </button>#}
+{#                                    </form>#}
+{#                                </div>#}
                             </div>
                         </div>
                     </div>
@@ -117,7 +588,6 @@
             </div>
         </div>
     </div>
-
     <div class="col-xl-3">
         <div class="col-lg-12">
             <div class="card">
@@ -286,9 +756,9 @@
                                         <div class="avatar-group-item">
                                             <a href="javascript: void(0);" class="d-inline-block">
                                                 <div class="avatar-xs">
-                                                                        <span class="avatar-title rounded-circle bg-danger text-white font-size-16">
-                                                                            9+
-                                                                        </span>
+                                                    <span class="avatar-title rounded-circle bg-danger text-white font-size-16">
+                                                        9+
+                                                    </span>
                                                 </div>
                                             </a>
                                         </div>
@@ -437,12 +907,94 @@
         </div>
     </div>
 </div>
+
+
 {% endblock %}
+
 {% block extra_javascript %}
 
-<script>
+<!--<script>-->
+<!--$(document).ready(function(){-->
+<!--    $("select").change(function(){-->
+<!--        $(this).find("option:selected").each(function(){-->
+<!--            var optionValue = $(this).attr("value");-->
+<!--            if(optionValue){-->
+<!--                $(".box").not("." + optionValue).hide();-->
+<!--                $("." + optionValue).show();-->
+<!--            } else{-->
+<!--                $(".box").hide();-->
+<!--            }-->
+<!--        });-->
+<!--    }).change();-->
+<!--});-->
+<!--</script>-->
 
+
+<script>
+    $(function() {
+    $('#componentcard1').hide();
+    $('#plant_unit').change(function(){
+        if($('#plant_unit').val() == '1') {
+            $('#componentcard1').show();
+        } else {
+            $('#componentcard1').hide();
+        }
+    });
+});
 </script>
+
+<script>
+    $(function() {
+    $('#componentcard2').hide();
+    $('#plant_unit').change(function(){
+        if($('#plant_unit').val() == '2') {
+            $('#componentcard2').show();
+        } else {
+            $('#componentcard2').hide();
+        }
+    });
+});
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard3').hide();
+    $('#plant_unit').change(function(){
+        if($('#plant_unit').val() == '3') {
+            $('#componentcard3').show();
+        } else {
+            $('#componentcard3').hide();
+        }
+    });
+});
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard4').hide();
+    $('#plant_unit').change(function(){
+        if($('#plant_unit').val() == '4') {
+            $('#componentcard4').show();
+        } else {
+            $('#componentcard4').hide();
+        }
+    });
+});
+</script>
+
+<script>
+    $(function() {
+    $('#componentcard5').hide();
+    $('#plant_unit').change(function(){
+        if($('#plant_unit').val() == '5') {
+            $('#componentcard5').show();
+        } else {
+            $('#componentcard5').hide();
+        }
+    });
+});
+</script>
+
 <!-- select -->
 <script src="{% static 'libs/select2/dist/js/select2.min.js' %}"></script>
 <script src="{% static 'js/pages/ecommerce-select2.init.js' %}"></script>
