@@ -45,9 +45,7 @@ urlpatterns = [
     path('projects/', include('projects.urls')),
     # Tasks
     path('tasks/', include('tasks.urls')),
-    # Blog
-    path('blog/', include('blog.urls')),
-    # Blog
+    # Contacts
     path('contacts/', include('contacts.urls')),
     # Authencation
     # path('authentication/',include('authentication.urls')),

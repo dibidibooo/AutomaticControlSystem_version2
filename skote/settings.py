@@ -57,7 +57,6 @@ INSTALLED_APPS = [
     'projects',
     'tasks',
     'contacts',
-    'blog',
     'pages',
     'components',
     # Third Party App
@@ -110,7 +109,7 @@ WSGI_APPLICATION = 'skote.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dmsdatabase_ver2',
+        'NAME': 'dmsdatabase_2',
         'USER': 'postgres',
         'PASSWORD': 'Alaska_71749809',
         'HOST': 'localhost',
