@@ -1,7 +1,7 @@
-options = {
+var options = {
     series: [{
-        name: "ETH",
-        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+        name: "Нефтепродукт",
+
     }],
     chart: {
         type: "area",
@@ -46,7 +46,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Значение рН",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -92,7 +92,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общие взвешенные твердые частицы",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -138,7 +138,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Фосфор",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -184,7 +184,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Щелочность общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -230,7 +230,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Жесткость общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -276,7 +276,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Солесодержание",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -322,7 +322,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Хлориды",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -368,7 +368,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Сульфаты",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -414,7 +414,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Жесткость кальциевая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -460,7 +460,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Жесткость магниевая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -506,7 +506,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Железо",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -552,7 +552,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Нефтепродукт",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -598,7 +598,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Значение рН",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -644,7 +644,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общие взвешенные твердые частицы",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -690,7 +690,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Взвешенные вещества",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -736,7 +736,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Жесткость общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -782,7 +782,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Железо",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -827,7 +827,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Сухой остаток",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -873,7 +873,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Щелочность общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -919,7 +919,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Солесодержание",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -965,7 +965,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Хлориды",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1011,7 +1011,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Сульфаты",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1057,7 +1057,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: " Жесткость кальциевая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1103,7 +1103,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Жесткость магниевая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1149,7 +1149,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Значение рН",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1195,7 +1195,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общая жесткость",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1241,7 +1241,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Кальциевая жесткость",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1287,7 +1287,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Значение рН",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1333,7 +1333,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общее солесодержание",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1379,7 +1379,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Содержание хлоридов",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1425,7 +1425,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Содержание сульфатов",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1471,7 +1471,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Содержание нефтепродуктов",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1517,7 +1517,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общие взвешенные вещества",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1563,7 +1563,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Щелочность общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1609,7 +1609,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Железо",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1655,7 +1655,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общая жесткость",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1701,7 +1701,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Кальциевая жесткость",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1747,7 +1747,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Значение рН",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1793,7 +1793,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общее солесодержание",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1839,7 +1839,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Содержание хлоридов",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1885,7 +1885,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Содержание сульфатов",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1931,7 +1931,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Содержание нефтепродуктов",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -1977,7 +1977,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общие взвешенные вещества",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2023,7 +2023,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Щелочность общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2069,7 +2069,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Железо",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2115,7 +2115,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общая жесткость",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2161,7 +2161,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Кальциевая жесткость",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2207,7 +2207,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Значение рН",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2253,7 +2253,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общее солесодержание",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2299,7 +2299,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Содержание хлоридов",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2345,7 +2345,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Содержание сульфатов",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2391,7 +2391,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Содержание нефтепродуктов",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2437,7 +2437,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общие взвешенные вещества",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2483,7 +2483,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Щелочность по фенолу",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2529,7 +2529,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Щелочность общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2575,7 +2575,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Железо",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2621,7 +2621,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общие взвешенные твердые частицы",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2667,7 +2667,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Хлориды",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2713,7 +2713,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Сульфаты",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2759,7 +2759,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Значение рН",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2805,7 +2805,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Щелочность общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2851,7 +2851,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Жесткость кальциевая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2897,7 +2897,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Жесткость общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2943,7 +2943,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Железо общее",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -2989,7 +2989,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общие взвешенные твердые частицы",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3035,7 +3035,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Значение рН",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3081,7 +3081,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Хлориды",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3127,7 +3127,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Фосфор",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3173,7 +3173,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Нефтепродукт",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3219,7 +3219,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Щелочность общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3265,7 +3265,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Жесткость кальциевая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3311,7 +3311,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Жесткость общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3357,7 +3357,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Железо общее",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3403,7 +3403,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Солесодержание",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3449,7 +3449,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общие взвешенные твердые частицы",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3495,7 +3495,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Хлориды",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3541,7 +3541,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Сульфаты",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3587,7 +3587,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Значение рН",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3633,7 +3633,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Фосфор",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3679,7 +3679,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Щелочность общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3725,7 +3725,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Жесткость кальциевая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3771,7 +3771,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Жесткость общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3817,7 +3817,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Железо общее",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3863,7 +3863,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Солесодержание",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3909,7 +3909,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Остаточный хлор",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -3955,7 +3955,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Нефтепродукт",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4001,7 +4001,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Солесодержание",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4047,7 +4047,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Общие взвешенные твёрдые частицы",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4093,7 +4093,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Нефтепродукт",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4139,7 +4139,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Взвешенные вещества",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4185,7 +4185,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Значение рН",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4231,7 +4231,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "ХПК",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4277,7 +4277,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "АПАВ",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4323,7 +4323,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Аммонийный азот",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4369,7 +4369,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Значение рН",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4415,7 +4415,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Взвешенные вещества",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4461,7 +4461,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "ХПК",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4507,7 +4507,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Нефтепродукт",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4553,7 +4553,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "БПК5",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4599,7 +4599,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Фенолы",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4645,7 +4645,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "АПАВ",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4691,7 +4691,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Хлориды",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4737,7 +4737,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Сульфаты",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4783,7 +4783,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Железо",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4829,7 +4829,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Аммонийный азот",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4875,7 +4875,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Азот нитратов",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4921,7 +4921,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Азот нитритов",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -4967,7 +4967,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Щёлочность общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -5013,7 +5013,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Жёсткость общая",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -5059,7 +5059,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Окисляемость",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -5105,7 +5105,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Солесодержание",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
@@ -5151,7 +5151,7 @@ options = {
 
 options = {
     series: [{
-        name: "ETH",
+        name: "Остаточный хлор",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {

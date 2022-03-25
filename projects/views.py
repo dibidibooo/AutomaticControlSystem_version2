@@ -483,6 +483,7 @@ class ResultsView(LoginRequiredMixin, View):
             'pageview': "Projects",
             'components': components,
             'tasks': tasks,
+            'allresults1': ComponentsSite1.objects.all(),
             'results1': results_site1,
             'results2': results_site2,
             'results3': results_site3,
