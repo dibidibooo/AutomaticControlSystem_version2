@@ -64,14 +64,11 @@ class AnalysisCreateView(MultiFormsView):
     success_url = reverse_lazy('projects-createview')
 
     def get_context_data(self, **kwargs):
-        tasks = TaskAssign.objects.all()
-        components = Component.objects.all()
-        context = {
-            'heading': "Загрузка анализов",
-            'pageview': "Projects",
-            'components': components,
-            'tasks': tasks,
-        }
+        context = super().get_context_data(**kwargs)
+        context['heading'] = 'Загрузка анализов'
+        context['pageview'] = 'Projects'
+        context['components'] = Component.objects.all()
+        context['tasks'] = TaskAssign.objects.all()
         return context
 
     # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
