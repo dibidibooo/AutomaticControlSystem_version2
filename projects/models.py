@@ -33,7 +33,7 @@ class WaterType(models.Model):
 
 
 class Component(models.Model):
-    title = models.CharField(max_length=50, verbose_name='Название компонента')
+    title = models.CharField(max_length=100, verbose_name='Название компонента')
     measurement = models.CharField(verbose_name='Единица измерения', max_length=50)
     limits = models.CharField(verbose_name='Допустимые нормы не более', max_length=50, blank=True)
     period = models.CharField(verbose_name='Периодичность отбора', max_length=100, blank=True)
@@ -256,7 +256,7 @@ class ComponentsSite14(models.Model):
     water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component14')
 
 
-class Tasks(models.Model):
+class Task(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название задачи')
     description = models.TextField(max_length=1000, verbose_name='Описание задачи')
 
@@ -265,7 +265,7 @@ class Tasks(models.Model):
 
 
 class TaskAssign(models.Model):
-    task = models.ForeignKey('projects.Tasks', related_name='assign', on_delete=models.CASCADE)
+    task = models.ForeignKey('projects.Task', related_name='assign', on_delete=models.CASCADE)
     user = models.ForeignKey(get_user_model(), related_name='assign', on_delete=models.CASCADE)
-    start_date = models.DateTimeField(verbose_name='Дата назначения задачи')
-    deadline = models.DateTimeField(verbose_name='Срок выполнения задачи')
+    start_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата назначения задачи')
+    deadline = models.DateTimeField(auto_now_add=True, verbose_name='Срок выполнения задачи')

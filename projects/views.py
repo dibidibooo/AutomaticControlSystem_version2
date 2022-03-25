@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import DetailView, ListView
 
 from .forms import (
     Site1Form,
@@ -34,7 +35,10 @@ from .models import (
     ComponentsSite11,
     ComponentsSite12,
     ComponentsSite13,
-    ComponentsSite14, Component,
+    ComponentsSite14,
+    Component,
+    Task,
+    TaskAssign,
 )
 from .multiforms import MultiFormsView
 
@@ -60,10 +64,14 @@ class AnalysisCreateView(MultiFormsView):
     success_url = reverse_lazy('projects-createview')
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['heading'] = 'Загрузка анализов'
-        context['pageview'] = 'Projects'
-        context['components'] = Component.objects.all()
+        tasks = TaskAssign.objects.all()
+        components = Component.objects.all()
+        context = {
+            'heading': "Загрузка анализов",
+            'pageview': "Projects",
+            'components': components,
+            'tasks': tasks,
+        }
         return context
 
     # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
@@ -98,6 +106,8 @@ class AnalysisCreateView(MultiFormsView):
             sampling_site_id=1,
             water_type_id=1
         )
+        task_create = TaskCreate()
+        task_create.site1_task(form)
         return HttpResponseRedirect(self.success_url)
 
     # Водоблок - 2 | Установка АВТ напротив погружного холодильника №42
@@ -114,6 +124,8 @@ class AnalysisCreateView(MultiFormsView):
             sampling_site_id=2,
             water_type_id=1
         )
+        task_create = TaskCreate()
+        task_create.site2_task(form)
         return HttpResponseRedirect(self.success_url)
 
     # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12
@@ -468,11 +480,12 @@ class ResultsView(LoginRequiredMixin, View):
         # results_site12 = self.get_results12()
         # results_site13 = self.get_results13()
         # results_site14 = self.get_results14()
-
+        tasks = TaskAssign.objects.all()
         context = {
             'heading': "Результаты",
             'pageview': "Projects",
             'components': components,
+            'tasks': tasks,
             'results1': results_site1,
             'results2': results_site2,
             'results3': results_site3,
@@ -587,3 +600,39 @@ class ResultsView(LoginRequiredMixin, View):
     #         if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
     #             results_site[key] = value
     #     return results_site
+
+
+class TaskCreate:
+    def site1_task(self, form):
+        if float(form.cleaned_data['oil_prod']) > float(list(Component.objects.filter(title__contains='[1|1] Нефтепродукт').values('limits'))[0].get('limits')):
+            task = Task.objects.get(pk=1)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1
+            )
+        if float(form.cleaned_data['ph']) > float(list(Component.objects.filter(title__contains='[1|1] Значение рН').values('limits'))[0].get('limits')):
+            task = Task.objects.get(pk=2)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1
+            )
+
+    def site2_task(self, form):
+        if float(form.cleaned_data['oil_prod']) > float(list(Component.objects.filter(title__contains='[1|2] Нефтепродукт').values('limits'))[0].get('limits')):
+            task = Task.objects.get(pk=1)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1
+            )
+        if form.cleaned_data['suspended_solids'] > list(Component.objects.filter(title__contains='[1|2] Общие взвешенные твердые частицы').values('limits'))[0].get('limits'):
+            task = Task.objects.get(pk=3)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1
+            )
+        if form.cleaned_data['suspended_solids'] < list(Component.objects.filter(title__contains='[1|2] Общие взвешенные твердые частицы').values('limits'))[0].get('limits'):
+            task = Task.objects.get(pk=4)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1
+            )
