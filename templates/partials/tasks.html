@@ -31,10 +31,11 @@
                             <div>
                                 <h5 class="font-size-15">
                                     <a href="javascript: void(0);" class="text-dark" id="task-name">
-                                        Topnav layout design {{ task.task.title }}
+                                        {{ task.task.title }}
                                     </a>
                                 </h5>
                                 <p class="text-muted mb-4">{{ task.task.description }}</p>
+                                <p class="text-muted mb-4">{{ task.deadline }}</p>
                             </div>
                             <div class="avatar-group float-start task-assigne">
                                 <div class="avatar-group-item">
@@ -69,10 +70,10 @@
                                 </div>
                             </div>
 
-                            <div class="text-end">
-                                <h5 class="font-size-15 mb-1" id="task-budget">$ 145</h5>
-                                <p class="mb-0 text-muted">Budget</p>
-                            </div>
+{#                            <div class="text-end">#}
+{#                                <h5 class="font-size-15 mb-1" id="task-budget">$ 145</h5>#}
+{#                                <p class="mb-0 text-muted">Budget</p>#}
+{#                            </div>#}
                         </div>
                     </div>
                     {% endfor %}
