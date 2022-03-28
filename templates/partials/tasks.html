@@ -26,22 +26,46 @@
                             </div> <!-- end dropdown -->
                             <div class="float-end ms-2">
                                 <span class="badge rounded-pill badge-soft-secondary font-size-12"
-                                      id="task-status">Запланировано</span>
+                                      id="task-status">Waiting</span>
                             </div>
                             <div>
                                 <h5 class="font-size-15">
                                     <a href="javascript: void(0);" class="text-dark" id="task-name">
-                                        <b>Задача - </b>{{ task.task.title }}
+                                        {{ task.task.title }}
                                     </a>
                                 </h5>
                                 <p class="text-muted mb-4">{{ task.task.description }}</p>
+                                <p class="text-muted mb-4">{{ task.deadline }}</p>
                             </div>
                             <div class="avatar-group float-start task-assigne">
                                 <div class="avatar-group-item">
                                     <a href="javascript: void(0);" class="d-inline-block"
-                                       value="member-1">
-                                        <img src="{% static 'images/users/avatar-1.jpg'%}" alt=""
+                                       value="member-4">
+                                        <img src="{% static 'images/users/avatar-4.jpg'%}" alt=""
                                              class="rounded-circle avatar-xs">
+                                    </a>
+                                </div>
+                                <div class="avatar-group-item">
+                                    <a href="javascript: void(0);" class="d-inline-block"
+                                       value="member-5">
+                                        <img src="{% static 'images/users/avatar-5.jpg'%}" alt=""
+                                             class="rounded-circle avatar-xs">
+                                    </a>
+                                </div>
+                                <div class="avatar-group-item">
+                                    <a href="javascript: void(0);" class="d-inline-block"
+                                       value="member-6">
+                                        <img src="{% static 'images/users/avatar-2.jpg'%}" alt=""
+                                             class="rounded-circle avatar-xs">
+                                    </a>
+                                </div>
+                                <div class="avatar-group-item">
+                                    <a href="javascript: void(0);" class="d-inline-block">
+                                        <div class="avatar-xs">
+                                            <span class="avatar-title rounded-circle bg-info text-white font-size-16">
+                                                3+
+                                            </span>
+                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -51,7 +75,7 @@
                 </div>
 
                 <div class="text-center d-grid">
-                    <a href="{% url 'tasks-kanbanboard' %}"
+                    <a href="{% url 'ecommerce-cart' %}"
                        class="btn btn-primary waves-effect waves-light addtask-btn">Перейти в раздел
                         редактирования</a>
                 </div>

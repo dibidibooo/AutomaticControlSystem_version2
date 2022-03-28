@@ -1,5 +1,6 @@
-from django.db import models
 from django.contrib.auth import get_user_model
+from django.db import models
+
 
 class PlantUnit(models.Model):
     title = models.CharField(verbose_name='Название установки', max_length=50)
@@ -35,7 +36,8 @@ class WaterType(models.Model):
 class Component(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название компонента')
     measurement = models.CharField(verbose_name='Единица измерения', max_length=50)
-    limits = models.CharField(verbose_name='Допустимые нормы не более', max_length=50, blank=True)
+    limit_lo = models.CharField(verbose_name='Допустимые нормы не ниже', max_length=50, null=True, blank=True)
+    limit_hi = models.CharField(verbose_name='Допустимые нормы не более', max_length=50, null=True, blank=True)
     period = models.CharField(verbose_name='Периодичность отбора', max_length=100, blank=True)
     standards = models.CharField(verbose_name='Наименование НД и методы испытаний', max_length=100, blank=True)
     recommendation1 = models.CharField(verbose_name='Рекомендация выше нормы', max_length=200, null=True, blank=True)
@@ -224,7 +226,7 @@ class ComponentsSite12(models.Model):
     water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component12')
 
 
-# БОС -> Пробоотборник 001 перед БОС / А1 –SN -001
+# БОС -> Пробоотборник 001 перед БОС / А1–SN-001
 class ComponentsSite13(models.Model):
     oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
     suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Взвешенные вещества')
@@ -244,7 +246,7 @@ class ComponentsSite13(models.Model):
     water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component13')
 
 
-# БОС -> Сточная вода после биологических очистных сооружений А1 –SN -009
+# БОС -> Сточная вода после биологических очистных сооружений А1–SN-009
 class ComponentsSite14(models.Model):
     alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
     hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')
@@ -259,6 +261,7 @@ class ComponentsSite14(models.Model):
 class Task(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название задачи')
     description = models.TextField(max_length=1000, verbose_name='Описание задачи')
+    execution_period = models.IntegerField(null=True, blank=True, verbose_name='Срок выполнения задачи в часах')
 
     def __str__(self):
         return self.title
@@ -268,4 +271,4 @@ class TaskAssign(models.Model):
     task = models.ForeignKey('projects.Task', related_name='assign', on_delete=models.CASCADE)
     user = models.ForeignKey(get_user_model(), related_name='assign', on_delete=models.CASCADE)
     start_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата назначения задачи')
-    deadline = models.DateTimeField(auto_now_add=True, verbose_name='Срок выполнения задачи')
+    deadline = models.DateTimeField(null=True, blank=True, verbose_name='Срок выполнения задачи')
