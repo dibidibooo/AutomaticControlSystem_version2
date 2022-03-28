@@ -1,7 +1,6 @@
 options = {
     series: [{
         name: "Нефтепродукт",
-        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
         type: "area",
