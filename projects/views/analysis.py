@@ -1,8 +1,11 @@
+from datetime import datetime, timedelta
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import DetailView, ListView
 
 from projects.views.tasks import TaskCreate
 from projects.forms import (

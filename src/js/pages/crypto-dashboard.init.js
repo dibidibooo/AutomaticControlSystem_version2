@@ -171,7 +171,7 @@ var walletOptions = {
             background: '#f2f2f2',
             strokeWidth: '97%',
             opacity: 1,
-            margin: 12, 
+            margin: 12,
             dropShadow: {
                 enabled: false,
                 top: 0,

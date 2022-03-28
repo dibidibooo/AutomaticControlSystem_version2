@@ -39,6 +39,9 @@ var options = {
     },
     chart = new ApexCharts(document.querySelector("#area-sparkline-chart-1"), options);
 chart.render();
+
+
+
 options = {
     series: [{
         name: "ETH",

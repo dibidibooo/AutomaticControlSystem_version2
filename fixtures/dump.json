@@ -258,7 +258,11 @@
     "title": "[1|1] Фосфор",
     "measurement": "мг/дм³",
     "limit_lo": "1.5",
+<<<<<<< HEAD
     "limit_hi": "",
+=======
+    "limit_hi": "3",
+>>>>>>> b12885362af891c165f07e2e362d347ad33a856e
     "period": "1 раз в неделю воскресенье",
     "standards": "МВИ «Hach»",
     "recommendation1": "увеличить дозировку ингибитора",
@@ -3063,6 +3067,7 @@
   }
 },
 {
+<<<<<<< HEAD
   "model": "projects.componentssite2",
   "pk": 24,
   "fields": {
@@ -3279,6 +3284,8 @@
   }
 },
 {
+=======
+>>>>>>> b12885362af891c165f07e2e362d347ad33a856e
   "model": "projects.componentssite3",
   "pk": 3,
   "fields": {
@@ -3604,8 +3611,13 @@
   "model": "projects.task",
   "pk": 1,
   "fields": {
+<<<<<<< HEAD
     "title": "Увеличить продувку",
     "description": "Увеличить продувку",
+=======
+    "title": "Задача 1",
+    "description": "Описание задачи 1",
+>>>>>>> b12885362af891c165f07e2e362d347ad33a856e
     "execution_period": 24
   }
 },
@@ -3613,24 +3625,37 @@
   "model": "projects.task",
   "pk": 2,
   "fields": {
+<<<<<<< HEAD
     "title": "Уменьшить продувку",
     "description": "Уменьшить продувку",
     "execution_period": 24
+=======
+    "title": "Задача 2",
+    "description": "Описание задачи 2",
+    "execution_period": 48
+>>>>>>> b12885362af891c165f07e2e362d347ad33a856e
   }
 },
 {
   "model": "projects.task",
   "pk": 3,
   "fields": {
+<<<<<<< HEAD
     "title": "Устранить утечки технологических продуктов в оборотную воду",
     "description": "Устранить утечки технологических продуктов в оборотную воду",
     "execution_period": 168
+=======
+    "title": "Задача 3",
+    "description": "Описание задачи 3",
+    "execution_period": 36
+>>>>>>> b12885362af891c165f07e2e362d347ad33a856e
   }
 },
 {
   "model": "projects.task",
   "pk": 4,
   "fields": {
+<<<<<<< HEAD
     "title": "Увеличить дозировку ингибитора",
     "description": "Увеличить дозировку ингибитора",
     "execution_period": 168
@@ -3733,10 +3758,166 @@
     "title": "Уменьшить продувку",
     "description": "Уменьшить продувку",
     "execution_period": 168
+=======
+    "title": "Задача 4",
+    "description": "Описание задачи 4",
+    "execution_period": 72
   }
 },
 {
   "model": "projects.taskassign",
+  "pk": 1,
+  "fields": {
+    "task": 1,
+    "user": 1,
+    "start_date": "2022-03-24T18:34:28.652",
+    "deadline": "2022-03-24T18:34:28.652"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 2,
+  "fields": {
+    "task": 2,
+    "user": 1,
+    "start_date": "2022-03-24T18:39:27.844",
+    "deadline": "2022-03-24T18:39:27.844"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 3,
+  "fields": {
+    "task": 1,
+    "user": 1,
+    "start_date": "2022-03-24T19:27:50.946",
+    "deadline": "2022-03-24T19:27:50.946"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 4,
+  "fields": {
+    "task": 2,
+    "user": 1,
+    "start_date": "2022-03-24T19:27:50.954",
+    "deadline": "2022-03-24T19:27:50.954"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 5,
+  "fields": {
+    "task": 1,
+    "user": 1,
+    "start_date": "2022-03-24T19:28:57.646",
+    "deadline": "2022-03-24T19:28:57.647"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 6,
+  "fields": {
+    "task": 1,
+    "user": 1,
+    "start_date": "2022-03-24T19:30:29.726",
+    "deadline": "2022-03-24T19:30:29.726"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 7,
+  "fields": {
+    "task": 3,
+    "user": 1,
+    "start_date": "2022-03-24T19:51:25.106",
+    "deadline": "2022-03-24T19:51:25.106"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 8,
+  "fields": {
+    "task": 3,
+    "user": 1,
+    "start_date": "2022-03-24T19:53:08.805",
+    "deadline": "2022-03-24T19:53:08.805"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 9,
+  "fields": {
+    "task": 4,
+    "user": 1,
+    "start_date": "2022-03-24T19:54:50.722",
+    "deadline": "2022-03-24T19:54:50.722"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 10,
+  "fields": {
+    "task": 1,
+    "user": 1,
+    "start_date": "2022-03-24T19:57:13.850",
+    "deadline": "2022-03-24T19:57:13.850"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 11,
+  "fields": {
+    "task": 1,
+    "user": 1,
+    "start_date": "2022-03-24T19:58:34.325",
+    "deadline": "2022-03-24T19:58:34.325"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 12,
+  "fields": {
+    "task": 1,
+    "user": 1,
+    "start_date": "2022-03-24T19:59:09.953",
+    "deadline": "2022-03-24T19:59:09.953"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 13,
+  "fields": {
+    "task": 1,
+    "user": 1,
+    "start_date": "2022-03-24T20:01:20.244",
+    "deadline": "2022-03-24T20:01:20.244"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 14,
+  "fields": {
+    "task": 2,
+    "user": 1,
+    "start_date": "2022-03-24T20:01:20.250",
+    "deadline": "2022-03-24T20:01:20.250"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 15,
+  "fields": {
+    "task": 1,
+    "user": 1,
+    "start_date": "2022-03-24T20:06:41.939",
+    "deadline": "2022-03-24T20:06:41.939"
+>>>>>>> b12885362af891c165f07e2e362d347ad33a856e
+  }
+},
+{
+  "model": "projects.taskassign",
+<<<<<<< HEAD
   "pk": 36,
   "fields": {
     "task": 3,
@@ -3745,10 +3926,29 @@
     "deadline": "2022-04-04T17:33:07.573",
     "comp_title": "Нефтепродукты",
     "sampling_site": 2
+=======
+  "pk": 16,
+  "fields": {
+    "task": 2,
+    "user": 1,
+    "start_date": "2022-03-24T20:09:41.116",
+    "deadline": "2022-03-24T20:09:41.116"
   }
 },
 {
   "model": "projects.taskassign",
+  "pk": 17,
+  "fields": {
+    "task": 1,
+    "user": 1,
+    "start_date": "2022-03-25T12:15:58.148",
+    "deadline": "2022-03-26T12:15:58.146"
+>>>>>>> b12885362af891c165f07e2e362d347ad33a856e
+  }
+},
+{
+  "model": "projects.taskassign",
+<<<<<<< HEAD
   "pk": 37,
   "fields": {
     "task": 13,
@@ -3757,10 +3957,19 @@
     "deadline": "2022-04-04T17:33:54.082",
     "comp_title": "Значение рН",
     "sampling_site": 2
+=======
+  "pk": 18,
+  "fields": {
+    "task": 2,
+    "user": 1,
+    "start_date": "2022-03-25T12:15:58.156",
+    "deadline": null
+>>>>>>> b12885362af891c165f07e2e362d347ad33a856e
   }
 },
 {
   "model": "projects.taskassign",
+<<<<<<< HEAD
   "pk": 38,
   "fields": {
     "task": 3,
@@ -3769,6 +3978,24 @@
     "deadline": "2022-04-04T17:34:51.051",
     "comp_title": "Нефтепродукты",
     "sampling_site": 2
+=======
+  "pk": 19,
+  "fields": {
+    "task": 3,
+    "user": 1,
+    "start_date": "2022-03-25T12:19:18.551",
+    "deadline": "2022-03-27T00:19:18.551"
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 20,
+  "fields": {
+    "task": 4,
+    "user": 1,
+    "start_date": "2022-03-25T12:28:50.090",
+    "deadline": "2022-03-28T12:28:50.090"
+>>>>>>> b12885362af891c165f07e2e362d347ad33a856e
   }
 }
 ]
