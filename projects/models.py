@@ -226,7 +226,7 @@ class ComponentsSite12(models.Model):
     water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component12')
 
 
-# БОС -> Пробоотборник 001 перед БОС / А1 –SN -001
+# БОС -> Пробоотборник 001 перед БОС / А1–SN-001
 class ComponentsSite13(models.Model):
     oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
     suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Взвешенные вещества')
@@ -246,7 +246,7 @@ class ComponentsSite13(models.Model):
     water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component13')
 
 
-# БОС -> Сточная вода после биологических очистных сооружений А1 –SN -009
+# БОС -> Сточная вода после биологических очистных сооружений А1–SN-009
 class ComponentsSite14(models.Model):
     alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
     hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')

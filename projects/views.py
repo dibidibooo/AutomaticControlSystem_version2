@@ -387,7 +387,7 @@ class AnalysisCreateView(MultiFormsView):
         )
         return HttpResponseRedirect(self.success_url)
 
-    # БОС -> Пробоотборник 001 перед БОС / А1 –SN -001
+    # БОС -> Пробоотборник 001 перед БОС / А1–SN-001
     def site13_form_valid(self, form):
         oil_prod = form.cleaned_data.get('oil_prod')
         suspended_subst = form.cleaned_data.get('suspended_subst')
@@ -423,7 +423,7 @@ class AnalysisCreateView(MultiFormsView):
         )
         return HttpResponseRedirect(self.success_url)
 
-    # БОС -> Сточная вода после биологических очистных сооружений А1 –SN -009
+    # БОС -> Сточная вода после биологических очистных сооружений А1–SN-009
     def site14_form_valid(self, form):
         alkalinity = form.cleaned_data.get('alkalinity')
         hardness = form.cleaned_data.get('hardness')
@@ -645,7 +645,7 @@ class ResultsView(LoginRequiredMixin, View):
 
 class TaskCreate:
     def site1_task(self, form):
-        if float(form.cleaned_data['oil_prod']) > float(list(Component.objects.filter(title__contains='[1|1] Нефтепродукт').values('limits'))[0].get('limits')):
+        if float(form.cleaned_data['oil_prod']) > float(list(Component.objects.filter(title__contains='[1|1] Нефтепродукт').values('limit_hi'))[0].get('limit_hi')):
             task = Task.objects.get(pk=1)
             deadline = datetime.now() + timedelta(hours=task.execution_period)
             TaskAssign.objects.create(
@@ -653,8 +653,64 @@ class TaskCreate:
                 user_id=1,
                 deadline=deadline
             )
-        if float(form.cleaned_data['ph']) > float(list(Component.objects.filter(title__contains='[1|1] Значение рН').values('limits'))[0].get('limits')):
+        if float(form.cleaned_data['ph']) > float(list(Component.objects.filter(title__contains='[1|1] Значение рН').values('limit_hi'))[0].get('limit_hi')):
             task = Task.objects.get(pk=2)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['suspended_solids']) > float(list(Component.objects.filter(title__contains='[1|1] Общие взвешенные твердые частицы').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['phosphorus']) > float(list(Component.objects.filter(title__contains='[1|1] Фосфор').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['alkalinity']) > float(list(Component.objects.filter(title__contains='[1|1] Щелочность общая').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['hardness']) > float(list(Component.objects.filter(title__contains='[1|1] Жесткость общая').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['salt']) > float(list(Component.objects.filter(title__contains='[1|1] Солесодержание').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['chlorides']) > float(list(Component.objects.filter(title__contains='[1|1] Хлориды').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['sulfates']) > float(list(Component.objects.filter(title__contains='[1|1] Сульфаты').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
             deadline = datetime.now() + timedelta(hours=task.execution_period)
             TaskAssign.objects.create(
                 task_id=task.id,
@@ -663,7 +719,7 @@ class TaskCreate:
             )
 
     def site2_task(self, form):
-        if float(form.cleaned_data['oil_prod']) > float(list(Component.objects.filter(title__contains='[1|2] Нефтепродукт').values('limits'))[0].get('limits')):
+        if float(form.cleaned_data['oil_prod']) > float(list(Component.objects.filter(title__contains='[1|2] Нефтепродукт').values('limit_hi'))[0].get('limit_hi')):
             task = Task.objects.get(pk=1)
             deadline = datetime.now() + timedelta(hours=task.execution_period)
             TaskAssign.objects.create(
@@ -671,7 +727,7 @@ class TaskCreate:
                 user_id=1,
                 deadline=deadline
             )
-        if float(form.cleaned_data['suspended_solids']) > float(list(Component.objects.filter(title__contains='[1|2] Общие взвешенные твердые частицы').values('limits'))[0].get('limits')):
+        if float(form.cleaned_data['suspended_solids']) > float(list(Component.objects.filter(title__contains='[1|2] Общие взвешенные твердые частицы').values('limit_hi'))[0].get('limit_hi')):
             task = Task.objects.get(pk=3)
             deadline = datetime.now() + timedelta(hours=task.execution_period)
             TaskAssign.objects.create(
@@ -679,7 +735,7 @@ class TaskCreate:
                 user_id=1,
                 deadline=deadline
             )
-        if float(form.cleaned_data['suspended_solids']) < float(list(Component.objects.filter(title__contains='[1|2] Общие взвешенные твердые частицы').values('limits'))[0].get('limits')):
+        if float(form.cleaned_data['suspended_solids']) < float(list(Component.objects.filter(title__contains='[1|2] Общие взвешенные твердые частицы').values('limit_lo'))[0].get('limit_lo')):
             task = Task.objects.get(pk=4)
             deadline = datetime.now() + timedelta(hours=task.execution_period)
             TaskAssign.objects.create(
