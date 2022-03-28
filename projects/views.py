@@ -387,7 +387,7 @@ class AnalysisCreateView(MultiFormsView):
         )
         return HttpResponseRedirect(self.success_url)
 
-    # БОС -> Пробоотборник 001 перед БОС / А1 –SN -001
+    # БОС -> Пробоотборник 001 перед БОС / А1–SN-001
     def site13_form_valid(self, form):
         oil_prod = form.cleaned_data.get('oil_prod')
         suspended_subst = form.cleaned_data.get('suspended_subst')
@@ -423,7 +423,7 @@ class AnalysisCreateView(MultiFormsView):
         )
         return HttpResponseRedirect(self.success_url)
 
-    # БОС -> Сточная вода после биологических очистных сооружений А1 –SN -009
+    # БОС -> Сточная вода после биологических очистных сооружений А1–SN-009
     def site14_form_valid(self, form):
         alkalinity = form.cleaned_data.get('alkalinity')
         hardness = form.cleaned_data.get('hardness')

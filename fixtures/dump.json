@@ -220,7 +220,7 @@
     "period": "1 раз в неделю воскресенье",
     "standards": "ГОСТ 26449. 1-85 ПНДФ 14.1:2:4.128-98",
     "recommendation1": null,
-    "recommendation2": "Устранить утечки технологических продуктов в оборотную воду"
+    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -233,8 +233,8 @@
     "limit_hi": "9",
     "period": "1 раз в неделю воскресенье",
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -243,12 +243,12 @@
   "fields": {
     "title": "[1|1] Общие взвешенные твердые частицы",
     "measurement": "мг/дм³",
-    "limit_lo": null,
-    "limit_hi": "35",
+    "limit_lo": "35",
+    "limit_hi": "50",
     "period": "1 раз в неделю воскресенье",
     "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "проверить Ку, увеличить продувку"
   }
 },
 {
@@ -261,7 +261,7 @@
     "limit_hi": "3",
     "period": "1 раз в неделю воскресенье",
     "standards": "МВИ «Hach»",
-    "recommendation1": null,
+    "recommendation1": "увеличить дозировку ингибитора",
     "recommendation2": null
   }
 },
@@ -276,7 +276,7 @@
     "period": "Еженедельно по средам",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -304,7 +304,7 @@
     "period": "Еженедельно по средам",
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -318,7 +318,7 @@
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -332,7 +332,7 @@
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -388,7 +388,7 @@
     "period": "1 раз в неделю воскресенье",
     "standards": "ГОСТ 26449. 1-85 ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -401,8 +401,8 @@
     "limit_hi": "9",
     "period": "1 раз в неделю воскресенье",
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -416,7 +416,7 @@
     "period": "1 раз в неделю воскресенье",
     "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -430,7 +430,7 @@
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -486,7 +486,7 @@
     "period": "Еженедельно по средам",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -500,7 +500,7 @@
     "period": "Еженедельно по средам",
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -514,7 +514,7 @@
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -528,7 +528,7 @@
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -569,8 +569,8 @@
     "limit_hi": "9",
     "period": "Еженедельно по средам",
     "standards": "рН метр ГОСТ 26449.1",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -724,7 +724,7 @@
     "period": "2 раза в неделю",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -738,7 +738,7 @@
     "period": "2 раза в неделю",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -751,8 +751,8 @@
     "limit_hi": "9",
     "period": "1 раз в неделю",
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -766,7 +766,7 @@
     "period": "1 раз в неделю",
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -780,7 +780,7 @@
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -794,7 +794,7 @@
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -808,7 +808,7 @@
     "period": "1 раз в неделю",
     "standards": "ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -822,7 +822,7 @@
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -835,8 +835,8 @@
     "limit_hi": "7",
     "period": "2 раза в неделю",
     "standards": "РТМ 24.030.24-72",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -864,7 +864,7 @@
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -878,7 +878,7 @@
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -891,8 +891,8 @@
     "limit_hi": "9",
     "period": "1 раз в неделю",
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -906,7 +906,7 @@
     "period": "1 раз в неделю",
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -920,7 +920,7 @@
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -934,7 +934,7 @@
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -948,7 +948,7 @@
     "period": "1 раз в неделю",
     "standards": "ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -962,7 +962,7 @@
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -989,8 +989,8 @@
     "limit_hi": "7",
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24-72",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -1270,7 +1270,7 @@
     "period": "1 раз в неделю пятница",
     "standards": "ГОСТ 26449.1-85 МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -1284,7 +1284,7 @@
     "period": "1 раз в неделю пятница",
     "standards": "ГОСТ 26449.1-85 МВИ «Насh",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку и подпитку осветленной водой"
   }
 },
 {
@@ -1298,7 +1298,7 @@
     "period": "1 раз в неделю пятница",
     "standards": "ГОСТ 26449.2-85 МВИ «Насh»",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку и подпитку осветленной водой"
   }
 },
 {
@@ -1311,8 +1311,8 @@
     "limit_hi": "9",
     "period": "1 раз в сутки** 07.30",
     "standards": "рН-метр",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -1325,7 +1325,7 @@
     "limit_hi": "",
     "period": "1 раз в неделю понедельник",
     "standards": "МВИ «Насh»",
-    "recommendation1": null,
+    "recommendation1": "увеличить дозировку ингибитора",
     "recommendation2": null
   }
 },
@@ -1340,7 +1340,7 @@
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24-72.",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -1396,7 +1396,7 @@
     "period": "1 раз в неделю",
     "standards": "Кондуктометр",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -1410,7 +1410,7 @@
     "period": "1 раз в неделю",
     "standards": "МВИ «Насh»",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "снизить подачу галогена в оборотную воду"
   }
 },
 {
@@ -1424,7 +1424,7 @@
     "period": "2 раза в неделю вторник, пятница",
     "standards": "ГОСТ 26449.1-85 ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -1438,7 +1438,7 @@
     "period": "1 раз в неделю",
     "standards": "Кондуктометр",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -1452,7 +1452,7 @@
     "period": "1 раз в сутки** 07.30",
     "standards": "ГОСТ 26449.1-85         МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -1466,7 +1466,7 @@
     "period": "1 раз в сутки 08:00",
     "standards": "ГОСТ 26449. 1-85",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "Отбор пробы сточной воды поступающих с установок завода."
   }
 },
 {
@@ -1549,8 +1549,8 @@
     "limit_hi": "7.5",
     "period": "1 раз в сутки 07:30",
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "подать едкий натр",
+    "recommendation2": "подать ортофосфорную кислоту"
   }
 },
 {
@@ -1606,7 +1606,7 @@
     "period": "2 раза в сутки 07:30 и 13:00",
     "standards": "ГОСТ 26449. 1-85 ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "повысить дозу флокулянта и коагулянта подаваемых на блок  флотации"
   }
 },
 {
