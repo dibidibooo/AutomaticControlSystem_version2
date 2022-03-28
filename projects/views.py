@@ -743,12 +743,3 @@ class TaskCreate:
                 user_id=1,
                 deadline=deadline
             )
-
-
-    def chart(request):
-        dataSource['data'] = []
-        for key in ComponentsSite1.objects.all():
-            data = {}
-            data['value'] = key.oil_prod
-            dataSource['data'].append(data)
-            

@@ -1,6 +1,7 @@
 options = {
     series: [{
         name: "Нефтепродукт",
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
     chart: {
         type: "area",
@@ -39,7 +40,6 @@ options = {
 (chart = new ApexCharts(document.querySelector("#mini-chart-1"), options)).render();
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 
 
 options = {
@@ -82,7 +82,6 @@ options = {
     }
 };
 (chart = new ApexCharts(document.querySelector("#mini-chart-2"), options)).render();
-
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
