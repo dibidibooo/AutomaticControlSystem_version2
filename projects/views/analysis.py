@@ -1,13 +1,11 @@
-from datetime import datetime, timedelta
-
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import DetailView, ListView
 
 from projects.views.tasks import TaskCreate
+
 from projects.forms import (
     Site1Form,
     Site2Form,
@@ -40,7 +38,7 @@ from projects.models import (
     ComponentsSite13,
     ComponentsSite14,
     Component,
-    TaskAssign, Task,
+    TaskAssign,
 )
 from projects.multiforms import MultiFormsView
 
@@ -466,10 +464,9 @@ class ProjectOverviewView(LoginRequiredMixin, View):
 
 
 class ResultsView(LoginRequiredMixin, View):
-    tasks = TaskAssign.objects.all()
-    components = Component.objects.all()
-
     def get(self, request):
+        tasks = TaskAssign.objects.all()
+        components = Component.objects.all()
         results_site1 = self.get_results1()
         results_site2 = self.get_results2()
         results_site3 = self.get_results3()
@@ -487,8 +484,8 @@ class ResultsView(LoginRequiredMixin, View):
         context = {
             'heading': "Результаты",
             'pageview': "Projects",
-            'components': self.components,
-            'tasks': self.tasks,
+            'components': components,
+            'tasks': tasks,
             'results1': results_site1,
             'results2': results_site2,
             'results3': results_site3,
@@ -508,9 +505,10 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results1(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
             sample = ComponentsSite1.objects.all().latest('datetime')
-            for task in self.tasks:
+            for task in tasks:
                 if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
                     results_site[task.comp_title] = task.task.title
                 else:
@@ -520,12 +518,18 @@ class ResultsView(LoginRequiredMixin, View):
                     results_site[key] = value
         except ComponentsSite1.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
-
         return results_site
 
     def get_results2(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
+            sample = ComponentsSite2.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.title
+                else:
+                    results_site['no_recom'] = 'Рекомендация не требуется'
             for key, value in ComponentsSite2.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
@@ -535,7 +539,14 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results3(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
+            sample = ComponentsSite3.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.title
+                else:
+                    results_site['no_recom'] = 'Рекомендация не требуется'
             for key, value in ComponentsSite3.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
