@@ -10,62 +10,39 @@
                     {% for task in tasks %}
                         <div class="card task-box" id="uptask-1">
                         <div class="card-body">
-                            <div class="dropdown float-end">
-                                <a href="#" class="dropdown-toggle arrow-none"
-                                   data-bs-toggle="dropdown"
-                                   aria-expanded="false">
-                                    <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
-                                </a>
-                                <div class="dropdown-menu dropdown-menu-end">
-                                    <a class="dropdown-item edittask-details" href="#" id="taskedit"
-                                       data-id="#uptask-1" data-bs-toggle="modal"
-                                       data-bs-target=".bs-example-modal-lg">Редактировать</a>
-                                    <a class="dropdown-item deletetask" href="#"
-                                       data-id="#uptask-1">Удалить</a>
-                                </div>
-                            </div> <!-- end dropdown -->
-                            <div class="float-end ms-2">
-                                <span class="badge rounded-pill badge-soft-secondary font-size-12"
-                                      id="task-status">Waiting</span>
-                            </div>
+{#                            <div class="dropdown float-end">#}
+{#                                <a href="#" class="dropdown-toggle arrow-none"#}
+{#                                   data-bs-toggle="dropdown"#}
+{#                                   aria-expanded="false">#}
+{#                                    <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>#}
+{#                                </a>#}
+{#                                <div class="dropdown-menu dropdown-menu-end">#}
+{#                                    <a class="dropdown-item edittask-details" href="#" id="taskedit"#}
+{#                                       data-id="#uptask-1" data-bs-toggle="modal"#}
+{#                                       data-bs-target=".bs-example-modal-lg">Редактировать</a>#}
+{#                                    <a class="dropdown-item deletetask" href="#"#}
+{#                                       data-id="#uptask-1">Удалить</a>#}
+{#                                </div>#}
+{#                            </div> <!-- end dropdown -->#}
+{#                            <div class="float-end ms-2">#}
+{#                                <span class="badge rounded-pill badge-soft-secondary font-size-12"#}
+{#                                      id="task-status">Waiting</span>#}
+{#                            </div>#}
                             <div>
                                 <h5 class="font-size-15">
                                     <a href="javascript: void(0);" class="text-dark" id="task-name">
-                                        {{ task.task.title }}
+                                        {{ task.task.title }} для компонента '{{ task.comp_title }}'
                                     </a>
                                 </h5>
-                                <p class="text-muted mb-4">{{ task.task.description }}</p>
+                                <p class="text-muted mb-4" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
                                 <p class="text-muted mb-4">{{ task.deadline }}</p>
                             </div>
                             <div class="avatar-group float-start task-assigne">
                                 <div class="avatar-group-item">
                                     <a href="javascript: void(0);" class="d-inline-block"
-                                       value="member-4">
-                                        <img src="{% static 'images/users/avatar-4.jpg'%}" alt=""
+                                       value="member-1">
+                                        <img src="{% static 'images/users/avatar-1.jpg'%}" alt=""
                                              class="rounded-circle avatar-xs">
-                                    </a>
-                                </div>
-                                <div class="avatar-group-item">
-                                    <a href="javascript: void(0);" class="d-inline-block"
-                                       value="member-5">
-                                        <img src="{% static 'images/users/avatar-5.jpg'%}" alt=""
-                                             class="rounded-circle avatar-xs">
-                                    </a>
-                                </div>
-                                <div class="avatar-group-item">
-                                    <a href="javascript: void(0);" class="d-inline-block"
-                                       value="member-6">
-                                        <img src="{% static 'images/users/avatar-2.jpg'%}" alt=""
-                                             class="rounded-circle avatar-xs">
-                                    </a>
-                                </div>
-                                <div class="avatar-group-item">
-                                    <a href="javascript: void(0);" class="d-inline-block">
-                                        <div class="avatar-xs">
-                                            <span class="avatar-title rounded-circle bg-info text-white font-size-16">
-                                                3+
-                                            </span>
-                                        </div>
                                     </a>
                                 </div>
                             </div>
@@ -75,7 +52,7 @@
                 </div>
 
                 <div class="text-center d-grid">
-                    <a href="{% url 'ecommerce-cart' %}"
+                    <a href="{% url 'tasks-kanbanboard' %}"
                        class="btn btn-primary waves-effect waves-light addtask-btn">Перейти в раздел
                         редактирования</a>
                 </div>

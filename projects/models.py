@@ -260,7 +260,7 @@ class ComponentsSite14(models.Model):
 
 class Task(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название задачи')
-    description = models.TextField(max_length=1000, verbose_name='Описание задачи')
+    description = models.TextField(max_length=1000, null=True, blank=True, verbose_name='Описание задачи')
     execution_period = models.IntegerField(null=True, blank=True, verbose_name='Срок выполнения задачи в часах')
 
     def __str__(self):
@@ -268,7 +268,32 @@ class Task(models.Model):
 
 
 class TaskAssign(models.Model):
-    task = models.ForeignKey('projects.Task', related_name='assign', on_delete=models.CASCADE)
-    user = models.ForeignKey(get_user_model(), related_name='assign', on_delete=models.CASCADE)
+    task = models.ForeignKey('projects.Task', related_name='task_assign', on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), related_name='task_assign', on_delete=models.CASCADE)
     start_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата назначения задачи')
     deadline = models.DateTimeField(null=True, blank=True, verbose_name='Срок выполнения задачи')
+    comp_title = models.CharField(max_length=100, null=True, blank=True, verbose_name='Название компонента')
+    sampling_site = models.ForeignKey(
+        'projects.SamplingSite',
+        null=True,
+        blank=True,
+        related_name='task_assign',
+        on_delete=models.CASCADE
+    )
+#
+#
+# class Notification(models.Model):
+#     description = models.CharField(max_length=500, verbose_name='Уведомление')
+#
+#     def __str__(self):
+#         return self.description
+#
+#
+# class NotificationAssign(models.Model):
+#     notification = models.ForeignKey(
+#         'projects.Notification',
+#         related_name='notification_assign',
+#         on_delete=models.CASCADE
+#     )
+#     user = models.ForeignKey(get_user_model(), related_name='notification_assign', on_delete=models.CASCADE)
+#     start_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время создания')
