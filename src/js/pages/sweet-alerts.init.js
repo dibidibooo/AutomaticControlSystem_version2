@@ -172,6 +172,8 @@ File: Sweetalert Js File
             })
         });
 
+
+
         //Custom width padding
         $('#custom-padding-width-alert').click(function () {
             Swal.fire({

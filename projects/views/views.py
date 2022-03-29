@@ -7,7 +7,11 @@ from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView, ListView
 
-from .forms import (
+<<<<<<< HEAD:projects/views/analysis.py
+from projects.views.tasks import TaskCreate
+=======
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051:projects/views/views.py
+from projects.forms import (
     Site1Form,
     Site2Form,
     Site3Form,
@@ -23,7 +27,7 @@ from .forms import (
     Site13Form,
     Site14Form,
 )
-from .models import (
+from projects.models import (
     ComponentsSite1,
     ComponentsSite2,
     ComponentsSite3,
@@ -39,10 +43,9 @@ from .models import (
     ComponentsSite13,
     ComponentsSite14,
     Component,
-    Task,
-    TaskAssign,
+    TaskAssign, Task,
 )
-from .multiforms import MultiFormsView
+from projects.multiforms import MultiFormsView
 
 
 class AnalysisCreateView(MultiFormsView):
@@ -111,6 +114,7 @@ class AnalysisCreateView(MultiFormsView):
 
     # Водоблок - 2 | Установка АВТ напротив погружного холодильника №42
     def site2_form_valid(self, form):
+        print(self.request.GET)
         oil_prod = form.cleaned_data.get('oil_prod')
         ph = form.cleaned_data.get('ph')
         suspended_solids = form.cleaned_data.get('suspended_solids')
@@ -157,6 +161,8 @@ class AnalysisCreateView(MultiFormsView):
             sampling_site_id=3,
             water_type_id=1
         )
+        task_create = TaskCreate()
+        task_create.site3_task(form)
         return HttpResponseRedirect(self.success_url)
 
     # БОВ-1 | Аналитическая точка насосов Р-02А/В/С
@@ -459,13 +465,14 @@ class ProjectOverviewView(LoginRequiredMixin, View):
             'heading': "Таблица",
             'pageview': "Projects"
         }
-        return render(request,'projects/projectsoverview.html', context)
+        return render(request, 'projects/projectsoverview.html', context)
 
 
 class ResultsView(LoginRequiredMixin, View):
+    tasks = TaskAssign.objects.all()
+    components = Component.objects.all()
+
     def get(self, request):
-        components = Component.objects.all()
-        tasks = TaskAssign.objects.all()
         results_site1 = self.get_results1()
         results_site2 = self.get_results2()
         results_site3 = self.get_results3()
@@ -483,8 +490,8 @@ class ResultsView(LoginRequiredMixin, View):
         context = {
             'heading': "Результаты",
             'pageview': "Projects",
-            'components': components,
-            'tasks': tasks,
+            'components': self.components,
+            'tasks': self.tasks,
             'results1': results_site1,
             'results2': results_site2,
             'results3': results_site3,
@@ -505,11 +512,18 @@ class ResultsView(LoginRequiredMixin, View):
     def get_results1(self):
         results_site = {}
         try:
+            sample = ComponentsSite1.objects.all().latest('datetime')
+            for task in self.tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.title
+                else:
+                    results_site['no_recom'] = 'Рекомендация не требуется'
             for key, value in ComponentsSite1.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
         except ComponentsSite1.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
+
         return results_site
 
     def get_results2(self):
@@ -641,6 +655,8 @@ class ResultsView(LoginRequiredMixin, View):
         except ComponentsSite6.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
+<<<<<<< HEAD:projects/views/analysis.py
+=======
 
 
 class TaskCreate:
@@ -743,3 +759,11 @@ class TaskCreate:
                 user_id=1,
                 deadline=deadline
             )
+
+    def chart (request):
+        components = Component.objects.all()
+        context = {
+            'components': components,
+        }
+        return render(request, 'static/js/mini-chart.js', context)
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051:projects/views/views.py

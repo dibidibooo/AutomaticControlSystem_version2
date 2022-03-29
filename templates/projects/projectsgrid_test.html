@@ -236,7 +236,7 @@
                                         {% csrf_token %}
                                         <div class="row">
                                             <div class="col-lg-6 mb-3">
-                                                <label for="water_type">Контролируемая вода</label>
+                                                <label class="card-title" for="water_type">Контролируемая вода</label>
                                                 <select class="form-select" name="water_type" id="water_type">
                                                     <option selected>Выбрать..</option>
                                                     <option value="1">Оборотная</option>
@@ -524,217 +524,16 @@
 {% endblock %}
 {% block extra_javascript %}
 
-<!--<script>-->
-<!--$(document).ready(function(){-->
-<!--    $("select").change(function(){-->
-<!--        $(this).find("option:selected").each(function(){-->
-<!--            var optionValue = $(this).attr("value");-->
-<!--            if(optionValue){-->
-<!--                $(".box").not("." + optionValue).hide();-->
-<!--                $("." + optionValue).show();-->
-<!--            } else{-->
-<!--                $(".box").hide();-->
-<!--            }-->
-<!--        });-->
-<!--    }).change();-->
-<!--});-->
-<!--</script>-->
 
-
-<script>
-    $(function() {
-    $('#componentcard11').hide();
-    $('#plant_unit1').change(function(){
-        if($('#plant_unit1').val() == '1') {
-            $('#componentcard11').show();
-        } else {
-            $('#componentcard11').hide();
-        }
-    });
-});
-</script>
-
-<script>
-    $(function() {
-    $('#componentcard12').hide();
-    $('#plant_unit1').change(function(){
-        if($('#plant_unit1').val() == '2') {
-            $('#componentcard12').show();
-        } else {
-            $('#componentcard12').hide();
-        }
-    });
-});
-</script>
-
-<script>
-    $(function() {
-    $('#componentcard13').hide();
-    $('#plant_unit1').change(function(){
-        if($('#plant_unit1').val() == '3') {
-            $('#componentcard13').show();
-        } else {
-            $('#componentcard13').hide();
-        }
-    });
-});
-</script>
-
-<script>
-    $(function() {
-    $('#componentcard21').hide();
-    $('#plant_unit2').change(function(){
-        if($('#plant_unit2').val() == '4') {
-            $('#componentcard21').show();
-        } else {
-            $('#componentcard21').hide();
-        }
-    });
-});
-</script>
-
-<script>
-    $(function() {
-    $('#componentcard22').hide();
-    $('#plant_unit2').change(function(){
-        if($('#plant_unit2').val() == '5') {
-            $('#componentcard22').show();
-        } else {
-            $('#componentcard22').hide();
-        }
-    });
-});
-</script>
-
-<script>
-    $(function() {
-    $('#componentcard31').hide();
-    $('#plant_unit3').change(function(){
-        if($('#plant_unit3').val() == '6') {
-            $('#componentcard31').show();
-        } else {
-            $('#componentcard31').hide();
-        }
-    });
-});
-</script>
-
-<script>
-    $(function() {
-    $('#componentcard41').hide();
-    $('#plant_unit4').change(function(){
-        if($('#plant_unit4').val() == '7') {
-            $('#componentcard41').show();
-        } else {
-            $('#componentcard41').hide();
-        }
-    });
-});
-</script>
-
-<script>
-    $(function() {
-    $('#componentcard42').hide();
-    $('#plant_unit4').change(function(){
-        if($('#plant_unit4').val() == '8') {
-            $('#componentcard42').show();
-        } else {
-            $('#componentcard42').hide();
-        }
-    });
-});
-</script>
-
-<script>
-    $(function() {
-    $('#componentcard43').hide();
-    $('#plant_unit4').change(function(){
-        if($('#plant_unit4').val() == '9') {
-            $('#componentcard43').show();
-        } else {
-            $('#componentcard43').hide();
-        }
-    });
-});
-</script>
-
-<script>
-    $(function() {
-    $('#componentcard44').hide();
-    $('#plant_unit4').change(function(){
-        if($('#plant_unit4').val() == '10') {
-            $('#componentcard44').show();
-        } else {
-            $('#componentcard44').hide();
-        }
-    });
-});
-</script>
-
-<script>
-    $(function() {
-    $('#componentcard45').hide();
-    $('#plant_unit4').change(function(){
-        if($('#plant_unit4').val() == '11') {
-            $('#componentcard45').show();
-        } else {
-            $('#componentcard45').hide();
-        }
-    });
-});
-</script>
-
-<script>
-    $(function() {
-    $('#componentcard51').hide();
-    $('#plant_unit5').change(function(){
-        if($('#plant_unit5').val() == '12') {
-            $('#componentcard51').show();
-        } else {
-            $('#componentcard51').hide();
-        }
-    });
-});
-</script>
-
-<script>
-    $(function() {
-    $('#componentcard61').hide();
-    $('#plant_unit6').change(function(){
-        if($('#plant_unit6').val() == '13') {
-            $('#componentcard61').show();
-        } else {
-            $('#componentcard61').hide();
-        }
-    });
-});
-</script>
-
-<script>
-    $(function() {
-    $('#componentcard62').hide();
-    $('#plant_unit6').change(function(){
-        if($('#plant_unit6').val() == '14') {
-            $('#componentcard62').show();
-        } else {
-            $('#componentcard62').hide();
-        }
-    });
-});
-</script>
-
-
+<!-- Выбор форм мест отбора -->
+<script src="{% static 'js/choose.js'%}"></script>
 <!-- select -->
 <script src="{% static 'libs/select2/dist/js/select2.min.js' %}"></script>
 <script src="{% static 'js/pages/ecommerce-select2.init.js' %}"></script>
-<script src="{% static 'js/pages/custom.js' %}"></script>
-
 <!-- validation -->
 <script src="{% static 'libs/parsleyjs/dist/parsley.min.js' %}"></script>
 <script src="{% static 'js/pages/form-validation.init.js' %}"></script>
-
 <!-- Sweet Alerts -->
 <script src="{% static 'libs/sweetalert2/dist/sweetalert2.min.js' %}"></script>
 <script src="{% static 'js/pages/sweet-alerts.init.js' %}"></script>
-
 {% endblock %}
