@@ -259,10 +259,14 @@
     "measurement": "мг/дм³",
     "limit_lo": "1.5",
 <<<<<<< HEAD
+<<<<<<< HEAD
     "limit_hi": "",
 =======
     "limit_hi": "3",
 >>>>>>> b12885362af891c165f07e2e362d347ad33a856e
+=======
+    "limit_hi": "",
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051
     "period": "1 раз в неделю воскресенье",
     "standards": "МВИ «Hach»",
     "recommendation1": "увеличить дозировку ингибитора",
@@ -3068,6 +3072,9 @@
 },
 {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051
   "model": "projects.componentssite2",
   "pk": 24,
   "fields": {
@@ -3284,8 +3291,11 @@
   }
 },
 {
+<<<<<<< HEAD
 =======
 >>>>>>> b12885362af891c165f07e2e362d347ad33a856e
+=======
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051
   "model": "projects.componentssite3",
   "pk": 3,
   "fields": {
@@ -3612,12 +3622,17 @@
   "pk": 1,
   "fields": {
 <<<<<<< HEAD
+<<<<<<< HEAD
     "title": "Увеличить продувку",
     "description": "Увеличить продувку",
 =======
     "title": "Задача 1",
     "description": "Описание задачи 1",
 >>>>>>> b12885362af891c165f07e2e362d347ad33a856e
+=======
+    "title": "Увеличить продувку",
+    "description": "Увеличить продувку",
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051
     "execution_period": 24
   }
 },
@@ -3625,6 +3640,7 @@
   "model": "projects.task",
   "pk": 2,
   "fields": {
+<<<<<<< HEAD
 <<<<<<< HEAD
     "title": "Уменьшить продувку",
     "description": "Уменьшить продувку",
@@ -3634,12 +3650,18 @@
     "description": "Описание задачи 2",
     "execution_period": 48
 >>>>>>> b12885362af891c165f07e2e362d347ad33a856e
+=======
+    "title": "Уменьшить продувку",
+    "description": "Уменьшить продувку",
+    "execution_period": 24
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051
   }
 },
 {
   "model": "projects.task",
   "pk": 3,
   "fields": {
+<<<<<<< HEAD
 <<<<<<< HEAD
     "title": "Устранить утечки технологических продуктов в оборотную воду",
     "description": "Устранить утечки технологических продуктов в оборотную воду",
@@ -3649,12 +3671,18 @@
     "description": "Описание задачи 3",
     "execution_period": 36
 >>>>>>> b12885362af891c165f07e2e362d347ad33a856e
+=======
+    "title": "Устранить утечки технологических продуктов в оборотную воду",
+    "description": "Устранить утечки технологических продуктов в оборотную воду",
+    "execution_period": 168
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051
   }
 },
 {
   "model": "projects.task",
   "pk": 4,
   "fields": {
+<<<<<<< HEAD
 <<<<<<< HEAD
     "title": "Увеличить дозировку ингибитора",
     "description": "Увеличить дозировку ингибитора",
@@ -3762,161 +3790,123 @@
     "title": "Задача 4",
     "description": "Описание задачи 4",
     "execution_period": 72
+=======
+    "title": "Увеличить дозировку ингибитора",
+    "description": "Увеличить дозировку ингибитора",
+    "execution_period": 168
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051
   }
 },
 {
-  "model": "projects.taskassign",
-  "pk": 1,
-  "fields": {
-    "task": 1,
-    "user": 1,
-    "start_date": "2022-03-24T18:34:28.652",
-    "deadline": "2022-03-24T18:34:28.652"
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 2,
-  "fields": {
-    "task": 2,
-    "user": 1,
-    "start_date": "2022-03-24T18:39:27.844",
-    "deadline": "2022-03-24T18:39:27.844"
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 3,
-  "fields": {
-    "task": 1,
-    "user": 1,
-    "start_date": "2022-03-24T19:27:50.946",
-    "deadline": "2022-03-24T19:27:50.946"
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 4,
-  "fields": {
-    "task": 2,
-    "user": 1,
-    "start_date": "2022-03-24T19:27:50.954",
-    "deadline": "2022-03-24T19:27:50.954"
-  }
-},
-{
-  "model": "projects.taskassign",
+  "model": "projects.task",
   "pk": 5,
   "fields": {
-    "task": 1,
-    "user": 1,
-    "start_date": "2022-03-24T19:28:57.646",
-    "deadline": "2022-03-24T19:28:57.647"
+    "title": "Проверить работу осветлителя, проверить Ку, увеличить продувку",
+    "description": "Проверить работу осветлителя, проверить Ку, увеличить продувку",
+    "execution_period": 168
   }
 },
 {
-  "model": "projects.taskassign",
+  "model": "projects.task",
   "pk": 6,
   "fields": {
-    "task": 1,
-    "user": 1,
-    "start_date": "2022-03-24T19:30:29.726",
-    "deadline": "2022-03-24T19:30:29.726"
+    "title": "Проверить Ку, увеличить продувку",
+    "description": "Проверить Ку, увеличить продувку",
+    "execution_period": 168
   }
 },
 {
-  "model": "projects.taskassign",
+  "model": "projects.task",
   "pk": 7,
   "fields": {
-    "task": 3,
-    "user": 1,
-    "start_date": "2022-03-24T19:51:25.106",
-    "deadline": "2022-03-24T19:51:25.106"
+    "title": "Увеличить продувку и подпитку осветленной водой",
+    "description": "Увеличить продувку и подпитку осветленной водой",
+    "execution_period": 168
   }
 },
 {
-  "model": "projects.taskassign",
+  "model": "projects.task",
   "pk": 8,
   "fields": {
-    "task": 3,
-    "user": 1,
-    "start_date": "2022-03-24T19:53:08.805",
-    "deadline": "2022-03-24T19:53:08.805"
+    "title": "Повысить дозу флокулянта и коагулянта подаваемых на блок флотации",
+    "description": "Повысить дозу флокулянта и коагулянта подаваемых на блок флотации",
+    "execution_period": 12
   }
 },
 {
-  "model": "projects.taskassign",
+  "model": "projects.task",
   "pk": 9,
   "fields": {
-    "task": 4,
-    "user": 1,
-    "start_date": "2022-03-24T19:54:50.722",
-    "deadline": "2022-03-24T19:54:50.722"
+    "title": "Снизить подачу галогена в оборотную воду",
+    "description": "Снизить подачу галогена в оборотную воду",
+    "execution_period": 168
   }
 },
 {
-  "model": "projects.taskassign",
+  "model": "projects.task",
   "pk": 10,
   "fields": {
-    "task": 1,
-    "user": 1,
-    "start_date": "2022-03-24T19:57:13.850",
-    "deadline": "2022-03-24T19:57:13.850"
+    "title": "Подать ортофосфорную кислоту",
+    "description": "Подать ортофосфорную кислоту",
+    "execution_period": 24
   }
 },
 {
-  "model": "projects.taskassign",
+  "model": "projects.task",
   "pk": 11,
   "fields": {
-    "task": 1,
-    "user": 1,
-    "start_date": "2022-03-24T19:58:34.325",
-    "deadline": "2022-03-24T19:58:34.325"
+    "title": "Отбор пробы сточной воды поступающих с установок завода",
+    "description": "Отбор пробы сточной воды поступающих с установок завода",
+    "execution_period": 24
   }
 },
 {
-  "model": "projects.taskassign",
+  "model": "projects.task",
   "pk": 12,
   "fields": {
-    "task": 1,
-    "user": 1,
-    "start_date": "2022-03-24T19:59:09.953",
-    "deadline": "2022-03-24T19:59:09.953"
+    "title": "Подать едкий натр",
+    "description": "Подать едкий натр",
+    "execution_period": 24
   }
 },
 {
-  "model": "projects.taskassign",
+  "model": "projects.task",
   "pk": 13,
   "fields": {
-    "task": 1,
-    "user": 1,
-    "start_date": "2022-03-24T20:01:20.244",
-    "deadline": "2022-03-24T20:01:20.244"
+    "title": "Увеличить продувку",
+    "description": "Увеличить продувку",
+    "execution_period": 168
   }
 },
 {
-  "model": "projects.taskassign",
+  "model": "projects.task",
   "pk": 14,
   "fields": {
-    "task": 2,
-    "user": 1,
-    "start_date": "2022-03-24T20:01:20.250",
-    "deadline": "2022-03-24T20:01:20.250"
+    "title": "Проверить работу осветлителя, проверить Ку, увеличить продувку",
+    "description": "Проверить работу осветлителя, проверить Ку, увеличить продувку",
+    "execution_period": 24
   }
 },
 {
-  "model": "projects.taskassign",
+  "model": "projects.task",
   "pk": 15,
   "fields": {
+<<<<<<< HEAD
     "task": 1,
     "user": 1,
     "start_date": "2022-03-24T20:06:41.939",
     "deadline": "2022-03-24T20:06:41.939"
 >>>>>>> b12885362af891c165f07e2e362d347ad33a856e
+=======
+    "title": "Уменьшить продувку",
+    "description": "Уменьшить продувку",
+    "execution_period": 168
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051
   }
 },
 {
   "model": "projects.taskassign",
+<<<<<<< HEAD
 <<<<<<< HEAD
   "pk": 36,
   "fields": {
@@ -3938,16 +3928,27 @@
 {
   "model": "projects.taskassign",
   "pk": 17,
+=======
+  "pk": 36,
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051
   "fields": {
-    "task": 1,
+    "task": 3,
     "user": 1,
+<<<<<<< HEAD
     "start_date": "2022-03-25T12:15:58.148",
     "deadline": "2022-03-26T12:15:58.146"
 >>>>>>> b12885362af891c165f07e2e362d347ad33a856e
+=======
+    "start_date": "2022-03-28T17:33:07.573",
+    "deadline": "2022-04-04T17:33:07.573",
+    "comp_title": "Нефтепродукты",
+    "sampling_site": 2
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051
   }
 },
 {
   "model": "projects.taskassign",
+<<<<<<< HEAD
 <<<<<<< HEAD
   "pk": 37,
   "fields": {
@@ -3959,16 +3960,27 @@
     "sampling_site": 2
 =======
   "pk": 18,
+=======
+  "pk": 37,
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051
   "fields": {
-    "task": 2,
+    "task": 13,
     "user": 1,
+<<<<<<< HEAD
     "start_date": "2022-03-25T12:15:58.156",
     "deadline": null
 >>>>>>> b12885362af891c165f07e2e362d347ad33a856e
+=======
+    "start_date": "2022-03-28T17:33:54.083",
+    "deadline": "2022-04-04T17:33:54.082",
+    "comp_title": "Значение рН",
+    "sampling_site": 2
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051
   }
 },
 {
   "model": "projects.taskassign",
+<<<<<<< HEAD
 <<<<<<< HEAD
   "pk": 38,
   "fields": {
@@ -3996,6 +4008,16 @@
     "start_date": "2022-03-25T12:28:50.090",
     "deadline": "2022-03-28T12:28:50.090"
 >>>>>>> b12885362af891c165f07e2e362d347ad33a856e
+=======
+  "pk": 38,
+  "fields": {
+    "task": 3,
+    "user": 1,
+    "start_date": "2022-03-28T17:34:51.051",
+    "deadline": "2022-04-04T17:34:51.051",
+    "comp_title": "Нефтепродукты",
+    "sampling_site": 2
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051
   }
 }
 ]
