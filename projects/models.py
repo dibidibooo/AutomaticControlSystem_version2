@@ -292,3 +292,13 @@ class Notification(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Status(models.Model):
+    title = models.CharField(max_length=25, verbose_name='Статус задачи')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Statuses'
