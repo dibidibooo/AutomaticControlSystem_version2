@@ -177,7 +177,7 @@
   "model": "projects.samplingsite",
   "pk": 13,
   "fields": {
-    "title": "Пробоотборник 001 перед БОС / А1 –SN -001",
+    "title": "Пробоотборник 001 перед БОС / А1–SN-001",
     "location": 6,
     "water_type": [
       1
@@ -188,7 +188,7 @@
   "model": "projects.samplingsite",
   "pk": 14,
   "fields": {
-    "title": "Сточная вода после биологических очистных сооружений А1 –SN -009",
+    "title": "Сточная вода после биологических очистных сооружений А1–SN-009",
     "location": 6,
     "water_type": [
       1
@@ -215,11 +215,12 @@
   "fields": {
     "title": "[1|1] Нефтепродукт",
     "measurement": "мг/дм³",
-    "limits": "25",
+    "limit_lo": null,
+    "limit_hi": "25",
     "period": "1 раз в неделю воскресенье",
     "standards": "ГОСТ 26449. 1-85 ПНДФ 14.1:2:4.128-98",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -228,11 +229,12 @@
   "fields": {
     "title": "[1|1] Значение рН",
     "measurement": "един",
-    "limits": "7-8,5",
+    "limit_lo": "7",
+    "limit_hi": "9",
     "period": "1 раз в неделю воскресенье",
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -241,11 +243,12 @@
   "fields": {
     "title": "[1|1] Общие взвешенные твердые частицы",
     "measurement": "мг/дм³",
-    "limits": "25",
+    "limit_lo": "35",
+    "limit_hi": "50",
     "period": "1 раз в неделю воскресенье",
     "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "проверить Ку, увеличить продувку"
   }
 },
 {
@@ -254,10 +257,11 @@
   "fields": {
     "title": "[1|1] Фосфор",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": "1.5",
+    "limit_hi": "",
     "period": "1 раз в неделю воскресенье",
     "standards": "МВИ «Hach»",
-    "recommendation1": null,
+    "recommendation1": "увеличить дозировку ингибитора",
     "recommendation2": null
   }
 },
@@ -267,11 +271,12 @@
   "fields": {
     "title": "[1|1] Щелочность общая",
     "measurement": "мг/л-экв/л",
-    "limits": "3,5",
+    "limit_lo": null,
+    "limit_hi": "8",
     "period": "Еженедельно по средам",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -280,7 +285,8 @@
   "fields": {
     "title": "[1|1] Жесткость общая",
     "measurement": "мг/л-экв/л",
-    "limits": "",
+    "limit_lo": "6",
+    "limit_hi": null,
     "period": "Еженедельно по средам",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
@@ -293,11 +299,12 @@
   "fields": {
     "title": "[1|1] Солесодержание",
     "measurement": "мг/дм³",
-    "limits": "2000",
+    "limit_lo": null,
+    "limit_hi": "2500",
     "period": "Еженедельно по средам",
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -306,11 +313,12 @@
   "fields": {
     "title": "[1|1] Хлориды",
     "measurement": "мг/дм³",
-    "limits": "300",
+    "limit_lo": null,
+    "limit_hi": "300",
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -319,11 +327,12 @@
   "fields": {
     "title": "[1|1] Сульфаты",
     "measurement": "мг/дм³",
-    "limits": "500",
+    "limit_lo": null,
+    "limit_hi": "500",
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -332,7 +341,8 @@
   "fields": {
     "title": "[1|1] Жесткость кальциевая",
     "measurement": "мг/л-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
     "recommendation1": null,
@@ -345,7 +355,8 @@
   "fields": {
     "title": "[1|1] Жесткость магниевая",
     "measurement": "мг/л-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": null,
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
@@ -358,7 +369,8 @@
   "fields": {
     "title": "[1|1] Железо",
     "measurement": "мкг/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": null,
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1-85 РТМ 24.030.24",
     "recommendation1": null,
@@ -371,11 +383,12 @@
   "fields": {
     "title": "[1|2] Нефтепродукты",
     "measurement": "мг/дм³",
-    "limits": "25",
+    "limit_lo": null,
+    "limit_hi": "25",
     "period": "1 раз в неделю воскресенье",
     "standards": "ГОСТ 26449. 1-85 ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -384,11 +397,12 @@
   "fields": {
     "title": "[1|2] Значение рН",
     "measurement": "един",
-    "limits": "7-8,5",
+    "limit_lo": "7",
+    "limit_hi": "9",
     "period": "1 раз в неделю воскресенье",
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -397,11 +411,12 @@
   "fields": {
     "title": "[1|2] Общие взвешенные твердые частицы",
     "measurement": "мг/дм³",
-    "limits": "25",
+    "limit_lo": null,
+    "limit_hi": "2500",
     "period": "1 раз в неделю воскресенье",
     "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -410,11 +425,12 @@
   "fields": {
     "title": "[1|3] Взвешенные вещества",
     "measurement": "мг/дм³",
-    "limits": "25",
+    "limit_lo": null,
+    "limit_hi": "2500",
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -423,7 +439,8 @@
   "fields": {
     "title": "[1|3] Жесткость общая",
     "measurement": "мг/л-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": null,
     "period": "Еженедельно по средам",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
@@ -436,7 +453,8 @@
   "fields": {
     "title": "[1|3] Железо",
     "measurement": "мкг/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": null,
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1-85 РТМ 24.030.24",
     "recommendation1": null,
@@ -449,7 +467,8 @@
   "fields": {
     "title": "[1|3] Сухой остаток",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": null,
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
@@ -462,11 +481,12 @@
   "fields": {
     "title": "[1|3] Щелочность общая",
     "measurement": "мг/л-экв/л",
-    "limits": "3,5",
+    "limit_lo": null,
+    "limit_hi": "8",
     "period": "Еженедельно по средам",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -475,11 +495,12 @@
   "fields": {
     "title": "[1|3] Солесодержание",
     "measurement": "мг/дм³",
-    "limits": "2000",
+    "limit_lo": null,
+    "limit_hi": "2500",
     "period": "Еженедельно по средам",
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -488,11 +509,12 @@
   "fields": {
     "title": "[1|3] Хлориды",
     "measurement": "мг/дм³",
-    "limits": "300",
+    "limit_lo": null,
+    "limit_hi": "300",
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -501,11 +523,12 @@
   "fields": {
     "title": "[1|3] Сульфаты",
     "measurement": "мг/дм³",
-    "limits": "500",
+    "limit_lo": null,
+    "limit_hi": "500",
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -514,7 +537,8 @@
   "fields": {
     "title": "[1|3] Жесткость кальциевая",
     "measurement": "мг/л-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": null,
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
     "recommendation1": null,
@@ -527,7 +551,8 @@
   "fields": {
     "title": "[1|3] Жесткость магниевая",
     "measurement": "мг/л-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": null,
     "period": "Еженедельно по средам",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
@@ -540,11 +565,12 @@
   "fields": {
     "title": "[1|3] Значение рН",
     "measurement": "един",
-    "limits": "7- 8,5",
+    "limit_lo": "7",
+    "limit_hi": "9",
     "period": "Еженедельно по средам",
     "standards": "рН метр ГОСТ 26449.1",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -553,7 +579,8 @@
   "fields": {
     "title": "[2|1] Общая жесткость",
     "measurement": "мг-экв/л",
-    "limits": "5-12",
+    "limit_lo": "5",
+    "limit_hi": "12",
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
@@ -566,7 +593,8 @@
   "fields": {
     "title": "[2|1] Кальциевая жесткость",
     "measurement": "мг-экв/л",
-    "limits": "2-4,5",
+    "limit_lo": "2",
+    "limit_hi": "4.5",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
     "recommendation1": null,
@@ -579,7 +607,8 @@
   "fields": {
     "title": "[2|1] Значение рН",
     "measurement": "един",
-    "limits": "7 -8,5",
+    "limit_lo": "7",
+    "limit_hi": "8.5",
     "period": "1 раз в неделю",
     "standards": "рН- метр ГОСТ 26449. 1-85",
     "recommendation1": null,
@@ -592,7 +621,8 @@
   "fields": {
     "title": "[2|1] Общее солесодержание",
     "measurement": "мг/дм³",
-    "limits": "1000",
+    "limit_lo": "1000",
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
@@ -605,7 +635,8 @@
   "fields": {
     "title": "[2|1] Содержание хлоридов",
     "measurement": "мг/дм³",
-    "limits": "200",
+    "limit_lo": "200",
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
@@ -618,7 +649,8 @@
   "fields": {
     "title": "[2|1] Содержание сульфатов",
     "measurement": "мг/дм³",
-    "limits": "120",
+    "limit_lo": "120",
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
@@ -631,7 +663,8 @@
   "fields": {
     "title": "[2|1] Содержание нефтепродуктов",
     "measurement": "мг/дм³",
-    "limits": "1,5",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
@@ -644,7 +677,8 @@
   "fields": {
     "title": "[2|1] Общие взвешенные вещества",
     "measurement": "мг/дм³",
-    "limits": "15",
+    "limit_lo": "5",
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
@@ -657,7 +691,8 @@
   "fields": {
     "title": "[2|1] Щелочность общая",
     "measurement": "мг-экв/л",
-    "limits": "2,0-5,5",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раза в неделю",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
@@ -670,7 +705,8 @@
   "fields": {
     "title": "[2|1] Железо",
     "measurement": "мг/дм³",
-    "limits": "1.0",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в месяц",
     "standards": "ГОСТ 26449.1-85 РТМ 24.030.24",
     "recommendation1": null,
@@ -683,11 +719,12 @@
   "fields": {
     "title": "[2|2] Общая жесткость",
     "measurement": "мг-экв/л",
-    "limits": "5,0-20",
+    "limit_lo": "",
+    "limit_hi": "20",
     "period": "2 раза в неделю",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -696,11 +733,12 @@
   "fields": {
     "title": "[2|2] Кальциевая жесткость",
     "measurement": "мг-экв/л",
-    "limits": "3,5-9,0",
+    "limit_lo": "",
+    "limit_hi": "12",
     "period": "2 раза в неделю",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -709,11 +747,12 @@
   "fields": {
     "title": "[2|2] Значение рН",
     "measurement": "един",
-    "limits": "7-8,5",
+    "limit_lo": "7",
+    "limit_hi": "9",
     "period": "1 раз в неделю",
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -722,11 +761,12 @@
   "fields": {
     "title": "[2|2] Общее солесодержание",
     "measurement": "мг/дм³",
-    "limits": "2000",
+    "limit_lo": "",
+    "limit_hi": "2000",
     "period": "1 раз в неделю",
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -735,11 +775,12 @@
   "fields": {
     "title": "[2|2] Содержание хлоридов",
     "measurement": "мг/дм³",
-    "limits": "300",
+    "limit_lo": "",
+    "limit_hi": "1000",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -748,11 +789,12 @@
   "fields": {
     "title": "[2|2] Содержание сульфатов",
     "measurement": "мг/дм³",
-    "limits": "500",
+    "limit_lo": null,
+    "limit_hi": "1000",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -761,11 +803,12 @@
   "fields": {
     "title": "[2|2] Содержание нефтепродуктов",
     "measurement": "мг/дм³",
-    "limits": "5,0",
+    "limit_lo": null,
+    "limit_hi": "3",
     "period": "1 раз в неделю",
     "standards": "ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -774,11 +817,12 @@
   "fields": {
     "title": "[2|2] Общие взвешенные вещества",
     "measurement": "мг/дм³",
-    "limits": "10,0",
+    "limit_lo": null,
+    "limit_hi": "25",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -787,11 +831,12 @@
   "fields": {
     "title": "[2|2] Щелочность общая",
     "measurement": "мг-экв/л",
-    "limits": "2,0-7,0",
+    "limit_lo": "6",
+    "limit_hi": "7",
     "period": "2 раза в неделю",
     "standards": "РТМ 24.030.24-72",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -800,7 +845,8 @@
   "fields": {
     "title": "[2|2] Железо",
     "measurement": "мг/дм³",
-    "limits": "2,0",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в месяц",
     "standards": "ГОСТ 26449.1-85 РТМ 24.030.24",
     "recommendation1": null,
@@ -813,11 +859,12 @@
   "fields": {
     "title": "[3|1] Общая жесткость",
     "measurement": "мг-экв/л",
-    "limits": "5,0-20",
+    "limit_lo": null,
+    "limit_hi": "20",
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -826,11 +873,12 @@
   "fields": {
     "title": "[3|1] Кальциевая жесткость",
     "measurement": "мг-экв/л",
-    "limits": "3,5-9,0",
+    "limit_lo": null,
+    "limit_hi": "12",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -839,11 +887,12 @@
   "fields": {
     "title": "[3|1] Значение рН",
     "measurement": "един",
-    "limits": "7-8,5",
+    "limit_lo": "7",
+    "limit_hi": "9",
     "period": "1 раз в неделю",
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -852,11 +901,12 @@
   "fields": {
     "title": "[3|1] Общее солесодержание",
     "measurement": "мг/дм³",
-    "limits": "2000",
+    "limit_lo": null,
+    "limit_hi": "2000",
     "period": "1 раз в неделю",
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -865,11 +915,12 @@
   "fields": {
     "title": "[3|1] Содержание хлоридов",
     "measurement": "мг/дм³",
-    "limits": "300",
+    "limit_lo": null,
+    "limit_hi": "1000",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -878,11 +929,12 @@
   "fields": {
     "title": "[3|1] Содержание сульфатов",
     "measurement": "мг/дм³",
-    "limits": "500",
+    "limit_lo": null,
+    "limit_hi": "1000",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -891,11 +943,12 @@
   "fields": {
     "title": "[3|1] Содержание нефтепродуктов",
     "measurement": "мг/дм³",
-    "limits": "5,0",
+    "limit_lo": null,
+    "limit_hi": "3",
     "period": "1 раз в неделю",
     "standards": "ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -904,11 +957,12 @@
   "fields": {
     "title": "[3|1] Общие взвешенные вещества",
     "measurement": "мг/дм³",
-    "limits": "10,0",
+    "limit_lo": null,
+    "limit_hi": "25",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -917,7 +971,8 @@
   "fields": {
     "title": "[3|1] Щелочность по фенолу",
     "measurement": "мг-экв/л",
-    "limits": "2,0",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24-72",
     "recommendation1": null,
@@ -930,11 +985,12 @@
   "fields": {
     "title": "[3|1] Щелочность общая",
     "measurement": "мг-экв/л",
-    "limits": "2,0-7,0",
+    "limit_lo": "6",
+    "limit_hi": "7",
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24-72",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -943,7 +999,8 @@
   "fields": {
     "title": "[3|1] Железо",
     "measurement": "мг/дм³",
-    "limits": "2,0",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в месяц",
     "standards": "ГОСТ 26449.1-85 РТМ 24.030.24",
     "recommendation1": null,
@@ -956,7 +1013,8 @@
   "fields": {
     "title": "[4|1] Общие взвешенные твердые частицы",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "2 раза в неделю (вторник и четверг)",
     "standards": "ГОСТ 26449.1-85              МВИ АРНА",
     "recommendation1": null,
@@ -969,7 +1027,8 @@
   "fields": {
     "title": "[4|1] Хлориды",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю вторник",
     "standards": "ГОСТ 26449.1-85 МВИ «Насh»",
     "recommendation1": null,
@@ -982,7 +1041,8 @@
   "fields": {
     "title": "[4|1] Сульфаты",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю четверг",
     "standards": "ГОСТ 26449.2-85 МВИ «Насh»",
     "recommendation1": null,
@@ -995,7 +1055,8 @@
   "fields": {
     "title": "[4|1] Значение рН",
     "measurement": "един",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю четверг",
     "standards": "ГОСТ 26449.1-85",
     "recommendation1": null,
@@ -1008,7 +1069,8 @@
   "fields": {
     "title": "[4|1] Щелочность общая",
     "measurement": "мг-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24-72.",
     "recommendation1": null,
@@ -1021,7 +1083,8 @@
   "fields": {
     "title": "[4|1] Жесткость кальциевая",
     "measurement": "мг-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "ПНД Ф 14.1: 2.95-97",
     "recommendation1": null,
@@ -1034,7 +1097,8 @@
   "fields": {
     "title": "[4|1] Жесткость общая",
     "measurement": "мг-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24-72",
     "recommendation1": null,
@@ -1047,7 +1111,8 @@
   "fields": {
     "title": "[4|1] Железо общее",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24-72 ПНД Ф 14.1: 2.50-96",
     "recommendation1": null,
@@ -1060,7 +1125,8 @@
   "fields": {
     "title": "[4|2] Общие взвешенные твердые частицы",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": "15",
+    "limit_hi": "100",
     "period": "1 раз в сутки** 07.30",
     "standards": "ГОСТ 26449.1-85 МВИ АРНА",
     "recommendation1": null,
@@ -1073,7 +1139,8 @@
   "fields": {
     "title": "[4|2] Значение рН",
     "measurement": "един",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1-85 МВИ АРНА",
     "recommendation1": null,
@@ -1086,7 +1153,8 @@
   "fields": {
     "title": "[4|2] Хлориды",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1-85",
     "recommendation1": null,
@@ -1099,7 +1167,8 @@
   "fields": {
     "title": "[4|2] Фосфор",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "МВИ «Hach»",
     "recommendation1": null,
@@ -1112,7 +1181,8 @@
   "fields": {
     "title": "[4|2] Нефтепродукт",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "ГОСТ 26449.1-85 ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
@@ -1125,7 +1195,8 @@
   "fields": {
     "title": "[4|2] Щелочность общая",
     "measurement": "мг-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24-72.",
     "recommendation1": null,
@@ -1138,7 +1209,8 @@
   "fields": {
     "title": "[4|2] Жесткость кальциевая",
     "measurement": "мг-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "По требованию",
     "standards": "ПНД Ф 14.1: 2.95-97",
     "recommendation1": null,
@@ -1151,7 +1223,8 @@
   "fields": {
     "title": "[4|2] Жесткость общая",
     "measurement": "мг-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24-72",
     "recommendation1": null,
@@ -1164,7 +1237,8 @@
   "fields": {
     "title": "[4|2] Железо общее",
     "measurement": "мкг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "По требованию",
     "standards": "РТМ 24.030.24-72 ПНД Ф 14.1: 2.50-96",
     "recommendation1": null,
@@ -1177,7 +1251,8 @@
   "fields": {
     "title": "[4|2] Солесодержание",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "Кондуктометр",
     "recommendation1": null,
@@ -1190,11 +1265,12 @@
   "fields": {
     "title": "[4|3] Общие взвешенные твёрдые частицы",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": "35",
+    "limit_hi": "50",
     "period": "1 раз в неделю пятница",
     "standards": "ГОСТ 26449.1-85 МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -1203,11 +1279,12 @@
   "fields": {
     "title": "[4|3] Хлориды",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "300",
     "period": "1 раз в неделю пятница",
     "standards": "ГОСТ 26449.1-85 МВИ «Насh",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку и подпитку осветленной водой"
   }
 },
 {
@@ -1216,11 +1293,12 @@
   "fields": {
     "title": "[4|3] Сульфаты",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "500",
     "period": "1 раз в неделю пятница",
     "standards": "ГОСТ 26449.2-85 МВИ «Насh»",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку и подпитку осветленной водой"
   }
 },
 {
@@ -1229,11 +1307,12 @@
   "fields": {
     "title": "[4|3] Значение рН",
     "measurement": "един",
-    "limits": "",
+    "limit_lo": "7",
+    "limit_hi": "9",
     "period": "1 раз в сутки** 07.30",
     "standards": "рН-метр",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "уменьшить продувку",
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -1242,10 +1321,11 @@
   "fields": {
     "title": "[4|3] Фосфор",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": "1.5",
+    "limit_hi": "",
     "period": "1 раз в неделю понедельник",
     "standards": "МВИ «Насh»",
-    "recommendation1": null,
+    "recommendation1": "увеличить дозировку ингибитора",
     "recommendation2": null
   }
 },
@@ -1255,11 +1335,12 @@
   "fields": {
     "title": "[4|3] Щелочность",
     "measurement": "мг-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "8",
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24-72.",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -1268,7 +1349,8 @@
   "fields": {
     "title": "[4|3] Жесткость кальциевая",
     "measurement": "мг-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "ПНД Ф 14.1: 2.95-97",
     "recommendation1": null,
@@ -1281,7 +1363,8 @@
   "fields": {
     "title": "[4|3] Жесткость общая",
     "measurement": "мг-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24-72",
     "recommendation1": null,
@@ -1294,7 +1377,8 @@
   "fields": {
     "title": "[4|3] Железо общее",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в неделю",
     "standards": "РТМ 24.030.24-72 ПНД Ф 14.1: 2.50-96",
     "recommendation1": null,
@@ -1307,11 +1391,12 @@
   "fields": {
     "title": "[4|3] Солесодержание",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "2500",
     "period": "1 раз в неделю",
     "standards": "Кондуктометр",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -1320,11 +1405,12 @@
   "fields": {
     "title": "[4|4] Остаточный хлор",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "0.6",
     "period": "1 раз в неделю",
     "standards": "МВИ «Насh»",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "снизить подачу галогена в оборотную воду"
   }
 },
 {
@@ -1333,11 +1419,12 @@
   "fields": {
     "title": "[4|4] Нефтепродукт",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "5",
     "period": "2 раза в неделю вторник, пятница",
     "standards": "ГОСТ 26449.1-85 ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -1346,11 +1433,12 @@
   "fields": {
     "title": "[4|4] Солесодержание",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "2500",
     "period": "1 раз в неделю",
     "standards": "Кондуктометр",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "увеличить продувку"
   }
 },
 {
@@ -1359,11 +1447,12 @@
   "fields": {
     "title": "[4|5] Общие взвешенные твёрдые частицы",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": "35",
+    "limit_hi": "50",
     "period": "1 раз в сутки** 07.30",
     "standards": "ГОСТ 26449.1-85         МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -1372,11 +1461,12 @@
   "fields": {
     "title": "[5|1] Нефтепродукт",
     "measurement": "мг/дм³",
-    "limits": "3500",
+    "limit_lo": null,
+    "limit_hi": "3500",
     "period": "1 раз в сутки 08:00",
     "standards": "ГОСТ 26449. 1-85",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "Отбор пробы сточной воды поступающих с установок завода."
   }
 },
 {
@@ -1385,7 +1475,8 @@
   "fields": {
     "title": "[5|1] Взвешенные вещества",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в сутки 08:00",
     "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
     "recommendation1": null,
@@ -1398,7 +1489,8 @@
   "fields": {
     "title": "[5|1] Значение рН",
     "measurement": "един",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в сутки  08:00",
     "standards": "рН- метр ГОСТ 26449. 1-85",
     "recommendation1": null,
@@ -1411,7 +1503,8 @@
   "fields": {
     "title": "[5|1] ХПК",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в сутки 08:00",
     "standards": "ПНДФ 14.1: 2:4.190-03 МВИ «Hach»",
     "recommendation1": null,
@@ -1424,7 +1517,8 @@
   "fields": {
     "title": "[5|1] АПАВ",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в сутки 08:00",
     "standards": "ПНДФ 14.1:2:4.158-2000",
     "recommendation1": null,
@@ -1437,7 +1531,8 @@
   "fields": {
     "title": "[5|1] Аммонийный азот",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз сутки 08:00",
     "standards": "ГОСТ 26449. 2-85 МВИ «Hach»",
     "recommendation1": null,
@@ -1450,11 +1545,12 @@
   "fields": {
     "title": "[6|1] Значение рН",
     "measurement": "един",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "7.5",
     "period": "1 раз в сутки 07:30",
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": null,
-    "recommendation2": null
+    "recommendation1": "подать едкий натр",
+    "recommendation2": "подать ортофосфорную кислоту"
   }
 },
 {
@@ -1463,7 +1559,8 @@
   "fields": {
     "title": "[6|1] Взвешенные вещества",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в сутки 07:30",
     "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
     "recommendation1": null,
@@ -1476,7 +1573,8 @@
   "fields": {
     "title": "[6|1] Взвешенные вещества",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в сутки 07:30",
     "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
     "recommendation1": null,
@@ -1489,7 +1587,8 @@
   "fields": {
     "title": "[6|1] ХПК",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в сутки 07:30",
     "standards": "ПНДФ 14.1: 2:4.190-03 МВИ «Hach»",
     "recommendation1": null,
@@ -1502,11 +1601,12 @@
   "fields": {
     "title": "[6|1] Нефтепродукт",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "48",
     "period": "2 раза в сутки 07:30 и 13:00",
     "standards": "ГОСТ 26449. 1-85 ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": null
+    "recommendation2": "повысить дозу флокулянта и коагулянта подаваемых на блок  флотации"
   }
 },
 {
@@ -1515,7 +1615,8 @@
   "fields": {
     "title": "[6|1] БПК5",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в декаду",
     "standards": "РД 204.2.07-91 МВИ №АО-02-2004",
     "recommendation1": null,
@@ -1528,7 +1629,8 @@
   "fields": {
     "title": "[6|1] Фенолы",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в декаду",
     "standards": "ГОСТ 26449. 1-85",
     "recommendation1": null,
@@ -1541,7 +1643,8 @@
   "fields": {
     "title": "[6|1] АПАВ",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в декаду",
     "standards": "ПНДФ 14.1:2:4.158-2000",
     "recommendation1": null,
@@ -1554,7 +1657,8 @@
   "fields": {
     "title": "[6|1] Хлориды",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в декаду",
     "standards": "ГОСТ 26449. 1-85 СТ РК 1496-2006",
     "recommendation1": null,
@@ -1567,7 +1671,8 @@
   "fields": {
     "title": "[6|1] Сульфаты",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "2 раза в месяц 2,12",
     "standards": "СТ РК 1015-2000 МВИ «Hach»",
     "recommendation1": null,
@@ -1580,7 +1685,8 @@
   "fields": {
     "title": "[6|1] Железо",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "2 раза в месяц 3,13",
     "standards": "ГОСТ 26449. 1-85 МВИ «Hach»",
     "recommendation1": null,
@@ -1593,7 +1699,8 @@
   "fields": {
     "title": "[6|1] Аммонийный азот",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз сутки",
     "standards": "ГОСТ 26449. 2-85 МВИ «Hach»",
     "recommendation1": null,
@@ -1606,7 +1713,8 @@
   "fields": {
     "title": "[6|1] Азот нитратов",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в декаду",
     "standards": "ГОСТ 18826-73 СТ РК 7890-3-2006",
     "recommendation1": null,
@@ -1619,7 +1727,8 @@
   "fields": {
     "title": "[6|1] Азот нитритов",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в декаду",
     "standards": "ПНДФ 14.1:2:4.26-95",
     "recommendation1": null,
@@ -1632,7 +1741,8 @@
   "fields": {
     "title": "[6|2] Щёлочность общая",
     "measurement": "мг-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в декаду",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
@@ -1645,7 +1755,8 @@
   "fields": {
     "title": "[6|2] Жёсткость общая",
     "measurement": "мг-экв/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в декаду",
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
@@ -1658,7 +1769,8 @@
   "fields": {
     "title": "[6|2] Окисляемость",
     "measurement": "мг О2/л",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в декаду",
     "standards": "ГОСТ 26449.1 Методические рекомендации по эксплуатационному анализу воды и пара на тепловых электрос",
     "recommendation1": null,
@@ -1671,7 +1783,8 @@
   "fields": {
     "title": "[6|2] Солесодержание",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в декаду",
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
@@ -1684,7 +1797,8 @@
   "fields": {
     "title": "[6|2] Остаточный хлор",
     "measurement": "мг/дм³",
-    "limits": "",
+    "limit_lo": null,
+    "limit_hi": "",
     "period": "1 раз в декаду",
     "standards": "",
     "recommendation1": null,
@@ -2007,6 +2121,804 @@
   }
 },
 {
+  "model": "projects.componentssite1",
+  "pk": 29,
+  "fields": {
+    "oil_prod": 1,
+    "suspended_solids": 1,
+    "ph": 1,
+    "phosphorus": 1,
+    "alkalinity": 1,
+    "hardness": 1,
+    "salt": 1,
+    "chlorides": 1,
+    "sulfates": 1,
+    "iron": 1,
+    "hardness_calcium": 1,
+    "hardness_magnesium": 1,
+    "datetime": "2022-03-19T19:06:05.994",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 30,
+  "fields": {
+    "oil_prod": 2,
+    "suspended_solids": 2,
+    "ph": 2,
+    "phosphorus": 2,
+    "alkalinity": 2,
+    "hardness": 2,
+    "salt": 2,
+    "chlorides": 2,
+    "sulfates": 2,
+    "iron": 2,
+    "hardness_calcium": 2,
+    "hardness_magnesium": 2,
+    "datetime": "2022-03-19T19:06:25.798",
+    "sampling_site": 1,
+    "water_type": 2
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 31,
+  "fields": {
+    "oil_prod": 4,
+    "suspended_solids": 4,
+    "ph": 4,
+    "phosphorus": 4,
+    "alkalinity": 4,
+    "hardness": 4,
+    "salt": 4,
+    "chlorides": 4,
+    "sulfates": 4,
+    "iron": 4,
+    "hardness_calcium": 4,
+    "hardness_magnesium": 4,
+    "datetime": "2022-03-22T15:04:24.684",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 32,
+  "fields": {
+    "oil_prod": 9,
+    "suspended_solids": 9,
+    "ph": 9,
+    "phosphorus": 9,
+    "alkalinity": 9,
+    "hardness": 9,
+    "salt": 9,
+    "chlorides": 9,
+    "sulfates": 9,
+    "iron": 9,
+    "hardness_calcium": 9,
+    "hardness_magnesium": 9,
+    "datetime": "2022-03-22T16:18:56.130",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 33,
+  "fields": {
+    "oil_prod": 5,
+    "suspended_solids": 5,
+    "ph": 5,
+    "phosphorus": 5,
+    "alkalinity": 5,
+    "hardness": 5,
+    "salt": 5,
+    "chlorides": 5,
+    "sulfates": 5,
+    "iron": 5,
+    "hardness_calcium": 5,
+    "hardness_magnesium": 5,
+    "datetime": "2022-03-22T16:22:04.255",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 34,
+  "fields": {
+    "oil_prod": 8,
+    "suspended_solids": 8,
+    "ph": 8,
+    "phosphorus": 8,
+    "alkalinity": 8,
+    "hardness": 8,
+    "salt": 8,
+    "chlorides": 8,
+    "sulfates": 8,
+    "iron": 8,
+    "hardness_calcium": 8,
+    "hardness_magnesium": 8,
+    "datetime": "2022-03-22T16:39:07.973",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 35,
+  "fields": {
+    "oil_prod": 6,
+    "suspended_solids": 6,
+    "ph": 6,
+    "phosphorus": 6,
+    "alkalinity": 6,
+    "hardness": 6,
+    "salt": 6,
+    "chlorides": 6,
+    "sulfates": 6,
+    "iron": 6,
+    "hardness_calcium": 6,
+    "hardness_magnesium": 6,
+    "datetime": "2022-03-22T16:44:02.320",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 36,
+  "fields": {
+    "oil_prod": 211,
+    "suspended_solids": 312,
+    "ph": 422,
+    "phosphorus": 541,
+    "alkalinity": 2222,
+    "hardness": 1652,
+    "salt": 444,
+    "chlorides": 22,
+    "sulfates": 72,
+    "iron": 300,
+    "hardness_calcium": 256,
+    "hardness_magnesium": 777,
+    "datetime": "2022-03-24T01:35:48.276",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 37,
+  "fields": {
+    "oil_prod": 7,
+    "suspended_solids": 7,
+    "ph": 7,
+    "phosphorus": 7,
+    "alkalinity": 7,
+    "hardness": 7,
+    "salt": 7,
+    "chlorides": 7,
+    "sulfates": 7,
+    "iron": 7,
+    "hardness_calcium": 7,
+    "hardness_magnesium": 7,
+    "datetime": "2022-03-24T17:18:49.317",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 38,
+  "fields": {
+    "oil_prod": 1,
+    "suspended_solids": 1,
+    "ph": 1,
+    "phosphorus": 1,
+    "alkalinity": 1,
+    "hardness": 1,
+    "salt": 1,
+    "chlorides": 1,
+    "sulfates": 1,
+    "iron": 1,
+    "hardness_calcium": 1,
+    "hardness_magnesium": 1,
+    "datetime": "2022-03-24T17:56:13.165",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 39,
+  "fields": {
+    "oil_prod": 2,
+    "suspended_solids": 2,
+    "ph": 2,
+    "phosphorus": 2,
+    "alkalinity": 2,
+    "hardness": 2,
+    "salt": 2,
+    "chlorides": 2,
+    "sulfates": 2,
+    "iron": 2,
+    "hardness_calcium": 2,
+    "hardness_magnesium": 2,
+    "datetime": "2022-03-24T18:18:15.842",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 40,
+  "fields": {
+    "oil_prod": 3,
+    "suspended_solids": 3,
+    "ph": 3,
+    "phosphorus": 3,
+    "alkalinity": 3,
+    "hardness": 3,
+    "salt": 3,
+    "chlorides": 3,
+    "sulfates": 3,
+    "iron": 3,
+    "hardness_calcium": 3,
+    "hardness_magnesium": 3,
+    "datetime": "2022-03-24T18:24:17.744",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 41,
+  "fields": {
+    "oil_prod": 4,
+    "suspended_solids": 4,
+    "ph": 4,
+    "phosphorus": 4,
+    "alkalinity": 4,
+    "hardness": 4,
+    "salt": 4,
+    "chlorides": 4,
+    "sulfates": 4,
+    "iron": 4,
+    "hardness_calcium": 4,
+    "hardness_magnesium": 4,
+    "datetime": "2022-03-24T18:24:43.458",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 42,
+  "fields": {
+    "oil_prod": 5,
+    "suspended_solids": 5,
+    "ph": 5,
+    "phosphorus": 5,
+    "alkalinity": 5,
+    "hardness": 5,
+    "salt": 5,
+    "chlorides": 5,
+    "sulfates": 5,
+    "iron": 5,
+    "hardness_calcium": 5,
+    "hardness_magnesium": 5,
+    "datetime": "2022-03-24T18:25:31.922",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 43,
+  "fields": {
+    "oil_prod": 6,
+    "suspended_solids": 6,
+    "ph": 6,
+    "phosphorus": 6,
+    "alkalinity": 6,
+    "hardness": 6,
+    "salt": 6,
+    "chlorides": 6,
+    "sulfates": 6,
+    "iron": 6,
+    "hardness_calcium": 6,
+    "hardness_magnesium": 6,
+    "datetime": "2022-03-24T18:30:29.474",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 44,
+  "fields": {
+    "oil_prod": 8,
+    "suspended_solids": 8,
+    "ph": 8,
+    "phosphorus": 8,
+    "alkalinity": 8,
+    "hardness": 8,
+    "salt": 8,
+    "chlorides": 8,
+    "sulfates": 8,
+    "iron": 8,
+    "hardness_calcium": 8,
+    "hardness_magnesium": 8,
+    "datetime": "2022-03-24T18:32:45.846",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 45,
+  "fields": {
+    "oil_prod": 999,
+    "suspended_solids": 999,
+    "ph": 99,
+    "phosphorus": 999,
+    "alkalinity": 999,
+    "hardness": 999,
+    "salt": 999,
+    "chlorides": 999,
+    "sulfates": 999,
+    "iron": 999,
+    "hardness_calcium": 999,
+    "hardness_magnesium": 999,
+    "datetime": "2022-03-24T18:33:56.346",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 46,
+  "fields": {
+    "oil_prod": 888,
+    "suspended_solids": 88,
+    "ph": 88,
+    "phosphorus": 88,
+    "alkalinity": 88,
+    "hardness": 88,
+    "salt": 88,
+    "chlorides": 88,
+    "sulfates": 88,
+    "iron": 88,
+    "hardness_calcium": 88,
+    "hardness_magnesium": 88,
+    "datetime": "2022-03-24T18:34:28.638",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 47,
+  "fields": {
+    "oil_prod": 10,
+    "suspended_solids": 10,
+    "ph": 10,
+    "phosphorus": 10,
+    "alkalinity": 9,
+    "hardness": 9,
+    "salt": 9,
+    "chlorides": 9,
+    "sulfates": 9,
+    "iron": 9,
+    "hardness_calcium": 9,
+    "hardness_magnesium": 9,
+    "datetime": "2022-03-24T18:39:27.827",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 48,
+  "fields": {
+    "oil_prod": 99,
+    "suspended_solids": 99,
+    "ph": 99,
+    "phosphorus": 99,
+    "alkalinity": 99,
+    "hardness": 99,
+    "salt": 99,
+    "chlorides": 99,
+    "sulfates": 99,
+    "iron": 99,
+    "hardness_calcium": 99,
+    "hardness_magnesium": 99,
+    "datetime": "2022-03-24T19:27:50.935",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 49,
+  "fields": {
+    "oil_prod": 5,
+    "suspended_solids": 5,
+    "ph": 5,
+    "phosphorus": 5,
+    "alkalinity": 5,
+    "hardness": 5,
+    "salt": 5,
+    "chlorides": 5,
+    "sulfates": 5,
+    "iron": 5,
+    "hardness_calcium": 5,
+    "hardness_magnesium": 5,
+    "datetime": "2022-03-24T19:28:57.636",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 50,
+  "fields": {
+    "oil_prod": 3,
+    "suspended_solids": 3,
+    "ph": 3,
+    "phosphorus": 3,
+    "alkalinity": 3,
+    "hardness": 3,
+    "salt": 3,
+    "chlorides": 3,
+    "sulfates": 3,
+    "iron": 33,
+    "hardness_calcium": 3,
+    "hardness_magnesium": 3,
+    "datetime": "2022-03-24T19:30:29.712",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 51,
+  "fields": {
+    "oil_prod": 10,
+    "suspended_solids": 10,
+    "ph": 26,
+    "phosphorus": 10,
+    "alkalinity": 9,
+    "hardness": 9,
+    "salt": 9,
+    "chlorides": 9,
+    "sulfates": 9,
+    "iron": 9,
+    "hardness_calcium": 9,
+    "hardness_magnesium": 9,
+    "datetime": "2022-03-24T19:56:03.840",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 52,
+  "fields": {
+    "oil_prod": 26,
+    "suspended_solids": 10,
+    "ph": 27,
+    "phosphorus": 8,
+    "alkalinity": 8,
+    "hardness": 8,
+    "salt": 8,
+    "chlorides": 8,
+    "sulfates": 8,
+    "iron": 8,
+    "hardness_calcium": 8,
+    "hardness_magnesium": 8,
+    "datetime": "2022-03-24T19:57:13.839",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 53,
+  "fields": {
+    "oil_prod": 7,
+    "suspended_solids": 7,
+    "ph": 30,
+    "phosphorus": 7,
+    "alkalinity": 77,
+    "hardness": 7,
+    "salt": 7,
+    "chlorides": 7,
+    "sulfates": 7,
+    "iron": 7,
+    "hardness_calcium": 7,
+    "hardness_magnesium": 7,
+    "datetime": "2022-03-24T19:58:34.314",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 54,
+  "fields": {
+    "oil_prod": 5,
+    "suspended_solids": 5,
+    "ph": 5,
+    "phosphorus": 5,
+    "alkalinity": 5,
+    "hardness": 5,
+    "salt": 5,
+    "chlorides": 5,
+    "sulfates": 5,
+    "iron": 5,
+    "hardness_calcium": 5,
+    "hardness_magnesium": 5,
+    "datetime": "2022-03-24T19:59:09.940",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 55,
+  "fields": {
+    "oil_prod": 13,
+    "suspended_solids": 13,
+    "ph": 33,
+    "phosphorus": 13,
+    "alkalinity": 13,
+    "hardness": 13,
+    "salt": 13,
+    "chlorides": 13,
+    "sulfates": 13,
+    "iron": 13,
+    "hardness_calcium": 13,
+    "hardness_magnesium": 13,
+    "datetime": "2022-03-24T20:00:33.861",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 56,
+  "fields": {
+    "oil_prod": 7,
+    "suspended_solids": 7,
+    "ph": 77,
+    "phosphorus": 7,
+    "alkalinity": 7,
+    "hardness": 7,
+    "salt": 7,
+    "chlorides": 7,
+    "sulfates": 7,
+    "iron": 7,
+    "hardness_calcium": 7,
+    "hardness_magnesium": 7,
+    "datetime": "2022-03-24T20:01:20.237",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 57,
+  "fields": {
+    "oil_prod": 22,
+    "suspended_solids": 22,
+    "ph": 22,
+    "phosphorus": 22,
+    "alkalinity": 22,
+    "hardness": 22,
+    "salt": 22,
+    "chlorides": 22,
+    "sulfates": 22,
+    "iron": 22,
+    "hardness_calcium": 22,
+    "hardness_magnesium": 22,
+    "datetime": "2022-03-24T20:02:38.595",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 58,
+  "fields": {
+    "oil_prod": 22,
+    "suspended_solids": 22,
+    "ph": 22,
+    "phosphorus": 22,
+    "alkalinity": 22,
+    "hardness": 22,
+    "salt": 22,
+    "chlorides": 22,
+    "sulfates": 22,
+    "iron": 22,
+    "hardness_calcium": 22,
+    "hardness_magnesium": 22,
+    "datetime": "2022-03-24T20:03:35.693",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 59,
+  "fields": {
+    "oil_prod": 12,
+    "suspended_solids": 12,
+    "ph": 12,
+    "phosphorus": 12,
+    "alkalinity": 12,
+    "hardness": 12,
+    "salt": 12,
+    "chlorides": 12,
+    "sulfates": 12,
+    "iron": 12,
+    "hardness_calcium": 12,
+    "hardness_magnesium": 12,
+    "datetime": "2022-03-24T20:05:33.050",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 60,
+  "fields": {
+    "oil_prod": 33,
+    "suspended_solids": 33,
+    "ph": 33,
+    "phosphorus": 33,
+    "alkalinity": 33,
+    "hardness": 33,
+    "salt": 33,
+    "chlorides": 33,
+    "sulfates": 33,
+    "iron": 33,
+    "hardness_calcium": 33,
+    "hardness_magnesium": 33,
+    "datetime": "2022-03-24T20:06:41.926",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 61,
+  "fields": {
+    "oil_prod": 22,
+    "suspended_solids": 22,
+    "ph": 11,
+    "phosphorus": 22,
+    "alkalinity": 22,
+    "hardness": 11,
+    "salt": 11,
+    "chlorides": 11,
+    "sulfates": 11,
+    "iron": 11,
+    "hardness_calcium": 11,
+    "hardness_magnesium": 11,
+    "datetime": "2022-03-24T20:07:44.115",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 62,
+  "fields": {
+    "oil_prod": 11,
+    "suspended_solids": 11,
+    "ph": 11,
+    "phosphorus": 11,
+    "alkalinity": 11,
+    "hardness": 11,
+    "salt": 11,
+    "chlorides": 11,
+    "sulfates": 11,
+    "iron": 11,
+    "hardness_calcium": 11,
+    "hardness_magnesium": 11,
+    "datetime": "2022-03-24T20:08:36.831",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 63,
+  "fields": {
+    "oil_prod": 11,
+    "suspended_solids": 11,
+    "ph": 11,
+    "phosphorus": 11,
+    "alkalinity": 11,
+    "hardness": 11,
+    "salt": 11,
+    "chlorides": 11,
+    "sulfates": 11,
+    "iron": 11,
+    "hardness_calcium": 11,
+    "hardness_magnesium": 11,
+    "datetime": "2022-03-24T20:09:41.101",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 64,
+  "fields": {
+    "oil_prod": 22,
+    "suspended_solids": 22,
+    "ph": 22,
+    "phosphorus": 22,
+    "alkalinity": 22,
+    "hardness": 22,
+    "salt": 22,
+    "chlorides": 22,
+    "sulfates": 22,
+    "iron": 22,
+    "hardness_calcium": 22,
+    "hardness_magnesium": 22,
+    "datetime": "2022-03-24T20:10:23.519",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 65,
+  "fields": {
+    "oil_prod": 30,
+    "suspended_solids": 11,
+    "ph": 11,
+    "phosphorus": 22,
+    "alkalinity": 22,
+    "hardness": 33,
+    "salt": 33,
+    "chlorides": 44,
+    "sulfates": 44,
+    "iron": 33,
+    "hardness_calcium": 33,
+    "hardness_magnesium": 22,
+    "datetime": "2022-03-25T12:15:58.135",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 66,
+  "fields": {
+    "oil_prod": 9,
+    "suspended_solids": 9,
+    "ph": 9,
+    "phosphorus": 9,
+    "alkalinity": 9,
+    "hardness": 9,
+    "salt": 9,
+    "chlorides": 9,
+    "sulfates": 9,
+    "iron": 9,
+    "hardness_calcium": 9,
+    "hardness_magnesium": 9,
+    "datetime": "2022-03-25T19:29:04.610",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
   "model": "projects.componentssite2",
   "pk": 9,
   "fields": {
@@ -2014,6 +2926,54 @@
     "ph": 10,
     "suspended_solids": 10,
     "datetime": "2022-03-18T18:56:36.754",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 10,
+  "fields": {
+    "oil_prod": 2,
+    "ph": 2,
+    "suspended_solids": 2,
+    "datetime": "2022-03-19T19:07:08.062",
+    "sampling_site": 2,
+    "water_type": 2
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 12,
+  "fields": {
+    "oil_prod": 3,
+    "ph": 3,
+    "suspended_solids": 3,
+    "datetime": "2022-03-22T14:14:20.508",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 13,
+  "fields": {
+    "oil_prod": 4,
+    "ph": 4,
+    "suspended_solids": 4,
+    "datetime": "2022-03-22T15:04:40.711",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 14,
+  "fields": {
+    "oil_prod": 5,
+    "ph": 5,
+    "suspended_solids": 5,
+    "datetime": "2022-03-22T16:44:33.397",
     "sampling_site": 2,
     "water_type": 1
   }
@@ -2038,6 +2998,282 @@
     "ph": 20,
     "suspended_solids": 20,
     "datetime": "2022-03-24T02:42:23.846",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 19,
+  "fields": {
+    "oil_prod": 6,
+    "ph": 6,
+    "suspended_solids": 6,
+    "datetime": "2022-03-24T19:51:25.091",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 20,
+  "fields": {
+    "oil_prod": 4,
+    "ph": 4,
+    "suspended_solids": 4,
+    "datetime": "2022-03-24T19:53:08.796",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 21,
+  "fields": {
+    "oil_prod": 10,
+    "ph": 10,
+    "suspended_solids": 10,
+    "datetime": "2022-03-24T19:54:50.710",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 22,
+  "fields": {
+    "oil_prod": 10,
+    "ph": 45,
+    "suspended_solids": 50,
+    "datetime": "2022-03-25T12:19:18.537",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 23,
+  "fields": {
+    "oil_prod": 3,
+    "ph": 8,
+    "suspended_solids": 8,
+    "datetime": "2022-03-25T12:28:50.078",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 24,
+  "fields": {
+    "oil_prod": 21,
+    "ph": 10,
+    "suspended_solids": 5,
+    "datetime": "2022-03-28T15:46:42.168",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 25,
+  "fields": {
+    "oil_prod": 26,
+    "ph": 8,
+    "suspended_solids": 25,
+    "datetime": "2022-03-28T15:57:11.802",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 26,
+  "fields": {
+    "oil_prod": 1,
+    "ph": 2,
+    "suspended_solids": 3,
+    "datetime": "2022-03-28T16:06:27.400",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 27,
+  "fields": {
+    "oil_prod": 31,
+    "ph": 8,
+    "suspended_solids": 100,
+    "datetime": "2022-03-28T16:07:18.779",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 28,
+  "fields": {
+    "oil_prod": 31,
+    "ph": 8,
+    "suspended_solids": 100,
+    "datetime": "2022-03-28T16:08:04.600",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 29,
+  "fields": {
+    "oil_prod": 33,
+    "ph": 8,
+    "suspended_solids": 100,
+    "datetime": "2022-03-28T16:10:53.912",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 30,
+  "fields": {
+    "oil_prod": 33,
+    "ph": 8,
+    "suspended_solids": 8,
+    "datetime": "2022-03-28T16:13:34.275",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 31,
+  "fields": {
+    "oil_prod": 33,
+    "ph": 8,
+    "suspended_solids": 8,
+    "datetime": "2022-03-28T16:17:40.527",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 32,
+  "fields": {
+    "oil_prod": 33,
+    "ph": 8,
+    "suspended_solids": 8,
+    "datetime": "2022-03-28T16:18:51.095",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 33,
+  "fields": {
+    "oil_prod": 33,
+    "ph": 8,
+    "suspended_solids": 8,
+    "datetime": "2022-03-28T16:22:23.435",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 34,
+  "fields": {
+    "oil_prod": 33,
+    "ph": 8,
+    "suspended_solids": 8,
+    "datetime": "2022-03-28T16:54:18.596",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 35,
+  "fields": {
+    "oil_prod": 33,
+    "ph": 8,
+    "suspended_solids": 8,
+    "datetime": "2022-03-28T17:13:57.742",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 36,
+  "fields": {
+    "oil_prod": 1,
+    "ph": 1,
+    "suspended_solids": 1,
+    "datetime": "2022-03-28T17:21:31.830",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 37,
+  "fields": {
+    "oil_prod": 33,
+    "ph": 6,
+    "suspended_solids": 8,
+    "datetime": "2022-03-28T17:25:11.296",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 38,
+  "fields": {
+    "oil_prod": 33,
+    "ph": 8,
+    "suspended_solids": 8,
+    "datetime": "2022-03-28T17:31:44.964",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 39,
+  "fields": {
+    "oil_prod": 33,
+    "ph": 8,
+    "suspended_solids": 8,
+    "datetime": "2022-03-28T17:33:07.551",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 40,
+  "fields": {
+    "oil_prod": 22,
+    "ph": 10,
+    "suspended_solids": 10,
+    "datetime": "2022-03-28T17:33:54.052",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 41,
+  "fields": {
+    "oil_prod": 33,
+    "ph": 8,
+    "suspended_solids": 8,
+    "datetime": "2022-03-28T17:34:51.020",
     "sampling_site": 2,
     "water_type": 1
   }
@@ -2084,6 +3320,25 @@
 },
 {
   "model": "projects.componentssite4",
+  "pk": 2,
+  "fields": {
+    "hardness": 1,
+    "hardness_calcium": 1,
+    "ph": 1,
+    "salt": 1,
+    "chlorides": 1,
+    "sulfates": 1,
+    "oil_prod": 1,
+    "suspended_subst": 1,
+    "alkalinity": 1,
+    "iron": 1,
+    "datetime": "2022-03-19T19:08:16.083",
+    "sampling_site": 4,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite4",
   "pk": 3,
   "fields": {
     "hardness": 20,
@@ -2098,6 +3353,82 @@
     "iron": 5,
     "datetime": "2022-03-24T02:43:55.990",
     "sampling_site": 4,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite4",
+  "pk": 4,
+  "fields": {
+    "hardness": 3,
+    "hardness_calcium": 3,
+    "ph": 3,
+    "salt": 3,
+    "chlorides": 3,
+    "sulfates": 3,
+    "oil_prod": 3,
+    "suspended_subst": 3,
+    "alkalinity": 3,
+    "iron": 3,
+    "datetime": "2022-03-19T19:43:11.301",
+    "sampling_site": 4,
+    "water_type": 2
+  }
+},
+{
+  "model": "projects.componentssite5",
+  "pk": 1,
+  "fields": {
+    "hardness": 1,
+    "hardness_calcium": 1,
+    "ph": 1,
+    "salt": 1,
+    "chlorides": 1,
+    "sulfates": 1,
+    "oil_prod": 1,
+    "suspended_subst": 1,
+    "alkalinity": 1,
+    "iron": 1,
+    "datetime": "2022-03-19T19:09:01.892",
+    "sampling_site": 5,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite5",
+  "pk": 2,
+  "fields": {
+    "hardness": 2,
+    "hardness_calcium": 2,
+    "ph": 2,
+    "salt": 2,
+    "chlorides": 2,
+    "sulfates": 2,
+    "oil_prod": 2,
+    "suspended_subst": 2,
+    "alkalinity": 2,
+    "iron": 2,
+    "datetime": "2022-03-19T19:09:18.529",
+    "sampling_site": 5,
+    "water_type": 2
+  }
+},
+{
+  "model": "projects.componentssite5",
+  "pk": 3,
+  "fields": {
+    "hardness": 3,
+    "hardness_calcium": 3,
+    "ph": 3,
+    "salt": 3,
+    "chlorides": 3,
+    "sulfates": 3,
+    "oil_prod": 3,
+    "suspended_subst": 3,
+    "alkalinity": 3,
+    "iron": 3,
+    "datetime": "2022-03-19T19:31:32.538",
+    "sampling_site": 5,
     "water_type": 1
   }
 },
@@ -2119,6 +3450,26 @@
     "datetime": "2022-03-24T02:49:03.127",
     "sampling_site": 6,
     "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite6",
+  "pk": 2,
+  "fields": {
+    "hardness": 8,
+    "hardness_calcium": 8,
+    "ph": 8,
+    "salt": 8,
+    "chlorides": 8,
+    "sulfates": 8,
+    "oil_prod": 8,
+    "suspended_subst": 8,
+    "alkalinity_phenols": 8,
+    "alkalinity": 8,
+    "iron": 8,
+    "datetime": "2022-03-22T15:32:02.067",
+    "sampling_site": 6,
+    "water_type": 2
   }
 },
 {
@@ -2247,6 +3598,177 @@
     "datetime": "2022-03-24T02:56:59.469",
     "sampling_site": 14,
     "water_type": 1
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 1,
+  "fields": {
+    "title": "Увеличить продувку",
+    "description": "Увеличить продувку",
+    "execution_period": 24
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 2,
+  "fields": {
+    "title": "Уменьшить продувку",
+    "description": "Уменьшить продувку",
+    "execution_period": 24
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 3,
+  "fields": {
+    "title": "Устранить утечки технологических продуктов в оборотную воду",
+    "description": "Устранить утечки технологических продуктов в оборотную воду",
+    "execution_period": 168
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 4,
+  "fields": {
+    "title": "Увеличить дозировку ингибитора",
+    "description": "Увеличить дозировку ингибитора",
+    "execution_period": 168
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 5,
+  "fields": {
+    "title": "Проверить работу осветлителя, проверить Ку, увеличить продувку",
+    "description": "Проверить работу осветлителя, проверить Ку, увеличить продувку",
+    "execution_period": 168
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 6,
+  "fields": {
+    "title": "Проверить Ку, увеличить продувку",
+    "description": "Проверить Ку, увеличить продувку",
+    "execution_period": 168
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 7,
+  "fields": {
+    "title": "Увеличить продувку и подпитку осветленной водой",
+    "description": "Увеличить продувку и подпитку осветленной водой",
+    "execution_period": 168
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 8,
+  "fields": {
+    "title": "Повысить дозу флокулянта и коагулянта подаваемых на блок флотации",
+    "description": "Повысить дозу флокулянта и коагулянта подаваемых на блок флотации",
+    "execution_period": 12
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 9,
+  "fields": {
+    "title": "Снизить подачу галогена в оборотную воду",
+    "description": "Снизить подачу галогена в оборотную воду",
+    "execution_period": 168
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 10,
+  "fields": {
+    "title": "Подать ортофосфорную кислоту",
+    "description": "Подать ортофосфорную кислоту",
+    "execution_period": 24
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 11,
+  "fields": {
+    "title": "Отбор пробы сточной воды поступающих с установок завода",
+    "description": "Отбор пробы сточной воды поступающих с установок завода",
+    "execution_period": 24
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 12,
+  "fields": {
+    "title": "Подать едкий натр",
+    "description": "Подать едкий натр",
+    "execution_period": 24
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 13,
+  "fields": {
+    "title": "Увеличить продувку",
+    "description": "Увеличить продувку",
+    "execution_period": 168
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 14,
+  "fields": {
+    "title": "Проверить работу осветлителя, проверить Ку, увеличить продувку",
+    "description": "Проверить работу осветлителя, проверить Ку, увеличить продувку",
+    "execution_period": 24
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 15,
+  "fields": {
+    "title": "Уменьшить продувку",
+    "description": "Уменьшить продувку",
+    "execution_period": 168
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 36,
+  "fields": {
+    "task": 3,
+    "user": 1,
+    "start_date": "2022-03-28T17:33:07.573",
+    "deadline": "2022-04-04T17:33:07.573",
+    "comp_title": "Нефтепродукты",
+    "sampling_site": 2
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 37,
+  "fields": {
+    "task": 13,
+    "user": 1,
+    "start_date": "2022-03-28T17:33:54.083",
+    "deadline": "2022-04-04T17:33:54.082",
+    "comp_title": "Значение рН",
+    "sampling_site": 2
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 38,
+  "fields": {
+    "task": 3,
+    "user": 1,
+    "start_date": "2022-03-28T17:34:51.051",
+    "deadline": "2022-04-04T17:34:51.051",
+    "comp_title": "Нефтепродукты",
+    "sampling_site": 2
   }
 }
 ]
