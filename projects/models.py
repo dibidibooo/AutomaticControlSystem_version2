@@ -39,6 +39,7 @@ class Component(models.Model):
     limit_lo = models.CharField(verbose_name='Допустимые нормы не ниже', max_length=50, null=True, blank=True)
     limit_hi = models.CharField(verbose_name='Допустимые нормы не более', max_length=50, null=True, blank=True)
     period = models.CharField(verbose_name='Периодичность отбора', max_length=100, blank=True)
+    period_in_hours = models.IntegerField(null=True, blank=True, verbose_name='Срок выполнения задачи в часах')
     standards = models.CharField(verbose_name='Наименование НД и методы испытаний', max_length=100, blank=True)
     recommendation1 = models.CharField(verbose_name='Рекомендация выше нормы', max_length=200, null=True, blank=True)
     recommendation2 = models.CharField(verbose_name='Рекомендация ниже нормы', max_length=200, null=True, blank=True)
@@ -258,17 +259,8 @@ class ComponentsSite14(models.Model):
     water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component14')
 
 
-class Task(models.Model):
-    title = models.CharField(max_length=100, verbose_name='Название задачи')
-    description = models.TextField(max_length=1000, null=True, blank=True, verbose_name='Описание задачи')
-    execution_period = models.IntegerField(null=True, blank=True, verbose_name='Срок выполнения задачи в часах')
-
-    def __str__(self):
-        return self.title
-
-
 class TaskAssign(models.Model):
-    task = models.ForeignKey('projects.Task', related_name='task_assign', on_delete=models.CASCADE)
+    task = models.CharField(max_length=100, verbose_name='Задача')
     user = models.ForeignKey(get_user_model(), related_name='task_assign', on_delete=models.CASCADE)
     start_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата назначения задачи')
     deadline = models.DateTimeField(null=True, blank=True, verbose_name='Срок выполнения задачи')
@@ -278,22 +270,25 @@ class TaskAssign(models.Model):
         null=True,
         blank=True,
         related_name='task_assign',
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        verbose_name='Место отбора проб'
     )
-#
-#
-# class Notification(models.Model):
-#     description = models.CharField(max_length=500, verbose_name='Уведомление')
-#
-#     def __str__(self):
-#         return self.description
-#
-#
-# class NotificationAssign(models.Model):
-#     notification = models.ForeignKey(
-#         'projects.Notification',
-#         related_name='notification_assign',
-#         on_delete=models.CASCADE
-#     )
-#     user = models.ForeignKey(get_user_model(), related_name='notification_assign', on_delete=models.CASCADE)
-#     start_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время создания')
+    plant_unit = models.ForeignKey(
+        'projects.PlantUnit',
+        related_name='task_assign',
+        on_delete=models.CASCADE,
+        verbose_name='Установка'
+    )
+    notification = models.ForeignKey(
+        'projects.Notification',
+        related_name='task_assign',
+        on_delete=models.CASCADE,
+        verbose_name='Уведомление'
+    )
+
+
+class Notification(models.Model):
+    title = models.CharField(max_length=500, verbose_name='Уведомление')
+
+    def __str__(self):
+        return self.title
