@@ -5,8 +5,6 @@
 
 {% endblock %}
 {% block contents %}
-
-
 <div class="row">
     <div class="col-xl-6">
         <div class="checkout-tabs">
@@ -49,7 +47,6 @@
                 <div class="col-xl-10 col-sm-9">
                     <form class="needs-validation" novalidate method="POST" action="{% url 'projects-projectsgrid' %}">
                         {% csrf_token %}
-
                         <div class="tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade show active" id="location1" role="tabpanel"
                                  aria-labelledby="location1-tab">
@@ -852,11 +849,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            {{ component.recommendation1 }}
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Нефтепродукт' not in results2 %}
+                                                                    <h5>{{ results2.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results2.items %}
+                                                                    {% if key == 'Нефтепродукт' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -900,13 +900,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Значение рН' not in results2 %}
+                                                                    <h5>{{ results2.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results2.items %}
+                                                                    {% if key == 'Значение рН' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -950,13 +951,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общие взвешенные твердые частицы' not in results2 %}
+                                                                    <h5>{{ results2.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results2.items %}
+                                                                    {% if key == 'Общие взвешенные твердые частицы' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1011,13 +1013,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Взвешенные вещества' not in results3 %}
+                                                                    <h5>{{ results3.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results3.items %}
+                                                                    {% if key == 'Взвешенные вещества' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1061,13 +1064,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Жесткость общая' not in results3 %}
+                                                                    <h5>{{ results3.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results3.items %}
+                                                                    {% if key == 'Жесткость общая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1111,13 +1115,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Железо' not in results3 %}
+                                                                    <h5>{{ results3.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results3.items %}
+                                                                    {% if key == 'Железо' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1161,13 +1166,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Сухой остаток' not in results3 %}
+                                                                    <h5>{{ results3.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results3.items %}
+                                                                    {% if key == 'Сухой остаток' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1211,13 +1217,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Щелочность общая' not in results3 %}
+                                                                    <h5>{{ results3.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results3.items %}
+                                                                    {% if key == 'Щелочность общая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1261,13 +1268,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Солесодержание' not in results3 %}
+                                                                    <h5>{{ results3.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results3.items %}
+                                                                    {% if key == 'Солесодержание' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1311,13 +1319,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Хлориды' not in results3 %}
+                                                                    <h5>{{ results3.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results3.items %}
+                                                                    {% if key == 'Хлориды' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1361,13 +1370,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Сульфаты' not in results3 %}
+                                                                    <h5>{{ results3.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results3.items %}
+                                                                    {% if key == 'Сульфаты' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1411,13 +1421,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Жесткость кальциевая' not in results3 %}
+                                                                    <h5>{{ results3.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results3.items %}
+                                                                    {% if key == 'Жесткость кальциевая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1461,13 +1472,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Жесткость магниевая' not in results3 %}
+                                                                    <h5>{{ results3.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results3.items %}
+                                                                    {% if key == 'Жесткость магниевая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1511,13 +1523,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Значение рН' not in results3 %}
+                                                                    <h5>{{ results3.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results3.items %}
+                                                                    {% if key == 'Значение рН' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1606,13 +1619,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общая жесткость' not in results4 %}
+                                                                    <h5>{{ results4.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results4.items %}
+                                                                    {% if key == 'Общая жесткость' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1656,13 +1670,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Кальциевая жесткость' not in results4 %}
+                                                                    <h5>{{ results4.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results4.items %}
+                                                                    {% if key == 'Кальциевая жесткость' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1706,13 +1721,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Значение рН' not in results4 %}
+                                                                    <h5>{{ results4.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results4.items %}
+                                                                    {% if key == 'Значение рН' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1756,13 +1772,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общее солесодержание' not in results4 %}
+                                                                    <h5>{{ results4.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results4.items %}
+                                                                    {% if key == 'Общее солесодержание' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1806,13 +1823,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Содержание хлоридов' not in results4 %}
+                                                                    <h5>{{ results4.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results4.items %}
+                                                                    {% if key == 'Содержание хлоридов' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1856,13 +1874,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Содержание сульфатов' not in results4 %}
+                                                                    <h5>{{ results4.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results4.items %}
+                                                                    {% if key == 'Содержание сульфатов' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1906,13 +1925,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Содержание нефтепродуктов' not in results4 %}
+                                                                    <h5>{{ results4.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results4.items %}
+                                                                    {% if key == 'Содержание нефтепродуктов' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1956,13 +1976,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общие взвешенные вещества' not in results4 %}
+                                                                    <h5>{{ results4.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results4.items %}
+                                                                    {% if key == 'Общие взвешенные вещества' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2006,13 +2027,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Щелочность общая' not in results4 %}
+                                                                    <h5>{{ results4.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results4.items %}
+                                                                    {% if key == 'Щелочность общая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2056,13 +2078,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Железо' not in results4 %}
+                                                                    <h5>{{ results4.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results4.items %}
+                                                                    {% if key == 'Железо' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2117,13 +2140,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общая жесткость' not in results5 %}
+                                                                    <h5>{{ results5.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results5.items %}
+                                                                    {% if key == 'Общая жесткость' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2167,13 +2191,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Кальциевая жесткость' not in results5 %}
+                                                                    <h5>{{ results5.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results5.items %}
+                                                                    {% if key == 'Кальциевая жесткость' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2217,13 +2242,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Значение рН' not in results5 %}
+                                                                    <h5>{{ results5.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results5.items %}
+                                                                    {% if key == 'Значение рН' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2267,13 +2293,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общее солесодержание' not in results5 %}
+                                                                    <h5>{{ results5.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results5.items %}
+                                                                    {% if key == 'Общее солесодержание' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2317,13 +2344,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Содержание хлоридов' not in results5 %}
+                                                                    <h5>{{ results5.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results5.items %}
+                                                                    {% if key == 'Содержание хлоридов' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2367,13 +2395,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Содержание сульфатов' not in results5 %}
+                                                                    <h5>{{ results5.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results5.items %}
+                                                                    {% if key == 'Содержание сульфатов' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2417,13 +2446,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Содержание нефтепродуктов' not in results5 %}
+                                                                    <h5>{{ results5.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results5.items %}
+                                                                    {% if key == 'Содержание нефтепродуктов' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2467,13 +2497,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общие взвешенные вещества' not in results5 %}
+                                                                    <h5>{{ results5.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results5.items %}
+                                                                    {% if key == 'Общие взвешенные вещества' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2517,13 +2548,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Щелочность общая' not in results5 %}
+                                                                    <h5>{{ results5.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results5.items %}
+                                                                    {% if key == 'Щелочность общая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2567,13 +2599,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Железо' not in results5 %}
+                                                                    <h5>{{ results5.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results5.items %}
+                                                                    {% if key == 'Железо' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2659,13 +2692,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общая жесткость' not in results6 %}
+                                                                    <h5>{{ results6.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results6.items %}
+                                                                    {% if key == 'Общая жесткость' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2709,13 +2743,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Кальциевая жесткость' not in results6 %}
+                                                                    <h5>{{ results6.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results6.items %}
+                                                                    {% if key == 'Кальциевая жесткость' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2759,13 +2794,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Значение рН' not in results6 %}
+                                                                    <h5>{{ results6.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results6.items %}
+                                                                    {% if key == 'Значение рН' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2809,13 +2845,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общее солесодержание' not in results6 %}
+                                                                    <h5>{{ results6.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results6.items %}
+                                                                    {% if key == 'Общее солесодержание' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2859,13 +2896,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Содержание хлоридов' not in results6 %}
+                                                                    <h5>{{ results6.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results6.items %}
+                                                                    {% if key == 'Содержание хлоридов' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2909,13 +2947,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Содержание сульфатов' not in results6 %}
+                                                                    <h5>{{ results6.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results6.items %}
+                                                                    {% if key == 'Содержание сульфатов' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -2959,13 +2998,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Содержание нефтепродуктов' not in results6 %}
+                                                                    <h5>{{ results6.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results6.items %}
+                                                                    {% if key == 'Содержание нефтепродуктов' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3009,13 +3049,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общие взвешенные вещества' not in results6 %}
+                                                                    <h5>{{ results6.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results6.items %}
+                                                                    {% if key == 'Общие взвешенные вещества' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3059,13 +3100,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Щелочность по фенолу' not in results6 %}
+                                                                    <h5>{{ results6.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results6.items %}
+                                                                    {% if key == 'Щелочность по фенолу' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3109,13 +3151,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Щелочность общая' not in results6 %}
+                                                                    <h5>{{ results6.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results6.items %}
+                                                                    {% if key == 'Щелочность общая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3159,13 +3202,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Железо' not in results6 %}
+                                                                    <h5>{{ results6.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results6.items %}
+                                                                    {% if key == 'Железо' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3262,13 +3306,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общие взвешенные твердые частицы' not in results7 %}
+                                                                    <h5>{{ results7.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results7.items %}
+                                                                    {% if key == 'Общие взвешенные твердые частицы' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3312,13 +3357,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Хлориды' not in results7 %}
+                                                                    <h5>{{ results7.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results7.items %}
+                                                                    {% if key == 'Хлориды' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3362,13 +3408,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Сульфаты' not in results7 %}
+                                                                    <h5>{{ results7.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results7.items %}
+                                                                    {% if key == 'Сульфаты' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3412,13 +3459,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Значение рН' not in results7 %}
+                                                                    <h5>{{ results7.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results7.items %}
+                                                                    {% if key == 'Значение рН' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3462,13 +3510,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Щелочность общая' not in results7 %}
+                                                                    <h5>{{ results7.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results7.items %}
+                                                                    {% if key == 'Щелочность общая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3512,13 +3561,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Жесткость кальциевая' not in results7 %}
+                                                                    <h5>{{ results7.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results7.items %}
+                                                                    {% if key == 'Жесткость кальциевая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3562,13 +3612,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Жесткость общая' not in results7 %}
+                                                                    <h5>{{ results7.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results7.items %}
+                                                                    {% if key == 'Жесткость общая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3612,13 +3663,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Железо общее' not in results7 %}
+                                                                    <h5>{{ results7.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results7.items %}
+                                                                    {% if key == 'Железо общее' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3672,13 +3724,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общие взвешенные твердые частицы' not in results8 %}
+                                                                    <h5>{{ results8.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results8.items %}
+                                                                    {% if key == 'Общие взвешенные твердые частицы' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3722,13 +3775,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Значение рН' not in results8 %}
+                                                                    <h5>{{ results8.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results8.items %}
+                                                                    {% if key == 'Значение рН' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3772,13 +3826,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Хлориды' not in results8 %}
+                                                                    <h5>{{ results8.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results8.items %}
+                                                                    {% if key == 'Хлориды' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3822,13 +3877,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Фосфор' not in results8 %}
+                                                                    <h5>{{ results8.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results8.items %}
+                                                                    {% if key == 'Фосфор' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3872,13 +3928,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Нефтепродукт' not in results8 %}
+                                                                    <h5>{{ results8.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results8.items %}
+                                                                    {% if key == 'Нефтепродукт' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3922,13 +3979,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Щелочность общая' not in results8 %}
+                                                                    <h5>{{ results8.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results8.items %}
+                                                                    {% if key == 'Щелочность общая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -3972,13 +4030,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Жесткость кальциевая' not in results8 %}
+                                                                    <h5>{{ results8.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results8.items %}
+                                                                    {% if key == 'Жесткость кальциевая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4022,13 +4081,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Жесткость общая' not in results8 %}
+                                                                    <h5>{{ results8.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results8.items %}
+                                                                    {% if key == 'Жесткость общая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4072,13 +4132,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Железо общее' not in results8 %}
+                                                                    <h5>{{ results8.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results8.items %}
+                                                                    {% if key == 'Железо общее' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4122,13 +4183,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Солесодержание' not in results8 %}
+                                                                    <h5>{{ results8.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results8.items %}
+                                                                    {% if key == 'Солесодержание' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4182,13 +4244,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общие взвешенные твердые частицы' not in results9 %}
+                                                                    <h5>{{ results9.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results9.items %}
+                                                                    {% if key == 'Общие взвешенные твердые частицы' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4232,13 +4295,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Хлориды' not in results9 %}
+                                                                    <h5>{{ results9.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results9.items %}
+                                                                    {% if key == 'Хлориды' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4282,13 +4346,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Сульфаты' not in results9 %}
+                                                                    <h5>{{ results9.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results9.items %}
+                                                                    {% if key == 'Сульфаты' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4332,13 +4397,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Значение рН' not in results9 %}
+                                                                    <h5>{{ results9.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results9.items %}
+                                                                    {% if key == 'Значение рН' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4382,13 +4448,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Фосфор' not in results9 %}
+                                                                    <h5>{{ results9.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results9.items %}
+                                                                    {% if key == 'Фосфор' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4432,13 +4499,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Щелочность общая' not in results9 %}
+                                                                    <h5>{{ results9.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results9.items %}
+                                                                    {% if key == 'Щелочность общая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4482,13 +4550,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Жесткость кальциевая' not in results9 %}
+                                                                    <h5>{{ results9.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results9.items %}
+                                                                    {% if key == 'Жесткость кальциевая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4532,13 +4601,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Жесткость общая' not in results9 %}
+                                                                    <h5>{{ results9.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results9.items %}
+                                                                    {% if key == 'Жесткость общая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4582,13 +4652,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Железо общее' not in results9 %}
+                                                                    <h5>{{ results9.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results9.items %}
+                                                                    {% if key == 'Железо общее' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4632,13 +4703,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Солесодержание' not in results9 %}
+                                                                    <h5>{{ results9.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results9.items %}
+                                                                    {% if key == 'Солесодержание' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4693,13 +4765,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Остаточный хлор' not in results10 %}
+                                                                    <h5>{{ results10.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results10.items %}
+                                                                    {% if key == 'Остаточный хлор' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4743,13 +4816,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Нефтепродукт' not in results10 %}
+                                                                    <h5>{{ results10.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results10.items %}
+                                                                    {% if key == 'Нефтепродукт' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4793,13 +4867,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Солесодержание' not in results10 %}
+                                                                    <h5>{{ results10.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results10.items %}
+                                                                    {% if key == 'Солесодержание' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4854,13 +4929,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Общие взвешенные твёрдые частицы' not in results11 %}
+                                                                    <h5>{{ results11.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results11.items %}
+                                                                    {% if key == 'Общие взвешенные твёрдые частицы' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4947,13 +5023,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Нефтепродукт' not in results12 %}
+                                                                    <h5>{{ results12.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results12.items %}
+                                                                    {% if key == 'Нефтепродукт' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -4997,13 +5074,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Взвешенные вещества' not in results12 %}
+                                                                    <h5>{{ results12.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results12.items %}
+                                                                    {% if key == 'Взвешенные вещества' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5047,13 +5125,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Значение рН' not in results12 %}
+                                                                    <h5>{{ results12.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results12.items %}
+                                                                    {% if key == 'Значение рН' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5097,13 +5176,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Химическая потребность в кислороде (ХПК)' not in results12 %}
+                                                                    <h5>{{ results12.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results12.items %}
+                                                                    {% if key == 'Химическая потребность в кислороде (ХПК)' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5147,13 +5227,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Поверхностно-активные вещества (АПАВ)' not in results12 %}
+                                                                    <h5>{{ results12.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results12.items %}
+                                                                    {% if key == 'Поверхностно-активные вещества (АПАВ)' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5197,13 +5278,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Аммонийный азот' not in results12 %}
+                                                                    <h5>{{ results12.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results12.items %}
+                                                                    {% if key == 'Аммонийный азот' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5292,13 +5374,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Значение рН' not in results13 %}
+                                                                    <h5>{{ results13.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results13.items %}
+                                                                    {% if key == 'Значение рН' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5342,13 +5425,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Взвешенные вещества' not in results13 %}
+                                                                    <h5>{{ results13.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results13.items %}
+                                                                    {% if key == 'Взвешенные вещества' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5392,13 +5476,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Химическая потребность в кислороде (ХПК)' not in results13 %}
+                                                                    <h5>{{ results13.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results13.items %}
+                                                                    {% if key == 'Химическая потребность в кислороде (ХПК)' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5442,13 +5527,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Нефтепродукт' not in results13 %}
+                                                                    <h5>{{ results13.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results13.items %}
+                                                                    {% if key == 'Нефтепродукт' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5492,13 +5578,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Биологическая потребность в кислороде (БПК5)' not in results13 %}
+                                                                    <h5>{{ results13.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results13.items %}
+                                                                    {% if key == 'Биологическая потребность в кислороде (БПК5)' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5542,13 +5629,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Фенолы' not in results13 %}
+                                                                    <h5>{{ results13.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results13.items %}
+                                                                    {% if key == 'Фенолы' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5592,13 +5680,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Поверхностно-активные вещества (АПАВ)' not in results13 %}
+                                                                    <h5>{{ results13.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results13.items %}
+                                                                    {% if key == 'Поверхностно-активные вещества (АПАВ)' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5642,13 +5731,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Хлориды' not in results13 %}
+                                                                    <h5>{{ results13.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results13.items %}
+                                                                    {% if key == 'Хлориды' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5692,13 +5782,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Сульфаты' not in results13 %}
+                                                                    <h5>{{ results13.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results13.items %}
+                                                                    {% if key == 'Сульфаты' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5742,13 +5833,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Железо' not in results13 %}
+                                                                    <h5>{{ results13.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results13.items %}
+                                                                    {% if key == 'Железо' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5792,13 +5884,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Аммонийный азот' not in results13 %}
+                                                                    <h5>{{ results13.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results13.items %}
+                                                                    {% if key == 'Аммонийный азот' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5842,13 +5935,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Азот нитратов' not in results13 %}
+                                                                    <h5>{{ results13.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results13.items %}
+                                                                    {% if key == 'Азот нитратов' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5892,13 +5986,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Азот нитритов' not in results13 %}
+                                                                    <h5>{{ results13.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results13.items %}
+                                                                    {% if key == 'Азот нитритов' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -5953,13 +6048,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Щёлочность общая' not in results14 %}
+                                                                    <h5>{{ results14.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results14.items %}
+                                                                    {% if key == 'Щёлочность общая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -6003,13 +6099,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Жёсткость общая' not in results14 %}
+                                                                    <h5>{{ results14.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results14.items %}
+                                                                    {% if key == 'Жёсткость общая' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -6053,13 +6150,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Окисляемость' not in results14 %}
+                                                                    <h5>{{ results14.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results14.items %}
+                                                                    {% if key == 'Окисляемость' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -6103,13 +6201,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Солесодержание' not in results14 %}
+                                                                    <h5>{{ results14.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results14.items %}
+                                                                    {% if key == 'Солесодержание' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -6153,13 +6252,14 @@
                                                                     Рекомендация
                                                                 </p>
                                                                 <div class="col-12">
-                                                                    <div>
-                                                                        <h5>
-                                                                            Здесь будет написана та или иная
-                                                                            рекомендация по
-                                                                            контролируемым показателям
-                                                                        </h5>
-                                                                    </div>
+                                                                    {% if 'Остаточный хлор' not in results14 %}
+                                                                    <h5>{{ results14.no_recom }}</h5>
+                                                                    {% endif %}
+                                                                    {% for key, value in results14.items %}
+                                                                    {% if key == 'Остаточный хлор' %}
+                                                                    <h5>{{ value }}</h5>
+                                                                    {% endif %}
+                                                                    {% endfor %}
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -6201,5 +6301,4 @@ $(document).ready(function(){
 <!-- Saas dashboard init -->
 <script src="{% static 'js/pages/saas-dashboard.init.js'%}"></script>
 <script src="{% static 'js/big-chart.js'%}"></script>
-
 {% endblock %}
