@@ -1,15 +1,16 @@
+from datetime import datetime, timedelta
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.views.generic import DetailView, ListView
 
-<<<<<<< HEAD
+<<<<<<< HEAD:projects/views/analysis.py
 from projects.views.tasks import TaskCreate
 =======
-from ..views.tasks import TaskCreate
->>>>>>> 1737f54361328be94e3373621eeb36f858201952
-
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051:projects/views/views.py
 from projects.forms import (
     Site1Form,
     Site2Form,
@@ -42,7 +43,7 @@ from projects.models import (
     ComponentsSite13,
     ComponentsSite14,
     Component,
-    TaskAssign,
+    TaskAssign, Task,
 )
 from projects.multiforms import MultiFormsView
 
@@ -468,9 +469,10 @@ class ProjectOverviewView(LoginRequiredMixin, View):
 
 
 class ResultsView(LoginRequiredMixin, View):
+    tasks = TaskAssign.objects.all()
+    components = Component.objects.all()
+
     def get(self, request):
-        tasks = TaskAssign.objects.all()
-        components = Component.objects.all()
         results_site1 = self.get_results1()
         results_site2 = self.get_results2()
         results_site3 = self.get_results3()
@@ -485,12 +487,11 @@ class ResultsView(LoginRequiredMixin, View):
         results_site12 = self.get_results12()
         results_site13 = self.get_results13()
         results_site14 = self.get_results14()
-
         context = {
             'heading': "Результаты",
             'pageview': "Projects",
-            'components': components,
-            'tasks': tasks,
+            'components': self.components,
+            'tasks': self.tasks,
             'results1': results_site1,
             'results2': results_site2,
             'results3': results_site3,
@@ -510,43 +511,24 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results1(self):
         results_site = {}
-        tasks = TaskAssign.objects.all()
         try:
             sample = ComponentsSite1.objects.all().latest('datetime')
-            for task in tasks:
+            for task in self.tasks:
                 if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-<<<<<<< HEAD
                     results_site[task.comp_title] = task.task.title
                 else:
                     results_site['no_recom'] = 'Рекомендация не требуется'
-=======
-                    results_site[task.comp_title] = task.task.capitalize()
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
->>>>>>> 1737f54361328be94e3373621eeb36f858201952
             for key, value in ComponentsSite1.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
         except ComponentsSite1.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
+
         return results_site
 
     def get_results2(self):
         results_site = {}
-        tasks = TaskAssign.objects.all()
         try:
-            sample = ComponentsSite2.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-<<<<<<< HEAD
-                    results_site[task.comp_title] = task.task.title
-                else:
-                    results_site['no_recom'] = 'Рекомендация не требуется'
-=======
-                    results_site[task.comp_title] = task.task.capitalize()
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
->>>>>>> 1737f54361328be94e3373621eeb36f858201952
             for key, value in ComponentsSite2.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
@@ -556,20 +538,7 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results3(self):
         results_site = {}
-        tasks = TaskAssign.objects.all()
         try:
-            sample = ComponentsSite3.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-<<<<<<< HEAD
-                    results_site[task.comp_title] = task.task.title
-                else:
-                    results_site['no_recom'] = 'Рекомендация не требуется'
-=======
-                    results_site[task.comp_title] = task.task.capitalize()
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
->>>>>>> 1737f54361328be94e3373621eeb36f858201952
             for key, value in ComponentsSite3.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
@@ -627,66 +596,6 @@ class ResultsView(LoginRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-<<<<<<< HEAD
-<<<<<<< HEAD:projects/views.py
-    # def get_results7(self):
-    #     results_site = {}
-    #     for key, value in ComponentsSite7.objects.values().latest('datetime').items():
-    #         if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-    #             results_site[key] = value
-    #     return results_site
-    #
-    # def get_results8(self):
-    #     results_site = {}
-    #     for key, value in ComponentsSite8.objects.values().latest('datetime').items():
-    #         if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-    #             results_site[key] = value
-    #     return results_site
-    #
-    # def get_results9(self):
-    #     results_site = {}
-    #     for key, value in ComponentsSite9.objects.values().latest('datetime').items():
-    #         if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-    #             results_site[key] = value
-    #     return results_site
-    #
-    # def get_results10(self):
-    #     results_site = {}
-    #     for key, value in ComponentsSite10.objects.values().latest('datetime').items():
-    #         if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-    #             results_site[key] = value
-    #     return results_site
-    #
-    # def get_results11(self):
-    #     results_site = {}
-    #     for key, value in ComponentsSite11.objects.values().latest('datetime').items():
-    #         if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-    #             results_site[key] = value
-    #     return results_site
-    #
-    # def get_results12(self):
-    #     results_site = {}
-    #     for key, value in ComponentsSite12.objects.values().latest('datetime').items():
-    #         if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-    #             results_site[key] = value
-    #     return results_site
-    #
-    # def get_results13(self):
-    #     results_site = {}
-    #     for key, value in ComponentsSite13.objects.values().latest('datetime').items():
-    #         if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-    #             results_site[key] = value
-    #     return results_site
-    #
-    # def get_results14(self):
-    #     results_site = {}
-    #     for key, value in ComponentsSite14.objects.values().latest('datetime').items():
-    #         if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-    #             results_site[key] = value
-    #     return results_site
-=======
-=======
->>>>>>> 1737f54361328be94e3373621eeb36f858201952
     def get_results9(self):
         results_site = {}
         try:
@@ -746,21 +655,115 @@ class ResultsView(LoginRequiredMixin, View):
         except ComponentsSite6.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
-<<<<<<< HEAD
-
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        context['data'] = [
-            {
-                'id': obj.id,
-                'oil_prod': obj.oil_prod,
-            }
-            for obj in ComponentsSite1.objects.all()
-        ]
-
-        return context
->>>>>>> 270e8a5942d0ecacf5e9406a66f4c5c449f129a4:projects/views/analysis.py
+<<<<<<< HEAD:projects/views/analysis.py
 =======
->>>>>>> 1737f54361328be94e3373621eeb36f858201952
+
+
+class TaskCreate:
+    def site1_task(self, form):
+        if float(form.cleaned_data['oil_prod']) > float(list(Component.objects.filter(title__contains='[1|1] Нефтепродукт').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=1)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['ph']) > float(list(Component.objects.filter(title__contains='[1|1] Значение рН').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=2)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['suspended_solids']) > float(list(Component.objects.filter(title__contains='[1|1] Общие взвешенные твердые частицы').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['phosphorus']) > float(list(Component.objects.filter(title__contains='[1|1] Фосфор').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['alkalinity']) > float(list(Component.objects.filter(title__contains='[1|1] Щелочность общая').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['hardness']) > float(list(Component.objects.filter(title__contains='[1|1] Жесткость общая').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['salt']) > float(list(Component.objects.filter(title__contains='[1|1] Солесодержание').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['chlorides']) > float(list(Component.objects.filter(title__contains='[1|1] Хлориды').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['sulfates']) > float(list(Component.objects.filter(title__contains='[1|1] Сульфаты').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+
+    def site2_task(self, form):
+        if float(form.cleaned_data['oil_prod']) > float(list(Component.objects.filter(title__contains='[1|2] Нефтепродукт').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=1)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['suspended_solids']) > float(list(Component.objects.filter(title__contains='[1|2] Общие взвешенные твердые частицы').values('limit_hi'))[0].get('limit_hi')):
+            task = Task.objects.get(pk=3)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+        if float(form.cleaned_data['suspended_solids']) < float(list(Component.objects.filter(title__contains='[1|2] Общие взвешенные твердые частицы').values('limit_lo'))[0].get('limit_lo')):
+            task = Task.objects.get(pk=4)
+            deadline = datetime.now() + timedelta(hours=task.execution_period)
+            TaskAssign.objects.create(
+                task_id=task.id,
+                user_id=1,
+                deadline=deadline
+            )
+
+    def chart (request):
+        components = Component.objects.all()
+        context = {
+            'components': components,
+        }
+        return render(request, 'static/js/mini-chart.js', context)
+>>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051:projects/views/views.py

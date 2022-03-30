@@ -42,80 +42,37 @@
                                 </div>
                             </div>
                         </li>
-                        <li class="event-list">
-                            <div class="event-timeline-dot">
-                                <i class="bx bx-right-arrow-circle font-size-18"></i>
-                            </div>
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 me-3">
-                                    <h5 class="font-size-14">15 Янв <i
-                                            class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
-                                    </h5>
+                        {% for task in tasks %}
+                            <li class="event-list">
+                                <div class="event-timeline-dot">
+                                    <i class="bx bx-right-arrow-circle font-size-18"></i>
                                 </div>
-                                <div class="flex-grow-1">
-                                    <div>
-                                        Содержание pH превысило норму
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0 me-3">
+                                        <h5 class="font-size-14">
+                                            {{ task.start_date|date:"d M" }}
+                                            <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                        </h5>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div>
+                                            Компонент '{{ task.comp_title }}'
+                                            <br>{{ task.notification }}
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </li>
-                        <li class="event-list">
-                            <div class="event-timeline-dot">
-                                <i class="bx bx-right-arrow-circle font-size-18"></i>
-                            </div>
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 me-3">
-                                    <h5 class="font-size-14">23 Янв <i
-                                            class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
-                                    </h5>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <div>
-                                        Новый комментарий от <span class="fw-semibold">Пользователь</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="event-list">
-                            <div class="event-timeline-dot">
-                                <i class="bx bx-right-arrow-circle font-size-18"></i>
-                            </div>
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 me-3">
-                                    <h5 class="font-size-14">2 Фев <i
-                                            class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
-                                    </h5>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <div>
-                                        Содержание сульфатов превысило норму
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="event-list">
-                            <div class="event-timeline-dot">
-                                <i class="bx bx-right-arrow-circle font-size-18"></i>
-                            </div>
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 me-3">
-                                    <h5 class="font-size-14">3 Фев <i
-                                            class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
-                                    </h5>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <div>
-                                        Просрочен срок пробы
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+                            </li>
+                        {% endfor %}
+
                     </ul>
                 </div>
 
-                <div class="text-center mt-4"><a href="javascript: void(0);"
-                                                 class="btn btn-primary waves-effect waves-light btn-sm">Подробнее
-                    <i class="mdi mdi-arrow-right ms-1"></i></a></div>
+                <div class="text-center mt-4">
+                    <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light btn-sm">
+                        Подробнее
+                        <i class="mdi mdi-arrow-right ms-1"></i>
+                    </a>
+                </div>
             </div>
         </div>
         <!-- end card -->
