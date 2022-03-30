@@ -2,7 +2,7 @@ Python Version >> 3.8.10
 Django Version >> 3.2.5
 
 
-Skote Installation in Django Python
+Installation in Django Python
 
 >>>Installation Python
  ->https://www.python.org/downloads/

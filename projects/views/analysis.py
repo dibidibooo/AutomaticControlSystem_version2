@@ -663,3 +663,17 @@ class ResultsView(LoginRequiredMixin, View):
         except ComponentsSite6.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
+
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+
+        context['data'] = [
+            {
+                'id': obj.id,
+                'oil_prod': obj.oil_prod,
+            }
+            for obj in ComponentsSite1.objects.all()
+        ]
+
+        return context
