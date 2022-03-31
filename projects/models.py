@@ -285,6 +285,7 @@ class TaskAssign(models.Model):
         on_delete=models.CASCADE,
         verbose_name='Уведомление'
     )
+    status = models.ForeignKey('projects.Status', related_name='task_assign', on_delete=models.CASCADE, default=1)
 
 
 class Notification(models.Model):
@@ -292,3 +293,13 @@ class Notification(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Status(models.Model):
+    title = models.CharField(max_length=25, verbose_name='Статус задачи')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name_plural = 'Statuses'

@@ -8,9 +8,9 @@
             <div id="task-1">
                 <div id="upcoming-task" class="pb-1 task-list">
                     {% for task in tasks %}
-                    <div class="card task-box" id="uptask-1">
-                        <div class="card-body">
-                            <!-- <div class="dropdown float-end">
+                        <div class="card task-box" id="uptask-1">
+                        <div class="card-body" data-status="">
+                            <!--- <div class="dropdown float-end">
                                 <a href="#" class="dropdown-toggle arrow-none"
                                    data-bs-toggle="dropdown"
                                    aria-expanded="false">
@@ -23,39 +23,30 @@
                                     <a class="dropdown-item deletetask" href="#"
                                        data-id="#uptask-1">Удалить</a>
                                 </div>
-                            </div>
+                            </div> --->
                             <div class="float-end ms-2">
                                 <span class="badge rounded-pill badge-soft-secondary font-size-12"
-                                      id="task-status">Waiting</span>
-                            </div> -->
+                                      id="task-status">{{ task.status }}</span>
+                            </div>
                             <div>
-                                <h5 class="font-size-15">
+                                <p class="fw-bold mb-2">
                                     <a href="javascript: void(0);" class="text-dark" id="task-name">
                                         {{ task.task.title }} для компонента '{{ task.comp_title }}'
                                     </a>
-                                </h5>
-                                <p class="text-muted mb-4" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
-                                <p class="text-muted" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
-                                <p class="text-muted">Выполнить до: {{ task.deadline }}</p>
+                                </p>
+                                <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
+                                <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
+                                <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
                             </div>
-
-                            <div class="row">
-                                <div class="col-xl-2">
-                                    <div class="avatar-group float-start task-assigne">
-                                        <div class="avatar-group-item">
-                                            <a href="javascript: void(0);" class="d-inline-block"
-                                               value="member-1">
-                                                <img src="{% static 'images/users/avatar-1.jpg'%}" alt=""
-                                                     class="rounded-circle avatar-xs">
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-xl-10">
-                                    <p class="text-muted">Исполнитель: User</p>
+                            <div class="avatar-group float-start task-assigne">
+                                <div class="avatar-group-item">
+                                    <a href="javascript: void(0);" class="d-inline-block"
+                                       value="member-1">
+                                        <img src="{% static 'images/users/avatar-1.jpg'%}" alt=""
+                                             class="rounded-circle avatar-xs">
+                                    </a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                     {% endfor %}
@@ -63,8 +54,9 @@
 
                 <div class="text-center d-grid">
                     <a href="{% url 'tasks-kanbanboard' %}"
-                       class="btn btn-primary waves-effect waves-light addtask-btn">Перейти в раздел
-                        редактирования</a>
+                       class="btn btn-primary waves-effect waves-light addtask-btn">
+                        Перейти в раздел редактирования
+                    </a>
                 </div>
             </div>
         </div>
