@@ -2088,6 +2088,60 @@
   }
 },
 {
+  "model": "projects.componentssite1",
+  "pk": 76,
+  "fields": {
+    "oil_prod": 44,
+    "suspended_solids": 8,
+    "ph": 10,
+    "phosphorus": 1,
+    "alkalinity": 8,
+    "hardness": 8,
+    "salt": 8,
+    "chlorides": 8,
+    "sulfates": 8,
+    "iron": 8,
+    "hardness_calcium": 8,
+    "hardness_magnesium": 8,
+    "datetime": "2022-03-30T12:32:51.768",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite1",
+  "pk": 77,
+  "fields": {
+    "oil_prod": 45,
+    "suspended_solids": 30,
+    "ph": 10,
+    "phosphorus": 7,
+    "alkalinity": 7,
+    "hardness": 7,
+    "salt": 7,
+    "chlorides": 7,
+    "sulfates": 7,
+    "iron": 7,
+    "hardness_calcium": 7,
+    "hardness_magnesium": 7,
+    "datetime": "2022-03-30T14:49:18.246",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 42,
+  "fields": {
+    "oil_prod": 33,
+    "ph": 5,
+    "suspended_solids": 5,
+    "datetime": "2022-03-30T12:32:02.337",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
   "model": "projects.componentssite3",
   "pk": 3,
   "fields": {
@@ -2420,7 +2474,8 @@
     "comp_title": "Нефтепродукт",
     "sampling_site": 1,
     "plant_unit": 1,
-    "notification": 1
+    "notification": 1,
+    "status": 1
   }
 },
 {
@@ -2434,7 +2489,8 @@
     "comp_title": "Значение рН",
     "sampling_site": 1,
     "plant_unit": 1,
-    "notification": 2
+    "notification": 2,
+    "status": 1
   }
 },
 {
@@ -2448,7 +2504,8 @@
     "comp_title": "Фосфор",
     "sampling_site": 1,
     "plant_unit": 1,
-    "notification": 2
+    "notification": 2,
+    "status": 1
   }
 },
 {
@@ -2462,7 +2519,8 @@
     "comp_title": "Щелочность общая",
     "sampling_site": 1,
     "plant_unit": 1,
-    "notification": 1
+    "notification": 1,
+    "status": 1
   }
 },
 {
@@ -2476,7 +2534,83 @@
     "comp_title": "Значение рН",
     "sampling_site": 1,
     "plant_unit": 1,
-    "notification": 2
+    "notification": 2,
+    "status": 1
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 17,
+  "fields": {
+    "task": "устранить утечки технологических продуктов в оборотную воду",
+    "user": 1,
+    "start_date": "2022-03-30T12:32:51.793",
+    "deadline": "2022-04-06T12:32:51.792",
+    "comp_title": "Нефтепродукт",
+    "sampling_site": 1,
+    "plant_unit": 1,
+    "notification": 1,
+    "status": 1
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 18,
+  "fields": {
+    "task": "увеличить продувку",
+    "user": 1,
+    "start_date": "2022-03-30T12:32:51.799",
+    "deadline": "2022-04-06T12:32:51.798",
+    "comp_title": "Значение рН",
+    "sampling_site": 1,
+    "plant_unit": 1,
+    "notification": 1,
+    "status": 2
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 19,
+  "fields": {
+    "task": "увеличить дозировку ингибитора",
+    "user": 1,
+    "start_date": "2022-03-30T12:32:51.800",
+    "deadline": "2022-04-06T12:32:51.800",
+    "comp_title": "Фосфор",
+    "sampling_site": 1,
+    "plant_unit": 1,
+    "notification": 2,
+    "status": 1
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 20,
+  "fields": {
+    "task": "устранить утечки технологических продуктов в оборотную воду",
+    "user": 1,
+    "start_date": "2022-03-30T14:49:18.269",
+    "deadline": "2022-04-06T14:49:18.268",
+    "comp_title": "Нефтепродукт",
+    "sampling_site": 1,
+    "plant_unit": 1,
+    "notification": 1,
+    "status": 4
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 21,
+  "fields": {
+    "task": "увеличить продувку",
+    "user": 1,
+    "start_date": "2022-03-30T14:49:18.275",
+    "deadline": "2022-04-06T14:49:18.274",
+    "comp_title": "Значение рН",
+    "sampling_site": 1,
+    "plant_unit": 1,
+    "notification": 1,
+    "status": 3
   }
 },
 {
@@ -2491,6 +2625,34 @@
   "pk": 2,
   "fields": {
     "title": "Ниже нормы"
+  }
+},
+{
+  "model": "projects.status",
+  "pk": 1,
+  "fields": {
+    "title": "Запланировано"
+  }
+},
+{
+  "model": "projects.status",
+  "pk": 2,
+  "fields": {
+    "title": "В работе"
+  }
+},
+{
+  "model": "projects.status",
+  "pk": 3,
+  "fields": {
+    "title": "На проверке"
+  }
+},
+{
+  "model": "projects.status",
+  "pk": 4,
+  "fields": {
+    "title": "Выполнено"
   }
 }
 ]

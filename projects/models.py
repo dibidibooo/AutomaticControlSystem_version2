@@ -285,6 +285,7 @@ class TaskAssign(models.Model):
         on_delete=models.CASCADE,
         verbose_name='Уведомление'
     )
+    status = models.ForeignKey('projects.Status', related_name='task_assign', on_delete=models.CASCADE, default=1)
 
 
 class Notification(models.Model):
