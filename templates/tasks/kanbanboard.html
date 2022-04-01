@@ -6,20 +6,20 @@
 <link href="{% static 'libs/dragula/dist/dragula.min.css' %}" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="{% static 'libs/toastr/build/toastr.min.css' %}">
 
+
 <link href="{% static 'libs/select2/dist/css/select2.min.css'%}" rel="stylesheet" type="text/css"/>
 <link href="{% static 'libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'%}" rel="stylesheet" type="text/css">
 <link href="{% static 'libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css'%}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="{% static 'libs/@chenfengyuan/datepicker/dist/datepicker.min.css'%}" type="text/css"/>
+
 {% endblock %}
 {% block contents %}
 
 <div class="row">
-    {% include 'partials/tasks.html' %}
-    <!-- end col -->
     <div class="col-lg-3">
         <div class="card">
             <div class="card-body">
-                <div class="dropdown float-end">
+                <!--- <div class="dropdown float-end">
                     <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
                     </a>
@@ -27,16 +27,92 @@
                         <a class="dropdown-item" href="#">Редактировать</a>
                         <a class="dropdown-item" href="#">Удалить</a>
                     </div>
-                </div> <!-- end dropdown -->
+                </div> -->
+
+                <h4 class="card-title mb-4">Запланировано</h4>
+                <div id="task-2">
+                    <div id="upcoming-task" class="pb-1 task-list">
+                        <!-- task card -->
+                        {% for task in tasks %}
+                        {% if task.status_id == 1 %}
+                        <div class="card task-box" id="{{ task.id }}">
+                            <div class="card-body">
+                                <div class="dropdown float-end">
+                                    <a href="#" class="dropdown-toggle arrow-none"
+                                       data-bs-toggle="dropdown"
+                                       aria-expanded="false">
+                                        <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-end">
+                                        <a class="dropdown-item edittask-details" href="#" id="taskedit"
+                                           data-id="#uptask-1" data-bs-toggle="modal"
+                                           data-bs-target=".bs-example-modal-lg">Редактировать</a>
+                                        <a class="dropdown-item deletetask" href="#"
+                                           data-id="#uptask-1">Удалить</a>
+                                    </div>
+                                </div>
+                                <div class="float-end ms-2">
+                                            <span class="badge rounded-pill badge-soft-secondary font-size-12"
+                                                  id="task-status">{{ task.status }}</span>
+                                </div>
+                                <div>
+                                    <p class="fw-bold mb-2">
+                                        <a href="javascript: void(0);" class="text-dark" id="task-name">
+                                            {{ task.task.title }} для компонента '{{ task.comp_title }}'
+                                        </a>
+                                    </p>
+                                    <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
+                                    <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
+                                    <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
+                                </div>
+                                <div class="avatar-group float-start task-assigne">
+                                    <div class="avatar-group-item">
+                                        <a href="javascript: void(0);" class="d-inline-block"
+                                           value="member-1">
+                                            <img src="{% static 'images/users/avatar-1.jpg'%}" alt=""
+                                                 class="rounded-circle avatar-xs">
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                        <!-- end task card -->
+                    </div>
+                    <div class="text-center d-grid">
+                        <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light addtask-btn"
+                           data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg" data-id="#inprogress-task">
+                            <i class="mdi mdi-plus me-1"></i>
+                            Добавить карточку
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+    <div class="col-lg-3">
+        <div class="card">
+            <div class="card-body">
+                <!-- <div class="dropdown float-end">
+                    <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <a class="dropdown-item" href="#">Редактировать</a>
+                        <a class="dropdown-item" href="#">Удалить</a>
+                    </div>
+                </div> end dropdown -->
 
                 <h4 class="card-title mb-4">В работе</h4>
                 <div id="task-2">
                     <div id="inprogress-task" class="pb-1 task-list">
                         <!-- task card -->
-                        <div class="card task-box" id="intask-3">
-                            {% for task in tasks %}
-                            {% if task.status_id == 2 %}
-                            <div class="card-body" data-status="">
+                        {% for task in tasks %}
+                        {% if task.status_id == 2 %}
+                        <div class="card task-box" id="{{ task.id }}">
+                            <div class="card-body">
                                 <div class="dropdown float-end">
                                     <a href="#" class="dropdown-toggle arrow-none"
                                        data-bs-toggle="dropdown"
@@ -75,93 +151,9 @@
                                     </div>
                                 </div>
                             </div>
-                            {% endif %}
-                            {% endfor %}
-
-                            {#
-                            <div class="card-body">#}
-                                {#
-                                <div class="dropdown float-end">#}
-                                    {# <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" #}
-                                          {# aria-expanded="false">#}
-                                        {# <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>#}
-                                        {# </a>#}
-                                    {#
-                                    <div class="dropdown-menu dropdown-menu-end">#}
-                                        {# <a class="dropdown-item edittask-details" href="#" id="taskedit" #}
-                                              {# data-id="#intask-3" data-bs-toggle="modal" #}
-                                              {# data-bs-target=".bs-example-modal-lg">Редактировать</a>#}
-                                        {# <a class="dropdown-item deletetask" href="#" data-id="#intask-3">Удалить</a>#}
-                                        {#
-                                    </div>
-                                    #}
-                                    {#
-                                </div> <!-- end dropdown -->#}
-                                {#
-                                <div class="float-end ms-2">#}
-                                    {# <span class="badge rounded-pill badge-soft-success font-size-12" id="task-status">Complete</span>#}
-                                    {#
-                                </div>
-                                #}
-                                {#
-                                <div>#}
-                                    {# <h5 class="font-size-15"><a href="javascript: void(0);" class="text-dark" #}
-                                                                   {# id="task-name">Skote Dashboard UI</a></h5>#}
-                                    {# <p class="text-muted mb-4">13 Oct, 2019</p>#}
-                                    {#
-                                </div>
-                                #}
-                                {##}
-                                {#
-                                <div class="avatar-group float-start task-assigne">#}
-                                    {#
-                                    <div class="avatar-group-item">#}
-                                        {# <a href="javascript: void(0);" class="d-inline-block" value="member-4">#}
-                                            {# <img src="{% static 'images/users/avatar-4.jpg'%}" alt="" #}
-                                                    {# class="rounded-circle avatar-xs">#}
-                                            {# </a>#}
-                                        {#
-                                    </div>
-                                    #}
-                                    {#
-                                    <div class="avatar-group-item">#}
-                                        {# <a href="javascript: void(0);" class="d-inline-block" value="member-5">#}
-                                            {# <img src="{% static 'images/users/avatar-5.jpg'%}" alt="" #}
-                                                    {# class="rounded-circle avatar-xs">#}
-                                            {# </a>#}
-                                        {#
-                                    </div>
-                                    #}
-                                    {#
-                                    <div class="avatar-group-item">#}
-                                        {# <a href="javascript: void(0);" class="d-inline-block">#}
-                                            {#
-                                            <div class="avatar-xs">#}
-                                                {# <span class="avatar-title rounded-circle bg-primary text-white font-size-16">#}
-{#                                                    7+#}
-{#                                                </span>#}
-                                                {#
-                                            </div>
-                                            #}
-                                            {# </a>#}
-                                        {#
-                                    </div>
-                                    #}
-                                    {#
-                                </div>
-                                #}
-                                {##}
-                                {#
-                                <div class="text-end">#}
-                                    {# <h5 class="font-size-15 mb-1" id="task-budget">$ 94</h5>#}
-                                    {# <p class="mb-0 text-muted">Budget</p>#}
-                                    {#
-                                </div>
-                                #}
-                                {#
-                            </div>
-                            #}
                         </div>
+                        {% endif %}
+                        {% endfor %}
                         <!-- end task card -->
                     </div>
                     <div class="text-center d-grid">
@@ -179,7 +171,7 @@
     <div class="col-lg-3">
         <div class="card">
             <div class="card-body">
-                <div class="dropdown float-end">
+                <!-- <div class="dropdown float-end">
                     <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
                     </a>
@@ -187,16 +179,16 @@
                         <a class="dropdown-item" href="#">Редактировать</a>
                         <a class="dropdown-item" href="#">Удалить</a>
                     </div>
-                </div> <!-- end dropdown -->
+                </div> -->
 
                 <h4 class="card-title mb-4">На проверке</h4>
                 <div id="task-2">
-                    <div id="delegation-task" class="pb-1 task-list">
+                    <div id="test-task" class="pb-1 task-list">
                         <!-- task card -->
-                        <div class="card task-box" id="intask-3">
-                            {% for task in tasks %}
-                            {% if task.status_id == 3 %}
-                            <div class="card-body" data-status="3">
+                        {% for task in tasks %}
+                        {% if task.status_id == 3 %}
+                        <div class="card task-box" id="{{ task.id }}">
+                            <div class="card-body">
                                 <div class="dropdown float-end">
                                     <a href="#" class="dropdown-toggle arrow-none"
                                        data-bs-toggle="dropdown"
@@ -235,9 +227,9 @@
                                     </div>
                                 </div>
                             </div>
-                            {% endif %}
-                            {% endfor %}
                         </div>
+                        {% endif %}
+                        {% endfor %}
                         <!-- end task card -->
                     </div>
 
@@ -255,7 +247,7 @@
     <div class="col-lg-3">
         <div class="card">
             <div class="card-body">
-                <div class="dropdown float-end">
+                <!--<div class="dropdown float-end">
                     <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>
                     </a>
@@ -263,16 +255,16 @@
                         <a class="dropdown-item" href="#">Редактировать</a>
                         <a class="dropdown-item" href="#">Удалить</a>
                     </div>
-                </div> <!-- end dropdown -->
+                </div> -->
 
                 <h4 class="card-title mb-4">Выполнено</h4>
                 <div id="task-3">
                     <div id="complete-task" class="pb-1 task-list">
                         <!-- task card -->
-                        <div class="card task-box" id="intask-3">
-                            {% for task in tasks %}
-                            {% if task.status_id == 4 %}
-                            <div class="card-body" data-status="4">
+                        {% for task in tasks %}
+                        {% if task.status_id == 4 %}
+                        <div class="card task-box" id="{{ task.id }}">
+                            <div class="card-body">
                                 <div class="dropdown float-end">
                                     <a href="#" class="dropdown-toggle arrow-none"
                                        data-bs-toggle="dropdown"
@@ -311,95 +303,9 @@
                                     </div>
                                 </div>
                             </div>
-                            {% endif %}
-                            {% endfor %}
                         </div>
-                        {#
-                        <div class="card task-box" id="cmptask-1">#}
-                            {#
-                            <div class="card-body">#}
-                                {#
-                                <div class="dropdown float-end">#}
-                                    {# <a href="#" class="dropdown-toggle arrow-none" data-bs-toggle="dropdown" #}
-                                          {# aria-expanded="false">#}
-                                        {# <i class="mdi mdi-dots-vertical m-0 text-muted h5"></i>#}
-                                        {# </a>#}
-                                    {#
-                                    <div class="dropdown-menu dropdown-menu-end">#}
-                                        {# <a class="dropdown-item edittask-details" href="#" id="taskedit" #}
-                                              {# data-id="#cmptask-1" data-bs-toggle="modal" #}
-                                              {# data-bs-target=".bs-example-modal-lg">Редактировать</a>#}
-                                        {# <a class="dropdown-item deletetask" href="#" data-id="#cmptask-1" #}
-                                              {# onclick="ToastDeleted()">Удалить</a>#}
-                                        {#
-                                    </div>
-                                    #}
-                                    {#
-                                </div> <!-- end dropdown -->#}
-                                {#
-                                <div class="float-end ms-2">#}
-                                    {# <span class="badge rounded-pill badge-soft-success font-size-12" id="task-status">Complete</span>#}
-                                    {#
-                                </div>
-                                #}
-                                {#
-                                <div>#}
-                                    {# <h5 class="font-size-15"><a href="javascript: void(0);" class="text-dark" #}
-                                                                   {# id="task-name">Redesign - Landing page</a></h5>#}
-                                    {# <p class="text-muted mb-4">10 Oct, 2019</p>#}
-                                    {#
-                                </div>
-                                #}
-                                {##}
-                                {#
-                                <div class="avatar-group float-start task-assigne">#}
-                                    {#
-                                    <div class="avatar-group-item">#}
-                                        {# <a href="javascript: void(0);" class="d-inline-block" value="member-1">#}
-                                            {# <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" #}
-                                                    {# class="rounded-circle avatar-xs">#}
-                                            {# </a>#}
-                                        {#
-                                    </div>
-                                    #}
-                                    {#
-                                    <div class="avatar-group-item">#}
-                                        {# <a href="javascript: void(0);" class="d-inline-block" value="member-2">#}
-                                            {# <img src="{% static 'images/users/avatar-2.jpg'%}" alt="" #}
-                                                    {# class="rounded-circle avatar-xs">#}
-                                            {# </a>#}
-                                        {#
-                                    </div>
-                                    #}
-                                    {#
-                                    <div class="avatar-group-item">#}
-                                        {# <a href="javascript: void(0);" class="d-inline-block" value="member-3">#}
-                                            {# <img src="{% static 'images/users/avatar-3.jpg'%}" alt="" #}
-                                                    {# class="rounded-circle avatar-xs">#}
-                                            {# </a>#}
-                                        {#
-                                    </div>
-                                    #}
-                                    {#
-                                </div>
-                                #}
-                                {##}
-                                {#
-                                <div class="text-end">#}
-                                    {# <h5 class="font-size-15 mb-1" id="task-budget">$ 145</h5>#}
-                                    {# <p class="mb-0 text-muted">Budget</p>#}
-                                    {#
-                                </div>
-                                #}
-                                {#
-                            </div>
-                            #}
-                            {##}
-                            {#
-                        </div>
-                        #}
-                        <!-- end task card -->
-
+                        {% endif %}
+                        {% endfor %}
                     </div>
 
                     <div class="text-center d-grid">
@@ -537,6 +443,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
+
 <div class="col-lg-2">
     <div class="card">
         <!-- Static Backdrop modal Button -->
@@ -658,6 +565,22 @@
                                             </div>
                                         </li>
 
+                                        <li class="list-group-item py-3">
+                                            <div class="d-flex">
+                                                <div class="flex-shrink-0 me-3">
+                                                    <div class="avatar-xs">
+                                                        <div class="avatar-title rounded-circle bg-light text-primary">
+                                                            <i class="bx bxs-user"></i>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="flex-grow-1">
+                                                    <h5 class="font-size-14 mb-1">Keith McCoy <small class="text-muted float-end">12 Aug</small></h5>
+                                                    <p class="text-muted">Donec posuere vulputate arcu. phasellus accumsan cursus velit</p>
+                                                </div>
+                                            </div>
+                                        </li>
+
 
                                     </ul>
                                 </div>
@@ -676,9 +599,6 @@
         </div>
     </div>
 </div>
-<!-- end card body -->
-</div>
-</div>
 
 {% endblock %}
 
@@ -690,34 +610,12 @@
 <script src="{% static 'js/pages/task-form.init.js' %}"></script>
 <script src="{% static 'libs/toastr/build/toastr.min.js' %}"></script>
 <script src="{% static 'js/pages/toastr.init.js' %}"></script>
-<script src="{% static 'js/pages/modal.init.js' %}"></script>
-
 
 <script src="{% static 'libs/select2/dist/js/select2.min.js'%}"></script>
 <script src="{% static 'libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'%}"></script>
 <script src="{% static 'libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js'%}"></script>
 <script src="{% static 'libs/@chenfengyuan/datepicker/dist/datepicker.min.js'%}"></script>
-
 <!-- form advanced init -->
 <script src="{% static 'js/pages/form-advanced.init.js'%}"></script>
-
-<script>
-    $('inprogress-task').each(function () {
-        $(this).children().children().attr('data-status', '2');
-    });
-    {#$('delegation-task').children().children().attr('data-status', '3');#}
-    {#$('complete-task').children().children().attr('data-status', '4');#}
-
-
-
-
-
-
-
-
-
-
-
-</script>
 
 {% endblock %}

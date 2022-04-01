@@ -211,9 +211,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 2,
+  "pk": 1,
   "fields": {
-    "title": "[1|1] Нефтепродукт",
+    "title": "[1|1] Нефтепродукты",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "25",
@@ -226,7 +226,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 3,
+  "pk": 2,
   "fields": {
     "title": "[1|1] Значение рН",
     "measurement": "един",
@@ -241,7 +241,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 4,
+  "pk": 3,
   "fields": {
     "title": "[1|1] Общие взвешенные твердые частицы",
     "measurement": "мг/дм³",
@@ -256,7 +256,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 5,
+  "pk": 4,
   "fields": {
     "title": "[1|1] Фосфор",
     "measurement": "мг/дм³",
@@ -271,7 +271,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 6,
+  "pk": 5,
   "fields": {
     "title": "[1|1] Щелочность общая",
     "measurement": "мг/л-экв/л",
@@ -286,7 +286,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 7,
+  "pk": 6,
   "fields": {
     "title": "[1|1] Жесткость общая",
     "measurement": "мг/л-экв/л",
@@ -301,7 +301,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 8,
+  "pk": 7,
   "fields": {
     "title": "[1|1] Солесодержание",
     "measurement": "мг/дм³",
@@ -316,7 +316,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 9,
+  "pk": 8,
   "fields": {
     "title": "[1|1] Хлориды",
     "measurement": "мг/дм³",
@@ -331,7 +331,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 10,
+  "pk": 9,
   "fields": {
     "title": "[1|1] Сульфаты",
     "measurement": "мг/дм³",
@@ -346,7 +346,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 11,
+  "pk": 10,
   "fields": {
     "title": "[1|1] Жесткость кальциевая",
     "measurement": "мг/л-экв/л",
@@ -361,7 +361,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 12,
+  "pk": 11,
   "fields": {
     "title": "[1|1] Жесткость магниевая",
     "measurement": "мг/л-экв/л",
@@ -376,7 +376,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 13,
+  "pk": 12,
   "fields": {
     "title": "[1|1] Железо",
     "measurement": "мкг/л",
@@ -391,7 +391,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 14,
+  "pk": 13,
   "fields": {
     "title": "[1|2] Нефтепродукты",
     "measurement": "мг/дм³",
@@ -406,7 +406,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 15,
+  "pk": 14,
   "fields": {
     "title": "[1|2] Значение рН",
     "measurement": "един",
@@ -421,7 +421,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 16,
+  "pk": 15,
   "fields": {
     "title": "[1|2] Общие взвешенные твердые частицы",
     "measurement": "мг/дм³",
@@ -436,7 +436,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 17,
+  "pk": 16,
   "fields": {
     "title": "[1|3] Взвешенные вещества",
     "measurement": "мг/дм³",
@@ -451,7 +451,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 18,
+  "pk": 17,
   "fields": {
     "title": "[1|3] Жесткость общая",
     "measurement": "мг/л-экв/л",
@@ -466,7 +466,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 19,
+  "pk": 18,
   "fields": {
     "title": "[1|3] Железо",
     "measurement": "мкг/л",
@@ -481,7 +481,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 20,
+  "pk": 19,
   "fields": {
     "title": "[1|3] Сухой остаток",
     "measurement": "мг/дм³",
@@ -496,7 +496,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 21,
+  "pk": 20,
   "fields": {
     "title": "[1|3] Щелочность общая",
     "measurement": "мг/л-экв/л",
@@ -511,7 +511,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 22,
+  "pk": 21,
   "fields": {
     "title": "[1|3] Солесодержание",
     "measurement": "мг/дм³",
@@ -526,7 +526,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 23,
+  "pk": 22,
   "fields": {
     "title": "[1|3] Хлориды",
     "measurement": "мг/дм³",
@@ -541,7 +541,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 24,
+  "pk": 23,
   "fields": {
     "title": "[1|3] Сульфаты",
     "measurement": "мг/дм³",
@@ -556,7 +556,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 25,
+  "pk": 24,
   "fields": {
     "title": "[1|3] Жесткость кальциевая",
     "measurement": "мг/л-экв/л",
@@ -571,7 +571,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 26,
+  "pk": 25,
   "fields": {
     "title": "[1|3] Жесткость магниевая",
     "measurement": "мг/л-экв/л",
@@ -586,7 +586,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 27,
+  "pk": 26,
   "fields": {
     "title": "[1|3] Значение рН",
     "measurement": "един",
@@ -601,9 +601,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 28,
+  "pk": 27,
   "fields": {
-    "title": "[2|1] Общая жесткость",
+    "title": "[2|1] Жесткость общая",
     "measurement": "мг-экв/л",
     "limit_lo": "5",
     "limit_hi": "12",
@@ -616,9 +616,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 29,
+  "pk": 28,
   "fields": {
-    "title": "[2|1] Кальциевая жесткость",
+    "title": "[2|1] Жесткость кальциевая",
     "measurement": "мг-экв/л",
     "limit_lo": "2",
     "limit_hi": "4.5",
@@ -631,7 +631,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 30,
+  "pk": 29,
   "fields": {
     "title": "[2|1] Значение рН",
     "measurement": "един",
@@ -646,9 +646,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 31,
+  "pk": 30,
   "fields": {
-    "title": "[2|1] Общее солесодержание",
+    "title": "[2|1] Солесодержание",
     "measurement": "мг/дм³",
     "limit_lo": "1000",
     "limit_hi": "",
@@ -661,9 +661,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 32,
+  "pk": 31,
   "fields": {
-    "title": "[2|1] Содержание хлоридов",
+    "title": "[2|1] Хлориды",
     "measurement": "мг/дм³",
     "limit_lo": "200",
     "limit_hi": "",
@@ -676,9 +676,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 33,
+  "pk": 32,
   "fields": {
-    "title": "[2|1] Содержание сульфатов",
+    "title": "[2|1] Сульфаты",
     "measurement": "мг/дм³",
     "limit_lo": "120",
     "limit_hi": "",
@@ -691,9 +691,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 34,
+  "pk": 33,
   "fields": {
-    "title": "[2|1] Содержание нефтепродуктов",
+    "title": "[2|1] Нефтепродукты",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "",
@@ -706,7 +706,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 35,
+  "pk": 34,
   "fields": {
     "title": "[2|1] Общие взвешенные вещества",
     "measurement": "мг/дм³",
@@ -721,7 +721,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 36,
+  "pk": 35,
   "fields": {
     "title": "[2|1] Щелочность общая",
     "measurement": "мг-экв/л",
@@ -736,7 +736,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 37,
+  "pk": 36,
   "fields": {
     "title": "[2|1] Железо",
     "measurement": "мг/дм³",
@@ -751,9 +751,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 38,
+  "pk": 37,
   "fields": {
-    "title": "[2|2] Общая жесткость",
+    "title": "[2|2] Жесткость общая",
     "measurement": "мг-экв/л",
     "limit_lo": "",
     "limit_hi": "20",
@@ -766,9 +766,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 39,
+  "pk": 38,
   "fields": {
-    "title": "[2|2] Кальциевая жесткость",
+    "title": "[2|2] Жесткость кальциевая",
     "measurement": "мг-экв/л",
     "limit_lo": "",
     "limit_hi": "12",
@@ -781,7 +781,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 40,
+  "pk": 39,
   "fields": {
     "title": "[2|2] Значение рН",
     "measurement": "един",
@@ -796,9 +796,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 41,
+  "pk": 40,
   "fields": {
-    "title": "[2|2] Общее солесодержание",
+    "title": "[2|2] Солесодержание",
     "measurement": "мг/дм³",
     "limit_lo": "",
     "limit_hi": "2000",
@@ -811,9 +811,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 42,
+  "pk": 41,
   "fields": {
-    "title": "[2|2] Содержание хлоридов",
+    "title": "[2|2] Хлориды",
     "measurement": "мг/дм³",
     "limit_lo": "",
     "limit_hi": "1000",
@@ -826,9 +826,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 43,
+  "pk": 42,
   "fields": {
-    "title": "[2|2] Содержание сульфатов",
+    "title": "[2|2] Сульфаты",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "1000",
@@ -841,9 +841,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 44,
+  "pk": 43,
   "fields": {
-    "title": "[2|2] Содержание нефтепродуктов",
+    "title": "[2|2] Нефтепродукты",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "3",
@@ -856,7 +856,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 45,
+  "pk": 44,
   "fields": {
     "title": "[2|2] Общие взвешенные вещества",
     "measurement": "мг/дм³",
@@ -871,7 +871,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 46,
+  "pk": 45,
   "fields": {
     "title": "[2|2] Щелочность общая",
     "measurement": "мг-экв/л",
@@ -886,7 +886,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 47,
+  "pk": 46,
   "fields": {
     "title": "[2|2] Железо",
     "measurement": "мг/дм³",
@@ -901,9 +901,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 48,
+  "pk": 47,
   "fields": {
-    "title": "[3|1] Общая жесткость",
+    "title": "[3|1] Жесткость общая",
     "measurement": "мг-экв/л",
     "limit_lo": null,
     "limit_hi": "20",
@@ -916,9 +916,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 49,
+  "pk": 48,
   "fields": {
-    "title": "[3|1] Кальциевая жесткость",
+    "title": "[3|1] Жесткость кальциевая",
     "measurement": "мг-экв/л",
     "limit_lo": null,
     "limit_hi": "12",
@@ -931,7 +931,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 50,
+  "pk": 49,
   "fields": {
     "title": "[3|1] Значение рН",
     "measurement": "един",
@@ -946,9 +946,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 51,
+  "pk": 50,
   "fields": {
-    "title": "[3|1] Общее солесодержание",
+    "title": "[3|1] Солесодержание",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "2000",
@@ -961,9 +961,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 52,
+  "pk": 51,
   "fields": {
-    "title": "[3|1] Содержание хлоридов",
+    "title": "[3|1] Хлориды",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "1000",
@@ -976,9 +976,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 53,
+  "pk": 52,
   "fields": {
-    "title": "[3|1] Содержание сульфатов",
+    "title": "[3|1] Сульфаты",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "1000",
@@ -991,9 +991,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 54,
+  "pk": 53,
   "fields": {
-    "title": "[3|1] Содержание нефтепродуктов",
+    "title": "[3|1] Нефтепродукты",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "3",
@@ -1006,7 +1006,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 55,
+  "pk": 54,
   "fields": {
     "title": "[3|1] Общие взвешенные вещества",
     "measurement": "мг/дм³",
@@ -1021,7 +1021,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 56,
+  "pk": 55,
   "fields": {
     "title": "[3|1] Щелочность по фенолу",
     "measurement": "мг-экв/л",
@@ -1036,7 +1036,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 57,
+  "pk": 56,
   "fields": {
     "title": "[3|1] Щелочность общая",
     "measurement": "мг-экв/л",
@@ -1051,7 +1051,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 58,
+  "pk": 57,
   "fields": {
     "title": "[3|1] Железо",
     "measurement": "мг/дм³",
@@ -1066,7 +1066,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 59,
+  "pk": 58,
   "fields": {
     "title": "[4|1] Общие взвешенные твердые частицы",
     "measurement": "мг/дм³",
@@ -1081,7 +1081,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 60,
+  "pk": 59,
   "fields": {
     "title": "[4|1] Хлориды",
     "measurement": "мг/дм³",
@@ -1096,7 +1096,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 61,
+  "pk": 60,
   "fields": {
     "title": "[4|1] Сульфаты",
     "measurement": "мг/дм³",
@@ -1111,7 +1111,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 62,
+  "pk": 61,
   "fields": {
     "title": "[4|1] Значение рН",
     "measurement": "един",
@@ -1126,7 +1126,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 63,
+  "pk": 62,
   "fields": {
     "title": "[4|1] Щелочность общая",
     "measurement": "мг-экв/л",
@@ -1141,7 +1141,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 64,
+  "pk": 63,
   "fields": {
     "title": "[4|1] Жесткость кальциевая",
     "measurement": "мг-экв/л",
@@ -1156,7 +1156,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 65,
+  "pk": 64,
   "fields": {
     "title": "[4|1] Жесткость общая",
     "measurement": "мг-экв/л",
@@ -1171,9 +1171,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 66,
+  "pk": 65,
   "fields": {
-    "title": "[4|1] Железо общее",
+    "title": "[4|1] Железо",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "",
@@ -1186,7 +1186,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 67,
+  "pk": 66,
   "fields": {
     "title": "[4|2] Общие взвешенные твердые частицы",
     "measurement": "мг/дм³",
@@ -1201,7 +1201,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 68,
+  "pk": 67,
   "fields": {
     "title": "[4|2] Значение рН",
     "measurement": "един",
@@ -1216,7 +1216,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 69,
+  "pk": 68,
   "fields": {
     "title": "[4|2] Хлориды",
     "measurement": "мг/дм³",
@@ -1231,7 +1231,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 70,
+  "pk": 69,
   "fields": {
     "title": "[4|2] Фосфор",
     "measurement": "мг/дм³",
@@ -1246,9 +1246,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 71,
+  "pk": 70,
   "fields": {
-    "title": "[4|2] Нефтепродукт",
+    "title": "[4|2] Нефтепродукты",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "",
@@ -1261,7 +1261,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 72,
+  "pk": 71,
   "fields": {
     "title": "[4|2] Щелочность общая",
     "measurement": "мг-экв/л",
@@ -1276,7 +1276,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 73,
+  "pk": 72,
   "fields": {
     "title": "[4|2] Жесткость кальциевая",
     "measurement": "мг-экв/л",
@@ -1291,7 +1291,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 74,
+  "pk": 73,
   "fields": {
     "title": "[4|2] Жесткость общая",
     "measurement": "мг-экв/л",
@@ -1306,9 +1306,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 75,
+  "pk": 74,
   "fields": {
-    "title": "[4|2] Железо общее",
+    "title": "[4|2] Железо",
     "measurement": "мкг/дм³",
     "limit_lo": null,
     "limit_hi": "",
@@ -1321,7 +1321,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 76,
+  "pk": 75,
   "fields": {
     "title": "[4|2] Солесодержание",
     "measurement": "мг/дм³",
@@ -1336,7 +1336,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 77,
+  "pk": 76,
   "fields": {
     "title": "[4|3] Общие взвешенные твёрдые частицы",
     "measurement": "мг/дм³",
@@ -1351,7 +1351,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 78,
+  "pk": 77,
   "fields": {
     "title": "[4|3] Хлориды",
     "measurement": "мг/дм³",
@@ -1366,7 +1366,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 79,
+  "pk": 78,
   "fields": {
     "title": "[4|3] Сульфаты",
     "measurement": "мг/дм³",
@@ -1381,7 +1381,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 80,
+  "pk": 79,
   "fields": {
     "title": "[4|3] Значение рН",
     "measurement": "един",
@@ -1396,7 +1396,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 81,
+  "pk": 80,
   "fields": {
     "title": "[4|3] Фосфор",
     "measurement": "мг/дм³",
@@ -1411,7 +1411,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 82,
+  "pk": 81,
   "fields": {
     "title": "[4|3] Щелочность",
     "measurement": "мг-экв/л",
@@ -1426,7 +1426,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 83,
+  "pk": 82,
   "fields": {
     "title": "[4|3] Жесткость кальциевая",
     "measurement": "мг-экв/л",
@@ -1441,7 +1441,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 84,
+  "pk": 83,
   "fields": {
     "title": "[4|3] Жесткость общая",
     "measurement": "мг-экв/л",
@@ -1456,9 +1456,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 85,
+  "pk": 84,
   "fields": {
-    "title": "[4|3] Железо общее",
+    "title": "[4|3] Железо",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "",
@@ -1471,7 +1471,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 86,
+  "pk": 85,
   "fields": {
     "title": "[4|3] Солесодержание",
     "measurement": "мг/дм³",
@@ -1486,7 +1486,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 87,
+  "pk": 86,
   "fields": {
     "title": "[4|4] Остаточный хлор",
     "measurement": "мг/дм³",
@@ -1501,9 +1501,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 88,
+  "pk": 87,
   "fields": {
-    "title": "[4|4] Нефтепродукт",
+    "title": "[4|4] Нефтепродукты",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "5",
@@ -1516,7 +1516,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 89,
+  "pk": 88,
   "fields": {
     "title": "[4|4] Солесодержание",
     "measurement": "мг/дм³",
@@ -1531,7 +1531,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 90,
+  "pk": 89,
   "fields": {
     "title": "[4|5] Общие взвешенные твёрдые частицы",
     "measurement": "мг/дм³",
@@ -1546,9 +1546,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 91,
+  "pk": 90,
   "fields": {
-    "title": "[5|1] Нефтепродукт",
+    "title": "[5|1] Нефтепродукты",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "3500",
@@ -1561,7 +1561,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 92,
+  "pk": 91,
   "fields": {
     "title": "[5|1] Взвешенные вещества",
     "measurement": "мг/дм³",
@@ -1576,7 +1576,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 93,
+  "pk": 92,
   "fields": {
     "title": "[5|1] Значение рН",
     "measurement": "един",
@@ -1591,7 +1591,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 94,
+  "pk": 93,
   "fields": {
     "title": "[5|1] ХПК",
     "measurement": "мг/дм³",
@@ -1606,7 +1606,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 95,
+  "pk": 94,
   "fields": {
     "title": "[5|1] АПАВ",
     "measurement": "мг/дм³",
@@ -1621,7 +1621,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 96,
+  "pk": 95,
   "fields": {
     "title": "[5|1] Аммонийный азот",
     "measurement": "мг/дм³",
@@ -1636,7 +1636,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 97,
+  "pk": 96,
   "fields": {
     "title": "[6|1] Значение рН",
     "measurement": "един",
@@ -1651,37 +1651,22 @@
 },
 {
   "model": "projects.component",
+  "pk": 97,
+  "fields": {
+    "title": "[6|1] Взвешенные вещества",
+    "measurement": "мг/дм³",
+    "limit_lo": null,
+    "limit_hi": "",
+    "period": "1 раз в сутки 07:30",
+    "period_in_hours": 24,
+    "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
+    "recommendation1": null,
+    "recommendation2": null
+  }
+},
+{
+  "model": "projects.component",
   "pk": 98,
-  "fields": {
-    "title": "[6|1] Взвешенные вещества",
-    "measurement": "мг/дм³",
-    "limit_lo": null,
-    "limit_hi": "",
-    "period": "1 раз в сутки 07:30",
-    "period_in_hours": 24,
-    "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
-    "recommendation1": null,
-    "recommendation2": null
-  }
-},
-{
-  "model": "projects.component",
-  "pk": 99,
-  "fields": {
-    "title": "[6|1] Взвешенные вещества",
-    "measurement": "мг/дм³",
-    "limit_lo": null,
-    "limit_hi": "",
-    "period": "1 раз в сутки 07:30",
-    "period_in_hours": 24,
-    "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
-    "recommendation1": null,
-    "recommendation2": null
-  }
-},
-{
-  "model": "projects.component",
-  "pk": 100,
   "fields": {
     "title": "[6|1] ХПК",
     "measurement": "мг/дм³",
@@ -1696,9 +1681,9 @@
 },
 {
   "model": "projects.component",
-  "pk": 101,
+  "pk": 99,
   "fields": {
-    "title": "[6|1] Нефтепродукт",
+    "title": "[6|1] Нефтепродукты",
     "measurement": "мг/дм³",
     "limit_lo": null,
     "limit_hi": "48",
@@ -1711,7 +1696,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 102,
+  "pk": 100,
   "fields": {
     "title": "[6|1] БПК5",
     "measurement": "мг/дм³",
@@ -1726,7 +1711,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 103,
+  "pk": 101,
   "fields": {
     "title": "[6|1] Фенолы",
     "measurement": "мг/дм³",
@@ -1741,7 +1726,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 104,
+  "pk": 102,
   "fields": {
     "title": "[6|1] АПАВ",
     "measurement": "мг/дм³",
@@ -1756,7 +1741,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 105,
+  "pk": 103,
   "fields": {
     "title": "[6|1] Хлориды",
     "measurement": "мг/дм³",
@@ -1771,7 +1756,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 106,
+  "pk": 104,
   "fields": {
     "title": "[6|1] Сульфаты",
     "measurement": "мг/дм³",
@@ -1786,7 +1771,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 107,
+  "pk": 105,
   "fields": {
     "title": "[6|1] Железо",
     "measurement": "мг/дм³",
@@ -1801,7 +1786,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 108,
+  "pk": 106,
   "fields": {
     "title": "[6|1] Аммонийный азот",
     "measurement": "мг/дм³",
@@ -1816,7 +1801,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 109,
+  "pk": 107,
   "fields": {
     "title": "[6|1] Азот нитратов",
     "measurement": "мг/дм³",
@@ -1831,7 +1816,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 110,
+  "pk": 108,
   "fields": {
     "title": "[6|1] Азот нитритов",
     "measurement": "мг/дм³",
@@ -1846,7 +1831,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 111,
+  "pk": 109,
   "fields": {
     "title": "[6|2] Щёлочность общая",
     "measurement": "мг-экв/л",
@@ -1861,7 +1846,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 112,
+  "pk": 110,
   "fields": {
     "title": "[6|2] Жёсткость общая",
     "measurement": "мг-экв/л",
@@ -1876,7 +1861,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 113,
+  "pk": 111,
   "fields": {
     "title": "[6|2] Окисляемость",
     "measurement": "мг О2/л",
@@ -1891,7 +1876,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 114,
+  "pk": 112,
   "fields": {
     "title": "[6|2] Солесодержание",
     "measurement": "мг/дм³",
@@ -1906,7 +1891,7 @@
 },
 {
   "model": "projects.component",
-  "pk": 115,
+  "pk": 113,
   "fields": {
     "title": "[6|2] Остаточный хлор",
     "measurement": "мг/дм³",
@@ -1921,403 +1906,159 @@
 },
 {
   "model": "projects.componentssite1",
-  "pk": 68,
+  "pk": 78,
   "fields": {
     "oil_prod": 10,
     "suspended_solids": 10,
-    "ph": 8,
-    "phosphorus": 8,
-    "alkalinity": 8,
-    "hardness": 8,
-    "salt": 8,
-    "chlorides": 8,
-    "sulfates": 8,
-    "iron": 8,
-    "hardness_calcium": 8,
-    "hardness_magnesium": 8,
-    "datetime": "2022-03-29T17:35:36.317",
-    "sampling_site": 1,
-    "water_type": 1
-  }
-},
-{
-  "model": "projects.componentssite1",
-  "pk": 69,
-  "fields": {
-    "oil_prod": 33,
-    "suspended_solids": 8,
-    "ph": 5,
-    "phosphorus": 8,
-    "alkalinity": 8,
-    "hardness": 8,
-    "salt": 8,
-    "chlorides": 8,
-    "sulfates": 8,
-    "iron": 8,
-    "hardness_calcium": 8,
-    "hardness_magnesium": 8,
-    "datetime": "2022-03-29T17:36:11.269",
-    "sampling_site": 1,
-    "water_type": 1
-  }
-},
-{
-  "model": "projects.componentssite1",
-  "pk": 70,
-  "fields": {
-    "oil_prod": 10,
-    "suspended_solids": 29,
     "ph": 10,
-    "phosphorus": 1,
-    "alkalinity": 8,
-    "hardness": 8,
-    "salt": 8,
-    "chlorides": 8,
-    "sulfates": 8,
-    "iron": 8,
-    "hardness_calcium": 8,
-    "hardness_magnesium": 8,
-    "datetime": "2022-03-29T17:40:03.454",
-    "sampling_site": 1,
-    "water_type": 1
-  }
-},
-{
-  "model": "projects.componentssite1",
-  "pk": 71,
-  "fields": {
-    "oil_prod": 33,
-    "suspended_solids": 29,
-    "ph": 4,
-    "phosphorus": 1,
-    "alkalinity": 9,
-    "hardness": 9,
-    "salt": 9,
-    "chlorides": 9,
-    "sulfates": 9,
-    "iron": 9,
-    "hardness_calcium": 9,
-    "hardness_magnesium": 9,
-    "datetime": "2022-03-29T17:40:57.491",
-    "sampling_site": 1,
-    "water_type": 1
-  }
-},
-{
-  "model": "projects.componentssite1",
-  "pk": 72,
-  "fields": {
-    "oil_prod": 11,
-    "suspended_solids": 11,
-    "ph": 11,
-    "phosphorus": 11,
-    "alkalinity": 11,
-    "hardness": 11,
-    "salt": 11,
-    "chlorides": 1,
-    "sulfates": 1,
-    "iron": 1,
-    "hardness_calcium": 1,
-    "hardness_magnesium": 1,
-    "datetime": "2022-03-29T18:27:49.216",
-    "sampling_site": 1,
-    "water_type": 1
-  }
-},
-{
-  "model": "projects.componentssite1",
-  "pk": 73,
-  "fields": {
-    "oil_prod": 50,
-    "suspended_solids": 8,
-    "ph": 8,
-    "phosphorus": 8,
-    "alkalinity": 8,
-    "hardness": 8,
-    "salt": 8,
-    "chlorides": 8,
-    "sulfates": 8,
-    "iron": 8,
-    "hardness_calcium": 8,
-    "hardness_magnesium": 8,
-    "datetime": "2022-03-29T18:32:02.787",
-    "sampling_site": 1,
-    "water_type": 1
-  }
-},
-{
-  "model": "projects.componentssite1",
-  "pk": 74,
-  "fields": {
-    "oil_prod": 45,
-    "suspended_solids": 30,
-    "ph": 5,
-    "phosphorus": 1,
-    "alkalinity": 30,
-    "hardness": 8,
-    "salt": 8,
-    "chlorides": 8,
-    "sulfates": 8,
-    "iron": 8,
-    "hardness_calcium": 1,
-    "hardness_magnesium": 1,
-    "datetime": "2022-03-29T18:35:08.235",
-    "sampling_site": 1,
-    "water_type": 1
-  }
-},
-{
-  "model": "projects.componentssite1",
-  "pk": 75,
-  "fields": {
-    "oil_prod": 22,
-    "suspended_solids": 8,
-    "ph": 4,
-    "phosphorus": 8,
-    "alkalinity": 5,
+    "phosphorus": 10,
+    "alkalinity": 10,
     "hardness": 10,
-    "salt": 2500,
+    "salt": 10,
     "chlorides": 10,
     "sulfates": 10,
     "iron": 10,
     "hardness_calcium": 10,
     "hardness_magnesium": 10,
-    "datetime": "2022-03-29T18:42:33.002",
+    "datetime": "2022-04-01T17:05:58.466",
     "sampling_site": 1,
     "water_type": 1
   }
 },
 {
   "model": "projects.componentssite1",
-  "pk": 76,
+  "pk": 79,
   "fields": {
-    "oil_prod": 44,
-    "suspended_solids": 8,
-    "ph": 10,
-    "phosphorus": 1,
-    "alkalinity": 8,
-    "hardness": 8,
-    "salt": 8,
-    "chlorides": 8,
-    "sulfates": 8,
-    "iron": 8,
-    "hardness_calcium": 8,
-    "hardness_magnesium": 8,
-    "datetime": "2022-03-30T12:32:51.768",
-    "sampling_site": 1,
-    "water_type": 1
-  }
-},
-{
-  "model": "projects.componentssite1",
-  "pk": 77,
-  "fields": {
-    "oil_prod": 45,
-    "suspended_solids": 30,
-    "ph": 10,
-    "phosphorus": 7,
-    "alkalinity": 7,
-    "hardness": 7,
-    "salt": 7,
-    "chlorides": 7,
-    "sulfates": 7,
-    "iron": 7,
-    "hardness_calcium": 7,
-    "hardness_magnesium": 7,
-    "datetime": "2022-03-30T14:49:18.246",
+    "oil_prod": 25,
+    "suspended_solids": 3,
+    "ph": 7,
+    "phosphorus": 45,
+    "alkalinity": 10,
+    "hardness": 10,
+    "salt": 2700,
+    "chlorides": 10,
+    "sulfates": 10,
+    "iron": 10,
+    "hardness_calcium": 10,
+    "hardness_magnesium": 10,
+    "datetime": "2022-04-01T17:38:44.070",
     "sampling_site": 1,
     "water_type": 1
   }
 },
 {
   "model": "projects.componentssite2",
-  "pk": 42,
+  "pk": 43,
   "fields": {
-    "oil_prod": 33,
-    "ph": 5,
-    "suspended_solids": 5,
-    "datetime": "2022-03-30T12:32:02.337",
+    "oil_prod": 30,
+    "ph": 8,
+    "suspended_solids": 8,
+    "datetime": "2022-04-01T17:29:36.577",
     "sampling_site": 2,
     "water_type": 1
   }
 },
 {
   "model": "projects.componentssite3",
-  "pk": 3,
+  "pk": 5,
   "fields": {
-    "suspended_subst": 2,
-    "hardness": 2,
-    "iron": 2,
-    "dry_residue": 2,
-    "alkalinity": 2,
-    "salt": 2,
-    "chlorides": 2,
-    "sulfates": 2,
-    "hardness_calcium": 2,
-    "hardness_magnesium": 2,
-    "ph": 2,
-    "datetime": "2022-03-24T00:52:25.788",
-    "sampling_site": 3,
-    "water_type": 1
-  }
-},
-{
-  "model": "projects.componentssite3",
-  "pk": 4,
-  "fields": {
-    "suspended_subst": 30,
-    "hardness": 30,
-    "iron": 30,
-    "dry_residue": 30,
-    "alkalinity": 30,
+    "suspended_subst": 7,
+    "hardness": 7,
+    "iron": 7,
+    "dry_residue": 7,
+    "alkalinity": 7,
     "salt": 30,
-    "chlorides": 30,
-    "sulfates": 30,
-    "hardness_calcium": 30,
-    "hardness_magnesium": 30,
-    "ph": 30,
-    "datetime": "2022-03-24T02:42:43.705",
+    "chlorides": 7,
+    "sulfates": 7,
+    "hardness_calcium": 7,
+    "hardness_magnesium": 7,
+    "ph": 7,
+    "datetime": "2022-04-01T17:37:51.225",
     "sampling_site": 3,
     "water_type": 1
   }
 },
 {
   "model": "projects.componentssite4",
-  "pk": 2,
+  "pk": 5,
   "fields": {
-    "hardness": 1,
-    "hardness_calcium": 1,
-    "ph": 1,
-    "salt": 1,
-    "chlorides": 1,
-    "sulfates": 1,
-    "oil_prod": 1,
+    "hardness": 9,
+    "hardness_calcium": 9,
+    "ph": 8,
+    "salt": 3199,
+    "chlorides": 9,
+    "sulfates": 9,
+    "oil_prod": 9,
     "suspended_subst": 1,
-    "alkalinity": 1,
-    "iron": 1,
-    "datetime": "2022-03-19T19:08:16.083",
+    "alkalinity": 9,
+    "iron": 9,
+    "datetime": "2022-04-01T17:57:49.396",
     "sampling_site": 4,
-    "water_type": 1
+    "water_type": 2
   }
 },
 {
-  "model": "projects.componentssite4",
-  "pk": 3,
-  "fields": {
-    "hardness": 20,
-    "hardness_calcium": 20,
-    "ph": 20,
-    "salt": 20,
-    "chlorides": 5,
-    "sulfates": 1,
-    "oil_prod": 51,
-    "suspended_subst": 51,
-    "alkalinity": 51,
-    "iron": 5,
-    "datetime": "2022-03-24T02:43:55.990",
-    "sampling_site": 4,
-    "water_type": 1
-  }
-},
-{
-  "model": "projects.componentssite4",
+  "model": "projects.componentssite5",
   "pk": 4,
   "fields": {
-    "hardness": 3,
-    "hardness_calcium": 3,
-    "ph": 3,
-    "salt": 3,
-    "chlorides": 3,
-    "sulfates": 3,
-    "oil_prod": 3,
-    "suspended_subst": 3,
-    "alkalinity": 3,
-    "iron": 3,
-    "datetime": "2022-03-19T19:43:11.301",
-    "sampling_site": 4,
-    "water_type": 2
-  }
-},
-{
-  "model": "projects.componentssite5",
-  "pk": 1,
-  "fields": {
-    "hardness": 1,
-    "hardness_calcium": 1,
-    "ph": 1,
-    "salt": 1,
-    "chlorides": 1,
-    "sulfates": 1,
-    "oil_prod": 1,
-    "suspended_subst": 1,
-    "alkalinity": 1,
-    "iron": 1,
-    "datetime": "2022-03-19T19:09:01.892",
-    "sampling_site": 5,
-    "water_type": 1
-  }
-},
-{
-  "model": "projects.componentssite5",
-  "pk": 2,
-  "fields": {
-    "hardness": 2,
-    "hardness_calcium": 2,
-    "ph": 2,
-    "salt": 2,
-    "chlorides": 2,
-    "sulfates": 2,
-    "oil_prod": 2,
-    "suspended_subst": 2,
-    "alkalinity": 2,
-    "iron": 2,
-    "datetime": "2022-03-19T19:09:18.529",
-    "sampling_site": 5,
-    "water_type": 2
-  }
-},
-{
-  "model": "projects.componentssite5",
-  "pk": 3,
-  "fields": {
-    "hardness": 3,
-    "hardness_calcium": 3,
-    "ph": 3,
-    "salt": 3,
-    "chlorides": 3,
-    "sulfates": 3,
-    "oil_prod": 3,
-    "suspended_subst": 3,
-    "alkalinity": 3,
-    "iron": 3,
-    "datetime": "2022-03-19T19:31:32.538",
+    "hardness": 30,
+    "hardness_calcium": 30,
+    "ph": 5,
+    "salt": 800,
+    "chlorides": 9,
+    "sulfates": 9,
+    "oil_prod": 9,
+    "suspended_subst": 40,
+    "alkalinity": 9,
+    "iron": 9,
+    "datetime": "2022-04-01T17:58:43.993",
     "sampling_site": 5,
     "water_type": 1
   }
 },
 {
   "model": "projects.componentssite6",
-  "pk": 1,
+  "pk": 3,
   "fields": {
-    "hardness": 20,
-    "hardness_calcium": 20,
-    "ph": 20,
-    "salt": 20,
-    "chlorides": 2,
-    "sulfates": 0,
-    "oil_prod": 20,
-    "suspended_subst": 2,
+    "hardness": 11,
+    "hardness_calcium": 11,
+    "ph": 7,
+    "salt": 11,
+    "chlorides": 11,
+    "sulfates": 11,
+    "oil_prod": 11,
+    "suspended_subst": 11,
     "alkalinity_phenols": null,
-    "alkalinity": 1,
-    "iron": 51,
-    "datetime": "2022-03-24T02:49:03.127",
+    "alkalinity": 11,
+    "iron": 11,
+    "datetime": "2022-04-01T18:20:57.821",
     "sampling_site": 6,
     "water_type": 1
   }
 },
 {
   "model": "projects.componentssite6",
-  "pk": 2,
+  "pk": 4,
+  "fields": {
+    "hardness": 12,
+    "hardness_calcium": 12,
+    "ph": 12,
+    "salt": 12,
+    "chlorides": 12,
+    "sulfates": 12,
+    "oil_prod": 12,
+    "suspended_subst": 12,
+    "alkalinity_phenols": null,
+    "alkalinity": 12,
+    "iron": 12,
+    "datetime": "2022-04-01T18:22:23.984",
+    "sampling_site": 6,
+    "water_type": 2
+  }
+},
+{
+  "model": "projects.componentssite6",
+  "pk": 5,
   "fields": {
     "hardness": 8,
     "hardness_calcium": 8,
@@ -2330,148 +2071,148 @@
     "alkalinity_phenols": 8,
     "alkalinity": 8,
     "iron": 8,
-    "datetime": "2022-03-22T15:32:02.067",
+    "datetime": "2022-04-01T18:31:38.483",
     "sampling_site": 6,
-    "water_type": 2
+    "water_type": 1
   }
 },
 {
   "model": "projects.componentssite7",
-  "pk": 1,
+  "pk": 2,
   "fields": {
-    "suspended_solids": 55,
-    "chlorides": 5,
-    "sulfates": 5,
-    "ph": 5,
-    "alkalinity": 5,
-    "hardness_calcium": 5,
-    "hardness": 5,
-    "iron": 5,
-    "datetime": "2022-03-24T02:52:38.980",
+    "suspended_solids": 8,
+    "chlorides": 8,
+    "sulfates": 8,
+    "ph": 8,
+    "alkalinity": 8,
+    "hardness_calcium": 8,
+    "hardness": 8,
+    "iron": 8,
+    "datetime": "2022-04-01T18:32:11.262",
     "sampling_site": 7,
     "water_type": 1
   }
 },
 {
   "model": "projects.componentssite8",
-  "pk": 1,
+  "pk": 2,
   "fields": {
-    "suspended_solids": 20,
-    "ph": 2,
-    "chlorides": 2,
-    "phosphorus": 2,
-    "oil_prod": 2,
-    "alkalinity": 2,
-    "hardness_calcium": 2,
-    "hardness": 2,
-    "iron": 2,
-    "salt": 2,
-    "datetime": "2022-03-24T02:52:54.156",
+    "suspended_solids": 7,
+    "ph": 7,
+    "chlorides": 7,
+    "phosphorus": 7,
+    "oil_prod": 7,
+    "alkalinity": 7,
+    "hardness_calcium": 7,
+    "hardness": 7,
+    "iron": 7,
+    "salt": 7,
+    "datetime": "2022-04-01T18:32:29.829",
     "sampling_site": 8,
-    "water_type": 1
+    "water_type": 2
   }
 },
 {
   "model": "projects.componentssite9",
-  "pk": 1,
+  "pk": 2,
   "fields": {
-    "suspended_solids": 30,
-    "chlorides": 30,
-    "sulfates": 30,
-    "ph": 30,
-    "phosphorus": 30,
-    "alkalinity": 3,
-    "hardness_calcium": 30,
-    "hardness": 30,
-    "iron": 30,
-    "salt": 30,
-    "datetime": "2022-03-24T02:53:08.604",
+    "suspended_solids": 6,
+    "chlorides": 6,
+    "sulfates": 6,
+    "ph": 7,
+    "phosphorus": 7,
+    "alkalinity": 8,
+    "hardness_calcium": 8,
+    "hardness": 8,
+    "iron": 8,
+    "salt": 8,
+    "datetime": "2022-04-01T18:32:48.099",
     "sampling_site": 9,
     "water_type": 1
   }
 },
 {
   "model": "projects.componentssite10",
-  "pk": 1,
+  "pk": 2,
   "fields": {
-    "chlorine": 30,
-    "oil_prod": 30,
-    "salt": 30,
-    "datetime": "2022-03-24T02:53:21.399",
+    "chlorine": 8,
+    "oil_prod": 8,
+    "salt": 8,
+    "datetime": "2022-04-01T18:33:15.498",
     "sampling_site": 10,
     "water_type": 1
   }
 },
 {
   "model": "projects.componentssite11",
-  "pk": 1,
+  "pk": 2,
   "fields": {
-    "suspended_solids": 42343,
-    "datetime": "2022-03-24T02:53:36.498",
+    "suspended_solids": 8,
+    "datetime": "2022-04-01T18:33:31.573",
     "sampling_site": 11,
     "water_type": 1
   }
 },
 {
   "model": "projects.componentssite12",
-  "pk": 1,
+  "pk": 2,
   "fields": {
-    "oil_prod": 20,
-    "suspended_subst": 20,
-    "ph": 20,
-    "oxygen_chem": 20,
-    "active_subst": 20,
-    "ammonium": 20,
-    "datetime": "2022-03-24T02:56:36.867",
+    "oil_prod": 8,
+    "suspended_subst": 8,
+    "ph": 8,
+    "oxygen_chem": 8,
+    "active_subst": 8,
+    "ammonium": 8,
+    "datetime": "2022-04-01T18:33:46.663",
     "sampling_site": 12,
     "water_type": 1
   }
 },
 {
   "model": "projects.componentssite13",
-  "pk": 1,
+  "pk": 2,
   "fields": {
-    "oil_prod": 30,
-    "suspended_subst": 30,
-    "ph": 20,
-    "oxygen_chem": 2,
-    "active_subst": 0,
-    "ammonium": 20,
-    "oxygen_bio": 5,
-    "phenols": 5,
-    "chlorides": 0,
-    "sulfates": 5,
-    "iron": 0,
-    "nitrate": 50,
-    "nitrite": 50,
-    "datetime": "2022-03-24T02:56:48.398",
+    "oil_prod": 8,
+    "suspended_subst": 8,
+    "ph": 8,
+    "oxygen_chem": 8,
+    "active_subst": 8,
+    "ammonium": 8,
+    "oxygen_bio": 8,
+    "phenols": 8,
+    "chlorides": 8,
+    "sulfates": 8,
+    "iron": 8,
+    "nitrate": 8,
+    "nitrite": 8,
+    "datetime": "2022-04-01T18:34:08.831",
     "sampling_site": 13,
     "water_type": 1
   }
 },
 {
   "model": "projects.componentssite14",
-  "pk": 2,
+  "pk": 3,
   "fields": {
-    "alkalinity": 5,
-    "hardness": 5,
-    "oxidability": 5,
-    "salt": 5,
-    "chlorine": 5,
-    "datetime": "2022-03-24T02:56:59.469",
+    "alkalinity": 9,
+    "hardness": 9,
+    "oxidability": 9,
+    "salt": 9,
+    "chlorine": 9,
+    "datetime": "2022-04-01T18:34:26.396",
     "sampling_site": 14,
     "water_type": 1
   }
 },
 {
   "model": "projects.taskassign",
-  "pk": 12,
+  "pk": 22,
   "fields": {
-    "task": "устранить утечки технологических продуктов в оборотную воду",
+    "task": "увеличить продувку",
     "user": 1,
-    "start_date": "2022-03-29T18:35:08.252",
-    "deadline": "2022-04-05T18:35:08.251",
-    "comp_title": "Нефтепродукт",
+    "start_date": "2022-04-01T17:05:58.490",
+    "deadline": "2022-04-08T17:05:58.490",
+    "comp_title": "Значение рН",
     "sampling_site": 1,
     "plant_unit": 1,
     "notification": 1,
@@ -2480,42 +2221,12 @@
 },
 {
   "model": "projects.taskassign",
-  "pk": 13,
-  "fields": {
-    "task": "уменьшить продувку",
-    "user": 1,
-    "start_date": "2022-03-29T18:35:08.257",
-    "deadline": "2022-04-05T18:35:08.257",
-    "comp_title": "Значение рН",
-    "sampling_site": 1,
-    "plant_unit": 1,
-    "notification": 2,
-    "status": 1
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 14,
-  "fields": {
-    "task": "увеличить дозировку ингибитора",
-    "user": 1,
-    "start_date": "2022-03-29T18:35:08.258",
-    "deadline": "2022-04-05T18:35:08.258",
-    "comp_title": "Фосфор",
-    "sampling_site": 1,
-    "plant_unit": 1,
-    "notification": 2,
-    "status": 1
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 15,
+  "pk": 23,
   "fields": {
     "task": "увеличить продувку",
     "user": 1,
-    "start_date": "2022-03-29T18:35:08.259",
-    "deadline": "2022-04-05T18:35:08.259",
+    "start_date": "2022-04-01T17:05:58.499",
+    "deadline": "2022-04-08T17:05:58.498",
     "comp_title": "Щелочность общая",
     "sampling_site": 1,
     "plant_unit": 1,
@@ -2525,28 +2236,28 @@
 },
 {
   "model": "projects.taskassign",
-  "pk": 16,
-  "fields": {
-    "task": "уменьшить продувку",
-    "user": 1,
-    "start_date": "2022-03-29T18:42:33.025",
-    "deadline": "2022-04-05T18:42:33.024",
-    "comp_title": "Значение рН",
-    "sampling_site": 1,
-    "plant_unit": 1,
-    "notification": 2,
-    "status": 1
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 17,
+  "pk": 24,
   "fields": {
     "task": "устранить утечки технологических продуктов в оборотную воду",
     "user": 1,
-    "start_date": "2022-03-30T12:32:51.793",
-    "deadline": "2022-04-06T12:32:51.792",
-    "comp_title": "Нефтепродукт",
+    "start_date": "2022-04-01T17:29:36.600",
+    "deadline": "2022-04-08T17:29:36.599",
+    "comp_title": "Нефтепродукты",
+    "sampling_site": 2,
+    "plant_unit": 1,
+    "notification": 1,
+    "status": 1
+  }
+},
+{
+  "model": "projects.taskassign",
+  "pk": 25,
+  "fields": {
+    "task": "увеличить продувку",
+    "user": 1,
+    "start_date": "2022-04-01T17:38:44.095",
+    "deadline": "2022-04-08T17:38:44.093",
+    "comp_title": "Щелочность общая",
     "sampling_site": 1,
     "plant_unit": 1,
     "notification": 1,
@@ -2555,62 +2266,17 @@
 },
 {
   "model": "projects.taskassign",
-  "pk": 18,
+  "pk": 26,
   "fields": {
     "task": "увеличить продувку",
     "user": 1,
-    "start_date": "2022-03-30T12:32:51.799",
-    "deadline": "2022-04-06T12:32:51.798",
-    "comp_title": "Значение рН",
+    "start_date": "2022-04-01T17:38:44.102",
+    "deadline": "2022-04-08T17:38:44.101",
+    "comp_title": "Солесодержание",
     "sampling_site": 1,
     "plant_unit": 1,
     "notification": 1,
-    "status": 2
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 19,
-  "fields": {
-    "task": "увеличить дозировку ингибитора",
-    "user": 1,
-    "start_date": "2022-03-30T12:32:51.800",
-    "deadline": "2022-04-06T12:32:51.800",
-    "comp_title": "Фосфор",
-    "sampling_site": 1,
-    "plant_unit": 1,
-    "notification": 2,
     "status": 1
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 20,
-  "fields": {
-    "task": "устранить утечки технологических продуктов в оборотную воду",
-    "user": 1,
-    "start_date": "2022-03-30T14:49:18.269",
-    "deadline": "2022-04-06T14:49:18.268",
-    "comp_title": "Нефтепродукт",
-    "sampling_site": 1,
-    "plant_unit": 1,
-    "notification": 1,
-    "status": 4
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 21,
-  "fields": {
-    "task": "увеличить продувку",
-    "user": 1,
-    "start_date": "2022-03-30T14:49:18.275",
-    "deadline": "2022-04-06T14:49:18.274",
-    "comp_title": "Значение рН",
-    "sampling_site": 1,
-    "plant_unit": 1,
-    "notification": 1,
-    "status": 3
   }
 },
 {

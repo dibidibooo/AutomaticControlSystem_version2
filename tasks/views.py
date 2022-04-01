@@ -1,4 +1,5 @@
-from django.shortcuts import render
+from django.http import JsonResponse
+from django.shortcuts import render, get_object_or_404
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 # Create your views here.
@@ -13,6 +14,14 @@ class KanbanBoardView(LoginRequiredMixin, View):
             'tasks': TaskAssign.objects.all()
         }
         return render(request, 'tasks/kanbanboard.html', context)
+
+    def post(self, request):
+        status_id = int(request.POST.get('status'))
+        task_id = int(request.POST.get('task_id'))
+        task = get_object_or_404(TaskAssign, pk=task_id)
+        task.status_id = status_id
+        task.save()
+        return JsonResponse({"message": "success"})
 
 
 class TaskListView(LoginRequiredMixin, View):
