@@ -109,7 +109,6 @@ class AnalysisCreateView(MultiFormsView):
 
     # Водоблок - 2 | Установка АВТ напротив погружного холодильника №42
     def site2_form_valid(self, form):
-        print(self.request.GET)
         oil_prod = form.cleaned_data.get('oil_prod')
         ph = form.cleaned_data.get('ph')
         suspended_solids = form.cleaned_data.get('suspended_solids')
@@ -619,7 +618,7 @@ class ResultsView(LoginRequiredMixin, View):
             for key, value in ComponentsSite7.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
-        except ComponentsSite6.DoesNotExist:
+        except ComponentsSite7.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
 
@@ -636,7 +635,7 @@ class ResultsView(LoginRequiredMixin, View):
             for key, value in ComponentsSite8.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
-        except ComponentsSite6.DoesNotExist:
+        except ComponentsSite8.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
 
@@ -653,7 +652,7 @@ class ResultsView(LoginRequiredMixin, View):
             for key, value in ComponentsSite9.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
-        except ComponentsSite6.DoesNotExist:
+        except ComponentsSite9.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
 
@@ -670,7 +669,7 @@ class ResultsView(LoginRequiredMixin, View):
             for key, value in ComponentsSite10.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
-        except ComponentsSite6.DoesNotExist:
+        except ComponentsSite10.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
 
@@ -687,7 +686,7 @@ class ResultsView(LoginRequiredMixin, View):
             for key, value in ComponentsSite11.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
-        except ComponentsSite6.DoesNotExist:
+        except ComponentsSite11.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
 
@@ -704,7 +703,7 @@ class ResultsView(LoginRequiredMixin, View):
             for key, value in ComponentsSite12.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
-        except ComponentsSite6.DoesNotExist:
+        except ComponentsSite12.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
 
@@ -721,7 +720,7 @@ class ResultsView(LoginRequiredMixin, View):
             for key, value in ComponentsSite13.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
-        except ComponentsSite6.DoesNotExist:
+        except ComponentsSite13.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
 
@@ -738,6 +737,6 @@ class ResultsView(LoginRequiredMixin, View):
             for key, value in ComponentsSite14.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
-        except ComponentsSite6.DoesNotExist:
+        except ComponentsSite14.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
