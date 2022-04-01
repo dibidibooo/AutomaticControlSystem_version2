@@ -557,7 +557,14 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results4(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
+            sample = ComponentsSite4.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.capitalize()
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite4.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
@@ -567,7 +574,14 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results5(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
+            sample = ComponentsSite5.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.capitalize()
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite5.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
@@ -577,7 +591,14 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results6(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
+            sample = ComponentsSite6.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.capitalize()
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite6.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
@@ -587,7 +608,14 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results7(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
+            sample = ComponentsSite7.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.capitalize()
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite7.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
@@ -597,7 +625,14 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results8(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
+            sample = ComponentsSite8.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.capitalize()
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite8.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
@@ -607,7 +642,14 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results9(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
+            sample = ComponentsSite9.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.capitalize()
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite9.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
@@ -617,7 +659,14 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results10(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
+            sample = ComponentsSite10.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.capitalize()
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite10.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
@@ -627,7 +676,14 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results11(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
+            sample = ComponentsSite11.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.capitalize()
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite11.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
@@ -637,7 +693,14 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results12(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
+            sample = ComponentsSite12.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.capitalize()
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite12.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
@@ -647,7 +710,14 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results13(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
+            sample = ComponentsSite13.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.capitalize()
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite13.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
@@ -657,7 +727,14 @@ class ResultsView(LoginRequiredMixin, View):
 
     def get_results14(self):
         results_site = {}
+        tasks = TaskAssign.objects.all()
         try:
+            sample = ComponentsSite14.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.task.capitalize()
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite14.objects.values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value

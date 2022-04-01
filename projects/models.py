@@ -50,7 +50,7 @@ class Component(models.Model):
 
 # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
 class ComponentsSite1(models.Model):
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
     suspended_solids = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные твердые частицы')
     ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
     phosphorus = models.IntegerField(null=True, blank=True, verbose_name='Фосфор')
@@ -69,7 +69,7 @@ class ComponentsSite1(models.Model):
 
 # Водоблок - 2 | Установка АВТ напротив погружного холодильника №42
 class ComponentsSite2(models.Model):
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
     ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
     suspended_solids = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные твердые частицы')
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
@@ -97,14 +97,14 @@ class ComponentsSite3(models.Model):
 
 # БОВ-1 | Аналитическая точка насосов Р-02А/В/С
 class ComponentsSite4(models.Model):
-    hardness = models.IntegerField(null=True, blank=True, verbose_name='Общая жесткость')
-    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Кальциевая жесткость')
+    hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость кальциевая')
     ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
-    salt = models.IntegerField(null=True, blank=True, verbose_name='Общее солесодержание')
-    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Содержание хлоридов')
-    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Содержание сульфатов')
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Содержание нефтепродуктов')
-    suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Общие Взвешенные вещества')
+    salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
+    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
+    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Сульфаты')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
+    suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные вещества')
     alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
     iron = models.IntegerField(null=True, blank=True, verbose_name='Железо')
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
@@ -114,14 +114,14 @@ class ComponentsSite4(models.Model):
 
 # БОВ-1 | Аналитическая точка выкид насосов Р-01А/В/С/Д
 class ComponentsSite5(models.Model):
-    hardness = models.IntegerField(null=True, blank=True, verbose_name='Общая жесткость')
-    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Кальциевая жесткость')
+    hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость кальциевая')
     ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
-    salt = models.IntegerField(null=True, blank=True, verbose_name='Общее солесодержание')
-    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Содержание хлоридов')
-    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Содержание сульфатов')
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Содержание нефтепродуктов')
-    suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Общие Взвешенные вещества')
+    salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
+    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
+    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Сульфаты')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
+    suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные вещества')
     alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
     iron = models.IntegerField(null=True, blank=True, verbose_name='Железо')
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
@@ -131,13 +131,13 @@ class ComponentsSite5(models.Model):
 
 # БОВ-2 | Аналитическая точка насосов Р-01А/В/С/Д
 class ComponentsSite6(models.Model):
-    hardness = models.IntegerField(null=True, blank=True, verbose_name='Общая жесткость')
-    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Кальциевая жесткость')
+    hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость кальциевая')
     ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
-    salt = models.IntegerField(null=True, blank=True, verbose_name='Общее солесодержание')
-    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Содержание хлоридов')
-    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Содержание сульфатов')
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Содержание нефтепродуктов')
+    salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
+    chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
+    sulfates = models.IntegerField(null=True, blank=True, verbose_name='Сульфаты')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
     suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Общие Взвешенные вещества')
     alkalinity_phenols = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность по фенолу')
     alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
@@ -154,9 +154,9 @@ class ComponentsSite7(models.Model):
     sulfates = models.IntegerField(null=True, blank=True, verbose_name='Сульфаты')
     ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
     alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
-    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Кальциевая жесткость (кальций, мг/л)')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость кальциевая (кальций, мг/л)')
     hardness = models.IntegerField(null=True, blank=True, verbose_name='Жесткость общая')
-    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо общее')
+    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо')
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
     sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component7')
     water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component7')
@@ -168,11 +168,11 @@ class ComponentsSite8(models.Model):
     ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
     chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
     phosphorus = models.IntegerField(null=True, blank=True, verbose_name='Фосфор')
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
     alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
-    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Кальциевая жесткость (кальций, мг/л)')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость кальциевая (кальций, мг/л)')
     hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')
-    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо общее')
+    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо')
     salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
     sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component8')
@@ -187,9 +187,9 @@ class ComponentsSite9(models.Model):
     ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
     phosphorus = models.IntegerField(null=True, blank=True, verbose_name='Фосфор')
     alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность')
-    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Кальциевая жесткость (кальций, мг/л)')
+    hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость кальциевая (кальций, мг/л)')
     hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')
-    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо общее')
+    iron = models.IntegerField(null=True, blank=True, verbose_name='Железо')
     salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
     sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component9')
@@ -199,7 +199,7 @@ class ComponentsSite9(models.Model):
 # УГОВ | Подача на градирню в районе 77-ТI-205 77-SN-007
 class ComponentsSite10(models.Model):
     chlorine = models.IntegerField(null=True, blank=True, verbose_name='Остаточный хлор')
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
     salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
     sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component10')
