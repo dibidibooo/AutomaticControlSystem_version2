@@ -1,6 +1,5 @@
 from django.urls import path
 from .views.analysis import AnalysisCreateView, ProjectsListView, ProjectOverviewView, ResultsView
-from .views.tasks import TaskUpdateView
 
 urlpatterns = [
     path('analyzes', AnalysisCreateView.as_view(), name='projects-projectsgrid'),
