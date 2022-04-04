@@ -1,8 +1,4 @@
 {% load static %}
-
-
-{% load static %}
-
 <div class="col-xl-3">
     <div class="col-xl-12">
         <div class="card">
@@ -20,8 +16,21 @@
                                 <div class="card task-box" id="uptask-1">
                                     <div class="card-body" data-status="">
                                         <div class="float-end ms-2">
-                                <span class="badge rounded-pill badge-soft-secondary font-size-12"
-                                      id="task-status">{{ task.status }}</span>
+
+                                            {% if container.id == 'upcoming-task' %}
+                                            <span class="badge rounded-pill badge-soft-secondary font-size-12"
+                                            >{{ task.status }}</span>
+                                            {% elif container.id == 'inprogress-task' %}
+                                            <span class="badge rounded-pill badge-soft-primary font-size-12"
+                                            >{{ task.status }}</span>
+                                            {% elif container.id == 'test-task' %}
+                                            <span class="badge rounded-pill badge-soft-warning font-size-12"
+                                            >{{ task.status }}</span>
+                                            {% else %}
+                                            <span class="badge rounded-pill badge-soft-warning font-size-12"
+                                            >{{ task.status }}</span>
+                                            {% endif %}
+
                                         </div>
                                         <div>
                                             <p class="fw-bold mb-2">
@@ -63,3 +72,7 @@
 </div>
 
 
+{% block extra_javascript %}
+<!-- Kanban -->
+<script src="{% static 'js/pages/task-kanban.init.js' %}"></script>
+{% endblock %}
