@@ -1,7 +1,7 @@
 options = {
     series: [{
         name: "Нефтепродукт",
-        data: [15, 285, 468, 46, 320, 498, 297, 145, 489, 182]
+        data:  [{% for value in ComponentsSite1.objects.all().latest('oil_prod') %} {{ value }}, {% endfor %}]
     }],
     chart: {
         type: "area",
