@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import View
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 from ..views.tasks import TaskCreate
 
@@ -43,7 +43,8 @@ from projects.models import (
 from projects.multiforms import MultiFormsView
 
 
-class AnalysisCreateView(MultiFormsView):
+class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
+    permission_required = ('projects.add_componentssite1',)
     template_name = "projects/projectsgrid_test.html"
     form_classes = {'site1': Site1Form,
                     'site2': Site2Form,
@@ -462,7 +463,9 @@ class ProjectOverviewView(LoginRequiredMixin, View):
         return render(request, 'projects/projectsoverview.html', context)
 
 
-class ResultsView(LoginRequiredMixin, View):
+class ResultsView(PermissionRequiredMixin, View):
+    permission_required = 'projects.view_componentssite1'
+
     def get(self, request):
         tasks = TaskAssign.objects.all()
         components = Component.objects.all()

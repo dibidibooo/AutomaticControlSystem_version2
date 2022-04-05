@@ -1,12 +1,14 @@
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404
 from django.views import View
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 # Create your views here.
 from projects.models import TaskAssign
 
 
-class KanbanBoardView(LoginRequiredMixin, View):
+class KanbanBoardView(PermissionRequiredMixin, View):
+    permission_required = ('projects.view_taskassign',)
+
     def get(self, request):
         context = {
             'heading': "Kanban Board",

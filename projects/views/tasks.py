@@ -1,6 +1,11 @@
 from datetime import datetime, timedelta
 
-from ..models import Component, TaskAssign
+from django.contrib.auth.models import User
+from django.urls import reverse
+from django.views.generic import UpdateView
+
+from tasks.forms import TaskUpdateForm
+from ..models import Component, TaskAssign, Status
 
 
 class TaskCreate:
@@ -792,3 +797,19 @@ class TaskCreate:
     # 5|2
     def site14_task(self, form):
         pass
+
+
+class TaskUpdateView(UpdateView):
+    model = TaskAssign
+    template_name = 'tasks/task_update.html'
+    context_object_name = 'task'
+    form_class = TaskUpdateForm
+
+    def get_context_data(self, **kwargs):
+        context = super(TaskUpdateView, self).get_context_data(**kwargs)
+        context['statuses'] = Status.objects.all()
+        context['users'] = User.objects.all()
+        return context
+
+    def get_success_url(self):
+        return reverse('tasks-kanbanboard')
