@@ -44,7 +44,7 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="javascript: void(0);" class="text-dark" id="task-name">
+                                        <a href="{% url 'tasks-updatetask' task.pk %}" class="text-dark" id="task-name">
                                             {{ task.task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
@@ -63,11 +63,6 @@
                         </div>
                         {% endif %} {% endfor %}
                         <!-- end task card -->
-                    </div>
-                    <div class="text-center d-grid">
-                        <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light addtask-btn" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg" data-id="#inprogress-task">
-                            <i class="mdi mdi-plus me-1"></i> Добавить карточку
-                        </a>
                     </div>
                 </div>
             </div>
@@ -108,7 +103,7 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="javascript: void(0);" class="text-dark" id="task-name">
+                                        <a href="{% url 'tasks-updatetask' task.pk %}" class="text-dark" id="task-name">
                                             {{ task.task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
@@ -127,10 +122,6 @@
                         </div>
                         {% endif %} {% endfor %}
                         <!-- end task card -->
-                    </div>
-                    <div class="text-center d-grid">
-                        <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light addtask-btn" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg" data-id="#inprogress-task"><i
-                                class="mdi mdi-plus me-1"></i>Добавить карточку</a>
                     </div>
                 </div>
             </div>
@@ -173,7 +164,7 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="javascript: void(0);" class="text-dark" id="task-name">
+                                        <a href="{% url 'tasks-updatetask' task.pk %}" class="text-dark" id="task-name">
                                             {{ task.task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
@@ -192,11 +183,6 @@
                         </div>
                         {% endif %} {% endfor %}
                         <!-- end task card -->
-                    </div>
-
-                    <div class="text-center d-grid">
-                        <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light addtask-btn" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg" data-id="#delegation-task"><i
-                                class="mdi mdi-plus me-1"></i>Добавить карточку</a>
                     </div>
                 </div>
             </div>
@@ -238,7 +224,7 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="javascript: void(0);" class="text-dark" id="task-name">
+                                        <a href="{% url 'tasks-updatetask' task.pk %}" class="text-dark" id="task-name">
                                             {{ task.task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
@@ -258,10 +244,6 @@
                         {% endif %} {% endfor %}
                     </div>
 
-                    <div class="text-center d-grid">
-                        <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light addtask-btn" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg" data-id="#complete-task"><i
-                                class="mdi mdi-plus me-1"></i>Добавить карточку</a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -384,161 +366,166 @@
 </div>
 <!-- /.modal -->
 
-
-<div class="col-lg-2">
-    <div class="card">
-        <!-- Static Backdrop modal Button -->
-        <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-            Modal
-        </button>
-        <!-- Static Backdrop Modal -->
-        <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="staticBackdropLabel" style="max-width: 25em"><b>Устранить Утечки Технологических Продуктов В Оборотную Воду для компонента 'Нефтепродукт'</b></h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-7">
-                            <div class="modal-body" style="margin-left: 10px">
-                                <p><b>Место отбора проб:</b> Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16</p>
-                                <p><b>Установка:</b> Водоблок-2</p>
-                                <div class="row">
-                                    <p><b>Выполнить до: </b>5 апреля 2022 г. 18:35</p>
-                                    <div class="col-md-6">
-                                        <input class="form-control" type="datetime-local" value="2019-08-19T13:45:00" id="example-datetime-local-input">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-5">
-                            <div class="modal-body">
-                                <div class="mb-3">
-                                    <label for="#" class="form-label"><b>Статус</b></label>
-                                    <select id="#" class="form-select">
-                                        <option selected>Запланировано</option>
-                                        <option>В работе</option>
-                                        <option>Тестирование</option>
-                                        <option>Выполнено</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="#" class="form-label"><b>Исполнитель</b></label>
-                                    <select id="#" class="form-select">
-                                        <option selected>Выбрать..</option>
-                                        <option>User 1</option>
-                                        <option>User 2</option>
-                                        <option>User 3</option>
-                                    </select>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="#" class="form-label"><b>Наблюдатель</b></label>
-                                    <select id="#" class="form-select">
-                                        <option selected>Выбрать..</option>
-                                        <option>User 1</option>
-                                        <option>User 2</option>
-                                        <option>User 3</option>
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="row">
-                        <div class="col-lg-8">
-                            <div class="p-3 chat-input-section" style="margin-left: 10px">
-                                <p><b>Комментарии:</b></p>
-                                <div class="row">
-                                    <div class="col-lg-1">
-                                        <div class="">
-                                            <div class="avatar-xs">
-                                                <div class="avatar-title rounded-circle bg-light text-primary">
-                                                    <i class="bx bxs-user"></i>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <div class="position-relative">
-                                            <input type="text" class="form-control rounded chat-input" placeholder="Введите комментарий...">
-                                        </div>
-                                    </div>
-                                    <div class="col-auto">
-                                        <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light"><span class="d-none d-sm-inline-block me-2">Отправить</span>
-                                            <i class="mdi mdi-send"></i></button>
-                                    </div>
-                                </div>
-                                <br>
-                                <div class="col-lg-12">
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item py-3">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0 me-3">
-                                                    <div class="avatar-xs">
-                                                        <div class="avatar-title rounded-circle bg-light text-primary">
-                                                            <i class="bx bxs-user"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <h5 class="font-size-14 mb-1">Delores Williams <small class="text-muted float-end">1 hr Ago</small></h5>
-                                                    <p class="text-muted">Если несколько языков объединяются, то грамматика получается индивидуальной</p>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="list-group-item py-3">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0 me-3">
-                                                    <div class="avatar-xs">
-                                                        <div class="avatar-title rounded-circle bg-light text-primary">
-                                                            <i class="bx bxs-user"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <h5 class="font-size-14 mb-1">Keith McCoy <small class="text-muted float-end">12 Aug</small></h5>
-                                                    <p class="text-muted">Donec posuere vulputate arcu. phasellus accumsan cursus velit</p>
-                                                </div>
-                                            </div>
-                                        </li>
-
-                                        <li class="list-group-item py-3">
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0 me-3">
-                                                    <div class="avatar-xs">
-                                                        <div class="avatar-title rounded-circle bg-light text-primary">
-                                                            <i class="bx bxs-user"></i>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <h5 class="font-size-14 mb-1">Keith McCoy <small class="text-muted float-end">12 Aug</small></h5>
-                                                    <p class="text-muted">Donec posuere vulputate arcu. phasellus accumsan cursus velit</p>
-                                                </div>
-                                            </div>
-                                        </li>
-
-
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-4">
-                            <hr>
-                            <p><b>Установка:</b> неделю назад</p>
-                            <p><b>Обновлена:</b> только что</p>
-                        </div>
-
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+{% include 'tasks/task_update.html' %}
+{#<div class="col-lg-2">#}
+{#    <div class="card">#}
+{#        <!-- Static Backdrop modal Button -->#}
+{#        <button type="button" class="btn btn-primary waves-effect waves-light" data-bs-toggle="modal" data-bs-target="#staticBackdrop">#}
+{#            Modal#}
+{#        </button>#}
+{#        <!-- Static Backdrop Modal -->#}
+{#        <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">#}
+{#            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">#}
+{#                <form action="{% url 'tasks-updatetask' task.pk %}" method="POST">#}
+{#                    <div class="modal-content">#}
+{#                        <div class="modal-header">#}
+{#                            <h5 class="modal-title" id="staticBackdropLabel" style="max-width: 25em">#}
+{#                                <b>Устранить Утечки Технологических Продуктов В Оборотную Воду для компонента 'Нефтепродукт'</b>#}
+{#                            </h5>#}
+{#                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>#}
+{#                        </div>#}
+{##}
+{#                        <div class="row">#}
+{#                            <div class="col-lg-7">#}
+{#                                <div class="modal-body" style="margin-left: 10px">#}
+{#                                    {{ task }}#}
+{#                                    <p><b>Место отбора проб:</b> Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16</p>#}
+{#                                    <p><b>Установка:</b> Водоблок-2</p>#}
+{#                                    <div class="row">#}
+{#                                        <p><b>Выполнить до: </b>5 апреля 2022 г. 18:35</p>#}
+{#                                        <div class="col-md-6">#}
+{#                                            <input class="form-control" type="datetime-local" value="2019-08-19T13:45:00" id="example-datetime-local-input">#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-lg-5">#}
+{#                                <div class="modal-body">#}
+{#                                    <div class="mb-3">#}
+{#                                        <label for="#" class="form-label"><b>Статус</b></label>#}
+{#                                        <select id="#" class="form-select">#}
+{#                                            <option selected>Запланировано</option>#}
+{#                                            <option>В работе</option>#}
+{#                                            <option>Тестирование</option>#}
+{#                                            <option>Выполнено</option>#}
+{#                                        </select>#}
+{#                                    </div>#}
+{#                                    <div class="mb-3">#}
+{#                                        <label for="#" class="form-label"><b>Исполнитель</b></label>#}
+{#                                        <select id="#" class="form-select">#}
+{#                                            <option selected>Выбрать..</option>#}
+{#                                            <option>User 1</option>#}
+{#                                            <option>User 2</option>#}
+{#                                            <option>User 3</option>#}
+{#                                        </select>#}
+{#                                    </div>#}
+{#                                    <div class="mb-3">#}
+{#                                        <label for="#" class="form-label"><b>Наблюдатель</b></label>#}
+{#                                        <select id="#" class="form-select">#}
+{#                                            <option selected>Выбрать..</option>#}
+{#                                            <option>User 1</option>#}
+{#                                            <option>User 2</option>#}
+{#                                            <option>User 3</option>#}
+{#                                        </select>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{##}
+{#                        <div class="row">#}
+{#                            <div class="col-lg-8">#}
+{#                                <div class="p-3 chat-input-section" style="margin-left: 10px">#}
+{#                                    <p><b>Комментарии:</b></p>#}
+{#                                    <div class="row">#}
+{#                                        <div class="col-lg-1">#}
+{#                                            <div class="">#}
+{#                                                <div class="avatar-xs">#}
+{#                                                    <div class="avatar-title rounded-circle bg-light text-primary">#}
+{#                                                        <i class="bx bxs-user"></i>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                        <div class="col">#}
+{#                                            <div class="position-relative">#}
+{#                                                <input type="text" class="form-control rounded chat-input" placeholder="Введите комментарий...">#}
+{#                                            </div>#}
+{#                                        </div>#}
+{#                                        <div class="col-auto">#}
+{#                                            <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light"><span class="d-none d-sm-inline-block me-2">Отправить</span>#}
+{#                                                <i class="mdi mdi-send"></i></button>#}
+{#                                        </div>#}
+{#                                    </div>#}
+{#                                    <br>#}
+{#                                    <div class="col-lg-12">#}
+{#                                        <ul class="list-group list-group-flush">#}
+{#                                            <li class="list-group-item py-3">#}
+{#                                                <div class="d-flex">#}
+{#                                                    <div class="flex-shrink-0 me-3">#}
+{#                                                        <div class="avatar-xs">#}
+{#                                                            <div class="avatar-title rounded-circle bg-light text-primary">#}
+{#                                                                <i class="bx bxs-user"></i>#}
+{#                                                            </div>#}
+{#                                                        </div>#}
+{#                                                    </div>#}
+{#                                                    <div class="flex-grow-1">#}
+{#                                                        <h5 class="font-size-14 mb-1">Delores Williams <small class="text-muted float-end">1 hr Ago</small></h5>#}
+{#                                                        <p class="text-muted">Если несколько языков объединяются, то грамматика получается индивидуальной</p>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </li>#}
+{##}
+{#                                            <li class="list-group-item py-3">#}
+{#                                                <div class="d-flex">#}
+{#                                                    <div class="flex-shrink-0 me-3">#}
+{#                                                        <div class="avatar-xs">#}
+{#                                                            <div class="avatar-title rounded-circle bg-light text-primary">#}
+{#                                                                <i class="bx bxs-user"></i>#}
+{#                                                            </div>#}
+{#                                                        </div>#}
+{#                                                    </div>#}
+{#                                                    <div class="flex-grow-1">#}
+{#                                                        <h5 class="font-size-14 mb-1">Keith McCoy <small class="text-muted float-end">12 Aug</small></h5>#}
+{#                                                        <p class="text-muted">Donec posuere vulputate arcu. phasellus accumsan cursus velit</p>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </li>#}
+{##}
+{#                                            <li class="list-group-item py-3">#}
+{#                                                <div class="d-flex">#}
+{#                                                    <div class="flex-shrink-0 me-3">#}
+{#                                                        <div class="avatar-xs">#}
+{#                                                            <div class="avatar-title rounded-circle bg-light text-primary">#}
+{#                                                                <i class="bx bxs-user"></i>#}
+{#                                                            </div>#}
+{#                                                        </div>#}
+{#                                                    </div>#}
+{#                                                    <div class="flex-grow-1">#}
+{#                                                        <h5 class="font-size-14 mb-1">Keith McCoy <small class="text-muted float-end">12 Aug</small></h5>#}
+{#                                                        <p class="text-muted">Donec posuere vulputate arcu. phasellus accumsan cursus velit</p>#}
+{#                                                    </div>#}
+{#                                                </div>#}
+{#                                            </li>#}
+{##}
+{##}
+{#                                        </ul>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                            <div class="col-lg-4">#}
+{#                                <hr>#}
+{#                                <p><b>Установка:</b> неделю назад</p>#}
+{#                                <p><b>Обновлена:</b> только что</p>#}
+{#                            </div>#}
+{##}
+{#                        </div>#}
+{##}
+{#                    </div>#}
+{#                </form>#}
+{#            </div>#}
+{#        </div>#}
+{#    </div>#}
+{#</div>#}
 
 {% endblock %} {% block extra_javascript %}
 <!-- Kanban -->
