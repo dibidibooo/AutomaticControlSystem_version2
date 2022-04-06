@@ -50,7 +50,7 @@ class CustomersView(PermissionRequiredMixin, View):
         greeting['page_obj'] = page_obj
         greeting['form'] = form
         greeting['form1'] = EditCustomersForm()
-        return render(request, 'ecommerce/ecommerce-customers.html', greeting)
+        return render(request, 'ecommerce/../templates/account/users-list.html', greeting)
 
     def post(self, request):
         if request.method == "POST":
