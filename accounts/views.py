@@ -31,7 +31,6 @@ class ProfileCreateView(PermissionRequiredMixin, CreateView):
         return context
 
     def form_valid(self, form):
-        page_number = self.request.POST['page_number']
         phone = form.cleaned_data.get('phone')
         position = form.cleaned_data.get('position')
         role = form.cleaned_data.get('role')
@@ -42,7 +41,7 @@ class ProfileCreateView(PermissionRequiredMixin, CreateView):
             position=position,
             role=role
         )
-        return redirect('accounts-users' + "?page=" + str(page_number))
+        return redirect('accounts-users')
 
     def form_invalid(self, form):
         return self.render_to_response(self.get_context_data(form=form, data=self.request.POST))

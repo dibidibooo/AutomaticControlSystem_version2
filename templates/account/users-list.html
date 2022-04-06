@@ -203,7 +203,7 @@
                                             </span>
                                         </div>
                                         <input type="text" class="form-control" id="basicpill-firstname-input"
-                                               placeholder="Введите логин" name="username">
+                                               required placeholder="Введите логин" name="username">
                                     </div>
                                 </div>
                             </div>
@@ -244,14 +244,14 @@
                                 <div class="mb-3">
                                     <label for="basicpill-firstname-input"><b>Имя</b></label>
                                     <input type="text" class="form-control" id="basicpill-firstname-input"
-                                           placeholder="Введите имя" name="first_name">
+                                           required placeholder="Введите имя" name="first_name">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="basicpill-lastname-input"><b>Фамилия</b></label>
                                     <input type="text" class="form-control" id="basicpill-lastname-input"
-                                           placeholder="Введите фамилию" name="last_name">
+                                           required placeholder="Введите фамилию" name="last_name">
                                 </div>
                             </div>
                         </div>
@@ -261,14 +261,14 @@
                                 <div class="mb-3">
                                     <label for="basicpill-phoneno-input"><b>Телефон</b></label>
                                     <input id="basicpill-phoneno-input" class="form-control input-mask"
-                                           data-inputmask="'mask': '+7(999)-999-99-99'" name="phone">
+                                           required data-inputmask="'mask': '+7(999)-999-99-99'" name="phone">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="basicpill-lastname-input"><b>Должность</b></label>
                                     <input type="text" class="form-control" id="basicpill-lastname-input"
-                                           placeholder="Введите должность" name="position">
+                                           required placeholder="Введите должность" name="position">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -289,6 +289,10 @@
                     <!-- Confirm Details -->
                     <h3><b>Подтвердить детали</b></h3>
                     <section>
+                        {% for error in form.errors %}
+                            <div class="alert errors-list error_style" role="alert" style="color: red;">{{ error }}</div>
+                        {% endfor %}
+
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="text-center">

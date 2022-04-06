@@ -8,9 +8,9 @@ class ProfileForm(forms.ModelForm):
     first_name = forms.CharField(label="Имя", required=True)
     last_name = forms.CharField(label="Фамилия", required=True)
     email = forms.CharField(label="Почта", required=True)
-    phone = forms.CharField(label="Телефон", widget=forms.TextInput(attrs={'placeholder': 'Телефон'}))
+    phone = forms.CharField(label="Телефон", required=True, widget=forms.TextInput(attrs={'placeholder': 'Телефон'}))
     role = forms.ModelChoiceField(label="Роль пользователя", widget=forms.Select, queryset=Group.objects.all())
-    position = forms.CharField(label="Должность", widget=forms.TextInput(attrs={'placeholder': 'Должность'}))
+    position = forms.CharField(label="Должность", required=True, widget=forms.TextInput(attrs={'placeholder': 'Должность'}))
     password1 = forms.CharField(label="Пароль", strip=False, required=True, widget=forms.PasswordInput)
     password2 = forms.CharField(label="Подтвердите пароль", required=True, widget=forms.PasswordInput,
                                 strip=False)
