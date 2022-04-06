@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'contacts',
     'pages',
     'components',
+    'accounts',
     # Third Party App
     'crispy_forms',
     'django.contrib.sites',
