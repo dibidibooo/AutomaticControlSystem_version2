@@ -46,7 +46,10 @@ dragula([document.getElementById("upcoming-task"),document.getElementById("inpro
                     console.log("Something went wrong");
                 }
             });
+                window.location.reload();
+
         }
+        setTimeout('send_data_1(id)', 200);
 
         function send_data_2(id) {
             $.ajax({
@@ -63,7 +66,11 @@ dragula([document.getElementById("upcoming-task"),document.getElementById("inpro
                     console.log("Something went wrong");
                 }
             });
+                window.location.reload();
+
         }
+        setTimeout('send_data_2(id)', 200);
+
 
         function send_data_3(id) {
             $.ajax({
@@ -80,7 +87,10 @@ dragula([document.getElementById("upcoming-task"),document.getElementById("inpro
                     console.log("Something went wrong");
                 }
             });
+                window.location.reload();
+
         }
+        setTimeout('send_data_3(id)', 200);
 
         function send_data_4(id) {
             $.ajax({
@@ -97,7 +107,10 @@ dragula([document.getElementById("upcoming-task"),document.getElementById("inpro
                     console.log("Something went wrong");
                 }
             });
+                window.location.reload();
+
         }
+        setTimeout('send_data_4(id)', 200);
 
         if (container.id === 'upcoming-task'){
             el.className += ' task_status_1';
