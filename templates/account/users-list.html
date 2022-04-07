@@ -1,4 +1,5 @@
 {% extends 'partials/base.html' %}
+{% load crispy_forms_filters %}
 {% load static %}
 {% load humanize %}
 {% load crispy_forms_tags %}
@@ -39,7 +40,7 @@
                         <tr>
                             <th>#</th>
                             <th>Login</th>
-                            <th>Фамилия Имя</th>
+                            <th>Имя Фамилия</th>
                             <th>Email</th>
                             <th>Телефон</th>
                             <th>Должность</th>
@@ -54,56 +55,33 @@
                             <tr>
                                 <td>{{ users.id }}</td>
                                 <td>{{ users.username }}</td>
-                                <td>{{ users.last_name }} {{ users.first_name }}</td>
+                                <td>{{ users.first_name }} {{ users.last_name }}</td>
                                 <td>{{ users.email }}</td>
                                 <td>{{ users.profile.phone }}</td>
                                 <td>{{ users.profile.position }}</td>
                                 <td>{{ users.profile.role }}</td>
+                                <td>
+                                    <div class="dropdown">
+                                        <a href="#" class="dropdown-toggle card-drop" data-bs-toggle="dropdown"
+                                           aria-expanded="false">
+                                            <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-end">
+                                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal"
+                                                   data-bs-target="#editcustomerModal" id="{{ users.id }}"
+                                                   onclick="editCustomer(this.id)">
+                                                <i class="mdi mdi-pencil font-size-16 text-success me-1"></i> Редактировать</a>
+                                            </li>
+                                            <li><a href="#" class="dropdown-item" id="{{ users.id }}"
+                                                   onclick="sweetDelete(this.id,this)">
+                                                <i class="mdi mdi-trash-can font-size-16 text-danger me-1"></i> Удалить</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </td>
                             </tr>
                         {% endfor %}
 
-
-{#                        {% for customers in page_obj %}#}
-{#                        <tr id="row-{{customers.id}}">#}
-{#                            <td>#}
-{#                                <div class="form-check font-size-16">#}
-{#                                    <input class="form-check-input" type="checkbox" id="customerlistcheck01">#}
-{#                                    <label class="form-check-label" for="customerlistcheck01"></label>#}
-{#                                </div>#}
-{#                            </td>#}
-{#                            <td id="username-{{customers.id}}">{{customers.username}}</td>#}
-{#                            <td>#}
-{#                                <p class="mb-1" id="phone-{{customers.id}}">{{customers.phone}}</p>#}
-{#                                <p class="mb-0" id="email-{{customers.id}}">{{customers.email}}</p>#}
-{#                            </td>#}
-{##}
-{#                            <td id="address-{{customers.id}}">{{customers.address}}</td>#}
-{#                            <td id="rating-{{customers.id}}"><span class="badge bg-success font-size-12"><i#}
-{#                                    class="mdi mdi-star me-1"></i> {{customers.rating}}</span></td>#}
-{#                            <td id="wallet_balance-{{customers.id}}" data-id="{{customers.wallet_balance}}">$#}
-{#                                {{customers.wallet_balance|intcomma}}#}
-{#                            </td>#}
-{#                            <td>{{customers.joining_date|date:"d M, Y"}}</td>#}
-{#                            <td>#}
-{#                                <div class="dropdown">#}
-{#                                    <a href="#" class="dropdown-toggle card-drop" data-bs-toggle="dropdown"#}
-{#                                       aria-expanded="false">#}
-{#                                        <i class="mdi mdi-dots-horizontal font-size-18"></i>#}
-{#                                    </a>#}
-{#                                    <ul class="dropdown-menu dropdown-menu-end">#}
-{#                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal"#}
-{#                                               data-bs-target="#editcustomerModal" id="{{customers.id}}"#}
-{#                                               onclick="editCustomer(this.id)"><i#}
-{#                                                class="mdi mdi-pencil font-size-16 text-success me-1"></i> Edit</a></li>#}
-{#                                        <li><a href="#" class="dropdown-item" id="{{customers.id}}"#}
-{#                                               onclick="sweetDelete(this.id,this)"><i#}
-{#                                                class="mdi mdi-trash-can font-size-16 text-danger me-1"></i> Delete</a>#}
-{#                                        </li>#}
-{#                                    </ul>#}
-{#                                </div>#}
-{#                            </td>#}
-{#                        </tr>#}
-{#                        {% endfor %}#}
                         </tbody>
                     </table>
                 </div>
@@ -117,8 +95,8 @@
                         {% endif %}
                     </li>
                     {% for i in page_obj.paginator.page_range %}
-                    <li class="page-item {% if i == page_obj.number  %} active{% endif %}"><a class="page-link"
-                                                                                              href="?page={{ i }}">{{i}}</a>
+                    <li class="page-item {% if i == page_obj.number  %} active{% endif %}">
+                        <a class="page-link" href="?page={{ i }}">{{i}}</a>
                     </li>
                     {% endfor %}
                     <li class="page-item">
@@ -136,45 +114,52 @@
 <!-- end row -->
 
 <!-- editcustomerModal -->
-{#<div class="modal fade" id="editcustomerModal" tabindex="-1" role="dialog" aria-labelledby="editcustomerModalLabel"#}
-{#     aria-hidden="true">#}
-{#    <div class="modal-dialog modal-dialog-centered modal-md" role="document">#}
-{#        <form class="modal-content" method="POST">#}
-{#            <input type="hidden" name="id" id="uid">#}
-{#            <input type="hidden" name="page_number" value="{{page_obj.number}}">#}
-{#            {% csrf_token %}#}
-{#            <div class="modal-body">#}
-{#                <div class="mb-3">#}
-{#                    {{ form1.username|as_crispy_field }}#}
-{#                </div>#}
-{#                <div class="mb-3">#}
-{#                    {{ form1.phone|as_crispy_field }}#}
-{#                </div>#}
-{#                <div class="mb-3">#}
-{#                    {{ form1.email|as_crispy_field }}#}
-{#                </div>#}
-{#                <div class="mb-3">#}
-{#                    {{ form1.address|as_crispy_field }}#}
-{#                </div>#}
-{#                <div class="mb-3">#}
-{#                    {{ form1.rating|as_crispy_field }}#}
-{#                </div>#}
-{#                <div class="mb-3">#}
-{#                    {{ form1.wallet_balance|as_crispy_field }}#}
-{#                </div>#}
-{#            </div>#}
-{##}
-{#            <div class="modal-footer">#}
-{#                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>#}
-{#                <button type="submit" class="btn btn-primary" name="editprofile">Save</button>#}
-{#            </div>#}
-{#        </form>#}
-{#    </div>#}
-{#</div>#}
+<div class="modal fade" id="editcustomerModal" tabindex="-1" role="dialog" aria-labelledby="editcustomerModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-md" role="document">
+        <form class="modal-content" method="POST">
+            <input type="hidden" name="id" id="uid">
+            <input type="hidden" name="page_number" value="{{ page_obj.number }}">
+            {% csrf_token %}
+            <div class="modal-body">
+                <h4 class="mb-3">Редактирование профиля</h4>
+                <div class="mb-3">
+                    <label class="form-label" for="first_name"><b>Имя</b></label>
+                    <input class="form-control" type="text" name="first_name" id="first_name" placeholder="Имя" value="{{ user_object.first_name }}">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="last_name"><b>Фамилия</b></label>
+                    <input class="form-control" type="text" name="last_name" id="last_name" placeholder="Фамилия" value="{{ user_object.last_name }}">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="phone"><b>Телефон</b></label>
+                    <input class="form-control input-mask" data-inputmask="'mask': '+7(999)-999-99-99'" name="phone" id="phone" value="{{ user_object.profile.phone }}">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="position"><b>Должность</b></label>
+                    <input class="form-control" type="text" name="position" id="position" placeholder="Должность" value="{{ user_object.profile.position }}">
+                </div>
+                <div class="mb-3">
+                <label class="form-label" for="role"><b>Роль пользователя</b></label>
+                    <select class="form-select" name="role" id="id_role">
+                        <option value="" selected="">---------</option>
+                        {% for group in user.groups.all %}
+                            <option value="{{ group.pk }}" {% if group == user_object.role %}selected{% endif %} >{{ group }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-primary" name="editprofile">Save</button>
+            </div>
+        </form>
+    </div>
+</div>
 <!-- end modal -->
 
 
-<!-- NewCustomer Modal That Needed-->
+<!-- Add User Modal -->
 <div class="modal fade" data-bs-backdrop="static" id="customerModal" tabindex="-1" role="dialog"
      aria-labelledby="newcustomerModalLabel"
      aria-hidden="true">
@@ -185,7 +170,7 @@
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
 
-{#            <input type="hidden" name="page_number" value="{{page_obj.number}}">#}
+            <input type="hidden" name="page_number" value="{{ page_obj.number }}">
             <div class="modal-body">
                 <div id="basic-example">
                     <!-- Add user -->
@@ -194,7 +179,7 @@
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="mb-3">
-                                    <label for="basicpill-firstname-input"><b>Логин</b></label>
+                                    <label for="basicpill-username-input"><b>Логин</b></label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"
@@ -202,8 +187,8 @@
                                                 @
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="basicpill-firstname-input"
-                                               placeholder="Введите логин" name="username">
+                                        <input type="text" class="form-control" id="basicpill-username-input"
+                                               required placeholder="Введите логин" name="username">
                                     </div>
                                 </div>
                             </div>
@@ -244,14 +229,14 @@
                                 <div class="mb-3">
                                     <label for="basicpill-firstname-input"><b>Имя</b></label>
                                     <input type="text" class="form-control" id="basicpill-firstname-input"
-                                           placeholder="Введите имя" name="first_name">
+                                           required placeholder="Введите имя" name="first_name">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="basicpill-lastname-input"><b>Фамилия</b></label>
                                     <input type="text" class="form-control" id="basicpill-lastname-input"
-                                           placeholder="Введите фамилию" name="last_name">
+                                           required placeholder="Введите фамилию" name="last_name">
                                 </div>
                             </div>
                         </div>
@@ -261,14 +246,14 @@
                                 <div class="mb-3">
                                     <label for="basicpill-phoneno-input"><b>Телефон</b></label>
                                     <input id="basicpill-phoneno-input" class="form-control input-mask"
-                                           data-inputmask="'mask': '+7(999)-999-99-99'" name="phone">
+                                           required data-inputmask="'mask': '+7(999)-999-99-99'" name="phone">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
-                                    <label for="basicpill-lastname-input"><b>Должность</b></label>
-                                    <input type="text" class="form-control" id="basicpill-lastname-input"
-                                           placeholder="Введите должность" name="position">
+                                    <label for="basicpill-position-input"><b>Должность</b></label>
+                                    <input type="text" class="form-control" id="basicpill-position-input"
+                                           required placeholder="Введите должность" name="position">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -289,6 +274,10 @@
                     <!-- Confirm Details -->
                     <h3><b>Подтвердить детали</b></h3>
                     <section>
+                        {% for error in form.errors %}
+                            <div class="alert errors-list error_style" role="alert" style="color: red;">{{ error }}</div>
+                        {% endfor %}
+
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="text-center">
@@ -303,7 +292,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Завершить</button>
+                        <button type="submit" class="btn btn-primary" name="addprofile">Завершить</button>
                     </section>
                 </div>
             </div>

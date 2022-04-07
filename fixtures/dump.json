@@ -1,5 +1,45 @@
 [
 {
+  "model": "accounts.profile",
+  "pk": 1,
+  "fields": {
+    "user": 2,
+    "phone": "87079998877",
+    "position": "Лаборант",
+    "role": 4
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 2,
+  "fields": {
+    "user": 3,
+    "phone": "87774443322",
+    "position": "Директор",
+    "role": 1
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 3,
+  "fields": {
+    "user": 4,
+    "phone": "87011112233",
+    "position": "Начальник БОВ-1",
+    "role": 3
+  }
+},
+{
+  "model": "accounts.profile",
+  "pk": 4,
+  "fields": {
+    "user": 5,
+    "phone": null,
+    "position": "Консультант",
+    "role": 2
+  }
+},
+{
   "model": "projects.plantunit",
   "pk": 1,
   "fields": {
@@ -2209,14 +2249,14 @@
   "pk": 22,
   "fields": {
     "task": "увеличить продувку",
-    "user": 1,
+    "user": 5,
     "start_date": "2022-04-01T17:05:58.490",
-    "deadline": "2022-04-08T17:05:58.490",
+    "deadline": "2022-04-08T17:05:58",
     "comp_title": "Значение рН",
     "sampling_site": 1,
     "plant_unit": 1,
     "notification": 1,
-    "status": 1
+    "status": 4
   }
 },
 {
@@ -2224,14 +2264,14 @@
   "pk": 23,
   "fields": {
     "task": "увеличить продувку",
-    "user": 1,
+    "user": 2,
     "start_date": "2022-04-01T17:05:58.499",
-    "deadline": "2022-04-08T17:05:58.498",
+    "deadline": "2022-04-08T17:05:58",
     "comp_title": "Щелочность общая",
     "sampling_site": 1,
     "plant_unit": 1,
     "notification": 1,
-    "status": 1
+    "status": 2
   }
 },
 {
@@ -2241,7 +2281,7 @@
     "task": "устранить утечки технологических продуктов в оборотную воду",
     "user": 1,
     "start_date": "2022-04-01T17:29:36.600",
-    "deadline": "2022-04-08T17:29:36.599",
+    "deadline": "2022-04-15T11:45:00",
     "comp_title": "Нефтепродукты",
     "sampling_site": 2,
     "plant_unit": 1,
@@ -2269,14 +2309,14 @@
   "pk": 26,
   "fields": {
     "task": "увеличить продувку",
-    "user": 1,
+    "user": 5,
     "start_date": "2022-04-01T17:38:44.102",
-    "deadline": "2022-04-08T17:38:44.101",
+    "deadline": "2022-04-07T11:55:00",
     "comp_title": "Солесодержание",
     "sampling_site": 1,
     "plant_unit": 1,
     "notification": 1,
-    "status": 1
+    "status": 3
   }
 },
 {
