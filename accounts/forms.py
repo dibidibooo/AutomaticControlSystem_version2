@@ -41,16 +41,13 @@ class ProfileForm(forms.ModelForm):
         )
 
 
-# class EditProfileForm(forms.ModelForm):
-#     username = forms.CharField(widget=forms.TextInput(attrs={'id': 'username', 'placeholder': 'Username'}))
-#     phone = forms.CharField(widget=forms.TextInput(attrs={'id': 'phone', 'placeholder': 'Phone'}))
-#     email = forms.CharField(widget=forms.EmailInput(attrs={'id': 'email', 'placeholder': 'Email'}))
-#     address = forms.CharField(widget=forms.TextInput(attrs={'id': 'address', 'placeholder': 'Address'}))
-#     wallet_balance = forms.IntegerField(
-#         widget=forms.TextInput(attrs={'id': 'wallet_balance', 'placeholder': 'Wallet Balance'}))
-#     rating = forms.CharField(
-#         widget=forms.Select(choices=rating_choice, attrs={'id': 'rating', 'placeholder': 'Rating'}))
-#
-#     class Meta:
-#         model = Customers
-#         fields = ["username", "phone", "email", "address", "rating", "wallet_balance"]
+class ProfileEditForm(forms.ModelForm):
+    first_name = forms.CharField(label="Имя", widget=forms.TextInput(attrs={'id': 'first_name', 'placeholder': 'Имя'}))
+    last_name = forms.CharField(label="Фамилия", widget=forms.TextInput(attrs={'id': 'last_name', 'placeholder': 'Фамилия'}))
+    phone = forms.CharField(label="Телефон", widget=forms.TextInput(attrs={'id': 'phone', 'placeholder': 'Телефон'}))
+    position = forms.CharField(label="Должность", widget=forms.TextInput(attrs={'id': 'position', 'placeholder': 'Должность'}))
+    role = forms.ModelChoiceField(label="Роль пользователя", widget=forms.Select, queryset=Group.objects.all())
+
+    class Meta:
+        model = get_user_model()
+        fields = ["first_name", "last_name", "phone", "position"]
