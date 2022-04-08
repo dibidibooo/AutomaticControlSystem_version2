@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # Local App
+    'rest_framework',
     'layout',
     'ecommerce',
     'crypto',
@@ -59,6 +60,7 @@ INSTALLED_APPS = [
     'contacts',
     'pages',
     'components',
+    'project_api',
     'accounts',
     # Third Party App
     'crispy_forms',
