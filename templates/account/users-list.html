@@ -121,7 +121,7 @@
             <input type="hidden" name="id" id="uid">
             <input type="hidden" name="page_number" value="{{ page_obj.number }}">
             {% csrf_token %}
-            <div class="modal-body">
+            <div class="modal-body" id="edituserform">
                 <h4 class="mb-3">Редактирование профиля</h4>
                 <div class="mb-3">
                     <label class="form-label" for="first_name"><b>Имя</b></label>
@@ -140,11 +140,11 @@
                     <input class="form-control" type="text" name="position" id="position" placeholder="Должность" value="{{ user_object.profile.position }}">
                 </div>
                 <div class="mb-3">
-                <label class="form-label" for="role"><b>Роль пользователя</b></label>
+                <label class="form-label" for="id_role"><b>Роль пользователя</b></label>
                     <select class="form-select" name="role" id="id_role">
                         <option value="" selected="">---------</option>
                         {% for group in user.groups.all %}
-                            <option value="{{ group.pk }}" {% if group == user_object.role %}selected{% endif %} >{{ group }}</option>
+                            <option value="{{ group.pk }}" {% if group == user_object.role %}selected{% endif %}>{{ group }}</option>
                         {% endfor %}
                     </select>
                 </div>

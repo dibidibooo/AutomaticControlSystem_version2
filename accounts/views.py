@@ -88,6 +88,7 @@ class ProfileView(PermissionRequiredMixin, View):
             pk = request.GET.get('userid')
             self.user_object = User.objects.get(pk=pk)
             context['user_object'] = self.user_object
+        print(context)
         return render(request, 'account/users-list.html', context)
 
     def post(self, request):

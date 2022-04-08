@@ -62,4 +62,5 @@ urlpatterns = [
     # Custum set password done page redirect
     path('accounts/password/set/', login_required(MyPasswordSetView.as_view()), name="account_set_password"),
     path('accounts/', include('accounts.urls')),
+    path('api/', include('project_api.urls')),
 ]
