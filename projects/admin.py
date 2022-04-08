@@ -1,5 +1,7 @@
 from django.contrib import admin
 from .models import (
+    Status,
+    Notification,
     TaskAssign,
     PlantUnit,
     SamplingSite,
@@ -21,6 +23,8 @@ from .models import (
     ComponentsSite14
 )
 
+admin.site.register(Status)
+admin.site.register(Notification)
 admin.site.register(TaskAssign)
 admin.site.register(PlantUnit)
 admin.site.register(SamplingSite)

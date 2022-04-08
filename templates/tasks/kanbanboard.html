@@ -25,7 +25,7 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="{% url 'tasks-updatetask' task.pk %}" class="text-dark" id="task-name">
+                                        <a data-bs-toggle="modal" data-bs-target="#staticBackdrop" type="button" href="{% url 'tasks-updatetask' task.pk %}" class="text-dark">
                                             {{ task.task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
@@ -177,8 +177,11 @@
 <!-- end row -->
 
 
-<!--{% include 'tasks/task_update.html' %}-->
-<div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+{% include 'tasks/task_update.html' %}
+
+{% for task in tasks %} {% if task.status_id == 1 %}
+<a href="{% url 'tasks-updatetask' task.pk %}" data-target="#modal" data-toggle="modal" class="btn btn-default btn-sm entity-btn-params"><i class="icon icon-th-large"></i> Окно 1</a>
+<div class="modal fade" id="modal" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
                 <form action="" method="POST">
                     {% csrf_token %}
@@ -329,8 +332,42 @@
             </div>
         </div>
 
+{% endif %} {% endfor %}
 
-{% endblock %} {% block extra_javascript %}
+
+
+
+
+{% endblock %}
+
+{% block extra_javascript %}
+
+<!--<script>-->
+<!--var modalDiv = $("#modal-div");-->
+<!--$(".open-modal").on("click", function() {-->
+<!--  $.ajax({-->
+<!--    url: $(this).attr("data-url"),-->
+<!--    success: function(data) {-->
+<!--      modalDiv.html(data);-->
+<!--      $("#myEdit").modal();-->
+<!--    }-->
+<!--  });-->
+<!--});-->
+<!--</script>-->
+
+<script>
+//Событие клик на кнопки с классом .entity-btn-params
+    $(document).on('click','.entity-btn-params',function(e){
+        // Получаем урл
+        var url = $(this).attr('href');
+        // Загружаем данные в модальное окно
+        $('.modal-content').load(url);
+    })
+
+// При закрытии окна чистим содержимое чтобы при загрузке другого окна изображение не "прыгало"
+    $('#modal').on('hidden.bs.modal',function(e){
+        targetModalContent.html(' ');
+    });</script>
 <!-- Kanban -->
 <script src="{% static 'libs/dragula/dist/dragula.min.js' %}"></script>
 <script src="{% static 'libs/jquery-validation/dist/jquery.validate.min.js' %}"></script>
