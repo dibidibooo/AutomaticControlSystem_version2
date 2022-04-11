@@ -215,7 +215,7 @@ var walletOptions = {
         lineCap: 'round'
     },
     colors: ['#3452e1', '#f1b44c', '#50a5f1'],
-    labels: ['Ethereum', 'Bitcoin', 'Litecoin'],
+    labels: ['свс', 'Bitcoin', 'Litecoin'],
     legend: {
         show: false,
     },
