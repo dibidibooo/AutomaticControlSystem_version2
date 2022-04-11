@@ -1,4 +1,5 @@
-from django.urls import path
+from django.urls import path, include
+from rest_framework import routers
 
 from project_api.views import (
     get_results1,
@@ -14,8 +15,14 @@ from project_api.views import (
     get_results11,
     get_results12,
     get_results13,
-    get_results14,
+    get_results14, TaskViewSet, Results1ViewSet, Results2ViewSet, Results3ViewSet
 )
+
+router = routers.DefaultRouter()
+router.register(r'tasks', TaskViewSet)
+router.register(r'results1', Results1ViewSet)
+router.register(r'results2', Results2ViewSet)
+router.register(r'results3', Results3ViewSet)
 
 urlpatterns = [
     path('results1', get_results1, name='results1'),
@@ -32,4 +39,6 @@ urlpatterns = [
     path('results12', get_results12, name='results12'),
     path('results13', get_results13, name='results13'),
     path('results14', get_results14, name='results14'),
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls')),
 ]

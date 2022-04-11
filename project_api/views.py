@@ -1,4 +1,7 @@
 from django.http import JsonResponse
+from rest_framework import viewsets
+
+from project_api.serializers import TasksSerializer, Results1Serializer, Results2Serializer, Results3Serializer
 from projects.models import (
     TaskAssign,
     ComponentsSite1,
@@ -16,6 +19,26 @@ from projects.models import (
     ComponentsSite13,
     ComponentsSite14,
 )
+
+
+class TaskViewSet(viewsets.ModelViewSet):
+    queryset = TaskAssign.objects.all()
+    serializer_class = TasksSerializer
+
+
+class Results1ViewSet(viewsets.ModelViewSet):
+    queryset = ComponentsSite1.objects.all()
+    serializer_class = Results1Serializer
+
+
+class Results2ViewSet(viewsets.ModelViewSet):
+    queryset = ComponentsSite2.objects.all()
+    serializer_class = Results2Serializer
+
+
+class Results3ViewSet(viewsets.ModelViewSet):
+    queryset = ComponentsSite3.objects.all()
+    serializer_class = Results3Serializer
 
 
 def get_results1(request):
