@@ -20,19 +20,9 @@ from projects.models import (
 
 def get_results1(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
-    try:
-        sample = ComponentsSite1.objects.all().latest('datetime')
-        for task in tasks:
-            if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
-            else:
-                results_site['no_recom'] = 'В пределах нормы'
-        for key, value in ComponentsSite1.objects.values().latest('datetime').items():
+    for key, value in ComponentsSite1.objects.values().latest('oil_prod').items():
             if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                 results_site[key] = value
-    except ComponentsSite1.DoesNotExist:
-        results_site['no_data'] = 'Нет данных'
     return JsonResponse(results_site, json_dumps_params={'ensure_ascii': False})
 
 def get_results2(request):
