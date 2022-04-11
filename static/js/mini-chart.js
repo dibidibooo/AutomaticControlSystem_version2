@@ -1,8 +1,7 @@
 options = {
     series: [{
         name: "Нефтепродукт",
-        data: [{{ for loop in Components1}} {{loop}} {{endfor}}]
-        data: [44, 165, 222, 12, 195, 244, 5, 209, 62, 192]
+        data: [10, 20, 222, 40, 195, 77, 5, 3, 62, 192]
     }],
     chart: {
         type: "area",

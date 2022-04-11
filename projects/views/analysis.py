@@ -463,6 +463,7 @@ class ProjectOverviewView(LoginRequiredMixin, View):
         return render(request, 'projects/projectsoverview.html', context)
 
 
+
 class ResultsView(PermissionRequiredMixin, View):
     permission_required = 'projects.view_componentssite1'
 
