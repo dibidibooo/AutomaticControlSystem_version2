@@ -69,7 +69,6 @@ from accounts.models import Profile
 
 class ProfileView(PermissionRequiredMixin, View):
     permission_required = 'add_user'
-    user_object = None
 
     def get(self, request):
         users = User.objects.order_by('id')
@@ -86,9 +85,8 @@ class ProfileView(PermissionRequiredMixin, View):
         context['form'] = ProfileForm()
         if request.GET.get('userid'):
             pk = request.GET.get('userid')
-            self.user_object = User.objects.get(pk=pk)
-            context['user_object'] = self.user_object
-        # print(context)
+            user_object = User.objects.get(pk=pk)
+            context['user_object'] = user_object
         return render(request, 'account/users-list.html', context)
 
     def post(self, request):

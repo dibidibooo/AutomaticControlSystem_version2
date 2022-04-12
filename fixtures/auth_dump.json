@@ -111,11 +111,6 @@
         "task"
       ],
       [
-        "view_taskassign",
-        "projects",
-        "taskassign"
-      ],
-      [
         "view_watertype",
         "projects",
         "watertype"
@@ -233,11 +228,6 @@
         "view_task",
         "projects",
         "task"
-      ],
-      [
-        "view_taskassign",
-        "projects",
-        "taskassign"
       ],
       [
         "view_watertype",
@@ -374,26 +364,6 @@
         "task"
       ],
       [
-        "add_taskassign",
-        "projects",
-        "taskassign"
-      ],
-      [
-        "change_taskassign",
-        "projects",
-        "taskassign"
-      ],
-      [
-        "delete_taskassign",
-        "projects",
-        "taskassign"
-      ],
-      [
-        "view_taskassign",
-        "projects",
-        "taskassign"
-      ],
-      [
         "view_watertype",
         "projects",
         "watertype"
@@ -420,7 +390,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$320000$eRkAI8jMT2sp5wE9zO26Hn$pKk//3HRTrmrFjWLarNE0uEfjHSy9AHPcshNXzfFOR0=",
-    "last_login": "2022-04-06T16:37:38.033",
+    "last_login": "2022-04-11T16:58:53.953",
     "is_superuser": true,
     "username": "admin",
     "first_name": "admin",
@@ -1152,11 +1122,11 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$320000$Uu360kySw9e5ffs9ws7vIq$9Om+Sl6qokNIFkIFgAtw6OtE8l3i27yVj6etfzSDsys=",
-    "last_login": "2022-04-06T10:33:30.956",
+    "last_login": "2022-04-11T16:33:50.460",
     "is_superuser": false,
     "username": "lab_assistant",
     "first_name": "ivan",
-    "last_name": "ivanov",
+    "last_name": "ivanov1",
     "email": "user@mail.ru",
     "is_staff": false,
     "is_active": true,
@@ -1174,11 +1144,11 @@
   "pk": 3,
   "fields": {
     "password": "pbkdf2_sha256$320000$Cq1MMIlQSHp0rAKjabFjuH$OULusmdw6D5+qTe7GukJ0dFUU2847wFHb1JsgmkLEz4=",
-    "last_login": "2022-04-04T15:28:05.940",
+    "last_login": "2022-04-11T16:43:57.275",
     "is_superuser": false,
     "username": "director",
-    "first_name": "",
-    "last_name": "",
+    "first_name": "Director",
+    "last_name": "Directorov",
     "email": "mail@mail.com",
     "is_staff": false,
     "is_active": true,
@@ -1221,8 +1191,8 @@
     "last_login": null,
     "is_superuser": false,
     "username": "consultant",
-    "first_name": "consultant",
-    "last_name": "consultant",
+    "first_name": "name",
+    "last_name": "last name",
     "email": "",
     "is_staff": false,
     "is_active": true,

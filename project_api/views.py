@@ -1,9 +1,10 @@
+from django.contrib.auth.models import User
 from django.http import JsonResponse
 from rest_framework import viewsets
 
-from project_api.serializers import TasksSerializer, Results1Serializer, Results2Serializer, Results3Serializer
+from project_api.serializers import TasksSerializer, Results1Serializer, Results2Serializer, Results3Serializer, \
+    UserSerializer
 from projects.models import (
-    TaskAssign,
     ComponentsSite1,
     ComponentsSite2,
     ComponentsSite3,
@@ -19,11 +20,17 @@ from projects.models import (
     ComponentsSite13,
     ComponentsSite14,
 )
+from tasks.models import Task
 
 
 class TaskViewSet(viewsets.ModelViewSet):
-    queryset = TaskAssign.objects.all()
+    queryset = Task.objects.all()
     serializer_class = TasksSerializer
+
+
+class UserViewSet(viewsets.ModelViewSet):
+    queryset = User.objects.all()
+    serializer_class = UserSerializer
 
 
 class Results1ViewSet(viewsets.ModelViewSet):
@@ -43,12 +50,12 @@ class Results3ViewSet(viewsets.ModelViewSet):
 
 def get_results1(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite1.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite1.objects.values().latest('datetime').items():
@@ -60,12 +67,12 @@ def get_results1(request):
 
 def get_results2(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite2.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite2.objects.values().latest('datetime').items():
@@ -77,12 +84,12 @@ def get_results2(request):
 
 def get_results3(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite3.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite3.objects.values().latest('datetime').items():
@@ -94,12 +101,12 @@ def get_results3(request):
 
 def get_results4(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite4.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite4.objects.values().latest('datetime').items():
@@ -111,12 +118,12 @@ def get_results4(request):
 
 def get_results5(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite5.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite5.objects.values().latest('datetime').items():
@@ -128,12 +135,12 @@ def get_results5(request):
 
 def get_results6(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite6.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite6.objects.values().latest('datetime').items():
@@ -145,12 +152,12 @@ def get_results6(request):
 
 def get_results7(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite7.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite7.objects.values().latest('datetime').items():
@@ -162,12 +169,12 @@ def get_results7(request):
 
 def get_results8(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite8.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite8.objects.values().latest('datetime').items():
@@ -179,12 +186,12 @@ def get_results8(request):
 
 def get_results9(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite9.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite9.objects.values().latest('datetime').items():
@@ -196,12 +203,12 @@ def get_results9(request):
 
 def get_results10(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite10.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite10.objects.values().latest('datetime').items():
@@ -213,12 +220,12 @@ def get_results10(request):
 
 def get_results11(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite11.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite11.objects.values().latest('datetime').items():
@@ -230,12 +237,12 @@ def get_results11(request):
 
 def get_results12(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite12.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite12.objects.values().latest('datetime').items():
@@ -247,12 +254,12 @@ def get_results12(request):
 
 def get_results13(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite13.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite13.objects.values().latest('datetime').items():
@@ -264,12 +271,12 @@ def get_results13(request):
 
 def get_results14(request):
     results_site = {}
-    tasks = TaskAssign.objects.all()
+    tasks = Task.objects.all()
     try:
         sample = ComponentsSite14.objects.all().latest('datetime')
         for task in tasks:
             if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
-                results_site[task.comp_title] = task.task.capitalize()
+                results_site[task.comp_title] = task.title
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite14.objects.values().latest('datetime').items():

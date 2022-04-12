@@ -68,7 +68,7 @@
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-end">
                                             <li><a href="#" class="dropdown-item" data-bs-toggle="modal"
-                                                   data-bs-target="#editcustomerModal" id="{{ users.id }}"
+                                                   data-bs-target="#editProfileModal" id="{{ users.id }}"
                                                    onclick="editCustomer(this.id)">
                                                 <i class="mdi mdi-pencil font-size-16 text-success me-1"></i> Редактировать</a>
                                             </li>
@@ -113,45 +113,49 @@
 </div>
 <!-- end row -->
 
-<!-- editcustomerModal -->
-<div class="modal fade" id="editcustomerModal" tabindex="-1" role="dialog" aria-labelledby="editcustomerModalLabel"
+<!-- editProfileModal -->
+<div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel"
      aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
         <form class="modal-content" method="POST">
             <input type="hidden" name="id" id="uid">
             <input type="hidden" name="page_number" value="{{ page_obj.number }}">
             {% csrf_token %}
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel" style="max-width: 25em">Редактирование профиля</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
             <div class="modal-body" id="edituserform">
-                <h4 class="mb-3">Редактирование профиля</h4>
                 <div class="mb-3">
                     <label class="form-label" for="first_name"><b>Имя</b></label>
-                    <input class="form-control" type="text" name="first_name" id="first_name" placeholder="Имя" value="{{ user_object.first_name }}">
+                    <input class="form-control" type="text" name="first_name" id="first_name" placeholder="Имя">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="last_name"><b>Фамилия</b></label>
-                    <input class="form-control" type="text" name="last_name" id="last_name" placeholder="Фамилия" value="{{ user_object.last_name }}">
+                    <input class="form-control" type="text" name="last_name" id="last_name" placeholder="Фамилия">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="phone"><b>Телефон</b></label>
-                    <input class="form-control input-mask" data-inputmask="'mask': '+7(999)-999-99-99'" name="phone" id="phone" value="{{ user_object.profile.phone }}">
+                    <input class="form-control input-mask" data-inputmask="'mask': '+7(999)-999-99-99'" name="phone" id="phone">
                 </div>
                 <div class="mb-3">
                     <label class="form-label" for="position"><b>Должность</b></label>
-                    <input class="form-control" type="text" name="position" id="position" placeholder="Должность" value="{{ user_object.profile.position }}">
+                    <input class="form-control" type="text" name="position" id="position" placeholder="Должность">
                 </div>
                 <div class="mb-3">
-                <label class="form-label" for="id_role"><b>Роль пользователя</b></label>
-                    <select class="form-select" name="role" id="id_role">
-                        <option value="" selected="">---------</option>
+                    <label class="form-label" for="role_id"><b>Роль пользователя</b></label>
+                    <select class="form-select" name="role" id="role_id">
                         {% for group in user.groups.all %}
-                            <option value="{{ group.pk }}" {% if group == user_object.role %}selected{% endif %}>{{ group }}</option>
+                            <option value="{{ group.pk }}">{{ group }}</option>
                         {% endfor %}
                     </select>
                 </div>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="submit" class="btn btn-primary" name="editprofile">Save</button>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                <button type="submit" class="btn btn-primary" name="editprofile">Сохранить</button>
             </div>
         </form>
     </div>
@@ -258,7 +262,7 @@
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
-                                    <label id="id_role"><b>Роль пользователя</b></label>
+                                    <label for="id_role"><b>Роль пользователя</b></label>
                                     <select class="form-select" name="role" id="id_role">
                                         <option value="" selected="">---------</option>
                                         {% for group in user.groups.all %}
@@ -319,6 +323,38 @@
 <script src="{% static 'js/pages/form-validation.init.js' %}"></script>
 <!-- Sweet Alerts js -->
 <script src="{% static 'libs/sweetalert2/dist/sweetalert2.min.js' %}"></script>
-<script src="{% static 'js/pages/customer.init.js' %}"></script>
+{#<script src="{% static 'js/pages/customer.init.js' %}"></script>#}
+    <script>
+        function editCustomer(event) {
+            let user_id = document.getElementById("uid");
+            user_id.setAttribute("value", event);
+            $.ajax({
+                data: {
+                    'userid': event
+                }
+            });
+            $.ajax({
+                url: 'http://127.0.0.1:8000/api/users/',
+                type: 'GET',
+                dataType: 'json',
+                success: function (resp) {
+                    for (let i = 0; i < resp.length; i++){
+                        let user_object = resp[i];
+                        {#console.log(user_object.profile.role);#}
+                        if (Number(event) === user_object.id){
+                            document.getElementById("first_name").setAttribute("value", user_object.first_name);
+                            document.getElementById("last_name").setAttribute("value", user_object.last_name);
+                            document.getElementById("phone").setAttribute("value", user_object.profile.phone);
+                            document.getElementById("position").setAttribute("value", user_object.profile.position);
+                            document.getElementById("role_id").insertAdjacentHTML('afterbegin', `<option selected>${user_object.profile.role.name}</option>`)
+                        }
+                    }
+                },
+                error: function (resp) {
+                    console.log('Something went wrong')
+                }
+            });
+        }
+    </script>
 {% endblock %}
 

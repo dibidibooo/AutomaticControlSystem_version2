@@ -221,7 +221,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449. 1-85 ПНДФ 14.1:2:4.128-98",
     "recommendation1": null,
-    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
+    "recommendation2": "Устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -236,7 +236,7 @@
     "period_in_hours": 168,
     "standards": "рН- метр ГОСТ 26449. 1-85",
     "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -251,7 +251,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": "проверить Ку, увеличить продувку"
+    "recommendation2": "Проверить Ку, увеличить продувку"
   }
 },
 {
@@ -281,7 +281,7 @@
     "period_in_hours": 168,
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -311,7 +311,7 @@
     "period_in_hours": 168,
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -326,7 +326,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -341,7 +341,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -401,7 +401,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449. 1-85 ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
+    "recommendation2": "Устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -416,7 +416,7 @@
     "period_in_hours": 168,
     "standards": "рН- метр ГОСТ 26449. 1-85",
     "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -431,7 +431,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -446,7 +446,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -506,7 +506,7 @@
     "period_in_hours": 168,
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -521,7 +521,7 @@
     "period_in_hours": 168,
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -536,7 +536,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -551,7 +551,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -596,7 +596,7 @@
     "period_in_hours": 168,
     "standards": "рН метр ГОСТ 26449.1",
     "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -761,7 +761,7 @@
     "period_in_hours": 84,
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -776,7 +776,7 @@
     "period_in_hours": 84,
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -791,7 +791,7 @@
     "period_in_hours": 168,
     "standards": "рН- метр ГОСТ 26449. 1-85",
     "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -806,7 +806,7 @@
     "period_in_hours": 168,
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -821,7 +821,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -836,7 +836,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -851,7 +851,7 @@
     "period_in_hours": 168,
     "standards": "ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
+    "recommendation2": "Устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -866,7 +866,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
+    "recommendation2": "Проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -881,7 +881,7 @@
     "period_in_hours": 84,
     "standards": "РТМ 24.030.24-72",
     "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -911,7 +911,7 @@
     "period_in_hours": 168,
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -926,7 +926,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -941,7 +941,7 @@
     "period_in_hours": 168,
     "standards": "рН- метр ГОСТ 26449. 1-85",
     "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -956,7 +956,7 @@
     "period_in_hours": 168,
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -971,7 +971,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -986,7 +986,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -1001,7 +1001,7 @@
     "period_in_hours": 168,
     "standards": "ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
+    "recommendation2": "Устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -1016,7 +1016,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
+    "recommendation2": "Проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -1046,7 +1046,7 @@
     "period_in_hours": 168,
     "standards": "РТМ 24.030.24-72",
     "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -1346,7 +1346,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1-85 МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
+    "recommendation2": "Проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -1361,7 +1361,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1-85 МВИ «Насh",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку и подпитку осветленной водой"
+    "recommendation2": "Увеличить продувку и подпитку осветленной водой"
   }
 },
 {
@@ -1376,7 +1376,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.2-85 МВИ «Насh»",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку и подпитку осветленной водой"
+    "recommendation2": "Увеличить продувку и подпитку осветленной водой"
   }
 },
 {
@@ -1391,7 +1391,7 @@
     "period_in_hours": 24,
     "standards": "рН-метр",
     "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -1421,7 +1421,7 @@
     "period_in_hours": 168,
     "standards": "РТМ 24.030.24-72.",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -1481,7 +1481,7 @@
     "period_in_hours": 168,
     "standards": "Кондуктометр",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -1496,7 +1496,7 @@
     "period_in_hours": 168,
     "standards": "МВИ «Насh»",
     "recommendation1": null,
-    "recommendation2": "снизить подачу галогена в оборотную воду"
+    "recommendation2": "Снизить подачу галогена в оборотную воду"
   }
 },
 {
@@ -1511,7 +1511,7 @@
     "period_in_hours": 84,
     "standards": "ГОСТ 26449.1-85 ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
+    "recommendation2": "Устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -1526,7 +1526,7 @@
     "period_in_hours": 168,
     "standards": "Кондуктометр",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -1541,7 +1541,7 @@
     "period_in_hours": 24,
     "standards": "ГОСТ 26449.1-85         МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
+    "recommendation2": "Проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -1646,7 +1646,7 @@
     "period_in_hours": 24,
     "standards": "рН- метр ГОСТ 26449. 1-85",
     "recommendation1": "подать едкий натр",
-    "recommendation2": "подать ортофосфорную кислоту"
+    "recommendation2": "Подать ортофосфорную кислоту"
   }
 },
 {
@@ -1691,7 +1691,7 @@
     "period_in_hours": 12,
     "standards": "ГОСТ 26449. 1-85 ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": "повысить дозу флокулянта и коагулянта подаваемых на блок  флотации"
+    "recommendation2": "Повысить дозу флокулянта и коагулянта подаваемых на блок  флотации"
   }
 },
 {
@@ -2205,10 +2205,10 @@
   }
 },
 {
-  "model": "projects.taskassign",
+  "model": "projects.task",
   "pk": 22,
   "fields": {
-    "task": "увеличить продувку",
+    "title": "Увеличить продувку",
     "user": 5,
     "start_date": "2022-04-01T17:05:58.490",
     "deadline": "2022-04-08T17:05:58",
@@ -2216,17 +2216,47 @@
     "sampling_site": 1,
     "plant_unit": 1,
     "notification": 1,
+    "status": 1
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 23,
+  "fields": {
+    "title": "Увеличить продувку",
+    "user": 1,
+    "start_date": "2022-04-01T17:05:58.499",
+    "deadline": "2022-04-11T17:05:58",
+    "comp_title": "Щелочность общая",
+    "sampling_site": 1,
+    "plant_unit": 1,
+    "notification": 1,
+    "status": 3
+  }
+},
+{
+  "model": "projects.task",
+  "pk": 24,
+  "fields": {
+    "title": "Устранить утечки технологических продуктов в оборотную воду",
+    "user": 47,
+    "start_date": "2022-04-01T17:29:36.600",
+    "deadline": "2022-04-20T15:41:00",
+    "comp_title": "Нефтепродукты",
+    "sampling_site": 2,
+    "plant_unit": 1,
+    "notification": 1,
     "status": 4
   }
 },
 {
-  "model": "projects.taskassign",
-  "pk": 23,
+  "model": "projects.task",
+  "pk": 25,
   "fields": {
-    "task": "увеличить продувку",
-    "user": 2,
-    "start_date": "2022-04-01T17:05:58.499",
-    "deadline": "2022-04-08T17:05:58",
+    "title": "Увеличить продувку",
+    "user": 1,
+    "start_date": "2022-04-01T17:38:44.095",
+    "deadline": "2022-04-08T17:38:44.093",
     "comp_title": "Щелочность общая",
     "sampling_site": 1,
     "plant_unit": 1,
@@ -2235,40 +2265,10 @@
   }
 },
 {
-  "model": "projects.taskassign",
-  "pk": 24,
-  "fields": {
-    "task": "устранить утечки технологических продуктов в оборотную воду",
-    "user": 1,
-    "start_date": "2022-04-01T17:29:36.600",
-    "deadline": "2022-04-15T11:45:00",
-    "comp_title": "Нефтепродукты",
-    "sampling_site": 2,
-    "plant_unit": 1,
-    "notification": 1,
-    "status": 1
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 25,
-  "fields": {
-    "task": "увеличить продувку",
-    "user": 1,
-    "start_date": "2022-04-01T17:38:44.095",
-    "deadline": "2022-04-08T17:38:44.093",
-    "comp_title": "Щелочность общая",
-    "sampling_site": 1,
-    "plant_unit": 1,
-    "notification": 1,
-    "status": 1
-  }
-},
-{
-  "model": "projects.taskassign",
+  "model": "projects.task",
   "pk": 26,
   "fields": {
-    "task": "увеличить продувку",
+    "title": "Увеличить продувку",
     "user": 5,
     "start_date": "2022-04-01T17:38:44.102",
     "deadline": "2022-04-07T11:55:00",
@@ -2276,7 +2276,7 @@
     "sampling_site": 1,
     "plant_unit": 1,
     "notification": 1,
-    "status": 3
+    "status": 2
   }
 },
 {
