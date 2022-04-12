@@ -28,7 +28,7 @@
                                         <a href="" class="text-dark" id="{{ task.id }}"
                                            data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                                            onclick="editTask(this.id)">
-                                            {{ task.task.title }} для компонента '{{ task.comp_title }}'
+                                            {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
                                     <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
@@ -70,7 +70,7 @@
                                         <a href="" class="text-dark" id="{{ task.id }}"
                                            data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                                            onclick="editTask(this.id)">
-                                            {{ task.task.title }} для компонента '{{ task.comp_title }}'
+                                            {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
                                     <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
@@ -114,7 +114,7 @@
                                         <a href="" class="text-dark" id="{{ task.id }}"
                                            data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                                            onclick="editTask(this.id)">
-                                            {{ task.task.title }} для компонента '{{ task.comp_title }}'
+                                            {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
                                     <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
@@ -157,7 +157,7 @@
                                         <a href="" class="text-dark" id="{{ task.id }}"
                                            data-bs-toggle="modal" data-bs-target="#staticBackdrop"
                                            onclick="editTask(this.id)">
-                                            {{ task.task.title }} для компонента '{{ task.comp_title }}'
+                                            {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
                                     <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
@@ -185,30 +185,27 @@
 <!-- end row -->
 
 
-{#<!--{% include 'tasks/task_update.html' %}-->#}
 <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <form action="" method="POST">
-            <input type="hidden" name="id" id="uid">
+            <input type="hidden" name="id" id="uid" data-url="{% url 'tasks-kanbanboard' %}">
             {% csrf_token %}
             <div class="modal-content">
+
                 <div class="modal-header">
-                    <h5 class="modal-title" id="staticBackdropLabel" style="max-width: 25em">
-                        <b>{{ task.task.title }} для компонента {{ task.comp_title }}</b>
-                    </h5>
+                    <h5 class="modal-title" id="staticBackdropLabel" style="max-width: 25em"></h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <h5>Task: {{ task }}</h5>
 
                 <div class="row">
                     <div class="col-lg-7">
-                        <div class="modal-body" style="margin-left: 10px">
-                            <p><b>Место отбора проб:</b> {{ task.sampling_site }}</p>
-                            <p><b>Установка:</b> {{ task.plant_unit }}</p>
+                        <div class="modal-body" style="margin-left: 10px" id="task_modal_body1">
+                            <p id="sampling_site"></p>
+                            <p id="plant_unit"></p>
                             <div class="row">
-                                <p><b>Выполнить до: </b>{{ task.deadline }}</p>
                                 <div class="col-md-6">
-                                    <input class="form-control" type="datetime-local" value="{{ task.deadline }}" name="deadline" id="id_deadline">
+                                    <label for="id_deadline"><b>Выполнить до:</b></label>
+                                    <input class="form-control" type="datetime-local" name="deadline" id="id_deadline">
                                 </div>
                             </div>
                         </div>
@@ -232,13 +229,7 @@
                                 </select>
                             </div>
                             <div class="mb-3">
-                                <label for="#" class="form-label"><b>Наблюдатель</b></label>
-                                <select id="#" class="form-select">
-                                    <option selected>Выбрать..</option>
-                                    <option>User 1</option>
-                                    <option>User 2</option>
-                                    <option>User 3</option>
-                                </select>
+                                <p id="task_observer"></p>
                             </div>
                             <input type="submit" value="Изменить" name="edittask" class="btn btn-primary">
                         </div>
@@ -357,11 +348,36 @@
         function editTask(event){
             let task_id = document.getElementById("uid");
             task_id.setAttribute("value", event);
-            console.log('Event: ', event)
             $.ajax({
-                url: "",
+                url: 'http://127.0.0.1:8000/api/tasks/',
+                type: 'GET',
+                dataType: 'json',
+                success: function (resp) {
+                    for (let i = 0; i < resp.length; i++){
+                        let task_object = resp[i]
+                        if (Number(event) === task_object.id){
+                            document.getElementsByClassName("modal-title")[0].innerHTML = `<b>${task_object.title} для компонента ${task_object.comp_title}</b>`;
+                            document.getElementById("sampling_site").innerHTML = `<b>Место отбора проб:</b> ${task_object.sampling_site.title}</b>`;
+                            document.getElementById("plant_unit").innerHTML = `<b>Установка:</b> ${task_object.plant_unit.title}`
+                            document.getElementById("id_deadline").setAttribute("value", task_object.deadline);
+                            document.getElementById("task_observer").innerHTML = `<b>Наблюдатель: </b>${task_object.user.first_name} ${task_object.user.last_name}`;
+                        }
+                    }
+                },
+                error: function (resp) {
+                    console.log('Something went wrong')
+                }
+            });
+            $.ajax({
+                type: 'GET',
                 data: {
                     'taskid': event
+                },
+                success: function (result) {
+                    console.log(result);
+                },
+                error: function (result) {
+                    console.log('Error!');
                 }
             });
         }
