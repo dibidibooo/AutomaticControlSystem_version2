@@ -42,11 +42,21 @@ options = {
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
+
+
 options = {
-    series: [{
-        name: "Значение рН",
-        data: [44, 165, 222, 12, 195, 244, 5, 209, 62, 192]
-    }],
+
+var url = 'http://127.0.0.1:8000/api/results1/';
+
+axios({
+  method: 'POST',
+  url: url,
+}).then(function(response) {
+  chart.updateSeries([{
+    name: 'Sales',
+    data: response.data
+  }])
+}),
     chart: {
         type: "area",
         height: 40,
