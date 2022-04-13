@@ -2,6 +2,7 @@
 # from adminsortable.models import SortableMixin
 # from model_utils.models import TimeStampedModel
 from django.contrib.auth import get_user_model
+from django.contrib.auth.models import User
 from django.db import models
 
 
@@ -35,10 +36,12 @@ class Task(models.Model):
     status = models.ForeignKey('projects.Status', related_name='task_assign', on_delete=models.CASCADE, default=1)
 
 
-# class Comment(models.Model):
-#     task = models.ForeignKey(Task, on_delete=models.CASCADE, related_name="comments")
-#     author = models.ForeignKey(User, on_delete=models.PROTECT, related_name="comments")
-#     text = models.TextField()
-#
-#     class Meta:
-#         verbose_name_plural = 'Comments'
+class Comment(models.Model):
+    task = models.ForeignKey('tasks.Task', on_delete=models.CASCADE, related_name="comments")
+    author = models.ForeignKey(User, on_delete=models.PROTECT, related_name="comments")
+    text = models.TextField(max_length=2000, verbose_name='Текст комментария')
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время создания')
+    updated_at = models.DateTimeField(auto_now=True, null=True, blank=True, verbose_name="Дата изменения")
+
+    class Meta:
+        verbose_name_plural = 'Comments'

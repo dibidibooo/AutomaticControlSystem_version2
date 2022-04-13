@@ -3,9 +3,9 @@ from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.models import User
 from django.core.paginator import Paginator
 from django.http import HttpResponse
-from django.shortcuts import redirect, render, get_object_or_404
+from django.shortcuts import redirect, render
 from django.views import View
-from django.views.generic import CreateView
+from django.views.generic import DetailView
 
 from accounts.forms import ProfileForm, ProfileEditForm
 from accounts.models import Profile
@@ -67,6 +67,15 @@ from accounts.models import Profile
 #     def form_invalid(self, form):
 #         return self.render_to_response(self.get_context_data(form=form, data=self.request.POST))
 
+
+class ProfileDetailView(DetailView):
+    model = get_user_model()
+    template_name = 'account/detail.html'
+    context_object_name = 'user_obj'
+    success_url = 'accounts-users'
+    form_class = ProfileEditForm
+
+
 class ProfileView(PermissionRequiredMixin, View):
     permission_required = 'add_user'
 
@@ -123,4 +132,12 @@ class ProfileView(PermissionRequiredMixin, View):
                 profile.role_id = role
                 profile.save()
                 return redirect('accounts-users')
+            if "deleteCustomer" in request.POST:
+                print(111)
+                id = request.POST['id']
+                print(id)
+                obj = User.objects.filter(id=id).first()
+                print(obj)
+                obj.delete()
+                return HttpResponse()
             return redirect('accounts-users')
