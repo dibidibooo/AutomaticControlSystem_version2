@@ -5,9 +5,24 @@ from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.views.generic import DetailView
 
 from projects.models import Status, Component
 from tasks.models import Task
+
+
+class TaskDetailView(DetailView):
+    model = Task
+    template_name = 'tasks/update.html'
+    context_object_name = 'task'
+    success_url = 'tasks-kanbanboard'
+    fields = ('status', 'user', 'deadline', )
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['statuses'] = Status.objects.all()
+        context['users'] = User.objects.all()
+        return context
 
 
 class KanbanBoardView(PermissionRequiredMixin, View):
@@ -21,11 +36,6 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             'statuses': Status.objects.all(),
             'users': User.objects.all(),
         }
-        if 'taskid' in request.GET:
-            task_id = request.GET.get('taskid')
-            task_object = Task.objects.get(id=task_id)
-            context['task'] = task_object
-            return render(request, 'tasks/kanbanboard.html', context)
         return render(request, 'tasks/kanbanboard.html', context)
 
     def post(self, request):
@@ -34,7 +44,6 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             deadline = request.POST['deadline']
             status = request.POST['status']
             user = request.POST['user']
-
             task = Task.objects.filter(id=id)
             task.update(deadline=deadline, status=status, user_id=int(user))
             return redirect('tasks-kanbanboard')
@@ -46,25 +55,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             if task.status_id == 4:
                 task.completion_date = datetime.now()
             task.save()
-            return JsonResponse({"message": "success"})
-
-    # @staticmethod
-    # def is_ajax(request):
-    #     return request.META.get('HTTP_X_REQUESTED_WITH') == 'XMLHttpRequest'
-
-    def get_update_modal(self, request):
-        if request.GET.get('taskid'):
-            task_id = request.GET.get('taskid')
-            task_object = Task.objects.get(id=task_id)
-            context = {
-                'heading': "Kanban доска",
-                'pageview': "Задачи",
-                'tasks': Task.objects.all(),
-                'statuses': Status.objects.all(),
-                'users': User.objects.all(),
-                'task': task_object,
-            }
-            return render(request, 'tasks/kanbanboard.html', context)
+        return JsonResponse({"message": "success"})
 
 
 class TaskCreate:

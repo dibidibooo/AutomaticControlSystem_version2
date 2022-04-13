@@ -5,7 +5,7 @@ from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 
 from tasks.models import Task
-from tasks.views import TaskCreate
+from tasks.views.task_views import TaskCreate
 
 from projects.forms import (
     Site1Form,

@@ -1,0 +1,23 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block extra_css %}
+<!-- dragula css -->
+<link href="{% static 'libs/dragula/dist/dragula.min.css' %}" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" type="text/css" href="{% static 'libs/toastr/build/toastr.min.css' %}">
+
+<link href="{% static 'libs/select2/dist/css/select2.min.css'%}" rel="stylesheet" type="text/css" />
+<link href="{% static 'libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'%}" rel="stylesheet" type="text/css">
+<link href="{% static 'libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css'%}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{% static 'libs/@chenfengyuan/datepicker/dist/datepicker.min.css'%}" type="text/css" />
+{% endblock %}
+
+{% block contents %}
+    <h1>Create comment</h1>
+    <form action="{% url 'comments-add' 1 %}" method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit"
+               class="btn btn-success"
+               name="Оставить комментарий">
+    </form>
+{% endblock %}
