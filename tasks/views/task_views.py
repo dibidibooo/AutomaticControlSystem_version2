@@ -8,6 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.views.generic import DetailView
 
 from projects.models import Status, Component
+from tasks.forms import TaskForm
 from tasks.models import Task, Comment
 
 
@@ -16,7 +17,7 @@ class TaskDetailView(DetailView):
     template_name = 'tasks/update.html'
     context_object_name = 'task'
     success_url = 'tasks-kanbanboard'
-    fields = ('status', 'user', 'deadline', )
+    form_class = TaskForm
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -81,7 +82,7 @@ class TaskCreate:
 
         if float(form.cleaned_data['oil_prod']) > float(oil_prod.limit_hi):
             comp_title = oil_prod.title[6:]
-            deadline = datetime.now() + timedelta(hours=oil_prod.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 user_id=1,
@@ -93,7 +94,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['ph']) > float(ph.limit_hi):
             comp_title = ph.title[6:]
-            deadline = datetime.now() + timedelta(hours=ph.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
                 user_id=1,
@@ -105,7 +106,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['ph']) < float(ph.limit_lo):
             comp_title = ph.title[6:]
-            deadline = datetime.now() + timedelta(hours=ph.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation1,
                 user_id=1,
@@ -117,7 +118,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_hi):
             comp_title = suspended_solids.title[6:]
-            deadline = datetime.now() + timedelta(hours=suspended_solids.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_solids.recommendation2,
                 user_id=1,
@@ -129,7 +130,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['phosphorus']) < float(phosphorus.limit_lo):
             comp_title = phosphorus.title[6:]
-            deadline = datetime.now() + timedelta(hours=phosphorus.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=phosphorus.recommendation1,
                 user_id=1,
@@ -141,7 +142,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['alkalinity']) > float(alkalinity.limit_hi):
             comp_title = alkalinity.title[6:]
-            deadline = datetime.now() + timedelta(hours=alkalinity.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation2,
                 user_id=1,
@@ -153,7 +154,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['salt']) > float(salt.limit_hi):
             comp_title = salt.title[6:]
-            deadline = datetime.now() + timedelta(hours=salt.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=salt.recommendation2,
                 user_id=1,
@@ -165,7 +166,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['chlorides']) > float(chlorides.limit_hi):
             comp_title = chlorides.title[6:]
-            deadline = datetime.now() + timedelta(hours=chlorides.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=chlorides.recommendation2,
                 user_id=1,
@@ -177,7 +178,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['sulfates']) > float(sulfates.limit_hi):
             comp_title = sulfates.title[6:]
-            deadline = datetime.now() + timedelta(hours=sulfates.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=sulfates.recommendation2,
                 user_id=1,
@@ -196,7 +197,7 @@ class TaskCreate:
 
         if float(form.cleaned_data['oil_prod']) > float(oil_prod.limit_hi):
             comp_title = oil_prod.title[6:]
-            deadline = datetime.now() + timedelta(hours=oil_prod.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 user_id=1,
@@ -208,7 +209,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['ph']) > float(ph.limit_hi):
             comp_title = ph.title[6:]
-            deadline = datetime.now() + timedelta(hours=ph.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
                 user_id=1,
@@ -220,7 +221,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['ph']) < float(ph.limit_lo):
             comp_title = ph.title[6:]
-            deadline = datetime.now() + timedelta(hours=ph.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation1,
                 user_id=1,
@@ -232,7 +233,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_hi):
             comp_title = suspended_solids.title[6:]
-            deadline = datetime.now() + timedelta(hours=suspended_solids.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_solids.recommendation2,
                 user_id=1,
@@ -254,7 +255,7 @@ class TaskCreate:
 
         if float(form.cleaned_data['suspended_subst']) > float(suspended_subst.limit_hi):
             comp_title = suspended_subst.title[6:]
-            deadline = datetime.now() + timedelta(hours=suspended_subst.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_subst.recommendation2,
                 user_id=1,
@@ -266,7 +267,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['ph']) > float(ph.limit_hi):
             comp_title = ph.title[6:]
-            deadline = datetime.now() + timedelta(hours=ph.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
                 user_id=1,
@@ -278,7 +279,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['ph']) < float(ph.limit_lo):
             comp_title = ph.title[6:]
-            deadline = datetime.now() + timedelta(hours=ph.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation1,
                 user_id=1,
@@ -290,7 +291,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['alkalinity']) > float(alkalinity.limit_hi):
             comp_title = alkalinity.title[6:]
-            deadline = datetime.now() + timedelta(hours=alkalinity.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation2,
                 user_id=1,
@@ -302,7 +303,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['salt']) > float(salt.limit_hi):
             comp_title = salt.title[6:]
-            deadline = datetime.now() + timedelta(hours=salt.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=salt.recommendation2,
                 user_id=1,
@@ -314,7 +315,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['chlorides']) > float(chlorides.limit_hi):
             comp_title = chlorides.title[6:]
-            deadline = datetime.now() + timedelta(hours=chlorides.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=chlorides.recommendation2,
                 user_id=1,
@@ -326,7 +327,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['sulfates']) > float(sulfates.limit_hi):
             comp_title = sulfates.title[6:]
-            deadline = datetime.now() + timedelta(hours=sulfates.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=sulfates.recommendation2,
                 user_id=1,
@@ -355,7 +356,7 @@ class TaskCreate:
 
         if float(form.cleaned_data['hardness']) > float(hardness.limit_hi):
             comp_title = hardness.title[6:]
-            deadline = datetime.now() + timedelta(hours=hardness.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=hardness.recommendation2,
                 user_id=1,
@@ -367,7 +368,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['hardness_calcium']) > float(hardness_calcium.limit_hi):
             comp_title = hardness_calcium.title[6:]
-            deadline = datetime.now() + timedelta(hours=hardness_calcium.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=hardness_calcium.recommendation2,
                 user_id=1,
@@ -379,7 +380,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['ph']) > float(ph.limit_hi):
             comp_title = ph.title[6:]
-            deadline = datetime.now() + timedelta(hours=ph.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
                 user_id=1,
@@ -391,7 +392,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['ph']) < float(ph.limit_lo):
             comp_title = ph.title[6:]
-            deadline = datetime.now() + timedelta(hours=ph.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation1,
                 user_id=1,
@@ -403,7 +404,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['salt']) > float(salt.limit_hi):
             comp_title = salt.title[6:]
-            deadline = datetime.now() + timedelta(hours=salt.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=salt.recommendation2,
                 user_id=1,
@@ -415,7 +416,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['chlorides']) > float(chlorides.limit_hi):
             comp_title = chlorides.title[6:]
-            deadline = datetime.now() + timedelta(hours=chlorides.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=chlorides.recommendation2,
                 user_id=1,
@@ -427,7 +428,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['sulfates']) > float(sulfates.limit_hi):
             comp_title = sulfates.title[6:]
-            deadline = datetime.now() + timedelta(hours=sulfates.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=sulfates.recommendation2,
                 user_id=1,
@@ -439,7 +440,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['oil_prod']) > float(oil_prod.limit_hi):
             comp_title = oil_prod.title[6:]
-            deadline = datetime.now() + timedelta(hours=oil_prod.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 user_id=1,
@@ -451,7 +452,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['suspended_subst']) > float(suspended_subst.limit_hi):
             comp_title = suspended_subst.title[6:]
-            deadline = datetime.now() + timedelta(hours=suspended_subst.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_subst.recommendation2,
                 user_id=1,
@@ -463,7 +464,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['alkalinity']) > float(alkalinity.limit_hi):
             comp_title = alkalinity.title[6:]
-            deadline = datetime.now() + timedelta(hours=alkalinity.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation2,
                 user_id=1,
@@ -475,7 +476,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['alkalinity']) < float(alkalinity.limit_lo):
             comp_title = alkalinity.title[6:]
-            deadline = datetime.now() + timedelta(hours=alkalinity.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation1,
                 user_id=1,
@@ -500,7 +501,7 @@ class TaskCreate:
 
         if float(form.cleaned_data['hardness']) > float(hardness.limit_hi):
             comp_title = hardness.title[6:]
-            deadline = datetime.now() + timedelta(hours=hardness.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=hardness.recommendation2,
                 user_id=1,
@@ -512,7 +513,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['hardness_calcium']) > float(hardness_calcium.limit_hi):
             comp_title = hardness_calcium.title[6:]
-            deadline = datetime.now() + timedelta(hours=hardness_calcium.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=hardness_calcium.recommendation2,
                 user_id=1,
@@ -524,7 +525,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['ph']) > float(ph.limit_hi):
             comp_title = ph.title[6:]
-            deadline = datetime.now() + timedelta(hours=ph.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
                 user_id=1,
@@ -536,7 +537,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['ph']) < float(ph.limit_lo):
             comp_title = ph.title[6:]
-            deadline = datetime.now() + timedelta(hours=ph.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation1,
                 user_id=1,
@@ -548,7 +549,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['salt']) > float(salt.limit_hi):
             comp_title = salt.title[6:]
-            deadline = datetime.now() + timedelta(hours=salt.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=salt.recommendation2,
                 user_id=1,
@@ -560,7 +561,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['chlorides']) > float(chlorides.limit_hi):
             comp_title = chlorides.title[6:]
-            deadline = datetime.now() + timedelta(hours=chlorides.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=chlorides.recommendation2,
                 user_id=1,
@@ -572,7 +573,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['sulfates']) > float(sulfates.limit_hi):
             comp_title = sulfates.title[6:]
-            deadline = datetime.now() + timedelta(hours=sulfates.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=sulfates.recommendation2,
                 user_id=1,
@@ -584,7 +585,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['oil_prod']) > float(oil_prod.limit_hi):
             comp_title = oil_prod.title[6:]
-            deadline = datetime.now() + timedelta(hours=oil_prod.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 user_id=1,
@@ -596,7 +597,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['suspended_subst']) > float(suspended_subst.limit_hi):
             comp_title = suspended_subst.title[6:]
-            deadline = datetime.now() + timedelta(hours=suspended_subst.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_subst.recommendation2,
                 user_id=1,
@@ -608,7 +609,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['alkalinity']) > float(alkalinity.limit_hi):
             comp_title = alkalinity.title[6:]
-            deadline = datetime.now() + timedelta(hours=alkalinity.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation2,
                 user_id=1,
@@ -620,7 +621,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['alkalinity']) < float(alkalinity.limit_lo):
             comp_title = alkalinity.title[6:]
-            deadline = datetime.now() + timedelta(hours=alkalinity.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation1,
                 user_id=1,
@@ -651,7 +652,7 @@ class TaskCreate:
 
         if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_hi):
             comp_title = suspended_solids.title[6:]
-            deadline = datetime.now() + timedelta(hours=suspended_solids.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_solids.recommendation2,
                 user_id=1,
@@ -663,7 +664,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['chlorides']) > float(chlorides.limit_hi):
             comp_title = chlorides.title[6:]
-            deadline = datetime.now() + timedelta(hours=chlorides.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=chlorides.recommendation2,
                 user_id=1,
@@ -675,7 +676,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['sulfates']) > float(sulfates.limit_hi):
             comp_title = sulfates.title[6:]
-            deadline = datetime.now() + timedelta(hours=sulfates.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=sulfates.recommendation2,
                 user_id=1,
@@ -687,7 +688,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['ph']) > float(ph.limit_hi):
             comp_title = ph.title[6:]
-            deadline = datetime.now() + timedelta(hours=ph.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
                 user_id=1,
@@ -699,7 +700,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['ph']) < float(ph.limit_lo):
             comp_title = ph.title[6:]
-            deadline = datetime.now() + timedelta(hours=ph.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation1,
                 user_id=1,
@@ -711,7 +712,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['phosphorus']) < float(phosphorus.limit_lo):
             comp_title = phosphorus.title[6:]
-            deadline = datetime.now() + timedelta(hours=phosphorus.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=phosphorus.recommendation1,
                 user_id=1,
@@ -723,7 +724,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['alkalinity']) > float(alkalinity.limit_hi):
             comp_title = alkalinity.title[6:]
-            deadline = datetime.now() + timedelta(hours=alkalinity.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation2,
                 user_id=1,
@@ -735,7 +736,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['salt']) > float(salt.limit_hi):
             comp_title = salt.title[6:]
-            deadline = datetime.now() + timedelta(hours=salt.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=salt.recommendation2,
                 user_id=1,
@@ -754,7 +755,7 @@ class TaskCreate:
 
         if float(form.cleaned_data['chlorine']) > float(chlorine.limit_hi):
             comp_title = chlorine.title[6:]
-            deadline = datetime.now() + timedelta(hours=chlorine.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=chlorine.recommendation2,
                 user_id=1,
@@ -766,7 +767,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['oil_prod']) > float(oil_prod.limit_hi):
             comp_title = oil_prod.title[6:]
-            deadline = datetime.now() + timedelta(hours=oil_prod.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 user_id=1,
@@ -778,7 +779,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['salt']) > float(salt.limit_hi):
             comp_title = salt.title[6:]
-            deadline = datetime.now() + timedelta(hours=salt.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=salt.recommendation2,
                 user_id=1,
@@ -795,7 +796,7 @@ class TaskCreate:
 
         if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_hi):
             comp_title = suspended_solids.title[6:]
-            deadline = datetime.now() + timedelta(hours=suspended_solids.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_solids.recommendation2,
                 user_id=1,
@@ -812,7 +813,7 @@ class TaskCreate:
 
         if float(form.cleaned_data['oil_prod']) > float(oil_prod.limit_hi):
             comp_title = oil_prod.title[6:]
-            deadline = datetime.now() + timedelta(hours=oil_prod.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 user_id=1,
@@ -830,7 +831,7 @@ class TaskCreate:
 
         if float(form.cleaned_data['oil_prod']) > float(oil_prod.limit_hi):
             comp_title = oil_prod.title[6:]
-            deadline = datetime.now() + timedelta(hours=oil_prod.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 user_id=1,
@@ -842,7 +843,7 @@ class TaskCreate:
             )
         if float(form.cleaned_data['ph']) > float(ph.limit_hi):
             comp_title = ph.title[6:]
-            deadline = datetime.now() + timedelta(hours=ph.period_in_hours)
+            deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
                 user_id=1,

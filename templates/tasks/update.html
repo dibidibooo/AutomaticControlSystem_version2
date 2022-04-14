@@ -11,7 +11,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <label for="id_deadline"><b>Выполнить до:</b></label>
-                    <input class="form-control" type="datetime-local" name="deadline" id="id_deadline" value="{{ task.deadline|date:"d.m.Y,H:i" }}">
+                    <input class="form-control" type="datetime-local" name="deadline" id="id_deadline"
+                           value="{{ task.deadline|date:"d.m.Y,H:i" }}" required>
                 </div>
             </div>
         </div>
@@ -44,7 +45,7 @@
 
 <form action="{% url 'comments-add' 2 %}" method="POST">
     {% csrf_token %}
-    <div class="row">
+    <div class="row" id="comments_section">
         <div class="col-lg-8">
             <div class="p-3 chat-input-section" style="margin-left: 10px">
                 <p><b>Комментарии:</b></p>
@@ -65,7 +66,8 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light" name="add_comment_button">
+                        <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light"
+                                name="add_comment_button" id="add_comment_button" data-url="{% url 'comments-add' task.pk %}">
                             <span class="d-none d-sm-inline-block me-2">Отправить</span>
                             <i class="mdi mdi-send"></i>
                         </button>
@@ -97,8 +99,8 @@
         </div>
         <div class="col-lg-4">
             <hr>
-            <p><b>Установка:</b> неделю назад</p>
-            <p><b>Обновлена:</b> только что</p>
+            <p><b>Дата создания:</b> {{ task.start_date }}</p>
+            <p><b>Дата обновления:</b> {{ task.updated_at }}</p>
         </div>
     </div>
 </form>
