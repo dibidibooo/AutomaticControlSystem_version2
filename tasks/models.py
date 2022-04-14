@@ -10,6 +10,7 @@ class Task(models.Model):
     title = models.CharField(max_length=100, verbose_name='Задача')
     user = models.ForeignKey(get_user_model(), related_name='task_assign', on_delete=models.CASCADE)
     start_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата назначения задачи')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата и время обновления')
     deadline = models.DateTimeField(null=True, blank=True, verbose_name='Срок выполнения задачи')
     completion_date = models.DateTimeField(null=True, blank=True, verbose_name='Дата и время выполнения задачи')
     comp_title = models.CharField(max_length=100, null=True, blank=True, verbose_name='Название компонента')

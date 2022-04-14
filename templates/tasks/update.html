@@ -11,7 +11,7 @@
             <div class="row">
                 <div class="col-md-6">
                     <label for="id_deadline"><b>Выполнить до:</b></label>
-                    <input class="form-control" type="datetime-local" name="deadline" id="id_deadline" value="{{ task.deadline|date:" d.m.Y,H:i " }}">
+                    <input class="form-control" type="datetime-local" name="deadline" id="id_deadline" value="{{ task.deadline|date:'Y-m-d\TH:i' }}">
                 </div>
             </div>
         </div>

@@ -45,7 +45,7 @@ from projects.multiforms import MultiFormsView
 
 class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
     permission_required = ('projects.add_componentssite1',)
-    template_name = "projects/projectsgrid_test.html"
+    template_name = "projects/analyses_create.html"
     form_classes = {'site1': Site1Form,
                     'site2': Site2Form,
                     'site3': Site3Form,
@@ -67,7 +67,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['heading'] = 'Загрузка анализов'
-        context['pageview'] = 'Projects'
+        context['pageview'] = 'Анализы'
         context['components'] = Component.objects.all()
         context['tasks'] = Task.objects.all()
         return context
@@ -508,7 +508,7 @@ class ResultsView(PermissionRequiredMixin, View):
 
         context = {
             'heading': "Результаты",
-            'pageview': "Projects",
+            'pageview': "Анализы",
             'components': components,
             'tasks': tasks,
             'results1': results_site1,
@@ -526,7 +526,7 @@ class ResultsView(PermissionRequiredMixin, View):
             'results13': results_site13,
             'results14': results_site14,
         }
-        return render(request, 'projects/createnew.html', context)
+        return render(request, 'projects/analyses_results.html', context)
 
     def get_results1(self):
         results_site = {}
