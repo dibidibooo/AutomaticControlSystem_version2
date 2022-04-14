@@ -1,0 +1,35 @@
+<div class="modal-header">
+    <h5 class="modal-title" id="staticBackdropLabel" style="max-width: 25em">Редактирование профиля</h5>
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+
+<div class="modal-body" id="edituserform">
+    <div class="mb-3">
+        <label class="form-label" for="first_name"><b>Имя</b></label>
+        <input class="form-control" type="text" name="first_name" id="first_name" placeholder="Имя" value="{{ user_obj.first_name }}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="last_name"><b>Фамилия</b></label>
+        <input class="form-control" type="text" name="last_name" id="last_name" placeholder="Фамилия" value="{{ user_obj.last_name }}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="phone"><b>Телефон</b></label>
+        <input class="form-control input-mask" data-inputmask="'mask': '+7(999)-999-99-99'" name="phone" id="phone" value="{{ user_obj.profile.phone }}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="position"><b>Должность</b></label>
+        <input class="form-control" type="text" name="position" id="position" placeholder="Должность" value="{{ user_obj.profile.position }}">
+    </div>
+    <div class="mb-3">
+        <label class="form-label" for="role_id"><b>Роль пользователя</b></label>
+        <select class="form-select" name="role" id="role_id">
+            {% for group in user.groups.all %}
+                <option value="{{ group.pk }}" {% if group == user_obj.profile.role %}selected{% endif %}>{{ group }}</option>
+            {% endfor %}
+        </select>
+    </div>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+    <button type="submit" class="btn btn-primary" name="editprofile">Сохранить</button>
+</div>

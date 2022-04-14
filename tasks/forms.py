@@ -1,9 +1,9 @@
-from django import forms
+from django.forms import ModelForm
 
-from projects.models import TaskAssign
+from tasks.models import Comment
 
 
-class TaskUpdateForm(forms.ModelForm):
+class CommentForm(ModelForm):
     class Meta:
-        model = TaskAssign
-        fields = ('deadline', 'user', 'status',)
+        model = Comment
+        fields = ('text', )
