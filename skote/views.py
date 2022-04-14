@@ -5,15 +5,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.base import TemplateView
 from allauth.account.views import PasswordSetView,PasswordChangeView
 from django.urls import reverse_lazy
-from projects.models import TaskAssign
 
 # utillity
 class DashboardView(LoginRequiredMixin,View):
     def get(self, request):
         greeting = {}
         greeting['heading'] = "Dashboard"
-        greeting['pageview'] = "Dashboards"
-        greeting['tasks'] = TaskAssign.objects.all()
+        greeting['pageview'] = "Dashboards"        
         return render(request, 'dashboard/dashboard.html',greeting)
 
 

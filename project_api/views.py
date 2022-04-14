@@ -50,9 +50,6 @@ class Results3ViewSet(viewsets.ModelViewSet):
 
 def get_results1(request):
     results_site = {}
-<<<<<<< HEAD
-    for key, value in ComponentsSite1.objects.values().latest('oil_prod').items():
-=======
     tasks = Task.objects.all()
     try:
         sample = ComponentsSite1.objects.all().latest('datetime')
@@ -62,9 +59,10 @@ def get_results1(request):
             else:
                 results_site['no_recom'] = 'В пределах нормы'
         for key, value in ComponentsSite1.objects.values().latest('datetime').items():
->>>>>>> 075c1e9ca8c9101167fbff845ab7c6658fa019a6
             if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                 results_site[key] = value
+    except ComponentsSite1.DoesNotExist:
+        results_site['no_data'] = 'Нет данных'
     return JsonResponse(results_site, json_dumps_params={'ensure_ascii': False})
 
 def get_results2(request):

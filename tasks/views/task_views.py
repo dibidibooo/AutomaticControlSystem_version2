@@ -8,7 +8,7 @@ from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMix
 from django.views.generic import DetailView
 
 from projects.models import Status, Component
-from tasks.models import Task
+from tasks.models import Task, Comment
 
 
 class TaskDetailView(DetailView):
@@ -26,13 +26,13 @@ class TaskDetailView(DetailView):
 
 
 class KanbanBoardView(PermissionRequiredMixin, View):
-    permission_required = ('projects.view_Task',)
+    permission_required = ('projects.view_task',)
 
     def get(self, request, *args, **kwargs):
         context = {
             'heading': "Kanban доска",
             'pageview': "Задачи",
-            'tasks': Task.objects.all(),
+            'tasks': Task.objects.all().order_by('start_date'),
             'statuses': Status.objects.all(),
             'users': User.objects.all(),
         }
@@ -46,6 +46,15 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             user = request.POST['user']
             task = Task.objects.filter(id=id)
             task.update(deadline=deadline, status=status, user_id=int(user))
+            return redirect('tasks-kanbanboard')
+        elif 'add_comment_button' in request.POST:
+            id = request.POST['id']
+            task = Task.objects.get(id=id)
+            comment = Comment.objects.create(
+                text=request.POST.get('text'),
+                task=task,
+                author=self.request.user
+            )
             return redirect('tasks-kanbanboard')
         else:
             status_id = int(request.POST.get('status'))
