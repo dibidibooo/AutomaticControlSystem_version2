@@ -11,7 +11,8 @@
             <div class="row">
                 <div class="col-md-6">
                     <label for="id_deadline"><b>Выполнить до:</b></label>
-                    <input class="form-control" type="datetime-local" name="deadline" id="id_deadline" value="{{ task.deadline|date:'Y-m-d\TH:i' }}">
+                    <input class="form-control" type="datetime-local" name="deadline" id="id_deadline"
+                           value="{{ task.deadline|date:"Y-m-d\TH:i" }}" required>
                 </div>
             </div>
         </div>
@@ -44,12 +45,12 @@
 
 <form action="{% url 'comments-add' 2 %}" method="POST">
     {% csrf_token %}
-    <div class="row">
+    <div class="row" id="comments_section">
         <div class="col-lg-8">
             <div class="p-3 chat-input-section" style="margin-left: 10px">
                 <p><b>Комментарии:</b></p>
                 <div class="row">
-                    {# {{ form.as_p }}#}
+{#                    {{ form.as_p }}#}
                     <div class="col-lg-1">
                         <div class="">
                             <div class="avatar-xs">
@@ -65,7 +66,8 @@
                         </div>
                     </div>
                     <div class="col-auto">
-                        <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light" name="add_comment_button">
+                        <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light"
+                                name="add_comment_button" id="add_comment_button" data-url="{% url 'comments-add' task.pk %}">
                             <span class="d-none d-sm-inline-block me-2">Отправить</span>
                             <i class="mdi mdi-send"></i>
                         </button>
@@ -74,31 +76,31 @@
                 <br>
                 <div class="col-lg-12">
                     {% for comment in task.comments.all %}
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item py-3">
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 me-3">
-                                    <div class="avatar-xs">
-                                        <div class="avatar-title rounded-circle bg-light text-primary">
-                                            <i class="bx bxs-user"></i>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item py-3">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0 me-3">
+                                        <div class="avatar-xs">
+                                            <div class="avatar-title rounded-circle bg-light text-primary">
+                                                <i class="bx bxs-user"></i>
+                                            </div>
                                         </div>
                                     </div>
+                                    <div class="flex-grow-1">
+                                        <h5 class="font-size-14 mb-1">{{ comment.author }} <small class="text-muted float-end">{{ comment.created_at }}</small></h5>
+                                        <p class="text-muted">{{ comment.text }}</p>
+                                    </div>
                                 </div>
-                                <div class="flex-grow-1">
-                                    <h5 class="font-size-14 mb-1">{{ comment.author }} <small class="text-muted float-end">{{ comment.created_at }}</small></h5>
-                                    <p class="text-muted">{{ comment.text }}</p>
-                                </div>
-                            </div>
-                        </li>
-                    </ul>
+                            </li>
+                        </ul>
                     {% endfor %}
                 </div>
             </div>
         </div>
         <div class="col-lg-4">
             <hr>
-            <p><b>Установка:</b> неделю назад</p>
-            <p><b>Обновлена:</b> только что</p>
+            <p><b>Дата создания:</b> {{ task.start_date }}</p>
+            <p><b>Дата обновления:</b> {{ task.updated_at }}</p>
         </div>
     </div>
 </form>

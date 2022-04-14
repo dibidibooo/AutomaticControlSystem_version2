@@ -17,11 +17,15 @@
                                     <div class="card-body" data-status="">
                                         <div class="float-end ms-2">
 
-                                            {% if container.id == 'upcoming-task' %}
-                                            <span class="badge rounded-pill badge-soft-secondary font-size-12">{{ task.status }}</span> {% elif container.id == 'inprogress-task' %}
-                                            <span class="badge rounded-pill badge-soft-primary font-size-12">{{ task.status }}</span> {% elif container.id == 'test-task' %}
-                                            <span class="badge rounded-pill badge-soft-warning font-size-12">{{ task.status }}</span> {% else %}
-                                            <span class="badge rounded-pill badge-soft-warning font-size-12">{{ task.status }}</span> {% endif %}
+                                            {% if task.status.title == 'Запланировано' %}
+                                                <span class="badge rounded-pill badge-soft-secondary font-size-12">{{ task.status }}</span>
+                                            {% elif task.status.title == 'В работе' %}
+                                                <span class="badge rounded-pill badge-soft-primary font-size-12">{{ task.status }}</span>
+                                            {% elif task.status.title == 'На проверке' %}
+                                                <span class="badge rounded-pill badge-soft-warning font-size-12">{{ task.status }}</span>
+                                            {% else %}
+                                                <span class="badge rounded-pill badge-soft-success font-size-12">{{ task.status }}</span>
+                                            {% endif %}
 
                                         </div>
                                         <div>
@@ -36,8 +40,10 @@
                                         </div>
                                         <div class="avatar-group float-start task-assigne">
                                             <div class="avatar-group-item">
-                                                <a href="javascript: void(0);" class="d-inline-block" value="member-1">
-                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
+                                                <a href="javascript: void(0);" class="d-inline-block"
+                                                   value="member-1">
+                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt=""
+                                                         class="rounded-circle avatar-xs">
                                                 </a>
                                             </div>
                                         </div>

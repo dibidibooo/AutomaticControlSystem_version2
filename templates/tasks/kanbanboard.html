@@ -25,7 +25,8 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="{% url 'tasks-detail' task.pk %}" class="text-dark open_task" id="{{ task.id }}" data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
+                                        <a href="{% url 'tasks-detail' task.pk %}" class="text-dark open_task" id="{{ task.id }}"
+                                           data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
                                             {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
@@ -65,7 +66,8 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="{% url 'tasks-detail' task.pk %}" class="text-dark open_task" id="{{ task.id }}" data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
+                                        <a href="{% url 'tasks-detail' task.pk %}" class="text-dark open_task" id="{{ task.id }}"
+                                           data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
                                             {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
@@ -107,7 +109,8 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="{% url 'tasks-detail' task.pk %}" class="text-dark open_task" id="{{ task.id }}" data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
+                                        <a href="{% url 'tasks-detail' task.pk %}" class="text-dark open_task" id="{{ task.id }}"
+                                           data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
                                             {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
@@ -148,7 +151,8 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="{% url 'tasks-detail' task.pk %}" class="text-dark open_task" id="{{ task.id }}" data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
+                                        <a href="{% url 'tasks-detail' task.pk %}" class="text-dark open_task" id="{{ task.id }}"
+                                           data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
                                             {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
@@ -179,8 +183,9 @@
 <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <form action="" method="POST">
-            <input type="hidden" name="id" id="uid" data-url="{% url 'tasks-kanbanboard' %}"> {% csrf_token %}
-            <div class="modal-content">
+            <input type="hidden" name="id" id="uid" data-url="{% url 'tasks-kanbanboard' %}">
+            {% csrf_token %}
+            <div class="modal-content form">
             </div>
         </form>
     </div>
@@ -203,18 +208,16 @@
 <!-- form advanced init -->
 <script src="{% static 'js/pages/form-advanced.init.js'%}"></script>
 
-
 <script>
-    $(document).on("click", ".open_task", function(e) {
+    $(document).on("click", ".open_task", function (e) {
         e.preventDefault();
         let $popup = $("#staticBackdrop");
         let popup_url = $(this).data("popup-url");
-        $(".modal-content", $popup).load(popup_url, function() {
-            $popup.modal("show");
+        $(".modal-content", $popup).load(popup_url, function () {
+          $popup.modal("show");
         });
     });
-
-    function editTask(event) {
+    function editTask(event){
         let task_id = document.getElementById("uid");
         task_id.setAttribute("value", event);
         console.log(task_id);
@@ -223,10 +226,10 @@
             data: {
                 'taskid': event
             },
-            success: function(result) {
+            success: function (result) {
                 console.log('Success!');
             },
-            error: function(result) {
+            error: function (result) {
                 console.log('Error!');
             }
         });

@@ -497,6 +497,7 @@ class ResultsView(PermissionRequiredMixin, View):
         results_site4 = self.get_results4()
         results_site5 = self.get_results5()
         results_site6 = self.get_results6()
+        results_site6_2 = self.get_results6_2()
         results_site7 = self.get_results7()
         results_site8 = self.get_results8()
         results_site9 = self.get_results9()
@@ -517,6 +518,7 @@ class ResultsView(PermissionRequiredMixin, View):
             'results4': results_site4,
             'results5': results_site5,
             'results6': results_site6,
+            'results6_2': results_site6_2,
             'results7': results_site7,
             'results8': results_site8,
             'results9': results_site9,
@@ -617,13 +619,30 @@ class ResultsView(PermissionRequiredMixin, View):
         results_site = {}
         tasks = Task.objects.all()
         try:
-            sample = ComponentsSite6.objects.all().latest('datetime')
+            sample = ComponentsSite6.objects.filter(water_type_id=1).latest('datetime')
             for task in tasks:
                 if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite6.objects.values().latest('datetime').items():
+            for key, value in ComponentsSite6.objects.filter(water_type_id=1).values().latest('datetime').items():
+                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
+                    results_site[key] = value
+        except ComponentsSite6.DoesNotExist:
+            results_site['no_data'] = 'Нет данных'
+        return results_site
+
+    def get_results6_2(self):
+        results_site = {}
+        tasks = Task.objects.all()
+        try:
+            sample = ComponentsSite6.objects.filter(water_type_id=2).latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.title
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
+            for key, value in ComponentsSite6.objects.filter(water_type_id=2).values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
         except ComponentsSite6.DoesNotExist:

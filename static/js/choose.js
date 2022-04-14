@@ -54,12 +54,35 @@
 });
 
     $(function() {
-    $('#componentcard31').hide();
+    $('#componentcard311').hide();
     $('#plant_unit3').change(function(){
-        if($('#plant_unit3').val() == '6') {
+        if($('#plant_unit3').val() === '61') {
+            $('#componentcard311').show();
+        } else {
+            $('#componentcard311').hide();
+        }
+    });
+});
+
+
+    $(function() {
+    $('#componentcard31').hide();
+    $('#unit').change(function(){
+        if($('#plant_unit3').val() === '6' && $('#water_type3').val() === '1') {
             $('#componentcard31').show();
         } else {
             $('#componentcard31').hide();
+        }
+    });
+});
+
+    $(function() {
+    $('#componentcard32').hide();
+    $('#unit').change(function(){
+        if($('#plant_unit3').val() === '6' && $('#water_type3').val() === '2') {
+            $('#componentcard32').show();
+        } else {
+            $('#componentcard32').hide();
         }
     });
 });

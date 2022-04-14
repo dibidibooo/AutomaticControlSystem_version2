@@ -2628,6 +2628,523 @@ options = {
 
 options = {
     series: [{
+        name: "Общая жесткость",
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+    }],
+    chart: {
+        type: "area",
+        height: 40,
+        sparkline: {
+            enabled: !0
+        }
+    },
+    stroke: {
+        curve: "smooth",
+        width: 2
+    },
+    colors: ["#3452e1"],
+    fill: {
+        type: "gradient",
+        gradient: {
+            shadeIntensity: 1,
+            inverseColors: !1,
+            opacityFrom: .45,
+            opacityTo: .05,
+            stops: [25, 100, 100, 100]
+        }
+    },
+    tooltip: {
+        fixed: {
+            enabled: !1
+        },
+        x: {
+            show: !1
+        },
+        marker: {
+            show: !1
+        }
+    }
+};
+(chart = new ApexCharts(document.querySelector("#mini-chart-147"), options)).render();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+options = {
+    series: [{
+        name: "Жесткость кальциевая",
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+    }],
+    chart: {
+        type: "area",
+        height: 40,
+        sparkline: {
+            enabled: !0
+        }
+    },
+    stroke: {
+        curve: "smooth",
+        width: 2
+    },
+    colors: ["#3452e1"],
+    fill: {
+        type: "gradient",
+        gradient: {
+            shadeIntensity: 1,
+            inverseColors: !1,
+            opacityFrom: .45,
+            opacityTo: .05,
+            stops: [25, 100, 100, 100]
+        }
+    },
+    tooltip: {
+        fixed: {
+            enabled: !1
+        },
+        x: {
+            show: !1
+        },
+        marker: {
+            show: !1
+        }
+    }
+};
+(chart = new ApexCharts(document.querySelector("#mini-chart-148"), options)).render();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+options = {
+    series: [{
+        name: "Значение рН",
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+    }],
+    chart: {
+        type: "area",
+        height: 40,
+        sparkline: {
+            enabled: !0
+        }
+    },
+    stroke: {
+        curve: "smooth",
+        width: 2
+    },
+    colors: ["#3452e1"],
+    fill: {
+        type: "gradient",
+        gradient: {
+            shadeIntensity: 1,
+            inverseColors: !1,
+            opacityFrom: .45,
+            opacityTo: .05,
+            stops: [25, 100, 100, 100]
+        }
+    },
+    tooltip: {
+        fixed: {
+            enabled: !1
+        },
+        x: {
+            show: !1
+        },
+        marker: {
+            show: !1
+        }
+    }
+};
+(chart = new ApexCharts(document.querySelector("#mini-chart-149"), options)).render();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+options = {
+    series: [{
+        name: "Солесодержание",
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+    }],
+    chart: {
+        type: "area",
+        height: 40,
+        sparkline: {
+            enabled: !0
+        }
+    },
+    stroke: {
+        curve: "smooth",
+        width: 2
+    },
+    colors: ["#3452e1"],
+    fill: {
+        type: "gradient",
+        gradient: {
+            shadeIntensity: 1,
+            inverseColors: !1,
+            opacityFrom: .45,
+            opacityTo: .05,
+            stops: [25, 100, 100, 100]
+        }
+    },
+    tooltip: {
+        fixed: {
+            enabled: !1
+        },
+        x: {
+            show: !1
+        },
+        marker: {
+            show: !1
+        }
+    }
+};
+(chart = new ApexCharts(document.querySelector("#mini-chart-150"), options)).render();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+options = {
+    series: [{
+        name: "Хлориды",
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+    }],
+    chart: {
+        type: "area",
+        height: 40,
+        sparkline: {
+            enabled: !0
+        }
+    },
+    stroke: {
+        curve: "smooth",
+        width: 2
+    },
+    colors: ["#3452e1"],
+    fill: {
+        type: "gradient",
+        gradient: {
+            shadeIntensity: 1,
+            inverseColors: !1,
+            opacityFrom: .45,
+            opacityTo: .05,
+            stops: [25, 100, 100, 100]
+        }
+    },
+    tooltip: {
+        fixed: {
+            enabled: !1
+        },
+        x: {
+            show: !1
+        },
+        marker: {
+            show: !1
+        }
+    }
+};
+(chart = new ApexCharts(document.querySelector("#mini-chart-151"), options)).render();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+options = {
+    series: [{
+        name: "Сульфаты",
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+    }],
+    chart: {
+        type: "area",
+        height: 40,
+        sparkline: {
+            enabled: !0
+        }
+    },
+    stroke: {
+        curve: "smooth",
+        width: 2
+    },
+    colors: ["#3452e1"],
+    fill: {
+        type: "gradient",
+        gradient: {
+            shadeIntensity: 1,
+            inverseColors: !1,
+            opacityFrom: .45,
+            opacityTo: .05,
+            stops: [25, 100, 100, 100]
+        }
+    },
+    tooltip: {
+        fixed: {
+            enabled: !1
+        },
+        x: {
+            show: !1
+        },
+        marker: {
+            show: !1
+        }
+    }
+};
+(chart = new ApexCharts(document.querySelector("#mini-chart-152"), options)).render();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+options = {
+    series: [{
+        name: "Нефтепродукты",
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+    }],
+    chart: {
+        type: "area",
+        height: 40,
+        sparkline: {
+            enabled: !0
+        }
+    },
+    stroke: {
+        curve: "smooth",
+        width: 2
+    },
+    colors: ["#3452e1"],
+    fill: {
+        type: "gradient",
+        gradient: {
+            shadeIntensity: 1,
+            inverseColors: !1,
+            opacityFrom: .45,
+            opacityTo: .05,
+            stops: [25, 100, 100, 100]
+        }
+    },
+    tooltip: {
+        fixed: {
+            enabled: !1
+        },
+        x: {
+            show: !1
+        },
+        marker: {
+            show: !1
+        }
+    }
+};
+(chart = new ApexCharts(document.querySelector("#mini-chart-153"), options)).render();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+options = {
+    series: [{
+        name: "Общие взвешенные вещества",
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+    }],
+    chart: {
+        type: "area",
+        height: 40,
+        sparkline: {
+            enabled: !0
+        }
+    },
+    stroke: {
+        curve: "smooth",
+        width: 2
+    },
+    colors: ["#3452e1"],
+    fill: {
+        type: "gradient",
+        gradient: {
+            shadeIntensity: 1,
+            inverseColors: !1,
+            opacityFrom: .45,
+            opacityTo: .05,
+            stops: [25, 100, 100, 100]
+        }
+    },
+    tooltip: {
+        fixed: {
+            enabled: !1
+        },
+        x: {
+            show: !1
+        },
+        marker: {
+            show: !1
+        }
+    }
+};
+(chart = new ApexCharts(document.querySelector("#mini-chart-154"), options)).render();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+options = {
+    series: [{
+        name: "Щелочность по фенолу",
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+    }],
+    chart: {
+        type: "area",
+        height: 40,
+        sparkline: {
+            enabled: !0
+        }
+    },
+    stroke: {
+        curve: "smooth",
+        width: 2
+    },
+    colors: ["#3452e1"],
+    fill: {
+        type: "gradient",
+        gradient: {
+            shadeIntensity: 1,
+            inverseColors: !1,
+            opacityFrom: .45,
+            opacityTo: .05,
+            stops: [25, 100, 100, 100]
+        }
+    },
+    tooltip: {
+        fixed: {
+            enabled: !1
+        },
+        x: {
+            show: !1
+        },
+        marker: {
+            show: !1
+        }
+    }
+};
+(chart = new ApexCharts(document.querySelector("#mini-chart-155"), options)).render();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+options = {
+    series: [{
+        name: "Щелочность общая",
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+    }],
+    chart: {
+        type: "area",
+        height: 40,
+        sparkline: {
+            enabled: !0
+        }
+    },
+    stroke: {
+        curve: "smooth",
+        width: 2
+    },
+    colors: ["#3452e1"],
+    fill: {
+        type: "gradient",
+        gradient: {
+            shadeIntensity: 1,
+            inverseColors: !1,
+            opacityFrom: .45,
+            opacityTo: .05,
+            stops: [25, 100, 100, 100]
+        }
+    },
+    tooltip: {
+        fixed: {
+            enabled: !1
+        },
+        x: {
+            show: !1
+        },
+        marker: {
+            show: !1
+        }
+    }
+};
+(chart = new ApexCharts(document.querySelector("#mini-chart-156"), options)).render();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+options = {
+    series: [{
+        name: "Железо",
+        data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
+    }],
+    chart: {
+        type: "area",
+        height: 40,
+        sparkline: {
+            enabled: !0
+        }
+    },
+    stroke: {
+        curve: "smooth",
+        width: 2
+    },
+    colors: ["#3452e1"],
+    fill: {
+        type: "gradient",
+        gradient: {
+            shadeIntensity: 1,
+            inverseColors: !1,
+            opacityFrom: .45,
+            opacityTo: .05,
+            stops: [25, 100, 100, 100]
+        }
+    },
+    tooltip: {
+        fixed: {
+            enabled: !1
+        },
+        x: {
+            show: !1
+        },
+        marker: {
+            show: !1
+        }
+    }
+};
+(chart = new ApexCharts(document.querySelector("#mini-chart-157"), options)).render();
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+options = {
+    series: [{
         name: "Общие взвешенные твердые частицы",
         data: [25, 66, 41, 89, 63, 25, 44, 12, 36, 9, 54]
     }],
