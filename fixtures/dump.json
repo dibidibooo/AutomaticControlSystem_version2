@@ -546,6 +546,45 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2022-04-15T15:35:34.845",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "1",
+    "object_repr": "Топ менеджмент",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2022-04-15T15:35:48.979",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "3",
+    "object_repr": "Начальник установки",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2022-04-15T15:35:56.115",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "2",
+    "object_repr": "Сотрудники",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -903,42 +942,6 @@
     "name": "Can view water type",
     "content_type": 10,
     "codename": "view_watertype"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 41,
-  "fields": {
-    "name": "Can add task assign",
-    "content_type": 11,
-    "codename": "add_taskassign"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 42,
-  "fields": {
-    "name": "Can change task assign",
-    "content_type": 11,
-    "codename": "change_taskassign"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 43,
-  "fields": {
-    "name": "Can delete task assign",
-    "content_type": 11,
-    "codename": "delete_taskassign"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 44,
-  "fields": {
-    "name": "Can view task assign",
-    "content_type": 11,
-    "codename": "view_taskassign"
   }
 },
 {
@@ -1921,19 +1924,6 @@
     "permissions": [
       20,
       100,
-      96,
-      92,
-      88,
-      84,
-      80,
-      76,
-      72,
-      68,
-      64,
-      60,
-      56,
-      52,
-      48,
       24,
       28,
       32,
@@ -1956,19 +1946,6 @@
     "permissions": [
       20,
       100,
-      96,
-      92,
-      88,
-      84,
-      80,
-      76,
-      72,
-      68,
-      64,
-      60,
-      56,
-      52,
-      48,
       24,
       28,
       32,
@@ -1991,19 +1968,6 @@
     "permissions": [
       20,
       100,
-      96,
-      92,
-      88,
-      84,
-      80,
-      76,
-      72,
-      68,
-      64,
-      60,
-      56,
-      52,
-      48,
       24,
       28,
       32,

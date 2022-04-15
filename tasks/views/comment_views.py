@@ -14,7 +14,6 @@ class CommentCreateView(LoginRequiredMixin, CreateView):
     template_name = 'comments/create.html'
 
     def form_valid(self, form):
-        print(888, self.kwargs.get('pk'))
         task = get_object_or_404(Task, pk=self.kwargs.get('pk'))
         form.instance.task = task
         form.instance.author = self.request.user
