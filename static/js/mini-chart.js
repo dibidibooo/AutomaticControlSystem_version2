@@ -45,18 +45,10 @@ options = {
 
 
 options = {
-
-var url = 'http://127.0.0.1:8000/api/results1/';
-
-axios({
-  method: 'POST',
-  url: url,
-}).then(function(response) {
-  chart.updateSeries([{
-    name: 'Sales',
-    data: response.data
-  }])
-}),
+    series: [{
+        name: "Значение Ph",
+        data: [40, 5, 111, 70, 12, 200, 150, 100, 4, 25]
+    }],
     chart: {
         type: "area",
         height: 40,
