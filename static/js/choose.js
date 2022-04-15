@@ -1,7 +1,7 @@
-    $(function() {
+$(function() {
     $('#componentcard11').hide();
-    $('#plant_unit1').change(function(){
-        if($('#plant_unit1').val() == '1') {
+    $('#plant_unit1').change(function() {
+        if ($('#plant_unit1').val() == '1') {
             $('#componentcard11').show();
         } else {
             $('#componentcard11').hide();
@@ -9,10 +9,10 @@
     });
 });
 
-    $(function() {
+$(function() {
     $('#componentcard12').hide();
-    $('#plant_unit1').change(function(){
-        if($('#plant_unit1').val() == '2') {
+    $('#plant_unit1').change(function() {
+        if ($('#plant_unit1').val() == '2') {
             $('#componentcard12').show();
         } else {
             $('#componentcard12').hide();
@@ -20,10 +20,10 @@
     });
 });
 
-    $(function() {
+$(function() {
     $('#componentcard13').hide();
-    $('#plant_unit1').change(function(){
-        if($('#plant_unit1').val() == '3') {
+    $('#plant_unit1').change(function() {
+        if ($('#plant_unit1').val() == '3') {
             $('#componentcard13').show();
         } else {
             $('#componentcard13').hide();
@@ -31,10 +31,10 @@
     });
 });
 
-    $(function() {
+$(function() {
     $('#componentcard21').hide();
-    $('#plant_unit2').change(function(){
-        if($('#plant_unit2').val() == '4') {
+    $('#plant_unit2').change(function() {
+        if ($('#plant_unit2').val() == '4') {
             $('#componentcard21').show();
         } else {
             $('#componentcard21').hide();
@@ -42,10 +42,10 @@
     });
 });
 
-    $(function() {
+$(function() {
     $('#componentcard22').hide();
-    $('#plant_unit2').change(function(){
-        if($('#plant_unit2').val() == '5') {
+    $('#plant_unit2').change(function() {
+        if ($('#plant_unit2').val() == '5') {
             $('#componentcard22').show();
         } else {
             $('#componentcard22').hide();
@@ -53,10 +53,22 @@
     });
 });
 
-    $(function() {
+$(function() {
+    $('#componentcard311').hide();
+    $('#plant_unit3').change(function() {
+        if ($('#plant_unit3').val() === '61') {
+            $('#componentcard311').show();
+        } else {
+            $('#componentcard311').hide();
+        }
+    });
+});
+
+
+$(function() {
     $('#componentcard31').hide();
-    $('#plant_unit3').change(function(){
-        if($('#plant_unit3').val() === '6' && $('#water_type3').val() === '1') {
+    $('#unit').change(function() {
+        if ($('#plant_unit3').val() === '6' && $('#water_type3').val() === '1') {
             $('#componentcard31').show();
         } else {
             $('#componentcard31').hide();
@@ -64,10 +76,10 @@
     });
 });
 
-    $(function() {
+$(function() {
     $('#componentcard32').hide();
-    $('#plant_unit3').change(function(){
-        if($('#plant_unit3').val() === '6' && $('#water_type3').val() === '2') {
+    $('#unit').change(function() {
+        if ($('#plant_unit3').val() === '6' && $('#water_type3').val() === '2') {
             $('#componentcard32').show();
         } else {
             $('#componentcard32').hide();
@@ -75,10 +87,10 @@
     });
 });
 
-    $(function() {
+$(function() {
     $('#componentcard41').hide();
-    $('#plant_unit4').change(function(){
-        if($('#plant_unit4').val() == '7') {
+    $('#plant_unit4').change(function() {
+        if ($('#plant_unit4').val() == '7') {
             $('#componentcard41').show();
         } else {
             $('#componentcard41').hide();
@@ -86,10 +98,10 @@
     });
 });
 
-    $(function() {
+$(function() {
     $('#componentcard42').hide();
-    $('#plant_unit4').change(function(){
-        if($('#plant_unit4').val() == '8') {
+    $('#plant_unit4').change(function() {
+        if ($('#plant_unit4').val() == '8') {
             $('#componentcard42').show();
         } else {
             $('#componentcard42').hide();
@@ -97,10 +109,10 @@
     });
 });
 
-    $(function() {
+$(function() {
     $('#componentcard43').hide();
-    $('#plant_unit4').change(function(){
-        if($('#plant_unit4').val() == '9') {
+    $('#plant_unit4').change(function() {
+        if ($('#plant_unit4').val() == '9') {
             $('#componentcard43').show();
         } else {
             $('#componentcard43').hide();
@@ -108,10 +120,10 @@
     });
 });
 
-    $(function() {
+$(function() {
     $('#componentcard44').hide();
-    $('#plant_unit4').change(function(){
-        if($('#plant_unit4').val() == '10') {
+    $('#plant_unit4').change(function() {
+        if ($('#plant_unit4').val() == '10') {
             $('#componentcard44').show();
         } else {
             $('#componentcard44').hide();
@@ -119,10 +131,10 @@
     });
 });
 
-    $(function() {
+$(function() {
     $('#componentcard45').hide();
-    $('#plant_unit4').change(function(){
-        if($('#plant_unit4').val() == '11') {
+    $('#plant_unit4').change(function() {
+        if ($('#plant_unit4').val() == '11') {
             $('#componentcard45').show();
         } else {
             $('#componentcard45').hide();
@@ -130,10 +142,10 @@
     });
 });
 
-    $(function() {
+$(function() {
     $('#componentcard51').hide();
-    $('#plant_unit5').change(function(){
-        if($('#plant_unit5').val() == '12') {
+    $('#plant_unit5').change(function() {
+        if ($('#plant_unit5').val() == '12') {
             $('#componentcard51').show();
         } else {
             $('#componentcard51').hide();
@@ -141,10 +153,10 @@
     });
 });
 
-    $(function() {
+$(function() {
     $('#componentcard61').hide();
-    $('#plant_unit6').change(function(){
-        if($('#plant_unit6').val() == '13') {
+    $('#plant_unit6').change(function() {
+        if ($('#plant_unit6').val() == '13') {
             $('#componentcard61').show();
         } else {
             $('#componentcard61').hide();
@@ -152,10 +164,10 @@
     });
 });
 
-    $(function() {
+$(function() {
     $('#componentcard62').hide();
-    $('#plant_unit6').change(function(){
-        if($('#plant_unit6').val() == '14') {
+    $('#plant_unit6').change(function() {
+        if ($('#plant_unit6').val() == '14') {
             $('#componentcard62').show();
         } else {
             $('#componentcard62').hide();

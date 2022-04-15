@@ -1,16 +1,6 @@
-{% extends 'partials/base.html' %}
-{% load crispy_forms_filters %}
-{% load static %}
-{% load humanize %}
-{% load crispy_forms_tags %}
-
-{% block extra_css %}
+{% extends 'partials/base.html' %} {% load crispy_forms_filters %} {% load static %} {% load humanize %} {% load crispy_forms_tags %} {% block extra_css %}
 <!-- Sweet Alert-->
-<link href="{% static 'libs/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet" type="text/css"/>
-
-{% endblock extra_css %}
-
-{% block contents %}
+<link href="{% static 'libs/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet" type="text/css" /> {% endblock extra_css %} {% block contents %}
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -26,32 +16,32 @@
                     </div>
                     <div class="col-sm-8">
                         <div class="text-sm-end">
-                            <button type="button" class="btn btn-danger btn-rounded waves-effect waves-light mb-2 me-2"
-                                    data-bs-toggle="modal" data-bs-target="#customerModal">
+                            <button type="button" class="btn btn-danger btn-rounded waves-effect waves-light mb-2 me-2" data-bs-toggle="modal" data-bs-target="#customerModal">
                                 <i class="mdi mdi-plus me-1"></i>Добавить пользователя
                             </button>
                         </div>
-                    </div><!-- end col-->
+                    </div>
+                    <!-- end col-->
                 </div>
 
                 <div class="table-responsive">
                     <table class="table align-middle table-nowrap" id="customerrecord">
                         <thead>
-                        <tr>
-                            <th>#</th>
-                            <th>Login</th>
-                            <th>Имя Фамилия</th>
-                            <th>Email</th>
-                            <th>Телефон</th>
-                            <th>Должность</th>
-                            <th>Роль пользователя</th>
-                            <th>Action</th>
+                            <tr>
+                                <th>#</th>
+                                <th>Login</th>
+                                <th>Имя Фамилия</th>
+                                <th>Email</th>
+                                <th>Телефон</th>
+                                <th>Должность</th>
+                                <th>Роль пользователя</th>
+                                <th>Action</th>
 
-                        </tr>
+                            </tr>
                         </thead>
                         <tbody>
 
-                        {% for users in page_obj %}
+                            {% for users in page_obj %}
                             <tr>
                                 <td>{{ users.id }}</td>
                                 <td>{{ users.username }}</td>
@@ -62,25 +52,23 @@
                                 <td>{{ users.profile.role }}</td>
                                 <td>
                                     <div class="dropdown">
-                                        <a href="#" class="dropdown-toggle card-drop" data-bs-toggle="dropdown"
-                                           aria-expanded="false">
+                                        <a href="#" class="dropdown-toggle card-drop" data-bs-toggle="dropdown" aria-expanded="false">
                                             <i class="mdi mdi-dots-horizontal font-size-18"></i>
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-end">
-                                            <li><a href="#" class="dropdown-item open_edit_modal" data-bs-toggle="modal"
-                                                   data-popup-url="{% url 'accounts-update' users.pk %}"  id="{{ users.id }}"
-                                                   onclick="editCustomer(this.id)">
-                                                <i class="mdi mdi-pencil font-size-16 text-success me-1"></i> Редактировать</a>
+                                            <li>
+                                                <a href="#" class="dropdown-item open_edit_modal" data-bs-toggle="modal" data-popup-url="{% url 'accounts-update' users.pk %}" id="{{ users.id }}" onclick="editCustomer(this.id)">
+                                                    <i class="mdi mdi-pencil font-size-16 text-success me-1"></i> Редактировать</a>
                                             </li>
-                                            <li><a href="#" class="dropdown-item" id="{{ users.id }}"
-                                                   onclick="sweetDelete(this.id,this)">
-                                                <i class="mdi mdi-trash-can font-size-16 text-danger me-1"></i> Удалить</a>
+                                            <li>
+                                                <a href="#" class="dropdown-item" id="{{ users.id }}" onclick="sweetDelete(this.id,this)">
+                                                    <i class="mdi mdi-trash-can font-size-16 text-danger me-1"></i> Удалить</a>
                                             </li>
                                         </ul>
                                     </div>
                                 </td>
                             </tr>
-                        {% endfor %}
+                            {% endfor %}
 
                         </tbody>
                     </table>
@@ -114,8 +102,7 @@
 <!-- end row -->
 
 <!-- editProfileModal -->
-<div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel"
-     aria-hidden="true">
+<div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
         <form action="" method="POST">
             {% csrf_token %}
@@ -130,9 +117,7 @@
 
 
 <!-- Add User Modal -->
-<div class="modal fade" data-bs-backdrop="static" id="customerModal" tabindex="-1" role="dialog"
-     aria-labelledby="newcustomerModalLabel"
-     aria-hidden="true">
+<div class="modal fade" data-bs-backdrop="static" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="newcustomerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
         <form class="modal-content" method="POST" name="form">
             {% csrf_token %}
@@ -152,21 +137,18 @@
                                     <label for="basicpill-username-input"><b>Логин</b></label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
-                                            <span class="input-group-text"
-                                                  id="validationTooltipUsernamePrepend">
+                                            <span class="input-group-text" id="validationTooltipUsernamePrepend">
                                                 @
                                             </span>
                                         </div>
-                                        <input type="text" class="form-control" id="basicpill-username-input"
-                                               required placeholder="Введите логин" name="username">
+                                        <input type="text" class="form-control" id="basicpill-username-input" required placeholder="Введите логин" name="username">
                                     </div>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="basicpill-email-input"><b>Email</b></label>
-                                    <input id="basicpill-email-input" class="form-control input-mask"
-                                           data-inputmask="'alias': 'email'" name="email">
+                                    <input id="basicpill-email-input" class="form-control input-mask" data-inputmask="'alias': 'email'" name="email">
                                 </div>
                             </div>
                         </div>
@@ -174,18 +156,13 @@
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="basicpill-phoneno-input"><b>Пароль</b></label>
-                                    <input type="password" id="basicpill-password-input" class="form-control"
-                                           required
-                                           placeholder="Введите пароль" name="password1"/>
+                                    <input type="password" id="basicpill-password-input" class="form-control" required placeholder="Введите пароль" name="password1" />
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="basicpill-phoneno-input"><b>Повторите пароль</b></label>
-                                    <input type="password" class="form-control" required
-                                           data-parsley-equalto="#basicpill-password-input"
-                                           placeholder="Повторите пароль"
-                                           name="password2"/>
+                                    <input type="password" class="form-control" required data-parsley-equalto="#basicpill-password-input" placeholder="Повторите пароль" name="password2" />
                                 </div>
                             </div>
                         </div>
@@ -198,15 +175,13 @@
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="basicpill-firstname-input"><b>Имя</b></label>
-                                    <input type="text" class="form-control" id="basicpill-firstname-input"
-                                           required placeholder="Введите имя" name="first_name">
+                                    <input type="text" class="form-control" id="basicpill-firstname-input" required placeholder="Введите имя" name="first_name">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="basicpill-lastname-input"><b>Фамилия</b></label>
-                                    <input type="text" class="form-control" id="basicpill-lastname-input"
-                                           required placeholder="Введите фамилию" name="last_name">
+                                    <input type="text" class="form-control" id="basicpill-lastname-input" required placeholder="Введите фамилию" name="last_name">
                                 </div>
                             </div>
                         </div>
@@ -215,15 +190,13 @@
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="basicpill-phoneno-input"><b>Телефон</b></label>
-                                    <input id="basicpill-phoneno-input" class="form-control input-mask"
-                                           required data-inputmask="'mask': '+7(999)-999-99-99'" name="phone">
+                                    <input id="basicpill-phoneno-input" class="form-control input-mask" required data-inputmask="'mask': '+7(999)-999-99-99'" name="phone">
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="basicpill-position-input"><b>Должность</b></label>
-                                    <input type="text" class="form-control" id="basicpill-position-input"
-                                           required placeholder="Введите должность" name="position">
+                                    <input type="text" class="form-control" id="basicpill-position-input" required placeholder="Введите должность" name="position">
                                 </div>
                             </div>
                             <div class="col-lg-6">
@@ -245,7 +218,7 @@
                     <h3><b>Подтвердить детали</b></h3>
                     <section>
                         {% for error in form.errors %}
-                            <div class="alert errors-list error_style" role="alert" style="color: red;">{{ error }}</div>
+                        <div class="alert errors-list error_style" role="alert" style="color: red;">{{ error }}</div>
                         {% endfor %}
 
                         <div class="row justify-content-center">
@@ -256,8 +229,8 @@
                                     </div>
                                     <div>
                                         <h5><b>Проверьте правильность введенных данных</b></h5>
-                                        <p class="text-muted">Нажмите кнопку "Завершить", чтобы добавить
-                                            пользователя</p>
+                                        <p class="text-muted">Нажмите кнопку "Завершить", чтобы добавить пользователя
+                                        </p>
                                     </div>
                                 </div>
                             </div>
@@ -272,8 +245,7 @@
 <!-- end modal -->
 
 
-{% endblock %}
-{% block extra_javascript %}
+{% endblock %} {% block extra_javascript %}
 <!-- jquery step -->
 <script src="{% static 'libs/jquery-steps/build/jquery.steps.min.js' %}"></script>
 <!-- form wizard init -->
@@ -291,4 +263,3 @@
 <script src="{% static 'libs/sweetalert2/dist/sweetalert2.min.js' %}"></script>
 <script src="{% static 'js/pages/customer.init.js' %}"></script>
 {% endblock %}
-

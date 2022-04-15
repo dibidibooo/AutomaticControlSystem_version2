@@ -123,7 +123,7 @@ options = {
 };
 (chart = new ApexCharts(document.querySelector("#area-sparkline-chart-3"), options)).render();
 var walletOptions = {
-    series: [76, 67, 61],
+    series: [60, 20, 40],
     chart: {
         height: 302,
         type: "radialBar"
@@ -172,7 +172,7 @@ var walletOptions = {
                 },
                 total: {
                     show: !0,
-                    label: "Total",
+                    label: "В общем",
                     color: "#373d3f",
                     fontSize: "16px",
                     fontFamily: void 0,
@@ -180,7 +180,7 @@ var walletOptions = {
                     formatter: function(e) {
                         return e.globals.seriesTotals.reduce(function(e, t) {
                             return e + t
-                        }, 0) + "%"
+                        }, 0)
                     }
                 }
             }
@@ -190,7 +190,7 @@ var walletOptions = {
         lineCap: "round"
     },
     colors: ["#3452e1", "#f1b44c", "#50a5f1"],
-    labels: ["Ethereum", "Bitcoin", "Litecoin"],
+    labels: ["Выполнено в срок", "Просрочено", "Эскалировано"],
     legend: {
         show: !1
     }
