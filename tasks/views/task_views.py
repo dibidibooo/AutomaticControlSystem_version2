@@ -85,7 +85,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -97,7 +97,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -109,7 +109,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation1,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -121,7 +121,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_solids.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -133,7 +133,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=phosphorus.recommendation1,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -145,7 +145,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -157,7 +157,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=salt.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -169,7 +169,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=chlorides.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -181,7 +181,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=sulfates.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -200,7 +200,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=2,
@@ -212,7 +212,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=2,
@@ -224,7 +224,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation1,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=2,
@@ -236,7 +236,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_solids.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=2,
@@ -258,7 +258,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_subst.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=3,
@@ -270,7 +270,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=3,
@@ -282,7 +282,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation1,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=3,
@@ -294,7 +294,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=3,
@@ -306,7 +306,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=salt.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=3,
@@ -318,7 +318,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=chlorides.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=3,
@@ -330,7 +330,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=sulfates.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=3,
@@ -359,7 +359,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=hardness.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=5,
@@ -371,7 +371,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=hardness_calcium.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=5,
@@ -383,7 +383,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=5,
@@ -395,7 +395,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation1,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=5,
@@ -407,7 +407,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=salt.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=5,
@@ -419,7 +419,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=chlorides.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=5,
@@ -431,7 +431,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=sulfates.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=5,
@@ -443,7 +443,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=5,
@@ -455,7 +455,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_subst.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=5,
@@ -467,7 +467,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=5,
@@ -479,7 +479,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation1,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=5,
@@ -504,7 +504,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=hardness.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=6,
@@ -516,7 +516,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=hardness_calcium.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=6,
@@ -528,7 +528,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=6,
@@ -540,7 +540,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation1,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=6,
@@ -552,7 +552,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=salt.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=6,
@@ -564,7 +564,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=chlorides.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=6,
@@ -576,7 +576,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=sulfates.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=6,
@@ -588,7 +588,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=6,
@@ -600,7 +600,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_subst.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=6,
@@ -612,7 +612,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=6,
@@ -624,7 +624,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation1,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=6,
@@ -655,7 +655,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_solids.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=9,
@@ -667,7 +667,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=chlorides.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=9,
@@ -679,7 +679,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=sulfates.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=9,
@@ -691,7 +691,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=9,
@@ -703,7 +703,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation1,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=9,
@@ -715,7 +715,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=phosphorus.recommendation1,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=9,
@@ -727,7 +727,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=9,
@@ -739,7 +739,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=salt.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=9,
@@ -758,7 +758,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=chlorine.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=10,
@@ -770,7 +770,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=10,
@@ -782,7 +782,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=salt.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=10,
@@ -799,7 +799,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_solids.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=11,
@@ -816,7 +816,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=12,
@@ -834,7 +834,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=13,
@@ -846,7 +846,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
-                user_id=1,
+                responsible_id=1,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=13,

@@ -25,7 +25,7 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="{% url 'tasks-detail' task.pk %}" class="text-dark open_task" id="{{ task.id }}"
+                                        <a href="" class="text-dark open_task" id="{{ task.id }}"
                                            data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
                                             {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
@@ -66,7 +66,7 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="{% url 'tasks-detail' task.pk %}" class="text-dark open_task" id="{{ task.id }}"
+                                        <a href="" class="text-dark open_task" id="{{ task.id }}"
                                            data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
                                             {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
@@ -109,7 +109,7 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="{% url 'tasks-detail' task.pk %}" class="text-dark open_task" id="{{ task.id }}"
+                                        <a href="" class="text-dark open_task" id="{{ task.id }}"
                                            data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
                                             {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
@@ -151,7 +151,7 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="{% url 'tasks-detail' task.pk %}" class="text-dark open_task" id="{{ task.id }}"
+                                        <a href="" class="text-dark open_task" id="{{ task.id }}"
                                            data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
                                             {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
@@ -209,6 +209,13 @@
 <script src="{% static 'js/pages/form-advanced.init.js'%}"></script>
 
 <script>
+console.log($('.open_task'));
+    function update_query_parameters(key, val) {
+       let uri = window.location.href
+          .replace(RegExp("([?&]"+key+"(?=[=&#]|$)[^#&]*|(?=#|$))"), "&"+key+"="+encodeURIComponent(val))
+          .replace(/^([^?&]+)&/, "$1?");
+       return uri;
+    }
     $(document).on("click", ".open_task", function (e) {
         e.preventDefault();
         let $popup = $("#staticBackdrop");
@@ -220,7 +227,9 @@
     function editTask(event){
         let task_id = document.getElementById("uid");
         task_id.setAttribute("value", event);
-        console.log(task_id);
+        let uri = window.location.href;
+        let new_uri = update_query_parameters('id', event);
+        console.log(new_uri);
         $.ajax({
             type: 'GET',
             data: {

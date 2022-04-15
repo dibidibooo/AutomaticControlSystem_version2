@@ -8,7 +8,10 @@ from django.db import models
 
 class Task(models.Model):
     title = models.CharField(max_length=100, verbose_name='Задача')
-    user = models.ForeignKey(get_user_model(), related_name='task_assign', on_delete=models.CASCADE)
+    user = models.ForeignKey(get_user_model(), related_name='task_assignee', null=True, blank=True,
+                             on_delete=models.CASCADE, verbose_name='Исполнитель')
+    responsible = models.ForeignKey(get_user_model(), related_name='task_responsible',
+                                    on_delete=models.CASCADE, verbose_name='Ответственный')
     start_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата назначения задачи')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата и время обновления')
     deadline = models.DateTimeField(null=True, blank=True, verbose_name='Срок выполнения задачи')
