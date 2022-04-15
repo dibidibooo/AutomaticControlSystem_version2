@@ -429,6 +429,162 @@
   }
 },
 {
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2022-04-12T13:01:27.264",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "4",
+    "object_repr": "Лаборант",
+    "action_flag": 2,
+    "change_message": "[]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2022-04-12T13:01:40.389",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "1",
+    "object_repr": "Топ менеджмент",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2022-04-12T13:01:52.052",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "3",
+    "object_repr": "Начальник установки",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2022-04-12T13:01:59.257",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "2",
+    "object_repr": "Сотрудники",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2022-04-15T15:07:45.785",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2022-04-15T15:10:42.425",
+    "user": 1,
+    "content_type": 3,
+    "object_id": "1",
+    "object_repr": "admin",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"User permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2022-04-15T15:11:32.135",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "1",
+    "object_repr": "Топ менеджмент",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2022-04-15T15:11:58.652",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "3",
+    "object_repr": "Начальник установки",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2022-04-15T15:12:29.939",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "2",
+    "object_repr": "Сотрудники",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2022-04-15T15:35:34.845",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "1",
+    "object_repr": "Топ менеджмент",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2022-04-15T15:35:48.979",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "3",
+    "object_repr": "Начальник установки",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 45,
+  "fields": {
+    "action_time": "2022-04-15T15:35:56.115",
+    "user": 1,
+    "content_type": 2,
+    "object_id": "2",
+    "object_repr": "Сотрудники",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+  }
+},
+{
   "model": "auth.permission",
   "pk": 1,
   "fields": {
@@ -786,42 +942,6 @@
     "name": "Can view water type",
     "content_type": 10,
     "codename": "view_watertype"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 41,
-  "fields": {
-    "name": "Can add task assign",
-    "content_type": 11,
-    "codename": "add_taskassign"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 42,
-  "fields": {
-    "name": "Can change task assign",
-    "content_type": 11,
-    "codename": "change_taskassign"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 43,
-  "fields": {
-    "name": "Can delete task assign",
-    "content_type": 11,
-    "codename": "delete_taskassign"
-  }
-},
-{
-  "model": "auth.permission",
-  "pk": 44,
-  "fields": {
-    "name": "Can view task assign",
-    "content_type": 11,
-    "codename": "view_taskassign"
   }
 },
 {
@@ -1725,6 +1845,78 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 145,
+  "fields": {
+    "name": "Can add task",
+    "content_type": 37,
+    "codename": "add_task"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 146,
+  "fields": {
+    "name": "Can change task",
+    "content_type": 37,
+    "codename": "change_task"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 147,
+  "fields": {
+    "name": "Can delete task",
+    "content_type": 37,
+    "codename": "delete_task"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 148,
+  "fields": {
+    "name": "Can view task",
+    "content_type": 37,
+    "codename": "view_task"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 149,
+  "fields": {
+    "name": "Can add comment",
+    "content_type": 38,
+    "codename": "add_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 150,
+  "fields": {
+    "name": "Can change comment",
+    "content_type": 38,
+    "codename": "change_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 151,
+  "fields": {
+    "name": "Can delete comment",
+    "content_type": 38,
+    "codename": "delete_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 152,
+  "fields": {
+    "name": "Can view comment",
+    "content_type": 38,
+    "codename": "view_comment"
+  }
+},
+{
   "model": "auth.group",
   "pk": 1,
   "fields": {
@@ -1732,27 +1924,17 @@
     "permissions": [
       20,
       100,
-      96,
-      92,
-      88,
-      84,
-      80,
-      76,
-      72,
-      68,
-      64,
-      60,
-      56,
-      52,
-      48,
       24,
       28,
       32,
       138,
       140,
       36,
-      44,
-      40
+      40,
+      149,
+      150,
+      151,
+      152
     ]
   }
 },
@@ -1764,27 +1946,17 @@
     "permissions": [
       20,
       100,
-      96,
-      92,
-      88,
-      84,
-      80,
-      76,
-      72,
-      68,
-      64,
-      60,
-      56,
-      52,
-      48,
       24,
       28,
       32,
       138,
       140,
       36,
-      44,
-      40
+      40,
+      149,
+      150,
+      151,
+      152
     ]
   }
 },
@@ -1796,19 +1968,6 @@
     "permissions": [
       20,
       100,
-      96,
-      92,
-      88,
-      84,
-      80,
-      76,
-      72,
-      68,
-      64,
-      60,
-      56,
-      52,
-      48,
       24,
       28,
       32,
@@ -1818,11 +1977,11 @@
       34,
       35,
       36,
-      41,
-      42,
-      43,
-      44,
-      40
+      40,
+      149,
+      150,
+      151,
+      152
     ]
   }
 },
@@ -1841,7 +2000,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$320000$eRkAI8jMT2sp5wE9zO26Hn$pKk//3HRTrmrFjWLarNE0uEfjHSy9AHPcshNXzfFOR0=",
-    "last_login": "2022-04-06T16:37:38.033",
+    "last_login": "2022-04-14T10:55:18",
     "is_superuser": true,
     "username": "admin",
     "first_name": "admin",
@@ -1865,6 +2024,10 @@
       122,
       123,
       124,
+      141,
+      142,
+      143,
+      144,
       101,
       102,
       103,
@@ -1969,10 +2132,6 @@
       34,
       35,
       36,
-      41,
-      42,
-      43,
-      44,
       37,
       38,
       39,
@@ -1996,7 +2155,11 @@
       133,
       134,
       135,
-      136
+      136,
+      149,
+      150,
+      151,
+      152
     ]
   }
 },
@@ -2005,7 +2168,7 @@
   "pk": 2,
   "fields": {
     "password": "pbkdf2_sha256$320000$Uu360kySw9e5ffs9ws7vIq$9Om+Sl6qokNIFkIFgAtw6OtE8l3i27yVj6etfzSDsys=",
-    "last_login": "2022-04-06T10:33:30.956",
+    "last_login": "2022-04-11T16:33:50.460",
     "is_superuser": false,
     "username": "lab_assistant",
     "first_name": "ivan",
@@ -2025,11 +2188,11 @@
   "pk": 3,
   "fields": {
     "password": "pbkdf2_sha256$320000$Cq1MMIlQSHp0rAKjabFjuH$OULusmdw6D5+qTe7GukJ0dFUU2847wFHb1JsgmkLEz4=",
-    "last_login": "2022-04-04T15:28:05.940",
+    "last_login": "2022-04-14T10:53:06.834",
     "is_superuser": false,
     "username": "director",
-    "first_name": "",
-    "last_name": "",
+    "first_name": "Petr",
+    "last_name": "Sidorov",
     "email": "mail@mail.com",
     "is_staff": false,
     "is_active": true,
@@ -2068,8 +2231,8 @@
     "last_login": null,
     "is_superuser": false,
     "username": "consultant",
-    "first_name": "consultant",
-    "last_name": "consultant",
+    "first_name": "Bruce",
+    "last_name": "Almighty",
     "email": "",
     "is_staff": false,
     "is_active": true,
@@ -2369,11 +2532,19 @@
   }
 },
 {
-  "model": "sessions.session",
-  "pk": "17e746nil88yfclu7lv4wkxa20wgf708",
+  "model": "contenttypes.contenttype",
+  "pk": 37,
   "fields": {
-    "session_data": ".eJxVjEsOwjAMBe-SNYrycb9L9pwhcm2XBlCCmlYCIe4OlbqA7Zt581IB12UKa5E5RFa9surwuw1IV0kb4Aumc9aU0zLHQW-K3mnRp8xyO-7uX2DCMn3fvm4aEsMOPHhLxkpLZkSPziET29q2IANDBdCRc64zjsYKbN2KGKRqixYpJeYU5HGP81P15v0Bcmk-vg:1nbxMj:lJLjts5Svq69tDFPuBXqRRgfSTc7Rhl8Om09jJAJVRE",
-    "expire_date": "2022-04-20T10:33:57.614"
+    "app_label": "tasks",
+    "model": "task"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "pk": 38,
+  "fields": {
+    "app_label": "tasks",
+    "model": "comment"
   }
 },
 {
@@ -2382,6 +2553,22 @@
   "fields": {
     "session_data": ".eJxVjEsOwjAMBe-SNYrycb9L9pwhcm2XBlCCmlYCIe4OlbqA7Zt581IB12UKa5E5RFa9surwuw1IV0kb4Aumc9aU0zLHQW-K3mnRp8xyO-7uX2DCMn3fvm4aEsMOPHhLxkpLZkSPziET29q2IANDBdCRc64zjsYKbN2KGKRqixYpJeYU5HGP81P15v0Bcmk-vg:1nbJ7w:zdoktHEAmjH2I6Ny7xuRFUwAdWEC4KnsGT8E3UC-LUY",
     "expire_date": "2022-04-18T15:36:00.574"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "nhj3nkmmclof6x7tfhnawwy9mjr6onho",
+  "fields": {
+    "session_data": ".eJxVjEsOwjAMBe-SNYrycb9L9pwhcm2XBlCCmlYCIe4OlbqA7Zt581IB12UKa5E5RFa9surwuw1IV0kb4Aumc9aU0zLHQW-K3mnRp8xyO-7uX2DCMn3fvm4aEsMOPHhLxkpLZkSPziET29q2IANDBdCRc64zjsYKbN2KGKRqixYpJeYU5HGP81P15v0Bcmk-vg:1nerVm:S-PU3RplHGRzOsh9cdT6djWzSBLM-uf_IR1V53JOgvQ",
+    "expire_date": "2022-04-28T10:55:18.814"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "uhrat1c047byuh6hg7mlh7i6un1xbsx6",
+  "fields": {
+    "session_data": ".eJxVjEsOwjAMBe-SNYrycb9L9pwhcm2XBlCCmlYCIe4OlbqA7Zt581IB12UKa5E5RFa9surwuw1IV0kb4Aumc9aU0zLHQW-K3mnRp8xyO-7uX2DCMn3fvm4aEsMOPHhLxkpLZkSPziET29q2IANDBdCRc64zjsYKbN2KGKRqixYpJeYU5HGP81P15v0Bcmk-vg:1ndrkz:3-X03eBjmY9qJyTk-lwPGQFrz4NcGiZDjHrM3sYtSx8",
+    "expire_date": "2022-04-25T16:58:53.954"
   }
 },
 {
@@ -2640,7 +2827,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449. 1-85 ПНДФ 14.1:2:4.128-98",
     "recommendation1": null,
-    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
+    "recommendation2": "Устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -2654,8 +2841,8 @@
     "period": "1 раз в неделю воскресенье",
     "period_in_hours": 168,
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation1": "Уменьшить продувку",
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -2670,7 +2857,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": "проверить Ку, увеличить продувку"
+    "recommendation2": "Проверить Ку, увеличить продувку"
   }
 },
 {
@@ -2684,7 +2871,7 @@
     "period": "1 раз в неделю воскресенье",
     "period_in_hours": 168,
     "standards": "МВИ «Hach»",
-    "recommendation1": "увеличить дозировку ингибитора",
+    "recommendation1": "Увеличить дозировку ингибитора",
     "recommendation2": null
   }
 },
@@ -2700,7 +2887,7 @@
     "period_in_hours": 168,
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -2730,7 +2917,7 @@
     "period_in_hours": 168,
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -2745,7 +2932,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -2760,7 +2947,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -2820,7 +3007,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449. 1-85 ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
+    "recommendation2": "Устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -2834,8 +3021,8 @@
     "period": "1 раз в неделю воскресенье",
     "period_in_hours": 168,
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation1": "Уменьшить продувку",
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -2850,7 +3037,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449. 1-85 МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -2865,7 +3052,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -2925,7 +3112,7 @@
     "period_in_hours": 168,
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -2940,7 +3127,7 @@
     "period_in_hours": 168,
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -2955,7 +3142,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -2970,7 +3157,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3014,8 +3201,8 @@
     "period": "Еженедельно по средам",
     "period_in_hours": 168,
     "standards": "рН метр ГОСТ 26449.1",
-    "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation1": "Уменьшить продувку",
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3180,7 +3367,7 @@
     "period_in_hours": 84,
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3195,7 +3382,7 @@
     "period_in_hours": 84,
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3209,8 +3396,8 @@
     "period": "1 раз в неделю",
     "period_in_hours": 168,
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation1": "Уменьшить продувку",
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3225,7 +3412,7 @@
     "period_in_hours": 168,
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3240,7 +3427,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3255,7 +3442,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3270,7 +3457,7 @@
     "period_in_hours": 168,
     "standards": "ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
+    "recommendation2": "Устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -3285,7 +3472,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
+    "recommendation2": "Проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -3299,8 +3486,8 @@
     "period": "2 раза в неделю",
     "period_in_hours": 84,
     "standards": "РТМ 24.030.24-72",
-    "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation1": "Уменьшить продувку",
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3330,7 +3517,7 @@
     "period_in_hours": 168,
     "standards": "РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3345,7 +3532,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-43-2014",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3359,8 +3546,8 @@
     "period": "1 раз в неделю",
     "period_in_hours": 168,
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation1": "Уменьшить продувку",
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3375,7 +3562,7 @@
     "period_in_hours": 168,
     "standards": "кондуктометр РТМ 24.030.24",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3390,7 +3577,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3405,7 +3592,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1 СТ ТОО 40319154-31-2014",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3420,7 +3607,7 @@
     "period_in_hours": 168,
     "standards": "ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
+    "recommendation2": "Устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -3435,7 +3622,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1",
     "recommendation1": null,
-    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
+    "recommendation2": "Проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -3464,8 +3651,8 @@
     "period": "1 раз в неделю",
     "period_in_hours": 168,
     "standards": "РТМ 24.030.24-72",
-    "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation1": "Уменьшить продувку",
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3765,7 +3952,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1-85 МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
+    "recommendation2": "Проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -3780,7 +3967,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.1-85 МВИ «Насh",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку и подпитку осветленной водой"
+    "recommendation2": "Увеличить продувку и подпитку осветленной водой"
   }
 },
 {
@@ -3795,7 +3982,7 @@
     "period_in_hours": 168,
     "standards": "ГОСТ 26449.2-85 МВИ «Насh»",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку и подпитку осветленной водой"
+    "recommendation2": "Увеличить продувку и подпитку осветленной водой"
   }
 },
 {
@@ -3809,8 +3996,8 @@
     "period": "1 раз в сутки** 07.30",
     "period_in_hours": 24,
     "standards": "рН-метр",
-    "recommendation1": "уменьшить продувку",
-    "recommendation2": "увеличить продувку"
+    "recommendation1": "Уменьшить продувку",
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3824,7 +4011,7 @@
     "period": "1 раз в неделю понедельник",
     "period_in_hours": 168,
     "standards": "МВИ «Насh»",
-    "recommendation1": "увеличить дозировку ингибитора",
+    "recommendation1": "Увеличить дозировку ингибитора",
     "recommendation2": null
   }
 },
@@ -3840,7 +4027,7 @@
     "period_in_hours": 168,
     "standards": "РТМ 24.030.24-72.",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3900,7 +4087,7 @@
     "period_in_hours": 168,
     "standards": "Кондуктометр",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3915,7 +4102,7 @@
     "period_in_hours": 168,
     "standards": "МВИ «Насh»",
     "recommendation1": null,
-    "recommendation2": "снизить подачу галогена в оборотную воду"
+    "recommendation2": "Снизить подачу галогена в оборотную воду"
   }
 },
 {
@@ -3930,7 +4117,7 @@
     "period_in_hours": 84,
     "standards": "ГОСТ 26449.1-85 ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": "устранить утечки технологических продуктов в оборотную воду"
+    "recommendation2": "Устранить утечки технологических продуктов в оборотную воду"
   }
 },
 {
@@ -3945,7 +4132,7 @@
     "period_in_hours": 168,
     "standards": "Кондуктометр",
     "recommendation1": null,
-    "recommendation2": "увеличить продувку"
+    "recommendation2": "Увеличить продувку"
   }
 },
 {
@@ -3960,7 +4147,7 @@
     "period_in_hours": 24,
     "standards": "ГОСТ 26449.1-85         МВИ АРНА",
     "recommendation1": null,
-    "recommendation2": "проверить работу осветлителя, проверить Ку, увеличить продувку"
+    "recommendation2": "Проверить работу осветлителя, проверить Ку, увеличить продувку"
   }
 },
 {
@@ -4064,8 +4251,8 @@
     "period": "1 раз в сутки 07:30",
     "period_in_hours": 24,
     "standards": "рН- метр ГОСТ 26449. 1-85",
-    "recommendation1": "подать едкий натр",
-    "recommendation2": "подать ортофосфорную кислоту"
+    "recommendation1": "Подать едкий натр",
+    "recommendation2": "Подать ортофосфорную кислоту"
   }
 },
 {
@@ -4110,7 +4297,7 @@
     "period_in_hours": 12,
     "standards": "ГОСТ 26449. 1-85 ПНДФ 14.1: 2:4.128-98",
     "recommendation1": null,
-    "recommendation2": "повысить дозу флокулянта и коагулянта подаваемых на блок  флотации"
+    "recommendation2": "Повысить дозу флокулянта и коагулянта подаваемых на блок  флотации"
   }
 },
 {
@@ -4366,6 +4553,27 @@
   }
 },
 {
+  "model": "projects.componentssite1",
+  "pk": 80,
+  "fields": {
+    "oil_prod": 11,
+    "suspended_solids": 11,
+    "ph": 11,
+    "phosphorus": 11,
+    "alkalinity": 11,
+    "hardness": 11,
+    "salt": 11,
+    "chlorides": 11,
+    "sulfates": 11,
+    "iron": 11,
+    "hardness_calcium": 11,
+    "hardness_magnesium": 11,
+    "datetime": "2022-04-12T13:43:34.539",
+    "sampling_site": 1,
+    "water_type": 1
+  }
+},
+{
   "model": "projects.componentssite2",
   "pk": 43,
   "fields": {
@@ -4373,6 +4581,18 @@
     "ph": 8,
     "suspended_solids": 8,
     "datetime": "2022-04-01T17:29:36.577",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 44,
+  "fields": {
+    "oil_prod": 10,
+    "ph": 8,
+    "suspended_solids": 10,
+    "datetime": "2022-04-12T13:45:37.411",
     "sampling_site": 2,
     "water_type": 1
   }
@@ -4398,6 +4618,26 @@
   }
 },
 {
+  "model": "projects.componentssite3",
+  "pk": 6,
+  "fields": {
+    "suspended_subst": 8,
+    "hardness": 8,
+    "iron": 8,
+    "dry_residue": 8,
+    "alkalinity": 8,
+    "salt": 20,
+    "chlorides": 8,
+    "sulfates": 8,
+    "hardness_calcium": 11,
+    "hardness_magnesium": 11,
+    "ph": 8,
+    "datetime": "2022-04-12T13:46:31.575",
+    "sampling_site": 3,
+    "water_type": 1
+  }
+},
+{
   "model": "projects.componentssite4",
   "pk": 5,
   "fields": {
@@ -4412,6 +4652,25 @@
     "alkalinity": 9,
     "iron": 9,
     "datetime": "2022-04-01T17:57:49.396",
+    "sampling_site": 4,
+    "water_type": 2
+  }
+},
+{
+  "model": "projects.componentssite4",
+  "pk": 6,
+  "fields": {
+    "hardness": 8,
+    "hardness_calcium": 8,
+    "ph": 2,
+    "salt": 300,
+    "chlorides": 20,
+    "sulfates": 20,
+    "oil_prod": 20,
+    "suspended_subst": 20,
+    "alkalinity": 20,
+    "iron": 20,
+    "datetime": "2022-04-12T13:47:40.821",
     "sampling_site": 4,
     "water_type": 2
   }
@@ -4496,6 +4755,126 @@
   }
 },
 {
+  "model": "projects.componentssite6",
+  "pk": 6,
+  "fields": {
+    "hardness": 10,
+    "hardness_calcium": 10,
+    "ph": 10,
+    "salt": 10,
+    "chlorides": 10,
+    "sulfates": 10,
+    "oil_prod": 10,
+    "suspended_subst": 10,
+    "alkalinity_phenols": 10,
+    "alkalinity": 10,
+    "iron": 10,
+    "datetime": "2022-04-12T12:54:39.035",
+    "sampling_site": 6,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite6",
+  "pk": 7,
+  "fields": {
+    "hardness": 10,
+    "hardness_calcium": 10,
+    "ph": 10,
+    "salt": 10,
+    "chlorides": 10,
+    "sulfates": 10,
+    "oil_prod": 10,
+    "suspended_subst": 10,
+    "alkalinity_phenols": 10,
+    "alkalinity": 10,
+    "iron": 10,
+    "datetime": "2022-04-12T12:55:30.996",
+    "sampling_site": 6,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite6",
+  "pk": 8,
+  "fields": {
+    "hardness": 500,
+    "hardness_calcium": 500,
+    "ph": 3,
+    "salt": 20,
+    "chlorides": 20,
+    "sulfates": 20,
+    "oil_prod": 20,
+    "suspended_subst": 20,
+    "alkalinity_phenols": 20,
+    "alkalinity": 30,
+    "iron": 30,
+    "datetime": "2022-04-12T13:49:42.459",
+    "sampling_site": 6,
+    "water_type": 2
+  }
+},
+{
+  "model": "projects.componentssite6",
+  "pk": 9,
+  "fields": {
+    "hardness": 10,
+    "hardness_calcium": 10,
+    "ph": 8,
+    "salt": 10,
+    "chlorides": 10,
+    "sulfates": 10,
+    "oil_prod": 10,
+    "suspended_subst": 10,
+    "alkalinity_phenols": 10,
+    "alkalinity": 10,
+    "iron": 10,
+    "datetime": "2022-04-12T13:53:37.647",
+    "sampling_site": 6,
+    "water_type": 2
+  }
+},
+{
+  "model": "projects.componentssite6",
+  "pk": 10,
+  "fields": {
+    "hardness": 5,
+    "hardness_calcium": 5,
+    "ph": 5,
+    "salt": 5,
+    "chlorides": 5,
+    "sulfates": 5,
+    "oil_prod": 5,
+    "suspended_subst": 5,
+    "alkalinity_phenols": 5,
+    "alkalinity": 5,
+    "iron": 5,
+    "datetime": "2022-04-12T13:57:33.261",
+    "sampling_site": 6,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite6",
+  "pk": 11,
+  "fields": {
+    "hardness": 5,
+    "hardness_calcium": 5,
+    "ph": 5,
+    "salt": 5,
+    "chlorides": 5,
+    "sulfates": 5,
+    "oil_prod": 5,
+    "suspended_subst": 5,
+    "alkalinity_phenols": 5,
+    "alkalinity": 5,
+    "iron": 5,
+    "datetime": "2022-04-12T13:58:56.994",
+    "sampling_site": 6,
+    "water_type": 1
+  }
+},
+{
   "model": "projects.componentssite7",
   "pk": 2,
   "fields": {
@@ -4508,6 +4887,23 @@
     "hardness": 8,
     "iron": 8,
     "datetime": "2022-04-01T18:32:11.262",
+    "sampling_site": 7,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite7",
+  "pk": 3,
+  "fields": {
+    "suspended_solids": 10,
+    "chlorides": 10,
+    "sulfates": 10,
+    "ph": 10,
+    "alkalinity": 10,
+    "hardness_calcium": 10,
+    "hardness": 10,
+    "iron": 10,
+    "datetime": "2022-04-12T13:05:49.345",
     "sampling_site": 7,
     "water_type": 1
   }
@@ -4588,6 +4984,21 @@
   }
 },
 {
+  "model": "projects.componentssite12",
+  "pk": 3,
+  "fields": {
+    "oil_prod": 4000,
+    "suspended_subst": 20,
+    "ph": 10,
+    "oxygen_chem": 10,
+    "active_subst": 10,
+    "ammonium": 10,
+    "datetime": "2022-04-14T15:07:19.136",
+    "sampling_site": 12,
+    "water_type": 1
+  }
+},
+{
   "model": "projects.componentssite13",
   "pk": 2,
   "fields": {
@@ -4621,81 +5032,6 @@
     "datetime": "2022-04-01T18:34:26.396",
     "sampling_site": 14,
     "water_type": 1
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 22,
-  "fields": {
-    "task": "увеличить продувку",
-    "user": 5,
-    "start_date": "2022-04-01T17:05:58.490",
-    "deadline": "2022-04-08T17:05:58",
-    "comp_title": "Значение рН",
-    "sampling_site": 1,
-    "plant_unit": 1,
-    "notification": 1,
-    "status": 4
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 23,
-  "fields": {
-    "task": "увеличить продувку",
-    "user": 2,
-    "start_date": "2022-04-01T17:05:58.499",
-    "deadline": "2022-04-08T17:05:58",
-    "comp_title": "Щелочность общая",
-    "sampling_site": 1,
-    "plant_unit": 1,
-    "notification": 1,
-    "status": 2
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 24,
-  "fields": {
-    "task": "устранить утечки технологических продуктов в оборотную воду",
-    "user": 1,
-    "start_date": "2022-04-01T17:29:36.600",
-    "deadline": "2022-04-15T11:45:00",
-    "comp_title": "Нефтепродукты",
-    "sampling_site": 2,
-    "plant_unit": 1,
-    "notification": 1,
-    "status": 1
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 25,
-  "fields": {
-    "task": "увеличить продувку",
-    "user": 1,
-    "start_date": "2022-04-01T17:38:44.095",
-    "deadline": "2022-04-08T17:38:44.093",
-    "comp_title": "Щелочность общая",
-    "sampling_site": 1,
-    "plant_unit": 1,
-    "notification": 1,
-    "status": 1
-  }
-},
-{
-  "model": "projects.taskassign",
-  "pk": 26,
-  "fields": {
-    "task": "увеличить продувку",
-    "user": 5,
-    "start_date": "2022-04-01T17:38:44.102",
-    "deadline": "2022-04-07T11:55:00",
-    "comp_title": "Солесодержание",
-    "sampling_site": 1,
-    "plant_unit": 1,
-    "notification": 1,
-    "status": 3
   }
 },
 {
@@ -4741,11 +5077,335 @@
   }
 },
 {
+  "model": "projects.status",
+  "pk": 5,
+  "fields": {
+    "title": "Архив"
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 1,
+  "fields": {
+    "title": "Увеличить продувку",
+    "user": 4,
+    "responsible": 1,
+    "start_date": "2022-04-12T13:43:34.557",
+    "updated_at": "2022-04-14T13:00:21.770",
+    "deadline": "2022-04-19T13:43:34.557",
+    "completion_date": "2022-04-13T18:18:26.938",
+    "comp_title": "Значение рН",
+    "sampling_site": 1,
+    "plant_unit": 1,
+    "notification": 1,
+    "status": 4
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 2,
+  "fields": {
+    "title": "Увеличить продувку",
+    "user": 3,
+    "responsible": 1,
+    "start_date": "2022-04-12T13:43:34.563",
+    "updated_at": "2022-04-15T14:01:08.505",
+    "deadline": "2022-04-15T10:53:00",
+    "completion_date": null,
+    "comp_title": "Щелочность общая",
+    "sampling_site": 1,
+    "plant_unit": 1,
+    "notification": 1,
+    "status": 3
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 3,
+  "fields": {
+    "title": "Уменьшить продувку",
+    "user": 3,
+    "responsible": 1,
+    "start_date": "2022-04-12T13:58:57.004",
+    "updated_at": "2022-04-15T14:01:00.575",
+    "deadline": "2022-04-20T15:31:00",
+    "completion_date": null,
+    "comp_title": "Значение рН",
+    "sampling_site": 6,
+    "plant_unit": 3,
+    "notification": 2,
+    "status": 2
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 4,
+  "fields": {
+    "title": "Устранить утечки технологических продуктов в оборотную воду",
+    "user": 3,
+    "responsible": 1,
+    "start_date": "2022-04-12T13:58:57.008",
+    "updated_at": "2022-04-15T14:00:59.374",
+    "deadline": "2022-04-19T13:58:00",
+    "completion_date": null,
+    "comp_title": "Нефтепродукты",
+    "sampling_site": 6,
+    "plant_unit": 3,
+    "notification": 1,
+    "status": 2
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 5,
+  "fields": {
+    "title": "Уменьшить продувку",
+    "user": 3,
+    "responsible": 1,
+    "start_date": "2022-04-12T13:58:57.009",
+    "updated_at": "2022-04-14T13:00:21.770",
+    "deadline": "2022-04-13T16:15:00",
+    "completion_date": null,
+    "comp_title": "Щелочность общая",
+    "sampling_site": 6,
+    "plant_unit": 3,
+    "notification": 2,
+    "status": 1
+  }
+},
+{
+  "model": "tasks.task",
+  "pk": 6,
+  "fields": {
+    "title": "Отбор пробы сточной воды поступающих с установок завода.",
+    "user": 1,
+    "responsible": 1,
+    "start_date": "2022-04-14T15:07:19.143",
+    "updated_at": "2022-04-14T15:07:19.143",
+    "deadline": "2022-04-17T15:07:19.143",
+    "completion_date": null,
+    "comp_title": "Нефтепродукты",
+    "sampling_site": 12,
+    "plant_unit": 5,
+    "notification": 1,
+    "status": 1
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 1,
+  "fields": {
+    "task": 1,
+    "author": 2,
+    "text": "asdf",
+    "created_at": "2022-04-13T17:22:25.484",
+    "updated_at": null
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 2,
+  "fields": {
+    "task": 2,
+    "author": 1,
+    "text": "qwerty",
+    "created_at": "2022-04-14T10:50:37.220",
+    "updated_at": "2022-04-14T10:50:37.220"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 3,
+  "fields": {
+    "task": 2,
+    "author": 3,
+    "text": "new comment",
+    "created_at": "2022-04-14T10:53:20.831",
+    "updated_at": "2022-04-14T10:53:20.831"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 4,
+  "fields": {
+    "task": 2,
+    "author": 3,
+    "text": "jhghgfhgff",
+    "created_at": "2022-04-14T10:53:43.610",
+    "updated_at": "2022-04-14T10:53:43.610"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 5,
+  "fields": {
+    "task": 4,
+    "author": 1,
+    "text": "aaaaaaa",
+    "created_at": "2022-04-14T11:45:23.614",
+    "updated_at": "2022-04-14T11:45:23.615"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 6,
+  "fields": {
+    "task": 4,
+    "author": 1,
+    "text": "aaaaaaaa",
+    "created_at": "2022-04-14T11:48:21.944",
+    "updated_at": "2022-04-14T11:48:21.945"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 7,
+  "fields": {
+    "task": 5,
+    "author": 1,
+    "text": "hhhhhhhhhh",
+    "created_at": "2022-04-14T11:48:59.031",
+    "updated_at": "2022-04-14T11:48:59.031"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 8,
+  "fields": {
+    "task": 3,
+    "author": 1,
+    "text": "new comment",
+    "created_at": "2022-04-14T12:59:12.187",
+    "updated_at": "2022-04-14T12:59:12.187"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 9,
+  "fields": {
+    "task": 3,
+    "author": 1,
+    "text": "mmmmmm",
+    "created_at": "2022-04-14T15:31:12.070",
+    "updated_at": "2022-04-14T15:31:12.070"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 10,
+  "fields": {
+    "task": 1,
+    "author": 1,
+    "text": "jhghgfhgff",
+    "created_at": "2022-04-14T15:50:35.294",
+    "updated_at": "2022-04-14T15:50:35.295"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 11,
+  "fields": {
+    "task": 5,
+    "author": 1,
+    "text": "new comment",
+    "created_at": "2022-04-14T15:52:22.122",
+    "updated_at": "2022-04-14T15:52:22.122"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 12,
+  "fields": {
+    "task": 2,
+    "author": 1,
+    "text": "aaaaffffff",
+    "created_at": "2022-04-14T16:00:57.847",
+    "updated_at": "2022-04-14T16:00:57.847"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 13,
+  "fields": {
+    "task": 3,
+    "author": 1,
+    "text": "aaaaaa",
+    "created_at": "2022-04-14T16:01:43.673",
+    "updated_at": "2022-04-14T16:01:43.673"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 14,
+  "fields": {
+    "task": 4,
+    "author": 1,
+    "text": "qwerty",
+    "created_at": "2022-04-14T18:43:00.904",
+    "updated_at": "2022-04-14T18:43:00.904"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 15,
+  "fields": {
+    "task": 5,
+    "author": 1,
+    "text": "jhghgfhgff",
+    "created_at": "2022-04-15T11:58:05.593",
+    "updated_at": "2022-04-15T11:58:05.593"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 16,
+  "fields": {
+    "task": 4,
+    "author": 1,
+    "text": "jhghgfhgff",
+    "created_at": "2022-04-15T11:58:20.543",
+    "updated_at": "2022-04-15T11:58:20.544"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 17,
+  "fields": {
+    "task": 4,
+    "author": 1,
+    "text": "aaaaggggg",
+    "created_at": "2022-04-15T12:28:14.640",
+    "updated_at": "2022-04-15T12:28:14.640"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 18,
+  "fields": {
+    "task": 4,
+    "author": 1,
+    "text": "ffffff",
+    "created_at": "2022-04-15T12:28:47.465",
+    "updated_at": "2022-04-15T12:28:47.465"
+  }
+},
+{
+  "model": "tasks.comment",
+  "pk": 19,
+  "fields": {
+    "task": 3,
+    "author": 1,
+    "text": "jhghgfhgff",
+    "created_at": "2022-04-15T15:02:26.085",
+    "updated_at": "2022-04-15T15:02:26.085"
+  }
+},
+{
   "model": "accounts.profile",
   "pk": 1,
   "fields": {
     "user": 2,
-    "phone": "87079998877",
+    "phone": "87079998888",
     "position": "Лаборант",
     "role": 4
   }
@@ -4756,7 +5416,7 @@
   "fields": {
     "user": 3,
     "phone": "87774443322",
-    "position": "Директор",
+    "position": "Генеральный директор",
     "role": 1
   }
 },
@@ -4765,9 +5425,9 @@
   "pk": 3,
   "fields": {
     "user": 4,
-    "phone": "87011112233",
+    "phone": "+7(701)-111-22-33",
     "position": "Начальник БОВ-1",
-    "role": 3
+    "role": 1
   }
 },
 {
@@ -4775,8 +5435,8 @@
   "pk": 4,
   "fields": {
     "user": 5,
-    "phone": null,
-    "position": "Консультант",
+    "phone": "+7(999)-999-99-99",
+    "position": "consultant",
     "role": 2
   }
 },

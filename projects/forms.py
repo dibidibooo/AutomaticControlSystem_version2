@@ -1,8 +1,15 @@
 from django import forms
+from django.core.exceptions import ValidationError
 
 
 class MultipleForm(forms.Form):
     action = forms.CharField(max_length=60, widget=forms.HiddenInput())
+
+    def clean(self):
+        cleaned_data = super().clean()
+        ph = cleaned_data['ph']
+        if float(ph) > 12 or float(ph) < 0:
+            raise ValidationError('Значение pH может быть от 0 до 12')
 
 
 # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16

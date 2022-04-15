@@ -1,5 +1,6 @@
-{% load static %} {% block extra_css %}
+{% load static %}
 
+{% block extra_css %}
 <!-- dragula css -->
 <link href="{% static 'libs/dragula/dist/dragula.min.css' %}" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="{% static 'libs/toastr/build/toastr.min.css' %}">
@@ -8,8 +9,10 @@
 <link href="{% static 'libs/select2/dist/css/select2.min.css'%}" rel="stylesheet" type="text/css"/>
 <link href="{% static 'libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'%}" rel="stylesheet" type="text/css">
 <link href="{% static 'libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css'%}" rel="stylesheet" type="text/css">
-<link rel="stylesheet" href="{% static 'libs/@chenfengyuan/datepicker/dist/datepicker.min.css'%}" type="text/css"/> {% endblock %} {% block contents %}
+<link rel="stylesheet" href="{% static 'libs/@chenfengyuan/datepicker/dist/datepicker.min.css'%}" type="text/css"/>
+{% endblock %}
 
+{% block contents %}
 <div class="row">
     <div class="col-lg-3">
         <div class="card">
@@ -18,7 +21,7 @@
                 <div id="task-2">
                     <div id="inprogress-task" class="pb-1 task-list">
                         <!-- task card -->
-                        {% for task in tasks %} {% if task.status_id == 2 %}
+                        {% for task in tasks %} {% if task.status_id == 2 and task.user.profile.role_id == 1 %}
                         <div class="card task-box" id="{{ task.id }}">
                             <div class="card-body">
                                 <div class="float-end ms-2">
@@ -26,8 +29,9 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="{% url 'tasks-updatetask' task.pk %}" class="text-dark" id="task-name">
-                                            {{ task.task.title }} для компонента '{{ task.comp_title }}'
+                                        <a href="" class="text-dark open_task" id="{{ task.id }}"
+                                           data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
+                                            {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
                                     <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
@@ -59,7 +63,7 @@
                 <div id="task-2">
                     <div id="test-task" class="pb-1 task-list">
                         <!-- task card -->
-                        {% for task in tasks %} {% if task.status_id == 3 %}
+                        {% for task in tasks %} {% if task.status_id == 3 and task.user.profile.role_id == 1 %}
                         <div class="card task-box" id="{{ task.id }}">
                             <div class="card-body">
                                 <div class="float-end ms-2">
@@ -67,8 +71,9 @@
                                 </div>
                                 <div>
                                     <p class="fw-bold mb-2">
-                                        <a href="{% url 'tasks-updatetask' task.pk %}" class="text-dark" id="task-name">
-                                            {{ task.task.title }} для компонента '{{ task.comp_title }}'
+                                        <a href="" class="text-dark open_task" id="{{ task.id }}"
+                                           data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
+                                            {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
                                     <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
@@ -140,9 +145,21 @@
 <!-- end row -->
 
 
+<!-- Task modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+        <form action="" method="POST">
+            <input type="hidden" name="id" id="uid" data-url="{% url 'tasks-kanbanboard' %}">
+            {% csrf_token %}
+            <div class="modal-content form">
+            </div>
+        </form>
+    </div>
+</div>
+<!-- end modal -->
 {% endblock %}
-{% block extra_javascript %}
 
+{% block extra_javascript %}
 <!--<script>-->
 <!--var modalDiv = $("#modal-div");-->
 <!--$(".open-modal").on("click", function() {-->
@@ -155,7 +172,7 @@
 <!--  });-->
 <!--});-->
 <!--</script>-->
-
+<script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
 <script>
 //Событие клик на кнопки с классом .entity-btn-params
     $(document).on('click','.entity-btn-params',function(e){
@@ -192,5 +209,32 @@
 <!-- crypto dash init js -->
 <script src="{% static 'js/pages/crypto-dashboard.init.js'%}"></script>
 
+<!-- edit task -->
+<script>
+    $(document).on("click", ".open_task", function (e) {
+        e.preventDefault();
+        let $popup = $("#staticBackdrop");
+        let popup_url = $(this).data("popup-url");
+        $(".modal-content", $popup).load(popup_url, function () {
+          $popup.modal("show");
+        });
+    });
 
+    function editTask(event){
+        let task_id = document.getElementById("uid");
+        task_id.setAttribute("value", event);
+        $.ajax({
+            type: 'GET',
+            data: {
+                'taskid': event
+            },
+            success: function (result) {
+                console.log('Success!');
+            },
+            error: function (result) {
+                console.log('Error!');
+            }
+        });
+    }
+</script>
 {% endblock %}

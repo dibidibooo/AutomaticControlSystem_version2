@@ -55,7 +55,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="tab-content" id="v-pills-tabContent">
-                                <!-- МОП Установка 1 -->
+                                <!-- Установка 1 -->
                                 <div class="tab-pane fade show active" id="location1" role="tabpanel"
                                      aria-labelledby="location1-tab">
                                     <div class="row">
@@ -83,13 +83,17 @@
                                         <p class="card-title-desc">Оборотная вода</p>
                                         <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %}
+                                            {% for error in forms.site1.non_field_errors %}
+                                                <div class="mb-2 text-danger">{{ error }}</div>
+                                            {% endfor %}
+
                                             {% for field in forms.site1 %}
                                                 {% if field.name == 'action' %}
                                                     <input type="hidden" name="action" value="{{ forms.site1.action.value }}" id="id_action">
                                                 {% else %}
                                                     <div class="mb-3" style="display: flex; align-items: center;">
                                                         <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                        <input class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
 {#                                                        {% for component in components %}#}
 {#                                                            {% if field.name in component.title %}#}
 {#                                                                <span class="input-group-text" id="#">{{ component.measurement }}</span>#}
@@ -108,15 +112,19 @@
                                     <div id="componentcard12" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %}
+                                            {% for error in forms.site2.non_field_errors %}
+                                                <div class="mb-2 text-danger">{{ error }}</div>
+                                            {% endfor %}
+
                                             {% for field in forms.site2 %}
                                                 {% if field.name == 'action' %}
                                                     <input type="hidden" name="action" value="{{ forms.site2.action.value }}" id="id_action">
                                                 {% else %}
                                                     <div class="mb-3" style="display: flex; align-items: center;">
                                                         <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                        <input class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
                                                     </div>
                                                 {% endif %}
                                             {% endfor %}
@@ -138,7 +146,7 @@
                                                 {% else %}
                                                     <div class="mb-3" style="display: flex; align-items: center;">
                                                         <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                        <input class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
                                                     </div>
                                                 {% endif %}
                                             {% endfor %}
@@ -151,7 +159,8 @@
                                         </form>
                                     </div>
                                 </div>
-                                <!-- МОП Установка 2 -->
+
+                                <!-- Установка 2 -->
                                 <div class="tab-pane fade show " id="location2" role="tabpanel"
                                      aria-labelledby="location2-tab">
                                     <div class="row">
@@ -181,7 +190,7 @@
                                                 {% else %}
                                                     <div class="mb-3" style="display: flex; align-items: center;">
                                                         <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                        <input class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
                                                     </div>
                                                 {% endif %}
                                             {% endfor %}
@@ -203,7 +212,7 @@
                                                 {% else %}
                                                     <div class="mb-3" style="display: flex; align-items: center;">
                                                         <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                        <input class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
                                                     </div>
                                                 {% endif %}
                                             {% endfor %}
@@ -214,7 +223,8 @@
                                         </form>
                                     </div>
                                 </div>
-                                <!-- МОП Установка 3 -->
+
+                                <!-- Установка 3 -->
                                 <div class="tab-pane fade show " id="location3" role="tabpanel"
                                      aria-labelledby="location3-tab">
                                     <div class="row">
@@ -231,7 +241,6 @@
                                         </div>
                                     </div>
 
-                                    <!-- МОП 6 -->
                                     <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                         {% csrf_token %}
                                         <div class="row">
@@ -244,7 +253,7 @@
                                                 </select>
                                             </div>
                                         </div>
-
+                                        <!-- МОП 6 -->
                                         <div id="componentcard311" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели</h4>
                                             <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
@@ -255,7 +264,7 @@
                                                     {% else %}
                                                         <div class="mb-3" style="display: flex; align-items: center;">
                                                             <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                            <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                            <input class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
                                                         </div>
                                                     {% endif %}
                                                 {% endfor %}
@@ -267,46 +276,8 @@
                                         </div>
                                     </form>
                                 </div>
-                                <!-- МОП Установка 4 -->
-                                <div class="tab-pane fade show " id="location5" role="tabpanel"
-                                     aria-labelledby="location5-tab">
-                                    <div class="row">
-                                        <div class="col-lg-6">
-                                            <div class="mb-3">
-                                                <h4 class="card-title">Место отбора проб</h4>
-                                                <select class="form-select" id="plant_unit5" name="plant_unit5">
-                                                    <option selected>Выбрать..</option>
-                                                    <option value="12">
-                                                        Очистные сооружения поз.119. С колодца промстоков №1 (точка №4 вход)
-                                                    </option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- МОП 12 -->
-                                    <div id="componentcard51" class="card-body">
-                                        <h4 class="card-title">Контролируемые показатели МОС 1</h4>
-                                        <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
-                                            {% csrf_token %}
-                                            {% for field in forms.site12 %}
-                                                {% if field.name == 'action' %}
-                                                    <input type="hidden" name="action" value="{{ forms.site12.action.value }}" id="id_action">
-                                                {% else %}
-                                                    <div class="mb-3" style="display: flex; align-items: center;">
-                                                        <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
-                                                    </div>
-                                                {% endif %}
-                                            {% endfor %}
-                                            <button type="submit"
-                                                    class="btn btn-primary waves-effect waves-light"
-                                                    id="sa-custom">Отправить
-                                            </button>
-                                        </form>
-                                    </div>
-                                </div>
-                                <!-- МОП Установка 5 -->
+
+                                <!-- Установка 4 -->
                                 <div class="tab-pane fade show " id="location4" role="tabpanel"
                                      aria-labelledby="location4-tab">
                                     <div class="row">
@@ -346,7 +317,7 @@
                                                 {% else %}
                                                     <div class="mb-3" style="display: flex; align-items: center;">
                                                         <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                        <input class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
                                                     </div>
                                                 {% endif %}
                                             {% endfor %}
@@ -368,7 +339,7 @@
                                                 {% else %}
                                                     <div class="mb-3" style="display: flex; align-items: center;">
                                                         <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                        <input class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
                                                     </div>
                                                 {% endif %}
                                             {% endfor %}
@@ -390,7 +361,7 @@
                                                 {% else %}
                                                     <div class="mb-3" style="display: flex; align-items: center;">
                                                         <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                        <input class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
                                                     </div>
                                                 {% endif %}
                                             {% endfor %}
@@ -412,7 +383,7 @@
                                                 {% else %}
                                                     <div class="mb-3" style="display: flex; align-items: center;">
                                                         <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                        <input class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
                                                     </div>
                                                 {% endif %}
                                             {% endfor %}
@@ -434,6 +405,46 @@
                                                 {% else %}
                                                     <div class="mb-3" style="display: flex; align-items: center;">
                                                         <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                                                        <input class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                    </div>
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit"
+                                                    class="btn btn-primary waves-effect waves-light"
+                                                    id="sa-custom">Отправить
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+
+                                <!-- Установка 5 -->
+                                <div class="tab-pane fade show " id="location5" role="tabpanel"
+                                     aria-labelledby="location5-tab">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="mb-3">
+                                                <h4 class="card-title">Место отбора проб</h4>
+                                                <select class="form-select" id="plant_unit5" name="plant_unit5">
+                                                    <option selected>Выбрать..</option>
+                                                    <option value="12">
+                                                        Очистные сооружения поз.119. С колодца промстоков №1 (точка №4 вход)
+                                                    </option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- МОП 12 -->
+                                    <div id="componentcard51" class="card-body">
+                                        <h4 class="card-title">Контролируемые показатели МОС 1</h4>
+                                        <p class="card-title-desc">Оборотная вода</p>
+                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                            {% csrf_token %}
+                                            {% for field in forms.site12 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site12.action.value }}" id="id_action">
+                                                {% else %}
+                                                    <div class="mb-3" style="display: flex; align-items: center;">
+                                                        <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
                                                         <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
                                                     </div>
                                                 {% endif %}
@@ -445,7 +456,8 @@
                                         </form>
                                     </div>
                                 </div>
-                                <!-- МОП Установка 6 -->
+
+                                <!-- Установка 6 -->
                                 <div class="tab-pane fade show " id="location6" role="tabpanel"
                                      aria-labelledby="location6-tab">
                                     <div class="row">
@@ -476,7 +488,7 @@
                                                 {% else %}
                                                     <div class="mb-3" style="display: flex; align-items: center;">
                                                         <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                        <input class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
                                                     </div>
                                                 {% endif %}
                                             {% endfor %}
@@ -498,7 +510,7 @@
                                                 {% else %}
                                                     <div class="mb-3" style="display: flex; align-items: center;">
                                                         <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                        <input class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                        <input class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
                                                     </div>
                                                 {% endif %}
                                             {% endfor %}
@@ -533,4 +545,26 @@
 <!-- Sweet Alerts -->
 <script src="{% static 'libs/sweetalert2/dist/sweetalert2.min.js' %}"></script>
 <script src="{% static 'js/pages/sweet-alerts.init.js' %}"></script>
+
+<script>
+(function () {
+  'use strict'
+
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  let forms = document.querySelectorAll('.needs-validation')
+
+  // Loop over them and prevent submission
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+</script>
 {% endblock %}
