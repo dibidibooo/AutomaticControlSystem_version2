@@ -212,7 +212,7 @@
         "model": "projects.component",
         "pk": 1,
         "fields": {
-            "title": "[1|1] Нефтепродукты",
+            "title": "[1|1] Нефтепродукт",
             "measurement": "мг/дм³",
             "limit_lo": null,
             "limit_hi": "25",
@@ -392,7 +392,7 @@
         "model": "projects.component",
         "pk": 13,
         "fields": {
-            "title": "[1|2] Нефтепродукты",
+            "title": "[1|2] Нефтепродукт",
             "measurement": "мг/дм³",
             "limit_lo": null,
             "limit_hi": "25",
@@ -692,7 +692,7 @@
         "model": "projects.component",
         "pk": 33,
         "fields": {
-            "title": "[2|1] Нефтепродукты",
+            "title": "[2|1] Нефтепродукт",
             "measurement": "мг/дм³",
             "limit_lo": null,
             "limit_hi": "",
@@ -842,7 +842,7 @@
         "model": "projects.component",
         "pk": 43,
         "fields": {
-            "title": "[2|2] Нефтепродукты",
+            "title": "[2|2] Нефтепродукт",
             "measurement": "мг/дм³",
             "limit_lo": null,
             "limit_hi": "3",
@@ -992,7 +992,7 @@
         "model": "projects.component",
         "pk": 53,
         "fields": {
-            "title": "[3|1] Нефтепродукты",
+            "title": "[3|1] Нефтепродукт",
             "measurement": "мг/дм³",
             "limit_lo": null,
             "limit_hi": "3",
@@ -1247,7 +1247,7 @@
         "model": "projects.component",
         "pk": 70,
         "fields": {
-            "title": "[4|2] Нефтепродукты",
+            "title": "[4|2] Нефтепродукт",
             "measurement": "мг/дм³",
             "limit_lo": null,
             "limit_hi": "",
@@ -1502,7 +1502,7 @@
         "model": "projects.component",
         "pk": 87,
         "fields": {
-            "title": "[4|4] Нефтепродукты",
+            "title": "[4|4] Нефтепродукт",
             "measurement": "мг/дм³",
             "limit_lo": null,
             "limit_hi": "5",
@@ -1547,7 +1547,7 @@
         "model": "projects.component",
         "pk": 90,
         "fields": {
-            "title": "[5|1] Нефтепродукты",
+            "title": "[5|1] Нефтепродукт",
             "measurement": "мг/дм³",
             "limit_lo": null,
             "limit_hi": "3500",
@@ -1682,7 +1682,7 @@
         "model": "projects.component",
         "pk": 99,
         "fields": {
-            "title": "[6|1] Нефтепродукты",
+            "title": "[6|1] Нефтепродукт",
             "measurement": "мг/дм³",
             "limit_lo": null,
             "limit_hi": "48",
@@ -2211,17 +2211,17 @@
         "model": "projects.componentssite6",
         "pk": 9,
         "fields": {
-            "hardness": 5,
-            "hardness_calcium": 5,
-            "ph": 5,
-            "salt": 5,
-            "chlorides": 5,
-            "sulfates": 5,
-            "oil_prod": 5,
-            "suspended_subst": 5,
-            "alkalinity_phenols": 5,
-            "alkalinity": 5,
-            "iron": 5,
+            "hardness": 10,
+            "hardness_calcium": 10,
+            "ph": 8,
+            "salt": 10,
+            "chlorides": 10,
+            "sulfates": 10,
+            "oil_prod": 10,
+            "suspended_subst": 10,
+            "alkalinity_phenols": 10,
+            "alkalinity": 10,
+            "iron": 10,
             "datetime": "2022-04-12T13:53:37.647",
             "sampling_site": 6,
             "water_type": 2
@@ -2372,6 +2372,21 @@
             "active_subst": 8,
             "ammonium": 8,
             "datetime": "2022-04-01T18:33:46.663",
+            "sampling_site": 12,
+            "water_type": 1
+        }
+    },
+    {
+        "model": "projects.componentssite12",
+        "pk": 3,
+        "fields": {
+            "oil_prod": 4000,
+            "suspended_subst": 20,
+            "ph": 10,
+            "oxygen_chem": 10,
+            "active_subst": 10,
+            "ammonium": 10,
+            "datetime": "2022-04-14T15:07:19.136",
             "sampling_site": 12,
             "water_type": 1
         }

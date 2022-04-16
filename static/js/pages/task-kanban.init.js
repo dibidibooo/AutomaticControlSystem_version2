@@ -67,7 +67,6 @@ dragula([document.getElementById("upcoming-task"),document.getElementById("inpro
                 }
             });
                 window.location.reload();
-
         }
         setTimeout('send_data_2(id)', 200);
 

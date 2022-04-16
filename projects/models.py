@@ -1,4 +1,3 @@
-from django.contrib.auth import get_user_model
 from django.db import models
 
 
@@ -50,7 +49,7 @@ class Component(models.Model):
 
 # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
 class ComponentsSite1(models.Model):
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
     suspended_solids = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные твердые частицы')
     ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
     phosphorus = models.IntegerField(null=True, blank=True, verbose_name='Фосфор')
@@ -69,7 +68,7 @@ class ComponentsSite1(models.Model):
 
 # Водоблок - 2 | Установка АВТ напротив погружного холодильника №42
 class ComponentsSite2(models.Model):
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
     ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
     suspended_solids = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные твердые частицы')
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
@@ -103,7 +102,7 @@ class ComponentsSite4(models.Model):
     salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
     chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
     sulfates = models.IntegerField(null=True, blank=True, verbose_name='Сульфаты')
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
     suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные вещества')
     alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
     iron = models.IntegerField(null=True, blank=True, verbose_name='Железо')
@@ -120,7 +119,7 @@ class ComponentsSite5(models.Model):
     salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
     chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
     sulfates = models.IntegerField(null=True, blank=True, verbose_name='Сульфаты')
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
     suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Общие взвешенные вещества')
     alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
     iron = models.IntegerField(null=True, blank=True, verbose_name='Железо')
@@ -137,7 +136,7 @@ class ComponentsSite6(models.Model):
     salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
     chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
     sulfates = models.IntegerField(null=True, blank=True, verbose_name='Сульфаты')
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
     suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Общие Взвешенные вещества')
     alkalinity_phenols = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность по фенолу')
     alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
@@ -168,7 +167,7 @@ class ComponentsSite8(models.Model):
     ph = models.IntegerField(null=True, blank=True, verbose_name='Значение pH')
     chlorides = models.IntegerField(null=True, blank=True, verbose_name='Хлориды')
     phosphorus = models.IntegerField(null=True, blank=True, verbose_name='Фосфор')
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
     alkalinity = models.IntegerField(null=True, blank=True, verbose_name='Щёлочность общая')
     hardness_calcium = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость кальциевая (кальций, мг/л)')
     hardness = models.IntegerField(null=True, blank=True, verbose_name='Жёсткость общая')
@@ -199,7 +198,7 @@ class ComponentsSite9(models.Model):
 # УГОВ | Подача на градирню в районе 77-ТI-205 77-SN-007
 class ComponentsSite10(models.Model):
     chlorine = models.IntegerField(null=True, blank=True, verbose_name='Остаточный хлор')
-    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукты')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
     salt = models.IntegerField(null=True, blank=True, verbose_name='Солесодержание')
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
     sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component10')
@@ -257,36 +256,6 @@ class ComponentsSite14(models.Model):
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
     sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component14')
     water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component14')
-
-
-# class Task(models.Model):
-#     title = models.CharField(max_length=100, verbose_name='Задача')
-#     user = models.ForeignKey(get_user_model(), related_name='task_assign', on_delete=models.CASCADE)
-#     start_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата назначения задачи')
-#     deadline = models.DateTimeField(null=True, blank=True, verbose_name='Срок выполнения задачи')
-#     completion_date = models.DateTimeField(null=True, blank=True, verbose_name='Дата и время выполнения задачи')
-#     comp_title = models.CharField(max_length=100, null=True, blank=True, verbose_name='Название компонента')
-#     sampling_site = models.ForeignKey(
-#         'projects.SamplingSite',
-#         null=True,
-#         blank=True,
-#         related_name='task_assign',
-#         on_delete=models.CASCADE,
-#         verbose_name='Место отбора проб'
-#     )
-#     plant_unit = models.ForeignKey(
-#         'projects.PlantUnit',
-#         related_name='task_assign',
-#         on_delete=models.CASCADE,
-#         verbose_name='Установка'
-#     )
-#     notification = models.ForeignKey(
-#         'projects.Notification',
-#         related_name='task_assign',
-#         on_delete=models.CASCADE,
-#         verbose_name='Уведомление'
-#     )
-#     status = models.ForeignKey('projects.Status', related_name='task_assign', on_delete=models.CASCADE, default=1)
 
 
 class Notification(models.Model):

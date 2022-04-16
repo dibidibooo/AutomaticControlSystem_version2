@@ -28,12 +28,11 @@
                 <i class="fa fa-fw fa-bars"></i>
             </button>
 
-            <div class="dropdown dropdown-mega d-none d-lg-block ms-2">
-
-            </div>
         </div>
 
         <div class="d-flex">
+
+
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -55,6 +54,53 @@
                     </a>
                 </div>
             </div>
+
+
+            <div class="dropdown d-inline-block">
+                <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
+                        data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="bx bx-bell bx-tada"></i>
+                    <span class="badge bg-danger rounded-pill">3</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0"
+                     aria-labelledby="page-header-notifications-dropdown">
+                    <div class="p-3">
+                        <div class="row align-items-center">
+                            <div class="col">
+                                <h6 class="m-0" key="t-notifications"> <b>Уведомления</b></h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div data-simplebar style="max-height: 230px;">
+                        {% for task in tasks %}
+                        <a href="javascript: void(0);" class="text-reset notification-item">
+                            <li class="event-list active">
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0 me-3">
+                                        <h5 class="font-size-14">
+                                            {{ task.start_date|date:"d M" }}
+                                            <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                        </h5>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div>
+                                            Компонент '{{ task.comp_title }}'
+                                            <br>{{ task.notification }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </a>
+                        {% endfor %}
+                    </div>
+                    <div class="p-2 border-top d-grid">
+                        <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                            <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">Подробнее..</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="dropdown d-none d-lg-inline-block ms-1">
                 <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
