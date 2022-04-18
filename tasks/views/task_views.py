@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
@@ -45,8 +46,11 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             deadline = request.POST['deadline']
             status = request.POST['status']
             user = request.POST['user']
-            task = Task.objects.filter(id=id)
-            task.update(deadline=deadline, status=status, user_id=int(user))
+            task = Task.objects.get(id=id)
+            task.deadline = deadline
+            task.status_id = int(status)
+            task.user_id = int(user)
+            task.save()
             return redirect('tasks-kanbanboard')
         elif 'add_comment_button' in request.POST:
             id = request.POST['id']
