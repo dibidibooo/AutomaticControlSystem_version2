@@ -83,9 +83,9 @@
                                         <p class="card-title-desc">Оборотная вода</p>
                                         <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %}
-                                            {% for error in forms.site1.non_field_errors %}
+                                            {% if forms.site1.non_field_errors %}{% for error in forms.site1.non_field_errors %}
                                                 <div class="mb-2 text-danger">{{ error }}</div>
-                                            {% endfor %}
+                                            {% endfor %}{% endif %}
 
                                             {% for field in forms.site1 %}
                                                 {% if field.name == 'action' %}
@@ -112,11 +112,11 @@
                                     <div id="componentcard12" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %}
-                                            {% for error in forms.site2.non_field_errors %}
+                                            {% if forms.site2.non_field_errors %}{% for error in forms.site2.non_field_errors %}
                                                 <div class="mb-2 text-danger">{{ error }}</div>
-                                            {% endfor %}
+                                            {% endfor %}{% endif %}
 
                                             {% for field in forms.site2 %}
                                                 {% if field.name == 'action' %}
