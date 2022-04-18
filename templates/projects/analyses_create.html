@@ -1,10 +1,10 @@
 {% extends 'partials/base.html' %} {% load static %} {% block extra_css %}
 <!-- Select-->
-<link href="{% static 'libs/select2/dist/css/select2.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'libs/select2/dist/css/select2.min.css' %}" rel="stylesheet" type="text/css"/>
 <!-- Sweet Alert-->
-<link href="{% static 'libs/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet" type="text/css" /> {% endblock %} {% block contents %}
+<link href="{% static 'libs/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet" type="text/css"/> {% endblock %} {% block contents %}
 <div class="row">
-    <div class="col-xl-6">
+    <div class="col-xl-4">
         <div class="checkout-tabs">
             <div class="row">
                 <!-- Установки -->
@@ -38,7 +38,7 @@
                                 <!-- Установка 1 -->
                                 <div class="tab-pane fade show active" id="location1" role="tabpanel" aria-labelledby="location1-tab">
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="mb-3">
                                                 <h4 class="card-title">Место отбора проб</h4>
                                                 <select class="form-select" id="plant_unit1" name="plant_unit1">
@@ -65,10 +65,14 @@
                                             <div class="mb-2 text-danger">{{ error }}</div>
                                             {% endfor %} {% for field in forms.site1 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site1.action.value }}" id="id_action"> {% else %}
-                                            <div class="mb-3" style="display: flex; align-items: center;">
-                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            <div class="row">
+                                                <div class="col-lg-7"> {{field.label}}</div>
+                                                <div class="col-lg-5">{{field}}</div>
                                             </div>
+                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
+                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -83,10 +87,14 @@
                                             <div class="mb-2 text-danger">{{ error }}</div>
                                             {% endfor %} {% for field in forms.site2 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site2.action.value }}" id="id_action"> {% else %}
-                                            <div class="mb-3" style="display: flex; align-items: center;">
-                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            <div class="row">
+                                                <div class="col-lg-7"> {{field.label}}</div>
+                                                <div class="col-lg-5">{{field}}</div>
                                             </div>
+                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
+                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -99,10 +107,14 @@
                                         <form class="needs-validation" novalidate action="" method="POST">
                                             {% csrf_token %} {% for field in forms.site3 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site3.action.value }}" id="id_action"> {% else %}
-                                            <div class="mb-3" style="display: flex; align-items: center;">
-                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            <div class="row">
+                                                <div class="col-lg-7"> {{field.label}}</div>
+                                                <div class="col-lg-5">{{field}}</div>
                                             </div>
+                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
+                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <div>
                                                 <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
@@ -115,7 +127,7 @@
                                 <!-- Установка 2 -->
                                 <div class="tab-pane fade show " id="location2" role="tabpanel" aria-labelledby="location2-tab">
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="mb-3">
                                                 <h4 class="card-title">Место отбора проб</h4>
                                                 <select class="form-select" id="plant_unit2" name="plant_unit2">
@@ -136,10 +148,14 @@
                                         <form class="needs-validation" novalidate action="" method="POST">
                                             {% csrf_token %} {% for field in forms.site4 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site4.action.value }}" id="id_action"> {% else %}
-                                            <div class="mb-3" style="display: flex; align-items: center;">
-                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            <div class="row">
+                                                <div class="col-lg-7"> {{field.label}}</div>
+                                                <div class="col-lg-5">{{field}}</div>
                                             </div>
+                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
+                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -152,10 +168,14 @@
                                         <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site5 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site5.action.value }}" id="id_action"> {% else %}
-                                            <div class="mb-3" style="display: flex; align-items: center;">
-                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            <div class="row">
+                                                <div class="col-lg-7"> {{field.label}}</div>
+                                                <div class="col-lg-5">{{field}}</div>
                                             </div>
+                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
+                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -166,7 +186,7 @@
                                 <!-- Установка 3 -->
                                 <div class="tab-pane fade show " id="location3" role="tabpanel" aria-labelledby="location3-tab">
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="mb-3">
                                                 <h4 class="card-title">Место отбора проб</h4>
                                                 <select class="form-select" id="plant_unit3" name="plant_unit3">
@@ -197,10 +217,14 @@
                                             <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                                 {% csrf_token %} {% for field in forms.site6 %} {% if field.name == 'action' %}
                                                 <input type="hidden" name="action" value="{{ forms.site6.action.value }}" id="id_action"> {% else %}
-                                                <div class="mb-3" style="display: flex; align-items: center;">
-                                                    <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                    <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                                <div class="row">
+                                                    <div class="col-lg-7"> {{field.label}}</div>
+                                                    <div class="col-lg-5">{{field}}</div>
                                                 </div>
+                                                <!--                                                <div class="mb-3" style="display: flex; align-items: center;">-->
+                                                <!--                                                    <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                                <!--                                                    <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                                <!--                                                </div>-->
                                                 {% endif %} {% endfor %}
                                                 <button type="submit" class="btn btn-primary waves-effect waves-light mt-2" id="#">Отправить
                                                 </button>
@@ -212,7 +236,7 @@
                                 <!-- Установка 4 -->
                                 <div class="tab-pane fade show " id="location4" role="tabpanel" aria-labelledby="location4-tab">
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="mb-3">
                                                 <h4 class="card-title">Место отбора проб</h4>
                                                 <select class="form-select" id="plant_unit4" name="plant_unit4">
@@ -243,10 +267,14 @@
                                         <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site7 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site7.action.value }}" id="id_action"> {% else %}
-                                            <div class="mb-3" style="display: flex; align-items: center;">
-                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            <div class="row">
+                                                <div class="col-lg-7"> {{field.label}}</div>
+                                                <div class="col-lg-5">{{field}}</div>
                                             </div>
+                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
+                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -259,10 +287,14 @@
                                         <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site8 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site8.action.value }}" id="id_action"> {% else %}
-                                            <div class="mb-3" style="display: flex; align-items: center;">
-                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            <div class="row">
+                                                <div class="col-lg-7"> {{field.label}}</div>
+                                                <div class="col-lg-5">{{field}}</div>
                                             </div>
+                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
+                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -275,10 +307,14 @@
                                         <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site9 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site9.action.value }}" id="id_action"> {% else %}
-                                            <div class="mb-3" style="display: flex; align-items: center;">
-                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            <div class="row">
+                                                <div class="col-lg-7"> {{field.label}}</div>
+                                                <div class="col-lg-5">{{field}}</div>
                                             </div>
+                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
+                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -291,10 +327,14 @@
                                         <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site10 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site10.action.value }}" id="id_action"> {% else %}
-                                            <div class="mb-3" style="display: flex; align-items: center;">
-                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            <div class="row">
+                                                <div class="col-lg-7"> {{field.label}}</div>
+                                                <div class="col-lg-5">{{field}}</div>
                                             </div>
+                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
+                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -307,10 +347,14 @@
                                         <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site11 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site11.action.value }}" id="id_action"> {% else %}
-                                            <div class="mb-3" style="display: flex; align-items: center;">
-                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            <div class="row">
+                                                <div class="col-lg-7"> {{field.label}}</div>
+                                                <div class="col-lg-5">{{field}}</div>
                                             </div>
+                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
+                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -321,7 +365,7 @@
                                 <!-- Установка 5 -->
                                 <div class="tab-pane fade show " id="location5" role="tabpanel" aria-labelledby="location5-tab">
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="mb-3">
                                                 <h4 class="card-title">Место отбора проб</h4>
                                                 <select class="form-select" id="plant_unit5" name="plant_unit5">
@@ -340,10 +384,14 @@
                                         <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site12 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site12.action.value }}" id="id_action"> {% else %}
-                                            <div class="mb-3" style="display: flex; align-items: center;">
-                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                <input required class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            <div class="row">
+                                                <div class="col-lg-7"> {{field.label}}</div>
+                                                <div class="col-lg-5">{{field}}</div>
                                             </div>
+                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
+                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                            <!--                                                <input required class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -354,7 +402,7 @@
                                 <!-- Установка 6 -->
                                 <div class="tab-pane fade show " id="location6" role="tabpanel" aria-labelledby="location6-tab">
                                     <div class="row">
-                                        <div class="col-lg-6">
+                                        <div class="col-lg-12">
                                             <div class="mb-3">
                                                 <h4 class="card-title">Место отбора проб</h4>
                                                 <select class="form-select" id="plant_unit6" name="plant_unit6">
@@ -376,10 +424,14 @@
                                         <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site13 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site13.action.value }}" id="id_action"> {% else %}
-                                            <div class="mb-3" style="display: flex; align-items: center;">
-                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            <div class="row">
+                                                <div class="col-lg-7"> {{field.label}}</div>
+                                                <div class="col-lg-5">{{field}}</div>
                                             </div>
+                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
+                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -392,10 +444,14 @@
                                         <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site14 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site14.action.value }}" id="id_action"> {% else %}
-                                            <div class="mb-3" style="display: flex; align-items: center;">
-                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>
-                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">
+                                            <div class="row">
+                                                <div class="col-lg-7"> {{field.label}}</div>
+                                                <div class="col-lg-5">{{field}}</div>
                                             </div>
+                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
+                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
+                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
+                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -446,5 +502,14 @@
                 }, false)
             })
     })()
+
+
+
+
+
+
+
+
+
 </script>
 {% endblock %}
