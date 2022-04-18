@@ -8,7 +8,7 @@
         <div class="checkout-tabs">
             <div class="row">
                 <!-- Установки -->
-                <div class="col-xl-3 col-sm-3 mb-3">
+                <div class="col-xl-3 col-sm-3">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="location1-tab" data-bs-toggle="pill" href="#location1" role="tab" aria-controls="location1" aria-selected="true">
                             <p class="fw-bold mt-3">Водоблок-2</p>
@@ -39,21 +39,19 @@
                                 <div class="tab-pane fade show active" id="location1" role="tabpanel" aria-labelledby="location1-tab">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <div class="mb-3">
-                                                <h4 class="card-title">Место отбора проб</h4>
-                                                <select class="form-select" id="plant_unit1" name="plant_unit1">
-                                                    <option selected>Выбрать..</option>
-                                                    <option name="selectcomp1" value="1">
-                                                        Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
-                                                    </option>
-                                                    <option name="selectcomp2" value="2">
-                                                        Установка АВТ напротив погружного холодильника №42
-                                                    </option>
-                                                    <option name="selectcomp3" value="3">
-                                                        Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12
-                                                    </option>
-                                                </select>
-                                            </div>
+                                            <h4 class="card-title">Место отбора проб</h4>
+                                            <select class="form-select" id="plant_unit1" name="plant_unit1">
+                                                <option selected>Выбрать..</option>
+                                                <option name="selectcomp1" value="1">
+                                                    Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
+                                                </option>
+                                                <option name="selectcomp2" value="2">
+                                                    Установка АВТ напротив погружного холодильника №42
+                                                </option>
+                                                <option name="selectcomp3" value="3">
+                                                    Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12
+                                                </option>
+                                            </select>
                                         </div>
                                     </div>
                                     <!-- МОП 1 -->
@@ -66,13 +64,16 @@
                                             {% endfor %} {% for field in forms.site1 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site1.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-7"> {{field.label}}</div>
-                                                <div class="col-lg-5">{{field}}</div>
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
-                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -88,13 +89,16 @@
                                             {% endfor %} {% for field in forms.site2 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site2.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-7"> {{field.label}}</div>
-                                                <div class="col-lg-5">{{field}}</div>
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
-                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -108,13 +112,16 @@
                                             {% csrf_token %} {% for field in forms.site3 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site3.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-7"> {{field.label}}</div>
-                                                <div class="col-lg-5">{{field}}</div>
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
-                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <div>
                                                 <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
@@ -128,17 +135,15 @@
                                 <div class="tab-pane fade show " id="location2" role="tabpanel" aria-labelledby="location2-tab">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <div class="mb-3">
-                                                <h4 class="card-title">Место отбора проб</h4>
-                                                <select class="form-select" id="plant_unit2" name="plant_unit2">
-                                                    <option selected>Выбрать..</option>
-                                                    <option value="4">Аналитическая точка насосов Р-02А/В/С
-                                                    </option>
-                                                    <option value="5">Аналитическая точка выкидных насосов
-                                                        Р-01А/В/С/Д
-                                                    </option>
-                                                </select>
-                                            </div>
+                                            <h4 class="card-title">Место отбора проб</h4>
+                                            <select class="form-select" id="plant_unit2" name="plant_unit2">
+                                                <option selected>Выбрать..</option>
+                                                <option value="4">Аналитическая точка насосов Р-02А/В/С
+                                                </option>
+                                                <option value="5">Аналитическая точка выкидных насосов
+                                                    Р-01А/В/С/Д
+                                                </option>
+                                            </select>
                                         </div>
                                     </div>
                                     <!-- МОП 4 -->
@@ -149,13 +154,16 @@
                                             {% csrf_token %} {% for field in forms.site4 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site4.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-7"> {{field.label}}</div>
-                                                <div class="col-lg-5">{{field}}</div>
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
-                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -169,13 +177,16 @@
                                             {% csrf_token %} {% for field in forms.site5 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site5.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-7"> {{field.label}}</div>
-                                                <div class="col-lg-5">{{field}}</div>
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
-                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -185,9 +196,11 @@
 
                                 <!-- Установка 3 -->
                                 <div class="tab-pane fade show " id="location3" role="tabpanel" aria-labelledby="location3-tab">
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="mb-3">
+                                    <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        {% csrf_token %}
+
+                                        <div class="row">
+                                            <div class="col-lg-6">
                                                 <h4 class="card-title">Место отбора проб</h4>
                                                 <select class="form-select" id="plant_unit3" name="plant_unit3">
                                                     <option selected>Выбрать..</option>
@@ -196,14 +209,9 @@
                                                     </option>
                                                 </select>
                                             </div>
-                                        </div>
-                                    </div>
 
-                                    <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
-                                        {% csrf_token %}
-                                        <div class="row">
-                                            <div class="col-lg-6 mb-3">
-                                                <label class="card-title" for="water_type">Контролируемая вода</label>
+                                            <div class="col-lg-6">
+                                                <h4 class="card-title" for="water_type">Контролируемая вода</h4>
                                                 <select class="form-select" name="water_type" id="water_type">
                                                     <option selected>Выбрать..</option>
                                                     <option value="1">Оборотная</option>
@@ -218,13 +226,16 @@
                                                 {% csrf_token %} {% for field in forms.site6 %} {% if field.name == 'action' %}
                                                 <input type="hidden" name="action" value="{{ forms.site6.action.value }}" id="id_action"> {% else %}
                                                 <div class="row">
-                                                    <div class="col-lg-7"> {{field.label}}</div>
-                                                    <div class="col-lg-5">{{field}}</div>
+                                                    <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                    <div class="col-lg-6">
+                                                        <div class="input-group">
+                                                            {{field}}
+                                                            <div class="input-group-prepend">
+                                                                <span class="input-group-text">ед.</span>
+                                                            </div>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                <!--                                                <div class="mb-3" style="display: flex; align-items: center;">-->
-                                                <!--                                                    <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                                <!--                                                    <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                                <!--                                                </div>-->
                                                 {% endif %} {% endfor %}
                                                 <button type="submit" class="btn btn-primary waves-effect waves-light mt-2" id="#">Отправить
                                                 </button>
@@ -237,27 +248,25 @@
                                 <div class="tab-pane fade show " id="location4" role="tabpanel" aria-labelledby="location4-tab">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <div class="mb-3">
-                                                <h4 class="card-title">Место отбора проб</h4>
-                                                <select class="form-select" id="plant_unit4" name="plant_unit4">
-                                                    <option selected>Выбрать..</option>
-                                                    <option value="7">
-                                                        Трубопровод Урал (в районе клапанной сборки позиций 77-FV-203) 77-SN-001
-                                                    </option>
-                                                    <option value="8">
-                                                        Выход из ёмкости 77-ТК-103 77-SN-004
-                                                    </option>
-                                                    <option value="9">
-                                                        На входе в боковой фильтр позиции 77-Z-003 77-SN-006
-                                                    </option>
-                                                    <option value="10">
-                                                        Подача на градирню в районе 77-ТI-205 77-SN-007
-                                                    </option>
-                                                    <option value="11">
-                                                        На выходе с бокового фильтра 77-Z-003, 77-SN-008
-                                                    </option>
-                                                </select>
-                                            </div>
+                                            <h4 class="card-title">Место отбора проб</h4>
+                                            <select class="form-select" id="plant_unit4" name="plant_unit4">
+                                                <option selected>Выбрать..</option>
+                                                <option value="7">
+                                                    Трубопровод Урал (в районе клапанной сборки позиций 77-FV-203) 77-SN-001
+                                                </option>
+                                                <option value="8">
+                                                    Выход из ёмкости 77-ТК-103 77-SN-004
+                                                </option>
+                                                <option value="9">
+                                                    На входе в боковой фильтр позиции 77-Z-003 77-SN-006
+                                                </option>
+                                                <option value="10">
+                                                    Подача на градирню в районе 77-ТI-205 77-SN-007
+                                                </option>
+                                                <option value="11">
+                                                    На выходе с бокового фильтра 77-Z-003, 77-SN-008
+                                                </option>
+                                            </select>
                                         </div>
                                     </div>
                                     <!-- МОП 7 -->
@@ -268,13 +277,16 @@
                                             {% csrf_token %} {% for field in forms.site7 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site7.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-7"> {{field.label}}</div>
-                                                <div class="col-lg-5">{{field}}</div>
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
-                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -288,13 +300,16 @@
                                             {% csrf_token %} {% for field in forms.site8 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site8.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-7"> {{field.label}}</div>
-                                                <div class="col-lg-5">{{field}}</div>
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
-                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -308,13 +323,16 @@
                                             {% csrf_token %} {% for field in forms.site9 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site9.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-7"> {{field.label}}</div>
-                                                <div class="col-lg-5">{{field}}</div>
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
-                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -328,13 +346,16 @@
                                             {% csrf_token %} {% for field in forms.site10 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site10.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-7"> {{field.label}}</div>
-                                                <div class="col-lg-5">{{field}}</div>
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
-                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -348,13 +369,16 @@
                                             {% csrf_token %} {% for field in forms.site11 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site11.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-7"> {{field.label}}</div>
-                                                <div class="col-lg-5">{{field}}</div>
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
-                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -366,15 +390,13 @@
                                 <div class="tab-pane fade show " id="location5" role="tabpanel" aria-labelledby="location5-tab">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <div class="mb-3">
-                                                <h4 class="card-title">Место отбора проб</h4>
-                                                <select class="form-select" id="plant_unit5" name="plant_unit5">
-                                                    <option selected>Выбрать..</option>
-                                                    <option value="12">
-                                                        Очистные сооружения поз.119. С колодца промстоков №1 (точка №4 вход)
-                                                    </option>
-                                                </select>
-                                            </div>
+                                            <h4 class="card-title">Место отбора проб</h4>
+                                            <select class="form-select" id="plant_unit5" name="plant_unit5">
+                                                <option selected>Выбрать..</option>
+                                                <option value="12">
+                                                    Очистные сооружения поз.119. С колодца промстоков №1 (точка №4 вход)
+                                                </option>
+                                            </select>
                                         </div>
                                     </div>
                                     <!-- МОП 12 -->
@@ -385,13 +407,16 @@
                                             {% csrf_token %} {% for field in forms.site12 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site12.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-7"> {{field.label}}</div>
-                                                <div class="col-lg-5">{{field}}</div>
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
-                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                            <!--                                                <input required class="form-control w-25" type="text" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -403,18 +428,16 @@
                                 <div class="tab-pane fade show " id="location6" role="tabpanel" aria-labelledby="location6-tab">
                                     <div class="row">
                                         <div class="col-lg-12">
-                                            <div class="mb-3">
-                                                <h4 class="card-title">Место отбора проб</h4>
-                                                <select class="form-select" id="plant_unit6" name="plant_unit6">
-                                                    <option selected>Выбрать..</option>
-                                                    <option value="13">
-                                                        Пробоотборник 001 перед БОС / А1–SN-001
-                                                    </option>
-                                                    <option value="14">
-                                                        Сточная вода после биологических очистных сооружений А1–SN-009
-                                                    </option>
-                                                </select>
-                                            </div>
+                                            <h4 class="card-title">Место отбора проб</h4>
+                                            <select class="form-select" id="plant_unit6" name="plant_unit6">
+                                                <option selected>Выбрать..</option>
+                                                <option value="13">
+                                                    Пробоотборник 001 перед БОС / А1–SN-001
+                                                </option>
+                                                <option value="14">
+                                                    Сточная вода после биологических очистных сооружений А1–SN-009
+                                                </option>
+                                            </select>
                                         </div>
                                     </div>
                                     <!-- МОП 13 -->
@@ -425,13 +448,16 @@
                                             {% csrf_token %} {% for field in forms.site13 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site13.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-7"> {{field.label}}</div>
-                                                <div class="col-lg-5">{{field}}</div>
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
-                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -445,13 +471,16 @@
                                             {% csrf_token %} {% for field in forms.site14 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site14.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-7"> {{field.label}}</div>
-                                                <div class="col-lg-5">{{field}}</div>
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
-                                            <!--                                            <div class="mb-3" style="display: flex; align-items: center;">-->
-                                            <!--                                                <label class="mb-0 w-50" for="{{ field.id_for_label }}">{{ field.label }}</label>-->
-                                            <!--                                                <input required class="form-control w-25" type="number" name="{{ field.name }}" id="{{ field.id_for_label }}">-->
-                                            <!--                                            </div>-->
                                             {% endif %} {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                             </button>
@@ -502,6 +531,15 @@
                 }, false)
             })
     })()
+
+
+
+
+
+
+
+
+
 
 
 
