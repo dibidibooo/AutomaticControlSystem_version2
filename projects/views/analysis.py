@@ -62,7 +62,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
                     'site14': Site14Form,
                     }
 
-    success_url = reverse_lazy('projects-createview')
+    success_url = reverse_lazy('projects-projectsgrid')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
