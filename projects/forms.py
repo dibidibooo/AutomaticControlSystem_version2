@@ -14,7 +14,7 @@ class MultipleForm(forms.Form):
 
 # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
 class Site1Form(MultipleForm):
-    oil_prod = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class':'form-control mb-3', 'max':12, 'type': 'number'}), label="Нефтепродукт")
+    oil_prod = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class':'form-control mb-3'}), label="Нефтепродукт")
     suspended_solids = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Общие взвешенные твердые частицы")
     ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="Значение pH")
     phosphorus = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Фосфор")

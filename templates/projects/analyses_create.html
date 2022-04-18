@@ -38,7 +38,7 @@
                                 <!-- Установка 1 -->
                                 <div class="tab-pane fade show active" id="location1" role="tabpanel" aria-labelledby="location1-tab">
                                     <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12 mb-3">
                                             <h4 class="card-title">Место отбора проб</h4>
                                             <select class="form-select" id="plant_unit1" name="plant_unit1">
                                                 <option selected>Выбрать..</option>
@@ -134,7 +134,7 @@
                                 <!-- Установка 2 -->
                                 <div class="tab-pane fade show " id="location2" role="tabpanel" aria-labelledby="location2-tab">
                                     <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12 mb-3">
                                             <h4 class="card-title">Место отбора проб</h4>
                                             <select class="form-select" id="plant_unit2" name="plant_unit2">
                                                 <option selected>Выбрать..</option>
@@ -199,7 +199,7 @@
                                     <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                         {% csrf_token %}
 
-                                        <div class="row">
+                                        <div class="row mb-3">
                                             <div class="col-lg-6">
                                                 <h4 class="card-title">Место отбора проб</h4>
                                                 <select class="form-select" id="plant_unit3" name="plant_unit3">
@@ -247,7 +247,7 @@
                                 <!-- Установка 4 -->
                                 <div class="tab-pane fade show " id="location4" role="tabpanel" aria-labelledby="location4-tab">
                                     <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12 mb-3">
                                             <h4 class="card-title">Место отбора проб</h4>
                                             <select class="form-select" id="plant_unit4" name="plant_unit4">
                                                 <option selected>Выбрать..</option>
@@ -389,7 +389,7 @@
                                 <!-- Установка 5 -->
                                 <div class="tab-pane fade show " id="location5" role="tabpanel" aria-labelledby="location5-tab">
                                     <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12 mb-3">
                                             <h4 class="card-title">Место отбора проб</h4>
                                             <select class="form-select" id="plant_unit5" name="plant_unit5">
                                                 <option selected>Выбрать..</option>
@@ -427,7 +427,7 @@
                                 <!-- Установка 6 -->
                                 <div class="tab-pane fade show " id="location6" role="tabpanel" aria-labelledby="location6-tab">
                                     <div class="row">
-                                        <div class="col-lg-12">
+                                        <div class="col-lg-12 mb-3">
                                             <h4 class="card-title">Место отбора проб</h4>
                                             <select class="form-select" id="plant_unit6" name="plant_unit6">
                                                 <option selected>Выбрать..</option>
@@ -514,7 +514,6 @@
 <script>
     (function() {
         'use strict'
-
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         let forms = document.querySelectorAll('.needs-validation')
 
@@ -531,23 +530,5 @@
                 }, false)
             })
     })()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </script>
 {% endblock %}
