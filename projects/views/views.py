@@ -7,10 +7,6 @@ from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic import DetailView, ListView
 
-<<<<<<< HEAD:projects/views/analysis.py
-from projects.views.tasks import TaskCreate
-=======
->>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051:projects/views/views.py
 from projects.forms import (
     Site1Form,
     Site2Form,
@@ -655,8 +651,6 @@ class ResultsView(LoginRequiredMixin, View):
         except ComponentsSite6.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
-<<<<<<< HEAD:projects/views/analysis.py
-=======
 
 
 class TaskCreate:
@@ -766,4 +760,3 @@ class TaskCreate:
             'components': components,
         }
         return render(request, 'static/js/mini-chart.js', context)
->>>>>>> e28073afb5c0fe1e25e08d777f2cb7fdf3e75051:projects/views/views.py

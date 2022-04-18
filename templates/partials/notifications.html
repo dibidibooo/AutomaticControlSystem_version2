@@ -1,51 +1,35 @@
 {% load static %}
 
 <div class="col-xl-3">
-    <div class="col-xl-12">
-        <div class="card">
+    <div class="col-xl-12" >
+        <div class="card" >
             <div class="card-body">
-                <div class="d-flex align-items-start">
+                <div class="d-flex align-items-start" >
                     <div class="me-2">
                         <h5 class="card-title mb-4">Уведомления</h5>
                     </div>
-                    <div class="dropdown ms-auto">
-                        <a class="text-muted font-size-16" role="button" data-bs-toggle="dropdown"
-                           aria-haspopup="true">
-                            <i class="mdi mdi-dots-horizontal"></i>
-                        </a>
-
-                        <div class="dropdown-menu dropdown-menu-end">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-                        </div>
-                    </div>
+{#                    <div class="dropdown ms-auto">#}
+{#                        <a class="text-muted font-size-16" role="button" data-bs-toggle="dropdown"#}
+{#                           aria-haspopup="true">#}
+{#                            <i class="mdi mdi-dots-horizontal"></i>#}
+{#                        </a>#}
+{##}
+{#                        <div class="dropdown-menu dropdown-menu-end">#}
+{#                            <a class="dropdown-item" href="#">Action</a>#}
+{#                            <a class="dropdown-item" href="#">Another action</a>#}
+{#                            <a class="dropdown-item" href="#">Something else here</a>#}
+{#                            <div class="dropdown-divider"></div>#}
+{#                            <a class="dropdown-item" href="#">Separated link</a>#}
+{#                        </div>#}
+{#                    </div>#}
                 </div>
-                <div data-simplebar class="mt-2" style="max-height: 280px;">
+                <div data-simplebar class="mt-2" style="max-height: 800px;">
                     <ul class="verti-timeline list-unstyled">
-                        <li class="event-list active">
-                            <div class="event-timeline-dot">
-                                <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
-                            </div>
-                            <div class="d-flex">
-                                <div class="flex-shrink-0 me-3">
-                                    <h5 class="font-size-14">5 Янв <i
-                                            class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
-                                    </h5>
-                                </div>
-                                <div class="flex-grow-1">
-                                    <div>
-                                        Поставлена задача
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
+
                         {% for task in tasks %}
-                            <li class="event-list">
+                            <li class="event-list active">
                                 <div class="event-timeline-dot">
-                                    <i class="bx bx-right-arrow-circle font-size-18"></i>
+                                    <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
                                 </div>
                                 <div class="d-flex">
                                     <div class="flex-shrink-0 me-3">

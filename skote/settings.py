@@ -51,6 +51,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     
     # Local App
+    'corsheaders',
+    'rest_framework',
     'layout',
     'ecommerce',
     'crypto',
@@ -59,6 +61,8 @@ INSTALLED_APPS = [
     'contacts',
     'pages',
     'components',
+    'project_api',
+    'accounts',
     # Third Party App
     'crispy_forms',
     'django.contrib.sites',
@@ -73,6 +77,8 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
+
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -81,6 +87,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'skote.urls'
 

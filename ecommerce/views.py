@@ -1,34 +1,42 @@
 from django.shortcuts import redirect, render
 from django.views import View
-from django.contrib.auth.mixins import LoginRequiredMixin
-from .models import Customers,CustomersForm, EditCustomersForm
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from .models import Customers, CustomersForm, EditCustomersForm
 from django.core.paginator import Paginator
 from django.http.response import HttpResponse
+
+
 # Create your views here.
 
-class ProductsView(LoginRequiredMixin,View):
-    def get(self , request):
+
+class ProductsView(LoginRequiredMixin, View):
+    def get(self, request):
         greeting = {}
         greeting['heading'] = "Products"
         greeting['pageview'] = "Ecommerce"
-        return render (request,'ecommerce/ecommerce-products.html',greeting)
+        return render(request, 'ecommerce/ecommerce-products.html', greeting)
 
-class ProductDetailView(LoginRequiredMixin,View):
-    def get(self , request):
+
+class ProductDetailView(LoginRequiredMixin, View):
+    def get(self, request):
         greeting = {}
         greeting['heading'] = "Product Detail"
         greeting['pageview'] = "Ecommerce"
-        return render (request,'ecommerce/ecommerce-productdetail.html',greeting)       
+        return render(request, 'ecommerce/ecommerce-productdetail.html', greeting)
 
-class OrdersView(LoginRequiredMixin,View):
-    def get(self , request):
+
+class OrdersView(LoginRequiredMixin, View):
+    def get(self, request):
         greeting = {}
         greeting['heading'] = "Orders"
         greeting['pageview'] = "Ecommerce"
-        return render (request,'ecommerce/ecommerce-orders.html',greeting)          
+        return render(request, 'ecommerce/ecommerce-orders.html', greeting)
 
-class CustomersView(LoginRequiredMixin,View):
-    def get(self , request):
+
+class CustomersView(PermissionRequiredMixin, View):
+    permission_required = ('add_user',)
+
+    def get(self, request):
         form = CustomersForm()
         customers_record = Customers.objects.all()
         p = Paginator(customers_record, 8)
@@ -42,14 +50,15 @@ class CustomersView(LoginRequiredMixin,View):
         greeting['page_obj'] = page_obj
         greeting['form'] = form
         greeting['form1'] = EditCustomersForm()
-        return render (request,'ecommerce/ecommerce-customers.html',greeting)      
+        return render(request, 'account/users-list.html', greeting)
+
     def post(self, request):
         if request.method == "POST":
             if "addcustomer" in request.POST:
                 form = CustomersForm(request.POST)
                 form.save()
                 page_number = request.POST['page_number']
-                return redirect("/ecommerce/customers" + "?page="+str(page_number))
+                return redirect("/ecommerce/customers" + "?page=" + str(page_number))
             if "editcustomer" in request.POST:
                 id = request.POST['id']
                 username = request.POST['username']
@@ -60,38 +69,45 @@ class CustomersView(LoginRequiredMixin,View):
                 address = request.POST['address']
                 page_number = request.POST['page_number']
 
-                user = Customers.objects.filter(id=id).update(username=username,email=email,phone=phone,rating=rating,wallet_balance=wallet_balance,address=address)
-                return redirect("/ecommerce/customers" + "?page="+str(page_number))
+                user = Customers.objects.filter(id=id).update(username=username, email=email, phone=phone,
+                                                              rating=rating, wallet_balance=wallet_balance,
+                                                              address=address)
+                return redirect("/ecommerce/customers" + "?page=" + str(page_number))
             if "deleteCustomer" in request.POST:
                 id = request.POST['id']
                 obj = Customers.objects.filter(id=id).first()
                 obj.delete()
                 return HttpResponse()
+
+
 # Edit Customer
-class CartView(LoginRequiredMixin,View):
-    def get(self , request):
+class CartView(LoginRequiredMixin, View):
+    def get(self, request):
         greeting = {}
         greeting['heading'] = "Cart"
         greeting['pageview'] = "Ecommerce"
-        return render (request,'ecommerce/ecommerce-cart.html',greeting)      
+        return render(request, 'ecommerce/ecommerce-cart.html', greeting)
 
-class CheckOutView(LoginRequiredMixin,View):
-    def get(self , request):
+
+class CheckOutView(LoginRequiredMixin, View):
+    def get(self, request):
         greeting = {}
         greeting['heading'] = "Checkout"
         greeting['pageview'] = "Ecommerce"
-        return render (request,'ecommerce/ecommerce-checkout.html',greeting) 
+        return render(request, 'ecommerce/ecommerce-checkout.html', greeting)
 
-class ShopsView(LoginRequiredMixin,View):
-    def get(self , request):
+
+class ShopsView(LoginRequiredMixin, View):
+    def get(self, request):
         greeting = {}
         greeting['heading'] = "Shops"
         greeting['pageview'] = "Ecommerce"
-        return render (request,'ecommerce/ecommerce-shops.html',greeting)                                         
+        return render(request, 'ecommerce/ecommerce-shops.html', greeting)
 
-class AddProductView(LoginRequiredMixin,View):
-    def get(self , request):
+
+class AddProductView(LoginRequiredMixin, View):
+    def get(self, request):
         greeting = {}
         greeting['heading'] = "Add Product"
         greeting['pageview'] = "Ecommerce"
-        return render (request,'ecommerce/ecommerce-addproduct.html',greeting)                                                 
+        return render(request, 'ecommerce/ecommerce-addproduct.html', greeting)

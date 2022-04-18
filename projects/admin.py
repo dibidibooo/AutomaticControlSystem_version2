@@ -1,6 +1,7 @@
 from django.contrib import admin
+
+from tasks.models import Task
 from .models import (
-    TaskAssign,
     PlantUnit,
     SamplingSite,
     WaterType,
@@ -21,7 +22,7 @@ from .models import (
     ComponentsSite14
 )
 
-admin.site.register(TaskAssign)
+admin.site.register(Task)
 admin.site.register(PlantUnit)
 admin.site.register(SamplingSite)
 admin.site.register(WaterType)
