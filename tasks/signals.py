@@ -18,5 +18,5 @@ def send_task_send_email(sender, instance, created, **kwargs):
         Установка {instance.plant_unit}.
         """
         subject = f"Изменения в задаче #{instance.id}"
-        send_mail(subject, body, 'tussupbekov@gmail.com',
-                  [instance.user.email, ], fail_silently=False,)
+        # send_mail(subject, body, 'tussupbekov@gmail.com',
+        #           [instance.user.email, ], fail_silently=False,)
