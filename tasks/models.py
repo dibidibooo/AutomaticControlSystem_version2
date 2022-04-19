@@ -1,9 +1,7 @@
-# from adminsortable.fields import SortableForeignKey
-# from adminsortable.models import SortableMixin
-# from model_utils.models import TimeStampedModel
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
 from django.db import models
+from model_utils import FieldTracker
 
 
 class Task(models.Model):
@@ -38,6 +36,7 @@ class Task(models.Model):
         verbose_name='Уведомление'
     )
     status = models.ForeignKey('projects.Status', related_name='task_assign', on_delete=models.CASCADE, default=1)
+    tracker = FieldTracker()
 
 
 class Comment(models.Model):
@@ -49,3 +48,8 @@ class Comment(models.Model):
 
     class Meta:
         verbose_name_plural = 'Comments'
+
+
+# class ChangesTracker(models.Model):
+#     task = models.ForeignKey('tasks.Task', on_delete=models.CASCADE, related_name="changes")
+#     text = models.CharField(max_length=1000, verbose_name='Текст изменения')
