@@ -47,7 +47,7 @@
 <form action="{% url 'comments-add' 2 %}" method="POST">
     {% csrf_token %}
     <div class="row" id="comments_section">
-        <div class="col-lg-8">
+        <div class="col-lg-7">
             <div class="p-3 chat-input-section" style="margin-left: 10px">
                 <p><b>Комментарии:</b></p>
                 <div class="row">
@@ -98,7 +98,7 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-4">
+        <div class="col-lg-5">
             <hr>
             <p><b>Дата создания:</b> {{ task.start_date }}</p>
             <p><b>Дата обновления:</b> {{ task.updated_at }}</p>

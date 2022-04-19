@@ -14,9 +14,9 @@ class MultipleForm(forms.Form):
 
 # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
 class Site1Form(MultipleForm):
-    oil_prod = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Нефтепродукт")
+    oil_prod = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class':'form-control mb-3'}), label="Нефтепродукт")
     suspended_solids = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Общие взвешенные твердые частицы")
-    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Значение pH")
+    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="Значение pH")
     phosphorus = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Фосфор")
     alkalinity = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Щёлочность общая")
     hardness = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Жёсткость общая")
@@ -31,7 +31,7 @@ class Site1Form(MultipleForm):
 # Водоблок - 2 | Установка АВТ напротив погружного холодильника №42
 class Site2Form(MultipleForm):
     oil_prod = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Нефтепродукт")
-    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Значение pH")
+    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="Значение pH")
     suspended_solids = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Общие взвешенные твердые частицы")
 
 
@@ -47,14 +47,14 @@ class Site3Form(MultipleForm):
     sulfates = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Сульфаты")
     hardness_calcium = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Жёсткость кальциевая")
     hardness_magnesium = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Жёсткость магниевая")
-    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Значение pH")
+    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="Значение pH")
 
 
 # БОВ-1 | Аналитическая точка насосов Р-02А/В/С
 class Site4Form(MultipleForm):
     hardness = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Жесткость общая")
     hardness_calcium = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Жесткость кальциевая")
-    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Значение pH")
+    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="Значение pH")
     salt = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Солесодержание")
     chlorides = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Хлориды")
     sulfates = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Сульфаты")
@@ -68,7 +68,7 @@ class Site4Form(MultipleForm):
 class Site5Form(MultipleForm):
     hardness = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Жесткость общая")
     hardness_calcium = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Жесткость кальциевая")
-    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Значение pH")
+    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="Значение pH")
     salt = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Солесодержание")
     chlorides = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Хлориды")
     sulfates = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Сульфаты")
@@ -82,7 +82,7 @@ class Site5Form(MultipleForm):
 class Site6Form(MultipleForm):
     hardness = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Жесткость общая")
     hardness_calcium = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Жесткость кальциевая")
-    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Значение pH")
+    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="Значение pH")
     salt = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Солесодержание")
     chlorides = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Хлориды")
     sulfates = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Сульфаты")
@@ -98,7 +98,7 @@ class Site7Form(MultipleForm):
     suspended_solids = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Общие взвешенные твердые частицы")
     chlorides = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Хлориды")
     sulfates = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Сульфаты")
-    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Значение pH")
+    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="Значение pH")
     alkalinity = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Щёлочность общая")
     hardness_calcium = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Жесткость кальциевая (кальций, мг/л)")
     hardness = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Жесткость общая")
@@ -108,7 +108,7 @@ class Site7Form(MultipleForm):
 # УГОВ | Выход из ёмкости 77-ТК-103 77-SN-004
 class Site8Form(MultipleForm):
     suspended_solids = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Общие взвешенные твердые частицы")
-    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Значение pH")
+    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="Значение pH")
     chlorides = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Хлориды")
     phosphorus = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Фосфор")
     oil_prod = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Нефтепродукт")
@@ -124,7 +124,7 @@ class Site9Form(MultipleForm):
     suspended_solids = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Общие взвешенные твердые частицы")
     chlorides = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Хлориды")
     sulfates = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Сульфаты")
-    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Значение pH")
+    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="Значение pH")
     phosphorus = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Фосфор")
     alkalinity = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Щёлочность общая")
     hardness_calcium = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Жесткость кальциевая (кальций, мг/л)")
@@ -149,7 +149,7 @@ class Site11Form(MultipleForm):
 class Site12Form(MultipleForm):
     oil_prod = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Нефтепродукт")
     suspended_subst = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Взвешенные вещества")
-    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="pH")
+    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="pH")
     oxygen_chem = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Химическая потребность в кислороде (ХПК)")
     active_subst = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Поверхностно-активные вещества (АПАВ)")
     ammonium = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Аммонийный азот")
@@ -159,7 +159,7 @@ class Site12Form(MultipleForm):
 class Site13Form(MultipleForm):
     oil_prod = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Нефтепродукт")
     suspended_subst = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Взвешенные вещества")
-    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Значение pH")
+    ph = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="Значение pH")
     oxygen_chem = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Химическая потребность в кислороде (ХПК)")
     active_subst = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Поверхностно-активные вещества (АПАВ)")
     ammonium = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Аммонийный азот")
