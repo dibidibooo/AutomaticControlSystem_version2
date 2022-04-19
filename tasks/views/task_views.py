@@ -1,6 +1,7 @@
 from datetime import datetime, timedelta
 
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
@@ -45,8 +46,11 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             deadline = request.POST['deadline']
             status = request.POST['status']
             user = request.POST['user']
-            task = Task.objects.filter(id=id)
-            task.update(deadline=deadline, status=status, user_id=int(user))
+            task = Task.objects.get(id=id)
+            task.deadline = deadline
+            task.status_id = int(status)
+            task.user_id = int(user)
+            task.save()
             return redirect('tasks-kanbanboard')
         elif 'add_comment_button' in request.POST:
             id = request.POST['id']
@@ -71,7 +75,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
 class TaskCreate:
     # 1|1
     def site1_task(self, form):
-        oil_prod = Component.objects.get(title__contains='[1|1] Нефтепродукт')
+        oil_prod = Component.objects.get(title__contains='[1|1] Нефтепродукты')
         ph = Component.objects.get(title__contains='[1|1] Значение рН')
         suspended_solids = Component.objects.get(title__contains='[1|1] Общие взвешенные твердые частицы')
         phosphorus = Component.objects.get(title__contains='[1|1] Фосфор')
@@ -191,7 +195,7 @@ class TaskCreate:
 
     # 1|2
     def site2_task(self, form):
-        oil_prod = Component.objects.get(title__contains='[1|2] Нефтепродукт')
+        oil_prod = Component.objects.get(title__contains='[1|2] Нефтепродукты')
         ph = Component.objects.get(title__contains='[1|2] Значение рН')
         suspended_solids = Component.objects.get(title__contains='[1|2] Общие взвешенные твердые частицы')
 
@@ -350,7 +354,7 @@ class TaskCreate:
         salt = Component.objects.get(title__contains='[2|2] Солесодержание')
         chlorides = Component.objects.get(title__contains='[2|2] Хлориды')
         sulfates = Component.objects.get(title__contains='[2|2] Сульфаты')
-        oil_prod = Component.objects.get(title__contains='[2|2] Нефтепродукт')
+        oil_prod = Component.objects.get(title__contains='[2|2] Нефтепродукты')
         suspended_subst = Component.objects.get(title__contains='[2|2] Взвешенные вещества')
         alkalinity = Component.objects.get(title__contains='[2|2] Щелочность общая')
 
@@ -495,7 +499,7 @@ class TaskCreate:
         salt = Component.objects.get(title__contains='[3|1] Солесодержание')
         chlorides = Component.objects.get(title__contains='[3|1] Хлориды')
         sulfates = Component.objects.get(title__contains='[3|1] Сульфаты')
-        oil_prod = Component.objects.get(title__contains='[3|1] Нефтепродукт')
+        oil_prod = Component.objects.get(title__contains='[3|1] Нефтепродукты')
         suspended_subst = Component.objects.get(title__contains='[3|1] Общие взвешенные вещества')
         alkalinity = Component.objects.get(title__contains='[3|1] Щелочность общая')
 
@@ -750,7 +754,7 @@ class TaskCreate:
     # 4|4
     def site10_task(self, form):
         chlorine = Component.objects.get(title__contains='[4|4] Остаточный хлор')
-        oil_prod = Component.objects.get(title__contains='[4|4] Нефтепродукт')
+        oil_prod = Component.objects.get(title__contains='[4|4] Нефтепродукты')
         salt = Component.objects.get(title__contains='[4|4] Солесодержание')
 
         if float(form.cleaned_data['chlorine']) > float(chlorine.limit_hi):
@@ -809,7 +813,7 @@ class TaskCreate:
 
     # 5|1
     def site12_task(self, form):
-        oil_prod = Component.objects.get(title__contains='[5|1] Нефтепродукт')
+        oil_prod = Component.objects.get(title__contains='[5|1] Нефтепродукты')
 
         if float(form.cleaned_data['oil_prod']) > float(oil_prod.limit_hi):
             comp_title = oil_prod.title[6:]
@@ -826,7 +830,7 @@ class TaskCreate:
 
     # 6|1
     def site13_task(self, form):
-        oil_prod = Component.objects.get(title__contains='[6|1] Нефтепродукт')
+        oil_prod = Component.objects.get(title__contains='[6|1] Нефтепродукты')
         ph = Component.objects.get(title__contains='[6|1] Значение рН')
 
         if float(form.cleaned_data['oil_prod']) > float(oil_prod.limit_hi):

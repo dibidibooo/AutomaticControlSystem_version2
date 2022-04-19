@@ -13,7 +13,16 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
+import environ
 
+# Reading env variables
+env = environ.Env()
+environ.Env.read_env()
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = env.str('SECRET_KEY')
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = env.bool('DEBUG')
 
 MESSAGE_TAGS = {
     messages.DEBUG: 'alert-info',
@@ -30,13 +39,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'd!m50t)w$$&ff(*pn7%oqw-1yxo+eub*xcxd^8pzo=*2)ynq=w'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = ['127.0.0.1','localhost','2da188c804ec.ngrok.io']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '2da188c804ec.ngrok.io']
 
 
 # Application definition
@@ -117,9 +121,9 @@ WSGI_APPLICATION = 'skote.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'dmsdatabase',
-        'USER': 'postgres',
-        'PASSWORD': 'Alaska_71749809',
+        'NAME': env.str('NAME'),
+        'USER': env.str('USER'),
+        'PASSWORD': env.str('PASSWORD'),
         'HOST': 'localhost',
         'PORT': '5432',
     }
@@ -212,3 +216,10 @@ ACCOUNT_LOGOUT_ON_GET= True
 ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
+
+EMAIL_BACKEND = env.str('EMAIL_BACKEND')
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = env.int('EMAIL_PORT')
+EMAIL_HOST_USER = env.str('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env.str('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS')
