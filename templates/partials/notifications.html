@@ -12,7 +12,7 @@
                 <div data-simplebar class="mt-2" style="max-height: 800px;">
                     <ul class="verti-timeline list-unstyled">
 
-                        {% for task in tasks %}
+                        {% for task in tasks %}{% if request.user == task.user %}
                             <li class="event-list active">
                                 <div class="event-timeline-dot">
                                     <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
@@ -32,16 +32,9 @@
                                     </div>
                                 </div>
                             </li>
-                        {% endfor %}
+                        {% endif %}{% endfor %}
 
                     </ul>
-                </div>
-
-                <div class="text-center mt-4">
-                    <a href="javascript: void(0);" class="btn btn-primary waves-effect waves-light btn-sm">
-                        Подробнее
-                        <i class="mdi mdi-arrow-right ms-1"></i>
-                    </a>
                 </div>
             </div>
         </div>

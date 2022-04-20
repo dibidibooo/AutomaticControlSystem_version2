@@ -7,15 +7,20 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from allauth.account.views import PasswordSetView, PasswordChangeView
 from django.urls import reverse_lazy
 
-from tasks.models import Task, Comment
+from tasks.models import Task, Comment, ChangesTracker
 
 
 class DashboardView(LoginRequiredMixin, View):
     def get(self, request):
+        tasks = Task.objects.all()
         context = {}
         context['heading'] = "Страница Генерального директора"
         context['pageview'] = "Dashboards"
-        context['tasks'] = Task.objects.all()
+        context['tasks'] = tasks
+        context['overdue'] = self.get_overdue_tasks()
+        context['on_time'] = self.get_on_time_tasks()
+        context['escalated'] = self.get_escalated_tasks()
+        self.get_escalated_tasks()
         return render(request, 'dashboard/dashboard.html', context)
 
     def post(self, request):
@@ -45,6 +50,31 @@ class DashboardView(LoginRequiredMixin, View):
                 task.completion_date = datetime.now()
             task.save()
         return JsonResponse({"message": "success"})
+
+    @staticmethod
+    def get_overdue_tasks():
+        overdue = 0
+        for task in Task.objects.all():
+            if task.completion_date and (task.completion_date > task.deadline):
+                overdue += 1
+        return overdue
+
+    @staticmethod
+    def get_on_time_tasks():
+        on_time = 0
+        for task in Task.objects.all():
+            if task.completion_date and (task.completion_date <= task.deadline):
+                on_time += 1
+        return on_time
+
+    @staticmethod
+    def get_escalated_tasks():
+        changes_history = ChangesTracker.objects.filter(text__contains='изменил исполнителя на director')
+        changes_list = []
+        for item in changes_history:
+            changes_list.append(item.task_id)
+        escalated = len(set(changes_list))
+        return escalated
 
 
 class SaasView(LoginRequiredMixin, View):
