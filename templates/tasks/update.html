@@ -1,23 +1,17 @@
 <div class="modal-header">
-    <h4 class="modal-title" id="staticBackdropLabel" style="max-width: 25em; margin-left: 10px;"><b>№{{ task.id }} - {{ task.title }} для компонента {{ task.comp_title }}</b></h4>
+    <h5 class="modal-title" id="staticBackdropLabel" style="max-width: 25em; margin-left: 10px;"><b>№{{ task.id }} - {{ task.title }} для компонента {{ task.comp_title }}</b></h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
 
 <div class="row">
     <div class="col-lg-7">
         <div class="modal-body" style="margin-left: 10px" id="task_modal_body1">
-            <p id="plant_unit"><b>Установка:</b> {{ task.plant_unit }}</p>
             <p id="sampling_site"><b>Место отбора проб:</b> {{ task.sampling_site }}</p>
+            <p id="plant_unit"><b>Установка:</b> {{ task.plant_unit }}</p>
             <div class="row">
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-4">
-                            <label for="id_deadline"><b>Выполнить до:</b></label>
-                        </div>
-                        <div class="col-md-8">
-                            <input class="form-control" type="datetime-local" name="deadline" id="id_deadline" value="{{ task.deadline|date:" Y-m-d\TH:i " }}" required>
-                        </div>
-                    </div>
+                <div class="col-md-6">
+                    <label for="id_deadline"><b>Выполнить до:</b></label>
+                    <input class="form-control" type="datetime-local" name="deadline" id="id_deadline" value="{{ task.deadline|date:" Y-m-d\TH:i " }}" required>
                 </div>
             </div>
         </div>
@@ -107,8 +101,9 @@
             <p><b>Дата создания:</b> {{ task.start_date }}</p>
             <p><b>Дата обновления:</b> {{ task.updated_at }}</p>
             <div><b>История изменений:</b> {% for change in changes %}
-                <p>{{ change.text }} - {{ change.updated_at }}</p>
-                <hr> {% endfor %}
+                <p class="mb-0">{{ change.text }}</p>
+                <p class="mb-0" style="font-size: 10px; color: dimgrey;">{{ change.updated_at }}</p>
+                <hr class="mt-1"> {% endfor %}
             </div>
         </div>
     </div>

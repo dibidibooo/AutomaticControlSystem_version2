@@ -1,7 +1,6 @@
 from datetime import datetime, timedelta
 
 from django.contrib.auth.models import User
-from django.core.mail import send_mail
 from django.http import JsonResponse
 from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
@@ -51,6 +50,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             task.deadline = deadline
             task.status_id = int(status)
             task.user_id = int(user)
+            task.save()
             if task.tracker.has_changed('status_id'):
                 ChangesTracker.objects.create(
                     task_id=task.id,
@@ -61,8 +61,6 @@ class KanbanBoardView(PermissionRequiredMixin, View):
                     task_id=task.id,
                     text=f"@{request.user} изменил исполнителя на {task.user}",
                 )
-            # print(111, task.tracker.previous('deadline'), type(task.tracker.previous('deadline')))
-            # print(222, task.deadline, type(task.deadline))
             previous_date = task.tracker.previous('deadline').strftime('%Y-%m-%d %H:%M')
             current_date = " ".join(task.deadline.split("T"))
             if task.tracker.has_changed('deadline') and (previous_date != current_date):
@@ -70,7 +68,6 @@ class KanbanBoardView(PermissionRequiredMixin, View):
                     task_id=task.id,
                     text=f"@{request.user} изменил срок исполнения на {task.deadline}",
                 )
-            task.save()
             return redirect('tasks-kanbanboard')
         elif 'add_comment_button' in request.POST:
             id = request.POST['id']
@@ -88,12 +85,12 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             task.status_id = status_id
             if task.status_id == 4:
                 task.completion_date = datetime.now()
+            task.save()
             if task.tracker.has_changed('status_id'):
                 ChangesTracker.objects.create(
                     task_id=task.id,
                     text=f"@{request.user} изменил статус на {task.status}",
                 )
-            task.save()
         return JsonResponse({"message": "success"})
 
 

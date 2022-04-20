@@ -39,6 +39,19 @@ class Task(models.Model):
     status = models.ForeignKey('projects.Status', related_name='task_assign', on_delete=models.CASCADE, default=1)
     tracker = FieldTracker()
 
+    def save(self, *args, **kwargs):
+        subject = f'Назначена новая задача'
+        body = f"""
+        Добавлена новая задача '{self.title} для компонента {self.comp_title}'.
+        (Место отбора проб: {self.sampling_site}. Установка: {self.plant_unit}.)
+        
+        Пройдите по ссылке, чтобы открыть доску задач: http://127.0.0.1:8000/tasks/kanbanboard
+        """
+        if self.pk is None:
+            send_mail(subject, body, 'tussupbekov@gmail.com',
+                      [self.responsible.email, ], fail_silently=False)
+        return super().save(*args, **kwargs)
+
     def __str__(self):
         return f'Задача № {self.pk}'
 
@@ -56,7 +69,9 @@ class Comment(models.Model):
         Добавлен новый комментарий в задаче #{self.task.id} - {self.task.title} для компонента {self.task.comp_title}.
         (Место отбора проб: {self.task.sampling_site}. Установка: {self.task.plant_unit}.)
         
-        '{self.text}.'
+        @{self.author}: '{self.text}.'
+        
+        Пройдите по ссылке, чтобы открыть доску задач: http://127.0.0.1:8000/tasks/kanbanboard
         """
         if self.pk is None:
             send_mail(subject, body, 'tussupbekov@gmail.com',
