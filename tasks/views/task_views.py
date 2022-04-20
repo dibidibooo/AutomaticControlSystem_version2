@@ -10,7 +10,7 @@ from django.views.generic import DetailView
 
 from projects.models import Status, Component
 from tasks.forms import TaskForm
-from tasks.models import Task, Comment
+from tasks.models import Task, Comment, ChangesTracker
 
 
 class TaskDetailView(DetailView):
@@ -24,6 +24,7 @@ class TaskDetailView(DetailView):
         context = super().get_context_data(**kwargs)
         context['statuses'] = Status.objects.all()
         context['users'] = User.objects.all()
+        context['changes'] = ChangesTracker.objects.filter(task_id=self.object.id)
         return context
 
 
@@ -50,6 +51,25 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             task.deadline = deadline
             task.status_id = int(status)
             task.user_id = int(user)
+            if task.tracker.has_changed('status_id'):
+                ChangesTracker.objects.create(
+                    task_id=task.id,
+                    text=f"@{request.user} изменил статус на {task.status}",
+                )
+            if task.tracker.has_changed('user_id'):
+                ChangesTracker.objects.create(
+                    task_id=task.id,
+                    text=f"@{request.user} изменил исполнителя на {task.user}",
+                )
+            # print(111, task.tracker.previous('deadline'), type(task.tracker.previous('deadline')))
+            # print(222, task.deadline, type(task.deadline))
+            previous_date = task.tracker.previous('deadline').strftime('%Y-%m-%d %H:%M')
+            current_date = " ".join(task.deadline.split("T"))
+            if task.tracker.has_changed('deadline') and (previous_date != current_date):
+                ChangesTracker.objects.create(
+                    task_id=task.id,
+                    text=f"@{request.user} изменил срок исполнения на {task.deadline}",
+                )
             task.save()
             return redirect('tasks-kanbanboard')
         elif 'add_comment_button' in request.POST:
@@ -68,6 +88,11 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             task.status_id = status_id
             if task.status_id == 4:
                 task.completion_date = datetime.now()
+            if task.tracker.has_changed('status_id'):
+                ChangesTracker.objects.create(
+                    task_id=task.id,
+                    text=f"@{request.user} изменил статус на {task.status}",
+                )
             task.save()
         return JsonResponse({"message": "success"})
 
@@ -75,7 +100,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
 class TaskCreate:
     # 1|1
     def site1_task(self, form):
-        oil_prod = Component.objects.get(title__contains='[1|1] Нефтепродукты')
+        oil_prod = Component.objects.get(title__contains='[1|1] Нефтепродукт')
         ph = Component.objects.get(title__contains='[1|1] Значение рН')
         suspended_solids = Component.objects.get(title__contains='[1|1] Общие взвешенные твердые частицы')
         phosphorus = Component.objects.get(title__contains='[1|1] Фосфор')
@@ -195,7 +220,7 @@ class TaskCreate:
 
     # 1|2
     def site2_task(self, form):
-        oil_prod = Component.objects.get(title__contains='[1|2] Нефтепродукты')
+        oil_prod = Component.objects.get(title__contains='[1|2] Нефтепродукт')
         ph = Component.objects.get(title__contains='[1|2] Значение рН')
         suspended_solids = Component.objects.get(title__contains='[1|2] Общие взвешенные твердые частицы')
 
@@ -354,7 +379,7 @@ class TaskCreate:
         salt = Component.objects.get(title__contains='[2|2] Солесодержание')
         chlorides = Component.objects.get(title__contains='[2|2] Хлориды')
         sulfates = Component.objects.get(title__contains='[2|2] Сульфаты')
-        oil_prod = Component.objects.get(title__contains='[2|2] Нефтепродукты')
+        oil_prod = Component.objects.get(title__contains='[2|2] Нефтепродукт')
         suspended_subst = Component.objects.get(title__contains='[2|2] Взвешенные вещества')
         alkalinity = Component.objects.get(title__contains='[2|2] Щелочность общая')
 
@@ -499,7 +524,7 @@ class TaskCreate:
         salt = Component.objects.get(title__contains='[3|1] Солесодержание')
         chlorides = Component.objects.get(title__contains='[3|1] Хлориды')
         sulfates = Component.objects.get(title__contains='[3|1] Сульфаты')
-        oil_prod = Component.objects.get(title__contains='[3|1] Нефтепродукты')
+        oil_prod = Component.objects.get(title__contains='[3|1] Нефтепродукт')
         suspended_subst = Component.objects.get(title__contains='[3|1] Общие взвешенные вещества')
         alkalinity = Component.objects.get(title__contains='[3|1] Щелочность общая')
 
@@ -754,7 +779,7 @@ class TaskCreate:
     # 4|4
     def site10_task(self, form):
         chlorine = Component.objects.get(title__contains='[4|4] Остаточный хлор')
-        oil_prod = Component.objects.get(title__contains='[4|4] Нефтепродукты')
+        oil_prod = Component.objects.get(title__contains='[4|4] Нефтепродукт')
         salt = Component.objects.get(title__contains='[4|4] Солесодержание')
 
         if float(form.cleaned_data['chlorine']) > float(chlorine.limit_hi):
@@ -813,7 +838,7 @@ class TaskCreate:
 
     # 5|1
     def site12_task(self, form):
-        oil_prod = Component.objects.get(title__contains='[5|1] Нефтепродукты')
+        oil_prod = Component.objects.get(title__contains='[5|1] Нефтепродукт')
 
         if float(form.cleaned_data['oil_prod']) > float(oil_prod.limit_hi):
             comp_title = oil_prod.title[6:]
@@ -830,7 +855,7 @@ class TaskCreate:
 
     # 6|1
     def site13_task(self, form):
-        oil_prod = Component.objects.get(title__contains='[6|1] Нефтепродукты')
+        oil_prod = Component.objects.get(title__contains='[6|1] Нефтепродукт')
         ph = Component.objects.get(title__contains='[6|1] Значение рН')
 
         if float(form.cleaned_data['oil_prod']) > float(oil_prod.limit_hi):

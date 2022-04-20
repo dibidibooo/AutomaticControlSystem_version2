@@ -38,7 +38,6 @@ class Component(models.Model):
     limit_lo = models.CharField(verbose_name='Допустимые нормы не ниже', max_length=50, null=True, blank=True)
     limit_hi = models.CharField(verbose_name='Допустимые нормы не более', max_length=50, null=True, blank=True)
     period = models.CharField(verbose_name='Периодичность отбора', max_length=100, blank=True)
-    period_in_hours = models.IntegerField(null=True, blank=True, verbose_name='Срок выполнения задачи в часах')
     standards = models.CharField(verbose_name='Наименование НД и методы испытаний', max_length=100, blank=True)
     recommendation1 = models.CharField(verbose_name='Рекомендация выше нормы', max_length=200, null=True, blank=True)
     recommendation2 = models.CharField(verbose_name='Рекомендация ниже нормы', max_length=200, null=True, blank=True)

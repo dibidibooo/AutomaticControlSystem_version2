@@ -1,9 +1,8 @@
-# from adminsortable.fields import SortableForeignKey
-# from adminsortable.models import SortableMixin
-# from model_utils.models import TimeStampedModel
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import User
+from django.core.mail import send_mail
 from django.db import models
+from model_utils import FieldTracker
 
 
 class Task(models.Model):
@@ -38,6 +37,10 @@ class Task(models.Model):
         verbose_name='Уведомление'
     )
     status = models.ForeignKey('projects.Status', related_name='task_assign', on_delete=models.CASCADE, default=1)
+    tracker = FieldTracker()
+
+    def __str__(self):
+        return f'Задача № {self.pk}'
 
 
 class Comment(models.Model):
@@ -47,5 +50,27 @@ class Comment(models.Model):
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время создания')
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True, verbose_name="Дата изменения")
 
+    def save(self, *args, **kwargs):
+        subject = f'Новый комментарий в задаче #{self.task.id}'
+        body = f"""
+        Добавлен новый комментарий в задаче #{self.task.id} - {self.task.title} для компонента {self.task.comp_title}.
+        (Место отбора проб: {self.task.sampling_site}. Установка: {self.task.plant_unit}.)
+        
+        '{self.text}.'
+        """
+        if self.pk is None:
+            send_mail(subject, body, 'tussupbekov@gmail.com',
+                      [self.task.user.email, ], fail_silently=False)
+        return super().save(*args, **kwargs)
+
+    def __str__(self):
+        return self.text[:20]
+
     class Meta:
         verbose_name_plural = 'Comments'
+
+
+class ChangesTracker(models.Model):
+    task = models.ForeignKey('tasks.Task', on_delete=models.CASCADE, related_name="changes")
+    text = models.CharField(max_length=1000, verbose_name='Текст изменения')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата и время изменения')
