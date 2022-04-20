@@ -51,8 +51,13 @@ class Comment(models.Model):
     updated_at = models.DateTimeField(auto_now=True, null=True, blank=True, verbose_name="Дата изменения")
 
     def save(self, *args, **kwargs):
-        subject = f'Изменения в задаче #{self.task.id}'
-        body = 'Добавлен новый комментарий'
+        subject = f'Новый комментарий в задаче #{self.task.id}'
+        body = f"""
+        Добавлен новый комментарий в задаче #{self.task.id} - {self.task.title} для компонента {self.task.comp_title}.
+        (Место отбора проб: {self.task.sampling_site}. Установка: {self.task.plant_unit}.)
+        
+        '{self.text}.'
+        """
         if self.pk is None:
             send_mail(subject, body, 'tussupbekov@gmail.com',
                       [self.task.user.email, ], fail_silently=False)
@@ -68,4 +73,4 @@ class Comment(models.Model):
 class ChangesTracker(models.Model):
     task = models.ForeignKey('tasks.Task', on_delete=models.CASCADE, related_name="changes")
     text = models.CharField(max_length=1000, verbose_name='Текст изменения')
-    updated_at = models.DateTimeField(verbose_name='Дата и время изменения')
+    updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата и время изменения')
