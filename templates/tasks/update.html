@@ -102,6 +102,12 @@
             <hr>
             <p><b>Дата создания:</b> {{ task.start_date }}</p>
             <p><b>Дата обновления:</b> {{ task.updated_at }}</p>
+            <div><b>История изменений:</b>
+                {% for change in changes %}
+                    <p>{{ change.text }} - {{ change.updated_at }}</p>
+                    <hr>
+                {% endfor %}
+            </div>
         </div>
     </div>
 </form>
