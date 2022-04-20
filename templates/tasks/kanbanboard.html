@@ -181,7 +181,7 @@
 <!-- end row -->
 
 <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-lg" style="align-items: center;" role="document">
         <form action="" method="POST">
             <input type="hidden" name="id" id="uid" data-url="{% url 'tasks-kanbanboard' %}">
             {% csrf_token %}
