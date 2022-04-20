@@ -120,17 +120,17 @@
                     <div class="col-lg-4 col-sm-6 align-self-center">
                         <div>
                             <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-primary"></i> Выполнено <br>в срок</p>
-                            <h5>60</h5>
+                            <h5>{{ on_time }}</h5>
                         </div>
 
                         <div class="mt-4 pt-2">
                             <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-warning"></i> Просрочено</p>
-                            <h5>20</h5>
+                            <h5>{{ overdue }}</h5>
                         </div>
 
                         <div class="mt-4 pt-2">
                             <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-info"></i> Эскалировано</p>
-                            <h5>40</h5>
+                            <h5>{{ escalated }}</h5>
                         </div>
                     </div>
                 </div>
@@ -139,7 +139,49 @@
     </div>
 
     <!-- end col -->
-    {% include 'partials/notifications.html' %}
+
+    <!-- Notifications -->
+    <div class="col-xl-3">
+        <div class="col-xl-12" >
+            <div class="card" >
+                <div class="card-body">
+                    <div class="d-flex align-items-start" >
+                        <div class="me-2">
+                            <h5 class="card-title mb-4">Уведомления</h5>
+                        </div>
+                    </div>
+                    <div data-simplebar class="mt-2" style="max-height: 800px;">
+                        <ul class="verti-timeline list-unstyled">
+
+                            {% for task in tasks %}{% if 'директор' in task.user.profile.position %}
+                                <li class="event-list active">
+                                    <div class="event-timeline-dot">
+                                        <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
+                                    </div>
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 me-3">
+                                            <h5 class="font-size-14">
+                                                {{ task.start_date|date:"d M" }}
+                                                <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                            </h5>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <div>
+                                                Компонент '{{ task.comp_title }}'
+                                                <br>{{ task.notification }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endif %}{% endfor %}
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- end card -->
+        </div>
+    </div>
 
 </div>
 <!-- end row -->
