@@ -29,6 +29,9 @@
             <div class="mb-3">
                 <label for="id_user" class="form-label"><b>Исполнитель</b></label>
                 <select id="id_user" class="form-select" name="user">
+                    {% if not task.user %}
+                        <option value="" selected>-----------</option>
+                    {% endif %}
                     {% for user in users %}
                         <option value="{{ user.pk }}" {% if user == task.user %}selected{% endif %}>{{ user }}</option>
                     {% endfor %}

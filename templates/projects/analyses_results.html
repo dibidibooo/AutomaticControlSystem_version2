@@ -4,8 +4,7 @@
 {% load static %}
 <!-- -->
 
-{% block extra_css %}
-{% endblock %}
+{% block extra_css %} {% endblock %}
 <!-- -->
 
 <!-- -->
@@ -16,7 +15,7 @@
         <div class="checkout-tabs">
 
             <div class="row">
-<!--                left huina-->
+                <!--                left huina-->
                 <div class="col-xl-3 col-sm-3 mb-3">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="location1-tab" data-bs-toggle="pill" href="#location1" role="tab" aria-controls="location1" aria-selected="true">
@@ -40,15 +39,14 @@
                     </div>
                 </div>
 
-<!--                center-->
+                <!--                center-->
                 <div class="col-xl-9 col-sm-9 p-0">
                     {% for res in results %}
                     <div>
-                        {{res.index}}<br>
-                        {{res.values}}<br>
+                        {{res.index}}<br> {{res.values}}
+                        <br>
                     </div>
-                    <br>
-                    {% endfor %}
+                    <br> {% endfor %}
 
                     <form class="needs-validation" novalidate method="POST" action="{% url 'projects-projectsgrid' %}">
                         {% csrf_token %}
@@ -82,7 +80,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" data-simplebar class="mt-2" style="max-height: 800px;">
+                                <div class="card mt-2" data-simplebar style="max-height: 800px;">
                                     <div id="componentcard11" class="card-body">
                                         <div class="col-xl-12">
                                             <h4 class="card-title">Контролируемые показатели 1</h4>
@@ -163,13 +161,12 @@
                                                                     <p><b>{{ results1.no_recom }}</b></p>
                                                                 </div>
                                                             </div>
-                                                            {% endif %} {% for key, value in results1.items %} {% if key == 'Нефтепродукт' %}
+                                                            {% endif %} {% for key, value in results1.items %}{{ key }} {{ value }} {% if key == 'oil_prod' %}
                                                             <div class="card-body bg-danger bg-soft">
                                                                 <p class="text-muted mb-4">
                                                                     <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
                                                                 </p>
                                                                 <div class="col-12">
-
                                                                     <p><b>{{ value }}</b></p>
                                                                 </div>
                                                             </div>
@@ -1543,7 +1540,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" data-simplebar class="mt-2" style="max-height: 800px;">
+                                <div class="card mt-2" data-simplebar style="max-height: 800px;">
                                     <div id="componentcard21" class="card-body">
                                         <div class="col-xl-12">
                                             <h4 class="card-title">Контролируемые показатели 4</h4>
@@ -2613,9 +2610,7 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-                                <div class="card" data-simplebar class="mt-2" style="max-height: 800px;">
+                                <div class="card mt-2" data-simplebar style="max-height: 800px;">
                                     <div id="componentcard31" class="card-body">
                                         <div class="col-xl-12">
                                             <h4 class="card-title">Контролируемые показатели 6</h4>
@@ -3788,7 +3783,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" data-simplebar class="mt-2" style="max-height: 800px;">
+                                <div class="card mt-2" data-simplebar style="max-height: 800px;">
                                     <div id="componentcard41" class="card-body">
                                         <div class="col-xl-12">
                                             <h4 class="card-title">Контролируемые показатели 7</h4>
@@ -5502,7 +5497,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" data-simplebar class="mt-2" style="max-height: 800px;">
+                                <div class="card mt-2" data-simplebar style="max-height: 800px;">
                                     <div id="componentcard51" class="card-body">
                                         <div class="col-xl-12">
                                             <h4 class="card-title">Контролируемые показатели 12</h4>
@@ -5842,7 +5837,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" data-simplebar class="mt-2" style="max-height: 800px;">
+                                <div class="card mt-2" data-simplebar style="max-height: 800px;">
                                     <div id="componentcard61" class="card-body">
                                         <div class="col-xl-12">
                                             <h4 class="card-title">Контролируемые показатели 13</h4>
@@ -6802,19 +6797,19 @@
 <!-- -->
 
 {% block extra_javascript %}
-    <script>
-        $(document).ready(function() {
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
-    <!-- Выбор форм мест отбора -->
-    <script src="{% static 'js/choose.js'%}"></script>
-    <script src="{% static 'libs/apexcharts/dist/apexcharts.min.js' %}"></script>
-    <!-- apexcharts init -->
-    <script src="{% static 'js/pages/apexcharts.init.js' %}"></script>
-    <!-- crypto dash init js -->
-    <script src="{% static 'js/mini-chart.js'%}"></script>
-    <!-- Saas dashboard init -->
-    <script src="{% static 'js/pages/saas-dashboard.init.js'%}"></script>
-    <script src="{% static 'js/big-chart.js'%}"></script>
+<script>
+    $(document).ready(function() {
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>
+<!-- Выбор форм мест отбора -->
+<script src="{% static 'js/choose.js'%}"></script>
+<script src="{% static 'libs/apexcharts/dist/apexcharts.min.js' %}"></script>
+<!-- apexcharts init -->
+<script src="{% static 'js/pages/apexcharts.init.js' %}"></script>
+<!-- crypto dash init js -->
+<script src="{% static 'js/mini-chart.js'%}"></script>
+<!-- Saas dashboard init -->
+<script src="{% static 'js/pages/saas-dashboard.init.js'%}"></script>
+<script src="{% static 'js/big-chart.js'%}"></script>
 {% endblock %}

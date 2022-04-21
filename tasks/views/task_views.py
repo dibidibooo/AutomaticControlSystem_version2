@@ -50,7 +50,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             task.deadline = deadline
             task.status_id = int(status)
             task.user_id = int(user)
-            task.save()
+
             if task.tracker.has_changed('status_id'):
                 ChangesTracker.objects.create(
                     task_id=task.id,
@@ -61,6 +61,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
                     task_id=task.id,
                     text=f"@{request.user} изменил исполнителя на {task.user}",
                 )
+
             previous_date = task.tracker.previous('deadline').strftime('%Y-%m-%d %H:%M')
             current_date = " ".join(task.deadline.split("T"))
             if task.tracker.has_changed('deadline') and (previous_date != current_date):
@@ -68,6 +69,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
                     task_id=task.id,
                     text=f"@{request.user} изменил срок исполнения на {task.deadline}",
                 )
+            task.save()
             return redirect('tasks-kanbanboard')
         elif 'add_comment_button' in request.POST:
             id = request.POST['id']
@@ -83,14 +85,16 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             task_id = int(request.POST.get('task_id'))
             task = get_object_or_404(Task, pk=task_id)
             task.status_id = status_id
+            print(123, task.tracker.changed())
+            print(321, task.tracker.has_changed('status_id'))
             if task.status_id == 4:
                 task.completion_date = datetime.now()
-            task.save()
             if task.tracker.has_changed('status_id'):
                 ChangesTracker.objects.create(
                     task_id=task.id,
                     text=f"@{request.user} изменил статус на {task.status}",
                 )
+            task.save()
         return JsonResponse({"message": "success"})
 
 
@@ -111,7 +115,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=oil_prod.recommendation2,
-                responsible_id=1,
+                responsible_id=3,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -123,7 +127,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation2,
-                responsible_id=1,
+                responsible_id=3,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -135,7 +139,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=ph.recommendation1,
-                responsible_id=1,
+                responsible_id=3,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -371,7 +375,7 @@ class TaskCreate:
     # 2|2
     def site5_task(self, form):
         hardness = Component.objects.get(title__contains='[2|2] Жесткость общая')
-        hardness_calcium = Component.objects.get(title__contains='[2|2] Жесткость кальциеваяН')
+        hardness_calcium = Component.objects.get(title__contains='[2|2] Жесткость кальциевая')
         ph = Component.objects.get(title__contains='[2|2] Значение рН')
         salt = Component.objects.get(title__contains='[2|2] Солесодержание')
         chlorides = Component.objects.get(title__contains='[2|2] Хлориды')
@@ -379,7 +383,10 @@ class TaskCreate:
         oil_prod = Component.objects.get(title__contains='[2|2] Нефтепродукт')
         suspended_subst = Component.objects.get(title__contains='[2|2] Взвешенные вещества')
         alkalinity = Component.objects.get(title__contains='[2|2] Щелочность общая')
-
+        print(1, ph)
+        print(2, ph.limit_lo)
+        print(3, ph.limit_hi)
+        print(4, form.cleaned_data['ph'])
         if float(form.cleaned_data['hardness']) > float(hardness.limit_hi):
             comp_title = hardness.title[6:]
             deadline = datetime.now() + timedelta(days=3)
@@ -390,7 +397,7 @@ class TaskCreate:
                 comp_title=comp_title,
                 sampling_site_id=5,
                 notification_id=1,
-                plant_unit_id=1
+                plant_unit_id=2
             )
         if float(form.cleaned_data['hardness_calcium']) > float(hardness_calcium.limit_hi):
             comp_title = hardness_calcium.title[6:]
@@ -402,7 +409,7 @@ class TaskCreate:
                 comp_title=comp_title,
                 sampling_site_id=5,
                 notification_id=1,
-                plant_unit_id=1
+                plant_unit_id=2
             )
         if float(form.cleaned_data['ph']) > float(ph.limit_hi):
             comp_title = ph.title[6:]
@@ -414,7 +421,7 @@ class TaskCreate:
                 comp_title=comp_title,
                 sampling_site_id=5,
                 notification_id=1,
-                plant_unit_id=1
+                plant_unit_id=2
             )
         if float(form.cleaned_data['ph']) < float(ph.limit_lo):
             comp_title = ph.title[6:]
@@ -426,7 +433,7 @@ class TaskCreate:
                 comp_title=comp_title,
                 sampling_site_id=5,
                 notification_id=2,
-                plant_unit_id=1
+                plant_unit_id=2
             )
         if float(form.cleaned_data['salt']) > float(salt.limit_hi):
             comp_title = salt.title[6:]
@@ -438,7 +445,7 @@ class TaskCreate:
                 comp_title=comp_title,
                 sampling_site_id=5,
                 notification_id=1,
-                plant_unit_id=1
+                plant_unit_id=2
             )
         if float(form.cleaned_data['chlorides']) > float(chlorides.limit_hi):
             comp_title = chlorides.title[6:]
@@ -450,7 +457,7 @@ class TaskCreate:
                 comp_title=comp_title,
                 sampling_site_id=5,
                 notification_id=1,
-                plant_unit_id=1
+                plant_unit_id=2
             )
         if float(form.cleaned_data['sulfates']) > float(sulfates.limit_hi):
             comp_title = sulfates.title[6:]
@@ -462,7 +469,7 @@ class TaskCreate:
                 comp_title=comp_title,
                 sampling_site_id=5,
                 notification_id=1,
-                plant_unit_id=1
+                plant_unit_id=2
             )
         if float(form.cleaned_data['oil_prod']) > float(oil_prod.limit_hi):
             comp_title = oil_prod.title[6:]
@@ -474,7 +481,7 @@ class TaskCreate:
                 comp_title=comp_title,
                 sampling_site_id=5,
                 notification_id=1,
-                plant_unit_id=1
+                plant_unit_id=2
             )
         if float(form.cleaned_data['suspended_subst']) > float(suspended_subst.limit_hi):
             comp_title = suspended_subst.title[6:]
@@ -486,7 +493,7 @@ class TaskCreate:
                 comp_title=comp_title,
                 sampling_site_id=5,
                 notification_id=1,
-                plant_unit_id=1
+                plant_unit_id=2
             )
         if float(form.cleaned_data['alkalinity']) > float(alkalinity.limit_hi):
             comp_title = alkalinity.title[6:]
@@ -498,7 +505,7 @@ class TaskCreate:
                 comp_title=comp_title,
                 sampling_site_id=5,
                 notification_id=1,
-                plant_unit_id=1
+                plant_unit_id=2
             )
         if float(form.cleaned_data['alkalinity']) < float(alkalinity.limit_lo):
             comp_title = alkalinity.title[6:]
@@ -510,7 +517,7 @@ class TaskCreate:
                 comp_title=comp_title,
                 sampling_site_id=5,
                 notification_id=2,
-                plant_unit_id=1
+                plant_unit_id=2
             )
 
     # 3|1
@@ -522,7 +529,7 @@ class TaskCreate:
         chlorides = Component.objects.get(title__contains='[3|1] Хлориды')
         sulfates = Component.objects.get(title__contains='[3|1] Сульфаты')
         oil_prod = Component.objects.get(title__contains='[3|1] Нефтепродукт')
-        suspended_subst = Component.objects.get(title__contains='[3|1] Общие взвешенные вещества')
+        suspended_subst = Component.objects.get(title__contains='[3|1] Взвешенные вещества')
         alkalinity = Component.objects.get(title__contains='[3|1] Щелочность общая')
 
         if float(form.cleaned_data['hardness']) > float(hardness.limit_hi):
