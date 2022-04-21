@@ -536,7 +536,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite1.objects.all().latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 1 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -553,7 +555,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite2.objects.all().latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 2 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -570,7 +574,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite3.objects.all().latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 3 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -587,7 +593,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite4.objects.all().latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 4 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -604,7 +612,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite5.objects.all().latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 5 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -621,7 +631,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite6.objects.filter(water_type_id=1).latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 6 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -638,7 +650,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite6.objects.filter(water_type_id=2).latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 6 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -655,7 +669,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite7.objects.all().latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 7 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -672,7 +688,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite8.objects.all().latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 8 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -689,7 +707,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite9.objects.all().latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 9 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -706,7 +726,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite10.objects.all().latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 10 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -723,7 +745,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite11.objects.all().latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 11 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -740,7 +764,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite12.objects.all().latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 12 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -757,7 +783,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite13.objects.all().latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 13 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
@@ -774,7 +802,9 @@ class ResultsView(PermissionRequiredMixin, View):
         try:
             sample = ComponentsSite14.objects.all().latest('datetime')
             for task in tasks:
-                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                if sample.sampling_site_id == 14 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
+                ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
