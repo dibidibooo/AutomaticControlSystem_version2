@@ -59,7 +59,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" data-simplebar class="mt-2" style="max-height: 800px;">
+                                <div class="card mt-2" data-simplebar style="max-height: 800px;">
                                     <div id="componentcard11" class="card-body">
                                         <div class="col-xl-12">
                                             <h4 class="card-title">Контролируемые показатели 1</h4>
@@ -140,13 +140,12 @@
                                                                     <p><b>{{ results1.no_recom }}</b></p>
                                                                 </div>
                                                             </div>
-                                                            {% endif %} {% for key, value in results1.items %} {% if key == 'Нефтепродукт' %}
+                                                            {% endif %} {% for key, value in results1.items %}{{ key }} {{ value }} {% if key == 'oil_prod' %}
                                                             <div class="card-body bg-danger bg-soft">
                                                                 <p class="text-muted mb-4">
                                                                     <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
                                                                 </p>
                                                                 <div class="col-12">
-
                                                                     <p><b>{{ value }}</b></p>
                                                                 </div>
                                                             </div>
@@ -1520,7 +1519,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" data-simplebar class="mt-2" style="max-height: 800px;">
+                                <div class="card mt-2" data-simplebar style="max-height: 800px;">
                                     <div id="componentcard21" class="card-body">
                                         <div class="col-xl-12">
                                             <h4 class="card-title">Контролируемые показатели 4</h4>
@@ -2590,7 +2589,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" data-simplebar class="mt-2" style="max-height: 800px;">
+                                <div class="card mt-2" data-simplebar style="max-height: 800px;">
                                     <div id="componentcard31" class="card-body">
                                         <div class="col-xl-12">
                                             <h4 class="card-title">Контролируемые показатели 6</h4>
@@ -3763,7 +3762,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" data-simplebar class="mt-2" style="max-height: 800px;">
+                                <div class="card mt-2" data-simplebar style="max-height: 800px;">
                                     <div id="componentcard41" class="card-body">
                                         <div class="col-xl-12">
                                             <h4 class="card-title">Контролируемые показатели 7</h4>
@@ -5477,7 +5476,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" data-simplebar class="mt-2" style="max-height: 800px;">
+                                <div class="card mt-2" data-simplebar style="max-height: 800px;">
                                     <div id="componentcard51" class="card-body">
                                         <div class="col-xl-12">
                                             <h4 class="card-title">Контролируемые показатели 12</h4>
@@ -5817,7 +5816,7 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="card" data-simplebar class="mt-2" style="max-height: 800px;">
+                                <div class="card mt-2" data-simplebar style="max-height: 800px;">
                                     <div id="componentcard61" class="card-body">
                                         <div class="col-xl-12">
                                             <h4 class="card-title">Контролируемые показатели 13</h4>
