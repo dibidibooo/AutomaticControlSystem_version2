@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание задачи</title>
+</head>
+<body>
+    <div>
+        <h4>Добавлена новая задача:</h4>
+        <p>
+            "{{ task_title }} для компонента {{ component }}".
+            <br>Место отбора проб: {{ sampling_site }}. Установка: {{ plant_unit }}.
+        </p>
+        <br>
+        <hr>
+        <p>Пройдите по <a href="http://127.0.0.1:8000/tasks/kanbanboard">ссылке</a>, чтобы открыть доску задач</p>
+    </div>
+</body>
+</html>

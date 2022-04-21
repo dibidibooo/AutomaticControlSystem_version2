@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление комментария</title>
+</head>
+<body>
+    <div>
+        <h4>Добавлен новый комментарий в задаче #{{ task_id }}</h4>
+        <p>
+            {{ task_title }} для компонента {{ component }}.
+            <br>(Место отбора проб: {{ sampling_site }}. Установка: {{ plant_unit }}.)
+        </p>
+        <div>
+            <h5>@{{ author }}:</h5>
+            <p>{{ text }}</p>
+        </div>
+        <br>
+        <hr>
+        <p>Пройдите по <a href="http://127.0.0.1:8000/tasks/kanbanboard">ссылке</a>, чтобы открыть доску задач</p>
+    </div>
+</body>
+</html>

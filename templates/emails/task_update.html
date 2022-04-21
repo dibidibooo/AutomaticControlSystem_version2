@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Изменения в задаче</title>
+</head>
+<body>
+    <div>
+        <h4>
+            В задаче №{{ task_id }} - {{ task_title }} для компонента {{ component }}
+            <br>(Место отбора проб: {{ sampling_site }}. Установка: {{ plant_unit }}.):
+        </h4>
+        {% if prev_status != status %}
+            <p>- изменен статус с "{{ prev_status }}" на "{{ status }}"</p>
+        {% endif %}
+        {% if prev_assignee %}
+            <p>
+                - изменен исполнитель с {{ prev_assignee.first_name }} {{ prev_assignee.last_name }} на {{ assignee.first_name }} {{ assignee.last_name }}
+            </p>
+        {% endif %}
+        {% if deadline %}
+            <p>- изменен срок выполнения задачи на "{{ deadline }}"</p>
+        {% endif %}
+        <br>
+        <hr>
+        <p>Пройдите по <a href="http://127.0.0.1:8000/tasks/kanbanboard">ссылке</a>, чтобы открыть доску задач</p>
+    </div>
+</body>
+</html>
