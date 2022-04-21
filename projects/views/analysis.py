@@ -512,8 +512,8 @@ class ResultsView(PermissionRequiredMixin, View):
             'pageview': "Анализы",
             'components': components,
             'tasks': tasks,
-            'results1': results_site1,
             'results2': results_site2,
+            'results1': results_site1,
             'results3': results_site3,
             'results4': results_site4,
             'results5': results_site5,
@@ -527,8 +527,50 @@ class ResultsView(PermissionRequiredMixin, View):
             'results12': results_site12,
             'results13': results_site13,
             'results14': results_site14,
+
+            "results": [
+                self.get_results(ComponentsSite2.objects.all(), 1),
+                self.get_results(ComponentsSite1.objects.all(), 2),
+                self.get_results(ComponentsSite3.objects.all(), 3),
+                self.get_results(ComponentsSite4.objects.all(), 4),
+                self.get_results(ComponentsSite5.objects.all(), 5),
+                self.get_results(ComponentsSite6.objects.filter(water_type_id=1), 6),
+                self.get_results(ComponentsSite6.objects.filter(water_type_id=2), 7),
+                self.get_results(ComponentsSite7.objects.all(), 8),
+                self.get_results(ComponentsSite8.objects.all(), 9),
+                self.get_results(ComponentsSite9.objects.all(), 10),
+                self.get_results(ComponentsSite10.objects.all(), 11),
+                self.get_results(ComponentsSite11.objects.all(), 12),
+                self.get_results(ComponentsSite12.objects.all(), 13),
+                self.get_results(ComponentsSite13.objects.all(), 14),
+                self.get_results(ComponentsSite14.objects.all(), 15),
+            ]
         }
         return render(request, 'projects/analyses_results.html', context)
+
+    def get_results(self, items, index):
+        results_site = {
+            "index": index,
+            "values": {},
+        }
+        tasks = Task.objects.all()
+        try:
+            sample = items.latest('datetime')
+            for task in tasks:
+                if sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S'):
+                    results_site[task.comp_title] = task.title
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
+            for key, value in items.values().latest('datetime').items():
+                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
+                    results_site[key] = value
+                    results_site['values'][key] = value
+
+
+
+        except ComponentsSite1.DoesNotExist:
+            results_site['no_data'] = 'Нет данных'
+        return results_site
 
     def get_results1(self):
         results_site = {}

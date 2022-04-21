@@ -1,7 +1,7 @@
 dragula([document.getElementById("upcoming-task"),document.getElementById("inprogress-task"),document.getElementById("test-task"),document.getElementById("complete-task")])
     .on('drag', function (el, container) {
         if (container.id === 'upcoming-task'){
-            el.className = el.className.replace(' task_status_1', '');
+            (el.className = el.className.replace(' task_status_1', '') && $("#upcoming-task").load(" #upcoming-task"));
         }
         if (container.id === 'inprogress-task'){
             el.className = el.className.replace(' task_status_2', '');
@@ -20,7 +20,6 @@ dragula([document.getElementById("upcoming-task"),document.getElementById("inpro
                 const cookies = document.cookie.split(';');
                 for (let i = 0; i < cookies.length; i++) {
                     const cookie = cookies[i].trim();
-                    // Does this cookie string begin with the name we want?
                     if (cookie.substring(0, name.length + 1) === (name + '=')) {
                         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
                         break;
@@ -44,12 +43,9 @@ dragula([document.getElementById("upcoming-task"),document.getElementById("inpro
                 },
                 error: function(resp){
                     console.log("Something went wrong");
-                }
+                },
             });
-                window.location.reload();
-
         }
-        setTimeout('send_data_1(id)', 200);
 
         function send_data_2(id) {
             $.ajax({
@@ -69,7 +65,6 @@ dragula([document.getElementById("upcoming-task"),document.getElementById("inpro
                 window.location.reload();
         }
         setTimeout('send_data_2(id)', 200);
-
 
         function send_data_3(id) {
             $.ajax({
