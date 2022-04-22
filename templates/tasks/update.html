@@ -30,7 +30,7 @@
                 <label for="id_user" class="form-label"><b>Исполнитель</b></label>
                 <select id="id_user" class="form-select" name="user">
                     {% if not task.user %}
-                        <option value="" selected>-----------</option>
+                        <option value="" selected>Выбрать..</option>
                     {% endif %}
                     {% for user in users %}
                         <option value="{{ user.pk }}" {% if user == task.user %}selected{% endif %}>{{ user }}</option>
@@ -42,6 +42,10 @@
                 <p id="task_responsible">{{ task.responsible.first_name }} {{ task.responsible.last_name }}</p>
             </div>
             <input type="submit" value="Сохранить" name="edittask" class="btn btn-primary">
+            <button class="btn btn-primary" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                Загрузка...
+            </button>
         </div>
     </div>
 </div>

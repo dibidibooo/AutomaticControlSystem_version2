@@ -85,8 +85,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             task_id = int(request.POST.get('task_id'))
             task = get_object_or_404(Task, pk=task_id)
             task.status_id = status_id
-            print(123, task.tracker.changed())
-            print(321, task.tracker.has_changed('status_id'))
+
             if task.status_id == 4:
                 task.completion_date = datetime.now()
             if task.tracker.has_changed('status_id'):
@@ -151,7 +150,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=suspended_solids.recommendation2,
-                responsible_id=1,
+                responsible_id=3,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -163,7 +162,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=phosphorus.recommendation1,
-                responsible_id=1,
+                responsible_id=3,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -175,7 +174,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=alkalinity.recommendation2,
-                responsible_id=1,
+                responsible_id=3,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -187,7 +186,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=salt.recommendation2,
-                responsible_id=1,
+                responsible_id=3,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -199,7 +198,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=chlorides.recommendation2,
-                responsible_id=1,
+                responsible_id=3,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -211,7 +210,7 @@ class TaskCreate:
             deadline = datetime.now() + timedelta(days=3)
             Task.objects.create(
                 title=sulfates.recommendation2,
-                responsible_id=1,
+                responsible_id=3,
                 deadline=deadline,
                 comp_title=comp_title,
                 sampling_site_id=1,
@@ -383,10 +382,7 @@ class TaskCreate:
         oil_prod = Component.objects.get(title__contains='[2|2] Нефтепродукт')
         suspended_subst = Component.objects.get(title__contains='[2|2] Взвешенные вещества')
         alkalinity = Component.objects.get(title__contains='[2|2] Щелочность общая')
-        print(1, ph)
-        print(2, ph.limit_lo)
-        print(3, ph.limit_hi)
-        print(4, form.cleaned_data['ph'])
+
         if float(form.cleaned_data['hardness']) > float(hardness.limit_hi):
             comp_title = hardness.title[6:]
             deadline = datetime.now() + timedelta(days=3)
