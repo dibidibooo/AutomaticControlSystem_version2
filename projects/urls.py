@@ -4,7 +4,7 @@ from .views.analysis import AnalysisCreateView, ProjectsListView, ProjectOvervie
 urlpatterns = [
     path('analyzes', AnalysisCreateView.as_view(), name='projects-projectsgrid'),
     path('projectslist', ProjectsListView.as_view(), name='projects-projectslist'),
-    path('projectoverview', ProjectOverviewView.as_view(), name='projects-projectoverview'),
+    path('table', ProjectOverviewView.as_view(), name='projects-projectoverview'),
     path('results', ResultsView.as_view(), name='projects-createview'),
 
 ]

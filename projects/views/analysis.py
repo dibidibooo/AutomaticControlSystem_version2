@@ -481,7 +481,7 @@ class ProjectOverviewView(LoginRequiredMixin, View):
     def get(self, request):
         context = {
             'heading': "Таблица",
-            'pageview': "Projects",
+            'pageview': "Анализы",
             'tasks': Task.objects.order_by('start_date')
         }
         return render(request, 'projects/projectsoverview.html', context)
