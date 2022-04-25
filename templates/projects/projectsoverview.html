@@ -1,9 +1,7 @@
 {% extends 'partials/base.html' %}
 {% load static %}
 
-
-{% block extra_css %}
-{% endblock %}
+{% block extra_css %}{% endblock %}
 {% block contents %}
 <div class="row">
     <div class="col-12">
@@ -50,18 +48,18 @@
                 <div class="mt-3">
                     <table id="datatable-buttons" class="table text-center table-bordered dt-responsive nowrap w-100">
                         <thead>
-                        <tr>
-                            <th>Установка</th>
-                            <th>Место отбора анализов</th>
-                            <th>Контролируемая вода</th>
-                            <th>Контролируемый параметр</th>
-                            <th>Показатель</th>
-                            <th>Производные коэффициенты и метрики, полученные из анализов</th>
-                            <th>Задачи и рекомендации по нормализации качества воды</th>
-                            <th>Ответственный и срок выполнения задачи</th>
-                            <th>Исполнители</th>
-                            <th>Причины невыполнения задач</th>
-                        </tr>
+                            <tr>
+                                <th>Установка</th>
+                                <th>Место отбора анализов</th>
+                                <th>Контролируемая вода</th>
+                                <th>Контролируемый параметр</th>
+                                <th>Показатель</th>
+                                <th>Производные коэффициенты и метрики, полученные из анализов</th>
+                                <th>Задачи и рекомендации по нормализации качества воды</th>
+                                <th>Ответственный и срок выполнения задачи</th>
+                                <th>Исполнители</th>
+                                <th>Причины невыполнения задач</th>
+                            </tr>
                         </thead>
 
                         <tbody>
@@ -79,14 +77,18 @@
                                         {{ task.responsible.first_name }} {{ task.responsible.last_name }}
                                         <br>{{ task.deadline|date:"d.m.Y H:i" }}
                                     </td>
-                                    <td>
+                                    <td class="px-1">
                                         {% for change in task.changes.all %}
                                             {% if 'изменил исполнителя' in change.text %}
-                                                <div class="mb-2">{{ change.changed_to }} - {{ change.updated_at|date:"d.m.Y" }}, </div>
+                                                <ul class="px-3 mb-2"><li>{{ change.changed_to }}<br>{{ change.updated_at|date:"d.m.Y" }}</li></ul>
                                             {% endif %}
                                         {% endfor %}
                                     </td>
-                                    <td>Причины невыполнения задач</td>
+                                    <td class="px-1">
+                                        {% for change in task.changes.all %}
+                                                <ul class="px-3 mb-2"><li class="hide_item">{% if change.failure_reason %}{{ change.failure_reason }}{% endif %}</li></ul>
+                                        {% endfor %}
+                                    </td>
                                 </tr>
                             {% endfor %}
                         </tbody>
@@ -124,4 +126,6 @@
 
 <!-- Datatable init js -->
 <script src="{% static 'js/pages/datatables.init.js' %}"></script>
+
+<script>$('.hide_item:empty').parent().hide()</script>
 {% endblock %}

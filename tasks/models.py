@@ -116,3 +116,4 @@ class ChangesTracker(models.Model):
     who_changed = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Кто изменил')
     changed_to = models.CharField(max_length=200, verbose_name='На что изменил')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата и время изменения')
+    failure_reason = models.CharField(max_length=300, null=True, blank=True, verbose_name='Причина невыполнения задачи')
