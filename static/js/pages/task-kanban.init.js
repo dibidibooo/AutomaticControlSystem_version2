@@ -30,6 +30,7 @@ dragula([document.getElementById("upcoming-task"), document.getElementById("inpr
         }
         const csrftoken = getCookie('csrftoken');
 
+
         function send_data_1(id) {
             $.ajax({
                 url: '/tasks/kanbanboard',
@@ -46,6 +47,7 @@ dragula([document.getElementById("upcoming-task"), document.getElementById("inpr
                 },
             });
         }
+
 
         function send_data_2(id) {
             $.ajax({

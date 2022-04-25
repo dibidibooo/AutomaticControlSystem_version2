@@ -41,11 +41,9 @@
                 <label for="id_task_responsible" class="form-label"><b>Ответственный</b></label>
                 <p id="task_responsible">{{ task.responsible.first_name }} {{ task.responsible.last_name }}</p>
             </div>
-            <input type="submit" value="Сохранить" name="edittask" class="btn btn-primary">
-            <button class="btn btn-primary" type="button" disabled>
-            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                Загрузка...
-            </button>
+            <input id='getDataBtn' type="submit" value="Сохранить" name="edittask" class="btn btn-primary">
+
+            <div id="loader" class="lds-dual-ring hidden overlay"></div>
         </div>
     </div>
 </div>
