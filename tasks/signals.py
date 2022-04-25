@@ -43,7 +43,10 @@ def send_task_send_email(sender, instance, created, **kwargs):
         if instance.tracker.has_changed('status_id'):
             body += f'\n- изменен статус c "{Status.objects.get(id=instance.tracker.previous("status_id"))}" на "{task.status}".'
         if instance.tracker.has_changed('user_id'):
-            body += f'\n- изменен исполнитель c "{User.objects.get(id=instance.tracker.previous("user_id")).first_name} {User.objects.get(id=instance.tracker.previous("user_id")).last_name}" на "{task.user.first_name} {task.user.last_name}".'
+            if instance.tracker.previous("user_id") is None:
+                body += f'\n- изменен исполнитель на "{task.user.first_name} {task.user.last_name}".'
+            else:
+                body += f'\n- изменен исполнитель c "{User.objects.get(id=instance.tracker.previous("user_id")).first_name} {User.objects.get(id=instance.tracker.previous("user_id")).last_name}" на "{task.user.first_name} {task.user.last_name}".'
         if instance.tracker.has_changed('deadline') and (instance.tracker.previous('deadline') != task.deadline):
             body += f'\n- изменен срок выполнения задачи на "{task.deadline}"'
 

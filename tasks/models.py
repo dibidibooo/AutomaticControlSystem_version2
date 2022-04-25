@@ -10,7 +10,7 @@ from model_utils import FieldTracker
 class Task(models.Model):
     title = models.CharField(max_length=100, verbose_name='Задача')
     user = models.ForeignKey(get_user_model(), related_name='task_assignee', null=True, blank=True,
-                             on_delete=models.CASCADE, verbose_name='Исполнитель')
+                             on_delete=models.PROTECT, verbose_name='Исполнитель')
     responsible = models.ForeignKey(get_user_model(), related_name='task_responsible',
                                     on_delete=models.CASCADE, verbose_name='Ответственный')
     start_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата назначения задачи')
@@ -18,6 +18,8 @@ class Task(models.Model):
     deadline = models.DateTimeField(null=True, blank=True, verbose_name='Срок выполнения задачи')
     completion_date = models.DateTimeField(null=True, blank=True, verbose_name='Дата и время выполнения задачи')
     comp_title = models.CharField(max_length=100, null=True, blank=True, verbose_name='Название компонента')
+    comp_value = models.IntegerField(verbose_name='Показатель компонента')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='task')
     sampling_site = models.ForeignKey(
         'projects.SamplingSite',
         null=True,
@@ -110,5 +112,8 @@ class Comment(models.Model):
 
 class ChangesTracker(models.Model):
     task = models.ForeignKey('tasks.Task', on_delete=models.CASCADE, related_name="changes")
-    text = models.CharField(max_length=1000, verbose_name='Текст изменения')
+    text = models.CharField(max_length=200, verbose_name='Текст изменения')
+    who_changed = models.ForeignKey(User, on_delete=models.PROTECT, verbose_name='Кто изменил')
+    changed_to = models.CharField(max_length=200, verbose_name='На что изменил')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата и время изменения')
+    failure_reason = models.CharField(max_length=300, null=True, blank=True, verbose_name='Причина невыполнения задачи')

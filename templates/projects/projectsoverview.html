@@ -1,9 +1,7 @@
 {% extends 'partials/base.html' %}
 {% load static %}
 
-
-{% block extra_css %}
-{% endblock %}
+{% block extra_css %}{% endblock %}
 {% block contents %}
 <div class="row">
     <div class="col-12">
@@ -50,54 +48,49 @@
                 <div class="mt-3">
                     <table id="datatable-buttons" class="table text-center table-bordered dt-responsive nowrap w-100">
                         <thead>
-                        <tr>
-                            <th>Места отбора анализов</th>
-                            <th>Контролируемая вода</th>
-                            <th>Контролируемые параметры и их единицы измерения</th>
-                            <th>Производные коэффициенты и метрики, полученные из анализов</th>
-                            <th>Задачи и рекомендации по нормализации качества воды</th>
-                            <th>Исполнители задач и сроки их выполнения</th>
-                            <th>Причины невыполнения задач</th>
-                            <th>Комментарии</th>
-                        </tr>
+                            <tr>
+                                <th>Установка</th>
+                                <th>Место отбора анализов</th>
+                                <th>Контролируемая вода</th>
+                                <th>Контролируемый параметр</th>
+                                <th>Показатель</th>
+                                <th>Производные коэффициенты и метрики, полученные из анализов</th>
+                                <th>Задачи и рекомендации по нормализации качества воды</th>
+                                <th>Ответственный и срок выполнения задачи</th>
+                                <th>Исполнители</th>
+                                <th>Причины невыполнения задач</th>
+                            </tr>
                         </thead>
 
-
                         <tbody>
-                        <tr>
-                            <td>Подача на градирню в районе 77-ТI-205 77-SN-007</td>
-                            <td>Приточный</td>
-                            <td>32</td>
-                            <td id="area-sparkline-chart-1"
-                                class="apex-charts"></td>
-                            <td>Задачи и рекомендации по нормализации качества воды</td>
-                            <td>Исполнители задач и сроки их выполнения</td>
-                            <td>Причины невыполнения задач</td>
-                            <td>Комментарии</td>
-                        </tr>
-                        <tr>
-                            <td>На входе в боковой фильтр позиции 77-Z-003 77-SN-006</td>
-                            <td>Оборотный</td>
-                            <td>46</td>
-                            <td id="area-sparkline-chart-2"
-                                class="apex-charts"></td>
-                            <td>Задачи и рекомендации по нормализации качества воды</td>
-                            <td>Исполнители задач и сроки их выполнения</td>
-                            <td>Причины невыполнения задач</td>
-                            <td>Комментарии</td>
-                        </tr>
-                        <tr>
-                            <td>Выход из ёмкости 77-ТК-103 77-SN-004</td>
-                            <td>Приточный</td>
-                            <td>64</td>
-                            <td id="area-sparkline-chart-3"
-                                class="apex-charts"></td>
-                            <td>Задачи и рекомендации по нормализации качества воды</td>
-                            <td>Исполнители задач и сроки их выполнения</td>
-                            <td>Причины невыполнения задач</td>
-                            <td>Комментарии</td>
-                        </tr>
-
+                            {% for task in tasks %}
+                                <tr>
+                                    <td>{{ task.plant_unit }}</td>
+                                    <td>{{ task.sampling_site }}</td>
+                                    <td>{{ task.water_type }}</td>
+                                    <td>{{ task.comp_title }}</td>
+                                    <td>{{ task.comp_value }}</td>
+                                    <td id="area-sparkline-chart-1"
+                                        class="apex-charts"></td>
+                                    <td>{{ task.title }}</td>
+                                    <td>
+                                        {{ task.responsible.first_name }} {{ task.responsible.last_name }}
+                                        <br>{{ task.deadline|date:"d.m.Y H:i" }}
+                                    </td>
+                                    <td class="px-1">
+                                        {% for change in task.changes.all %}
+                                            {% if 'изменил исполнителя' in change.text %}
+                                                <ul class="px-3 mb-2"><li>{{ change.changed_to }}<br>{{ change.updated_at|date:"d.m.Y" }}</li></ul>
+                                            {% endif %}
+                                        {% endfor %}
+                                    </td>
+                                    <td class="px-1">
+                                        {% for change in task.changes.all %}
+                                                <ul class="px-3 mb-2"><li class="hide_item">{% if change.failure_reason %}{{ change.failure_reason }}{% endif %}</li></ul>
+                                        {% endfor %}
+                                    </td>
+                                </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
                 </div>
@@ -133,4 +126,6 @@
 
 <!-- Datatable init js -->
 <script src="{% static 'js/pages/datatables.init.js' %}"></script>
+
+<script>$('.hide_item:empty').parent().hide()</script>
 {% endblock %}
