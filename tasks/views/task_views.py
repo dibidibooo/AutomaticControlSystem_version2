@@ -60,7 +60,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
     def post(self, request):
         if 'edittask' in request.POST:
             id = request.POST['id']
-            deadline = request.POST['deadline']
+            deadline = request.POST.get('deadline')
             status = request.POST['status']
             user = request.POST['user']
             task = Task.objects.get(id=id)
@@ -83,15 +83,17 @@ class KanbanBoardView(PermissionRequiredMixin, View):
                     changed_to=f"{task.user}"
                 )
 
-            previous_date = task.tracker.previous('deadline').strftime('%Y-%m-%d %H:%M')
-            current_date = " ".join(task.deadline.split("T"))
-            if task.tracker.has_changed('deadline') and (previous_date != current_date):
-                ChangesTracker.objects.create(
-                    task_id=task.id,
-                    text="изменил срок исполнения на",
-                    who_changed=request.user,
-                    changed_to=task.deadline
-                )
+            if task.deadline:
+                previous_date = task.tracker.previous('deadline').strftime('%Y-%m-%d %H:%M')
+                current_date = " ".join(task.deadline.split("T"))
+                if task.tracker.has_changed('deadline') and (previous_date != current_date):
+                    ChangesTracker.objects.create(
+                        task_id=task.id,
+                        text="изменил срок исполнения на",
+                        who_changed=request.user,
+                        changed_to=task.deadline,
+                        failure_reason=request.POST['failure_reason']
+                    )
             task.save()
             return redirect('tasks-kanbanboard')
         elif 'add_comment_button' in request.POST:

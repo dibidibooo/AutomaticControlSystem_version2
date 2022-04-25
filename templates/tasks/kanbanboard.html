@@ -205,7 +205,6 @@
 <script src="{% static 'js/pages/form-advanced.init.js'%}"></script>
 
 <script>
-console.log($('.open_task'));
     function update_query_parameters(key, val) {
        let uri = window.location.href
           .replace(RegExp("([?&]"+key+"(?=[=&#]|$)[^#&]*|(?=#|$))"), "&"+key+"="+encodeURIComponent(val))
