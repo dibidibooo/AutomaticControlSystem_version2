@@ -34,7 +34,7 @@
                 <label for="id_user" class="form-label"><b>Исполнитель</b></label>
                 <select id="id_user" class="form-select" name="user">
                     {% if not task.user %}
-                        <option value="" selected>Выбрать..</option>
+                        <option value="" selected>-----------</option>
                     {% endif %}
                     {% for user in users %}
                         <option value="{{ user.pk }}" {% if user == task.user %}selected{% endif %}>{{ user }}</option>
@@ -45,9 +45,7 @@
                 <label for="id_task_responsible" class="form-label"><b>Ответственный</b></label>
                 <p id="task_responsible">{{ task.responsible.first_name }} {{ task.responsible.last_name }}</p>
             </div>
-            <input id='getDataBtn' type="submit" value="Сохранить" name="edittask" class="btn btn-primary">
-
-            <div id="loader" class="lds-dual-ring hidden overlay"></div>
+            <input type="submit" value="Сохранить" name="edittask" class="btn btn-primary">
         </div>
     </div>
 </div>
@@ -106,19 +104,15 @@
                 </div>
             </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5" style="max-width: 300px">
             <hr>
             <p><b>Дата создания:</b> {{ task.start_date }}</p>
             <p><b>Дата обновления:</b> {{ task.updated_at }}</p>
-            <<<<<<< HEAD <div><b>История изменений:</b> {% for change in changes %}
-                <p class="mb-0">{{ change.text }}</p>
+            <div class="mb-3"><b>История изменений:</b> {% for change in changes %}
+                <p class="mb-0">@{{ change.who_changed }} {{ change.text }} {{ change.changed_to }}</p>
                 <p class="mb-0" style="font-size: 10px; color: dimgrey;">{{ change.updated_at }}</p>
-                <hr class="mt-1"> {% endfor %} =======
-                <div class="mb-3"><b>История изменений:</b> {% for change in changes %}
-                    <p class="mb-0">@{{ change.who_changed }} {{ change.text }} {{ change.changed_to }}</p>
-                    <p class="mb-0" style="font-size: 10px; color: dimgrey;">{{ change.updated_at }}</p>
-                    <hr class="mt-1"> {% endfor %} >>>>>>> 9a70972032dfc98123d51ca1360d7770c16dfc66
-                </div>
+                <hr class="mt-1"> {% endfor %}
+            </div>
         </div>
     </div>
 </form>
