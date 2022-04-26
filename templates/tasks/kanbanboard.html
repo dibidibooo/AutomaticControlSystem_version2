@@ -208,12 +208,6 @@
 
 
 <script>
-    function update_query_parameters(key, val) {
-       let uri = window.location.href
-          .replace(RegExp("([?&]"+key+"(?=[=&#]|$)[^#&]*|(?=#|$))"), "&"+key+"="+encodeURIComponent(val))
-          .replace(/^([^?&]+)&/, "$1?");
-       return uri;
-    }
     $(document).on("click", ".open_task", function (e) {
         e.preventDefault();
         let $popup = $("#staticBackdrop");
@@ -225,9 +219,16 @@
         function editTask(event){
         let task_id = document.getElementById("uid");
         task_id.setAttribute("value", event);
+
         let uri = window.location.href;
-        let new_uri = update_query_parameters('id', event);
-        console.log(new_uri);
+        let $popup = $('#staticBackdrop');
+        $popup.on('show.bs.modal', function () {
+            history.pushState({}, '', uri + '/' + event);
+        });
+        $popup.on('hide.bs.modal', function () {
+            history.pushState({}, '', uri);
+        });
+
         $.ajax({
             type: 'GET',
             data: {
