@@ -53,11 +53,13 @@ class Results3ViewSet(viewsets.ModelViewSet):
     serializer_class = Results3Serializer
 
 
+
 def get_results1(request):
-    data_dict = {}
+    data_dict = dict()
+    data_dict['id'] = 1
     for i in ComponentsSite1.objects.values():
         for key, value in i.items():
-            if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
+            if key == 'oil_prod':
                 data_dict.setdefault(key, []).append(value)
     return JsonResponse(data_dict, json_dumps_params={'ensure_ascii': False})
 #
