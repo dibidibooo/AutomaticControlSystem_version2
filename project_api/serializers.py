@@ -66,18 +66,47 @@ class TasksSerializer(serializers.ModelSerializer):
 
 
 class Results1Serializer(serializers.ModelSerializer):
+    data = serializers.SerializerMethodField()
+
     class Meta:
         model = ComponentsSite1
-        fields = '__all__'
+        fields = ['data']
+
+    def get_data(self, comp_site):
+        data_dict = {}
+        for i in ComponentsSite1.objects.values():
+            for key, value in i.items():
+                data_dict.setdefault(key, []).append(value)
+        return data_dict
 
 
 class Results2Serializer(serializers.ModelSerializer):
+    data = serializers.SerializerMethodField()
+
     class Meta:
         model = ComponentsSite2
-        fields = '__all__'
+        fields = ['id', 'data']
+
+    def get_data(self, comp_site):
+        data_dict = {}
+        for i in ComponentsSite2.objects.values():
+            for key, value in i.items():
+                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
+                    data_dict[key] = value
+        return data_dict
 
 
 class Results3Serializer(serializers.ModelSerializer):
+    data = serializers.SerializerMethodField()
+
     class Meta:
         model = ComponentsSite3
-        fields = '__all__'
+        fields = ['id', 'data']
+
+    def get_data(self, comp_site):
+        data_dict = {}
+        for i in ComponentsSite3.objects.values():
+            for key, value in i.items():
+                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
+                    data_dict[key] = value
+        return data_dict

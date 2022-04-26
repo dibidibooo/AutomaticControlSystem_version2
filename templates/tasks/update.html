@@ -52,7 +52,7 @@
 </div>
 
 <!-- Comments -->
-<form action="{% url 'comments-add' 2 %}" method="POST">
+<form action="{% url 'comments-add' task.id %}" method="POST">
     {% csrf_token %}
     <div class="row" id="comments_section">
         <div class="col-lg-7">
@@ -84,7 +84,7 @@
                 </div>
                 <br>
                 <div class="col-lg-12">
-                    {% for comment in task.comments.all %}
+                    {% for comment in task.comments.all|dictsortreversed:"created_at" %}
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item py-3">
                                 <div class="d-flex">
@@ -124,15 +124,17 @@
 
 {% block extra_javascript %}
     <script>
-        let deadline = $('#id_deadline');
-        let reason = $('#failure_reason');
-        reason.on('input', function () {
-            if ($(this).val().length >= 20) {
-                deadline.removeAttr('disabled');
-            }
-            else {
-                deadline.attr('disabled', true);
-            }
-        });
+        $('.modal').show(function () {
+            let deadline = $('#id_deadline');
+            let reason = $('#failure_reason');
+            reason.on('input', function () {
+                if ($(this).val().length >= 20) {
+                    deadline.removeAttr('disabled');
+                }
+                else {
+                    deadline.attr('disabled', true);
+                }
+            });
+        })
     </script>
 {% endblock %}
