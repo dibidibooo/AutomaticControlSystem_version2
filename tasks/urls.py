@@ -8,5 +8,5 @@ urlpatterns = [
     path('kanbanboard', KanbanBoardView.as_view(), name='tasks-kanbanboard'),
     path('createtask', CreateTaskView.as_view(), name='tasks-createtask'),
     path('<int:pk>', TaskDetailView.as_view(), name='tasks-detail'),
-    path('<int:pk>/comment/add', CommentCreateView.as_view(), name='comments-add'),
+    path('kanbanboard/<int:pk>', CommentCreateView.as_view(), name='comments-add'),
 ]
