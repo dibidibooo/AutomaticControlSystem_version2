@@ -256,6 +256,30 @@ class ComponentsSite14(models.Model):
     sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component14')
     water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component14')
 
+# БОС -> Выход с аппарата напорной флотации в ТК -008А/ А1 –SN -004А
+class ComponentsSite15(models.Model):
+    suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Взвешенные вещества')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
+    oxygen_chem = models.IntegerField(null=True, blank=True, verbose_name='Химическая потребность в кислороде (ХПК)')
+    ammonium = models.IntegerField(null=True, blank=True, verbose_name='Аммонийный азот')
+    phosphorus = models.IntegerField(null=True, blank=True, verbose_name='Фосфор')
+    oxygen_bio = models.IntegerField(null=True, blank=True, verbose_name='Биологическая потребность в кислороде (БПК5)')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component15')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component15')
+
+# БОС -> Выход с аппарата напорной флотации в ТК-008В/ А1 –SN -004В
+class ComponentsSite16(models.Model):
+    suspended_subst = models.IntegerField(null=True, blank=True, verbose_name='Взвешенные вещества')
+    oil_prod = models.IntegerField(null=True, blank=True, verbose_name='Нефтепродукт')
+    oxygen_chem = models.IntegerField(null=True, blank=True, verbose_name='Химическая потребность в кислороде (ХПК)')
+    ammonium = models.IntegerField(null=True, blank=True, verbose_name='Аммонийный азот')
+    phosphorus = models.IntegerField(null=True, blank=True, verbose_name='Фосфор')
+    oxygen_bio = models.IntegerField(null=True, blank=True, verbose_name='Биологическая потребность в кислороде (БПК5)')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+    sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component16')
+    water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component16')
+
 
 class Notification(models.Model):
     title = models.CharField(max_length=500, verbose_name='Уведомление')

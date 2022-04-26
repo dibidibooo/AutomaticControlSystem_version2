@@ -18,7 +18,10 @@ from .models import (
     ComponentsSite11,
     ComponentsSite12,
     ComponentsSite13,
-    ComponentsSite14
+    ComponentsSite14,
+    ComponentsSite15,
+    ComponentsSite16
+
 )
 
 admin.site.register(PlantUnit)
@@ -39,3 +42,5 @@ admin.site.register(ComponentsSite11)
 admin.site.register(ComponentsSite12)
 admin.site.register(ComponentsSite13)
 admin.site.register(ComponentsSite14)
+admin.site.register(ComponentsSite15)
+admin.site.register(ComponentsSite16)
