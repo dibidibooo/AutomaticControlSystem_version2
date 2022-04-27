@@ -20,7 +20,8 @@ from .models import (
     ComponentsSite13,
     ComponentsSite14,
     ComponentsSite15,
-    ComponentsSite16
+    ComponentsSite16,
+    AdditionalComponents
 
 )
 
@@ -44,3 +45,4 @@ admin.site.register(ComponentsSite13)
 admin.site.register(ComponentsSite14)
 admin.site.register(ComponentsSite15)
 admin.site.register(ComponentsSite16)
+admin.site.register(AdditionalComponents)

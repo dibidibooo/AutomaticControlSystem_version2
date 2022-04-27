@@ -195,3 +195,12 @@ class Site16Form(MultipleForm):
     ammonium = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Аммонийный азот")
     phosphorus = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Фосфор")
     oxygen_bio = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Биологическая потребность в кислороде (БПК5)")
+
+
+# Дополнительные компоненты которые вводят каждый день
+class AdditionalComponentsForm(MultipleForm):
+    recycled_water_consumption = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Расход оборотной воды")
+    running_water_consumption = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Расход подпиточной воды")
+    purge_flow = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Расход продувки")
+    hot_water_temp = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Температура горячей оборотной воды")
+    cold_water_temp = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Температура охлажденной воды")

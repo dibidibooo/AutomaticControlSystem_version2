@@ -24,6 +24,7 @@ from projects.forms import (
     Site14Form,
     Site15Form,
     Site16Form,
+    AdditionalComponentsForm
 )
 from projects.models import (
     ComponentsSite1,
@@ -43,6 +44,7 @@ from projects.models import (
     ComponentsSite15,
     ComponentsSite16,
     Component,
+    AdditionalComponents,
 )
 from projects.multiforms import MultiFormsView
 
@@ -66,6 +68,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
                     'site14': Site14Form,
                     'site15': Site15Form,
                     'site16': Site16Form,
+                    'additionalcomponents': AdditionalComponentsForm,
                     }
 
     success_url = reverse_lazy('projects-projectsgrid')
@@ -519,6 +522,152 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         )
         task_create = TaskCreate()
         task_create.site16_task(form, 1)
+        return HttpResponseRedirect(self.success_url)
+
+
+    # Дополнительные компоненты Водоблок-2
+    def additional_components_form_valid_1(self, form):
+        recycled_water_consumption = form.cleaned_data.get('recycled_water_consumption')
+        running_water_consumption = form.cleaned_data.get('running_water_consumption')
+        purge_flow = form.cleaned_data.get('purge_flow')
+        hot_water_temp = form.cleaned_data.get('hot_water_temp')
+        cold_water_temp = form.cleaned_data.get('cold_water_temp')
+        total_microbial_number = form.cleaned_data.get('total_microbial_number')
+        form_name = form.cleaned_data.get('action')
+
+        AdditionalComponents.objects.create(
+            recycled_water_consumption=recycled_water_consumption,
+            running_water_consumption=running_water_consumption,
+            purge_flow=purge_flow,
+            hot_water_temp=hot_water_temp,
+            cold_water_temp=cold_water_temp,
+            total_microbial_number=total_microbial_number,
+            sampling_site_id=17,
+            water_type_id=1
+        )
+        task_create = TaskCreate()
+        task_create.additional_components_task_1(form, 1)
+        return HttpResponseRedirect(self.success_url)
+
+
+    # Дополнительные компоненты БОВ-1
+    def additional_components_form_valid_2(self, form):
+        recycled_water_consumption = form.cleaned_data.get('recycled_water_consumption')
+        running_water_consumption = form.cleaned_data.get('running_water_consumption')
+        purge_flow = form.cleaned_data.get('purge_flow')
+        hot_water_temp = form.cleaned_data.get('hot_water_temp')
+        cold_water_temp = form.cleaned_data.get('cold_water_temp')
+        total_microbial_number = form.cleaned_data.get('total_microbial_number')
+        form_name = form.cleaned_data.get('action')
+
+        AdditionalComponents.objects.create(
+            recycled_water_consumption=recycled_water_consumption,
+            running_water_consumption=running_water_consumption,
+            purge_flow=purge_flow,
+            hot_water_temp=hot_water_temp,
+            cold_water_temp=cold_water_temp,
+            total_microbial_number=total_microbial_number,
+            sampling_site_id=18,
+            water_type_id=1
+        )
+        task_create = TaskCreate()
+        task_create.additional_components_task_2(form, 1)
+        return HttpResponseRedirect(self.success_url)
+
+    # Дополнительные компоненты БОВ-2
+    def additional_components_form_valid_3(self, form):
+        recycled_water_consumption = form.cleaned_data.get('recycled_water_consumption')
+        running_water_consumption = form.cleaned_data.get('running_water_consumption')
+        purge_flow = form.cleaned_data.get('purge_flow')
+        hot_water_temp = form.cleaned_data.get('hot_water_temp')
+        cold_water_temp = form.cleaned_data.get('cold_water_temp')
+        total_microbial_number = form.cleaned_data.get('total_microbial_number')
+        form_name = form.cleaned_data.get('action')
+
+        AdditionalComponents.objects.create(
+            recycled_water_consumption=recycled_water_consumption,
+            running_water_consumption=running_water_consumption,
+            purge_flow=purge_flow,
+            hot_water_temp=hot_water_temp,
+            cold_water_temp=cold_water_temp,
+            total_microbial_number=total_microbial_number,
+            sampling_site_id=19,
+            water_type_id=1
+        )
+        task_create = TaskCreate()
+        task_create.additional_components_task_3(form, 1)
+        return HttpResponseRedirect(self.success_url)
+
+    # Дополнительные компоненты УГОВ
+    def additional_components_form_valid_4(self, form):
+        recycled_water_consumption = form.cleaned_data.get('recycled_water_consumption')
+        running_water_consumption = form.cleaned_data.get('running_water_consumption')
+        purge_flow = form.cleaned_data.get('purge_flow')
+        hot_water_temp = form.cleaned_data.get('hot_water_temp')
+        cold_water_temp = form.cleaned_data.get('cold_water_temp')
+        total_microbial_number = form.cleaned_data.get('total_microbial_number')
+        form_name = form.cleaned_data.get('action')
+
+        AdditionalComponents.objects.create(
+            recycled_water_consumption=recycled_water_consumption,
+            running_water_consumption=running_water_consumption,
+            purge_flow=purge_flow,
+            hot_water_temp=hot_water_temp,
+            cold_water_temp=cold_water_temp,
+            total_microbial_number=total_microbial_number,
+            sampling_site_id=20,
+            water_type_id=1
+        )
+        task_create = TaskCreate()
+        task_create.additional_components_task_4(form, 1)
+        return HttpResponseRedirect(self.success_url)
+
+    # Дополнительные компоненты МОС
+    def additional_components_form_valid_5(self, form):
+        recycled_water_consumption = form.cleaned_data.get('recycled_water_consumption')
+        running_water_consumption = form.cleaned_data.get('running_water_consumption')
+        purge_flow = form.cleaned_data.get('purge_flow')
+        hot_water_temp = form.cleaned_data.get('hot_water_temp')
+        cold_water_temp = form.cleaned_data.get('cold_water_temp')
+        total_microbial_number = form.cleaned_data.get('total_microbial_number')
+        form_name = form.cleaned_data.get('action')
+
+        AdditionalComponents.objects.create(
+            recycled_water_consumption=recycled_water_consumption,
+            running_water_consumption=running_water_consumption,
+            purge_flow=purge_flow,
+            hot_water_temp=hot_water_temp,
+            cold_water_temp=cold_water_temp,
+            total_microbial_number=total_microbial_number,
+            sampling_site_id=21,
+            water_type_id=1
+        )
+        task_create = TaskCreate()
+        task_create.additional_components_task_5(form, 1)
+        return HttpResponseRedirect(self.success_url)
+
+    # Дополнительные компоненты БОС
+    def additional_components_form_valid_6(self, form):
+        recycled_water_consumption = form.cleaned_data.get('recycled_water_consumption')
+        running_water_consumption = form.cleaned_data.get('running_water_consumption')
+        purge_flow = form.cleaned_data.get('purge_flow')
+        hot_water_temp = form.cleaned_data.get('hot_water_temp')
+        cold_water_temp = form.cleaned_data.get('cold_water_temp')
+        total_microbial_number = form.cleaned_data.get('total_microbial_number')
+        form_name = form.cleaned_data.get('action')
+
+        AdditionalComponents.objects.create(
+            recycled_water_consumption=recycled_water_consumption,
+            running_water_consumption=running_water_consumption,
+            purge_flow=purge_flow,
+            hot_water_temp=hot_water_temp,
+            cold_water_temp=cold_water_temp,
+            total_microbial_number=total_microbial_number,
+            sampling_site_id=22,
+            water_type_id=1
+        )
+        task_create = TaskCreate()
+        task_create.additional_components_task_6(form, 1)
         return HttpResponseRedirect(self.success_url)
 
 

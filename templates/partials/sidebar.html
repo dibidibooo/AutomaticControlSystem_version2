@@ -108,37 +108,6 @@
                 </li>
 
 
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bxs-bar-chart-alt-2"></i>
-                        <span key="t-charts">Графики</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li>
-                            <a href="{% url 'charts-apexcharts' %}" key="t-apex-charts">Графики</a>
-                        </li>
-                        <!--            <li>-->
-                        <!--              <a href="{% url 'charts-echarts' %}" key="t-e-charts">E Charts</a>-->
-                        <!--            </li>-->
-                        <!--            <li>-->
-                        <!--              <a href="{% url 'charts-chartjs' %}" key="t-chartjs-charts">Chartjs Charts-->
-                        <!--              </a>-->
-                        <!--            </li>-->
-                        <!--            <li>-->
-                        <!--              <a href="{% url 'charts-flotcharts' %}" key="t-flot-charts">Flot Charts</a>-->
-                        <!--            </li>-->
-                        <!--            <li>-->
-                        <!--              <a href="{% url 'charts-toastuicharts' %}" key="t-ui-charts">Toast UI Charts</a>-->
-                        <!--            </li>-->
-                        <!--            <li>-->
-                        <!--              <a href="{% url 'charts-jqueryknobcharts' %}" key="t-knob-charts">Jquery Knob Charts</a>-->
-                        <!--            </li>-->
-                        <!--            <li>-->
-                        <!--              <a href="{% url 'charts-sparklinecharts' %}" key="t-sparkline-charts">Sparkline Charts</a>-->
-                        <!--            </li>-->
-                    </ul>
-                </li>
-
                 {% elif user.is_superuser %}
                 <li>
                     <a href="{% url 'projects-projectsgrid' %}" key="t-p-grid">
@@ -177,18 +146,6 @@
                     </a>
                 </li>
 
-
-                <li>
-                    <a href="javascript: void(0);" class="has-arrow waves-effect">
-                        <i class="bx bxs-bar-chart-alt-2"></i>
-                        <span key="t-charts">Графики</span>
-                    </a>
-                    <ul class="sub-menu" aria-expanded="false">
-                        <li>
-                            <a href="{% url 'charts-apexcharts' %}" key="t-apex-charts">Графики</a>
-                        </li>
-                    </ul>
-                </li>
 
                 <li>
                     <a href="{% url 'accounts-users' %}">
