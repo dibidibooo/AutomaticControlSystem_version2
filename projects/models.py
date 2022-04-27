@@ -272,3 +272,13 @@ class Status(models.Model):
 
     class Meta:
         verbose_name_plural = 'Statuses'
+
+
+class AdditionalComponents(models.Model):
+    plant_unit = models.ForeignKey('projects.PlantUnit', on_delete=models.CASCADE, related_name='additional_component')
+    recycled_water_consumption = models.IntegerField(null=True, blank=True, verbose_name='Расход оборотной воды')
+    running_water_consumption = models.IntegerField(null=True, blank=True, verbose_name='Расход подпиточной воды')
+    purge_flow = models.IntegerField(null=True, blank=True, verbose_name='Расход продувки')
+    hot_water_temp = models.IntegerField(null=True, blank=True, verbose_name='Температура горячей оборотной воды')
+    cold_water_temp = models.IntegerField(null=True, blank=True, verbose_name='Температура охлажденной воды')
+    total_microbial_number = models.IntegerField(null=True, blank=True, verbose_name='Общее микробное число')

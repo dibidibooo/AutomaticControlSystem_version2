@@ -1035,7 +1035,7 @@ class TaskCreate:
         pass
 
 
-class TaskListView(LoginRequiredMixin, View):
+class ArchiveTaskListView(LoginRequiredMixin, View):
     def get(self, request):
         context = {
             'heading': "Архив",
