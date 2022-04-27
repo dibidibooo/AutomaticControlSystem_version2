@@ -437,6 +437,12 @@
                                                 <option value="14">
                                                     Сточная вода после биологических очистных сооружений А1–SN-009
                                                 </option>
+                                                <option value="15">
+                                                    Выход с аппарата напорной флотации в ТК-008А / А1–SN-004А
+                                                </option>
+                                                <option value="16">
+                                                    Выход с аппарата напорной флотации в ТК-008В / А1–SN-004В
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
@@ -470,6 +476,52 @@
                                         <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site14 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site14.action.value }}" id="id_action"> {% else %}
+                                            <div class="row">
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endif %} {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <!-- МОП 15 -->
+                                    <div id="componentcard63" class="card-body">
+                                        <h4 class="card-title">Контролируемые показатели</h4>
+                                        <p class="card-title-desc">Оборотная вода</p>
+                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                            {% csrf_token %} {% for field in forms.site15 %} {% if field.name == 'action' %}
+                                            <input type="hidden" name="action" value="{{ forms.site15.action.value }}" id="id_action"> {% else %}
+                                            <div class="row">
+                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                                <div class="col-lg-6">
+                                                    <div class="input-group">
+                                                        {{field}}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text">ед.</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            {% endif %} {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                            </button>
+                                        </form>
+                                    </div>
+                                    <!-- МОП 16 -->
+                                    <div id="componentcard64" class="card-body">
+                                        <h4 class="card-title">Контролируемые показатели</h4>
+                                        <p class="card-title-desc">Оборотная вода</p>
+                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                            {% csrf_token %} {% for field in forms.site16 %} {% if field.name == 'action' %}
+                                            <input type="hidden" name="action" value="{{ forms.site16.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
                                                 <div class="col-lg-6"><b>{{field.label}}</b></div>
                                                 <div class="col-lg-6">
@@ -530,5 +582,7 @@
                 }, false)
             })
     })()
+
+
 </script>
 {% endblock %}

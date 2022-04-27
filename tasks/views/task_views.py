@@ -23,7 +23,9 @@ from projects.models import (
     ComponentsSite11,
     ComponentsSite12,
     ComponentsSite13,
-    ComponentsSite14
+    ComponentsSite14,
+    ComponentsSite15,
+    ComponentsSite16,
 )
 from tasks.forms import TaskForm
 from tasks.models import Task, Comment, ChangesTracker
@@ -1026,6 +1028,16 @@ class TaskCreate:
 
     # 6|2
     def site14_task(self, form, water_type):
+        pass
+
+
+    # 6|2
+    def site15_task(self, form, water_type):
+        pass
+
+
+    # 6|2
+    def site16_task(self, form, water_type):
         pass
 
 
