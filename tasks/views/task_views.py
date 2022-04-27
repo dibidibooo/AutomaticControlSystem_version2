@@ -6,6 +6,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.views.generic import DetailView
+from tasks.tasks import archive_task
 
 from projects.models import (
     Status,
@@ -57,6 +58,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             'statuses': Status.objects.all(),
             'users': User.objects.all(),
         }
+        archive_task()
         return render(request, 'tasks/kanbanboard.html', context)
 
     def post(self, request):
@@ -69,6 +71,8 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             task.deadline = deadline
             task.status_id = int(status)
             task.user_id = int(user)
+            if task.status_id == 4:
+                task.completion_date = datetime.now()
 
             if task.tracker.has_changed('status_id'):
                 ChangesTracker.objects.create(
@@ -89,11 +93,13 @@ class KanbanBoardView(PermissionRequiredMixin, View):
                 previous_date = task.tracker.previous('deadline').strftime('%Y-%m-%d %H:%M')
                 current_date = " ".join(task.deadline.split("T"))
                 if task.tracker.has_changed('deadline') and (previous_date != current_date):
+                    print(task.deadline, type(task.deadline))
+                    print(datetime.strptime(task.deadline, '%Y-%m-%dT%H:%M'))
                     ChangesTracker.objects.create(
                         task_id=task.id,
                         text="изменил срок исполнения на",
                         who_changed=request.user,
-                        changed_to=task.deadline,
+                        changed_to=datetime.strptime(task.deadline, '%Y-%m-%dT%H:%M').strftime('%Y-%m-%d %H:%M'),
                         failure_reason=request.POST['failure_reason']
                     )
             task.save()
