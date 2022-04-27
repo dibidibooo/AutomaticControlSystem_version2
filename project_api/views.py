@@ -52,17 +52,69 @@ class Results3ViewSet(viewsets.ModelViewSet):
     queryset = ComponentsSite3.objects.all()
     serializer_class = Results3Serializer
 
+def is_data(name):
+    """
+    filter not data fields
+    """
+    if name == "id" \
+            or name == "datetime" \
+            or name == "water_type" \
+            or name == "sampling_site_id" \
+            or name == "sampling_site":
+        return False
+    else:
+        return True
 
 
 def get_results1(request):
-    data_dict = dict()
-    data_dict['id'] = 1
-    for i in ComponentsSite1.objects.values():
-        for key, value in i.items():
-            if key == 'oil_prod':
-                data_dict.setdefault(key, []).append(value)
+    """
+    api:
+        data = [
+            {
+                "object_index": 1,
+                "values":[
+                    {
+                        "name": "oil_prod",
+                        "values": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+                    }
+                ]
+            },
+        ]
+    """
+    data_dict = {
+        "data": [
+            get_object_statistic(ComponentsSite1.objects.all(), 1),
+            get_object_statistic(ComponentsSite2.objects.all(), 2),
+            get_object_statistic(ComponentsSite3.objects.all(), 3),
+        ]
+    }
     return JsonResponse(data_dict, json_dumps_params={'ensure_ascii': False})
-#
+
+
+def get_object_statistic(items, object_index):
+    # Component
+    _values = {}
+    # on components
+    for item in items.values():
+        # all values on component
+        for key, value in item.items():
+            if is_data(key):
+                if key in _values:
+                    _values[key].append(value)
+                else:
+                    _values[key] = [value, ]
+
+    res = {
+        "object_index": object_index,
+        "values": [{"name": key, "values": _values[key]} for key in  _values]
+    }
+    return res
+
+
+
+
+
+# dsf
 # def get_results2(request):
 #     results_site = {}
 #     tasks = Task.objects.all()
