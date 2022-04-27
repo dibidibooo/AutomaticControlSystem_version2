@@ -53,6 +53,7 @@ class Results3ViewSet(viewsets.ModelViewSet):
     serializer_class = Results3Serializer
 
 
+
 def get_results1(request):
     data_dict = dict()
     data_dict['id'] = 1

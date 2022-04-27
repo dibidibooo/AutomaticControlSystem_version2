@@ -1,26 +1,25 @@
-dragula([document.getElementById("upcoming-task"),document.getElementById("inprogress-task"),document.getElementById("test-task"),document.getElementById("complete-task")])
-    .on('drag', function (el, container) {
-        if (container.id === 'upcoming-task'){
+dragula([document.getElementById("upcoming-task"), document.getElementById("inprogress-task"), document.getElementById("test-task"), document.getElementById("complete-task")])
+    .on('drag', function(el, container) {
+        if (container.id === 'upcoming-task') {
             el.className = el.className.replace(' task_status_1', '');
         }
-        if (container.id === 'inprogress-task'){
+        if (container.id === 'inprogress-task') {
             el.className = el.className.replace(' task_status_2', '');
         }
-        if (container.id === 'test-task'){
+        if (container.id === 'test-task') {
             el.className = el.className.replace(' task_status_3', '');
         }
-        if (container.id === 'complete-task'){
+        if (container.id === 'complete-task') {
             el.className = el.className.replace(' task_status_4', '');
         }
     })
-    .on("drop", function (el, container) {
+    .on("drop", function(el, container) {
         function getCookie(name) {
             let cookieValue = null;
             if (document.cookie && document.cookie !== '') {
                 const cookies = document.cookie.split(';');
                 for (let i = 0; i < cookies.length; i++) {
                     const cookie = cookies[i].trim();
-                    // Does this cookie string begin with the name we want?
                     if (cookie.substring(0, name.length + 1) === (name + '=')) {
                         cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
                         break;
@@ -31,6 +30,7 @@ dragula([document.getElementById("upcoming-task"),document.getElementById("inpro
         }
         const csrftoken = getCookie('csrftoken');
 
+
         function send_data_1(id) {
             $.ajax({
                 url: '/tasks/kanbanboard',
@@ -39,17 +39,15 @@ dragula([document.getElementById("upcoming-task"),document.getElementById("inpro
                     status: 1,
                     task_id: id
                 },
-                beforeSend: function (xhr) {
+                beforeSend: function(xhr) {
                     xhr.setRequestHeader("X-CSRFToken", csrftoken);
                 },
-                error: function(resp){
+                error: function(resp) {
                     console.log("Something went wrong");
-                }
+                },
             });
-                window.location.reload();
-
         }
-        setTimeout('send_data_1(id)', 200);
+
 
         function send_data_2(id) {
             $.ajax({
@@ -59,17 +57,14 @@ dragula([document.getElementById("upcoming-task"),document.getElementById("inpro
                     status: 2,
                     task_id: id
                 },
-                beforeSend: function (xhr) {
+                beforeSend: function(xhr) {
                     xhr.setRequestHeader("X-CSRFToken", csrftoken);
                 },
-                error: function(resp){
+                error: function(resp) {
                     console.log("Something went wrong");
                 }
             });
-                window.location.reload();
         }
-        setTimeout('send_data_2(id)', 200);
-
 
         function send_data_3(id) {
             $.ajax({
@@ -79,17 +74,14 @@ dragula([document.getElementById("upcoming-task"),document.getElementById("inpro
                     status: 3,
                     task_id: id
                 },
-                beforeSend: function (xhr) {
+                beforeSend: function(xhr) {
                     xhr.setRequestHeader("X-CSRFToken", csrftoken);
                 },
-                error: function(resp){
+                error: function(resp) {
                     console.log("Something went wrong");
                 }
             });
-                window.location.reload();
-
         }
-        setTimeout('send_data_3(id)', 200);
 
         function send_data_4(id) {
             $.ajax({
@@ -99,31 +91,31 @@ dragula([document.getElementById("upcoming-task"),document.getElementById("inpro
                     status: 4,
                     task_id: id
                 },
-                beforeSend: function (xhr) {
+                beforeSend: function(xhr) {
                     xhr.setRequestHeader("X-CSRFToken", csrftoken);
                 },
-                error: function(resp){
+                error: function(resp) {
                     console.log("Something went wrong");
                 }
             });
-                window.location.reload();
+            window.location.reload();
 
         }
-        setTimeout('send_data_4(id)', 200);
+        setTimeout('send_data_4(id)', 2000);
 
-        if (container.id === 'upcoming-task'){
+        if (container.id === 'upcoming-task') {
             el.className += ' task_status_1';
             send_data_1(el.id);
         }
-        if (container.id === 'inprogress-task'){
+        if (container.id === 'inprogress-task') {
             el.className += ' task_status_2';
             send_data_2(el.id);
         }
-        if (container.id === 'test-task'){
+        if (container.id === 'test-task') {
             el.className += ' task_status_3';
             send_data_3(el.id);
         }
-        if (container.id === 'complete-task'){
+        if (container.id === 'complete-task') {
             el.className += ' task_status_4';
             send_data_4(el.id);
         }

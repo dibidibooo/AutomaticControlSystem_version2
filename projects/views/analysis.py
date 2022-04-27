@@ -22,6 +22,8 @@ from projects.forms import (
     Site12Form,
     Site13Form,
     Site14Form,
+    Site15Form,
+    Site16Form,
 )
 from projects.models import (
     ComponentsSite1,
@@ -38,6 +40,8 @@ from projects.models import (
     ComponentsSite12,
     ComponentsSite13,
     ComponentsSite14,
+    ComponentsSite15,
+    ComponentsSite16,
     Component,
 )
 from projects.multiforms import MultiFormsView
@@ -60,6 +64,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
                     'site12': Site12Form,
                     'site13': Site13Form,
                     'site14': Site14Form,
+                    'site15': Site15Form,
+                    'site16': Site16Form,
                     }
 
     success_url = reverse_lazy('projects-projectsgrid')
@@ -467,6 +473,54 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         task_create.site14_task(form, 1)
         return HttpResponseRedirect(self.success_url)
 
+    # БОС -> Выход с аппарата напорной флотации в ТК -008А/ А1–SN-004А
+    def site15_form_valid(self, form):
+        suspended_subst = form.cleaned_data.get('suspended_subst')
+        oil_prod = form.cleaned_data.get('oil_prod')
+        oxygen_chem = form.cleaned_data.get('oxygen_chem')
+        ammonium = form.cleaned_data.get('ammonium')
+        phosphorus = form.cleaned_data.get('phosphorus')
+        oxygen_bio = form.cleaned_data.get('oxygen_bio')
+        form_name = form.cleaned_data.get('action')
+
+        ComponentsSite15.objects.create(
+            suspended_subst=suspended_subst,
+            oil_prod=oil_prod,
+            oxygen_chem=oxygen_chem,
+            ammonium=ammonium,
+            phosphorus=phosphorus,
+            oxygen_bio=oxygen_bio,
+            sampling_site_id=15,
+            water_type_id=1
+        )
+        task_create = TaskCreate()
+        task_create.site15_task(form, 1)
+        return HttpResponseRedirect(self.success_url)
+
+    # БОС -> Выход с аппарата напорной флотации в ТК-008В/ А1 –SN -004В
+    def site16_form_valid(self, form):
+        suspended_subst = form.cleaned_data.get('suspended_subst')
+        oil_prod = form.cleaned_data.get('oil_prod')
+        oxygen_chem = form.cleaned_data.get('oxygen_chem')
+        ammonium = form.cleaned_data.get('ammonium')
+        phosphorus = form.cleaned_data.get('phosphorus')
+        oxygen_bio = form.cleaned_data.get('oxygen_bio')
+        form_name = form.cleaned_data.get('action')
+
+        ComponentsSite16.objects.create(
+            suspended_subst=suspended_subst,
+            oil_prod=oil_prod,
+            oxygen_chem=oxygen_chem,
+            ammonium=ammonium,
+            phosphorus=phosphorus,
+            oxygen_bio=oxygen_bio,
+            sampling_site_id=16,
+            water_type_id=1
+        )
+        task_create = TaskCreate()
+        task_create.site16_task(form, 1)
+        return HttpResponseRedirect(self.success_url)
+
 
 class ProjectsListView(LoginRequiredMixin, View):
     def get(self, request):
@@ -508,6 +562,8 @@ class ResultsView(PermissionRequiredMixin, View):
         results_site12 = self.get_results12()
         results_site13 = self.get_results13()
         results_site14 = self.get_results14()
+        results_site15 = self.get_results15()
+        results_site16 = self.get_results16()
 
         context = {
             'heading': "Результаты",
@@ -529,6 +585,8 @@ class ResultsView(PermissionRequiredMixin, View):
             'results12': results_site12,
             'results13': results_site13,
             'results14': results_site14,
+            'results15': results_site15,
+            'results16': results_site16,
         }
         return render(request, 'projects/analyses_results.html', context)
 
@@ -814,5 +872,44 @@ class ResultsView(PermissionRequiredMixin, View):
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
         except ComponentsSite14.DoesNotExist:
+            results_site['no_data'] = 'Нет данных'
+        return results_site
+
+
+    def get_results15(self):
+        results_site = {}
+        tasks = Task.objects.all()
+        try:
+            sample = ComponentsSite15.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.sampling_site_id == 15 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
+                ):
+                    results_site[task.comp_title] = task.title
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
+            for key, value in ComponentsSite15.objects.values().latest('datetime').items():
+                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
+                    results_site[key] = value
+        except ComponentsSite15.DoesNotExist:
+            results_site['no_data'] = 'Нет данных'
+        return results_site
+
+    def get_results16(self):
+        results_site = {}
+        tasks = Task.objects.all()
+        try:
+            sample = ComponentsSite16.objects.all().latest('datetime')
+            for task in tasks:
+                if sample.sampling_site_id == 16 and (
+                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
+                ):
+                    results_site[task.comp_title] = task.title
+                else:
+                    results_site['no_recom'] = 'В пределах нормы'
+            for key, value in ComponentsSite16.objects.values().latest('datetime').items():
+                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
+                    results_site[key] = value
+        except ComponentsSite16.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site

@@ -5,11 +5,7 @@ from django.core.exceptions import ValidationError
 class MultipleForm(forms.Form):
     action = forms.CharField(max_length=60, widget=forms.HiddenInput())
 
-    def clean(self):
-        cleaned_data = super().clean()
-        ph = cleaned_data['ph']
-        if float(ph) > 12 or float(ph) < 0:
-            raise ValidationError('Значение pH может быть от 0 до 12')
+
 
 
 # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
@@ -179,3 +175,23 @@ class Site14Form(MultipleForm):
     oxidability = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Окисляемость")
     salt = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Солесодержание")
     chlorine = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Остаточный хлор")
+
+
+# БОС | Выход с аппарата напорной флотации в ТК -008А/ А1 –SN -004А
+class Site15Form(MultipleForm):
+    suspended_subst = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Взвешенные вещества")
+    oil_prod = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Нефтепродукт")
+    oxygen_chem = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Химическая потребность в кислороде (ХПК)")
+    ammonium = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Аммонийный азот")
+    phosphorus = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Фосфор")
+    oxygen_bio = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Биологическая потребность в кислороде (БПК5)")
+
+
+# БОС | Выход с аппарата напорной флотации в ТК-008В/ А1 –SN -004В
+class Site16Form(MultipleForm):
+    suspended_subst = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Взвешенные вещества")
+    oil_prod = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Нефтепродукт")
+    oxygen_chem = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Химическая потребность в кислороде (ХПК)")
+    ammonium = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Аммонийный азот")
+    phosphorus = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Фосфор")
+    oxygen_bio = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Биологическая потребность в кислороде (БПК5)")
