@@ -25,8 +25,14 @@
                         </a>
                     </div>
                 </div>
-
                 <div class="col-xl-9 col-sm-9 p-0">
+                    {% for res in results %}
+                    <div>
+                        {{res.index}}<br> {{res.values}}
+                        <br>
+                    </div>
+                    <br> {% endfor %}
+
                     <form class="needs-validation" novalidate method="POST" action="{% url 'projects-projectsgrid' %}">
                         {% csrf_token %}
                         <div class="tab-content" id="v-pills-tabContent">
@@ -80,7 +86,7 @@
                                                                                 <h5>{{ results1.oil_prod }}</h5>
                                                                                 <p class="text-muted text-truncate mb-0">
                                                                                     {{ component.measurement }}
-                                                                                    <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                    <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                                 </p>
                                                                             </div>
                                                                         </div>
@@ -165,7 +171,7 @@
                                                                         <h5>{{ results1.ph }}</h5>
                                                                         <p class="text-muted text-truncate mb-0">
                                                                             {{ component.measurement }}
-                                                                            <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                            <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                         </p>
                                                                     </div>
                                                                     <div class="col-7">
@@ -215,7 +221,7 @@
                                                                             <h5>{{ results1.suspended_solids }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-down ms-1 text-danger"></i>
+                                                                                <i class="mdi mdi-arrow-down ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -267,7 +273,7 @@
                                                                             <h5>{{ results1.phosphorus }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -318,7 +324,7 @@
                                                                             <h5>{{ results1.alkalinity }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -369,7 +375,7 @@
                                                                             <h5>{{ results1.hardness }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -421,7 +427,7 @@
                                                                             <h5>{{ results1.salt }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -473,7 +479,7 @@
                                                                             <h5>{{ results1.chlorides }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -525,7 +531,7 @@
                                                                             <h5>{{ results1.sulfates }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -576,7 +582,7 @@
                                                                             <h5>{{ results1.hardness_calcium }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -627,7 +633,7 @@
                                                                             <h5>{{ results1.hardness_magnesium }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -679,7 +685,7 @@
                                                                             <h5>{{ results1.iron }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -741,7 +747,7 @@
                                                                                 <h5>{{ results2.oil_prod }}</h5>
                                                                                 <p class="text-muted text-truncate mb-0">
                                                                                     {{ component.measurement }}
-                                                                                    <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                    <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                                 </p>
                                                                             </div>
                                                                         </div>
@@ -828,7 +834,7 @@
                                                                             <h5>{{ results2.ph }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -880,7 +886,7 @@
                                                                             <h5>{{ results2.suspended_solids }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-down ms-1 text-danger"></i>
+                                                                                <i class="mdi mdi-arrow-down ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -940,7 +946,7 @@
                                                                             <h5>{{ results3.suspended_subst }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -991,7 +997,7 @@
                                                                             <h5>{{ results3.hardness }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-down ms-1 text-danger"></i>
+                                                                                <i class="mdi mdi-arrow-down ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1043,7 +1049,7 @@
                                                                             <h5>{{ results3.iron }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1094,7 +1100,7 @@
                                                                             <h5>{{ results3.dry_residue }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1145,7 +1151,7 @@
                                                                             <h5>{{ results3.alkalinity }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1197,7 +1203,7 @@
                                                                             <h5>{{ results3.salt }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1249,7 +1255,7 @@
                                                                             <h5>{{ results3.chlorides }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1301,7 +1307,7 @@
                                                                             <h5>{{ results3.sulfates }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1352,7 +1358,7 @@
                                                                             <h5>{{ results3.hardness_calcium }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1403,7 +1409,7 @@
                                                                             <h5>{{ results3.hardness_magnesium }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1454,7 +1460,7 @@
                                                                             <h5>{{ results3.ph }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1537,7 +1543,7 @@
                                                                             <h5>{{ results4.hardness }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1588,7 +1594,7 @@
                                                                             <h5>{{ results4.hardness_calcium }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-down ms-1 text-danger"></i>
+                                                                                <i class="mdi mdi-arrow-down ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1639,7 +1645,7 @@
                                                                             <h5>{{ results4.ph }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1690,7 +1696,7 @@
                                                                             <h5>{{ results4.salt }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1741,7 +1747,7 @@
                                                                             <h5>{{ results4.chlorides }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1792,7 +1798,7 @@
                                                                             <h5>{{ results4.sulfates }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1843,7 +1849,7 @@
                                                                             <h5>{{ results4.oil_prod }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1894,7 +1900,7 @@
                                                                             <h5>{{ results4.suspended_subst }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1945,7 +1951,7 @@
                                                                             <h5>{{ results4.alkalinity }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -1997,7 +2003,7 @@
                                                                             <h5>{{ results4.iron }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2057,7 +2063,7 @@
                                                                             <h5>{{ results5.hardness }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2108,7 +2114,7 @@
                                                                             <h5>{{ results5.hardness_calcium }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-down ms-1 text-danger"></i>
+                                                                                <i class="mdi mdi-arrow-down ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2159,7 +2165,7 @@
                                                                             <h5>{{ results5.ph }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2210,7 +2216,7 @@
                                                                             <h5>{{ results5.salt }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2261,7 +2267,7 @@
                                                                             <h5>{{ results5.chlorides }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2312,7 +2318,7 @@
                                                                             <h5>{{ results5.sulfates }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2363,7 +2369,7 @@
                                                                             <h5>{{ results5.oil_prod }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2414,7 +2420,7 @@
                                                                             <h5>{{ results5.suspended_subst }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2465,7 +2471,7 @@
                                                                             <h5>{{ results5.alkalinity }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2517,7 +2523,7 @@
                                                                             <h5>{{ results5.iron }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2607,7 +2613,7 @@
                                                                             <h5>{{ results6.hardness }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2658,7 +2664,7 @@
                                                                             <h5>{{ results6.hardness_calcium }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-down ms-1 text-danger"></i>
+                                                                                <i class="mdi mdi-arrow-down ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2709,7 +2715,7 @@
                                                                             <h5>{{ results6.ph }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2760,7 +2766,7 @@
                                                                             <h5>{{ results6.salt }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2811,7 +2817,7 @@
                                                                             <h5>{{ results6.chlorides }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2862,7 +2868,7 @@
                                                                             <h5>{{ results6.sulfates }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2913,7 +2919,7 @@
                                                                             <h5>{{ results6.oil_prod }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -2964,7 +2970,7 @@
                                                                             <h5>{{ results6.suspended_subst }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3015,7 +3021,7 @@
                                                                             <h5>{{ results6.alkalinity_phenols }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3066,7 +3072,7 @@
                                                                             <h5>{{ results6.alkalinity }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3118,7 +3124,7 @@
                                                                             <h5>{{ results6.iron }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3178,7 +3184,7 @@
                                                                             <h5>{{ results6_2.hardness }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3229,7 +3235,7 @@
                                                                             <h5>{{ results6_2.hardness_calcium }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-down ms-1 text-danger"></i>
+                                                                                <i class="mdi mdi-arrow-down ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3280,7 +3286,7 @@
                                                                             <h5>{{ results6_2.ph }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3331,7 +3337,7 @@
                                                                             <h5>{{ results6_2.salt }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3382,7 +3388,7 @@
                                                                             <h5>{{ results6_2.chlorides }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3433,7 +3439,7 @@
                                                                             <h5>{{ results6_2.sulfates }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3484,7 +3490,7 @@
                                                                             <h5>{{ results6_2.oil_prod }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3535,7 +3541,7 @@
                                                                             <h5>{{ results6_2.suspended_subst }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3586,7 +3592,7 @@
                                                                             <h5>{{ results6_2.alkalinity_phenols }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3637,7 +3643,7 @@
                                                                             <h5>{{ results6_2.alkalinity }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3689,7 +3695,7 @@
                                                                             <h5>{{ results6_2.iron }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3781,7 +3787,7 @@
                                                                             <h5>{{ results7.suspended_solids }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3833,7 +3839,7 @@
                                                                             <h5>{{ results7.chlorides }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3885,7 +3891,7 @@
                                                                             <h5>{{ results7.sulfates }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3936,7 +3942,7 @@
                                                                             <h5>{{ results7.ph }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -3987,7 +3993,7 @@
                                                                             <h5>{{ results7.alkalinity }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4038,7 +4044,7 @@
                                                                             <h5>{{ results7.hardness_calcium }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4089,7 +4095,7 @@
                                                                             <h5>{{ results7.hardness }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4140,7 +4146,7 @@
                                                                             <h5>{{ results7.iron }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4201,7 +4207,7 @@
                                                                             <h5>{{ results8.suspended_solids }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4252,7 +4258,7 @@
                                                                             <h5>{{ results8.ph }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4304,7 +4310,7 @@
                                                                             <h5>{{ results8.chlorides }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4356,7 +4362,7 @@
                                                                             <h5>{{ results8.phosphorus }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4408,7 +4414,7 @@
                                                                             <h5>{{ results8.oil_prod }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4459,7 +4465,7 @@
                                                                             <h5>{{ results8.alkalinity }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4510,7 +4516,7 @@
                                                                             <h5>{{ results8.hardness_calcium }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4561,7 +4567,7 @@
                                                                             <h5>{{ results8.hardness }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4612,7 +4618,7 @@
                                                                             <h5>{{ results8.iron }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4664,7 +4670,7 @@
                                                                             <h5>{{ results8.salt }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4725,7 +4731,7 @@
                                                                             <h5>{{ results9.suspended_solids }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4777,7 +4783,7 @@
                                                                             <h5>{{ results9.chlorides }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4829,7 +4835,7 @@
                                                                             <h5>{{ results9.sulfates }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4880,7 +4886,7 @@
                                                                             <h5>{{ results9.ph }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4932,7 +4938,7 @@
                                                                             <h5>{{ results9.phosphorus }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -4983,7 +4989,7 @@
                                                                             <h5>{{ results9.alkalinity }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5034,7 +5040,7 @@
                                                                             <h5>{{ results9.hardness_calcium }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5085,7 +5091,7 @@
                                                                             <h5>{{ results9.hardness }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5136,7 +5142,7 @@
                                                                             <h5>{{ results9.iron }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5188,7 +5194,7 @@
                                                                             <h5>{{ results9.salt }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5248,7 +5254,7 @@
                                                                             <h5>{{ results10.chlorine }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5300,7 +5306,7 @@
                                                                             <h5>{{ results10.oil_prod }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5352,7 +5358,7 @@
                                                                             <h5>{{ results10.salt }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5413,7 +5419,7 @@
                                                                             <h5>{{ results11.suspended_solids }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5495,7 +5501,7 @@
                                                                             <h5>{{ results12.oil_prod }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5546,7 +5552,7 @@
                                                                             <h5>{{ results12.suspended_subst }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5597,7 +5603,7 @@
                                                                             <h5>{{ results12.ph }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5648,7 +5654,7 @@
                                                                             <h5>{{ results12.oxygen_chem }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5700,7 +5706,7 @@
                                                                             <h5>{{ results12.active_subst }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5751,7 +5757,7 @@
                                                                             <h5>{{ results12.ammonium }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5804,11 +5810,10 @@
                                                     <h4 class="card-title">Место отбора проб</h4>
                                                     <select class="form-select" id="plant_unit6" name="plant_unit6">
                                                         <option selected>Выбрать..</option>
-                                                        <option value="13">Пробоотборник 001 перед БОС / А1 –SN -001
-                                                        </option>
-                                                        <option value="14">Сточная вода после биологических очистных
-                                                            сооружений А1 –SN -009
-                                                        </option>
+                                                        <option value="13">Пробоотборник 001 перед БОС / А1 –SN -001</option>
+                                                        <option value="14">Сточная вода после биологических очистных сооружений А1 –SN -009</option>
+                                                        <option value="15">Выход с аппарата напорной флотации в ТК -008А/ А1 –SN -004А</option>
+                                                        <option value="16">Выход с аппарата напорной флотации в ТК-008В/ А1 –SN -004В</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -5834,7 +5839,7 @@
                                                                             <h5>{{ results13.ph }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5885,7 +5890,7 @@
                                                                             <h5>{{ results13.suspended_subst }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5936,7 +5941,7 @@
                                                                             <h5>{{ results13.oxygen_chem }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -5988,7 +5993,7 @@
                                                                             <h5>{{ results13.oil_prod }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6039,7 +6044,7 @@
                                                                             <h5>{{ results13.oxygen_bio }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6091,7 +6096,7 @@
                                                                             <h5>{{ results13.phenols }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6143,7 +6148,7 @@
                                                                             <h5>{{ results13.active_subst }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6195,7 +6200,7 @@
                                                                             <h5>{{ results13.chlorides }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6247,7 +6252,7 @@
                                                                             <h5>{{ results13.sulfates }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6299,7 +6304,7 @@
                                                                             <h5>{{ results13.iron }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6350,7 +6355,7 @@
                                                                             <h5>{{ results13.ammonium }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6401,7 +6406,7 @@
                                                                             <h5>{{ results13.nitrate }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6452,7 +6457,7 @@
                                                                             <h5>{{ results13.nitrite }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6512,7 +6517,7 @@
                                                                             <h5>{{ results14.alkalinity }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6563,7 +6568,7 @@
                                                                             <h5>{{ results14.hardness }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6615,7 +6620,7 @@
                                                                             <h5>{{ results14.oxidability }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6667,7 +6672,7 @@
                                                                             <h5>{{ results14.salt }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6718,7 +6723,7 @@
                                                                             <h5>{{ results14.chlorine }}</h5>
                                                                             <p class="text-muted text-truncate mb-0">
                                                                                 {{ component.measurement }}
-                                                                                <i class="mdi mdi-arrow-up ms-1 text-success"></i>
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
                                                                             </p>
                                                                         </div>
                                                                     </div>
@@ -6760,6 +6765,640 @@
                                             </form>
                                         </div>
                                     </div>
+                                    <div id="componentcard63" class="card-body">
+                                        <div class="col-xl-12">
+                                            <h4 class="card-title">Контролируемые показатели 15</h4>
+                                            <p class="card-title-desc"></p>
+                                            <form class="needs-validation" novalidate>
+                                                {% for component in components %} {% if component.title == '[6|3] Взвешенные вещества' %}
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Взвешенные вещества</p>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div>
+                                                                            <h5>{{ results15.suspended_subst }}</h5>
+                                                                            <p class="text-muted text-truncate mb-0">
+                                                                                {{ component.measurement }}
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div>
+                                                                            <div id="mini-chart-114" class="apex-charts"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Взвешенные вещества' not in results15 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results15.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results15.items %} {% if key == 'Взвешенные вещества' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %} {% if component.title == '[6|3] Нефтепродукт' %}
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>Нефтепродукт</p>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div>
+                                                                            <h5>{{ results15.oil_prod }}</h5>
+                                                                            <p class="text-muted text-truncate mb-0">
+                                                                                {{ component.measurement }}
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div>
+                                                                            <div id="mini-chart-115" class="apex-charts"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Нефтепродукт' not in results15 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results15.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results15.items %} {% if key == 'Нефтепродукт' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %} {% if component.title == '[6|3] Химическая потребность в кислороде (ХПК)' %}
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>Химическая потребность в кислороде (ХПК)
+                                                                </p>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div>
+                                                                            <h5>{{ results15.oxygen_chem }}</h5>
+                                                                            <p class="text-muted text-truncate mb-0">
+                                                                                {{ component.measurement }}
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div>
+                                                                            <div id="mini-chart-116" class="apex-charts"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Химическая потребность в кислороде (ХПК)' not in results15 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results15.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results15.items %} {% if key == 'Химическая потребность в кислороде (ХПК)' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %} {% if component.title == '[6|3] Аммонийный азот' %}
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>Аммонийный азот
+                                                                </p>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div>
+                                                                            <h5>{{ results15.ammonium }}</h5>
+                                                                            <p class="text-muted text-truncate mb-0">
+                                                                                {{ component.measurement }}
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div>
+                                                                            <div id="mini-chart-117" class="apex-charts"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Аммонийный азот' not in results15 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results15.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results15.items %} {% if key == 'Аммонийный азот' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %} {% if component.title == '[6|3] Фосфор' %}
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Фосфор</p>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div>
+                                                                            <h5>{{ results15.phosphorus }}</h5>
+                                                                            <p class="text-muted text-truncate mb-0">
+                                                                                {{ component.measurement }}
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div>
+                                                                            <div id="mini-chart-118" class="apex-charts"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Фосфор' not in results15 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results15.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results15.items %} {% if key == 'Фосфор' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %} {% if component.title == '[6|3] Биологическая потребность в кислороде (БПК5)' %}
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Биологическая потребность в кислороде (БПК5)</p>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div>
+                                                                            <h5>{{ results15.oxygen_bio }}</h5>
+                                                                            <p class="text-muted text-truncate mb-0">
+                                                                                {{ component.measurement }}
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div>
+                                                                            <div id="mini-chart-119" class="apex-charts"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Биологическая потребность в кислороде (БПК5)' not in results15 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results15.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results15.items %} {% if key == 'Биологическая потребность в кислороде (БПК5)' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %} {% endfor %}
+                                            </form>
+                                        </div>
+                                    </div>
+                                    <div id="componentcard64" class="card-body">
+                                        <div class="col-xl-12">
+                                            <h4 class="card-title">Контролируемые показатели 16</h4>
+                                            <p class="card-title-desc"></p>
+                                            <form class="needs-validation" novalidate>
+                                                {% for component in components %} {% if component.title == '[6|4] Взвешенные вещества' %}
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Взвешенные вещества</p>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div>
+                                                                            <h5>{{ results16.suspended_subst }}</h5>
+                                                                            <p class="text-muted text-truncate mb-0">
+                                                                                {{ component.measurement }}
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div>
+                                                                            <div id="mini-chart-120" class="apex-charts"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Взвешенные вещества' not in results16 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results16.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results16.items %} {% if key == 'Взвешенные вещества' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %} {% if component.title == '[6|4] Нефтепродукт' %}
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>Нефтепродукт</p>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div>
+                                                                            <h5>{{ results16.oil_prod }}</h5>
+                                                                            <p class="text-muted text-truncate mb-0">
+                                                                                {{ component.measurement }}
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div>
+                                                                            <div id="mini-chart-121" class="apex-charts"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Нефтепродукт' not in results16 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results16.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results16.items %} {% if key == 'Нефтепродукт' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %} {% if component.title == '[6|4] Химическая потребность в кислороде (ХПК)' %}
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>Химическая потребность в кислороде (ХПК)
+                                                                </p>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div>
+                                                                            <h5>{{ results16.oxygen_chem }}</h5>
+                                                                            <p class="text-muted text-truncate mb-0">
+                                                                                {{ component.measurement }}
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div>
+                                                                            <div id="mini-chart-122" class="apex-charts"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Химическая потребность в кислороде (ХПК)' not in results16 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results16.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results16.items %} {% if key == 'Химическая потребность в кислороде (ХПК)' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %} {% if component.title == '[6|4] Аммонийный азот' %}
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>Аммонийный азот
+                                                                </p>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div>
+                                                                            <h5>{{ results16.ammonium }}</h5>
+                                                                            <p class="text-muted text-truncate mb-0">
+                                                                                {{ component.measurement }}
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div>
+                                                                            <div id="mini-chart-123" class="apex-charts"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Аммонийный азот' not in results16 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results16.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results16.items %} {% if key == 'Аммонийный азот' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %} {% if component.title == '[6|4] Фосфор' %}
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Фосфор</p>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div>
+                                                                            <h5>{{ results16.phosphorus }}</h5>
+                                                                            <p class="text-muted text-truncate mb-0">
+                                                                                {{ component.measurement }}
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div>
+                                                                            <div id="mini-chart-124" class="apex-charts"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Фосфор' not in results16 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results16.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results16.items %} {% if key == 'Фосфор' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %} {% if component.title == '[6|4] Биологическая потребность в кислороде (БПК5)' %}
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Биологическая потребность в кислороде (БПК5)</p>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div>
+                                                                            <h5>{{ results16.oxygen_bio }}</h5>
+                                                                            <p class="text-muted text-truncate mb-0">
+                                                                                {{ component.measurement }}
+                                                                                <i class="mdi mdi-arrow-up ms-1 text-primary"></i>
+                                                                            </p>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="col-7">
+                                                                        <div>
+                                                                            <div id="mini-chart-125" class="apex-charts"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Биологическая потребность в кислороде (БПК5)' not in results16 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results16.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results16.items %} {% if key == 'Биологическая потребность в кислороде (БПК5)' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %} {% endfor %}
+                                            </form>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -6770,7 +7409,11 @@
     </div>
     {% include 'partials/tasks_result.html' %} {% include 'partials/notifications.html' %}
 </div>
-{% endblock %} {% block extra_javascript %}
+{% endblock %}
+
+<!-- -->
+
+{% block extra_javascript %}
 <script>
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();

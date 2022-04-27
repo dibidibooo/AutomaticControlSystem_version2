@@ -174,3 +174,25 @@ $(function() {
         }
     });
 });
+
+$(function() {
+    $('#componentcard63').hide();
+    $('#plant_unit6').change(function() {
+        if ($('#plant_unit6').val() == '15') {
+            $('#componentcard63').show();
+        } else {
+            $('#componentcard63').hide();
+        }
+    });
+});
+
+$(function() {
+    $('#componentcard64').hide();
+    $('#plant_unit6').change(function() {
+        if ($('#plant_unit6').val() == '16') {
+            $('#componentcard64').show();
+        } else {
+            $('#componentcard64').hide();
+        }
+    });
+});
