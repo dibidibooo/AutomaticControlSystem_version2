@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 import os
 from pathlib import Path
+
+from celery.schedules import crontab
 from django.contrib.messages import constants as messages
 import environ
 
@@ -76,6 +78,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'allauth.socialaccount.providers.facebook',
+    'django_celery_beat',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
@@ -217,9 +220,17 @@ ACCOUNT_LOGOUT_ON_PASSWORD_CHANGE = True
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_EMAIL_VERIFICATION = "mandatory"
 
-EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST ='smtp.gmail.com'
-EMAIL_PORT ='587'
-EMAIL_HOST_USER ='dimash.iztleuov@gmail.com'
-EMAIL_HOST_PASSWORD ='Dimon_rulit!'
-EMAIL_USE_TLS = True
+EMAIL_BACKEND = env.str('EMAIL_BACKEND')
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = env.int('EMAIL_PORT')
+EMAIL_HOST_USER = env.str('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env.str('EMAIL_HOST_PASSWORD')
+EMAIL_USE_TLS = env.bool('EMAIL_USE_TLS')
+
+# CELERY STUFF
+BROKER_URL = 'redis://localhost:6379'
+CELERY_RESULT_BACKEND = 'redis://localhost:6379'
+CELERY_ACCEPT_CONTENT = ['application/json']
+CELERY_TASK_SERIALIZER = 'json'
+CELERY_RESULT_SERIALIZER = 'json'
+CELERY_TIMEZONE = 'Asia/Almaty'

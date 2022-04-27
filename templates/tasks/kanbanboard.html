@@ -217,14 +217,14 @@
         let task_id = document.getElementById("uid");
         task_id.setAttribute("value", event);
 
-        let uri = window.location.href;
-        let $popup = $('#staticBackdrop');
-        $popup.on('show.bs.modal', function () {
-            history.pushState({}, '', uri + '/' + event);
-        });
-        $popup.on('hide.bs.modal', function () {
-            history.pushState({}, '', uri);
-        });
+        {#let uri = window.location.href;#}
+        {#let $popup = $('#staticBackdrop');#}
+        {#$popup.on('show.bs.modal', function () {#}
+        {#    history.pushState({}, '', uri + '/' + event);#}
+        //});
+        {#$popup.on('hide.bs.modal', function () {#}
+        {#    history.pushState({}, '', uri);#}
+        //});
 
         $.ajax({
             type: 'GET',

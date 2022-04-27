@@ -875,7 +875,6 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-
     def get_results15(self):
         results_site = {}
         tasks = Task.objects.all()
