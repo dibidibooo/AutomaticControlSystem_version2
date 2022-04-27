@@ -4,11 +4,11 @@
 <!-- Sweet Alert-->
 <link href="{% static 'libs/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet" type="text/css"/> {% endblock %} {% block contents %}
 <div class="row">
-    <div class="col-xl-4">
+    <div class="col-xl-6">
         <div class="checkout-tabs">
             <div class="row">
                 <!-- Установки -->
-                <div class="col-xl-3 col-sm-3">
+                <div class="col-xl-2 col-sm-3">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link active" id="location1-tab" data-bs-toggle="pill" href="#location1" role="tab" aria-controls="location1" aria-selected="true">
                             <p class="fw-bold mt-3">Водоблок-2</p>
@@ -31,7 +31,7 @@
                     </div>
                 </div>
 
-                <div class="col-xl-9 col-sm-9 p-0">
+                <div class="col-xl-7 col-sm-9 p-0">
                     <div class="card">
                         <div class="card-body">
                             <div class="tab-content" id="v-pills-tabContent">
@@ -547,7 +547,10 @@
             </div>
         </div>
     </div>
+
+    {% include 'partials/illustration1.html' %}
 </div>
+
 {% endblock %} {% block extra_javascript %}
 
 
