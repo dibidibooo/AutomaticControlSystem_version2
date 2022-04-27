@@ -1036,22 +1036,26 @@ class TaskCreate:
     def site14_task(self, form, water_type):
         pass
 
-
-    # 6|2
+    # 6|3
     def site15_task(self, form, water_type):
         pass
 
-
-    # 6|2
+    # 6|4
     def site16_task(self, form, water_type):
         pass
 
 
-class TaskListView(LoginRequiredMixin, View):
+class ArchiveTaskListView(LoginRequiredMixin, View):
     def get(self, request):
         context = {
-            'heading': "Task List",
-            'pageview': "Tasks"
+            'heading': "Архив",
+            'pageview': "Задачи",
+            'unit1': Task.objects.filter(plant_unit_id=1, status_id=5),
+            'unit2': Task.objects.filter(plant_unit_id=2, status_id=5),
+            'unit3': Task.objects.filter(plant_unit_id=3, status_id=5),
+            'unit4': Task.objects.filter(plant_unit_id=4, status_id=5),
+            'unit5': Task.objects.filter(plant_unit_id=5, status_id=5),
+            'unit6': Task.objects.filter(plant_unit_id=6, status_id=5),
         }
         return render(request, 'tasks/tasklist.html', context)
 
