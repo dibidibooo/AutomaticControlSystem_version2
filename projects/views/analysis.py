@@ -69,7 +69,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
                     'site16': Site16Form,
                     }
 
-    success_url = reverse_lazy('projects-projectsgrid')
+    success_url = reverse_lazy('analyzes_create')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -526,7 +526,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
 class AdditionalAnalysisCreateView(LoginRequiredMixin, CreateView):
     model = AdditionalComponents
     form_class = AdditionalAnalysisForm
-    template_name = 'projects/projectslist.html'
+    template_name = 'projects/additional_analyses_create.html'
     success_url = reverse_lazy('tasks-kanbanboard')
 
     def get_context_data(self, **kwargs):

@@ -33,7 +33,7 @@
                     </div>
                     <br> {% endfor %}
 
-                    <form class="needs-validation" novalidate method="POST" action="{% url 'projects-projectsgrid' %}">
+                    <form class="needs-validation" novalidate method="POST" action="{% url 'analyzes_create' %}">
                         {% csrf_token %}
                         <div class="tab-content" id="v-pills-tabContent">
                             <div class="tab-pane fade show active" id="location1" role="tabpanel" aria-labelledby="location1-tab">
