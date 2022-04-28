@@ -543,7 +543,7 @@ class AdditionalAnalysisCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class ProjectOverviewView(LoginRequiredMixin, View):
+class ExcelTableView(LoginRequiredMixin, View):
     def get(self, request):
         context = {
             'heading': "Таблица",
@@ -566,7 +566,7 @@ class ProjectOverviewView(LoginRequiredMixin, View):
             # 'site15': ComponentsSite15.objects.order_by('datetime'),
             # 'site16': ComponentsSite16.objects.order_by('datetime'),
         }
-        return render(request, 'projects/projectsoverview.html', context)
+        return render(request, 'projects/excel_table.html', context)
 
 
 class ResultsView(PermissionRequiredMixin, View):
