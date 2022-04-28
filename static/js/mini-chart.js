@@ -33,8 +33,7 @@ function createAllCharts(charts_info){
         component.values.forEach(value => {
             // min chart
             const mini_chart_el_id = `mini-chart-${component_index}-${value.name}`
-            // slice for get not all objects
-            const mini_options = createChartObject(value.values.slice(0, 10))
+            const mini_options = createChartObject(value.values.slice(-10)) // !change slice for good range info
             const mini_chart = new ApexCharts(document.getElementById(mini_chart_el_id), mini_options)
             mini_chart.render();
 
