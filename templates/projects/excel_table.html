@@ -80,13 +80,13 @@
                                     <td class="px-1">
                                         {% for change in task.changes.all %}
                                             {% if 'изменил исполнителя' in change.text %}
-                                                <ul class="px-3 mb-2"><li>{{ change.changed_to }}<br>{{ change.updated_at|date:"d.m.Y" }}</li></ul>
+                                                <ul class="px-3 mb-2 text-start"><li>{{ change.changed_to }}<br>{{ change.updated_at|date:"d.m.Y" }}</li></ul>
                                             {% endif %}
                                         {% endfor %}
                                     </td>
                                     <td class="px-1">
                                         {% for change in task.changes.all %}
-                                                <ul class="px-3 mb-2"><li class="hide_item">{% if change.failure_reason %}{{ change.failure_reason }}{% endif %}</li></ul>
+                                                <ul class="px-3 mb-2 text-start"><li class="hide_item">{% if change.failure_reason %}{{ change.failure_reason|truncatechars:20 }}{% endif %}</li></ul>
                                         {% endfor %}
                                     </td>
                                 </tr>

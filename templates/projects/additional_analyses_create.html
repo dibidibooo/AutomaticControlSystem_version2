@@ -38,10 +38,10 @@
                                                     {% csrf_token %}
                                                     <input type="hidden" id="uid" name="uid" value="1">
                                                     {% for field in form %}
-                                                        <div class="row">
-                                                            <div class="col-lg-6"><b>{{ field.label }}</b></div>
+                                                        <div class="row" >
+                                                            <div class="col-lg-6 "><b>{{ field.label }}</b></div>
                                                             <div class="col-lg-6">
-                                                                <div class="input-group">
+                                                                <div class="input-group ">
                                                                     {{ field }}
                                                                     <div class="input-group-prepend">
                                                                         <span class="input-group-text">ед.</span>
@@ -80,13 +80,11 @@
 <!-- Sweet Alerts -->
 <script src="{% static 'libs/sweetalert2/dist/sweetalert2.min.js' %}"></script>
 <script src="{% static 'js/pages/sweet-alerts.init.js' %}"></script>
-
 <script>
     function analysisCreate(event) {
         console.log('ID is: ', event);
         $('.location_form').attr('id', `location${event}`);
         $('#uid').attr('value', event);
-
         $.ajax({
             type: 'GET',
             data: {
@@ -94,7 +92,6 @@
             }
         });
     }
-
     (function() {
         'use strict'
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
