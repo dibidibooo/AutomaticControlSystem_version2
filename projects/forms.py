@@ -1,11 +1,10 @@
 from django import forms
-from django.core.exceptions import ValidationError
+
+from projects.models import AdditionalComponents
 
 
 class MultipleForm(forms.Form):
     action = forms.CharField(max_length=60, widget=forms.HiddenInput())
-
-
 
 
 # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
@@ -197,10 +196,7 @@ class Site16Form(MultipleForm):
     oxygen_bio = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Биологическая потребность в кислороде (БПК5)")
 
 
-# Дополнительные компоненты которые вводят каждый день
-class AdditionalComponentsForm(MultipleForm):
-    recycled_water_consumption = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Расход оборотной воды")
-    running_water_consumption = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Расход подпиточной воды")
-    purge_flow = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Расход продувки")
-    hot_water_temp = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Температура горячей оборотной воды")
-    cold_water_temp = forms.CharField(max_length=50, widget=forms.TextInput(attrs={'class': 'form-control mb-3'}), label="Температура охлажденной воды")
+class AdditionalAnalysisForm(forms.ModelForm):
+    class Meta:
+        model = AdditionalComponents
+        exclude = ['plant_unit']

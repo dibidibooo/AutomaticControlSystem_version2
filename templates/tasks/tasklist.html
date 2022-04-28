@@ -333,6 +333,134 @@
                             <!-- end row -->
                         </div>
 
+                        <div class="mt-4">
+                            <div class="d-flex flex-wrap">
+                                <h5 class="font-size-16 me-3">Архив задач</h5>
+                                {#
+                                <div class="ms-auto">#} {# <a href="javascript: void(0);" class="fw-medium text-reset">View All</a>#} {# </div>#}
+                            </div>
+                            <hr class="mt-2">
+
+                            <div class="table-responsive">
+                                <table class="table align-middle table-nowrap table-hover mb-0">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">Номер</th>
+                                            <th scope="col">Название</th>
+                                            <th scope="col">Компонент</th>
+                                            <th scope="col">Показатель</th>
+                                            <th scope="col">Установка</th>
+                                            <th scope="col">Место отбора проб</th>
+                                            <th scope="col">Тип воды</th>
+                                            <th scope="col">Дата назначения задачи</th>
+                                            {#
+                                            <th scope="col" colspan="2">Size</th>#}
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {% for task in tasks %}
+                                        <tr>
+                                            <td>{{ task.id }}</td>
+                                            <td>{{ task.title }}</td>
+                                            <td>{{ task.comp_title }}</td>
+                                            <td>{{ task.comp_value }}</td>
+                                            <td>{{ task.plant_unit }}</td>
+                                            <td>{{ task.sampling_site }}</td>
+                                            <td>{{ task.water_type }}</td>
+                                            <td>{{ task.start_date }}</td>
+                                            {#
+                                            <td>#} {#
+                                                <div class="dropdown">#} {# <a class="font-size-16 text-muted" role="button" data-bs-toggle="dropdown" aria-haspopup="true">#}
+{#                                                        <i class="mdi mdi-dots-horizontal"></i>#}
+{#                                                    </a>#} {##} {#
+                                                    <div class="dropdown-menu dropdown-menu-end">#} {# <a class="dropdown-item" href="#">Open</a>#} {# <a class="dropdown-item" href="#">Edit</a>#} {# <a class="dropdown-item" href="#">Rename</a>#} {#
+                                                        <div class="dropdown-divider"></div>#} {# <a class="dropdown-item" href="#">Remove</a>#} {# </div>#} {# </div>#} {# </td>#}
+                                        </tr>
+                                        {% endfor %} {#
+                                        <tr>#} {#
+                                            <td><a href="javascript: void(0);" class="text-dark fw-medium"><i class="mdi mdi-folder-zip font-size-16 align-middle text-warning me-2"></i> Project-A.zip</a></td>#} {#
+                                            <td>11-10-2020, 17:05</td>#} {#
+                                            <td>115 KB</td>#} {#
+                                            <td>#} {#
+                                                <div class="dropdown">#} {# <a class="font-size-16 text-muted" role="button" data-bs-toggle="dropdown" aria-haspopup="true">#}
+{#                                                        <i class="mdi mdi-dots-horizontal"></i>#}
+{#                                                    </a>#} {##} {#
+                                                    <div class="dropdown-menu dropdown-menu-end">#} {# <a class="dropdown-item" href="#">Open</a>#} {# <a class="dropdown-item" href="#">Edit</a>#} {# <a class="dropdown-item" href="#">Rename</a>#} {#
+                                                        <div class="dropdown-divider"></div>#} {# <a class="dropdown-item" href="#">Remove</a>#} {# </div>#} {# </div>#} {# </td>#} {# </tr>#} {#
+                                        <tr>#} {#
+                                            <td><a href="javascript: void(0);" class="text-dark fw-medium"><i class="mdi mdi-image font-size-16 align-middle text-muted me-2"></i> Img-1.jpeg</a></td>#} {#
+                                            <td>11-10-2020, 13:26</td>#} {#
+                                            <td>86 KB</td>#} {#
+                                            <td>#} {#
+                                                <div class="dropdown">#} {# <a class="font-size-16 text-muted" role="button" data-bs-toggle="dropdown" aria-haspopup="true">#}
+{#                                                        <i class="mdi mdi-dots-horizontal"></i>#}
+{#                                                    </a>#} {##} {#
+                                                    <div class="dropdown-menu dropdown-menu-end">#} {# <a class="dropdown-item" href="#">Open</a>#} {# <a class="dropdown-item" href="#">Edit</a>#} {# <a class="dropdown-item" href="#">Rename</a>#} {#
+                                                        <div class="dropdown-divider"></div>#} {# <a class="dropdown-item" href="#">Remove</a>#} {# </div>#} {# </div>#} {# </td>#} {# </tr>#} {#
+                                        <tr>#} {#
+                                            <td><a href="javascript: void(0);" class="text-dark fw-medium"><i class="mdi mdi-text-box font-size-16 align-middle text-muted me-2"></i> update list.txt</a></td>#} {#
+                                            <td>10-10-2020, 11:32</td>#} {#
+                                            <td>08 KB</td>#} {#
+                                            <td>#} {#
+                                                <div class="dropdown">#} {# <a class="font-size-16 text-muted" role="button" data-bs-toggle="dropdown" aria-haspopup="true">#}
+{#                                                        <i class="mdi mdi-dots-horizontal"></i>#}
+{#                                                    </a>#} {##} {#
+                                                    <div class="dropdown-menu dropdown-menu-end">#} {# <a class="dropdown-item" href="#">Open</a>#} {# <a class="dropdown-item" href="#">Edit</a>#} {# <a class="dropdown-item" href="#">Rename</a>#} {#
+                                                        <div class="dropdown-divider"></div>#} {# <a class="dropdown-item" href="#">Remove</a>#} {# </div>#} {# </div>#} {# </td>#} {# </tr>#} {#
+                                        <tr>#} {#
+                                            <td><a href="javascript: void(0);" class="text-dark fw-medium"><i class="mdi mdi-folder font-size-16 align-middle text-warning me-2"></i> Project B</a></td>#} {#
+                                            <td>10-10-2020, 10:51</td>#} {#
+                                            <td>72 KB</td>#} {#
+                                            <td>#} {#
+                                                <div class="dropdown">#} {# <a class="font-size-16 text-muted" role="button" data-bs-toggle="dropdown" aria-haspopup="true">#}
+{#                                                        <i class="mdi mdi-dots-horizontal"></i>#}
+{#                                                    </a>#} {##} {#
+                                                    <div class="dropdown-menu dropdown-menu-end">#} {# <a class="dropdown-item" href="#">Open</a>#} {# <a class="dropdown-item" href="#">Edit</a>#} {# <a class="dropdown-item" href="#">Rename</a>#} {#
+                                                        <div class="dropdown-divider"></div>#} {# <a class="dropdown-item" href="#">Remove</a>#} {# </div>#} {# </div>#} {# </td>#} {# </tr>#} {#
+                                        <tr>#} {#
+                                            <td><a href="javascript: void(0);" class="text-dark fw-medium"><i class="mdi mdi-text-box font-size-16 align-middle text-muted me-2"></i> Changes list.txt</a></td>#} {#
+                                            <td>09-10-2020, 17:05</td>#} {#
+                                            <td>07 KB</td>#} {#
+                                            <td>#} {#
+                                                <div class="dropdown">#} {# <a class="font-size-16 text-muted" role="button" data-bs-toggle="dropdown" aria-haspopup="true">#}
+{#                                                        <i class="mdi mdi-dots-horizontal"></i>#}
+{#                                                    </a>#} {##} {#
+                                                    <div class="dropdown-menu dropdown-menu-end">#} {# <a class="dropdown-item" href="#">Open</a>#} {# <a class="dropdown-item" href="#">Edit</a>#} {# <a class="dropdown-item" href="#">Rename</a>#} {#
+                                                        <div class="dropdown-divider"></div>#} {# <a class="dropdown-item" href="#">Remove</a>#} {# </div>#} {# </div>#} {# </td>#} {# </tr>#} {#
+                                        <tr>#} {#
+                                            <td><a href="javascript: void(0);" class="text-dark fw-medium"><i class="mdi mdi-image font-size-16 align-middle text-success me-2"></i> Img-2.png</a></td>#} {#
+                                            <td>09-10-2020, 15:12</td>#} {#
+                                            <td>31 KB</td>#} {#
+                                            <td>#} {#
+                                                <div class="dropdown">#} {# <a class="font-size-16 text-muted" role="button" data-bs-toggle="dropdown" aria-haspopup="true">#}
+{#                                                        <i class="mdi mdi-dots-horizontal"></i>#}
+{#                                                    </a>#} {##} {#
+                                                    <div class="dropdown-menu dropdown-menu-end">#} {# <a class="dropdown-item" href="#">Open</a>#} {# <a class="dropdown-item" href="#">Edit</a>#} {# <a class="dropdown-item" href="#">Rename</a>#} {#
+                                                        <div class="dropdown-divider"></div>#} {# <a class="dropdown-item" href="#">Remove</a>#} {# </div>#} {# </div>#} {# </td>#} {# </tr>#} {#
+                                        <tr>#} {#
+                                            <td><a href="javascript: void(0);" class="text-dark fw-medium"><i class="mdi mdi-folder font-size-16 align-middle text-warning me-2"></i> Project C</a></td>#} {#
+                                            <td>09-10-2020, 10:11</td>#} {#
+                                            <td>20 KB</td>#} {#
+                                            <td>#} {#
+                                                <div class="dropdown">#} {# <a class="font-size-16 text-muted" role="button" data-bs-toggle="dropdown" aria-haspopup="true">#}
+{#                                                        <i class="mdi mdi-dots-horizontal"></i>#}
+{#                                                    </a>#} {##} {#
+                                                    <div class="dropdown-menu dropdown-menu-end">#} {# <a class="dropdown-item" href="#">Open</a>#} {# <a class="dropdown-item" href="#">Edit</a>#} {# <a class="dropdown-item" href="#">Rename</a>#} {#
+                                                        <div class="dropdown-divider"></div>#} {# <a class="dropdown-item" href="#">Remove</a>#} {# </div>#} {# </div>#} {# </td>#} {# </tr>#} {#
+                                        <tr>#} {#
+                                            <td><a href="javascript: void(0);" class="text-dark fw-medium"><i class="bx bxs-file font-size-16 align-middle text-primary me-2"></i> starter-page.html</a></td>#} {#
+                                            <td>08-10-2020, 03:22</td>#} {#
+                                            <td>11 KB</td>#} {#
+                                            <td>#} {#
+                                                <div class="dropdown">#} {# <a class="font-size-16 text-muted" role="button" data-bs-toggle="dropdown" aria-haspopup="true">#}
+{#                                                        <i class="mdi mdi-dots-horizontal"></i>#}
+{#                                                    </a>#} {##} {#
+                                                    <div class="dropdown-menu dropdown-menu-end">#} {# <a class="dropdown-item" href="#">Open</a>#} {# <a class="dropdown-item" href="#">Edit</a>#} {# <a class="dropdown-item" href="#">Rename</a>#} {#
+                                                        <div class="dropdown-divider"></div>#} {# <a class="dropdown-item" href="#">Remove</a>#} {# </div>#} {# </div>#} {# </td>#} {# </tr>#}
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <!-- end card -->
