@@ -27,7 +27,9 @@
                 <label for="id_status" class="form-label"><b>Статус</b></label>
                 <select id="id_status" class="form-select" name="status">
                     {% for status in statuses %}
-                        <option value="{{ status.pk }}" {% if status == task.status %}selected{% endif %}>{{ status }}</option>
+                        {% if status.title != 'Архив' %}
+                            <option value="{{ status.pk }}" {% if status == task.status %}selected{% endif %}>{{ status }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
             </div>
