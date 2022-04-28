@@ -12,7 +12,7 @@
                 <div class="col-md-6">
                     <label for="id_deadline"><b>Выполнить до:</b></label>
                     <input class="form-control" type="datetime-local" name="deadline" id="id_deadline"
-                           value="{{ task.deadline|date:"Y-m-d\TH:i" }}" required disabled>
+                           value="{{ task.deadline|date:"Y-m-d\TH:i" }}" required readonly>
                 </div>
                 <div class="mt-3">
                     <label for="failure_reason"><b>Причина изменения срока выполнения задачи</b></label>
@@ -135,11 +135,10 @@
             let reason = $('#failure_reason');
             reason.on('input', function () {
                 if ($(this).val().length >= 20) {
-                    deadline.removeAttr('disabled');
-
+                    deadline.removeAttr('readonly');
                 }
                 else {
-                    deadline.attr('disabled', true);
+                    deadline.attr('readonly', true);
                 }
             });
         })
