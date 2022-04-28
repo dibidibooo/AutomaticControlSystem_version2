@@ -170,7 +170,7 @@
   "model": "projects.samplingsite",
   "pk": 13,
   "fields": {
-    "title": "Пробоотборник 001 перед БОС / А1–SN-001",
+    "title": "Пробоотборник 001 перед БОС /А1–SN-001",
     "location": 6,
     "water_type": []
   }
@@ -188,7 +188,7 @@
   "model": "projects.samplingsite",
   "pk": 15,
   "fields": {
-    "title": "Выход с аппарата напорной флотации в ТК -008А/ А1 –SN -004А",
+    "title": "Выход с аппарата напорной флотации в ТК-008А/А1–SN-004А",
     "location": 6,
     "water_type": [
       1
@@ -199,7 +199,7 @@
   "model": "projects.samplingsite",
   "pk": 16,
   "fields": {
-    "title": "Выход с аппарата напорной флотации в ТК-008В/ А1 –SN -004В",
+    "title": "Выход с аппарата напорной флотации в ТК-008В/А1–SN-004В",
     "location": 6,
     "water_type": [
       1
@@ -217,7 +217,14 @@
   "model": "projects.watertype",
   "pk": 2,
   "fields": {
-    "type": "Приточная"
+    "type": "Подпиточная"
+  }
+},
+{
+  "model": "projects.watertype",
+  "pk": 3,
+  "fields": {
+    "type": "Сточная"
   }
 },
 {
@@ -2637,6 +2644,30 @@
   }
 },
 {
+  "model": "projects.componentssite2",
+  "pk": 65,
+  "fields": {
+    "oil_prod": 33,
+    "ph": 8,
+    "suspended_solids": 33,
+    "datetime": "2022-04-22T15:21:23.460",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite2",
+  "pk": 66,
+  "fields": {
+    "oil_prod": 11,
+    "ph": 7,
+    "suspended_solids": 11,
+    "datetime": "2022-04-26T10:50:04.114",
+    "sampling_site": 2,
+    "water_type": 1
+  }
+},
+{
   "model": "projects.componentssite3",
   "pk": 5,
   "fields": {
@@ -2786,6 +2817,44 @@
     "alkalinity": 3,
     "iron": 3,
     "datetime": "2022-04-28T14:13:26.376",
+    "sampling_site": 5,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite5",
+  "pk": 12,
+  "fields": {
+    "hardness": 222,
+    "hardness_calcium": 222,
+    "ph": 12,
+    "salt": 333,
+    "chlorides": 333,
+    "sulfates": 333,
+    "oil_prod": 3333,
+    "suspended_subst": 333,
+    "alkalinity": 333,
+    "iron": 333,
+    "datetime": "2022-04-22T15:06:28.577",
+    "sampling_site": 5,
+    "water_type": 1
+  }
+},
+{
+  "model": "projects.componentssite5",
+  "pk": 13,
+  "fields": {
+    "hardness": 9,
+    "hardness_calcium": 9,
+    "ph": 9,
+    "salt": 9,
+    "chlorides": 9,
+    "sulfates": 9,
+    "oil_prod": 9,
+    "suspended_subst": 9,
+    "alkalinity": 9,
+    "iron": 9,
+    "datetime": "2022-04-28T14:12:38.980",
     "sampling_site": 5,
     "water_type": 1
   }
@@ -3476,6 +3545,58 @@
     "hot_water_temp": 70,
     "cold_water_temp": 70,
     "total_microbial_number": 70
+  }
+},
+{
+  "model": "projects.additionalcomponents",
+  "pk": 3,
+  "fields": {
+    "plant_unit": 3,
+    "recycled_water_consumption": 4,
+    "running_water_consumption": 4,
+    "purge_flow": 4,
+    "hot_water_temp": 4,
+    "cold_water_temp": 4,
+    "total_microbial_number": 4
+  }
+},
+{
+  "model": "projects.additionalcomponents",
+  "pk": 5,
+  "fields": {
+    "plant_unit": 3,
+    "recycled_water_consumption": 4,
+    "running_water_consumption": 4,
+    "purge_flow": 4,
+    "hot_water_temp": 4,
+    "cold_water_temp": 4,
+    "total_microbial_number": 4
+  }
+},
+{
+  "model": "projects.additionalcomponents",
+  "pk": 6,
+  "fields": {
+    "plant_unit": 4,
+    "recycled_water_consumption": 2,
+    "running_water_consumption": 2,
+    "purge_flow": 2,
+    "hot_water_temp": 2,
+    "cold_water_temp": 2,
+    "total_microbial_number": 2
+  }
+},
+{
+  "model": "projects.additionalcomponents",
+  "pk": 7,
+  "fields": {
+    "plant_unit": 1,
+    "recycled_water_consumption": 1,
+    "running_water_consumption": 1,
+    "purge_flow": 1,
+    "hot_water_temp": 1,
+    "cold_water_temp": 1,
+    "total_microbial_number": 1
   }
 }
 ]

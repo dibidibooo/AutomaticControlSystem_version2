@@ -94,10 +94,6 @@ class Site4Form(MultipleForm):
     iron = forms.CharField(max_length=50, widget=forms.TextInput(
         attrs={'class': 'form-control mb-3'}), label="Железо")
 
-    def clean(self):
-        cleaned_data = super().clean()
-        return cleaned_data
-
 
 # БОВ-1 | Аналитическая точка выкид насосов Р-01А/В/С/Д
 class Site5Form(MultipleForm):

@@ -616,6 +616,25 @@ class ResultsView(PermissionRequiredMixin, View):
             'results15': results_site15,
             'results16': results_site16,
         }
+
+        # Сравнение показателей с оборотной воды и с подпиточной воды
+        dict1 = {}
+        dict2 = {}
+        a = ComponentsSite6.objects.filter(water_type_id=1).values().latest('datetime')
+        b = ComponentsSite6.objects.filter(water_type_id=2).values().latest('datetime')
+        for k, v in a.items():
+            if k != 'id' and k != 'datetime' and k != 'sampling_site_id' and k != 'water_type_id':
+                dict1[k] = v
+        for k, v in b.items():
+            if k != 'id' and k != 'datetime' and k != 'sampling_site_id' and k != 'water_type_id':
+                dict2[k] = v
+
+        diffkeys = [k for k in dict1 if dict1[k] < dict2[k]]
+        if diffkeys:
+            context['unit_3_warning'] = """
+            Показатели компонентов БОВ-2 с оборотной воды ниже показателей с подпиточной воды.
+            Пожалуйста, обратите внимание!
+            """
         return render(request, 'projects/analyses_results.html', context)
 
     def get_results1(self):
