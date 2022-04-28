@@ -1,8 +1,9 @@
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.views.generic import CreateView
 
 from tasks.models import Task
 from tasks.views.task_views import TaskCreate
@@ -23,7 +24,7 @@ from projects.forms import (
     Site13Form,
     Site14Form,
     Site15Form,
-    Site16Form,
+    Site16Form, AdditionalAnalysisForm,
 )
 from projects.models import (
     ComponentsSite1,
@@ -42,7 +43,7 @@ from projects.models import (
     ComponentsSite14,
     ComponentsSite15,
     ComponentsSite16,
-    Component,
+    Component, AdditionalComponents, PlantUnit,
 )
 from projects.multiforms import MultiFormsView
 
@@ -522,13 +523,24 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         return HttpResponseRedirect(self.success_url)
 
 
-class ProjectsListView(LoginRequiredMixin, View):
-    def get(self, request):
-        context = {
-            'heading': "Projects List",
-            'pageview': "Projects"
-        }
-        return render(request, 'projects/projectslist.html', context)
+class AdditionalAnalysisCreateView(LoginRequiredMixin, CreateView):
+    model = AdditionalComponents
+    form_class = AdditionalAnalysisForm
+    template_name = 'projects/projectslist.html'
+    success_url = reverse_lazy('tasks-kanbanboard')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['heading'] = "Projects List"
+        context['pageview'] = "Projects"
+        context['plant_units'] = PlantUnit.objects.all()
+        return context
+
+    def form_valid(self, form):
+        unit_id = self.request.POST.get('uid')
+        unit = get_object_or_404(PlantUnit, pk=unit_id)
+        form.instance.plant_unit = unit
+        return super().form_valid(form)
 
 
 class ProjectOverviewView(LoginRequiredMixin, View):
