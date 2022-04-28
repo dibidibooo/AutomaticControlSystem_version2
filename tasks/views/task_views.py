@@ -1050,6 +1050,7 @@ class ArchiveTaskListView(LoginRequiredMixin, View):
         context = {
             'heading': "Архив",
             'pageview': "Задачи",
+            'tasks': Task.objects.filter(status_id=5),
             'unit1': Task.objects.filter(plant_unit_id=1, status_id=5),
             'unit2': Task.objects.filter(plant_unit_id=2, status_id=5),
             'unit3': Task.objects.filter(plant_unit_id=3, status_id=5),

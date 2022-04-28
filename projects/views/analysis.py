@@ -548,7 +548,23 @@ class ProjectOverviewView(LoginRequiredMixin, View):
         context = {
             'heading': "Таблица",
             'pageview': "Анализы",
-            'tasks': Task.objects.order_by('start_date')
+            'tasks': Task.objects.order_by('start_date'),
+            # 'site1': ComponentsSite1.objects.order_by('datetime'),
+            # 'site2': ComponentsSite2.objects.order_by('datetime'),
+            # 'site3': ComponentsSite3.objects.order_by('datetime'),
+            # 'site4': ComponentsSite4.objects.order_by('datetime'),
+            # 'site5': ComponentsSite5.objects.order_by('datetime'),
+            # 'site6': ComponentsSite6.objects.order_by('datetime'),
+            # 'site7': ComponentsSite7.objects.order_by('datetime'),
+            # 'site8': ComponentsSite8.objects.order_by('datetime'),
+            # 'site9': ComponentsSite9.objects.order_by('datetime'),
+            # 'site10': ComponentsSite10.objects.order_by('datetime'),
+            # 'site11': ComponentsSite11.objects.order_by('datetime'),
+            # 'site12': ComponentsSite12.objects.order_by('datetime'),
+            # 'site13': ComponentsSite13.objects.order_by('datetime'),
+            # 'site14': ComponentsSite14.objects.order_by('datetime'),
+            # 'site15': ComponentsSite15.objects.order_by('datetime'),
+            # 'site16': ComponentsSite16.objects.order_by('datetime'),
         }
         return render(request, 'projects/projectsoverview.html', context)
 
