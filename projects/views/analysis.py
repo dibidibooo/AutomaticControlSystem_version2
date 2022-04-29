@@ -523,16 +523,17 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         return HttpResponseRedirect(self.success_url)
 
 
-class AdditionalAnalysisCreateView(LoginRequiredMixin, CreateView):
+class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
     model = AdditionalComponents
     form_class = AdditionalAnalysisForm
     template_name = 'projects/additional_analyses_create.html'
     success_url = reverse_lazy('tasks-kanbanboard')
+    permission_required = ['add_additionalcomponents']
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['heading'] = "Projects List"
-        context['pageview'] = "Projects"
+        context['heading'] = "Загрузка ежедневных анализов"
+        context['pageview'] = "Анализы"
         context['plant_units'] = PlantUnit.objects.all()
         return context
 
@@ -549,22 +550,22 @@ class ExcelTableView(LoginRequiredMixin, View):
             'heading': "Таблица",
             'pageview': "Анализы",
             'tasks': Task.objects.order_by('start_date'),
-            # 'site1': ComponentsSite1.objects.order_by('datetime'),
-            # 'site2': ComponentsSite2.objects.order_by('datetime'),
-            # 'site3': ComponentsSite3.objects.order_by('datetime'),
-            # 'site4': ComponentsSite4.objects.order_by('datetime'),
-            # 'site5': ComponentsSite5.objects.order_by('datetime'),
-            # 'site6': ComponentsSite6.objects.order_by('datetime'),
-            # 'site7': ComponentsSite7.objects.order_by('datetime'),
-            # 'site8': ComponentsSite8.objects.order_by('datetime'),
-            # 'site9': ComponentsSite9.objects.order_by('datetime'),
-            # 'site10': ComponentsSite10.objects.order_by('datetime'),
-            # 'site11': ComponentsSite11.objects.order_by('datetime'),
-            # 'site12': ComponentsSite12.objects.order_by('datetime'),
-            # 'site13': ComponentsSite13.objects.order_by('datetime'),
-            # 'site14': ComponentsSite14.objects.order_by('datetime'),
-            # 'site15': ComponentsSite15.objects.order_by('datetime'),
-            # 'site16': ComponentsSite16.objects.order_by('datetime'),
+            'site1': ComponentsSite1.objects.order_by('datetime'),
+            'site2': ComponentsSite2.objects.order_by('datetime'),
+            'site3': ComponentsSite3.objects.order_by('datetime'),
+            'site4': ComponentsSite4.objects.order_by('datetime'),
+            'site5': ComponentsSite5.objects.order_by('datetime'),
+            'site6': ComponentsSite6.objects.order_by('datetime'),
+            'site7': ComponentsSite7.objects.order_by('datetime'),
+            'site8': ComponentsSite8.objects.order_by('datetime'),
+            'site9': ComponentsSite9.objects.order_by('datetime'),
+            'site10': ComponentsSite10.objects.order_by('datetime'),
+            'site11': ComponentsSite11.objects.order_by('datetime'),
+            'site12': ComponentsSite12.objects.order_by('datetime'),
+            'site13': ComponentsSite13.objects.order_by('datetime'),
+            'site14': ComponentsSite14.objects.order_by('datetime'),
+            'site15': ComponentsSite15.objects.order_by('datetime'),
+            'site16': ComponentsSite16.objects.order_by('datetime'),
         }
         return render(request, 'projects/excel_table.html', context)
 

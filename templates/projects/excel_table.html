@@ -75,7 +75,7 @@
                                     <td>{{ task.title }}</td>
                                     <td>
                                         {{ task.responsible.first_name }} {{ task.responsible.last_name }}
-                                        <br>{{ task.deadline|date:"d.m.Y H:i" }}
+                                        <br>{{ task.deadline|date:"d.m.Y, H:i" }}
                                     </td>
                                     <td class="px-1">
                                         {% for change in task.changes.all %}
@@ -89,6 +89,1538 @@
                                                 <ul class="px-3 mb-2 text-start"><li class="hide_item">{% if change.failure_reason %}{{ change.failure_reason|truncatechars:20 }}{% endif %}</li></ul>
                                         {% endfor %}
                                     </td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site1 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Нефтепродукт</td>
+                                    <td>{{ item.oil_prod }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Общие взвешенные твердые частицы</td>
+                                    <td>{{ item.suspended_solids }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Значение pH</td>
+                                    <td>{{ item.ph }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Фосфор</td>
+                                    <td>{{ item.phosphorus }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Щёлочность общая</td>
+                                    <td>{{ item.alkalinity }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость общая</td>
+                                    <td>{{ item.hardness }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Солесодержание</td>
+                                    <td>{{ item.salt }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Хлориды</td>
+                                    <td>{{ item.chlorides }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Сульфаты</td>
+                                    <td>{{ item.sulfates }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Железо</td>
+                                    <td>{{ item.iron }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость кальциевая</td>
+                                    <td>{{ item.hardness_calcium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость магниевая</td>
+                                    <td>{{ item.hardness_magnesium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                        {% endfor %}
+                            {% for item in site2 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Нефтепродукт</td>
+                                    <td>{{ item.oil_prod }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Общие взвешенные твердые частицы</td>
+                                    <td>{{ item.suspended_solids }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Значение pH</td>
+                                    <td>{{ item.ph }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site3 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Взвешенные вещества</td>
+                                    <td>{{ item.suspended_subst }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость общая</td>
+                                    <td>{{ item.hardness }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Железо</td>
+                                    <td>{{ item.iron }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Сухой остаток</td>
+                                    <td>{{ item.dry_residue }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Щёлочность общая</td>
+                                    <td>{{ item.alkalinity }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Солесодержание</td>
+                                    <td>{{ item.salt }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Хлориды</td>
+                                    <td>{{ item.chlorides }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Сульфаты</td>
+                                    <td>{{ item.sulfates }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость кальциевая</td>
+                                    <td>{{ item.hardness_calcium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость магниевая</td>
+                                    <td>{{ item.hardness_magnesium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Значение pH</td>
+                                    <td>{{ item.ph }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                        {% endfor %}
+                            {% for item in site4 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Взвешенные вещества</td>
+                                    <td>{{ item.suspended_subst }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость общая</td>
+                                    <td>{{ item.hardness }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Железо</td>
+                                    <td>{{ item.iron }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Щёлочность общая</td>
+                                    <td>{{ item.alkalinity }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Солесодержание</td>
+                                    <td>{{ item.salt }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Хлориды</td>
+                                    <td>{{ item.chlorides }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Сульфаты</td>
+                                    <td>{{ item.sulfates }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость кальциевая</td>
+                                    <td>{{ item.hardness_calcium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Нефтепродукт</td>
+                                    <td>{{ item.oil_prod }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Значение pH</td>
+                                    <td>{{ item.ph }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site5 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Взвешенные вещества</td>
+                                    <td>{{ item.suspended_subst }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость общая</td>
+                                    <td>{{ item.hardness }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Железо</td>
+                                    <td>{{ item.iron }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Щёлочность общая</td>
+                                    <td>{{ item.alkalinity }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Солесодержание</td>
+                                    <td>{{ item.salt }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Хлориды</td>
+                                    <td>{{ item.chlorides }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Сульфаты</td>
+                                    <td>{{ item.sulfates }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость кальциевая</td>
+                                    <td>{{ item.hardness_calcium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Нефтепродукт</td>
+                                    <td>{{ item.oil_prod }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Значение pH</td>
+                                    <td>{{ item.ph }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site6 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Взвешенные вещества</td>
+                                    <td>{{ item.suspended_subst }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость общая</td>
+                                    <td>{{ item.hardness }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Железо</td>
+                                    <td>{{ item.iron }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Щёлочность по фенолу</td>
+                                    <td>{{ item.alkalinity_phenols }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Щёлочность общая</td>
+                                    <td>{{ item.alkalinity }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Солесодержание</td>
+                                    <td>{{ item.salt }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Хлориды</td>
+                                    <td>{{ item.chlorides }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Сульфаты</td>
+                                    <td>{{ item.sulfates }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость кальциевая</td>
+                                    <td>{{ item.hardness_calcium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Нефтепродукт</td>
+                                    <td>{{ item.oil_prod }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Значение pH</td>
+                                    <td>{{ item.ph }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site7 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Общие взвешенные твердые частицы</td>
+                                    <td>{{ item.suspended_solids }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость общая</td>
+                                    <td>{{ item.hardness }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Железо</td>
+                                    <td>{{ item.iron }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Щёлочность общая</td>
+                                    <td>{{ item.alkalinity }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Хлориды</td>
+                                    <td>{{ item.chlorides }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Сульфаты</td>
+                                    <td>{{ item.sulfates }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость кальциевая</td>
+                                    <td>{{ item.hardness_calcium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Значение pH</td>
+                                    <td>{{ item.ph }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site8 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Общие взвешенные твердые частицы</td>
+                                    <td>{{ item.suspended_solids }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Значение pH</td>
+                                    <td>{{ item.ph }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Хлориды</td>
+                                    <td>{{ item.chlorides }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Фосфор</td>
+                                    <td>{{ item.phosphorus }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Нефтепродукт</td>
+                                    <td>{{ item.oil_prod }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Щёлочность общая</td>
+                                    <td>{{ item.alkalinity }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость кальциевая</td>
+                                    <td>{{ item.hardness_calcium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость общая</td>
+                                    <td>{{ item.hardness }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Железо</td>
+                                    <td>{{ item.iron }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Солесодержание</td>
+                                    <td>{{ item.salt }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site9 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Общие взвешенные твердые частицы</td>
+                                    <td>{{ item.suspended_solids }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Значение pH</td>
+                                    <td>{{ item.ph }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Хлориды</td>
+                                    <td>{{ item.chlorides }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Сульфаты</td>
+                                    <td>{{ item.sulfates }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Фосфор</td>
+                                    <td>{{ item.phosphorus }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Щёлочность общая</td>
+                                    <td>{{ item.alkalinity }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость кальциевая</td>
+                                    <td>{{ item.hardness_calcium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость общая</td>
+                                    <td>{{ item.hardness }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Железо</td>
+                                    <td>{{ item.iron }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Солесодержание</td>
+                                    <td>{{ item.salt }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site10 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Остаточный хлор</td>
+                                    <td>{{ item.chlorine }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Нефтепродукт</td>
+                                    <td>{{ item.oil_prod }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Солесодержание</td>
+                                    <td>{{ item.salt }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site11 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Общие взвешенные твердые частицы</td>
+                                    <td>{{ item.suspended_solids }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site12 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Нефтепродукт</td>
+                                    <td>{{ item.oil_prod }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Значение pH</td>
+                                    <td>{{ item.ph }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Взвешенные вещества</td>
+                                    <td>{{ item.suspended_subst }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Химическая потребность в кислороде (ХПК)</td>
+                                    <td>{{ item.oxygen_chem }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Поверхностно-активные вещества (АПАВ)</td>
+                                    <td>{{ item.active_subst }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Аммонийный азот</td>
+                                    <td>{{ item.ammonium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site13 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Нефтепродукт</td>
+                                    <td>{{ item.oil_prod }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Значение pH</td>
+                                    <td>{{ item.ph }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Взвешенные вещества</td>
+                                    <td>{{ item.suspended_subst }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Химическая потребность в кислороде (ХПК)</td>
+                                    <td>{{ item.oxygen_chem }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Поверхностно-активные вещества (АПАВ)</td>
+                                    <td>{{ item.active_subst }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Аммонийный азот</td>
+                                    <td>{{ item.ammonium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Биологическая потребность в кислороде (БПК5)</td>
+                                    <td>{{ item.oxygen_bio }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Фенолы</td>
+                                    <td>{{ item.phenols }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Хлориды</td>
+                                    <td>{{ item.chlorides }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Сульфаты</td>
+                                    <td>{{ item.sulfates }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Железо</td>
+                                    <td>{{ item.iron }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                 <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Азот нитратов</td>
+                                    <td>{{ item.nitrate }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Азот нитритов</td>
+                                    <td>{{ item.nitrite }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site14 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Щёлочность общая</td>
+                                    <td>{{ item.alkalinity }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Жёсткость общая</td>
+                                    <td>{{ item.hardness }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Окисляемость</td>
+                                    <td>{{ item.oxidability }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Солесодержание</td>
+                                    <td>{{ item.salt }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Остаточный хлор</td>
+                                    <td>{{ item.chlorine }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site15 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Нефтепродукт</td>
+                                    <td>{{ item.oil_prod }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Взвешенные вещества</td>
+                                    <td>{{ item.suspended_subst }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Химическая потребность в кислороде (ХПК)</td>
+                                    <td>{{ item.oxygen_chem }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Аммонийный азот</td>
+                                    <td>{{ item.ammonium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Биологическая потребность в кислороде (БПК5)</td>
+                                    <td>{{ item.oxygen_bio }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Фосфор</td>
+                                    <td>{{ item.phosphorus }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            {% endfor %}
+                            {% for item in site16 %}
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Нефтепродукт</td>
+                                    <td>{{ item.oil_prod }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Взвешенные вещества</td>
+                                    <td>{{ item.suspended_subst }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Химическая потребность в кислороде (ХПК)</td>
+                                    <td>{{ item.oxygen_chem }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Аммонийный азот</td>
+                                    <td>{{ item.ammonium }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Биологическая потребность в кислороде (БПК5)</td>
+                                    <td>{{ item.oxygen_bio }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>{{ item.sampling_site.location }}</td>
+                                    <td>{{ item.sampling_site }}</td>
+                                    <td>{{ item.water_type }}</td>
+                                    <td>Фосфор</td>
+                                    <td>{{ item.phosphorus }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
+                                    <td></td>
+                                    <td></td>
                                 </tr>
                             {% endfor %}
                         </tbody>
@@ -106,7 +1638,6 @@
 <script src="{% static 'libs/apexcharts/dist/apexcharts.min.js'%}"></script>
 <!-- crypto dash init js -->
 <script src="{% static 'js/pages/crypto-dashboard.init.js'%}"></script>
-
 <!-- Required datatable js -->
 <script src="{% static 'libs/datatables.net/js/jquery.dataTables.min.js' %}"></script>
 <script src="{% static 'libs/datatables.net-bs4/js/dataTables.bootstrap4.min.js' %}"></script>
@@ -119,11 +1650,9 @@
 <script src="{% static 'libs/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
 <script src="{% static 'libs/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
 <script src="{% static 'libs/datatables.net-buttons/js/buttons.colVis.min.js' %}"></script>
-
 <!-- Responsive examples -->
 <script src="{% static 'libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
 <script src="{% static 'libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
-
 <!-- Datatable init js -->
 <script src="{% static 'js/pages/datatables.init.js' %}"></script>
 
