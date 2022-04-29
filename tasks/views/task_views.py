@@ -1045,7 +1045,9 @@ class TaskCreate:
         pass
 
 
-class ArchiveTaskListView(LoginRequiredMixin, View):
+class ArchiveTaskListView(PermissionRequiredMixin, View):
+    permission_required = ['projects.view_task']
+
     def get(self, request):
         context = {
             'heading': "Архив",
