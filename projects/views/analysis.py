@@ -69,7 +69,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
                     'site16': Site16Form,
                     }
 
-    success_url = reverse_lazy('projects-projectsgrid')
+    success_url = reverse_lazy('analyzes_create')
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -523,16 +523,17 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         return HttpResponseRedirect(self.success_url)
 
 
-class AdditionalAnalysisCreateView(LoginRequiredMixin, CreateView):
+class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
     model = AdditionalComponents
     form_class = AdditionalAnalysisForm
-    template_name = 'projects/projectslist.html'
+    template_name = 'projects/additional_analyses_create.html'
     success_url = reverse_lazy('tasks-kanbanboard')
+    permission_required = ['add_additionalcomponents']
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['heading'] = "Projects List"
-        context['pageview'] = "Projects"
+        context['heading'] = "Загрузка ежедневных анализов"
+        context['pageview'] = "Анализы"
         context['plant_units'] = PlantUnit.objects.all()
         return context
 
@@ -543,30 +544,30 @@ class AdditionalAnalysisCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class ProjectOverviewView(LoginRequiredMixin, View):
+class ExcelTableView(LoginRequiredMixin, View):
     def get(self, request):
         context = {
             'heading': "Таблица",
             'pageview': "Анализы",
             'tasks': Task.objects.order_by('start_date'),
-            # 'site1': ComponentsSite1.objects.order_by('datetime'),
-            # 'site2': ComponentsSite2.objects.order_by('datetime'),
-            # 'site3': ComponentsSite3.objects.order_by('datetime'),
-            # 'site4': ComponentsSite4.objects.order_by('datetime'),
-            # 'site5': ComponentsSite5.objects.order_by('datetime'),
-            # 'site6': ComponentsSite6.objects.order_by('datetime'),
-            # 'site7': ComponentsSite7.objects.order_by('datetime'),
-            # 'site8': ComponentsSite8.objects.order_by('datetime'),
-            # 'site9': ComponentsSite9.objects.order_by('datetime'),
-            # 'site10': ComponentsSite10.objects.order_by('datetime'),
-            # 'site11': ComponentsSite11.objects.order_by('datetime'),
-            # 'site12': ComponentsSite12.objects.order_by('datetime'),
-            # 'site13': ComponentsSite13.objects.order_by('datetime'),
-            # 'site14': ComponentsSite14.objects.order_by('datetime'),
-            # 'site15': ComponentsSite15.objects.order_by('datetime'),
-            # 'site16': ComponentsSite16.objects.order_by('datetime'),
+            'site1': ComponentsSite1.objects.order_by('datetime'),
+            'site2': ComponentsSite2.objects.order_by('datetime'),
+            'site3': ComponentsSite3.objects.order_by('datetime'),
+            'site4': ComponentsSite4.objects.order_by('datetime'),
+            'site5': ComponentsSite5.objects.order_by('datetime'),
+            'site6': ComponentsSite6.objects.order_by('datetime'),
+            'site7': ComponentsSite7.objects.order_by('datetime'),
+            'site8': ComponentsSite8.objects.order_by('datetime'),
+            'site9': ComponentsSite9.objects.order_by('datetime'),
+            'site10': ComponentsSite10.objects.order_by('datetime'),
+            'site11': ComponentsSite11.objects.order_by('datetime'),
+            'site12': ComponentsSite12.objects.order_by('datetime'),
+            'site13': ComponentsSite13.objects.order_by('datetime'),
+            'site14': ComponentsSite14.objects.order_by('datetime'),
+            'site15': ComponentsSite15.objects.order_by('datetime'),
+            'site16': ComponentsSite16.objects.order_by('datetime'),
         }
-        return render(request, 'projects/projectsoverview.html', context)
+        return render(request, 'projects/excel_table.html', context)
 
 
 class ResultsView(PermissionRequiredMixin, View):
@@ -616,6 +617,25 @@ class ResultsView(PermissionRequiredMixin, View):
             'results15': results_site15,
             'results16': results_site16,
         }
+
+        # Сравнение показателей с оборотной воды и с подпиточной воды
+        dict1 = {}
+        dict2 = {}
+        a = ComponentsSite6.objects.filter(water_type_id=1).values().latest('datetime')
+        b = ComponentsSite6.objects.filter(water_type_id=2).values().latest('datetime')
+        for k, v in a.items():
+            if k != 'id' and k != 'datetime' and k != 'sampling_site_id' and k != 'water_type_id':
+                dict1[k] = v
+        for k, v in b.items():
+            if k != 'id' and k != 'datetime' and k != 'sampling_site_id' and k != 'water_type_id':
+                dict2[k] = v
+
+        diffkeys = [k for k in dict1 if dict1[k] < dict2[k]]
+        if diffkeys:
+            context['unit_3_warning'] = """
+            Показатели компонентов БОВ-2 с оборотной воды ниже показателей с подпиточной воды.
+            Пожалуйста, обратите внимание!
+            """
         return render(request, 'projects/analyses_results.html', context)
 
     def get_results1(self):

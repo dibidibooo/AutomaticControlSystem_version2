@@ -58,7 +58,7 @@
                                     <div id="componentcard11" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for error in forms.site1.non_field_errors %}
                                             <div class="mb-2 text-danger">{{ error }}</div>
                                             {% endfor %} {% for field in forms.site1 %} {% if field.name == 'action' %}
@@ -83,7 +83,7 @@
                                     <div id="componentcard12" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for error in forms.site2.non_field_errors %}
                                             <div class="mb-2 text-danger">{{ error }}</div>
                                             {% endfor %} {% for field in forms.site2 %} {% if field.name == 'action' %}
@@ -173,7 +173,7 @@
                                     <div id="componentcard22" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site5 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site5.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
@@ -196,7 +196,7 @@
 
                                 <!-- Установка 3 -->
                                 <div class="tab-pane fade show " id="location3" role="tabpanel" aria-labelledby="location3-tab">
-                                    <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                    <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                         {% csrf_token %}
 
                                         <div class="row mb-3">
@@ -222,7 +222,7 @@
                                         <!-- МОП 6 -->
                                         <div id="componentcard311" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели</h4>
-                                            <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                            <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                                 {% csrf_token %} {% for field in forms.site6 %} {% if field.name == 'action' %}
                                                 <input type="hidden" name="action" value="{{ forms.site6.action.value }}" id="id_action"> {% else %}
                                                 <div class="row">
@@ -273,7 +273,7 @@
                                     <div id="componentcard41" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site7 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site7.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
@@ -296,7 +296,7 @@
                                     <div id="componentcard42" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Подпиточная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site8 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site8.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
@@ -319,7 +319,7 @@
                                     <div id="componentcard43" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site9 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site9.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
@@ -342,7 +342,7 @@
                                     <div id="componentcard44" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели 4</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site10 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site10.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
@@ -365,7 +365,7 @@
                                     <div id="componentcard45" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели 5</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site11 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site11.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
@@ -403,7 +403,7 @@
                                     <div id="componentcard51" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели МОС 1</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site12 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site12.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
@@ -450,7 +450,7 @@
                                     <div id="componentcard61" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site13 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site13.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
@@ -473,7 +473,7 @@
                                     <div id="componentcard62" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site14 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site14.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
@@ -496,7 +496,7 @@
                                     <div id="componentcard63" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site15 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site15.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
@@ -519,7 +519,7 @@
                                     <div id="componentcard64" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'projects-projectsgrid' %}" method="post">
+                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site16 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site16.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
