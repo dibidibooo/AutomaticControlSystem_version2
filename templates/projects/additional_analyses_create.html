@@ -28,22 +28,33 @@
                                     <div class="row">
                                         <div class="col-lg-12 mb-3">
                                             <h4 class="card-title">Данные по работе системы:</h4>
-                                                                                    <p class="card-title-desc">Оборотная вода</p>
+                                            <p class="card-title-desc">Оборотная вода</p>
                                             <form class="needs-validation" novalidate action="{% url 'additional_analyzes_create' %}" method="post">
                                                 {% csrf_token %}
-                                                <input type="hidden" id="uid" name="uid" value="1"> {% for field in form %}
-                                                <div class="row">
-                                                    <div class="col-lg-6 "><b>{{ field.label }}</b></div>
-                                                    <div class="col-lg-6">
-                                                        <div class="input-group ">
-                                                            {{ field }}
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text">ед.</span>
+                                                <input type="hidden" id="uid" name="uid" value="1">
+
+                                                {% for field in form %}
+                                                    <div class="row">
+                                                        <div class="col-lg-6 "><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">
+                                                                        {% if 'Расход' in field.label %}
+                                                                            м³/ч
+                                                                        {% elif 'Температура' in field.label %}
+                                                                            °C
+                                                                        {% else %}
+                                                                            КОЕ
+                                                                        {% endif %}
+                                                                    </span>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
                                                 {% endfor %}
+
                                                 <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
                                                 </button>
                                             </form>

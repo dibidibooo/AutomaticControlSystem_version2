@@ -544,7 +544,9 @@ class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class ExcelTableView(LoginRequiredMixin, View):
+class ExcelTableView(PermissionRequiredMixin, View):
+    permission_required = ['projects.view_task']
+
     def get(self, request):
         context = {
             'heading': "Таблица",
@@ -616,6 +618,7 @@ class ResultsView(PermissionRequiredMixin, View):
             'results14': results_site14,
             'results15': results_site15,
             'results16': results_site16,
+            'results_additional': AdditionalComponents.objects.all(),
         }
 
         # Сравнение показателей с оборотной воды и с подпиточной воды
