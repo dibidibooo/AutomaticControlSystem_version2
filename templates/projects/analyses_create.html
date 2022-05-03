@@ -59,23 +59,30 @@
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
                                         <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %} {% for error in forms.site1.non_field_errors %}
-                                            <div class="mb-2 text-danger">{{ error }}</div>
-                                            {% endfor %} {% for field in forms.site1 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site1.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6 comp_input">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text">мг/дм³</span>
+                                            {% csrf_token %}
+                                            {% for error in forms.site1.non_field_errors %}
+                                                <div class="mb-2 text-danger">{{ error }}</div>
+                                            {% endfor %}
+                                            {% for field in forms.site1 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action"
+                                                           value="{{ forms.site1.action.value }}" id="id_action">
+                                                {% else %}
+                                                    <div class="row component_row">
+                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6 comp_input">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text">мг/дм³</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                Отправить
                                             </button>
                                         </form>
                                     </div>
