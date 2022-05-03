@@ -9,7 +9,7 @@
         <div class="checkout-tabs">
             <div class="row">
                 <!-- Установки -->
-                <div class="col-xl-2 col-sm-3">
+                <div class="col-xl-3 col-sm-3">
                     {% for plant_unit in plant_units %}
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                         <a class="nav-link" id="{{ plant_unit.id }}" data-bs-toggle="pill" href="#location1" role="tab" onclick="analysisCreate(this.id)">
@@ -26,7 +26,7 @@
                             <div class="tab-content" id="v-pills-tabContent">
                                 <div class="tab-pane fade show active location_form" id="location1" role="tabpanel" aria-labelledby="location1-tab">
                                     <div class="row">
-                                        <div class="col-lg-12 mb-3">
+                                        <div class="col-lg-12">
                                             <h4 class="card-title">Данные по работе системы:</h4>
                                             <p class="card-title-desc">Оборотная вода</p>
                                             <form class="needs-validation" novalidate action="{% url 'additional_analyzes_create' %}" method="post">

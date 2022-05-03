@@ -578,47 +578,35 @@ class ResultsView(PermissionRequiredMixin, View):
     def get(self, request):
         tasks = Task.objects.all()
         components = Component.objects.all()
-        results_site1 = self.get_results1()
-        results_site2 = self.get_results2()
-        results_site3 = self.get_results3()
-        results_site4 = self.get_results4()
-        results_site5 = self.get_results5()
-        results_site6 = self.get_results6()
-        results_site6_2 = self.get_results6_2()
-        results_site7 = self.get_results7()
-        results_site8 = self.get_results8()
-        results_site9 = self.get_results9()
-        results_site10 = self.get_results10()
-        results_site11 = self.get_results11()
-        results_site12 = self.get_results12()
-        results_site13 = self.get_results13()
-        results_site14 = self.get_results14()
-        results_site15 = self.get_results15()
-        results_site16 = self.get_results16()
 
         context = {
             'heading': "Результаты",
             'pageview': "Анализы",
             'components': components,
             'tasks': tasks,
-            'results1': results_site1,
-            'results2': results_site2,
-            'results3': results_site3,
-            'results4': results_site4,
-            'results5': results_site5,
-            'results6': results_site6,
-            'results6_2': results_site6_2,
-            'results7': results_site7,
-            'results8': results_site8,
-            'results9': results_site9,
-            'results10': results_site10,
-            'results11': results_site11,
-            'results12': results_site12,
-            'results13': results_site13,
-            'results14': results_site14,
-            'results15': results_site15,
-            'results16': results_site16,
-            'results_additional': AdditionalComponents.objects.all(),
+            'results1': self.get_results1(),
+            'results2': self.get_results2(),
+            'results3': self.get_results3(),
+            'results4': self.get_results4(),
+            'results5': self.get_results5(),
+            'results6': self.get_results6(),
+            'results6_2': self.get_results6_2(),
+            'results7': self.get_results7(),
+            'results8': self.get_results8(),
+            'results9': self.get_results9(),
+            'results10': self.get_results10(),
+            'results11': self.get_results11(),
+            'results12': self.get_results12(),
+            'results13': self.get_results13(),
+            'results14': self.get_results14(),
+            'results15': self.get_results15(),
+            'results16': self.get_results16(),
+            'res_additional_1': self.get_add_results1(),
+            'res_additional_2': self.get_add_results2(),
+            'res_additional_3': self.get_add_results3(),
+            'res_additional_4': self.get_add_results4(),
+            'res_additional_5': self.get_add_results5(),
+            'res_additional_6': self.get_add_results6(),
         }
 
         # Сравнение показателей с оборотной воды и с подпиточной воды
@@ -640,6 +628,30 @@ class ResultsView(PermissionRequiredMixin, View):
             Пожалуйста, обратите внимание!
             """
         return render(request, 'projects/analyses_results.html', context)
+
+    def get_add_results1(self):
+        if AdditionalComponents.objects.filter(plant_unit_id=1):
+            return AdditionalComponents.objects.filter(plant_unit_id=1).latest('datetime')
+
+    def get_add_results2(self):
+        if AdditionalComponents.objects.filter(plant_unit_id=2):
+            return AdditionalComponents.objects.filter(plant_unit_id=2).latest('datetime')
+
+    def get_add_results3(self):
+        if AdditionalComponents.objects.filter(plant_unit_id=3):
+            return AdditionalComponents.objects.filter(plant_unit_id=3).latest('datetime')
+
+    def get_add_results4(self):
+        if AdditionalComponents.objects.filter(plant_unit_id=4):
+            return AdditionalComponents.objects.filter(plant_unit_id=4).latest('datetime')
+
+    def get_add_results5(self):
+        if AdditionalComponents.objects.filter(plant_unit_id=5):
+            return AdditionalComponents.objects.filter(plant_unit_id=5).latest('datetime')
+
+    def get_add_results6(self):
+        if AdditionalComponents.objects.filter(plant_unit_id=6):
+            return AdditionalComponents.objects.filter(plant_unit_id=6).latest('datetime')
 
     def get_results1(self):
         results_site = {}
