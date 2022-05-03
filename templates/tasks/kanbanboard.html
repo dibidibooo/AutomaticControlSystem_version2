@@ -9,6 +9,12 @@
 <link href="{% static 'libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css'%}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="{% static 'libs/@chenfengyuan/datepicker/dist/datepicker.min.css'%}" type="text/css" /> {% endblock %} {% block contents %}
 
+<div id="overlay">
+    sdkfjaslkjfdlk;asjdflk;j asl;dfjlajsdlfj a
+    sdfk a
+    spd[fk ;asdf;l
+</div>
+
 <div class="row">
     <div class="col-lg-3">
         <div class="card">
@@ -23,6 +29,7 @@
                                 <div class="float-end ms-2">
                                     <span class="badge rounded-pill badge-soft-secondary font-size-12" id="task-status">{{ task.status }}</span>
                                 </div>
+
                                 <div>
                                     <p class="fw-bold mb-2">
                                         <a href="" class="text-dark open_task" id="{{ task.id }}"
@@ -34,6 +41,7 @@
                                     <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
                                     <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
                                 </div>
+
                                 <div class="avatar-group float-start task-assigne">
                                     <div class="avatar-group-item">
                                         <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
@@ -90,8 +98,6 @@
         </div>
     </div>
     <!-- end col -->
-
-
     <div class="col-lg-3">
         <div class="card">
             <div class="card-body">
@@ -132,7 +138,6 @@
         </div>
     </div>
     <!-- end col -->
-
     <div class="col-lg-3">
         <div class="card">
             <div class="card-body">
@@ -240,4 +245,22 @@
         });
     }
 </script>
+
+
+<style>
+#overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 10000; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+</style>
+
 {% endblock %}
