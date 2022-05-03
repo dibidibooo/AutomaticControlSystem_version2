@@ -308,3 +308,4 @@ class AdditionalComponents(models.Model):
     hot_water_temp = models.IntegerField(null=True, blank=True, verbose_name='Температура горячей оборотной воды')
     cold_water_temp = models.IntegerField(null=True, blank=True, verbose_name='Температура охлажденной воды')
     total_microbial_number = models.IntegerField(null=True, blank=True, verbose_name='Общее микробное число')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
