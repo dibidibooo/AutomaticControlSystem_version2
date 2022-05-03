@@ -325,3 +325,11 @@ class AdditionalAnalysisForm(forms.ModelForm):
     class Meta:
         model = AdditionalComponents
         exclude = ['plant_unit']
+        widgets = {
+            'recycled_water_consumption': forms.TextInput(attrs={'class': 'form-control mb-3'}),
+            'running_water_consumption': forms.TextInput(attrs={'class': 'form-control mb-3'}),
+            'purge_flow': forms.TextInput(attrs={'class': 'form-control mb-3'}),
+            'hot_water_temp': forms.TextInput(attrs={'class': 'form-control mb-3'}),
+            'cold_water_temp': forms.TextInput(attrs={'class': 'form-control mb-3'}),
+            'total_microbial_number': forms.TextInput(attrs={'class': 'form-control mb-3'}),
+        }

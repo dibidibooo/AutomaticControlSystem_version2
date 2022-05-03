@@ -48,13 +48,14 @@
                 <label for="id_task_responsible" class="form-label"><b>Ответственный</b></label>
                 <p id="task_responsible">{{ task.responsible.first_name }} {{ task.responsible.last_name }}</p>
             </div>
-            <input type="submit" value="Сохранить" name="edittask" class="btn btn-primary">
+            <input id="save-btn" type="submit" value="Сохранить" name="edittask" class="btn btn-primary">
+
         </div>
     </div>
 </div>
 
 <!-- Comments -->
-<form action="{% url 'comments-add' task.id %}" method="POST">
+<form action="{% url 'comments-add' task.id %}" id="comment-form-id" onsubmit="overlay" method="POST">
     {% csrf_token %}
     <div class="row" id="comments_section">
         <div class="col-lg-7">
@@ -73,7 +74,7 @@
                     </div>
                     <div class="col">
                         <div class="position-relative">
-                            <input type="text" class="form-control rounded chat-input" placeholder="Введите комментарий..." name="text">
+                            <input type="text" class="form-control rounded chat-input" required placeholder="Введите комментарий..." name="text">
                         </div>
                     </div>
                     <div class="col-auto">
@@ -142,5 +143,13 @@
                 }
             });
         })
+
+        function overlay(event){
+            // event.preventDefault();
+            console.log(">> overlay", event);
+            document.getElementById("overlay").style.display = "block";
+        }
+        document.getElementById("save-btn").addEventListener('click', overlay);
+        document.getElementById("comment-form-id").addEventListener('submit', overlay);
     </script>
 {% endblock %}
