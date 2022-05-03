@@ -46,7 +46,9 @@ dragula([document.getElementById("upcoming-task"), document.getElementById("inpr
                     console.log("Something went wrong");
                 },
             });
+                        window.location.reload();
         }
+                setTimeout('send_data_1(id)', 2000);
 
 
         function send_data_2(id) {
@@ -64,7 +66,9 @@ dragula([document.getElementById("upcoming-task"), document.getElementById("inpr
                     console.log("Something went wrong");
                 }
             });
+                        window.location.reload();
         }
+                setTimeout('send_data_2(id)', 2000);
 
         function send_data_3(id) {
             $.ajax({
@@ -81,7 +85,9 @@ dragula([document.getElementById("upcoming-task"), document.getElementById("inpr
                     console.log("Something went wrong");
                 }
             });
+                        window.location.reload();
         }
+                setTimeout('send_data_3(id)', 2000);
 
         function send_data_4(id) {
             $.ajax({
