@@ -2,7 +2,8 @@
 <!-- Select-->
 <link href="{% static 'libs/select2/dist/css/select2.min.css' %}" rel="stylesheet" type="text/css" />
 <!-- Sweet Alert-->
-<link href="{% static 'libs/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet" type="text/css" /> {% endblock %} {% block contents %}
+<link href="{% static 'libs/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet" type="text/css" />
+{% endblock %} {% block contents %}
 <div class="row">
     <div class="col-xl-6">
         <div class="checkout-tabs">
@@ -27,6 +28,7 @@
                                     <div class="row">
                                         <div class="col-lg-12 mb-3">
                                             <h4 class="card-title">Данные по работе системы:</h4>
+                                                                                    <p class="card-title-desc">Оборотная вода</p>
                                             <form class="needs-validation" novalidate action="{% url 'additional_analyzes_create' %}" method="post">
                                                 {% csrf_token %}
                                                 <input type="hidden" id="uid" name="uid" value="1"> {% for field in form %}
