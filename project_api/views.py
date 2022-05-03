@@ -7,7 +7,8 @@ from project_api.serializers import (
     Results1Serializer,
     Results2Serializer,
     Results3Serializer,
-    UserSerializer
+    UserSerializer,
+    ComponentSerializer
 )
 from projects.models import (
     ComponentsSite1,
@@ -25,7 +26,7 @@ from projects.models import (
     ComponentsSite13,
     ComponentsSite14,
     ComponentsSite15,
-    ComponentsSite16,
+    ComponentsSite16, Component,
 )
 from tasks.models import Task
 
@@ -38,6 +39,11 @@ class TaskViewSet(viewsets.ModelViewSet):
 class UserViewSet(viewsets.ModelViewSet):
     queryset = User.objects.all()
     serializer_class = UserSerializer
+
+
+class ComponentViewSet(viewsets.ModelViewSet):
+    queryset = Component.objects.all()
+    serializer_class = ComponentSerializer
 
 
 class Results1ViewSet(viewsets.ModelViewSet):

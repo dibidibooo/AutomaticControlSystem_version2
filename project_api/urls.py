@@ -6,12 +6,15 @@ from project_api.views import (
     Results1ViewSet,
     Results2ViewSet,
     Results3ViewSet,
-    UserViewSet, get_results1
+    UserViewSet,
+    ComponentViewSet,
+    get_results1
 )
 
 router = routers.DefaultRouter()
 router.register(r'tasks', TaskViewSet)
 router.register(r'users', UserViewSet)
+router.register(r'components', ComponentViewSet)
 router.register(r'results1', Results1ViewSet)
 router.register(r'results2', Results2ViewSet)
 router.register(r'results3', Results3ViewSet)

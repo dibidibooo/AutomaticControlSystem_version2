@@ -9,6 +9,7 @@ from projects.models import (
     ComponentsSite1,
     ComponentsSite2,
     ComponentsSite3,
+    Component,
 )
 from tasks.models import Task
 
@@ -50,6 +51,12 @@ class PlantUnitSerializer(serializers.ModelSerializer):
 class StatusSerializer(serializers.ModelSerializer):
     class Meta:
         model = Status
+        fields = '__all__'
+
+
+class ComponentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Component
         fields = '__all__'
 
 

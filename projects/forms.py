@@ -236,7 +236,7 @@ class Site12Form(MultipleForm):
     suspended_subst = forms.CharField(max_length=50, widget=forms.TextInput(
         attrs={'class': 'form-control mb-3'}), label="Взвешенные вещества")
     ph = forms.CharField(max_length=50, widget=forms.TextInput(
-        attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="pH")
+        attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="Значение pH")
     oxygen_chem = forms.CharField(max_length=50, widget=forms.TextInput(
         attrs={'class': 'form-control mb-3'}), label="Химическая потребность в кислороде (ХПК)")
     active_subst = forms.CharField(max_length=50, widget=forms.TextInput(

@@ -63,13 +63,13 @@
                                             <div class="mb-2 text-danger">{{ error }}</div>
                                             {% endfor %} {% for field in forms.site1 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site1.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
-                                                <div class="col-lg-6">
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                <div class="col-lg-6 comp_input">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -88,13 +88,13 @@
                                             <div class="mb-2 text-danger">{{ error }}</div>
                                             {% endfor %} {% for field in forms.site2 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site2.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
-                                                <div class="col-lg-6">
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                <div class="col-lg-6 comp_input">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -111,13 +111,13 @@
                                         <form class="needs-validation" novalidate action="" method="POST">
                                             {% csrf_token %} {% for field in forms.site3 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site3.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
-                                                <div class="col-lg-6">
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                <div class="col-lg-6 comp_input">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -153,13 +153,13 @@
                                         <form class="needs-validation" novalidate action="" method="POST">
                                             {% csrf_token %} {% for field in forms.site4 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site4.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
                                                 <div class="col-lg-6">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -176,13 +176,13 @@
                                         <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site5 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site5.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
-                                                <div class="col-lg-6">
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                <div class="col-lg-6 comp_input">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -225,13 +225,13 @@
                                             <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                                 {% csrf_token %} {% for field in forms.site6 %} {% if field.name == 'action' %}
                                                 <input type="hidden" name="action" value="{{ forms.site6.action.value }}" id="id_action"> {% else %}
-                                                <div class="row">
-                                                    <div class="col-lg-6"><b>{{field.label}}</b></div>
-                                                    <div class="col-lg-6">
+                                                <div class="row component_row">
+                                                    <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                    <div class="col-lg-6 comp_input">
                                                         <div class="input-group">
-                                                            {{field}}
+                                                            {{ field }}
                                                             <div class="input-group-prepend">
-                                                                <span class="input-group-text">ед.</span>
+                                                                <span class="input-group-text">мг/дм³</span>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -276,13 +276,13 @@
                                         <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site7 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site7.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
-                                                <div class="col-lg-6">
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                <div class="col-lg-6 comp_input">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -299,13 +299,13 @@
                                         <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site8 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site8.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
-                                                <div class="col-lg-6">
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                <div class="col-lg-6 comp_input">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -322,13 +322,13 @@
                                         <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site9 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site9.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
-                                                <div class="col-lg-6">
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                <div class="col-lg-6 comp_input">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -345,13 +345,13 @@
                                         <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site10 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site10.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
-                                                <div class="col-lg-6">
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                <div class="col-lg-6 comp_input">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -369,12 +369,12 @@
                                             {% csrf_token %} {% for field in forms.site11 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site11.action.value }}" id="id_action"> {% else %}
                                             <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
-                                                <div class="col-lg-6">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                <div class="col-lg-6 comp_input">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -406,13 +406,13 @@
                                         <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site12 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site12.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
-                                                <div class="col-lg-6">
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                <div class="col-lg-6 comp_input">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -453,13 +453,13 @@
                                         <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site13 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site13.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
                                                 <div class="col-lg-6">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -476,13 +476,13 @@
                                         <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site14 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site14.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
-                                                <div class="col-lg-6">
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                <div class="col-lg-6 comp_input">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -499,13 +499,13 @@
                                         <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site15 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site15.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
                                                 <div class="col-lg-6">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -522,13 +522,13 @@
                                         <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %} {% for field in forms.site16 %} {% if field.name == 'action' %}
                                             <input type="hidden" name="action" value="{{ forms.site16.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6"><b>{{field.label}}</b></div>
-                                                <div class="col-lg-6">
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                <div class="col-lg-6 comp_input">
                                                     <div class="input-group">
-                                                        {{field}}
+                                                        {{ field }}
                                                         <div class="input-group-prepend">
-                                                            <span class="input-group-text">ед.</span>
+                                                            <span class="input-group-text">мг/дм³</span>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -566,6 +566,50 @@
 <script src="{% static 'js/pages/sweet-alerts.init.js' %}"></script>
 
 <script>
+    $(document).ready(function () {
+        let component_row = $('.component_row');
+
+        fetch('http://127.0.0.1:8000/api/components/')
+            .then((response) => {
+              return response.json();
+            })
+            .then((data) => {
+                for(let item in data){
+                    if (data[item]['title'].includes('Значение рН')){
+                        component_row.each(function () {
+                            if($(this).children('.comp_label').text() === 'Значение pH'){
+                                $(this).find('.input-group-text').text(data[item]['measurement']);
+                            }
+
+                        })
+                    }
+
+                    if (data[item]['title'].includes('Щёлочность общая')){
+                        component_row.each(function () {
+                            if($(this).children('.comp_label').text() === 'Щёлочность общая'
+                                || $(this).children('.comp_label').text() === 'Жёсткость общая'
+                                || $(this).children('.comp_label').text() === 'Жёсткость кальциевая'
+                                || $(this).children('.comp_label').text() === 'Жёсткость магниевая'
+                            ){
+                                $(this).find('.input-group-text').text(data[item]['measurement']);
+                            }
+
+                        })
+                    }
+
+                    if (data[item]['title'].includes('Окисляемость')){
+                        component_row.each(function () {
+                            if($(this).children('.comp_label').text() === 'Окисляемость'){
+                                $(this).find('.input-group-text').text(data[item]['measurement']);
+                            }
+
+                        })
+                    }
+
+                }
+            })
+    });
+
     (function() {
         'use strict'
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -584,7 +628,6 @@
                 }, false)
             })
     })()
-
 
 </script>
 {% endblock %}
