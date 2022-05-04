@@ -34,7 +34,7 @@
                                     <h5 class="font-size-15 mb-3"><b>Результаты ежедневных анализов</b></h5>
                                 </div>
                                 {% if res_additional_1 %}
-                                    <div class="mt-3 unit_1" hidden>
+                                    <div class="mt-3 unit_1"  >
                                         <div class="card border shadow-none mb-2">
                                             <a href="javascript: void(0);" class="text-body">
                                                 <div class="p-2">
@@ -126,7 +126,7 @@
                                         </div>
                                     </div>
                                 {% elif res_additional_2 %}
-                                    <div class="mt-3 unit_2" hidden>
+                                    <div class="mt-3 unit_2"  >
                                         <div class="card border shadow-none mb-2">
                                             <a href="javascript: void(0);" class="text-body">
                                                 <div class="p-2">
@@ -218,7 +218,7 @@
                                         </div>
                                     </div>
                                 {% elif res_additional_3 %}
-                                    <div class="mt-3 unit_3" hidden>
+                                    <div class="mt-3 unit_3" >
                                         <div class="card border shadow-none mb-2">
                                             <a href="javascript: void(0);" class="text-body">
                                                 <div class="p-2">
@@ -310,7 +310,7 @@
                                         </div>
                                     </div>
                                 {% elif res_additional_4 %}
-                                    <div class="mt-3 unit_4" hidden>
+                                    <div class="mt-3 unit_4"  >
                                         <div class="card border shadow-none mb-2">
                                             <a href="javascript: void(0);" class="text-body">
                                                 <div class="p-2">
@@ -402,7 +402,7 @@
                                         </div>
                                     </div>
                                 {% elif res_additional_5 %}
-                                    <div class="mt-3 unit_5" hidden>
+                                    <div class="mt-3 unit_5" >
                                         <div class="card border shadow-none mb-2">
                                             <a href="javascript: void(0);" class="text-body">
                                                 <div class="p-2">
@@ -494,7 +494,7 @@
                                         </div>
                                     </div>
                                 {% elif res_additional_6 %}
-                                    <div class="mt-3 unit_6" hidden>
+                                    <div class="mt-3 unit_6" >
                                         <div class="card border shadow-none mb-2">
                                             <a href="javascript: void(0);" class="text-body">
                                                 <div class="p-2">
@@ -624,7 +624,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="card mt-2" data-simplebar style="max-height: 800px;">
+                                    <div class="card mt-2">
                                         <div id="componentcard11" class="card-body">
                                             <div class="col-xl-12">
                                                 <h4 class="card-title">Контролируемые показатели 1</h4>
@@ -683,7 +683,8 @@
                                                                                             Все время
                                                                                         </button>
                                                                                     </div>
-                                                                                    <div id="big-chart-1"></div>
+<!--                                                                                    <div id="big-chart-1"></div>-->
+                                                                                    <div id="full-chart-1-oil_prod"></div>
                                                                                 </div>
                                                                             </div>
                                                                         </div>
@@ -7986,5 +7987,5 @@
 <script src="{% static 'js/mini-chart.js'%}"></script>
 <!-- Saas dashboard init -->
 <script src="{% static 'js/pages/saas-dashboard.init.js'%}"></script>
-<script src="{% static 'js/big-chart.js'%}"></script>
+<!--<script src="{% static 'js/big-chart.js'%}"></script>-->
 {% endblock %}
