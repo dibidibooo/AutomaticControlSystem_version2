@@ -5321,5 +5321,14 @@ table.dataTable.dtr-inline.collapsed>tbody>tr>td.dtr-control:before {
 	margin: 0 auto
 }
 
+/* Карточка детального просмотра задачи */
+.task-detail-card {
+	background-color: white;
+	border-radius: 1.5rem;
+	-webkit-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+	box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2);
+}
+
 
 /*# sourceMappingURL=app.min.css.map */
