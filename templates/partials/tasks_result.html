@@ -30,7 +30,7 @@
 
                                                 <div>
                                                     <p class="fw-bold mb-2">
-                                                        <a href="javascript: void(0);" class="text-dark" id="task-name">
+                                                        <a href="{% url 'tasks-kanbanboard' %}" class="text-dark" id="task-name">
                                                             #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
                                                         </a>
                                                     </p>
@@ -66,8 +66,8 @@
 
                                                 <div>
                                                     <p class="fw-bold mb-2">
-                                                        <a href="javascript: void(0);" class="text-dark" id="task-name">
-                                                            {{ task.title }} для компонента '{{ task.comp_title }}'
+                                                        <a href="{% url 'tasks-kanbanboard' %}" class="text-dark" id="task-name">
+                                                            #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
                                                         </a>
                                                     </p>
                                                     <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>

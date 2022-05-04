@@ -112,7 +112,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=1
         )
         task_create = TaskCreate()
-        task_create.site1_task(form, 1)
+        task_create.site1_task(form, water_type=1)
         return HttpResponseRedirect(self.success_url)
 
     # Водоблок - 2 | Установка АВТ напротив погружного холодильника №42
@@ -130,7 +130,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=1
         )
         task_create = TaskCreate()
-        task_create.site2_task(form, 1)
+        task_create.site2_task(form, water_type=1)
         return HttpResponseRedirect(self.success_url)
 
     # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12
@@ -164,7 +164,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=2
         )
         task_create = TaskCreate()
-        task_create.site3_task(form, 1)
+        task_create.site3_task(form, water_type=1)
         return HttpResponseRedirect(self.success_url)
 
     # БОВ-1 | Аналитическая точка насосов Р-02А/В/С

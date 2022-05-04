@@ -109,8 +109,6 @@ class KanbanBoardView(PermissionRequiredMixin, View):
                 previous_date = task.tracker.previous('deadline').strftime('%Y-%m-%d %H:%M')
                 current_date = " ".join(task.deadline.split("T"))
                 if task.tracker.has_changed('deadline') and (previous_date != current_date):
-                    print(task.deadline, type(task.deadline))
-                    print(datetime.strptime(task.deadline, '%Y-%m-%dT%H:%M'))
                     ChangesTracker.objects.create(
                         task_id=task.id,
                         text="изменил срок исполнения на",
