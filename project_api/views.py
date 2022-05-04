@@ -96,16 +96,12 @@ def get_results1(request):
             get_object_statistic(ComponentsSite2.objects.all().order_by("id"), 2),
             get_object_statistic(ComponentsSite3.objects.all().order_by("id"), 3),
             get_object_statistic(ComponentsSite4.objects.all().order_by("id"), 4),
-
             get_object_statistic(ComponentsSite5.objects.all().order_by("id"), 5),
-
             get_object_statistic(ComponentsSite6.objects.filter(water_type_id=1).order_by("id"), 6),
             get_object_statistic(ComponentsSite6.objects.filter(water_type_id=2).order_by("id"), 61),
             get_object_statistic(ComponentsSite7.objects.all().order_by("id"), 7),
             get_object_statistic(ComponentsSite8.objects.all().order_by("id"), 8),
-
             get_object_statistic(ComponentsSite9.objects.all().order_by("id"), 9),
-
             get_object_statistic(ComponentsSite10.objects.all().order_by("id"), 10),
             get_object_statistic(ComponentsSite11.objects.all().order_by("id"), 11),
             get_object_statistic(ComponentsSite12.objects.all().order_by("id"), 12),
@@ -121,18 +117,28 @@ def get_results1(request):
 def get_object_statistic(items, object_index):
     # Component
     _values = {}
+    _date_values = {}
     # on components
     for item in items.values():
+        print("sdkfjl", item)
         # all values on component
         for key, value in item.items():
             if is_data(key):
+                # for mini
                 if key in _values:
                     _values[key].append(value)
                 else:
                     _values[key] = [value, ]
 
+                # for full
+                if key in _date_values:
+                    _date_values[key].append([item["datetime"].timestamp() , value])
+                else:
+                    _date_values[key] = [[item["datetime"].timestamp() , value], ]
+
     res = {
         "object_index": object_index,
-        "values": [{"name": key, "values": _values[key]} for key in  _values]
+        "values": [{"name": key, "values": _values[key]} for key in  _values],
+        "date_values": [{"name": key, "values": _date_values[key]} for key in  _date_values],
     }
     return res
