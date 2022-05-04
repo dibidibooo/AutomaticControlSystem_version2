@@ -161,7 +161,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             hardness_magnesium=hardness_magnesium,
             ph=ph,
             sampling_site_id=3,
-            water_type_id=1
+            water_type_id=2
         )
         task_create = TaskCreate()
         task_create.site3_task(form, 1)
@@ -408,7 +408,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             active_subst=active_subst,
             ammonium=ammonium,
             sampling_site_id=12,
-            water_type_id=1
+            water_type_id=3
         )
         task_create = TaskCreate()
         task_create.site12_task(form, 1)
@@ -446,7 +446,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             nitrate=nitrate,
             nitrite=nitrite,
             sampling_site_id=13,
-            water_type_id=1
+            water_type_id=3
         )
         task_create = TaskCreate()
         task_create.site13_task(form, 1)
@@ -468,7 +468,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             salt=salt,
             chlorine=chlorine,
             sampling_site_id=14,
-            water_type_id=1
+            water_type_id=3
         )
         task_create = TaskCreate()
         task_create.site14_task(form, 1)
@@ -492,7 +492,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             phosphorus=phosphorus,
             oxygen_bio=oxygen_bio,
             sampling_site_id=15,
-            water_type_id=1
+            water_type_id=3
         )
         task_create = TaskCreate()
         task_create.site15_task(form, 1)
@@ -516,7 +516,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             phosphorus=phosphorus,
             oxygen_bio=oxygen_bio,
             sampling_site_id=16,
-            water_type_id=1
+            water_type_id=3
         )
         task_create = TaskCreate()
         task_create.site16_task(form, 1)
@@ -527,7 +527,7 @@ class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
     model = AdditionalComponents
     form_class = AdditionalAnalysisForm
     template_name = 'projects/additional_analyses_create.html'
-    success_url = reverse_lazy('tasks-kanbanboard')
+    success_url = reverse_lazy('analyzes_results')
     permission_required = ['add_additionalcomponents']
 
     def get_context_data(self, **kwargs):
