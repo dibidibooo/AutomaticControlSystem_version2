@@ -576,7 +576,7 @@ class ResultsView(PermissionRequiredMixin, View):
     permission_required = 'projects.view_componentssite1'
 
     def get(self, request):
-        tasks = Task.objects.all()
+        tasks = Task.objects.order_by('start_date')
         components = Component.objects.all()
 
         context = {
