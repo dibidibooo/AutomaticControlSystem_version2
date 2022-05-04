@@ -29,6 +29,7 @@ function createAllCharts(charts_info){
     console.log(">> createAllCharts", charts_info);
     charts_info.forEach(component => {
         console.log(">> component", component);
+
         const component_index = component.object_index;
         component.values.forEach(value => {
             // min chart
@@ -37,10 +38,17 @@ function createAllCharts(charts_info){
             const mini_chart = new ApexCharts(document.getElementById(mini_chart_el_id), mini_options)
             mini_chart.render();
 
+
+        })
+
+        component.date_values.forEach(value => {
+            console.log(">v", value)
             // full chart
-            const full_chart_el_id = `full-chart-${component_index}-${value.name}`
-            const full_options = createChartObject(value.values)
+             const full_chart_el_id = `full-chart-${component_index}-${value.name}`
+//            const full_chart_el_id = `big-chart-1`
+            const full_options = createFullChartObject(value.values)
             const full_chart = new ApexCharts(document.getElementById(full_chart_el_id), full_options)
+
             full_chart.render();
         })
     })
@@ -83,6 +91,53 @@ function createChartObject(data){
         },
         marker: {
             show: !1
+        }
+    }
+};
+}
+
+
+function createFullChartObject(data){
+    console.log("> full chart", data)
+    return {
+    series: [{
+        name: "Компонент",
+        data: data
+    }],
+    chart: {
+        type: "area",
+        height: 240,
+        toolbar: "false"
+    },
+    dataLabels: {
+        enabled: !1
+    },
+    stroke: {
+        curve: "smooth",
+        width: 2
+    },
+    markers: {
+        size: 0,
+        style: "hollow"
+    },
+    xaxis: {
+        type: "datetime",
+        min: new Date("01 Jan 2022").getTime(),
+        tickAmount: 6
+    },
+    tooltip: {
+        x: {
+            format: "dd MMM yyyy"
+        }
+    },
+    colors: ["#f1b44c"],
+    fill: {
+        type: "gradient",
+        gradient: {
+            shadeIntensity: 1,
+            opacityFrom: .6,
+            opacityTo: .05,
+            stops: [42, 100, 100, 100]
         }
     }
 };

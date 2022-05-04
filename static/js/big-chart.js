@@ -215,7 +215,7 @@ options = {
         }
     }
 };
-(chart = new ApexCharts(document.querySelector("#big-chart-1"), options)).render();
+(chart = new ApexCharts(document.querySelector("#full-chart-1-oil_prod"), options)).render();
 var resetCssClasses = function(e) {
     var t = document.querySelectorAll("button");
     Array.prototype.forEach.call(t, function(e) {
