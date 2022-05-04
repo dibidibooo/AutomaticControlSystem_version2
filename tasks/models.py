@@ -6,6 +6,8 @@ from django.db import models
 from django.template import loader
 from model_utils import FieldTracker
 
+from projects.helpers import send_html_mail
+
 
 class Task(models.Model):
     title = models.CharField(max_length=100, verbose_name='Задача')
@@ -61,12 +63,11 @@ class Task(models.Model):
         Пройдите по ссылке, чтобы открыть доску задач: http://127.0.0.1:8000/tasks/kanbanboard
         """
         if self.pk is None:
-            send_mail(subject, body, from_email,
-                      to_email, fail_silently=False, html_message=html_message)
+            send_html_mail(subject=subject, html_content=html_message, recipient_list=to_email, sender=from_email)
         return super().save(*args, **kwargs)
 
     def __str__(self):
-        return f'Задача № {self.pk}'
+        return f'Задача №{self.pk}'
 
 
 class Comment(models.Model):

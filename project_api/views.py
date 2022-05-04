@@ -60,6 +60,7 @@ class Results3ViewSet(viewsets.ModelViewSet):
     queryset = ComponentsSite3.objects.all()
     serializer_class = Results3Serializer
 
+
 def is_data(name):
     """
     filter not data fields
@@ -120,7 +121,6 @@ def get_object_statistic(items, object_index):
     _date_values = {}
     # on components
     for item in items.values():
-        print("sdkfjl", item)
         # all values on component
         for key, value in item.items():
             if is_data(key):
