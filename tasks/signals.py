@@ -36,9 +36,9 @@ def task_send_email(sender, instance, created, **kwargs):
                 val['prev_assignee'] = User.objects.get(id=instance.tracker.previous("user_id"))
                 body += f'\n- изменен исполнитель c "{User.objects.get(id=instance.tracker.previous("user_id")).first_name} {User.objects.get(id=instance.tracker.previous("user_id")).last_name}" на "{task.user.first_name} {task.user.last_name}".'
         if instance.tracker.has_changed('deadline') and (instance.tracker.previous('deadline') != task.deadline):
-            val['deadline'] = task.deadline
-            print(task.deadline, type(task.deadline))
-            body += f'\n- изменен срок выполнения задачи на "{task.deadline}"'
+            task_deadline = task.deadline.strftime("%d.%m.%Y %H:%M")
+            val['deadline'] = task_deadline
+            body += f'\n- изменен срок выполнения задачи на "{task_deadline}"'
 
         html_message = loader.render_to_string('emails/task_update.html', val)
         body += '\n\nПройдите по ссылке, чтобы открыть доску задач: http://127.0.0.1:8000/tasks/kanbanboard'
