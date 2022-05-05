@@ -346,24 +346,24 @@
                                     </thead>
                                     <tbody>
                                         {% for task in tasks %}
-                                        <tr>
-                                            <td>{{ task.id }}</td>
-                                            <td>{{ task.title }}</td>
-                                            <td>{{ task.comp_title }}</td>
-                                            <td>{{ task.comp_value }}</td>
-                                            <td>{{ task.plant_unit }}</td>
-                                            <td>{{ task.sampling_site }}</td>
-                                            <td>{{ task.water_type }}</td>
-                                            <td>{{ task.start_date }}</td>
-                                            {# <td>#}
-                                            {# <div class="dropdown">#} {# <a class="font-size-16 text-muted" role="button" data-bs-toggle="dropdown" aria-haspopup="true">#}
-{#                                                        <i class="mdi mdi-dots-horizontal"></i>#}
-{#                                                    </a>#} {##}
-                                            {# <div class="dropdown-menu dropdown-menu-end">#}
-                                                        {# <a class="dropdown-item" href="#">Open</a>#} {# <a class="dropdown-item" href="#">Edit</a>#} {# <a class="dropdown-item" href="#">Rename</a>#}
-                                                        {# <div class="dropdown-divider"></div>#}
-                                                        {# <a class="dropdown-item" href="#">Remove</a>#} {# </div>#} {# </div>#} {# </td>#}
-                                        </tr>
+                                            <tr>
+                                                <td>{{ task.id }}</td>
+                                                <td><a href="{% url 'tasks-detail' task.id %}">{{ task.title }}</a></td>
+                                                <td>{{ task.comp_title }}</td>
+                                                <td>{{ task.comp_value }}</td>
+                                                <td>{{ task.plant_unit }}</td>
+                                                <td>{{ task.sampling_site }}</td>
+                                                <td>{{ task.water_type }}</td>
+                                                <td>{{ task.start_date }}</td>
+                                                {# <td>#}
+                                                {# <div class="dropdown">#} {# <a class="font-size-16 text-muted" role="button" data-bs-toggle="dropdown" aria-haspopup="true">#}
+    {#                                                        <i class="mdi mdi-dots-horizontal"></i>#}
+    {#                                                    </a>#} {##}
+                                                {# <div class="dropdown-menu dropdown-menu-end">#}
+                                                            {# <a class="dropdown-item" href="#">Open</a>#} {# <a class="dropdown-item" href="#">Edit</a>#} {# <a class="dropdown-item" href="#">Rename</a>#}
+                                                            {# <div class="dropdown-divider"></div>#}
+                                                            {# <a class="dropdown-item" href="#">Remove</a>#} {# </div>#} {# </div>#} {# </td>#}
+                                            </tr>
                                         {% endfor %}
                                         {# <tr>#}
                                         {# <td><a href="javascript: void(0);" class="text-dark fw-medium"><i class="mdi mdi-folder-zip font-size-16 align-middle text-warning me-2"></i> Project-A.zip</a></td>#}

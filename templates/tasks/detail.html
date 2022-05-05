@@ -1,0 +1,165 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+
+{% block contents %}
+<div class="mb-5 task-detail-card">
+    <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel" style="max-width: 25em; margin-left: 10px;"><b>#{{ task.id }} - {{ task.title }} для компонента {{ task.comp_title }}</b></h5>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-7">
+            <div class="modal-body" style="margin-left: 10px" id="task_modal_body1">
+                <p id="sampling_site"><b>Место отбора проб:</b> {{ task.sampling_site }}</p>
+                <p id="plant_unit"><b>Установка:</b> {{ task.plant_unit }}</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <label for="id_deadline"><b>Выполнить до:</b></label>
+                        <p id="id_deadline">{{ task.deadline|date:"Y-m-d H:i" }}</p>
+                        {% if task.completion_date %}
+                            <label for="id_completed"><b>Выполнено:</b></label>
+                            <p id="id_completed">{{ task.completion_date|date:"Y-m-d H:i" }}</p>
+                        {% endif %}
+{#                        <input class="form-control" type="datetime-local" name="deadline" id="id_deadline"#}
+{#                               value="{{ task.deadline|date:"Y-m-d\TH:i" }}" required readonly>#}
+                    </div>
+{#                    <div class="mt-3">#}
+{#                        <label for="failure_reason"><b>Причина изменения срока выполнения задачи</b></label>#}
+{#                        <textarea name="failure_reason" class="form-control" id="failure_reason" minlength="20"></textarea>#}
+{#                    </div>#}
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="modal-body">
+                <div class="mb-3">
+                    <label for="id_status" class="form-label"><b>Статус</b></label>
+                    <p>{{ task.status }}</p>
+{#                    <select id="id_status" class="form-select" name="status">#}
+{#                        {% for status in statuses %}#}
+{#                            {% if status.title != 'Архив' %}#}
+{#                                <option value="{{ status.pk }}" {% if status == task.status %}selected{% endif %}>{{ status }}</option>#}
+{#                            {% endif %}#}
+{#                        {% endfor %}#}
+{#                    </select>#}
+                </div>
+                <div class="mb-3">
+                    <label for="id_user" class="form-label"><b>Исполнитель</b></label>
+                    <p>{{ task.user }}</p>
+    {#                <select id="id_user" class="form-select" name="user">#}
+    {#                    {% if not task.user %}#}
+    {#                        <option value="" selected>-----------</option>#}
+    {#                    {% endif %}#}
+    {#                    {% for user in users %}#}
+    {#                        <option value="{{ user.pk }}" {% if user == task.user %}selected{% endif %}>{{ user }}</option>#}
+    {#                    {% endfor %}#}
+    {#                </select>#}
+                </div>
+                <div class="mb-3">
+                    <label for="id_task_responsible" class="form-label"><b>Ответственный</b></label>
+                    <p id="task_responsible">{{ task.responsible.first_name }} {{ task.responsible.last_name }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Comments -->
+    <form method="get">
+        {% csrf_token %}
+        <div class="row" id="comments_section">
+            <div class="col-lg-7">
+                <div class="p-3 chat-input-section" style="margin-left: 10px">
+                    <p><b>Комментарии:</b></p>
+{#                    <div class="row">#}
+{#                        <div class="col-lg-1">#}
+{#                            <div class="">#}
+{#                                <div class="avatar-xs">#}
+{#                                    <div class="avatar-title rounded-circle bg-light text-primary">#}
+{#                                        <i class="bx bxs-user"></i>#}
+{#                                    </div>#}
+{#                                </div>#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col">#}
+{#                            <div class="position-relative">#}
+{#                                <input type="text" class="form-control rounded chat-input" required placeholder="Введите комментарий..." name="text">#}
+{#                            </div>#}
+{#                        </div>#}
+{#                        <div class="col-auto">#}
+{#                            <button type="submit" class="btn btn-primary chat-send w-md waves-effect waves-light"#}
+{#                                    name="add_comment_button" id="add_comment_button" data-url="{% url 'comments-add' task.pk %}">#}
+{#                                <span class="d-none d-sm-inline-block me-2">Отправить</span>#}
+{#                                <i class="mdi mdi-send"></i>#}
+{#                            </button>#}
+{#                        </div>#}
+{#                    </div>#}
+{#                    <br>#}
+                    <div class="col-lg-12">
+                        <ul class="list-group list-group-flush">
+
+                            {% for comment in task.comments.all|dictsortreversed:"created_at" %}
+                                <li class="list-group-item py-3 bg-white">
+                                    <div class="d-flex">
+                                        <div class="flex-shrink-0 me-3">
+                                            <div class="avatar-xs">
+                                                <div class="avatar-title rounded-circle bg-light text-primary">
+                                                    <i class="bx bxs-user"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <h5 class="font-size-14 mb-1">{{ comment.author }} <small class="text-muted float-end">{{ comment.created_at }}</small></h5>
+                                            <p class="text-muted">{{ comment.text }}</p>
+                                        </div>
+                                    </div>
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <hr>
+                <p><b>Дата создания:</b> {{ task.start_date }}</p>
+                <p><b>Дата обновления:</b> {{ task.updated_at }}</p>
+                <div class="mb-3"><b>История изменений:</b>
+                    {% for change in changes %}
+                        <p class="mb-0">@{{ change.who_changed }} {{ change.text }} {{ change.changed_to }}</p>
+                        <p class="mb-0" style="font-size: 10px; color: dimgrey;">{{ change.updated_at }}</p>
+                        {% if change.failure_reason %}
+                            <p class="text-muted">{{ change.failure_reason }}</p>
+                        {% endif %}
+                        <hr class="mt-1">
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </form>
+    <!-- End block -->
+</div>
+{% endblock %}
+
+{% block extra_javascript %}
+    <script>
+        $('.modal').show(function () {
+            let deadline = $('#id_deadline');
+            let reason = $('#failure_reason');
+            reason.on('input', function () {
+                if ($(this).val().length >= 20) {
+                    deadline.removeAttr('readonly');
+                }
+                else {
+                    deadline.attr('readonly', true);
+                }
+            });
+        })
+
+        function overlay(event){
+            // event.preventDefault();
+            console.log(">> overlay", event);
+            document.getElementById("overlay").style.display = "block";
+        }
+        document.getElementById("save-btn").addEventListener('click', overlay);
+        document.getElementById("comment-form-id").addEventListener('submit', overlay);
+    </script>
+{% endblock %}

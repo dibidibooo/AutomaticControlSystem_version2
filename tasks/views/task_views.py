@@ -34,6 +34,22 @@ from tasks.models import Task, Comment, ChangesTracker
 
 class TaskDetailView(DetailView):
     model = Task
+    template_name = 'tasks/detail.html'
+    context_object_name = 'task'
+    form_class = TaskForm
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['heading'] = "Просмотр задачи"
+        context['pageview'] = "Задачи"
+        context['statuses'] = Status.objects.all()
+        context['users'] = User.objects.all()
+        context['changes'] = ChangesTracker.objects.filter(task_id=self.object.id)
+        return context
+
+
+class TaskUpdateView(DetailView):
+    model = Task
     template_name = 'tasks/update.html'
     context_object_name = 'task'
     success_url = 'tasks-kanbanboard'
@@ -93,8 +109,6 @@ class KanbanBoardView(PermissionRequiredMixin, View):
                 previous_date = task.tracker.previous('deadline').strftime('%Y-%m-%d %H:%M')
                 current_date = " ".join(task.deadline.split("T"))
                 if task.tracker.has_changed('deadline') and (previous_date != current_date):
-                    print(task.deadline, type(task.deadline))
-                    print(datetime.strptime(task.deadline, '%Y-%m-%dT%H:%M'))
                     ChangesTracker.objects.create(
                         task_id=task.id,
                         text="изменил срок исполнения на",

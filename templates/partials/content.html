@@ -30,7 +30,7 @@
                                 <div>
                                     <p class="fw-bold mb-2">
                                         <a href="" class="text-dark open_task" id="{{ task.id }}"
-                                           data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
+                                           data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
                                             {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
@@ -72,7 +72,7 @@
                                 <div>
                                     <p class="fw-bold mb-2">
                                         <a href="" class="text-dark open_task" id="{{ task.id }}"
-                                           data-popup-url="{% url 'tasks-detail' task.pk %}" onclick="editTask(this.id)">
+                                           data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
                                             {{ task.title }} для компонента '{{ task.comp_title }}'
                                         </a>
                                     </p>
