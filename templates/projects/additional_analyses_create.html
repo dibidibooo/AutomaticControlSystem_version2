@@ -1,9 +1,13 @@
 {% extends 'partials/base.html' %} {% load static %} {% block extra_css %}
 <!-- Select-->
-<link href="{% static 'libs/select2/dist/css/select2.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'libs/select2/dist/css/select2.min.css' %}" rel="stylesheet" type="text/css"/>
+<!-- Preloader-->
+<link href="{% static 'css/preloader.css' %}" rel="stylesheet" type="text/css"/>
 <!-- Sweet Alert-->
-<link href="{% static 'libs/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet" type="text/css" />
+<link href="{% static 'libs/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet" type="text/css"/>
 {% endblock %} {% block contents %}
+{% include 'partials/preloader.html' %}
+
 <div class="row">
     <div class="col-xl-6">
         <div class="checkout-tabs">
@@ -34,12 +38,12 @@
                                                 <input type="hidden" id="uid" name="uid" value="1">
 
                                                 {% for field in form %}
-                                                    <div class="row">
-                                                        <div class="col-lg-6 "><b>{{ field.label }}</b></div>
-                                                        <div class="col-lg-6">
-                                                            <div class="input-group">
-                                                                {{ field }}
-                                                                <div class="input-group-prepend">
+                                                <div class="row">
+                                                    <div class="col-lg-6 "><b>{{ field.label }}</b></div>
+                                                    <div class="col-lg-6">
+                                                        <div class="input-group">
+                                                            {{ field }}
+                                                            <div class="input-group-prepend">
                                                                     <span class="input-group-text" style="min-width:52px">
                                                                         {% if 'Расход' in field.label %}
                                                                             м³/ч
@@ -49,10 +53,10 @@
                                                                             КОЕ
                                                                         {% endif %}
                                                                     </span>
-                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
+                                                </div>
                                                 {% endfor %}
 
                                                 <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
@@ -90,6 +94,7 @@ $(selector).on('click', function(){
     $(selector).removeClass('active');
     $(this).addClass('active');
 });
+
 </script>
 <script>
     function analysisCreate(event) {
@@ -120,4 +125,13 @@ $(selector).on('click', function(){
             })
     })()
 </script>
+<script>
+            function overlay(event){
+            // event.preventDefault();
+            console.log(">> overlay", event);
+            document.getElementById("overlay").style.display = "block";
+        }
+        document.getElementById("v-pills-tabContent").addEventListener('submit', overlay);
+</script>
+
 {% endblock %}
