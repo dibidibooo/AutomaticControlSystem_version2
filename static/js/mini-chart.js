@@ -45,10 +45,8 @@ function createAllCharts(charts_info){
             console.log(">v", value)
             // full chart
              const full_chart_el_id = `full-chart-${component_index}-${value.name}`
-//            const full_chart_el_id = `big-chart-1`
             const full_options = createFullChartObject(value.values)
             const full_chart = new ApexCharts(document.getElementById(full_chart_el_id), full_options)
-
             full_chart.render();
         })
     })
