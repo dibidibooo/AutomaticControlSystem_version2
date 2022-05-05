@@ -1,6 +1,4 @@
-
 var charts_info = null
-
 // function for get all info from API
 function getInfo(url, success_function)
 {
@@ -37,14 +35,12 @@ function createAllCharts(charts_info){
             const mini_options = createChartObject(value.values.slice(-10)) // !change slice for good range info
             const mini_chart = new ApexCharts(document.getElementById(mini_chart_el_id), mini_options)
             mini_chart.render();
-
-
         })
 
         component.date_values.forEach(value => {
             console.log(">v", value)
             // full chart
-             const full_chart_el_id = `full-chart-${component_index}-${value.name}`
+            const full_chart_el_id = `full-chart-${component_index}-${value.name}`
             const full_options = createFullChartObject(value.values)
             const full_chart = new ApexCharts(document.getElementById(full_chart_el_id), full_options)
             full_chart.render();
