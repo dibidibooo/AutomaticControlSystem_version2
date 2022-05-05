@@ -21,7 +21,7 @@
                         <!-- task card -->
                         {% for task in tasks %}
                             {% if task.status_id == 1 %}
-                                {% if task.user == request.user %}
+                                {% if request.user == task.user or request.user == task.responsible %}
                                     <div class="card task-box" id="{{ task.id }}">
                                         <div class="card-body">
                                             <div class="float-end ms-2">
@@ -32,7 +32,7 @@
                                                 <p class="fw-bold mb-2">
                                                     <a href="" class="text-dark open_task" id="{{ task.id }}"
                                                        data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
-                                                        {{ task.title }} для компонента '{{ task.comp_title }}'
+                                                        #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
                                                     </a>
                                                 </p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
@@ -59,7 +59,7 @@
                                                 <p class="fw-bold mb-2">
                                                     <a href="" class="text-dark open_task" id="{{ task.id }}"
                                                        data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
-                                                        {{ task.title }} для компонента '{{ task.comp_title }}'
+                                                        #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
                                                     </a>
                                                 </p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
@@ -94,7 +94,7 @@
                         <!-- task card -->
                         {% for task in tasks %}
                             {% if task.status_id == 2 %}
-                                {% if task.user == request.user %}
+                                {% if request.user == task.user or request.user == task.responsible %}
                                     <div class="card task-box" id="{{ task.id }}">
                                         <div class="card-body">
                                             <div class="float-end ms-2">
@@ -104,7 +104,7 @@
                                                 <p class="fw-bold mb-2">
                                                     <a href="" class="text-dark open_task" id="{{ task.id }}"
                                                        data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
-                                                        {{ task.title }} для компонента '{{ task.comp_title }}'
+                                                        #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
                                                     </a>
                                                 </p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
@@ -129,7 +129,7 @@
                                                 <p class="fw-bold mb-2">
                                                     <a href="" class="text-dark open_task" id="{{ task.id }}"
                                                        data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
-                                                        {{ task.title }} для компонента '{{ task.comp_title }}'
+                                                        #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
                                                     </a>
                                                 </p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
@@ -163,7 +163,7 @@
                         <!-- task card -->
                         {% for task in tasks %}
                             {% if task.status_id == 3 %}
-                                {% if task.user == request.user %}
+                                {% if request.user == task.user or request.user == task.responsible %}
                                     <div class="card task-box" id="{{ task.id }}">
                                         <div class="card-body">
                                             <div class="float-end ms-2">
@@ -173,7 +173,7 @@
                                                 <p class="fw-bold mb-2">
                                                     <a href="" class="text-dark open_task" id="{{ task.id }}"
                                                        data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
-                                                        {{ task.title }} для компонента '{{ task.comp_title }}'
+                                                        #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
                                                     </a>
                                                 </p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
@@ -198,7 +198,7 @@
                                                 <p class="fw-bold mb-2">
                                                     <a href="" class="text-dark open_task" id="{{ task.id }}"
                                                        data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
-                                                        {{ task.title }} для компонента '{{ task.comp_title }}'
+                                                        #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
                                                     </a>
                                                 </p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
@@ -232,7 +232,7 @@
                         <!-- task card -->
                         {% for task in tasks %}
                             {% if task.status_id == 4 %}
-                                {% if task.user == request.user %}
+                                {% if request.user == task.user or request.user == task.responsible %}
                                     <div class="card task-box" id="{{ task.id }}">
                                         <div class="card-body">
                                             <div class="float-end ms-2">
@@ -242,7 +242,7 @@
                                                 <p class="fw-bold mb-2">
                                                     <a href="" class="text-dark open_task" id="{{ task.id }}"
                                                        data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
-                                                        {{ task.title }} для компонента '{{ task.comp_title }}'
+                                                        #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
                                                     </a>
                                                 </p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
@@ -267,7 +267,7 @@
                                                 <p class="fw-bold mb-2">
                                                     <a href="" class="text-dark open_task" id="{{ task.id }}"
                                                        data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
-                                                        {{ task.title }} для компонента '{{ task.comp_title }}'
+                                                        #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
                                                     </a>
                                                 </p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
