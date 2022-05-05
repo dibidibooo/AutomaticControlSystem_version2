@@ -1,9 +1,13 @@
 {% extends 'partials/base.html' %} {% load static %} {% block extra_css %}
 <!-- Select-->
 <link href="{% static 'libs/select2/dist/css/select2.min.css' %}" rel="stylesheet" type="text/css"/>
+<!-- Preloader-->
+<link href="{% static 'css/preloader.css' %}" rel="stylesheet" type="text/css"/>
 <!-- Sweet Alert-->
 <link href="{% static 'libs/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet" type="text/css"/>
 {% endblock %} {% block contents %}
+{% include 'partials/preloader.html' %}
+
 <div class="row">
     <div class="col-xl-6">
         <div class="checkout-tabs">
@@ -120,6 +124,14 @@ $(selector).on('click', function(){
                 }, false)
             })
     })()
-
 </script>
+<script>
+            function overlay(event){
+            // event.preventDefault();
+            console.log(">> overlay", event);
+            document.getElementById("overlay").style.display = "block";
+        }
+        document.getElementById("v-pills-tabContent").addEventListener('submit', overlay);
+</script>
+
 {% endblock %}
