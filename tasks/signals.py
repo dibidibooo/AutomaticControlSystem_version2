@@ -1,5 +1,4 @@
 from django.contrib.auth.models import User
-from django.core.mail import send_mail
 from django.dispatch import receiver
 from django.db.models import signals
 from django.template import loader
