@@ -62,7 +62,6 @@
             <div class="p-3 chat-input-section" style="margin-left: 10px">
                 <p><b>Комментарии:</b></p>
                 <div class="row">
-{#                    {{ form.as_p }}#}
                     <div class="col-lg-1">
                         <div class="">
                             <div class="avatar-xs">
@@ -130,6 +129,21 @@
 <!-- End block -->
 
 {% block extra_javascript %}
+{#    <script>#}
+{#    $('#comment-form-id').submit(function (e) {#}
+{#        $.ajax({#}
+{#            data: $(this).serialize(),#}
+{#            type: $(this).attr("method"),#}
+{#            url: $(this).attr("action"),#}
+{#            success: function (response) {#}
+{#                alert('Комментарий добавлен!');#}
+{#            }#}
+{#        });#}
+{#        e.preventDefault();#}
+{#        return false;#}
+{#    });#}
+{#    </script>#}
+
     <script>
         $('.modal').show(function () {
             let deadline = $('#id_deadline');

@@ -56,12 +56,7 @@ class Task(models.Model):
         html_message = loader.render_to_string('emails/task_create.html', val)
         to_email = [self.responsible.email, ]
         subject = f'Назначена новая задача'
-        body = f"""
-        Добавлена новая задача '{self.title} для компонента {self.comp_title}'.
-        (Место отбора проб: {self.sampling_site}. Установка: {self.plant_unit}.)
 
-        Пройдите по ссылке, чтобы открыть доску задач: http://127.0.0.1:8000/tasks/kanbanboard
-        """
         if self.pk is None:
             send_html_mail(subject=subject, html_content=html_message, recipient_list=to_email, sender=from_email)
         return super().save(*args, **kwargs)
@@ -91,17 +86,9 @@ class Comment(models.Model):
         html_message = loader.render_to_string('emails/comment_create.html', val)
         to_email = [self.task.user.email, ]
         subject = f'Новый комментарий в задаче #{self.task.id}'
-        body = f"""
-        Добавлен новый комментарий в задаче #{self.task.id} - {self.task.title} для компонента {self.task.comp_title}.
-        (Место отбора проб: {self.task.sampling_site}. Установка: {self.task.plant_unit}.)
-        
-        @{self.author}: '{self.text}.'
-        
-        Пройдите по ссылке, чтобы открыть доску задач: http://127.0.0.1:8000/tasks/kanbanboard
-        """
+
         if self.pk is None:
-            send_mail(subject, body, 'tussupbekov@gmail.com',
-                      to_email, fail_silently=False, html_message=html_message)
+            send_html_mail(subject=subject, html_content=html_message, recipient_list=to_email, sender=from_email)
         return super().save(*args, **kwargs)
 
     def __str__(self):
