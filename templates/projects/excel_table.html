@@ -7,7 +7,6 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-
                 <h4 class="card-title">Пример таблицы</h4>
                 <p class="card-title-desc">Здесь вы можете просмотреть данные с таблицы, скачать их в формате excel и
                     pdf. Есть режим поиска и сортировки,
@@ -28,17 +27,17 @@
                         <select class="form-select" id="autoSizingSelect">
                             <option selected>Выберите месяц...</option>
                             <option value="1">Январь</option>
-                            <option value="1">Февраль</option>
-                            <option value="1">Март</option>
-                            <option value="1">Апрель</option>
-                            <option value="1">Май</option>
-                            <option value="1">Июнь</option>
-                            <option value="1">Июль</option>
-                            <option value="1">Август</option>
-                            <option value="1">Сентябрь</option>
-                            <option value="1">Октябрь</option>
-                            <option value="2">Ноябрь</option>
-                            <option value="3">Декабрь</option>
+                            <option value="2">Февраль</option>
+                            <option value="3">Март</option>
+                            <option value="4">Апрель</option>
+                            <option value="5">Май</option>
+                            <option value="6">Июнь</option>
+                            <option value="7">Июль</option>
+                            <option value="8">Август</option>
+                            <option value="9">Сентябрь</option>
+                            <option value="10">Октябрь</option>
+                            <option value="11">Ноябрь</option>
+                            <option value="12">Декабрь</option>
                         </select>
                     </div>
 <!--                    <div class="col-lg-4">-->
@@ -54,7 +53,6 @@
                                 <th>Контролируемая вода</th>
                                 <th>Контролируемый параметр</th>
                                 <th>Показатель</th>
-                                <th>Производные коэффициенты и метрики, полученные из анализов</th>
                                 <th>Задачи и рекомендации по нормализации качества воды</th>
                                 <th>Ответственный и срок выполнения задачи</th>
                                 <th>Исполнители</th>
@@ -70,8 +68,6 @@
                                     <td>{{ task.water_type }}</td>
                                     <td>{{ task.comp_title }}</td>
                                     <td>{{ task.comp_value }}</td>
-                                    <td id="area-sparkline-chart-1"
-                                        class="apex-charts"></td>
                                     <td>{{ task.title }}</td>
                                     <td>
                                         {{ task.responsible.first_name }} {{ task.responsible.last_name }}
@@ -99,7 +95,6 @@
                                     <td>Нефтепродукт</td>
                                     <td>{{ item.oil_prod }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -110,7 +105,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Общие взвешенные твердые частицы</td>
                                     <td>{{ item.suspended_solids }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -123,7 +117,6 @@
                                     <td>Значение pH</td>
                                     <td>{{ item.ph }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -134,7 +127,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Фосфор</td>
                                     <td>{{ item.phosphorus }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -147,7 +139,6 @@
                                     <td>Щёлочность общая</td>
                                     <td>{{ item.alkalinity }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -158,7 +149,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Жёсткость общая</td>
                                     <td>{{ item.hardness }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -171,7 +161,6 @@
                                     <td>Солесодержание</td>
                                     <td>{{ item.salt }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -182,7 +171,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Хлориды</td>
                                     <td>{{ item.chlorides }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -195,7 +183,6 @@
                                     <td>Сульфаты</td>
                                     <td>{{ item.sulfates }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -206,7 +193,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Железо</td>
                                     <td>{{ item.iron }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -219,7 +205,6 @@
                                     <td>Жёсткость кальциевая</td>
                                     <td>{{ item.hardness_calcium }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -230,7 +215,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Жёсткость магниевая</td>
                                     <td>{{ item.hardness_magnesium }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -245,7 +229,6 @@
                                     <td>Нефтепродукт</td>
                                     <td>{{ item.oil_prod }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -257,7 +240,6 @@
                                     <td>Общие взвешенные твердые частицы</td>
                                     <td>{{ item.suspended_solids }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -268,7 +250,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Значение pH</td>
                                     <td>{{ item.ph }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -283,7 +264,6 @@
                                     <td>Взвешенные вещества</td>
                                     <td>{{ item.suspended_subst }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -294,7 +274,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Жёсткость общая</td>
                                     <td>{{ item.hardness }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -307,7 +286,6 @@
                                     <td>Железо</td>
                                     <td>{{ item.iron }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -318,7 +296,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Сухой остаток</td>
                                     <td>{{ item.dry_residue }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -331,7 +308,6 @@
                                     <td>Щёлочность общая</td>
                                     <td>{{ item.alkalinity }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -342,7 +318,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Солесодержание</td>
                                     <td>{{ item.salt }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -355,7 +330,6 @@
                                     <td>Хлориды</td>
                                     <td>{{ item.chlorides }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -366,7 +340,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Сульфаты</td>
                                     <td>{{ item.sulfates }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -379,7 +352,6 @@
                                     <td>Жёсткость кальциевая</td>
                                     <td>{{ item.hardness_calcium }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -391,7 +363,6 @@
                                     <td>Жёсткость магниевая</td>
                                     <td>{{ item.hardness_magnesium }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -402,7 +373,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Значение pH</td>
                                     <td>{{ item.ph }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -417,7 +387,6 @@
                                     <td>Взвешенные вещества</td>
                                     <td>{{ item.suspended_subst }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -428,7 +397,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Жёсткость общая</td>
                                     <td>{{ item.hardness }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -441,7 +409,6 @@
                                     <td>Железо</td>
                                     <td>{{ item.iron }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -452,7 +419,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Щёлочность общая</td>
                                     <td>{{ item.alkalinity }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -465,7 +431,6 @@
                                     <td>Солесодержание</td>
                                     <td>{{ item.salt }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -476,7 +441,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Хлориды</td>
                                     <td>{{ item.chlorides }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -489,7 +453,6 @@
                                     <td>Сульфаты</td>
                                     <td>{{ item.sulfates }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -500,7 +463,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Жёсткость кальциевая</td>
                                     <td>{{ item.hardness_calcium }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -513,7 +475,6 @@
                                     <td>Нефтепродукт</td>
                                     <td>{{ item.oil_prod }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -524,7 +485,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Значение pH</td>
                                     <td>{{ item.ph }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -539,7 +499,6 @@
                                     <td>Взвешенные вещества</td>
                                     <td>{{ item.suspended_subst }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -550,7 +509,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Жёсткость общая</td>
                                     <td>{{ item.hardness }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -563,7 +521,6 @@
                                     <td>Железо</td>
                                     <td>{{ item.iron }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -574,7 +531,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Щёлочность общая</td>
                                     <td>{{ item.alkalinity }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -587,7 +543,6 @@
                                     <td>Солесодержание</td>
                                     <td>{{ item.salt }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -598,7 +553,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Хлориды</td>
                                     <td>{{ item.chlorides }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -611,7 +565,6 @@
                                     <td>Сульфаты</td>
                                     <td>{{ item.sulfates }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -622,7 +575,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Жёсткость кальциевая</td>
                                     <td>{{ item.hardness_calcium }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -635,7 +587,6 @@
                                     <td>Нефтепродукт</td>
                                     <td>{{ item.oil_prod }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -646,7 +597,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Значение pH</td>
                                     <td>{{ item.ph }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -661,7 +611,6 @@
                                     <td>Взвешенные вещества</td>
                                     <td>{{ item.suspended_subst }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -672,7 +621,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Жёсткость общая</td>
                                     <td>{{ item.hardness }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -685,7 +633,6 @@
                                     <td>Железо</td>
                                     <td>{{ item.iron }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -696,7 +643,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Щёлочность по фенолу</td>
                                     <td>{{ item.alkalinity_phenols }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -709,7 +655,6 @@
                                     <td>Щёлочность общая</td>
                                     <td>{{ item.alkalinity }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -720,7 +665,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Солесодержание</td>
                                     <td>{{ item.salt }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -733,7 +677,6 @@
                                     <td>Хлориды</td>
                                     <td>{{ item.chlorides }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -744,7 +687,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Сульфаты</td>
                                     <td>{{ item.sulfates }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -757,7 +699,6 @@
                                     <td>Жёсткость кальциевая</td>
                                     <td>{{ item.hardness_calcium }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -769,7 +710,6 @@
                                     <td>Нефтепродукт</td>
                                     <td>{{ item.oil_prod }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -780,7 +720,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Значение pH</td>
                                     <td>{{ item.ph }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -795,7 +734,6 @@
                                     <td>Общие взвешенные твердые частицы</td>
                                     <td>{{ item.suspended_solids }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -806,7 +744,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Жёсткость общая</td>
                                     <td>{{ item.hardness }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -819,7 +756,6 @@
                                     <td>Железо</td>
                                     <td>{{ item.iron }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -830,7 +766,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Щёлочность общая</td>
                                     <td>{{ item.alkalinity }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -843,7 +778,6 @@
                                     <td>Хлориды</td>
                                     <td>{{ item.chlorides }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -854,7 +788,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Сульфаты</td>
                                     <td>{{ item.sulfates }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -867,7 +800,6 @@
                                     <td>Жёсткость кальциевая</td>
                                     <td>{{ item.hardness_calcium }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -878,7 +810,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Значение pH</td>
                                     <td>{{ item.ph }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -893,7 +824,6 @@
                                     <td>Общие взвешенные твердые частицы</td>
                                     <td>{{ item.suspended_solids }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -904,7 +834,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Значение pH</td>
                                     <td>{{ item.ph }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -917,7 +846,6 @@
                                     <td>Хлориды</td>
                                     <td>{{ item.chlorides }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -928,7 +856,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Фосфор</td>
                                     <td>{{ item.phosphorus }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -941,7 +868,6 @@
                                     <td>Нефтепродукт</td>
                                     <td>{{ item.oil_prod }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -952,7 +878,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Щёлочность общая</td>
                                     <td>{{ item.alkalinity }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -965,7 +890,6 @@
                                     <td>Жёсткость кальциевая</td>
                                     <td>{{ item.hardness_calcium }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -976,7 +900,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Жёсткость общая</td>
                                     <td>{{ item.hardness }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -989,7 +912,6 @@
                                     <td>Железо</td>
                                     <td>{{ item.iron }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1000,7 +922,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Солесодержание</td>
                                     <td>{{ item.salt }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1015,7 +936,6 @@
                                     <td>Общие взвешенные твердые частицы</td>
                                     <td>{{ item.suspended_solids }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1026,7 +946,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Значение pH</td>
                                     <td>{{ item.ph }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1039,7 +958,6 @@
                                     <td>Хлориды</td>
                                     <td>{{ item.chlorides }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1050,7 +968,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Сульфаты</td>
                                     <td>{{ item.sulfates }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1063,7 +980,6 @@
                                     <td>Фосфор</td>
                                     <td>{{ item.phosphorus }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1074,7 +990,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Щёлочность общая</td>
                                     <td>{{ item.alkalinity }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1087,7 +1002,6 @@
                                     <td>Жёсткость кальциевая</td>
                                     <td>{{ item.hardness_calcium }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1098,7 +1012,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Жёсткость общая</td>
                                     <td>{{ item.hardness }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1111,7 +1024,6 @@
                                     <td>Железо</td>
                                     <td>{{ item.iron }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1122,7 +1034,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Солесодержание</td>
                                     <td>{{ item.salt }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1137,7 +1048,6 @@
                                     <td>Остаточный хлор</td>
                                     <td>{{ item.chlorine }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1149,7 +1059,6 @@
                                     <td>Нефтепродукт</td>
                                     <td>{{ item.oil_prod }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1160,7 +1069,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Солесодержание</td>
                                     <td>{{ item.salt }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1175,7 +1083,6 @@
                                     <td>Общие взвешенные твердые частицы</td>
                                     <td>{{ item.suspended_solids }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1189,7 +1096,6 @@
                                     <td>Нефтепродукт</td>
                                     <td>{{ item.oil_prod }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1200,7 +1106,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Значение pH</td>
                                     <td>{{ item.ph }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1213,7 +1118,6 @@
                                     <td>Взвешенные вещества</td>
                                     <td>{{ item.suspended_subst }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1224,7 +1128,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Химическая потребность в кислороде (ХПК)</td>
                                     <td>{{ item.oxygen_chem }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1237,7 +1140,6 @@
                                     <td>Поверхностно-активные вещества (АПАВ)</td>
                                     <td>{{ item.active_subst }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1248,7 +1150,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Аммонийный азот</td>
                                     <td>{{ item.ammonium }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1263,7 +1164,6 @@
                                     <td>Нефтепродукт</td>
                                     <td>{{ item.oil_prod }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1274,7 +1174,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Значение pH</td>
                                     <td>{{ item.ph }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1287,7 +1186,6 @@
                                     <td>Взвешенные вещества</td>
                                     <td>{{ item.suspended_subst }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1298,7 +1196,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Химическая потребность в кислороде (ХПК)</td>
                                     <td>{{ item.oxygen_chem }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1311,7 +1208,6 @@
                                     <td>Поверхностно-активные вещества (АПАВ)</td>
                                     <td>{{ item.active_subst }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1322,7 +1218,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Аммонийный азот</td>
                                     <td>{{ item.ammonium }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1335,7 +1230,6 @@
                                     <td>Биологическая потребность в кислороде (БПК5)</td>
                                     <td>{{ item.oxygen_bio }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1346,7 +1240,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Фенолы</td>
                                     <td>{{ item.phenols }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1359,7 +1252,6 @@
                                     <td>Хлориды</td>
                                     <td>{{ item.chlorides }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1370,7 +1262,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Сульфаты</td>
                                     <td>{{ item.sulfates }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1383,7 +1274,6 @@
                                     <td>Железо</td>
                                     <td>{{ item.iron }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1395,7 +1285,6 @@
                                     <td>Азот нитратов</td>
                                     <td>{{ item.nitrate }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1406,7 +1295,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Азот нитритов</td>
                                     <td>{{ item.nitrite }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1421,7 +1309,6 @@
                                     <td>Щёлочность общая</td>
                                     <td>{{ item.alkalinity }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1432,7 +1319,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Жёсткость общая</td>
                                     <td>{{ item.hardness }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1445,7 +1331,6 @@
                                     <td>Окисляемость</td>
                                     <td>{{ item.oxidability }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1457,7 +1342,6 @@
                                     <td>Солесодержание</td>
                                     <td>{{ item.salt }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1468,7 +1352,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Остаточный хлор</td>
                                     <td>{{ item.chlorine }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1483,7 +1366,6 @@
                                     <td>Нефтепродукт</td>
                                     <td>{{ item.oil_prod }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1494,7 +1376,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Взвешенные вещества</td>
                                     <td>{{ item.suspended_subst }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1507,7 +1388,6 @@
                                     <td>Химическая потребность в кислороде (ХПК)</td>
                                     <td>{{ item.oxygen_chem }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1518,7 +1398,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Аммонийный азот</td>
                                     <td>{{ item.ammonium }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1531,7 +1410,6 @@
                                     <td>Биологическая потребность в кислороде (БПК5)</td>
                                     <td>{{ item.oxygen_bio }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1542,7 +1420,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Фосфор</td>
                                     <td>{{ item.phosphorus }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1557,7 +1434,6 @@
                                     <td>Нефтепродукт</td>
                                     <td>{{ item.oil_prod }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1568,7 +1444,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Взвешенные вещества</td>
                                     <td>{{ item.suspended_subst }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1581,7 +1456,6 @@
                                     <td>Химическая потребность в кислороде (ХПК)</td>
                                     <td>{{ item.oxygen_chem }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1592,7 +1466,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Аммонийный азот</td>
                                     <td>{{ item.ammonium }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
@@ -1605,7 +1478,6 @@
                                     <td>Биологическая потребность в кислороде (БПК5)</td>
                                     <td>{{ item.oxygen_bio }}</td>
                                     <td></td>
-                                    <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>
                                     <td></td>
@@ -1616,7 +1488,6 @@
                                     <td>{{ item.water_type }}</td>
                                     <td>Фосфор</td>
                                     <td>{{ item.phosphorus }}</td>
-                                    <td></td>
                                     <td></td>
                                     <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
                                     <td></td>

@@ -2,7 +2,7 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
 from django.views import View
-from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic import CreateView
 
 from tasks.models import Task
@@ -629,31 +629,38 @@ class ResultsView(PermissionRequiredMixin, View):
             """
         return render(request, 'projects/analyses_results.html', context)
 
-    def get_add_results1(self):
+    @staticmethod
+    def get_add_results1():
         if AdditionalComponents.objects.filter(plant_unit_id=1):
             return AdditionalComponents.objects.filter(plant_unit_id=1).latest('datetime')
 
-    def get_add_results2(self):
+    @staticmethod
+    def get_add_results2():
         if AdditionalComponents.objects.filter(plant_unit_id=2):
             return AdditionalComponents.objects.filter(plant_unit_id=2).latest('datetime')
 
-    def get_add_results3(self):
+    @staticmethod
+    def get_add_results3():
         if AdditionalComponents.objects.filter(plant_unit_id=3):
             return AdditionalComponents.objects.filter(plant_unit_id=3).latest('datetime')
 
-    def get_add_results4(self):
+    @staticmethod
+    def get_add_results4():
         if AdditionalComponents.objects.filter(plant_unit_id=4):
             return AdditionalComponents.objects.filter(plant_unit_id=4).latest('datetime')
 
-    def get_add_results5(self):
+    @staticmethod
+    def get_add_results5():
         if AdditionalComponents.objects.filter(plant_unit_id=5):
             return AdditionalComponents.objects.filter(plant_unit_id=5).latest('datetime')
 
-    def get_add_results6(self):
+    @staticmethod
+    def get_add_results6():
         if AdditionalComponents.objects.filter(plant_unit_id=6):
             return AdditionalComponents.objects.filter(plant_unit_id=6).latest('datetime')
 
-    def get_results1(self):
+    @staticmethod
+    def get_results1() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -672,7 +679,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results2(self):
+    @staticmethod
+    def get_results2() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -691,7 +699,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results3(self):
+    @staticmethod
+    def get_results3() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -710,7 +719,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results4(self):
+    @staticmethod
+    def get_results4() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -729,7 +739,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results5(self):
+    @staticmethod
+    def get_results5() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -748,7 +759,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results6(self):
+    @staticmethod
+    def get_results6() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -767,7 +779,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results6_2(self):
+    @staticmethod
+    def get_results6_2() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -786,7 +799,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results7(self):
+    @staticmethod
+    def get_results7() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -805,7 +819,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results8(self):
+    @staticmethod
+    def get_results8() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -824,7 +839,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results9(self):
+    @staticmethod
+    def get_results9() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -843,7 +859,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results10(self):
+    @staticmethod
+    def get_results10() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -862,7 +879,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results11(self):
+    @staticmethod
+    def get_results11() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -881,7 +899,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results12(self):
+    @staticmethod
+    def get_results12() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -900,7 +919,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results13(self):
+    @staticmethod
+    def get_results13() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -919,7 +939,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results14(self):
+    @staticmethod
+    def get_results14() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -938,7 +959,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results15(self):
+    @staticmethod
+    def get_results15() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
@@ -957,7 +979,8 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    def get_results16(self):
+    @staticmethod
+    def get_results16() -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
