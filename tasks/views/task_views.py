@@ -78,6 +78,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
         return render(request, 'tasks/kanbanboard.html', context)
 
     def post(self, request):
+        # Редактирование карточки задачи
         if 'edittask' in request.POST:
             task_id = request.POST['id']
             deadline = request.POST.get('deadline')
@@ -118,6 +119,8 @@ class KanbanBoardView(PermissionRequiredMixin, View):
                     )
             task.save()
             return redirect('tasks-kanbanboard')
+
+        # Добавление комментариев
         elif 'add_comment_button' in request.POST:
             task_id = request.POST['id']
             task = Task.objects.get(id=task_id)
@@ -128,6 +131,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             )
             return redirect('tasks-kanbanboard')
         else:
+            # Изменение статуса в бд при перетаскивании карточки задачи
             status_id = int(request.POST.get('status'))
             task_id = int(request.POST.get('task_id'))
             task = get_object_or_404(Task, pk=task_id)
@@ -146,8 +150,10 @@ class KanbanBoardView(PermissionRequiredMixin, View):
 
 
 class TaskCreate:
+    """Создание задач в случае отклонений показателей от норм"""
+
     # 1|1
-    def site1_task(self, form, water_type):
+    def site1_task(self, form, water_type: int) -> None:
         oil_prod = Component.objects.get(title__contains='[1|1] Нефтепродукт')
         ph = Component.objects.get(title__contains='[1|1] Значение рН')
         suspended_solids = Component.objects.get(title__contains='[1|1] Общие взвешенные твердые частицы')
@@ -285,7 +291,7 @@ class TaskCreate:
             )
 
     # 1|2
-    def site2_task(self, form, water_type):
+    def site2_task(self, form, water_type: int) -> None:
         oil_prod = Component.objects.get(title__contains='[1|2] Нефтепродукт')
         ph = Component.objects.get(title__contains='[1|2] Значение рН')
         suspended_solids = Component.objects.get(title__contains='[1|2] Общие взвешенные твердые частицы')
@@ -348,7 +354,7 @@ class TaskCreate:
             )
 
     # 1|3
-    def site3_task(self, form, water_type):
+    def site3_task(self, form, water_type: int) -> None:
         ph = Component.objects.get(title__contains='[1|3] Значение рН')
         suspended_subst = Component.objects.get(title__contains='[1|3] Взвешенные вещества')
         alkalinity = Component.objects.get(title__contains='[1|3] Щелочность общая')
@@ -456,11 +462,11 @@ class TaskCreate:
             )
 
     # 2|1
-    def site4_task(self, form, water_type):
+    def site4_task(self, form, water_type: int) -> None:
         pass
 
     # 2|2
-    def site5_task(self, form, water_type):
+    def site5_task(self, form, water_type: int) -> None:
         hardness = Component.objects.get(title__contains='[2|2] Жесткость общая')
         hardness_calcium = Component.objects.get(title__contains='[2|2] Жесткость кальциевая')
         ph = Component.objects.get(title__contains='[2|2] Значение рН')
@@ -627,7 +633,7 @@ class TaskCreate:
             )
 
     # 3|1
-    def site6_task(self, form, water_type):
+    def site6_task(self, form, water_type: int) -> None:
         hardness = Component.objects.get(title__contains='[3|1] Жесткость общая')
         hardness_calcium = Component.objects.get(title__contains='[3|1] Жесткость кальциевая')
         ph = Component.objects.get(title__contains='[3|1] Значение рН')
@@ -794,15 +800,15 @@ class TaskCreate:
             )
 
     # 4|1
-    def site7_task(self, form, water_type):
+    def site7_task(self, form, water_type: int) -> None:
         pass
 
     # 4|2
-    def site8_task(self, form, water_type):
+    def site8_task(self, form, water_type: int) -> None:
         pass
 
     # 4|3
-    def site9_task(self, form, water_type):
+    def site9_task(self, form, water_type: int) -> None:
         suspended_solids = Component.objects.get(title__contains='[4|3] Общие взвешенные твердые частицы')
         chlorides = Component.objects.get(title__contains='[4|3] Хлориды')
         sulfates = Component.objects.get(title__contains='[4|3] Сульфаты')
@@ -925,7 +931,7 @@ class TaskCreate:
             )
 
     # 4|4
-    def site10_task(self, form, water_type):
+    def site10_task(self, form, water_type: int) -> None:
         chlorine = Component.objects.get(title__contains='[4|4] Остаточный хлор')
         oil_prod = Component.objects.get(title__contains='[4|4] Нефтепродукт')
         salt = Component.objects.get(title__contains='[4|4] Солесодержание')
@@ -974,7 +980,7 @@ class TaskCreate:
             )
 
     # 4|5
-    def site11_task(self, form, water_type):
+    def site11_task(self, form, water_type: int) -> None:
         suspended_solids = Component.objects.get(title__contains='[4|5] Общие взвешенные твердые частицы')
 
         if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_hi):
@@ -993,7 +999,7 @@ class TaskCreate:
             )
 
     # 5|1
-    def site12_task(self, form, water_type):
+    def site12_task(self, form, water_type: int) -> None:
         oil_prod = Component.objects.get(title__contains='[5|1] Нефтепродукт')
 
         if float(form.cleaned_data['oil_prod']) > float(oil_prod.limit_hi):
@@ -1012,7 +1018,7 @@ class TaskCreate:
             )
 
     # 6|1
-    def site13_task(self, form, water_type):
+    def site13_task(self, form, water_type: int) -> None:
         oil_prod = Component.objects.get(title__contains='[6|1] Нефтепродукт')
         ph = Component.objects.get(title__contains='[6|1] Значение рН')
 
@@ -1046,15 +1052,15 @@ class TaskCreate:
             )
 
     # 6|2
-    def site14_task(self, form, water_type):
+    def site14_task(self, form, water_type: int) -> None:
         pass
 
     # 6|3
-    def site15_task(self, form, water_type):
+    def site15_task(self, form, water_type: int) -> None:
         pass
 
     # 6|4
-    def site16_task(self, form, water_type):
+    def site16_task(self, form, water_type: int) -> None:
         pass
 
 

@@ -196,7 +196,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=2
         )
         task_create = TaskCreate()
-        task_create.site4_task(form, 2)
+        task_create.site4_task(form, water_type=2)
         return HttpResponseRedirect(self.success_url)
 
     # БОВ-1 | Аналитическая точка выкид насосов Р-01А/В/С/Д
@@ -228,7 +228,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=1
         )
         task_create = TaskCreate()
-        task_create.site5_task(form, 1)
+        task_create.site5_task(form, water_type=1)
         return HttpResponseRedirect(self.success_url)
 
     # БОВ-2 | Аналитическая точка насосов Р-01А/В/С/Д
@@ -291,7 +291,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=1
         )
         task_create = TaskCreate()
-        task_create.site7_task(form, 1)
+        task_create.site7_task(form, water_type=1)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | Выход из ёмкости 77-ТК-103 77-SN-004
@@ -323,7 +323,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=2
         )
         task_create = TaskCreate()
-        task_create.site8_task(form, 2)
+        task_create.site8_task(form, water_type=2)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | На входе в боковой фильтр позиции 77-Z-003 77-SN-006
@@ -355,7 +355,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=1
         )
         task_create = TaskCreate()
-        task_create.site9_task(form, 1)
+        task_create.site9_task(form, water_type=1)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | Подача на градирню в районе 77-ТI-205 77-SN-007
@@ -373,7 +373,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=1
         )
         task_create = TaskCreate()
-        task_create.site10_task(form, 1)
+        task_create.site10_task(form, water_type=1)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | На выходе с бокового фильтра 77-Z-003, 77-SN-008
@@ -387,7 +387,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=1
         )
         task_create = TaskCreate()
-        task_create.site11_task(form, 1)
+        task_create.site11_task(form, water_type=1)
         return HttpResponseRedirect(self.success_url)
 
     # МОС -> Очистные сооружения поз.119. С колодца промстоков №1 (точка №4 вход)
@@ -411,7 +411,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=3
         )
         task_create = TaskCreate()
-        task_create.site12_task(form, 1)
+        task_create.site12_task(form, water_type=1)
         return HttpResponseRedirect(self.success_url)
 
     # БОС -> Пробоотборник 001 перед БОС / А1–SN-001
@@ -449,7 +449,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=3
         )
         task_create = TaskCreate()
-        task_create.site13_task(form, 1)
+        task_create.site13_task(form, water_type=1)
         return HttpResponseRedirect(self.success_url)
 
     # БОС -> Сточная вода после биологических очистных сооружений А1–SN-009
@@ -471,7 +471,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=3
         )
         task_create = TaskCreate()
-        task_create.site14_task(form, 1)
+        task_create.site14_task(form, water_type=1)
         return HttpResponseRedirect(self.success_url)
 
     # БОС -> Выход с аппарата напорной флотации в ТК -008А/ А1–SN-004А
@@ -495,7 +495,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=3
         )
         task_create = TaskCreate()
-        task_create.site15_task(form, 1)
+        task_create.site15_task(form, water_type=1)
         return HttpResponseRedirect(self.success_url)
 
     # БОС -> Выход с аппарата напорной флотации в ТК-008В/ А1 –SN -004В
@@ -519,7 +519,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=3
         )
         task_create = TaskCreate()
-        task_create.site16_task(form, 1)
+        task_create.site16_task(form, water_type=1)
         return HttpResponseRedirect(self.success_url)
 
 
@@ -609,7 +609,7 @@ class ResultsView(PermissionRequiredMixin, View):
             'res_additional_6': self.get_add_results6(),
         }
 
-        # Сравнение показателей с оборотной воды и с подпиточной воды
+        # Сравнение показателей с оборотной воды и с подпиточной воды на БОВ-2
         dict1 = {}
         dict2 = {}
         a = ComponentsSite6.objects.filter(water_type_id=1).values().latest('datetime')
@@ -629,6 +629,7 @@ class ResultsView(PermissionRequiredMixin, View):
             """
         return render(request, 'projects/analyses_results.html', context)
 
+    # Отображение результатов анализов доп. компонентов
     @staticmethod
     def get_add_results1():
         if AdditionalComponents.objects.filter(plant_unit_id=1):
@@ -659,6 +660,7 @@ class ResultsView(PermissionRequiredMixin, View):
         if AdditionalComponents.objects.filter(plant_unit_id=6):
             return AdditionalComponents.objects.filter(plant_unit_id=6).latest('datetime')
 
+    # Отображение результатов основных анализов
     @staticmethod
     def get_results1() -> dict:
         results_site = {}

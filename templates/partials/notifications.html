@@ -26,37 +26,36 @@
                             </li>
                         {% endif %}
                         {% for task in tasks %}
-                            {% if request.user == task.user %}
-                                <li class="event-list active">
+                            {% if request.user == task.user or request.user == task.responsible %}
+                                <li class="event-list active pb-3">
                                     <div class="event-timeline-dot">
                                         <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
                                     </div>
                                     <div class="d-flex">
-                                        <div class="flex-shrink-0 me-3">
+                                        <div class="flex-shrink-0 me-2">
                                             <h5 class="font-size-14">
-                                                {{ task.start_date|date:"d M" }}
-                                                <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                                {{ task.start_date|date:"d M" }}<i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
                                             </h5>
                                         </div>
                                         <div class="flex-grow-1">
                                             <div>
-                                                {{ task.plant_unit }} | {{ task.sampling_site|truncatechars:15 }}
-                                                <br>Компонент '{{ task.comp_title }}'
+                                                #{{ task.id }} - {{ task.plant_unit }}
+                                                <br>{{ task.sampling_site|truncatechars:20 }}
+                                                <br>'{{ task.comp_title }}'
                                                 <br>{{ task.notification }}
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 {% if task.completion_date > task.deadline %}
-                                    <li class="event-list active">
+                                    <li class="event-list active pb-3">
                                         <div class="event-timeline-dot">
                                             <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
                                         </div>
                                         <div class="d-flex">
-                                            <div class="flex-shrink-0 me-3">
+                                            <div class="flex-shrink-0 me-2">
                                                 <h5 class="font-size-14">
-                                                    {{ task.start_date|date:"d M" }}
-                                                    <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                                    {{ task.start_date|date:"d M" }}<i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
                                                 </h5>
                                             </div>
                                             <div class="flex-grow-1">
@@ -68,36 +67,35 @@
                                     </li>
                                 {% endif %}
                             {% elif request.user.is_superuser %}
-                                <li class="event-list active">
+                                <li class="event-list active pb-3">
                                     <div class="event-timeline-dot">
                                         <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
                                     </div>
                                     <div class="d-flex">
-                                        <div class="flex-shrink-0 me-3">
+                                        <div class="flex-shrink-0 me-2">
                                             <h5 class="font-size-14">
-                                                {{ task.start_date|date:"d M" }}
-                                                <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                                {{ task.start_date|date:"d M" }}<i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
                                             </h5>
                                         </div>
                                         <div class="flex-grow-1">
                                             <div>
-                                                {{ task.plant_unit }} | {{ task.sampling_site|truncatechars:15 }}
-                                                <br>Компонент '{{ task.comp_title }}'
+                                                #{{ task.id }} - {{ task.plant_unit }}
+                                                <br>{{ task.sampling_site|truncatechars:20 }}
+                                                <br>'{{ task.comp_title }}'
                                                 <br>{{ task.notification }}
                                             </div>
                                         </div>
                                     </div>
                                 </li>
                                 {% if task.completion_date > task.deadline %}
-                                    <li class="event-list active">
+                                    <li class="event-list active pb-3">
                                         <div class="event-timeline-dot">
                                             <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
                                         </div>
                                         <div class="d-flex">
-                                            <div class="flex-shrink-0 me-3">
+                                            <div class="flex-shrink-0 me-2">
                                                 <h5 class="font-size-14">
-                                                    {{ task.start_date|date:"d M" }}
-                                                    <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                                    {{ task.start_date|date:"d M" }}<i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
                                                 </h5>
                                             </div>
                                             <div class="flex-grow-1">
