@@ -25,7 +25,7 @@
                                 </div>
                             </li>
                         {% endif %}
-                        {% for task in tasks %}
+                        {% for task in notifications %}
                             {% if request.user == task.user or request.user == task.responsible %}
                                 <li class="event-list active pb-3">
                                     <div class="event-timeline-dot">

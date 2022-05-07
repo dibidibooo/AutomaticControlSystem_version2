@@ -55,7 +55,7 @@
 </div>
 
 <!-- Comments -->
-<form action="{% url 'comments-add' task.id %}" id="comment-form-id" onsubmit="overlay" method="POST">
+<form action="{% url 'comments-add' task.id %}" id="comment-form-id" onsubmit="overlay()" method="POST">
     {% csrf_token %}
     <div class="row" id="comments_section">
         <div class="col-lg-7">
@@ -129,21 +129,6 @@
 <!-- End block -->
 
 {% block extra_javascript %}
-{#    <script>#}
-{#    $('#comment-form-id').submit(function (e) {#}
-{#        $.ajax({#}
-{#            data: $(this).serialize(),#}
-{#            type: $(this).attr("method"),#}
-{#            url: $(this).attr("action"),#}
-{#            success: function (response) {#}
-{#                alert('Комментарий добавлен!');#}
-{#            }#}
-{#        });#}
-{#        e.preventDefault();#}
-{#        return false;#}
-{#    });#}
-{#    </script>#}
-
     <script>
         $('.modal').show(function () {
             let deadline = $('#id_deadline');
@@ -160,7 +145,7 @@
 
         function overlay(event){
             // event.preventDefault();
-            console.log(">> overlay", event);
+            {#console.log(">> overlay", event);#}
             document.getElementById("overlay").style.display = "block";
         }
         document.getElementById("save-btn").addEventListener('click', overlay);
