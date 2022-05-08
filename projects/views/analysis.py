@@ -543,6 +543,13 @@ class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
         form.instance.plant_unit = unit
         return super().form_valid(form)
 
+    # @staticmethod
+    # def calc_formula1(unit):
+    #     chlorides_recycled_water = ComponentsSite1.objects.filter().last().chlorides
+    #     chlorides_running_water = ComponentsSite3.objects.filter().last().chlorides
+    #     evaporation_ratio = chlorides_recycled_water / chlorides_running_water
+    #     return evaporation_ratio
+
 
 class ExcelTableView(PermissionRequiredMixin, View):
     permission_required = ['projects.view_task']
@@ -577,6 +584,7 @@ class ResultsView(PermissionRequiredMixin, View):
 
     def get(self, request):
         tasks = Task.objects.order_by('start_date')
+        notifications = Task.objects.order_by('-start_date')[:10]
         components = Component.objects.all()
 
         context = {
@@ -584,6 +592,7 @@ class ResultsView(PermissionRequiredMixin, View):
             'pageview': "Анализы",
             'components': components,
             'tasks': tasks,
+            'notifications': notifications,
             'results1': self.get_results1(),
             'results2': self.get_results2(),
             'results3': self.get_results3(),
