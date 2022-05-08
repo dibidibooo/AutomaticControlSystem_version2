@@ -60,30 +60,42 @@
                                     </div>
                                     <!-- МОП 1 -->
                                     <div id="componentcard11" class="card-body">
-                                        <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc">Оборотная вода</p>
+                                        <div class="d-flex">
+
+                                            <div class="flex-grow-1">
+                                                <h4 class="card-title">Контролируемые показатели</h4>
+                                                <p class="card-title-desc">Оборотная вода</p>
+                                            </div>
+                                            <div>
+                                                <div class="dropdown chat-noti-dropdown active">
+                                                    <button class="btn" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                        <i class="bx bxs-cog bx-tada"></i>
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                             {% csrf_token %}
                                             {% for error in forms.site1.non_field_errors %}
-                                                <div class="mb-2 text-danger">{{ error }}</div>
+                                            <div class="mb-2 text-danger">{{ error }}</div>
                                             {% endfor %}
                                             {% for field in forms.site1 %}
-                                                {% if field.name == 'action' %}
-                                                    <input type="hidden" name="action"
-                                                           value="{{ forms.site1.action.value }}" id="id_action">
-                                                {% else %}
-                                                    <div class="row component_row">
-                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                        <div class="col-lg-6 comp_input">
-                                                            <div class="input-group">
-                                                                {{ field }}
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
-                                                                </div>
-                                                            </div>
+                                            {% if field.name == 'action' %}
+                                            <input type="hidden" name="action"
+                                                   value="{{ forms.site1.action.value }}" id="id_action">
+                                            {% else %}
+                                            <div class="row component_row">
+                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                <div class="col-lg-6 comp_input">
+                                                    <div class="input-group">
+                                                        {{ field }}
+                                                        <div class="input-group-prepend">
+                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
                                                         </div>
                                                     </div>
-                                                {% endif %}
+                                                </div>
+                                            </div>
+                                            {% endif %}
                                             {% endfor %}
                                             <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
                                                 Отправить
@@ -545,7 +557,7 @@
                                                 </div>
                                             </div>
                                             {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="sa-custom">Отправить
                                             </button>
                                         </form>
                                     </div>
@@ -575,7 +587,6 @@
 <!-- Sweet Alerts -->
 <script src="{% static 'libs/sweetalert2/dist/sweetalert2.min.js' %}"></script>
 <script src="{% static 'js/pages/sweet-alerts.init.js' %}"></script>
-
 <script>
     $(document).ready(function () {
         let component_row = $('.component_row');
@@ -637,6 +648,11 @@
             })
     })()
 
+
+
+
+
+
 </script>
 <script>
             function overlay(event){
@@ -645,5 +661,11 @@
             document.getElementById("overlay").style.display = "block";
         }
         document.getElementById("v-pills-tabContent").addEventListener('submit', overlay);
+
+
+
+
+
+
 </script>
 {% endblock %}
