@@ -4,8 +4,8 @@ from rest_framework import routers
 from project_api.views import (
     TaskViewSet,
     Results1ViewSet,
-    Results2ViewSet,
-    Results3ViewSet,
+    # Results2ViewSet,
+    # Results3ViewSet,
     UserViewSet,
     ComponentViewSet,
     get_results1
@@ -16,8 +16,8 @@ router.register(r'tasks', TaskViewSet)
 router.register(r'users', UserViewSet)
 router.register(r'components', ComponentViewSet)
 router.register(r'results1', Results1ViewSet)
-router.register(r'results2', Results2ViewSet)
-router.register(r'results3', Results3ViewSet)
+# router.register(r'results2', Results2ViewSet)
+# router.register(r'results3', Results3ViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

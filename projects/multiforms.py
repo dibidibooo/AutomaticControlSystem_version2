@@ -1,3 +1,5 @@
+import re
+
 from django.http import HttpResponseRedirect, HttpResponseForbidden
 from django.views.generic.base import ContextMixin, TemplateResponseMixin
 from django.views.generic.edit import ProcessFormView
@@ -41,10 +43,16 @@ class MultiFormMixin(ContextMixin):
         initial_method = 'get_%s_initial' % form_name
         if hasattr(self, initial_method):
             attrs = getattr(self, initial_method)()
+            digits = re.findall(r'\d+', form_name)
             attrs['action'] = form_name
+            attrs['smpl_site'] = int(digits[0])
             return attrs
         else:
-            return {'action': form_name}
+            digits = re.findall(r'\d+', form_name)
+            return {
+                'action': form_name,
+                'smpl_site': int(digits[0])
+            }
 
     def get_prefix(self, form_name):
         return self.prefixes.get(form_name, self.prefix)
