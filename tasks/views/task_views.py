@@ -192,20 +192,36 @@ class TaskCreate:
                 plant_unit_id=unit,
                 water_type_id=water_type
             )
-        if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_hi):
-            comp_title = suspended_solids.title[6:]
-            deadline = datetime.now() + timedelta(days=3)
-            Task.objects.create(
-                title=suspended_solids.recommendation2,
-                responsible_id=responsible_id,
-                deadline=deadline,
-                comp_title=comp_title,
-                comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
-                sampling_site_id=smpl_site,
-                notification_id=1,
-                plant_unit_id=unit,
-                water_type_id=water_type
-            )
+        if datetime.today().month in range(6, 9):
+            if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_hi):
+                comp_title = suspended_solids.title[6:]
+                deadline = datetime.now() + timedelta(days=3)
+                Task.objects.create(
+                    title=suspended_solids.recommendation2,
+                    responsible_id=responsible_id,
+                    deadline=deadline,
+                    comp_title=comp_title,
+                    comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
+                    sampling_site_id=smpl_site,
+                    notification_id=1,
+                    plant_unit_id=unit,
+                    water_type_id=water_type
+                )
+        else:
+            if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_lo):
+                comp_title = suspended_solids.title[6:]
+                deadline = datetime.now() + timedelta(days=3)
+                Task.objects.create(
+                    title=suspended_solids.recommendation2,
+                    responsible_id=responsible_id,
+                    deadline=deadline,
+                    comp_title=comp_title,
+                    comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
+                    sampling_site_id=smpl_site,
+                    notification_id=1,
+                    plant_unit_id=unit,
+                    water_type_id=water_type
+                )
         if float(form.cleaned_data['phosphorus']) < float(phosphorus.limit_lo):
             comp_title = phosphorus.title[6:]
             deadline = datetime.now() + timedelta(days=3)
@@ -335,7 +351,9 @@ class TaskCreate:
                 responsible_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
-                comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
+                comp_value=int(
+                    ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest(
+                        'datetime')['suspended_solids']),
                 sampling_site_id=smpl_site,
                 notification_id=1,
                 plant_unit_id=unit,
@@ -814,20 +832,36 @@ class TaskCreate:
         smpl_site = 9
         unit = 4
 
-        if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_hi):
-            comp_title = suspended_solids.title[6:]
-            deadline = datetime.now() + timedelta(days=3)
-            Task.objects.create(
-                title=suspended_solids.recommendation2,
-                responsible_id=responsible_id,
-                deadline=deadline,
-                comp_title=comp_title,
-                comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
-                sampling_site_id=smpl_site,
-                notification_id=1,
-                plant_unit_id=unit,
-                water_type_id=water_type
-            )
+        if datetime.today().month in range(6, 9):
+            if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_hi):
+                comp_title = suspended_solids.title[6:]
+                deadline = datetime.now() + timedelta(days=3)
+                Task.objects.create(
+                    title=suspended_solids.recommendation2,
+                    responsible_id=responsible_id,
+                    deadline=deadline,
+                    comp_title=comp_title,
+                    comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
+                    sampling_site_id=smpl_site,
+                    notification_id=1,
+                    plant_unit_id=unit,
+                    water_type_id=water_type
+                )
+        else:
+            if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_lo):
+                comp_title = suspended_solids.title[6:]
+                deadline = datetime.now() + timedelta(days=3)
+                Task.objects.create(
+                    title=suspended_solids.recommendation2,
+                    responsible_id=responsible_id,
+                    deadline=deadline,
+                    comp_title=comp_title,
+                    comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
+                    sampling_site_id=smpl_site,
+                    notification_id=1,
+                    plant_unit_id=unit,
+                    water_type_id=water_type
+                )
         if float(form.cleaned_data['chlorides']) > float(chlorides.limit_hi):
             comp_title = chlorides.title[6:]
             deadline = datetime.now() + timedelta(days=3)
@@ -984,20 +1018,36 @@ class TaskCreate:
         smpl_site = 11
         unit = 4
 
-        if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_hi):
-            comp_title = suspended_solids.title[6:]
-            deadline = datetime.now() + timedelta(days=3)
-            Task.objects.create(
-                title=suspended_solids.recommendation2,
-                responsible_id=responsible_id,
-                deadline=deadline,
-                comp_title=comp_title,
-                comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
-                sampling_site_id=smpl_site,
-                notification_id=1,
-                plant_unit_id=unit,
-                water_type_id=water_type
-            )
+        if datetime.today().month in range(6, 9):
+            if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_hi):
+                comp_title = suspended_solids.title[6:]
+                deadline = datetime.now() + timedelta(days=3)
+                Task.objects.create(
+                    title=suspended_solids.recommendation2,
+                    responsible_id=responsible_id,
+                    deadline=deadline,
+                    comp_title=comp_title,
+                    comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
+                    sampling_site_id=smpl_site,
+                    notification_id=1,
+                    plant_unit_id=unit,
+                    water_type_id=water_type
+                )
+        else:
+            if float(form.cleaned_data['suspended_solids']) > float(suspended_solids.limit_hi):
+                comp_title = suspended_solids.title[6:]
+                deadline = datetime.now() + timedelta(days=3)
+                Task.objects.create(
+                    title=suspended_solids.recommendation2,
+                    responsible_id=responsible_id,
+                    deadline=deadline,
+                    comp_title=comp_title,
+                    comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
+                    sampling_site_id=smpl_site,
+                    notification_id=1,
+                    plant_unit_id=unit,
+                    water_type_id=water_type
+                )
 
     # 5|1
     def site12_task(self, form, water_type: int, responsible_id: int) -> None:
@@ -1085,12 +1135,3 @@ class ArchiveTaskListView(PermissionRequiredMixin, View):
             'unit6': Task.objects.filter(plant_unit_id=6, status_id=5),
         }
         return render(request, 'tasks/tasklist.html', context)
-
-
-class CreateTaskView(LoginRequiredMixin, View):
-    def get(self, request):
-        context = {
-            'heading': "Create Task",
-            'pageview': "Tasks"
-        }
-        return render(request, 'tasks/createtask.html', context)

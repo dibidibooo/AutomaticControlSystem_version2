@@ -59,14 +59,9 @@ INSTALLED_APPS = [
     # Local App
     'corsheaders',
     'rest_framework',
-    'layout',
-    'ecommerce',
-    'crypto',
     'projects',
     'tasks',
-    'contacts',
     'pages',
-    'components',
     'project_api',
     'accounts',
     # Third Party App
@@ -84,7 +79,6 @@ INSTALLED_APPS = [
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 MIDDLEWARE = [
-
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',

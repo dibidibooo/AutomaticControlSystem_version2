@@ -752,14 +752,17 @@ class ResultsView(PermissionRequiredMixin, View):
     def unit3_results_comparison():
         dict1 = {}
         dict2 = {}
-        a = ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=1).values().latest('datetime')
-        b = ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=2).values().latest('datetime')
-        for key, value in a.items():
-            if value is not None and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit':
-                dict1[key] = value
-        for key, value in b.items():
-            if value is not None and key is not None and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit':
-                dict2[key] = value
+        if ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=1) and \
+                ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=2):
+
+            a = ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=1).values().latest('datetime')
+            b = ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=2).values().latest('datetime')
+            for key, value in a.items():
+                if value is not None and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit':
+                    dict1[key] = value
+            for key, value in b.items():
+                if value is not None and key is not None and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit':
+                    dict2[key] = value
 
         diffkeys = [key for key in dict1 if dict1[key] < dict2[key]]
         if diffkeys:
