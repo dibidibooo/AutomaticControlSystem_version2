@@ -41,105 +41,132 @@
                             <div class="tab-content" id="v-pills-tabContent">
                                 <!-- Установка 1 -->
                                 <div class="tab-pane fade show active" id="location1" role="tabpanel" aria-labelledby="location1-tab">
-                                    <div class="row">
-                                        <div class="col-lg-12 mb-3">
-                                            <h4 class="card-title">Место отбора проб</h4>
-                                            <select class="form-select" id="plant_unit1" name="plant_unit1">
-                                                <option selected>Выбрать..</option>
-                                                <option name="selectcomp1" value="1">
-                                                    Дренажные насосы Н-14,15,16
-                                                </option>
-                                                <option name="selectcomp2" value="2">
-                                                    АВТ напротив холодильника №42
-                                                </option>
-                                                <option name="selectcomp3" value="3">
-                                                    Дренажные насосы Н-5,11.12
-                                                </option>
-                                            </select>
+                                    <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                        <div class="row">
+                                            <div class="col-lg-12 mb-3">
+                                                <h4 class="card-title">Место отбора проб</h4>
+                                                <select class="form-select" id="plant_unit1" name="plant_unit1">
+                                                    <option selected>Выбрать..</option>
+                                                    <option value="1">
+                                                        Дренажные насосы Н-14,15,16
+                                                    </option>
+                                                    <option value="2">
+                                                        АВТ напротив холодильника №42
+                                                    </option>
+                                                    <option value="3">
+                                                        Дренажные насосы Н-5,11.12
+                                                    </option>
+                                                </select>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <!-- МОП 1 -->
-                                    <div id="componentcard11" class="card-body">
-                                        <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %}
-                                            {% for error in forms.site1.non_field_errors %}
-                                                <div class="mb-2 text-danger">{{ error }}</div>
-                                            {% endfor %}
-                                            {% for field in forms.site1 %}
-                                                {% if field.name == 'action' %}
-                                                    <input type="hidden" name="action"
-                                                           value="{{ forms.site1.action.value }}" id="id_action">
-                                                {% else %}
-                                                    <div class="row component_row">
-                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                        <div class="col-lg-6 comp_input">
-                                                            <div class="input-group">
-                                                                {{ field }}
-                                                                <div class="input-group-prepend">
-                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                        <!-- МОП 1 -->
+                                        <div id="componentcard11" class="card-body">
+                                            <h4 class="card-title">Контролируемые показатели</h4>
+                                            <p class="card-title-desc">Оборотная вода</p>
+                                            <form class="needs-validation form11" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                                {% csrf_token %}
+                                                <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                                {% for error in forms.site1.non_field_errors %}
+                                                    <div class="mb-2 text-danger">{{ error }}</div>
+                                                {% endfor %}
+                                                {% for field in forms.site1 %}
+                                                    {% if field.name == 'action' %}
+                                                        <input type="hidden" name="action"
+                                                               value="{{ forms.site1.action.value }}" id="id_action">
+                                                    {% elif field.name == 'smpl_site' %}
+                                                        <input type="hidden" name="smpl_site"
+                                                               value="{{ forms.site1.smpl_site.value }}" id="id_smpl_site">
+                                                    {% else %}
+                                                        <div class="row component_row">
+                                                            <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                            <div class="col-lg-6 comp_input">
+                                                                <div class="input-group">
+                                                                    {{ field }}
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                {% endif %}
-                                            {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
-                                                Отправить
-                                            </button>
-                                        </form>
-                                    </div>
-                                    <!-- МОП 2 -->
-                                    <div id="componentcard12" class="card-body">
-                                        <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %} {% for error in forms.site2.non_field_errors %}
-                                            <div class="mb-2 text-danger">{{ error }}</div>
-                                            {% endfor %} {% for field in forms.site2 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site2.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6 comp_input">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
-                                            </button>
-                                        </form>
-                                    </div>
-                                    <!-- МОП 3 -->
-                                    <div id="componentcard13" class="card-body ">
-                                        <h4 class="card-title">Контролируемые показатели</h4>
-                                        <p class="card-title-desc">Подпиточная вода</p>
-                                        <form class="needs-validation" novalidate action="" method="POST">
-                                            {% csrf_token %} {% for field in forms.site3 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site3.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6 comp_input">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <div>
-                                                <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                    {% endif %}
+                                                {% endfor %}
+                                                <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                    Отправить
                                                 </button>
-                                            </div>
-                                        </form>
-                                    </div>
+                                            </form>
+                                        </div>
+                                        <!-- МОП 2 -->
+                                        <div id="componentcard12" class="card-body">
+                                            <h4 class="card-title">Контролируемые показатели</h4>
+                                            <p class="card-title-desc">Оборотная вода</p>
+                                            <form class="needs-validation form12" action="{% url 'analyzes_create' %}" method="post">
+                                                {% csrf_token %}
+                                                <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                                {% for error in forms.site2.non_field_errors %}
+                                                    <div class="mb-2 text-danger">{{ error }}</div>
+                                                {% endfor %}
+                                                {% for field in forms.site2 %}
+                                                    {% if field.name == 'action' %}
+                                                        <input type="hidden" name="action"
+                                                               value="{{ forms.site2.action.value }}" id="id_action">
+                                                    {% elif field.name == 'smpl_site' %}
+                                                        <input type="hidden" name="smpl_site"
+                                                               value="{{ forms.site2.smpl_site.value }}" id="id_smpl_site">
+                                                    {% else %}
+                                                        <div class="row component_row">
+                                                            <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                            <div class="col-lg-6 comp_input">
+                                                                <div class="input-group">
+                                                                    {{ field }}
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
+                                                <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                    Отправить
+                                                </button>
+                                            </form>
+                                        </div>
+                                        <!-- МОП 3 -->
+                                        <div id="componentcard13" class="card-body ">
+                                            <h4 class="card-title">Контролируемые показатели</h4>
+                                            <p class="card-title-desc">Подпиточная вода</p>
+                                            <form class="needs-validation form13" novalidate action="" method="POST">
+                                                {% csrf_token %}
+                                                <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                                {% for field in forms.site3 %}
+                                                    {% if field.name == 'action' %}
+                                                        <input type="hidden" name="action"
+                                                               value="{{ forms.site3.action.value }}" id="id_action">
+                                                    {% elif field.name == 'smpl_site' %}
+                                                        <input type="hidden" name="smpl_site"
+                                                               value="{{ forms.site3.smpl_site.value }}" id="id_smpl_site">
+                                                    {% else %}
+                                                        <div class="row component_row">
+                                                            <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                            <div class="col-lg-6 comp_input">
+                                                                <div class="input-group">
+                                                                    {{ field }}
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    {% endif %}
+                                                {% endfor %}
+                                                <div>
+                                                    <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                        Отправить
+                                                    </button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </form>
                                 </div>
 
                                 <!-- Установка 2 -->
@@ -161,22 +188,32 @@
                                     <div id="componentcard21" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Подпиточная вода</p>
-                                        <form class="needs-validation" novalidate action="" method="POST">
-                                            {% csrf_token %} {% for field in forms.site4 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site4.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                        <form class="needs-validation form21" novalidate action="" method="POST">
+                                            {% csrf_token %}
+                                            <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                            {% for field in forms.site4 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action"
+                                                           value="{{ forms.site4.action.value }}" id="id_action">
+                                                {% elif field.name == 'smpl_site' %}
+                                                    <input type="hidden" name="smpl_site"
+                                                           value="{{ forms.site4.smpl_site.value }}" id="id_smpl_site">
+                                                {% else %}
+                                                    <div class="row component_row">
+                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                Отправить
                                             </button>
                                         </form>
                                     </div>
@@ -184,22 +221,32 @@
                                     <div id="componentcard22" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %} {% for field in forms.site5 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site5.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6 comp_input">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                        <form class="needs-validation form22" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                            {% csrf_token %}
+                                            <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                            {% for field in forms.site5 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action"
+                                                           value="{{ forms.site5.action.value }}" id="id_action">
+                                                {% elif field.name == 'smpl_site' %}
+                                                    <input type="hidden" name="smpl_site"
+                                                           value="{{ forms.site5.smpl_site.value }}" id="id_smpl_site">
+                                                {% else %}
+                                                    <div class="row component_row">
+                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6 comp_input">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                Отправить
                                             </button>
                                         </form>
                                     </div>
@@ -209,7 +256,6 @@
                                 <div class="tab-pane fade show " id="location3" role="tabpanel" aria-labelledby="location3-tab">
                                     <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
                                         {% csrf_token %}
-
                                         <div class="row mb-3">
                                             <div class="col-lg-6">
                                                 <h4 class="card-title">Место отбора проб</h4>
@@ -222,33 +268,43 @@
                                             </div>
 
                                             <div class="col-lg-6">
-                                                <h4 class="card-title" for="water_type">Контролируемая вода</h4>
+                                                <h4 class="card-title">Контролируемая вода</h4>
                                                 <select class="form-select" name="water_type" id="water_type" required>
-                                                    <option value=''>Выбрать..</option>
+                                                    <option>Выбрать..</option>
                                                     <option value="1">Оборотная</option>
-                                                    <option value="2">Приточная</option>
+                                                    <option value="2">Подпиточная</option>
                                                 </select>
                                             </div>
                                         </div>
                                         <!-- МОП 6 -->
                                         <div id="componentcard311" class="card-body">
                                             <h4 class="card-title">Контролируемые показатели</h4>
-                                            <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                                {% csrf_token %} {% for field in forms.site6 %} {% if field.name == 'action' %}
-                                                <input type="hidden" name="action" value="{{ forms.site6.action.value }}" id="id_action"> {% else %}
-                                                <div class="row component_row">
-                                                    <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                    <div class="col-lg-6 comp_input">
-                                                        <div class="input-group">
-                                                            {{ field }}
-                                                            <div class="input-group-prepend">
-                                                                <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                            <form class="needs-validation form31" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                                {% csrf_token %}
+                                                <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                                {% for field in forms.site6 %}
+                                                    {% if field.name == 'action' %}
+                                                        <input type="hidden" name="action"
+                                                               value="{{ forms.site6.action.value }}" id="id_action">
+                                                    {% elif field.name == 'smpl_site' %}
+                                                        <input type="hidden" name="smpl_site"
+                                                               value="{{ forms.site6.smpl_site.value }}" id="id_smpl_site">
+                                                    {% else %}
+                                                        <div class="row component_row">
+                                                            <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                            <div class="col-lg-6 comp_input">
+                                                                <div class="input-group">
+                                                                    {{ field }}
+                                                                    <div class="input-group-prepend">
+                                                                        <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
-                                                    </div>
-                                                </div>
-                                                {% endif %} {% endfor %}
-                                                <button type="submit" class="btn btn-primary waves-effect waves-light mt-2" id="#">Отправить
+                                                    {% endif %}
+                                                {% endfor %}
+                                                <button type="submit" class="btn btn-primary waves-effect waves-light mt-2" id="#">
+                                                    Отправить
                                                 </button>
                                             </form>
                                         </div>
@@ -284,22 +340,31 @@
                                     <div id="componentcard41" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %} {% for field in forms.site7 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site7.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6 comp_input">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                        <form class="needs-validation form41" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                            {% csrf_token %}
+                                            <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                            {% for field in forms.site7 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site7.action.value }}" id="id_action">
+                                                {% elif field.name == 'smpl_site' %}
+                                                    <input type="hidden" name="smpl_site"
+                                                           value="{{ forms.site7.smpl_site.value }}" id="id_smpl_site">
+                                                {% else %}
+                                                    <div class="row component_row">
+                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6 comp_input">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                Отправить
                                             </button>
                                         </form>
                                     </div>
@@ -307,22 +372,31 @@
                                     <div id="componentcard42" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Подпиточная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %} {% for field in forms.site8 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site8.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6 comp_input">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                        <form class="needs-validation form42" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                            {% csrf_token %}
+                                            <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                            {% for field in forms.site8 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site8.action.value }}" id="id_action">
+                                                {% elif field.name == 'smpl_site' %}
+                                                    <input type="hidden" name="smpl_site"
+                                                           value="{{ forms.site8.smpl_site.value }}" id="id_smpl_site">
+                                                {% else %}
+                                                    <div class="row component_row">
+                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6 comp_input">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                Отправить
                                             </button>
                                         </form>
                                     </div>
@@ -330,22 +404,31 @@
                                     <div id="componentcard43" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %} {% for field in forms.site9 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site9.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6 comp_input">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                        <form class="needs-validation form43" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                            {% csrf_token %}
+                                            <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                            {% for field in forms.site9 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site9.action.value }}" id="id_action">
+                                                {% elif field.name == 'smpl_site' %}
+                                                    <input type="hidden" name="smpl_site"
+                                                           value="{{ forms.site9.smpl_site.value }}" id="id_smpl_site">
+                                                {% else %}
+                                                    <div class="row component_row">
+                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6 comp_input">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                Отправить
                                             </button>
                                         </form>
                                     </div>
@@ -353,22 +436,31 @@
                                     <div id="componentcard44" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели 4</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %} {% for field in forms.site10 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site10.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6 comp_input">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                        <form class="needs-validation form44" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                            {% csrf_token %}
+                                            <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                            {% for field in forms.site10 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site10.action.value }}" id="id_action">
+                                                {% elif field.name == 'smpl_site' %}
+                                                    <input type="hidden" name="smpl_site"
+                                                           value="{{ forms.site10.smpl_site.value }}" id="id_smpl_site">
+                                                {% else %}
+                                                    <div class="row component_row">
+                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6 comp_input">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                Отправить
                                             </button>
                                         </form>
                                     </div>
@@ -376,22 +468,31 @@
                                     <div id="componentcard45" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели 5</h4>
                                         <p class="card-title-desc">Оборотная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %} {% for field in forms.site11 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site11.action.value }}" id="id_action"> {% else %}
-                                            <div class="row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6 comp_input">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                        <form class="needs-validation form45" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                            {% csrf_token %}
+                                            <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                            {% for field in forms.site11 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site11.action.value }}" id="id_action">
+                                                {% elif field.name == 'smpl_site' %}
+                                                    <input type="hidden" name="smpl_site"
+                                                           value="{{ forms.site11.smpl_site.value }}" id="id_smpl_site">
+                                                {% else %}
+                                                    <div class="row">
+                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6 comp_input">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                Отправить
                                             </button>
                                         </form>
                                     </div>
@@ -414,22 +515,31 @@
                                     <div id="componentcard51" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели МОС 1</h4>
                                         <p class="card-title-desc">Сточная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %} {% for field in forms.site12 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site12.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6 comp_input">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                        <form class="needs-validation form51" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                            {% csrf_token %}
+                                            <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                            {% for field in forms.site12 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site12.action.value }}" id="id_action">
+                                                {% elif field.name == 'smpl_site' %}
+                                                    <input type="hidden" name="smpl_site"
+                                                           value="{{ forms.site12.smpl_site.value }}" id="id_smpl_site">
+                                                {% else %}
+                                                    <div class="row component_row">
+                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6 comp_input">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                Отправить
                                             </button>
                                         </form>
                                     </div>
@@ -461,22 +571,31 @@
                                     <div id="componentcard61" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Сточная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %} {% for field in forms.site13 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site13.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                        <form class="needs-validation form61" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                            {% csrf_token %}
+                                            <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                            {% for field in forms.site13 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site13.action.value }}" id="id_action">
+                                                {% elif field.name == 'smpl_site' %}
+                                                    <input type="hidden" name="smpl_site"
+                                                           value="{{ forms.site13.smpl_site.value }}" id="id_smpl_site">
+                                                {% else %}
+                                                    <div class="row component_row">
+                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                Отправить
                                             </button>
                                         </form>
                                     </div>
@@ -484,22 +603,31 @@
                                     <div id="componentcard62" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Сточная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %} {% for field in forms.site14 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site14.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6 comp_input">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                        <form class="needs-validation form62" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                            {% csrf_token %}
+                                            <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                            {% for field in forms.site14 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site14.action.value }}" id="id_action">
+                                                {% elif field.name == 'smpl_site' %}
+                                                    <input type="hidden" name="smpl_site"
+                                                           value="{{ forms.site14.smpl_site.value }}" id="id_smpl_site">
+                                                {% else %}
+                                                    <div class="row component_row">
+                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6 comp_input">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                Отправить
                                             </button>
                                         </form>
                                     </div>
@@ -507,22 +635,31 @@
                                     <div id="componentcard63" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Сточная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %} {% for field in forms.site15 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site15.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                        <form class="needs-validation form63" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                            {% csrf_token %}
+                                            <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                            {% for field in forms.site15 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site15.action.value }}" id="id_action">
+                                                {% elif field.name == 'smpl_site' %}
+                                                    <input type="hidden" name="smpl_site"
+                                                           value="{{ forms.site15.smpl_site.value }}" id="id_smpl_site">
+                                                {% else %}
+                                                    <div class="row component_row">
+                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                Отправить
                                             </button>
                                         </form>
                                     </div>
@@ -530,22 +667,31 @@
                                     <div id="componentcard64" class="card-body">
                                         <h4 class="card-title">Контролируемые показатели</h4>
                                         <p class="card-title-desc">Сточная вода</p>
-                                        <form class="needs-validation" novalidate action="{% url 'analyzes_create' %}" method="post">
-                                            {% csrf_token %} {% for field in forms.site16 %} {% if field.name == 'action' %}
-                                            <input type="hidden" name="action" value="{{ forms.site16.action.value }}" id="id_action"> {% else %}
-                                            <div class="row component_row">
-                                                <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
-                                                <div class="col-lg-6 comp_input">
-                                                    <div class="input-group">
-                                                        {{ field }}
-                                                        <div class="input-group-prepend">
-                                                            <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                        <form class="needs-validation form64" novalidate action="{% url 'analyzes_create' %}" method="post">
+                                            {% csrf_token %}
+                                            <input class="plant_unit" type="hidden" name="plant_unit" value="">
+                                            {% for field in forms.site16 %}
+                                                {% if field.name == 'action' %}
+                                                    <input type="hidden" name="action" value="{{ forms.site16.action.value }}" id="id_action">
+                                                {% elif field.name == 'smpl_site' %}
+                                                    <input type="hidden" name="smpl_site"
+                                                           value="{{ forms.site16.smpl_site.value }}" id="id_smpl_site">
+                                                {% else %}
+                                                    <div class="row component_row">
+                                                        <div class="col-lg-6 comp_label"><b>{{ field.label }}</b></div>
+                                                        <div class="col-lg-6 comp_input">
+                                                            <div class="input-group">
+                                                                {{ field }}
+                                                                <div class="input-group-prepend">
+                                                                    <span class="input-group-text" style="min-width:82px">мг/дм³</span>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
-                                            </div>
-                                            {% endif %} {% endfor %}
-                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">Отправить
+                                                {% endif %}
+                                            {% endfor %}
+                                            <button type="submit" class="btn btn-primary waves-effect waves-light" id="#">
+                                                Отправить
                                             </button>
                                         </form>
                                     </div>
@@ -560,10 +706,9 @@
     </div>
     {% include 'partials/illustration1.html' %}
 </div>
+{% endblock %}
 
-{% endblock %} {% block extra_javascript %}
-
-
+{% block extra_javascript %}
 <!-- Выбор форм мест отбора -->
 <script src="{% static 'js/choose.js'%}"></script>
 <!-- select -->
@@ -578,6 +723,34 @@
 
 <script>
     $(document).ready(function () {
+        // Setting plant unit IDs
+        let plant_unit = $('.plant_unit');
+        let unit_select_btn = $('.nav-link');
+
+        if (unit_select_btn.hasClass('active')) {
+            plant_unit.val(1);
+        }
+
+        $('#location1-tab').click(function () {
+            plant_unit.val(1);
+        })
+        $('#location2-tab').click(function () {
+            plant_unit.val(2);
+        })
+        $('#location3-tab').click(function () {
+            plant_unit.val(3);
+        })
+        $('#location4-tab').click(function () {
+            plant_unit.val(4);
+        })
+        $('#location5-tab').click(function () {
+            plant_unit.val(5);
+        })
+        $('#location6-tab').click(function () {
+            plant_unit.val(6);
+        })
+
+        // Setting measurement units
         let component_row = $('.component_row');
         fetch('http://127.0.0.1:8000/api/components/')
             .then((response) => {
@@ -632,18 +805,18 @@
                         event.preventDefault()
                         event.stopPropagation()
                     }
-                    form.classList.add('was-validated'),
+                    form.classList.add('was-validated')
                 }, false)
             })
     })()
 
 </script>
 <script>
-            function overlay(event){
-            // event.preventDefault();
-            console.log(">> overlay", event);
-            document.getElementById("overlay").style.display = "block";
-        }
-        document.getElementById("v-pills-tabContent").addEventListener('submit', overlay);
+    function overlay(event){
+        // event.preventDefault();
+        console.log(">> overlay", event);
+        document.getElementById("overlay").style.display = "block";
+    }
+    document.getElementById("v-pills-tabContent").addEventListener('submit', overlay);
 </script>
 {% endblock %}

@@ -97,6 +97,10 @@ $(selector).on('click', function(){
 
 </script>
 <script>
+    $(document).ready(function () {
+        $('#1').addClass('active');
+    })
+
     function analysisCreate(event) {
         console.log('ID is: ', event);
         $('.location_form').attr('id', `location${event}`);
