@@ -1,6 +1,6 @@
 {% extends 'partials/base.html' %} {% load crispy_forms_filters %} {% load static %} {% load humanize %} {% load crispy_forms_tags %} {% block extra_css %}
 <!-- Sweet Alert-->
-<link href="{% static 'libs/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet" type="text/css" /> {% endblock extra_css %} {% block contents %}
+<link href="{% static 'libs/sweetalert2/dist/sweetalert2.min.css' %}" rel="stylesheet" type="text/css"/> {% endblock extra_css %} {% block contents %}
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -27,48 +27,49 @@
                 <div class="table-responsive">
                     <table class="table align-middle table-nowrap" id="customerrecord">
                         <thead>
-                            <tr>
-                                <th>#</th>
-                                <th>Login</th>
-                                <th>Имя Фамилия</th>
-                                <th>Email</th>
-                                <th>Телефон</th>
-                                <th>Должность</th>
-                                <th>Роль пользователя</th>
-                                <th>Action</th>
+                        <tr>
+                            <th>#</th>
+                            <th>Login</th>
+                            <th>Имя Фамилия</th>
+                            <th>Email</th>
+                            <th>Телефон</th>
+                            <th>Должность</th>
+                            <th>Роль пользователя</th>
+                            <th>Action</th>
 
-                            </tr>
+                        </tr>
                         </thead>
                         <tbody>
 
-                            {% for users in page_obj %}
-                            <tr>
-                                <td>{{ users.id }}</td>
-                                <td>{{ users.username }}</td>
-                                <td>{{ users.first_name }} {{ users.last_name }}</td>
-                                <td>{{ users.email }}</td>
-                                <td>{{ users.profile.phone }}</td>
-                                <td>{{ users.profile.position }}</td>
-                                <td>{{ users.profile.role }}</td>
-                                <td>
-                                    <div class="dropdown">
-                                        <a href="#" class="dropdown-toggle card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="mdi mdi-dots-horizontal font-size-18"></i>
-                                        </a>
-                                        <ul class="dropdown-menu dropdown-menu-end">
-                                            <li>
-                                                <a href="#" class="dropdown-item open_edit_modal" data-bs-toggle="modal" data-popup-url="{% url 'accounts-update' users.pk %}" id="{{ users.id }}" onclick="editCustomer(this.id)">
-                                                    <i class="mdi mdi-pencil font-size-16 text-success me-1"></i> Редактировать</a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="dropdown-item" id="{{ users.id }}" onclick="sweetDelete(this.id,this)">
-                                                    <i class="mdi mdi-trash-can font-size-16 text-danger me-1"></i> Удалить</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </td>
-                            </tr>
-                            {% endfor %}
+                        {% for users in page_obj %}
+                        <tr>
+                            <td>{{ users.id }}</td>
+                            <td>{{ users.username }}</td>
+                            <td>{{ users.first_name }} {{ users.last_name }}</td>
+                            <td>{{ users.email }}</td>
+                            <td>{{ users.profile.phone }}</td>
+                            <td>{{ users.profile.position }}</td>
+                            <td>{{ users.profile.role }}</td>
+                            <td>
+                                <div class="dropdown">
+                                    <a href="#" class="dropdown-toggle card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                            <a href="#" class="dropdown-item open_edit_modal" data-bs-toggle="modal" data-popup-url="{% url 'accounts-update' users.pk %}" id="{{ users.id }}"
+                                               onclick="editCustomer(this.id)">
+                                                <i class="mdi mdi-pencil font-size-16 text-success me-1"></i> Редактировать</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item" id="{{ users.id }}" onclick="sweetDelete(this.id,this)">
+                                                <i class="mdi mdi-trash-can font-size-16 text-danger me-1"></i> Удалить</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
 
                         </tbody>
                     </table>
@@ -156,13 +157,13 @@
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="basicpill-phoneno-input"><b>Пароль</b></label>
-                                    <input type="password" id="basicpill-password-input" class="form-control" required placeholder="Введите пароль" name="password1" />
+                                    <input type="password" id="basicpill-password-input" class="form-control" required placeholder="Введите пароль" name="password1"/>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="mb-3">
                                     <label for="basicpill-phoneno-input"><b>Повторите пароль</b></label>
-                                    <input type="password" class="form-control" required data-parsley-equalto="#basicpill-password-input" placeholder="Повторите пароль" name="password2" />
+                                    <input type="password" class="form-control" required data-parsley-equalto="#basicpill-password-input" placeholder="Повторите пароль" name="password2"/>
                                 </div>
                             </div>
                         </div>
@@ -205,7 +206,7 @@
                                     <select class="form-select" name="role" id="id_role">
                                         <option value="" selected="">---------</option>
                                         {% for group in user.groups.all %}
-                                            <option value="{{ group.pk }}">{{ group.name }}</option>
+                                        <option value="{{ group.pk }}">{{ group.name }}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
@@ -235,7 +236,7 @@
                                 </div>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary" name="addprofile">Завершить</button>
+                        <a style="position: absolute; bottom: 24px; right: 1.8em; z-index: 2; border-radius: 4px; padding: 8px 15px;" role="menuitem" type="submit" class="btn btn-primary" name="addprofile">Завершить</a>
                     </section>
                 </div>
             </div>
