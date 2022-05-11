@@ -607,6 +607,7 @@ class AdditionalCalc:
             chlorides_running_water = ComponentsSite.objects.filter(
                 sampling_site_id=smpl_site_running, plant_unit_id=unit).last().chlorides
         evaporation_ratio = chlorides_recycled_water / chlorides_running_water
+        evaporation_ratio = round(evaporation_ratio, 3)
 
         # Транспорт кальциевой жесткости
         if smpl_site_recycled == 6 and smpl_site_running == 6:
@@ -620,6 +621,7 @@ class AdditionalCalc:
             calcium_running_water = ComponentsSite.objects.filter(
                 sampling_site_id=smpl_site_running, plant_unit_id=unit).last().hardness_calcium
         tr_ca = (calcium_recycled_water * 100) / (calcium_running_water * evaporation_ratio)
+        tr_ca = round(tr_ca, 3)
 
         # Объем продувки
         running_water_consumption = AdditionalComponents.objects.all().last().running_water_consumption
@@ -740,6 +742,12 @@ class ResultsView(PermissionRequiredMixin, View):
             'res_additional_4': self.get_add_results(4),
             'res_additional_5': self.get_add_results(5),
             'res_additional_6': self.get_add_results(6),
+            'additional_formula1': AdditionalCalculations.objects.filter(plant_unit_id=1).last(),
+            'additional_formula2': AdditionalCalculations.objects.filter(plant_unit_id=2).last(),
+            'additional_formula3': AdditionalCalculations.objects.filter(plant_unit_id=3).last(),
+            'additional_formula4': AdditionalCalculations.objects.filter(plant_unit_id=4).last(),
+            'additional_formula5': AdditionalCalculations.objects.filter(plant_unit_id=5).last(),
+            'additional_formula6': AdditionalCalculations.objects.filter(plant_unit_id=6).last()
         }
 
         # Сравнение показателей с оборотной воды и с подпиточной воды на БОВ-2
