@@ -1135,12 +1135,3 @@ class ArchiveTaskListView(PermissionRequiredMixin, View):
             'unit6': Task.objects.filter(plant_unit_id=6, status_id=5),
         }
         return render(request, 'tasks/tasklist.html', context)
-
-
-class CreateTaskView(LoginRequiredMixin, View):
-    def get(self, request):
-        context = {
-            'heading': "Create Task",
-            'pageview': "Tasks"
-        }
-        return render(request, 'tasks/createtask.html', context)
