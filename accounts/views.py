@@ -76,11 +76,8 @@ class ProfileView(PermissionRequiredMixin, View):
                 profile.save()
                 return redirect('accounts-users')
             if "deleteCustomer" in request.POST:
-                print(111)
                 id = request.POST['id']
-                print(id)
                 obj = User.objects.filter(id=id).first()
-                print(obj)
                 obj.delete()
                 return HttpResponse()
             return redirect('accounts-users')
