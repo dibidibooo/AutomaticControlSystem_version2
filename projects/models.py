@@ -104,3 +104,14 @@ class AdditionalComponents(models.Model):
     cold_water_temp = models.IntegerField(null=True, blank=True, verbose_name='Температура охлажденной воды')
     total_microbial_number = models.IntegerField(null=True, blank=True, verbose_name='Общее микробное число')
     datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время пробы')
+
+
+class AdditionalCalculations(models.Model):
+    evaporation_ratio = models.FloatField(null=True, blank=True, verbose_name='Коэффициент упаривания')
+    calcium_hardness_transport = models.FloatField(null=True, blank=True, verbose_name='Транспорт кальциевой жесткости')
+    purge_volume = models.FloatField(null=True, blank=True, verbose_name='Объем продувки')
+    evaporative_loss = models.FloatField(null=True, blank=True, verbose_name='Потери с испарением')
+    drip_loss = models.FloatField(null=True, blank=True, verbose_name='Капельный унос')
+    unauthorized_loss = models.FloatField(null=True, blank=True, verbose_name='Несанкционированные потери')
+    plant_unit = models.ForeignKey('projects.PlantUnit', on_delete=models.CASCADE, related_name='additional_calculation')
+    datetime = models.DateTimeField(auto_now_add=True, verbose_name='Дата и время расчета')

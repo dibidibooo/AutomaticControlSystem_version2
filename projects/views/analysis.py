@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
@@ -24,13 +26,15 @@ from projects.forms import (
     Site13Form,
     Site14Form,
     Site15Form,
-    Site16Form, AdditionalAnalysisForm,
+    Site16Form,
+    AdditionalAnalysisForm,
 )
 from projects.models import (
     ComponentsSite,
     Component,
     AdditionalComponents,
     PlantUnit,
+    AdditionalCalculations
 )
 from projects.multiforms import MultiFormsView
 
@@ -559,6 +563,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
 
 
 class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
+    """Загрузка ежедневных анализов"""
+
     model = AdditionalComponents
     form_class = AdditionalAnalysisForm
     template_name = 'projects/additional_analyses_create.html'
@@ -576,14 +582,112 @@ class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
         unit_id = self.request.POST.get('uid')
         unit = get_object_or_404(PlantUnit, pk=unit_id)
         form.instance.plant_unit = unit
+        form.save()
+        formula = AdditionalCalc()
+        formula.calculations(unit=int(unit_id))
         return super().form_valid(form)
 
-    @staticmethod
-    def calc_formula1(unit):
-        chlorides_recycled_water = ComponentsSite.objects.filter(sampling_site_id=1, plant_unit_id=unit).last().chlorides
-        chlorides_running_water = ComponentsSite.objects.filter(sampling_site_id=3, plant_unit_id=unit).last().chlorides
+
+class AdditionalCalc:
+    """Дополнительные расчеты по формулам"""
+
+    def calculations(self, unit: int) -> None:
+        smpl_site_recycled = self.sampling_site_recycled_water(unit)
+        smpl_site_running = self.sampling_site_running_water(unit)
+
+        # Коэффициент упаривания
+        if smpl_site_recycled == 6 and smpl_site_running == 6:
+            chlorides_recycled_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_recycled, plant_unit_id=unit, water_type_id=1).last().chlorides
+            chlorides_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running, plant_unit_id=unit, water_type_id=2).last().chlorides
+        else:
+            chlorides_recycled_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_recycled, plant_unit_id=unit).last().chlorides
+            chlorides_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running, plant_unit_id=unit).last().chlorides
         evaporation_ratio = chlorides_recycled_water / chlorides_running_water
-        return evaporation_ratio
+
+        # Транспорт кальциевой жесткости
+        if smpl_site_recycled == 6 and smpl_site_running == 6:
+            calcium_recycled_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_recycled, plant_unit_id=unit, water_type_id=1).last().hardness_calcium
+            calcium_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running, plant_unit_id=unit, water_type_id=2).last().hardness_calcium
+        else:
+            calcium_recycled_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_recycled, plant_unit_id=unit).last().hardness_calcium
+            calcium_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running, plant_unit_id=unit).last().hardness_calcium
+        tr_ca = (calcium_recycled_water * 100) / (calcium_running_water * evaporation_ratio)
+
+        # Объем продувки
+        running_water_consumption = AdditionalComponents.objects.all().last().running_water_consumption
+        p3 = running_water_consumption / evaporation_ratio
+        p3 = round(p3, 3)
+
+        # Потери с испарением
+        hot_water_temp = AdditionalComponents.objects.all().last().hot_water_temp
+        cold_water_temp = AdditionalComponents.objects.all().last().cold_water_temp
+        delta_temp = hot_water_temp - cold_water_temp
+
+        k = 0
+        today = datetime.today()
+        if today.month in range(6, 9):
+            k = 1
+        elif today.month in range(1, 3) or today.month == 12:
+            k = 0.5
+        elif today.month in range(3, 6) or today.month in range(9, 12):
+            k = 0.75
+
+        x = (delta_temp * k) / 100
+        recycled_water_consumption = AdditionalComponents.objects.all().last().recycled_water_consumption
+        p1 = x * recycled_water_consumption
+        p1 = round(p1, 3)
+
+        # Капельный унос
+        p2 = recycled_water_consumption * 0.002
+        p2 = round(p2, 3)
+
+        # Несанкционированные потери
+        unauthorized_loss = running_water_consumption - p1 - p2 - p3
+        unauthorized_loss = round(unauthorized_loss, 3)
+
+        AdditionalCalculations.objects.create(
+            evaporation_ratio=evaporation_ratio,
+            calcium_hardness_transport=tr_ca,
+            purge_volume=p3,
+            evaporative_loss=p1,
+            drip_loss=p2,
+            unauthorized_loss=unauthorized_loss,
+            plant_unit_id=unit
+        )
+
+    @staticmethod
+    def sampling_site_recycled_water(unit: int) -> int:
+        smpl_site_recycled = 0
+        if unit == 1:
+            smpl_site_recycled = 1
+        elif unit == 2:
+            smpl_site_recycled = 5
+        elif unit == 3:
+            smpl_site_recycled = 6
+        elif unit == 4:
+            smpl_site_recycled = 8
+        return smpl_site_recycled
+
+    @staticmethod
+    def sampling_site_running_water(unit: int) -> int:
+        smpl_site_running = 0
+        if unit == 1:
+            smpl_site_running = 3
+        elif unit == 2:
+            smpl_site_running = 4
+        elif unit == 3:
+            smpl_site_running = 6
+        elif unit == 4:
+            smpl_site_running = 9
+        return smpl_site_running
 
 
 class ExcelTableView(PermissionRequiredMixin, View):
