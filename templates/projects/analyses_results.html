@@ -125,7 +125,8 @@
                                     </a>
                                 </div>
                             </div>
-                            {% elif res_additional_2 %}
+                            {% endif %}
+                            {% if res_additional_2 %}
                             <div id="add_unit2" class="mt-3 add_unit">
                                 <div class="card border shadow-none mb-2">
                                     <a href="javascript: void(0);" class="text-body">
@@ -164,7 +165,7 @@
                                                 <div class="overflow-hidden me-auto">
                                                     <h5 class="font-size-13  mb-1">Расход продувки</h5>
                                                     <p class="text-muted text-truncate mb-0">
-                                                        {{ res_additional_3.purge_flow }}
+                                                        {{ res_additional_2.purge_flow }}
                                                     </p>
                                                 </div>
                                             </div>
@@ -179,7 +180,7 @@
                                                 <div class="overflow-hidden me-auto">
                                                     <h5 class="font-size-13  mb-1">Температура горячей оборотной воды</h5>
                                                     <p class="text-muted text-truncate mb-0">
-                                                        {{ res_additional_4.hot_water_temp }}
+                                                        {{ res_additional_2.hot_water_temp }}
                                                     </p>
                                                 </div>
                                             </div>
@@ -194,7 +195,7 @@
                                                 <div class="overflow-hidden me-auto">
                                                     <h5 class="font-size-13  mb-1">Температура охлажденной воды</h5>
                                                     <p class="text-muted text-truncate mb-0">
-                                                        {{ res_additional_5.cold_water_temp }}
+                                                        {{ res_additional_2.cold_water_temp }}
                                                     </p>
                                                 </div>
                                             </div>
@@ -209,7 +210,7 @@
                                                 <div class="overflow-hidden me-auto">
                                                     <h5 class="font-size-13  mb-1">Общее микробное число</h5>
                                                     <p class="text-muted text-truncate mb-0">
-                                                        {{ res_additional_6.total_microbial_number }}
+                                                        {{ res_additional_2.total_microbial_number }}
                                                     </p>
                                                 </div>
                                             </div>
@@ -217,7 +218,8 @@
                                     </a>
                                 </div>
                             </div>
-                            {% elif res_additional_3 %}
+                            {% endif %}
+                            {% if res_additional_3 %}
                             <div id="add_unit3" class="mt-3 add_unit">
                                 <div class="card border shadow-none mb-2">
                                     <a href="javascript: void(0);" class="text-body">
@@ -309,7 +311,8 @@
                                     </a>
                                 </div>
                             </div>
-                            {% elif res_additional_4 %}
+                            {% endif %}
+                            {% if res_additional_4 %}
                             <div id="add_unit4" class="mt-3 add_unit">
                                 <div class="card border shadow-none mb-2">
                                     <a href="javascript: void(0);" class="text-body">
@@ -401,7 +404,8 @@
                                     </a>
                                 </div>
                             </div>
-                            {% elif res_additional_5 %}
+                            {% endif %}
+                            {% if res_additional_5 %}
                             <div id="add_unit5" class="mt-3 add_unit">
                                 <div class="card border shadow-none mb-2">
                                     <a href="javascript: void(0);" class="text-body">
@@ -493,7 +497,8 @@
                                     </a>
                                 </div>
                             </div>
-                            {% elif res_additional_6 %}
+                            {% endif %}
+                            {% if res_additional_6 %}
                             <div id="add_unit6" class="mt-3 add_unit">
                                 <div class="card border shadow-none mb-2">
                                     <a href="javascript: void(0);" class="text-body">
@@ -7981,7 +7986,7 @@
               jQuery('.add_unit').hide();
               jQuery('#add_unit'+$(this).attr('target')).show();
         });
-});
+    });
 </script>
 <!-- Выбор форм мест отбора -->
 <script src="{% static 'js/choose.js'%}"></script>
