@@ -5,6 +5,7 @@ from .models import (
     SamplingSite,
     WaterType,
     Component,
+    ComponentsSite,
     # ComponentsSite1,
     # ComponentsSite2,
     # ComponentsSite3,
@@ -29,6 +30,7 @@ admin.site.register(PlantUnit)
 admin.site.register(SamplingSite)
 admin.site.register(WaterType)
 admin.site.register(Component)
+admin.site.register(ComponentsSite)
 # admin.site.register(ComponentsSite1)
 # admin.site.register(ComponentsSite2)
 # admin.site.register(ComponentsSite3)
