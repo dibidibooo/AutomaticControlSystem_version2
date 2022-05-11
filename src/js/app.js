@@ -20,15 +20,6 @@ File: Main Js File
         if (document.getElementById("header-lang-img")) {
             if (lang == 'en') {
                 document.getElementById("header-lang-img").src = "../../static/images/flags/us.jpg";
-            } else if (lang == 'sp') {
-                document.getElementById("header-lang-img").src = "../../static/images/flags/spain.jpg";
-            }
-            else if (lang == 'gr') {
-                document.getElementById("header-lang-img").src = "../../static/images/flags/germany.jpg";
-            }
-            else if (lang == 'it') {
-                document.getElementById("header-lang-img").src = "../../static/images/flags/italy.jpg";
-            }
             else if (lang == 'ru') {
                 document.getElementById("header-lang-img").src = "../../static/images/flags/russia.jpg";
             }
