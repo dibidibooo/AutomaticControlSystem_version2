@@ -47,6 +47,7 @@ class PasswordResetKeyForm(ResetPasswordKeyForm):
         self.helper = FormHelper(self)
         self.fields['password1'].widget = forms.PasswordInput(attrs={'class': 'form-control mb-2','placeholder':'Введите новый пароль','id':'password6'})
         self.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'form-control mb-1','placeholder':'Повторите пароль','id':'password7'})
+        self.fields['password1'].label="<b>Новый пароль</b>"
         self.fields['password2'].label="<b>Подтвердите пароль</b>"
 class PasswordSetForm(SetPasswordForm):
       def __init__(self, *args, **kwargs):
@@ -54,4 +55,5 @@ class PasswordSetForm(SetPasswordForm):
         self.helper = FormHelper(self)
         self.fields['password1'].widget = forms.PasswordInput(attrs={'class': 'form-control mb-2','placeholder':'Введите новый пароль','id':'password8'})
         self.fields['password2'].widget = forms.PasswordInput(attrs={'class': 'form-control','placeholder':'Повторите пароль','id':'password9'})
+        self.fields['password1'].label="<b>Новый пароль</b>"
         self.fields['password2'].label="<b>Подтвердите пароль</b>"
