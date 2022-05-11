@@ -13,79 +13,78 @@
                         <div id="task-1">
                             <div id="upcoming-task" class="pb-1 task-list">
                                 {% for task in tasks %}
-                                    {% if task.user == request.user %}
-                                        <div class="card task-box" id="uptask-1">
-                                            <div class="card-body" data-status="">
-                                                <div class="float-end ms-2">
-                                                    {% if task.status.title == 'Запланировано' %}
-                                                        <span class="badge rounded-pill badge-soft-secondary font-size-12">{{ task.status }}</span>
-                                                    {% elif task.status.title == 'В работе' %}
-                                                        <span class="badge rounded-pill badge-soft-primary font-size-12">{{ task.status }}</span>
-                                                    {% elif task.status.title == 'На проверке' %}
-                                                        <span class="badge rounded-pill badge-soft-warning font-size-12">{{ task.status }}</span>
-                                                    {% else %}
-                                                        <span class="badge rounded-pill badge-soft-success font-size-12">{{ task.status }}</span>
-                                                    {% endif %}
-                                                </div>
-
-                                                <div>
-                                                    <p class="fw-bold mb-2">
-                                                        <a href="{% url 'tasks-kanbanboard' %}" class="text-dark" id="task-name">
-                                                            #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
-                                                        </a>
-                                                    </p>
-                                                    <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
-                                                    <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
-                                                    <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
-                                                </div>
-                                                <div class="avatar-group float-start task-assigne">
-                                                    <div class="avatar-group-item">
-                                                        <a href="javascript: void(0);" class="d-inline-block"
-                                                           value="member-1">
-                                                            <img src="{% static 'images/users/avatar-1.jpg'%}" alt=""
-                                                                 class="rounded-circle avatar-xs">
-                                                        </a>
-                                                    </div>
-                                                </div>
+                                {% if task.user == request.user %}
+                                <div class="card task-box" id="uptask-1">
+                                    <div class="card-body" data-status="">
+                                        <div class="float-end ms-2">
+                                            {% if task.status.title == 'Запланировано' %}
+                                            <span class="badge rounded-pill badge-soft-secondary font-size-12">{{ task.status }}</span>
+                                            {% elif task.status.title == 'В работе' %}
+                                            <span class="badge rounded-pill badge-soft-primary font-size-12">{{ task.status }}</span>
+                                            {% elif task.status.title == 'На проверке' %}
+                                            <span class="badge rounded-pill badge-soft-warning font-size-12">{{ task.status }}</span>
+                                            {% else %}
+                                            <span class="badge rounded-pill badge-soft-success font-size-12">{{ task.status }}</span>
+                                            {% endif %}
+                                        </div>
+                                        <a href="{% url 'tasks-kanbanboard' %}" class="text-dark" id="task-name">
+                                            <div>
+                                                <p class="fw-bold mb-2">
+                                                    #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
+                                                </p>
+                                                <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
+                                                <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
+                                                <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
+                                            </div>
+                                        </a>
+                                        <div class="avatar-group float-start task-assigne">
+                                            <div class="avatar-group-item">
+                                                <a href="javascript: void(0);" class="d-inline-block"
+                                                   value="member-1">
+                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt=""
+                                                         class="rounded-circle avatar-xs">
+                                                </a>
                                             </div>
                                         </div>
-                                    {% elif request.user.is_superuser %}
-                                        <div class="card task-box" id="uptask-1">
-                                            <div class="card-body" data-status="">
-                                                <div class="float-end ms-2">
-                                                    {% if task.status.title == 'Запланировано' %}
-                                                        <span class="badge rounded-pill badge-soft-secondary font-size-12">{{ task.status }}</span>
-                                                    {% elif task.status.title == 'В работе' %}
-                                                        <span class="badge rounded-pill badge-soft-primary font-size-12">{{ task.status }}</span>
-                                                    {% elif task.status.title == 'На проверке' %}
-                                                        <span class="badge rounded-pill badge-soft-warning font-size-12">{{ task.status }}</span>
-                                                    {% else %}
-                                                        <span class="badge rounded-pill badge-soft-success font-size-12">{{ task.status }}</span>
-                                                    {% endif %}
-                                                </div>
+                                    </div>
+                                </div>
+                                {% elif request.user.is_superuser %}
+                                <div class="card task-box" id="uptask-1">
+                                    <div class="card-body" data-status="">
+                                        <div class="float-end ms-2">
+                                            {% if task.status.title == 'Запланировано' %}
+                                            <span class="badge rounded-pill badge-soft-secondary font-size-12">{{ task.status }}</span>
+                                            {% elif task.status.title == 'В работе' %}
+                                            <span class="badge rounded-pill badge-soft-primary font-size-12">{{ task.status }}</span>
+                                            {% elif task.status.title == 'На проверке' %}
+                                            <span class="badge rounded-pill badge-soft-warning font-size-12">{{ task.status }}</span>
+                                            {% else %}
+                                            <span class="badge rounded-pill badge-soft-success font-size-12">{{ task.status }}</span>
+                                            {% endif %}
+                                        </div>
 
-                                                <div>
-                                                    <p class="fw-bold mb-2">
-                                                        <a href="{% url 'tasks-kanbanboard' %}" class="text-dark" id="task-name">
-                                                            #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
-                                                        </a>
-                                                    </p>
-                                                    <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
-                                                    <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
-                                                    <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
-                                                </div>
-                                                <div class="avatar-group float-start task-assigne">
-                                                    <div class="avatar-group-item">
-                                                        <a href="javascript: void(0);" class="d-inline-block"
-                                                           value="member-1">
-                                                            <img src="{% static 'images/users/avatar-1.jpg'%}" alt=""
-                                                                 class="rounded-circle avatar-xs">
-                                                        </a>
-                                                    </div>
-                                                </div>
+                                        <div>
+                                            <p class="fw-bold mb-2">
+                                                <a href="{% url 'tasks-kanbanboard' %}" class="text-dark" id="task-name">
+                                                    #{{ task.id }} - {{ task.title }} для компонента '{{ task.comp_title }}'
+                                                </a>
+                                            </p>
+                                            <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
+                                            <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
+                                            <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
+                                        </div>
+                                        <div class="avatar-group float-start task-assigne">
+                                            <div class="avatar-group-item">
+                                                <a href="javascript: void(0);" class="d-inline-block"
+                                                   value="member-1">
+                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt=""
+                                                         class="rounded-circle avatar-xs">
+                                                </a>
                                             </div>
                                         </div>
-                                    {% endif %}
+                                    </div>
+                                </div>
+                                {% endif %}
                                 {% endfor %}
                             </div>
                         </div>
