@@ -1,3 +1,5 @@
+from datetime import datetime
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
@@ -24,50 +26,40 @@ from projects.forms import (
     Site13Form,
     Site14Form,
     Site15Form,
-    Site16Form, AdditionalAnalysisForm,
+    Site16Form,
+    AdditionalAnalysisForm,
 )
 from projects.models import (
-    ComponentsSite1,
-    ComponentsSite2,
-    ComponentsSite3,
-    ComponentsSite4,
-    ComponentsSite5,
-    ComponentsSite6,
-    ComponentsSite7,
-    ComponentsSite8,
-    ComponentsSite9,
-    ComponentsSite10,
-    ComponentsSite11,
-    ComponentsSite12,
-    ComponentsSite13,
-    ComponentsSite14,
-    ComponentsSite15,
-    ComponentsSite16,
-    Component, AdditionalComponents, PlantUnit,
+    ComponentsSite,
+    Component,
+    AdditionalComponents,
+    PlantUnit,
+    AdditionalCalculations
 )
 from projects.multiforms import MultiFormsView
 
 
 class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
-    permission_required = ('projects.add_componentssite1',)
+    permission_required = ('projects.add_componentssite',)
     template_name = "projects/analyses_create.html"
-    form_classes = {'site1': Site1Form,
-                    'site2': Site2Form,
-                    'site3': Site3Form,
-                    'site4': Site4Form,
-                    'site5': Site5Form,
-                    'site6': Site6Form,
-                    'site7': Site7Form,
-                    'site8': Site8Form,
-                    'site9': Site9Form,
-                    'site10': Site10Form,
-                    'site11': Site11Form,
-                    'site12': Site12Form,
-                    'site13': Site13Form,
-                    'site14': Site14Form,
-                    'site15': Site15Form,
-                    'site16': Site16Form,
-                    }
+    form_classes = {
+        'site1': Site1Form,
+        'site2': Site2Form,
+        'site3': Site3Form,
+        'site4': Site4Form,
+        'site5': Site5Form,
+        'site6': Site6Form,
+        'site7': Site7Form,
+        'site8': Site8Form,
+        'site9': Site9Form,
+        'site10': Site10Form,
+        'site11': Site11Form,
+        'site12': Site12Form,
+        'site13': Site13Form,
+        'site14': Site14Form,
+        'site15': Site15Form,
+        'site16': Site16Form,
+    }
 
     success_url = reverse_lazy('analyzes_create')
 
@@ -94,8 +86,10 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         hardness_calcium = form.cleaned_data.get('hardness_calcium')
         hardness_magnesium = form.cleaned_data.get('hardness_magnesium')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 1
 
-        ComponentsSite1.objects.create(
+        ComponentsSite.objects.create(
             oil_prod=oil_prod,
             suspended_solids=suspended_solids,
             ph=ph,
@@ -108,11 +102,12 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             iron=iron,
             hardness_calcium=hardness_calcium,
             hardness_magnesium=hardness_magnesium,
-            sampling_site_id=1,
-            water_type_id=1
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site1_task(form, water_type=1)
+        task_create.site1_task(form, water_type, responsible_id=3)
         return HttpResponseRedirect(self.success_url)
 
     # Водоблок - 2 | Установка АВТ напротив погружного холодильника №42
@@ -121,16 +116,19 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         ph = form.cleaned_data.get('ph')
         suspended_solids = form.cleaned_data.get('suspended_solids')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 1
 
-        ComponentsSite2.objects.create(
+        ComponentsSite.objects.create(
             oil_prod=oil_prod,
             ph=ph,
             suspended_solids=suspended_solids,
-            sampling_site_id=2,
-            water_type_id=1
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site2_task(form, water_type=1)
+        task_create.site2_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12
@@ -147,8 +145,10 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         hardness_magnesium = form.cleaned_data.get('hardness_magnesium')
         ph = form.cleaned_data.get('ph')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 2
 
-        ComponentsSite3.objects.create(
+        ComponentsSite.objects.create(
             suspended_subst=suspended_subst,
             hardness=hardness,
             iron=iron,
@@ -160,11 +160,12 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             hardness_calcium=hardness_calcium,
             hardness_magnesium=hardness_magnesium,
             ph=ph,
-            sampling_site_id=3,
-            water_type_id=2
+            plant_unit_id=self.request.POST.get('plant_unit'),
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site3_task(form, water_type=1)
+        task_create.site3_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # БОВ-1 | Аналитическая точка насосов Р-02А/В/С
@@ -180,8 +181,10 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         alkalinity = form.cleaned_data.get('alkalinity')
         iron = form.cleaned_data.get('iron')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 2
 
-        ComponentsSite4.objects.create(
+        ComponentsSite.objects.create(
             hardness=hardness,
             hardness_calcium=hardness_calcium,
             ph=ph,
@@ -192,11 +195,12 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             suspended_subst=suspended_subst,
             alkalinity=alkalinity,
             iron=iron,
-            sampling_site_id=4,
-            water_type_id=2
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site4_task(form, water_type=2)
+        task_create.site4_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # БОВ-1 | Аналитическая точка выкид насосов Р-01А/В/С/Д
@@ -212,8 +216,10 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         alkalinity = form.cleaned_data.get('alkalinity')
         iron = form.cleaned_data.get('iron')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 1
 
-        ComponentsSite5.objects.create(
+        ComponentsSite.objects.create(
             hardness=hardness,
             hardness_calcium=hardness_calcium,
             ph=ph,
@@ -224,11 +230,12 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             suspended_subst=suspended_subst,
             alkalinity=alkalinity,
             iron=iron,
-            sampling_site_id=5,
-            water_type_id=1
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site5_task(form, water_type=1)
+        task_create.site5_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # БОВ-2 | Аналитическая точка насосов Р-01А/В/С/Д
@@ -246,8 +253,9 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         iron = form.cleaned_data.get('iron')
         form_name = form.cleaned_data.get('action')
         water_type = self.request.POST.get('water_type')
+        smpl_site = form.cleaned_data.get('smpl_site')
 
-        ComponentsSite6.objects.create(
+        ComponentsSite.objects.create(
             hardness=hardness,
             hardness_calcium=hardness_calcium,
             ph=ph,
@@ -259,11 +267,12 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             alkalinity_phenols=alkalinity_phenols,
             alkalinity=alkalinity,
             iron=iron,
-            sampling_site_id=6,
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
             water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site6_task(form, water_type)
+        task_create.site6_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | Аналитическая точка насосов Р-01А/В/С/Д
@@ -277,8 +286,10 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         hardness = form.cleaned_data.get('hardness')
         iron = form.cleaned_data.get('iron')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 1
 
-        ComponentsSite7.objects.create(
+        ComponentsSite.objects.create(
             suspended_solids=suspended_solids,
             chlorides=chlorides,
             sulfates=sulfates,
@@ -287,11 +298,12 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             hardness_calcium=hardness_calcium,
             hardness=hardness,
             iron=iron,
-            sampling_site_id=7,
-            water_type_id=1
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site7_task(form, water_type=1)
+        task_create.site7_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | Выход из ёмкости 77-ТК-103 77-SN-004
@@ -307,8 +319,10 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         iron = form.cleaned_data.get('iron')
         salt = form.cleaned_data.get('salt')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 2
 
-        ComponentsSite8.objects.create(
+        ComponentsSite.objects.create(
             suspended_solids=suspended_solids,
             ph=ph,
             chlorides=chlorides,
@@ -319,11 +333,12 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             hardness=hardness,
             iron=iron,
             salt=salt,
-            sampling_site_id=8,
-            water_type_id=2
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site8_task(form, water_type=2)
+        task_create.site8_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | На входе в боковой фильтр позиции 77-Z-003 77-SN-006
@@ -339,8 +354,10 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         iron = form.cleaned_data.get('iron')
         salt = form.cleaned_data.get('salt')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 1
 
-        ComponentsSite9.objects.create(
+        ComponentsSite.objects.create(
             suspended_solids=suspended_solids,
             chlorides=chlorides,
             sulfates=sulfates,
@@ -351,11 +368,12 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             hardness=hardness,
             iron=iron,
             salt=salt,
-            sampling_site_id=9,
-            water_type_id=1
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site9_task(form, water_type=1)
+        task_create.site9_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | Подача на градирню в районе 77-ТI-205 77-SN-007
@@ -364,30 +382,36 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         oil_prod = form.cleaned_data.get('oil_prod')
         salt = form.cleaned_data.get('salt')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 1
 
-        ComponentsSite10.objects.create(
+        ComponentsSite.objects.create(
             chlorine=chlorine,
             oil_prod=oil_prod,
             salt=salt,
-            sampling_site_id=10,
-            water_type_id=1
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site10_task(form, water_type=1)
+        task_create.site10_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | На выходе с бокового фильтра 77-Z-003, 77-SN-008
     def site11_form_valid(self, form):
         suspended_solids = form.cleaned_data.get('suspended_solids')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 1
 
-        ComponentsSite11.objects.create(
+        ComponentsSite.objects.create(
             suspended_solids=suspended_solids,
-            sampling_site_id=11,
-            water_type_id=1
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site11_task(form, water_type=1)
+        task_create.site11_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # МОС -> Очистные сооружения поз.119. С колодца промстоков №1 (точка №4 вход)
@@ -399,19 +423,22 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         active_subst = form.cleaned_data.get('active_subst')
         ammonium = form.cleaned_data.get('ammonium')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 3
 
-        ComponentsSite12.objects.create(
+        ComponentsSite.objects.create(
             oil_prod=oil_prod,
             suspended_subst=suspended_subst,
             ph=ph,
             oxygen_chem=oxygen_chem,
             active_subst=active_subst,
             ammonium=ammonium,
-            sampling_site_id=12,
-            water_type_id=3
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site12_task(form, water_type=1)
+        task_create.site12_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # БОС -> Пробоотборник 001 перед БОС / А1–SN-001
@@ -430,8 +457,10 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         nitrate = form.cleaned_data.get('nitrate')
         nitrite = form.cleaned_data.get('nitrite')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 3
 
-        ComponentsSite13.objects.create(
+        ComponentsSite.objects.create(
             oil_prod=oil_prod,
             suspended_subst=suspended_subst,
             ph=ph,
@@ -445,11 +474,12 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             iron=iron,
             nitrate=nitrate,
             nitrite=nitrite,
-            sampling_site_id=13,
-            water_type_id=3
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site13_task(form, water_type=1)
+        task_create.site13_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # БОС -> Сточная вода после биологических очистных сооружений А1–SN-009
@@ -460,18 +490,21 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         salt = form.cleaned_data.get('salt')
         chlorine = form.cleaned_data.get('chlorine')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 3
 
-        ComponentsSite14.objects.create(
+        ComponentsSite.objects.create(
             alkalinity=alkalinity,
             hardness=hardness,
             oxidability=oxidability,
             salt=salt,
             chlorine=chlorine,
-            sampling_site_id=14,
-            water_type_id=3
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site14_task(form, water_type=1)
+        task_create.site14_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # БОС -> Выход с аппарата напорной флотации в ТК -008А/ А1–SN-004А
@@ -483,19 +516,22 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         phosphorus = form.cleaned_data.get('phosphorus')
         oxygen_bio = form.cleaned_data.get('oxygen_bio')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 3
 
-        ComponentsSite15.objects.create(
+        ComponentsSite.objects.create(
             suspended_subst=suspended_subst,
             oil_prod=oil_prod,
             oxygen_chem=oxygen_chem,
             ammonium=ammonium,
             phosphorus=phosphorus,
             oxygen_bio=oxygen_bio,
-            sampling_site_id=15,
-            water_type_id=3
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site15_task(form, water_type=1)
+        task_create.site15_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
     # БОС -> Выход с аппарата напорной флотации в ТК-008В/ А1 –SN -004В
@@ -507,23 +543,28 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         phosphorus = form.cleaned_data.get('phosphorus')
         oxygen_bio = form.cleaned_data.get('oxygen_bio')
         form_name = form.cleaned_data.get('action')
+        smpl_site = form.cleaned_data.get('smpl_site')
+        water_type = 3
 
-        ComponentsSite16.objects.create(
+        ComponentsSite.objects.create(
             suspended_subst=suspended_subst,
             oil_prod=oil_prod,
             oxygen_chem=oxygen_chem,
             ammonium=ammonium,
             phosphorus=phosphorus,
             oxygen_bio=oxygen_bio,
-            sampling_site_id=16,
-            water_type_id=3
+            plant_unit_id=self.request.POST['plant_unit'],
+            sampling_site_id=smpl_site,
+            water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site16_task(form, water_type=1)
+        task_create.site16_task(form, water_type, responsible_id=4)
         return HttpResponseRedirect(self.success_url)
 
 
 class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
+    """Загрузка ежедневных анализов"""
+
     model = AdditionalComponents
     form_class = AdditionalAnalysisForm
     template_name = 'projects/additional_analyses_create.html'
@@ -541,14 +582,112 @@ class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
         unit_id = self.request.POST.get('uid')
         unit = get_object_or_404(PlantUnit, pk=unit_id)
         form.instance.plant_unit = unit
+        form.save()
+        formula = AdditionalCalc()
+        formula.calculations(unit=int(unit_id))
         return super().form_valid(form)
 
-    # @staticmethod
-    # def calc_formula1(unit):
-    #     chlorides_recycled_water = ComponentsSite1.objects.filter().last().chlorides
-    #     chlorides_running_water = ComponentsSite3.objects.filter().last().chlorides
-    #     evaporation_ratio = chlorides_recycled_water / chlorides_running_water
-    #     return evaporation_ratio
+
+class AdditionalCalc:
+    """Дополнительные расчеты по формулам"""
+
+    def calculations(self, unit: int) -> None:
+        smpl_site_recycled = self.sampling_site_recycled_water(unit)
+        smpl_site_running = self.sampling_site_running_water(unit)
+
+        # Коэффициент упаривания
+        if smpl_site_recycled == 6 and smpl_site_running == 6:
+            chlorides_recycled_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_recycled, plant_unit_id=unit, water_type_id=1).last().chlorides
+            chlorides_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running, plant_unit_id=unit, water_type_id=2).last().chlorides
+        else:
+            chlorides_recycled_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_recycled, plant_unit_id=unit).last().chlorides
+            chlorides_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running, plant_unit_id=unit).last().chlorides
+        evaporation_ratio = chlorides_recycled_water / chlorides_running_water
+
+        # Транспорт кальциевой жесткости
+        if smpl_site_recycled == 6 and smpl_site_running == 6:
+            calcium_recycled_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_recycled, plant_unit_id=unit, water_type_id=1).last().hardness_calcium
+            calcium_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running, plant_unit_id=unit, water_type_id=2).last().hardness_calcium
+        else:
+            calcium_recycled_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_recycled, plant_unit_id=unit).last().hardness_calcium
+            calcium_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running, plant_unit_id=unit).last().hardness_calcium
+        tr_ca = (calcium_recycled_water * 100) / (calcium_running_water * evaporation_ratio)
+
+        # Объем продувки
+        running_water_consumption = AdditionalComponents.objects.all().last().running_water_consumption
+        p3 = running_water_consumption / evaporation_ratio
+        p3 = round(p3, 3)
+
+        # Потери с испарением
+        hot_water_temp = AdditionalComponents.objects.all().last().hot_water_temp
+        cold_water_temp = AdditionalComponents.objects.all().last().cold_water_temp
+        delta_temp = hot_water_temp - cold_water_temp
+
+        k = 0
+        today = datetime.today()
+        if today.month in range(6, 9):
+            k = 1
+        elif today.month in range(1, 3) or today.month == 12:
+            k = 0.5
+        elif today.month in range(3, 6) or today.month in range(9, 12):
+            k = 0.75
+
+        x = (delta_temp * k) / 100
+        recycled_water_consumption = AdditionalComponents.objects.all().last().recycled_water_consumption
+        p1 = x * recycled_water_consumption
+        p1 = round(p1, 3)
+
+        # Капельный унос
+        p2 = recycled_water_consumption * 0.002
+        p2 = round(p2, 3)
+
+        # Несанкционированные потери
+        unauthorized_loss = running_water_consumption - p1 - p2 - p3
+        unauthorized_loss = round(unauthorized_loss, 3)
+
+        AdditionalCalculations.objects.create(
+            evaporation_ratio=evaporation_ratio,
+            calcium_hardness_transport=tr_ca,
+            purge_volume=p3,
+            evaporative_loss=p1,
+            drip_loss=p2,
+            unauthorized_loss=unauthorized_loss,
+            plant_unit_id=unit
+        )
+
+    @staticmethod
+    def sampling_site_recycled_water(unit: int) -> int:
+        smpl_site_recycled = 0
+        if unit == 1:
+            smpl_site_recycled = 1
+        elif unit == 2:
+            smpl_site_recycled = 5
+        elif unit == 3:
+            smpl_site_recycled = 6
+        elif unit == 4:
+            smpl_site_recycled = 8
+        return smpl_site_recycled
+
+    @staticmethod
+    def sampling_site_running_water(unit: int) -> int:
+        smpl_site_running = 0
+        if unit == 1:
+            smpl_site_running = 3
+        elif unit == 2:
+            smpl_site_running = 4
+        elif unit == 3:
+            smpl_site_running = 6
+        elif unit == 4:
+            smpl_site_running = 9
+        return smpl_site_running
 
 
 class ExcelTableView(PermissionRequiredMixin, View):
@@ -559,28 +698,13 @@ class ExcelTableView(PermissionRequiredMixin, View):
             'heading': "Таблица",
             'pageview': "Анализы",
             'tasks': Task.objects.order_by('start_date'),
-            'site1': ComponentsSite1.objects.order_by('datetime'),
-            'site2': ComponentsSite2.objects.order_by('datetime'),
-            'site3': ComponentsSite3.objects.order_by('datetime'),
-            'site4': ComponentsSite4.objects.order_by('datetime'),
-            'site5': ComponentsSite5.objects.order_by('datetime'),
-            'site6': ComponentsSite6.objects.order_by('datetime'),
-            'site7': ComponentsSite7.objects.order_by('datetime'),
-            'site8': ComponentsSite8.objects.order_by('datetime'),
-            'site9': ComponentsSite9.objects.order_by('datetime'),
-            'site10': ComponentsSite10.objects.order_by('datetime'),
-            'site11': ComponentsSite11.objects.order_by('datetime'),
-            'site12': ComponentsSite12.objects.order_by('datetime'),
-            'site13': ComponentsSite13.objects.order_by('datetime'),
-            'site14': ComponentsSite14.objects.order_by('datetime'),
-            'site15': ComponentsSite15.objects.order_by('datetime'),
-            'site16': ComponentsSite16.objects.order_by('datetime'),
+            'results': ComponentsSite.objects.order_by('datetime'),
         }
         return render(request, 'projects/excel_table.html', context)
 
 
 class ResultsView(PermissionRequiredMixin, View):
-    permission_required = 'projects.view_componentssite1'
+    permission_required = 'projects.view_componentssite'
 
     def get(self, request):
         tasks = Task.objects.order_by('start_date')
@@ -593,189 +717,96 @@ class ResultsView(PermissionRequiredMixin, View):
             'components': components,
             'tasks': tasks,
             'notifications': notifications,
-            'results1': self.get_results1(),
-            'results2': self.get_results2(),
-            'results3': self.get_results3(),
-            'results4': self.get_results4(),
-            'results5': self.get_results5(),
-            'results6': self.get_results6(),
-            'results6_2': self.get_results6_2(),
-            'results7': self.get_results7(),
-            'results8': self.get_results8(),
-            'results9': self.get_results9(),
-            'results10': self.get_results10(),
-            'results11': self.get_results11(),
-            'results12': self.get_results12(),
-            'results13': self.get_results13(),
-            'results14': self.get_results14(),
-            'results15': self.get_results15(),
-            'results16': self.get_results16(),
-            'res_additional_1': self.get_add_results1(),
-            'res_additional_2': self.get_add_results2(),
-            'res_additional_3': self.get_add_results3(),
-            'res_additional_4': self.get_add_results4(),
-            'res_additional_5': self.get_add_results5(),
-            'res_additional_6': self.get_add_results6(),
+            'results1': self.get_results(1),
+            'results2': self.get_results(2),
+            'results3': self.get_results(3),
+            'results4': self.get_results(4),
+            'results5': self.get_results(5),
+            'results6': self.get_results_2(6, 1),
+            'results6_2': self.get_results_2(6, 2),
+            'results7': self.get_results(7),
+            'results8': self.get_results(8),
+            'results9': self.get_results(9),
+            'results10': self.get_results(10),
+            'results11': self.get_results(11),
+            'results12': self.get_results(12),
+            'results13': self.get_results(13),
+            'results14': self.get_results(14),
+            'results15': self.get_results(15),
+            'results16': self.get_results(16),
+            'res_additional_1': self.get_add_results(1),
+            'res_additional_2': self.get_add_results(2),
+            'res_additional_3': self.get_add_results(3),
+            'res_additional_4': self.get_add_results(4),
+            'res_additional_5': self.get_add_results(5),
+            'res_additional_6': self.get_add_results(6),
         }
 
         # Сравнение показателей с оборотной воды и с подпиточной воды на БОВ-2
+        if self.unit3_results_comparison() is not None:
+            context['unit_3_warning'] = self.unit3_results_comparison()
+
+        return render(request, 'projects/analyses_results.html', context)
+
+    @staticmethod
+    def unit3_results_comparison():
         dict1 = {}
         dict2 = {}
-        a = ComponentsSite6.objects.filter(water_type_id=1).values().latest('datetime')
-        b = ComponentsSite6.objects.filter(water_type_id=2).values().latest('datetime')
-        for k, v in a.items():
-            if k != 'id' and k != 'datetime' and k != 'sampling_site_id' and k != 'water_type_id':
-                dict1[k] = v
-        for k, v in b.items():
-            if k != 'id' and k != 'datetime' and k != 'sampling_site_id' and k != 'water_type_id':
-                dict2[k] = v
+        a = ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=1).values().latest('datetime')
+        b = ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=2).values().latest('datetime')
+        for key, value in a.items():
+            if value is not None and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit':
+                dict1[key] = value
+        for key, value in b.items():
+            if value is not None and key is not None and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit':
+                dict2[key] = value
 
-        diffkeys = [k for k in dict1 if dict1[k] < dict2[k]]
+        diffkeys = [key for key in dict1 if dict1[key] < dict2[key]]
         if diffkeys:
-            context['unit_3_warning'] = """
+            return """
             Показатели компонентов БОВ-2 с оборотной воды ниже показателей с подпиточной воды.
             Пожалуйста, обратите внимание!
             """
-        return render(request, 'projects/analyses_results.html', context)
+        else:
+            return None
 
     # Отображение результатов анализов доп. компонентов
     @staticmethod
-    def get_add_results1():
-        if AdditionalComponents.objects.filter(plant_unit_id=1):
-            return AdditionalComponents.objects.filter(plant_unit_id=1).latest('datetime')
-
-    @staticmethod
-    def get_add_results2():
-        if AdditionalComponents.objects.filter(plant_unit_id=2):
-            return AdditionalComponents.objects.filter(plant_unit_id=2).latest('datetime')
-
-    @staticmethod
-    def get_add_results3():
-        if AdditionalComponents.objects.filter(plant_unit_id=3):
-            return AdditionalComponents.objects.filter(plant_unit_id=3).latest('datetime')
-
-    @staticmethod
-    def get_add_results4():
-        if AdditionalComponents.objects.filter(plant_unit_id=4):
-            return AdditionalComponents.objects.filter(plant_unit_id=4).latest('datetime')
-
-    @staticmethod
-    def get_add_results5():
-        if AdditionalComponents.objects.filter(plant_unit_id=5):
-            return AdditionalComponents.objects.filter(plant_unit_id=5).latest('datetime')
-
-    @staticmethod
-    def get_add_results6():
-        if AdditionalComponents.objects.filter(plant_unit_id=6):
-            return AdditionalComponents.objects.filter(plant_unit_id=6).latest('datetime')
+    def get_add_results(unit_id):
+        results = AdditionalComponents.objects.filter(plant_unit_id=unit_id)
+        if results:
+            return results.latest('datetime')
 
     # Отображение результатов основных анализов
     @staticmethod
-    def get_results1() -> dict:
+    def get_results(site_id: int) -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
-            sample = ComponentsSite1.objects.all().latest('datetime')
+            sample = ComponentsSite.objects.filter(
+                sampling_site_id=site_id).latest('datetime')
             for task in tasks:
-                if sample.sampling_site_id == 1 and (
+                if sample.sampling_site_id == site_id and (
                         sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
                 ):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite1.objects.values().latest('datetime').items():
+            for key, value in ComponentsSite.objects.filter(
+                    sampling_site_id=site_id).values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
-        except ComponentsSite1.DoesNotExist:
+        except ComponentsSite.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
 
     @staticmethod
-    def get_results2() -> dict:
+    def get_results_2(site_id: int, water_type_id: int) -> dict:
         results_site = {}
         tasks = Task.objects.all()
         try:
-            sample = ComponentsSite2.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 2 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite2.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite2.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results3() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite3.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 3 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite3.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite3.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results4() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite4.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 4 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite4.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite4.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results5() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite5.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 5 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite5.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite5.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results6() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite6.objects.filter(water_type_id=1).latest('datetime')
+            sample = ComponentsSite.objects.filter(
+                sampling_site_id=site_id, water_type_id=water_type_id).latest('datetime')
             for task in tasks:
                 if sample.sampling_site_id == 6 and (
                         sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
@@ -783,229 +814,10 @@ class ResultsView(PermissionRequiredMixin, View):
                     results_site[task.comp_title] = task.title
                 else:
                     results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite6.objects.filter(water_type_id=1).values().latest('datetime').items():
+            for key, value in ComponentsSite.objects.filter(
+                    sampling_site_id=site_id, water_type_id=water_type_id).values().latest('datetime').items():
                 if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
-        except ComponentsSite6.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results6_2() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite6.objects.filter(water_type_id=2).latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 6 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite6.objects.filter(water_type_id=2).values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite6.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results7() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite7.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 7 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite7.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite7.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results8() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite8.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 8 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite8.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite8.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results9() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite9.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 9 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite9.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite9.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results10() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite10.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 10 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite10.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite10.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results11() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite11.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 11 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite11.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite11.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results12() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite12.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 12 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite12.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite12.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results13() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite13.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 13 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite13.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite13.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results14() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite14.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 14 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite14.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite14.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results15() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite15.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 15 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite15.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite15.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
-
-    @staticmethod
-    def get_results16() -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite16.objects.all().latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 16 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M:%S') == task.start_date.strftime('%Y-%m-%d %H:%M:%S')
-                ):
-                    results_site[task.comp_title] = task.title
-                else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite16.objects.values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite16.DoesNotExist:
+        except ComponentsSite.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site

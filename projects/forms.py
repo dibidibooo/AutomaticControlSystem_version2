@@ -4,6 +4,7 @@ from projects.models import AdditionalComponents
 
 class MultipleForm(forms.Form):
     action = forms.CharField(max_length=60, widget=forms.HiddenInput())
+    smpl_site = forms.CharField(max_length=5, widget=forms.HiddenInput())
 
 # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
 class Site1Form(MultipleForm):
