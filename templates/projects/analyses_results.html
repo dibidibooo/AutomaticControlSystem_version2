@@ -8,22 +8,22 @@
             <div class="row">
                 <div class="col-xl-3 col-sm-3 mb-3">
                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                        <a class="nav-link active" id="location1-tab" data-bs-toggle="pill" href="#location1" role="tab" aria-controls="location1" aria-selected="true">
+                        <a class="nav-link active" id="location1-tab" data-bs-toggle="pill" href="#location1" role="tab" aria-controls="location1" aria-selected="true" target="1">
                             <p class="fw-bold mt-3">Водоблок-2</p>
                         </a>
-                        <a class="nav-link" id="location2-tab" data-bs-toggle="pill" href="#location2" role="tab" aria-controls="location2" aria-selected="false">
+                        <a class="nav-link" id="location2-tab" data-bs-toggle="pill" href="#location2" role="tab" aria-controls="location2" aria-selected="false" target="2">
                             <p class="fw-bold mt-3">БОВ-1</p>
                         </a>
-                        <a class="nav-link" id="location3-tab" data-bs-toggle="pill" href="#location3" role="tab" aria-controls="location3" aria-selected="false">
+                        <a class="nav-link" id="location3-tab" data-bs-toggle="pill" href="#location3" role="tab" aria-controls="location3" aria-selected="false" target="3">
                             <p class="fw-bold mt-3">БОВ-2</p>
                         </a>
-                        <a class="nav-link" id="location4-tab" data-bs-toggle="pill" href="#location4" role="tab" aria-controls="location4" aria-selected="false">
+                        <a class="nav-link" id="location4-tab" data-bs-toggle="pill" href="#location4" role="tab" aria-controls="location4" aria-selected="false" target="4">
                             <p class="fw-bold mt-3">УГОВ</p>
                         </a>
-                        <a class="nav-link" id="location5-tab" data-bs-toggle="pill" href="#location5" role="tab" aria-controls="location5" aria-selected="false">
+                        <a class="nav-link" id="location5-tab" data-bs-toggle="pill" href="#location5" role="tab" aria-controls="location5" aria-selected="false" target="5">
                             <p class="fw-bold mt-3">МОС</p>
                         </a>
-                        <a class="nav-link" id="location6-tab" data-bs-toggle="pill" href="#location6" role="tab" aria-controls="location6" aria-selected="false">
+                        <a class="nav-link" id="location6-tab" data-bs-toggle="pill" href="#location6" role="tab" aria-controls="location6" aria-selected="false" target="6">
                             <p class="fw-bold mt-3">БОС</p>
                         </a>
                     </div>
@@ -34,7 +34,7 @@
                                 <h5 class="font-size-15 mb-3"><b>Результаты ежедневных анализов</b></h5>
                             </div>
                             {% if res_additional_1 %}
-                            <div class="mt-3 unit_1">
+                            <div id="add_unit1" class="mt-3 add_unit">
                                 <div class="card border shadow-none mb-2">
                                     <a href="javascript: void(0);" class="text-body">
                                         <div class="p-2">
@@ -126,7 +126,7 @@
                                 </div>
                             </div>
                             {% elif res_additional_2 %}
-                            <div class="mt-3 unit_2">
+                            <div id="add_unit2" class="mt-3 add_unit">
                                 <div class="card border shadow-none mb-2">
                                     <a href="javascript: void(0);" class="text-body">
                                         <div class="p-2">
@@ -218,7 +218,7 @@
                                 </div>
                             </div>
                             {% elif res_additional_3 %}
-                            <div class="mt-3 unit_3">
+                            <div id="add_unit3" class="mt-3 add_unit">
                                 <div class="card border shadow-none mb-2">
                                     <a href="javascript: void(0);" class="text-body">
                                         <div class="p-2">
@@ -310,7 +310,7 @@
                                 </div>
                             </div>
                             {% elif res_additional_4 %}
-                            <div class="mt-3 unit_4">
+                            <div id="add_unit4" class="mt-3 add_unit">
                                 <div class="card border shadow-none mb-2">
                                     <a href="javascript: void(0);" class="text-body">
                                         <div class="p-2">
@@ -402,7 +402,7 @@
                                 </div>
                             </div>
                             {% elif res_additional_5 %}
-                            <div class="mt-3 unit_5">
+                            <div id="add_unit5" class="mt-3 add_unit">
                                 <div class="card border shadow-none mb-2">
                                     <a href="javascript: void(0);" class="text-body">
                                         <div class="p-2">
@@ -494,7 +494,7 @@
                                 </div>
                             </div>
                             {% elif res_additional_6 %}
-                            <div class="mt-3 unit_6">
+                            <div id="add_unit6" class="mt-3 add_unit">
                                 <div class="card border shadow-none mb-2">
                                     <a href="javascript: void(0);" class="text-body">
                                         <div class="p-2">
@@ -7974,7 +7974,14 @@
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();
     });
-
+</script>
+<script>
+    jQuery(function(){
+        jQuery('.nav-link').click(function(){
+              jQuery('.add_unit').hide();
+              jQuery('#add_unit'+$(this).attr('target')).show();
+        });
+});
 </script>
 <!-- Выбор форм мест отбора -->
 <script src="{% static 'js/choose.js'%}"></script>
