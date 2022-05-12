@@ -32,6 +32,17 @@ $(function() {
 });
 
 $(function() {
+    $('#componentcard14').hide();
+    $('#plant_unit1').change(function() {
+        if ($('#plant_unit1').val() == '3.1') {
+            $('#componentcard14').show();
+        } else {
+            $('#componentcard14').hide();
+        }
+    });
+});
+
+$(function() {
     $('#componentcard21').hide();
     $('#plant_unit2').change(function() {
         if ($('#plant_unit2').val() == '4') {
@@ -52,6 +63,18 @@ $(function() {
         }
     });
 });
+
+$(function() {
+    $('#componentcard23').hide();
+    $('#plant_unit2').change(function() {
+        if ($('#plant_unit2').val() == '5.1') {
+            $('#componentcard23').show();
+        } else {
+            $('#componentcard23').hide();
+        }
+    });
+});
+
 
 $(function() {
     $('#componentcard311').hide();
@@ -83,6 +106,17 @@ $(function() {
             $('#componentcard32').show();
         } else {
             $('#componentcard32').hide();
+        }
+    });
+});
+
+$(function() {
+    $('#componentcard33').hide();
+    $('#plant_unit3').change(function() {
+        if ($('#plant_unit3').val() === '6.1') {
+            $('#componentcard33').show();
+        } else {
+            $('#componentcard33').hide();
         }
     });
 });
@@ -138,6 +172,17 @@ $(function() {
             $('#componentcard45').show();
         } else {
             $('#componentcard45').hide();
+        }
+    });
+});
+
+$(function() {
+    $('#componentcard46').hide();
+    $('#plant_unit4').change(function() {
+        if ($('#plant_unit4').val() == '11.1') {
+            $('#componentcard46').show();
+        } else {
+            $('#componentcard46').hide();
         }
     });
 });
