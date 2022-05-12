@@ -16,71 +16,6 @@
         "componentssite1"
       ],
       [
-        "view_componentssite10",
-        "projects",
-        "componentssite10"
-      ],
-      [
-        "view_componentssite11",
-        "projects",
-        "componentssite11"
-      ],
-      [
-        "view_componentssite12",
-        "projects",
-        "componentssite12"
-      ],
-      [
-        "view_componentssite13",
-        "projects",
-        "componentssite13"
-      ],
-      [
-        "view_componentssite14",
-        "projects",
-        "componentssite14"
-      ],
-      [
-        "view_componentssite2",
-        "projects",
-        "componentssite2"
-      ],
-      [
-        "view_componentssite3",
-        "projects",
-        "componentssite3"
-      ],
-      [
-        "view_componentssite4",
-        "projects",
-        "componentssite4"
-      ],
-      [
-        "view_componentssite5",
-        "projects",
-        "componentssite5"
-      ],
-      [
-        "view_componentssite6",
-        "projects",
-        "componentssite6"
-      ],
-      [
-        "view_componentssite7",
-        "projects",
-        "componentssite7"
-      ],
-      [
-        "view_componentssite8",
-        "projects",
-        "componentssite8"
-      ],
-      [
-        "view_componentssite9",
-        "projects",
-        "componentssite9"
-      ],
-      [
         "view_notification",
         "projects",
         "notification"
@@ -155,71 +90,6 @@
         "componentssite1"
       ],
       [
-        "view_componentssite10",
-        "projects",
-        "componentssite10"
-      ],
-      [
-        "view_componentssite11",
-        "projects",
-        "componentssite11"
-      ],
-      [
-        "view_componentssite12",
-        "projects",
-        "componentssite12"
-      ],
-      [
-        "view_componentssite13",
-        "projects",
-        "componentssite13"
-      ],
-      [
-        "view_componentssite14",
-        "projects",
-        "componentssite14"
-      ],
-      [
-        "view_componentssite2",
-        "projects",
-        "componentssite2"
-      ],
-      [
-        "view_componentssite3",
-        "projects",
-        "componentssite3"
-      ],
-      [
-        "view_componentssite4",
-        "projects",
-        "componentssite4"
-      ],
-      [
-        "view_componentssite5",
-        "projects",
-        "componentssite5"
-      ],
-      [
-        "view_componentssite6",
-        "projects",
-        "componentssite6"
-      ],
-      [
-        "view_componentssite7",
-        "projects",
-        "componentssite7"
-      ],
-      [
-        "view_componentssite8",
-        "projects",
-        "componentssite8"
-      ],
-      [
-        "view_componentssite9",
-        "projects",
-        "componentssite9"
-      ],
-      [
         "view_notification",
         "projects",
         "notification"
@@ -284,6 +154,11 @@
     "name": "Начальник установки",
     "permissions": [
       [
+        "add_additionalcomponents",
+        "projects",
+        "additionalcomponents"
+      ],
+      [
         "view_component",
         "projects",
         "component"
@@ -292,71 +167,6 @@
         "view_componentssite1",
         "projects",
         "componentssite1"
-      ],
-      [
-        "view_componentssite10",
-        "projects",
-        "componentssite10"
-      ],
-      [
-        "view_componentssite11",
-        "projects",
-        "componentssite11"
-      ],
-      [
-        "view_componentssite12",
-        "projects",
-        "componentssite12"
-      ],
-      [
-        "view_componentssite13",
-        "projects",
-        "componentssite13"
-      ],
-      [
-        "view_componentssite14",
-        "projects",
-        "componentssite14"
-      ],
-      [
-        "view_componentssite2",
-        "projects",
-        "componentssite2"
-      ],
-      [
-        "view_componentssite3",
-        "projects",
-        "componentssite3"
-      ],
-      [
-        "view_componentssite4",
-        "projects",
-        "componentssite4"
-      ],
-      [
-        "view_componentssite5",
-        "projects",
-        "componentssite5"
-      ],
-      [
-        "view_componentssite6",
-        "projects",
-        "componentssite6"
-      ],
-      [
-        "view_componentssite7",
-        "projects",
-        "componentssite7"
-      ],
-      [
-        "view_componentssite8",
-        "projects",
-        "componentssite8"
-      ],
-      [
-        "view_componentssite9",
-        "projects",
-        "componentssite9"
       ],
       [
         "view_notification",
@@ -449,13 +259,13 @@
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$320000$eRkAI8jMT2sp5wE9zO26Hn$pKk//3HRTrmrFjWLarNE0uEfjHSy9AHPcshNXzfFOR0=",
-    "last_login": "2022-04-14T10:55:18",
+    "password": "pbkdf2_sha256$260000$A0ZsHtgHe2BPhUwLZrLSmE$KnVy1FMUUMlSVc9FdCOVFBtiW3mEHAHvoDuah7gES0s=",
+    "last_login": "2022-05-12T10:31:27.449",
     "is_superuser": true,
     "username": "admin",
     "first_name": "admin",
     "last_name": "adminov",
-    "email": "admin@mail.ru",
+    "email": "",
     "is_staff": true,
     "is_active": true,
     "date_joined": "2022-03-29T17:34:47",
@@ -1195,94 +1005,6 @@
         "comment"
       ]
     ]
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 2,
-  "fields": {
-    "password": "pbkdf2_sha256$320000$Uu360kySw9e5ffs9ws7vIq$9Om+Sl6qokNIFkIFgAtw6OtE8l3i27yVj6etfzSDsys=",
-    "last_login": "2022-04-11T16:33:50.460",
-    "is_superuser": false,
-    "username": "lab_assistant",
-    "first_name": "ivan",
-    "last_name": "ivanov",
-    "email": "user@mail.ru",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2022-04-04T12:11:01",
-    "groups": [
-      [
-        "Лаборант"
-      ]
-    ],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 3,
-  "fields": {
-    "password": "pbkdf2_sha256$320000$Cq1MMIlQSHp0rAKjabFjuH$OULusmdw6D5+qTe7GukJ0dFUU2847wFHb1JsgmkLEz4=",
-    "last_login": "2022-04-14T10:53:06.834",
-    "is_superuser": false,
-    "username": "director",
-    "first_name": "Petr",
-    "last_name": "Sidorov",
-    "email": "mail@mail.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2022-04-04T12:11:27",
-    "groups": [
-      [
-        "Топ менеджмент"
-      ]
-    ],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 4,
-  "fields": {
-    "password": "pbkdf2_sha256$320000$NXYXkmVn8YgSZe7YOYNP1P$9gA/fTIK7IY7YLn0OLRjIyDUTlQ7daHo+BSWWVfsxXA=",
-    "last_login": "2022-04-04T15:28:31.598",
-    "is_superuser": false,
-    "username": "unit1_head",
-    "first_name": "John",
-    "last_name": "Wick",
-    "email": "john@mail.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2022-04-04T12:11:53",
-    "groups": [
-      [
-        "Начальник установки"
-      ]
-    ],
-    "user_permissions": []
-  }
-},
-{
-  "model": "auth.user",
-  "pk": 5,
-  "fields": {
-    "password": "pbkdf2_sha256$320000$BQnl9vU56YubhjzLFPQqq9$YQ/R5h/smbqGnCv/QYUkcCNtzxl3oikwTMxGnrrC0pw=",
-    "last_login": null,
-    "is_superuser": false,
-    "username": "consultant",
-    "first_name": "Bruce",
-    "last_name": "Almighty",
-    "email": "",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2022-04-04T12:12:19",
-    "groups": [
-      [
-        "Сотрудники"
-      ]
-    ],
-    "user_permissions": []
   }
 }
 ]
