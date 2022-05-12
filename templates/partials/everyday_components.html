@@ -1,0 +1,565 @@
+<div class="card">
+    <div class="card-body">
+        <div class="text-left">
+            <h5 class="font-size-15 mb-3"><b>Результаты ежедневных анализов</b></h5>
+        </div>
+        {% if res_additional_1 %}
+        <div id="add_unit1" class="mt-3 add_unit">
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход оборотной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_1.recycled_water_consumption }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход подпиточной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_1.running_water_consumption }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход продувки</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_1.purge_flow }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Температура горячей оборотной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_1.hot_water_temp }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Температура охлажденной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_1.cold_water_temp }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Общее микробное число</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_1.total_microbial_number }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% if res_additional_2 %}
+        <div id="add_unit2" class="mt-3 add_unit">
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход оборотной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_2.recycled_water_consumption }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход подпиточной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_2.running_water_consumption }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход продувки</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_2.purge_flow }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Температура горячей оборотной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_2.hot_water_temp }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Температура охлажденной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_2.cold_water_temp }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Общее микробное число</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_2.total_microbial_number }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% if res_additional_3 %}
+        <div id="add_unit3" class="mt-3 add_unit">
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход оборотной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_3.recycled_water_consumption }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход подпиточной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_3.running_water_consumption }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход продувки</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_3.purge_flow }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Температура горячей оборотной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_3.hot_water_temp }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Температура охлажденной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_3.cold_water_temp }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Общее микробное число</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_3.total_microbial_number }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% if res_additional_4 %}
+        <div id="add_unit4" class="mt-3 add_unit">
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход оборотной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_4.recycled_water_consumption }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход подпиточной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_4.running_water_consumption }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход продувки</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_4.purge_flow }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Температура горячей оборотной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_4.hot_water_temp }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Температура охлажденной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_4.cold_water_temp }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Общее микробное число</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_4.total_microbial_number }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% if res_additional_5 %}
+        <div id="add_unit5" class="mt-3 add_unit">
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход оборотной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_5.recycled_water_consumption }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход подпиточной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_5.running_water_consumption }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход продувки</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_5.purge_flow }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Температура горячей оборотной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_5.hot_water_temp }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Температура охлажденной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_5.cold_water_temp }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Общее микробное число</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_5.total_microbial_number }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+        {% if res_additional_6 %}
+        <div id="add_unit6" class="mt-3 add_unit">
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход оборотной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_6.recycled_water_consumption }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход подпиточной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_6.running_water_consumption }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Расход продувки</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_6.purge_flow }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Температура горячей оборотной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_6.hot_water_temp }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Температура охлажденной воды</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_6.cold_water_temp }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+            <div class="card border shadow-none mb-2">
+                <a href="javascript: void(0);" class="text-body">
+                    <div class="p-2">
+                        <div class="d-flex">
+                            <div class="overflow-hidden me-auto">
+                                <h5 class="font-size-13  mb-1">Общее микробное число</h5>
+                                <p class="text-muted text-truncate mb-0">
+                                    {{ res_additional_6.total_microbial_number }}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
