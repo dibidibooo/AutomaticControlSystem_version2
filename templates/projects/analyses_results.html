@@ -1,7 +1,4 @@
-{% extends 'partials/base.html' %}
-{% load static %}
-
-{% block contents %}
+{% extends 'partials/base.html' %} {% load static %} {% block contents %}
 <div class="row">
     <div class="col-xl-6">
         <div class="checkout-tabs">
@@ -38,8 +35,7 @@
                         {{ res.index }}<br> {{ res.values }}
                         <br>
                     </div>
-                    <br>
-                    {% endfor %}
+                    <br> {% endfor %}
 
                     <form class="needs-validation" novalidate method="GET">
                         {% csrf_token %}
@@ -1511,8 +1507,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Коэффициент упаривания
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Коэффициент упаривания
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -1526,31 +1521,29 @@
                                                     </div>
                                                 </div>
                                                 <div class="row">
-                                                <div class="col-xl-6">
-                                                    <div class="card">
-                                                        <div class="card-body">
-                                                            <p class="text-muted mb-4">
-                                                                <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                Транспорт кальциевой жесткости
-                                                            </p>
-                                                            <div class="row">
-                                                                <div class="col-5">
-                                                                    <div>
-                                                                        <h5>{{ additional_formula1.calcium_hardness_transport }}</h5>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            <div class="card-body">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Транспорт кальциевой жесткости
+                                                                </p>
+                                                                <div class="row">
+                                                                    <div class="col-5">
+                                                                        <div>
+                                                                            <h5>{{ additional_formula1.calcium_hardness_transport }}</h5>
+                                                                        </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
-                                                </div>
                                                 <div class="row">
                                                     <div class="col-xl-6">
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Объем продувки
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Объем продувки
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -1568,8 +1561,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Потери с испарением
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Потери с испарением
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -1587,8 +1579,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Капельный унос
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Капельный унос
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -1606,8 +1597,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Несанкционированные потери
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Несанкционированные потери
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -2697,8 +2687,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Коэффициент упаривания
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Коэффициент упаривания
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -2716,8 +2705,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Транспорт кальциевой жесткости
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Транспорт кальциевой жесткости
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -2735,8 +2723,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Объем продувки
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Объем продувки
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -2754,8 +2741,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Потери с испарением
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Потери с испарением
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -2773,8 +2759,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Капельный унос
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Капельный унос
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -2792,8 +2777,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Несанкционированные потери
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Несанкционированные потери
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -3993,8 +3977,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Коэффициент упаривания
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Коэффициент упаривания
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -4012,8 +3995,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Транспорт кальциевой жесткости
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Транспорт кальциевой жесткости
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -4031,8 +4013,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Объем продувки
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Объем продувки
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -4050,8 +4031,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Потери с испарением
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Потери с испарением
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -4069,8 +4049,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Капельный унос
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Капельный унос
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -4088,8 +4067,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Несанкционированные потери
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Несанкционированные потери
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -5839,8 +5817,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Коэффициент упаривания
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Коэффициент упаривания
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -5858,8 +5835,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Транспорт кальциевой жесткости
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Транспорт кальциевой жесткости
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -5877,8 +5853,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Объем продувки
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Объем продувки
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -5896,8 +5871,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Потери с испарением
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Потери с испарением
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -5915,8 +5889,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Капельный унос
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Капельный унос
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -5934,8 +5907,7 @@
                                                         <div class="card">
                                                             <div class="card-body">
                                                                 <p class="text-muted mb-4">
-                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>
-                                                                    Несанкционированные потери
+                                                                    <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Несанкционированные потери
                                                                 </p>
                                                                 <div class="row">
                                                                     <div class="col-5">
@@ -7908,21 +7880,14 @@
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();
     });
-
 </script>
 <script>
-    jQuery(function(){
-        jQuery('.nav-link').click(function(){
-              jQuery('.add_unit').hide();
-              jQuery('#add_unit'+$(this).attr('target')).show();
+    jQuery(function() {
+        jQuery('.nav-link').click(function() {
+            jQuery('.add_unit').hide();
+            jQuery('#add_unit' + $(this).attr('target')).show();
         });
     });
-
-
-
-
-
-
 </script>
 <!-- Выбор форм мест отбора -->
 <script src="{% static 'js/choose.js'%}"></script>
