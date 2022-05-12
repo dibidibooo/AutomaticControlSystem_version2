@@ -583,8 +583,9 @@ class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
         unit = get_object_or_404(PlantUnit, pk=unit_id)
         form.instance.plant_unit = unit
         form.save()
-        formula = AdditionalCalc()
-        formula.calculations(unit=int(unit_id))
+        if int(unit_id) in range(5, 7):
+            formula = AdditionalCalc()
+            formula.calculations(unit=int(unit_id))
         return super().form_valid(form)
 
 
@@ -746,8 +747,6 @@ class ResultsView(PermissionRequiredMixin, View):
             'additional_formula2': AdditionalCalculations.objects.filter(plant_unit_id=2).last(),
             'additional_formula3': AdditionalCalculations.objects.filter(plant_unit_id=3).last(),
             'additional_formula4': AdditionalCalculations.objects.filter(plant_unit_id=4).last(),
-            'additional_formula5': AdditionalCalculations.objects.filter(plant_unit_id=5).last(),
-            'additional_formula6': AdditionalCalculations.objects.filter(plant_unit_id=6).last()
         }
 
         # Сравнение показателей с оборотной воды и с подпиточной воды на БОВ-2
