@@ -698,7 +698,7 @@ class ExcelTableView(PermissionRequiredMixin, View):
 
     def get(self, request):
         context = {
-            'heading': "Таблица",
+            'heading': "Отчеты",
             'pageview': "Анализы",
             'tasks': Task.objects.order_by('start_date'),
             'results': ComponentsSite.objects.order_by('datetime'),
