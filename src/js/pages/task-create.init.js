@@ -1,11 +1,3 @@
-/*
-Template Name: Skote - Admin & Dashboard Template
-Author: Themesbrand
-Website: https://themesbrand.com/
-Contact: themesbrand@gmail.com
-File: Task Create Init Js File
-*/
-
 $(document).ready(function () {
     'use strict';
 

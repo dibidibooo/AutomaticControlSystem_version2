@@ -1,12 +1,3 @@
-/*
-Template Name: Skote - Admin & Dashboard Template
-Author: Themesbrand
-Website: https://themesbrand.com/
-Contact: themesbrand@gmail.com
-File: Crypto Exchange Init Js File
-*/
-
-
 // Candlestick chart
 
 var options = {

@@ -1,11 +1,3 @@
-/*
-Template Name: Skote - Admin & Dashboard Template
-Author: Themesbrand
-Website: https://themesbrand.com/
-Contact: themesbrand@gmail.com
-File: coming soon Init Js File
-*/
-
 $('[data-countdown]').each(function () {
     var $this = $(this), finalDate = $(this).data('countdown');
     $this.countdown(finalDate, function (event) {

@@ -1,11 +1,3 @@
-/*
-Template Name: Skote - Admin & Dashboard Template
-Author: Themesbrand
-Website: https://themesbrand.com/
-Contact: themesbrand@gmail.com
-File: Saas dashboard Init Js File
-*/
-
 // Line chart
 
 var options = {

@@ -1,13 +1,3 @@
-/*
-Template Name: Skote - Admin & Dashboard Template
-Author: Themesbrand
-Version: 3.2.0
-Website: https://themesbrand.com/
-Contact: themesbrand@gmail.com
-File: Main Js File
-*/
-
-
 (function ($) {
 
     'use strict';

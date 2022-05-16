@@ -1,14 +1,3 @@
-
-
-/*
-Template Name: Skote - Admin & Dashboard Template
-Author: Themesbrand
-Website: https://themesbrand.com/
-Contact: themesbrand@gmail.com
-File: leaflet init js
-*/
-
-
 // leaflet-map
 var mymap = L.map('leaflet-map').setView([51.505, -0.09], 13);
 
