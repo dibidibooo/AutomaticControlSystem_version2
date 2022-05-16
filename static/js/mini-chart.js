@@ -56,7 +56,7 @@ function createChartObject(data){
     }],
     chart: {
         type: "area",
-        height: 40,
+        height: 50,
         sparkline: {
             enabled: !0
         }

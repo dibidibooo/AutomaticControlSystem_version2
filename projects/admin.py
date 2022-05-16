@@ -9,6 +9,9 @@ from .models import (
     ComponentsSite
 )
 
+
+# class ComponentsSite(admin.)
+
 admin.site.register(PlantUnit)
 admin.site.register(SamplingSite)
 admin.site.register(WaterType)
