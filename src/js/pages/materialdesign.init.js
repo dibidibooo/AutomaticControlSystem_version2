@@ -1,11 +1,3 @@
-/*
-Template Name: Skote - Admin & Dashboard Template
-Author: Themesbrand
-Website: https://themesbrand.com/
-Contact: themesbrand@gmail.com
-File: Material design Init Js File
-*/
-
 // icons
 function isNew(icon) {
     return icon.version === '5.8.55';
