@@ -1,11 +1,3 @@
-/*
-Template Name: Skote - Admin & Dashboard Template
-Author: Themesbrand
-Website: https://themesbrand.com/
-Contact: themesbrand@gmail.com
-File: Tui charts init Js File
-*/
-
 // Bar charts
 
 var barChartWidth = $("#bar-charts").width();
