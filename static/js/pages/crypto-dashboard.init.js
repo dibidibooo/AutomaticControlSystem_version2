@@ -123,7 +123,7 @@ options = {
 };
 (chart = new ApexCharts(document.querySelector("#area-sparkline-chart-3"), options)).render();
 var walletOptions = {
-    series: [60, 20, 40],
+    series: [0, 0, 0],
     chart: {
         height: 302,
         type: "radialBar"
