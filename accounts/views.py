@@ -30,8 +30,8 @@ class ProfileView(PermissionRequiredMixin, View):
             page = int(1)
         page_obj = p.get_page(page)
         context = {}
-        context['heading'] = "Пользователи"
-        context['pageview'] = "Пользователи"
+        context['heading'] = "Редактор пользователей"
+        context['pageview'] = "admin"
         context['users'] = users
         context['page_obj'] = page_obj
         context['form'] = ProfileForm()

@@ -14,8 +14,8 @@ class DashboardView(LoginRequiredMixin, View):
     def get(self, request):
         tasks = Task.objects.all()
         context = {}
-        context['heading'] = "Страница Генерального директора"
-        context['pageview'] = "Dashboards"
+        context['heading'] = "Страница CEO"
+        context['pageview'] = "Главная"
         context['tasks'] = tasks
         context['overdue'] = self.get_overdue_tasks()
         context['on_time'] = self.get_on_time_tasks()

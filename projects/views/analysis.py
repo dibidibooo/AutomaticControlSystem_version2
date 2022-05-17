@@ -697,9 +697,10 @@ class ExcelTableView(PermissionRequiredMixin, View):
     permission_required = ['projects.view_task']
 
     def get(self, request):
+
         context = {
-            'heading': "Таблица",
-            'pageview': "Анализы",
+            'heading': "Отчеты",
+            'pageview': "Результаты",
             'tasks': Task.objects.order_by('start_date'),
             'results': ComponentsSite.objects.order_by('datetime'),
         }
@@ -831,3 +832,4 @@ class ResultsView(PermissionRequiredMixin, View):
         except ComponentsSite.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
+

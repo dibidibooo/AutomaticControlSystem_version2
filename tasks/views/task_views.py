@@ -53,7 +53,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
 
     def get(self, request, *args, **kwargs):
         context = {
-            'heading': "Kanban доска",
+            'heading': "Управление задачами",
             'pageview': "Задачи",
             'tasks': Task.objects.all().order_by('start_date'),
             'statuses': Status.objects.all(),
@@ -1125,7 +1125,7 @@ class ArchiveTaskListView(PermissionRequiredMixin, View):
     def get(self, request):
         context = {
             'heading': "Архив",
-            'pageview': "Задачи",
+            'pageview': "Управление задачами",
             'tasks': Task.objects.filter(status_id=5),
             'unit1': Task.objects.filter(plant_unit_id=1, status_id=5),
             'unit2': Task.objects.filter(plant_unit_id=2, status_id=5),
@@ -1135,3 +1135,9 @@ class ArchiveTaskListView(PermissionRequiredMixin, View):
             'unit6': Task.objects.filter(plant_unit_id=6, status_id=5),
         }
         return render(request, 'tasks/tasklist.html', context)
+
+
+
+
+
+
