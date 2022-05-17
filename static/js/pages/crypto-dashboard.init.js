@@ -160,6 +160,10 @@ function getValues(){
 }
 
 document.addEventListener("DOMContentLoaded",() => {
+    const on_time_data = Number(document.getElementById("on_time_data").innerText)
+    const overdue_data = Number(document.getElementById("overdue_data").innerText)
+    const total = on_time_data + overdue_data
+
     const _chart_series = getValues()
     var walletOptions = {
         series: _chart_series,
@@ -218,7 +222,7 @@ document.addEventListener("DOMContentLoaded",() => {
                         fontWeight: 600,
                         formatter: function(e) {
                             return e.globals.seriesTotals.reduce(function(e, t) {
-                                return e + t
+                                return total
                             }, 0)
                         }
                     }
