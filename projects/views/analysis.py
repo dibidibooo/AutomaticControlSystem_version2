@@ -128,7 +128,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site2_task(form, water_type, responsible_id=4)
+        task_create.site2_task(form, water_type, responsible_id=51)
         return HttpResponseRedirect(self.success_url)
 
     # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12
@@ -569,7 +569,7 @@ class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
     form_class = AdditionalAnalysisForm
     template_name = 'projects/additional_analyses_create.html'
     success_url = reverse_lazy('analyzes_results')
-    permission_required = ['add_additionalcomponents']
+    permission_required = ('projects.add_additionalcomponents', )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -694,7 +694,7 @@ class AdditionalCalc:
 
 
 class ExcelTableView(PermissionRequiredMixin, View):
-    permission_required = ['projects.view_task']
+    permission_required = ['tasks.view_task']
 
     def get(self, request):
 

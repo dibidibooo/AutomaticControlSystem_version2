@@ -7,10 +7,9 @@
     <div class="col-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Пример таблицы</h4>
-                <p class="card-title-desc">Здесь вы можете просмотреть данные с таблицы, скачать их в формате excel и
-                    pdf. Есть режим поиска и сортировки,
-                    а также таблица разделена на страницы.
+                <h4 class="card-title">Таблица</h4>
+                <p class="card-title-desc">Здесь вы можете просмотреть данные с таблицы, скачать их в формате excel.
+                    Есть режим поиска и сортировки, а также таблица разделена на страницы.
                 </p>
 
 <!--                <form action="">-->
@@ -107,7 +106,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.suspended_solids %}
+                                {% endif %}
+                                {% if item.suspended_solids %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -119,7 +119,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.ph %}
+                                {% endif %}
+                                {% if item.ph %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -131,7 +132,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.phosphorus %}
+                                {% endif %}
+                                {% if item.phosphorus %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -143,7 +145,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.alkalinity %}
+                                {% endif %}
+                                {% if item.alkalinity %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -155,7 +158,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.hardness %}
+                                {% endif %}
+                                {% if item.hardness %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -167,7 +171,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.salt %}
+                                {% endif %}
+                                {% if item.salt %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -179,7 +184,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.chlorides %}
+                                {% endif %}
+                                {% if item.chlorides %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -191,7 +197,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.sulfates %}
+                                {% endif %}
+                                {% if item.sulfates %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -203,7 +210,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.iron %}
+                                {% endif %}
+                                {% if item.iron %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -215,7 +223,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.hardness_calcium %}
+                                {% endif %}
+                                {% if item.hardness_calcium %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -227,7 +236,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.hardness_magnesium %}
+                                {% endif %}
+                                {% if item.hardness_magnesium %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -239,7 +249,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.suspended_subst %}
+                                {% endif %}
+                                {% if item.suspended_subst %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -251,7 +262,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.dry_residue %}
+                                {% endif %}
+                                {% if item.dry_residue %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -263,7 +275,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.alkalinity_phenols %}
+                                {% endif %}
+                                {% if item.alkalinity_phenols %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -275,7 +288,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.chlorine %}
+                                {% endif %}
+                                {% if item.chlorine %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -287,7 +301,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.oxygen_chem %}
+                                {% endif %}
+                                {% if item.oxygen_chem %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -299,7 +314,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.active_subst %}
+                                {% endif %}
+                                {% if item.active_subst %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -311,7 +327,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.ammonium %}
+                                {% endif %}
+                                {% if item.ammonium %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -323,7 +340,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.oxygen_bio %}
+                                {% endif %}
+                                {% if item.oxygen_bio %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -335,7 +353,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.phenols %}
+                                {% endif %}
+                                {% if item.phenols %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -347,7 +366,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.nitrate %}
+                                {% endif %}
+                                {% if item.nitrate %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -359,7 +379,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.nitrite %}
+                                {% endif %}
+                                {% if item.nitrite %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
@@ -371,7 +392,8 @@
                                         <td></td>
                                         <td></td>
                                     </tr>
-                                {% elif item.oxidability %}
+                                {% endif %}
+                                {% if item.oxidability %}
                                     <tr>
                                         <td>{{ item.sampling_site.location }}</td>
                                         <td>{{ item.sampling_site }}</td>
