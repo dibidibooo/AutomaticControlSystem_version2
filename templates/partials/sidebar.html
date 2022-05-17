@@ -17,7 +17,7 @@
 
                 <li class="menu-title" key="t-apps">Приложения</li>
 
-                {% if not user.is_superuser and perms.projects.add_componentssite1 %}
+                {% if not user.is_superuser and perms.projects.add_componentssite %}
                 <li>
                     <a href="{% url 'analyzes_create' %}" key="t-p-grid">
                         <i class="mdi mdi-file-download-outline"></i>
@@ -25,15 +25,15 @@
                     </a>
                 </li>
 
-                {% elif not perms.projects.add_componentssite1 %}
-                {% if perms.projects.add_additionalcomponents %}
-                <li>
-                    <a href="{% url 'additional_analyzes_create' %}" key="t-p-list">
-                        <i class="mdi mdi-file-download-outline"></i>
-                        <span key="t-ecommerce">Загрузка ежедневных анализов</span>
-                    </a>
-                </li>
-                {% endif %}
+                {% elif not perms.projects.add_componentssite %}
+                    {% if perms.projects.add_additionalcomponents %}
+                        <li>
+                            <a href="{% url 'additional_analyzes_create' %}" key="t-p-list">
+                                <i class="mdi mdi-file-download-outline"></i>
+                                <span key="t-ecommerce">Загрузка ежедневных анализов</span>
+                            </a>
+                        </li>
+                    {% endif %}
 
                 <li>
                     <a href="{% url 'tasks-kanbanboard' %}" key="t-kanban-board">

@@ -1,6 +1,6 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import PermissionRequiredMixin
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
@@ -57,6 +57,9 @@ class ProfileView(PermissionRequiredMixin, View):
                     position=position,
                     role_id=role
                 )
+                group = Group.objects.get(id=role)
+                group.user_set.add(user.pk)
+
                 return redirect('accounts-users')
             if "editprofile" in request.POST:
                 id = request.POST['id']
@@ -74,6 +77,10 @@ class ProfileView(PermissionRequiredMixin, View):
                 profile.position = position
                 profile.role_id = role
                 profile.save()
+
+                get_user = User.objects.get(id=id)
+                get_user.groups.clear()
+                get_user.groups.add(role)
                 return redirect('accounts-users')
             if "deleteCustomer" in request.POST:
                 id = request.POST['id']
