@@ -120,17 +120,17 @@
                     <div class="col-lg-4 col-sm-6 align-self-center">
                         <div>
                             <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-primary"></i> Выполнено <br>в срок</p>
-                            <h5>{{ on_time }}</h5>
+                            <h5 id="on_time_data">{{ on_time }}</h5>
                         </div>
 
                         <div class="mt-4 pt-2">
                             <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-warning"></i> Просрочено</p>
-                            <h5>{{ overdue }}</h5>
+                            <h5 id="overdue_data">{{ overdue }}</h5>
                         </div>
 
                         <div class="mt-4 pt-2">
                             <p class="mb-2"><i class="mdi mdi-circle align-middle font-size-10 me-2 text-info"></i> Эскалировано</p>
-                            <h5>{{ escalated }}</h5>
+                            <h5 id="escalated_data">{{ escalated }}</h5>
                         </div>
                     </div>
                 </div>

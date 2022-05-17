@@ -14,8 +14,9 @@ class Site1Form(MultipleForm):
         attrs={'class': 'form-control mb-3'}), label="Нефтепродукт")
     suspended_solids = forms.CharField(max_length=50, widget=forms.NumberInput(
         attrs={'class': 'form-control mb-3'}), label="Общие взвешенные твердые частицы")
-    ph = forms.CharField(max_length=50, widget=forms.NumberInput(
-        attrs={'class': 'form-control mb-3', 'max':12, 'type': 'number'}), label="Значение pH")
+    ph = forms.DecimalField(max_value=12, error_messages={'max_value': 'Please enter your name'}, help_text='A valid email address, please.',
+                            widget=forms.NumberInput(attrs={'class': 'form-control mb-3', 'max': 12, 'type': 'number', "required": False}),
+                            label="Значение pH")
     phosphorus = forms.CharField(max_length=50, widget=forms.NumberInput(
         attrs={'class': 'form-control mb-3'}), label="Фосфор")
     alkalinity = forms.CharField(max_length=50, widget=forms.NumberInput(
