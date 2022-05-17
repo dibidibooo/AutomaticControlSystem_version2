@@ -14,7 +14,7 @@ def task_send_email(sender, instance, created, **kwargs):
     task = Task.objects.get(id=instance.id)
 
     if instance.user and instance.user.email and (
-            instance.tracker.has_changed('status_id') or
+            instance.tracker.previous("status_id") and instance.tracker.has_changed('status_id')) and (
             instance.tracker.has_changed('user_id') or (instance.tracker.previous('deadline') != task.deadline)):
         val = {
             'task': instance,

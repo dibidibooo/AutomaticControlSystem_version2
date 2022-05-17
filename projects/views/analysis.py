@@ -128,7 +128,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             water_type_id=water_type
         )
         task_create = TaskCreate()
-        task_create.site2_task(form, water_type, responsible_id=4)
+        task_create.site2_task(form, water_type, responsible_id=51)
         return HttpResponseRedirect(self.success_url)
 
     # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-5,11.12
