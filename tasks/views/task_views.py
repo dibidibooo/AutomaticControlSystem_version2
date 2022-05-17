@@ -49,7 +49,7 @@ class TaskUpdateView(DetailView):
 
 
 class KanbanBoardView(PermissionRequiredMixin, View):
-    permission_required = ('projects.view_task',)
+    permission_required = 'tasks.view_task'
 
     def get(self, request, *args, **kwargs):
         context = {
@@ -1120,7 +1120,7 @@ class TaskCreate:
 
 
 class ArchiveTaskListView(PermissionRequiredMixin, View):
-    permission_required = ['projects.view_task']
+    permission_required = ['tasks.view_task']
 
     def get(self, request):
         context = {

@@ -569,7 +569,7 @@ class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
     form_class = AdditionalAnalysisForm
     template_name = 'projects/additional_analyses_create.html'
     success_url = reverse_lazy('analyzes_results')
-    permission_required = ['add_additionalcomponents']
+    permission_required = ('projects.add_additionalcomponents', )
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -694,7 +694,7 @@ class AdditionalCalc:
 
 
 class ExcelTableView(PermissionRequiredMixin, View):
-    permission_required = ['projects.view_task']
+    permission_required = ['tasks.view_task']
 
     def get(self, request):
         context = {
