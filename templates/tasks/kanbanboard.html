@@ -38,14 +38,9 @@
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
+                                                <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
                                             </div>
 
-                                            <div class="avatar-group float-start task-assigne">
-                                                <div>
-                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
-                                                    Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 {% elif request.user.is_superuser %}
@@ -65,14 +60,9 @@
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
+                                                <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
                                             </div>
 
-                                            <div class="avatar-group float-start task-assigne">
-                                                <div>
-                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
-                                                    Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}
-                                                </div>
-                                            </div>
                                         </div>
                                     </div>
                                 {% endif %}
@@ -110,12 +100,8 @@
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
-                                            </div>
-                                            <div class="avatar-group float-start task-assigne">
-                                                <div>
-                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
-                                                    Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}
-                                                </div>
+                                                <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
+
                                             </div>
                                         </div>
                                     </div>
@@ -135,12 +121,8 @@
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
-                                            </div>
-                                            <div class="avatar-group float-start task-assigne">
-                                                <div>
-                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
-                                                    Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}
-                                                </div>
+                                                <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
+
                                             </div>
                                         </div>
                                     </div>
@@ -179,12 +161,8 @@
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
-                                            </div>
-                                            <div class="avatar-group float-start task-assigne">
-                                                <div>
-                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
-                                                    Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}
-                                                </div>
+                                                <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
+
                                             </div>
                                         </div>
                                     </div>
@@ -204,12 +182,8 @@
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
-                                            </div>
-                                            <div class="avatar-group float-start task-assigne">
-                                                <div>
-                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
-                                                    Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}
-                                                </div>
+                                                <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
+
                                             </div>
                                         </div>
                                     </div>
@@ -248,12 +222,8 @@
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
-                                            </div>
-                                            <div class="avatar-group float-start task-assigne">
-                                                <div>
-                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
-                                                    Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}
-                                                </div>
+                                                <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
+
                                             </div>
                                         </div>
                                     </div>
@@ -273,12 +243,8 @@
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
-                                            </div>
-                                            <div class="avatar-group float-start task-assigne">
-                                                <div>
-                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
-                                                    Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}
-                                                </div>
+                                                <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
+
                                             </div>
                                         </div>
                                     </div>
