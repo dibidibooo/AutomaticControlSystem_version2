@@ -71,7 +71,7 @@ class DashboardView(PermissionRequiredMixin, View):
 
     @staticmethod
     def get_escalated_tasks():
-        changes_history = ChangesTracker.objects.filter(text__contains='изменил исполнителя на director')
+        changes_history = ChangesTracker.objects.filter(changed_to__icontains='директор')
         changes_list = []
         for item in changes_history:
             changes_list.append(item.task_id)
