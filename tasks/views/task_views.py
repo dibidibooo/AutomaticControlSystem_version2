@@ -91,7 +91,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
                     task_id=task.id,
                     text="изменил исполнителя на",
                     who_changed=request.user,
-                    changed_to=f"{task.user}"
+                    changed_to=f"{task.user.profile.position}, {task.user.first_name} {task.user.last_name}"
                 )
 
             if task.deadline:
