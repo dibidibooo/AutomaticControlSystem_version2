@@ -203,7 +203,7 @@ ACCOUNT_FORMS = {
     'reset_password_from_key': 'pages.forms.PasswordResetKeyForm'
 }
 
-LOGIN_REDIRECT_URL = '/'    
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 # login url
 LOGIN_URL = 'account_login'
