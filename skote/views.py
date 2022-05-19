@@ -3,18 +3,20 @@ from datetime import datetime
 from django.http import JsonResponse
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views import View
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from allauth.account.views import PasswordSetView, PasswordChangeView
 from django.urls import reverse_lazy
 
 from tasks.models import Task, Comment, ChangesTracker
 
 
-class DashboardView(LoginRequiredMixin, View):
+class DashboardView(PermissionRequiredMixin, View):
+    permission_required = 'sites.view_site'
+
     def get(self, request):
         tasks = Task.objects.all()
         context = {}
-        context['heading'] = "Страница Генерального директора"
+        context['heading'] = "Страница CEO"
         context['pageview'] = "Dashboards"
         context['tasks'] = tasks
         context['overdue'] = self.get_overdue_tasks()

@@ -6,26 +6,61 @@
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu list-unstyled" id="side-menu">
-                <li class="menu-title" key="t-menu">Главная</li>
+                {% if not user.is_superuser and perms.sites.view_site %}
+                    <li class="menu-title" key="t-menu">Главная</li>
 
-                <li>
-                    <a href="{% url 'dashboard' %}">
-                        <i class="bx bx-home-circle"></i>
-                        <span key="t-default">Страница SEO</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{% url 'dashboard' %}">
+                            <i class="bx bx-home-circle"></i>
+                            <span key="t-default">Страница CEO</span>
+                        </a>
+                    </li>
 
-                <li class="menu-title" key="t-apps">Приложения</li>
+                    <li class="menu-title" key="t-apps">Приложения</li>
 
-                {% if not user.is_superuser and perms.projects.add_componentssite %}
-                <li>
-                    <a href="{% url 'analyzes_create' %}" key="t-p-grid">
-                        <i class="mdi mdi-file-download-outline"></i>
-                        <span key="t-ecommerce">Загрузка анализов</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{% url 'tasks-kanbanboard' %}" key="t-kanban-board">
+                            <i class="mdi mdi-trello"></i>
+                            <span key="t-ecommerce">Управление задачами</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="{% url 'excel_table' %}" key="t-p-overview">
+                            <i class="mdi mdi-table-arrow-down"></i>
+                            <span key="t-ecommerce">Отчеты</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="{% url 'analyzes_results' %}" key="t-create-new">
+                            <i class="mdi mdi-beaker-check-outline"></i>
+                            <span key="t-ecommerce">Результаты</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'tasks-tasklist' %}">
+                            <i class="bx bx-task"></i>
+                            <span key="t-task-list">Архив</span>
+                        </a>
+                    </li>
+
+                {% elif not user.is_superuser and perms.projects.add_componentssite %}
+                    <li class="menu-title" key="t-apps">Приложения</li>
+
+                    <li>
+                        <a href="{% url 'analyzes_create' %}" key="t-p-grid">
+                            <i class="mdi mdi-file-download-outline"></i>
+                            <span key="t-ecommerce">Загрузка анализов</span>
+                        </a>
+                    </li>
 
                 {% elif not perms.projects.add_componentssite %}
+                    <li class="menu-title" key="t-apps">Приложения</li>
+
                     {% if perms.projects.add_additionalcomponents %}
                         <li>
                             <a href="{% url 'additional_analyzes_create' %}" key="t-p-list">
@@ -35,89 +70,100 @@
                         </li>
                     {% endif %}
 
-                <li>
-                    <a href="{% url 'tasks-kanbanboard' %}" key="t-kanban-board">
-                        <i class="mdi mdi-trello"></i>
-                        <span key="t-ecommerce">Управление задачами</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{% url 'tasks-kanbanboard' %}" key="t-kanban-board">
+                            <i class="mdi mdi-trello"></i>
+                            <span key="t-ecommerce">Управление задачами</span>
+                        </a>
+                    </li>
 
 
-                <li>
-                    <a href="{% url 'excel_table' %}" key="t-p-overview">
-                        <i class="mdi mdi-table-arrow-down"></i>
-                        <span key="t-ecommerce">Отчеты</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{% url 'excel_table' %}" key="t-p-overview">
+                            <i class="mdi mdi-table-arrow-down"></i>
+                            <span key="t-ecommerce">Отчеты</span>
+                        </a>
+                    </li>
 
 
-                <li>
-                    <a href="{% url 'analyzes_results' %}" key="t-create-new">
-                        <i class="mdi mdi-beaker-check-outline"></i>
-                        <span key="t-ecommerce">Результаты</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{% url 'analyzes_results' %}" key="t-create-new">
+                            <i class="mdi mdi-beaker-check-outline"></i>
+                            <span key="t-ecommerce">Результаты</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="{% url 'tasks-tasklist' %}">
-                        <i class="bx bx-task"></i>
-                        <span key="t-task-list">Архив</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{% url 'tasks-tasklist' %}">
+                            <i class="bx bx-task"></i>
+                            <span key="t-task-list">Архив</span>
+                        </a>
+                    </li>
 
 
                 {% elif user.is_superuser %}
-                <li>
-                    <a href="{% url 'analyzes_create' %}" key="t-p-grid">
-                        <i class="mdi mdi-file-download-outline"></i>
-                        <span key="t-ecommerce">Загрузка анализов</span>
-                    </a>
-                </li>
+                    <li class="menu-title" key="t-menu">Главная</li>
 
-                <li>
-                    <a href="{% url 'additional_analyzes_create' %}" key="t-p-list">
-                        <i class="mdi mdi-file-download-outline"></i>
-                        <span key="t-ecommerce">Загрузка ежедневных анализов</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{% url 'dashboard' %}">
+                            <i class="bx bx-home-circle"></i>
+                            <span key="t-default">Страница CEO</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="{% url 'tasks-kanbanboard' %}" key="t-kanban-board">
-                        <i class="mdi mdi-trello"></i>
-                        <span key="t-ecommerce">Управление задачами</span>
-                    </a>
-                </li>
+                    <li class="menu-title" key="t-apps">Приложения</li>
 
+                    <li>
+                        <a href="{% url 'analyzes_create' %}" key="t-p-grid">
+                            <i class="mdi mdi-file-download-outline"></i>
+                            <span key="t-ecommerce">Загрузка анализов</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="{% url 'excel_table' %}" key="t-p-overview">
-                        <i class="mdi mdi-table-arrow-down"></i>
-                        <span key="t-ecommerce">Отчеты</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{% url 'additional_analyzes_create' %}" key="t-p-list">
+                            <i class="mdi mdi-file-download-outline"></i>
+                            <span key="t-ecommerce">Загрузка ежедневных анализов</span>
+                        </a>
+                    </li>
 
-
-                <li>
-                    <a href="{% url 'analyzes_results' %}" key="t-create-new">
-                        <i class="mdi mdi-beaker-check-outline"></i>
-                        <span key="t-ecommerce">Результаты</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{% url 'tasks-kanbanboard' %}" key="t-kanban-board">
+                            <i class="mdi mdi-trello"></i>
+                            <span key="t-ecommerce">Управление задачами</span>
+                        </a>
+                    </li>
 
 
-                <li>
-                    <a href="{% url 'accounts-users' %}">
-                        <i class="bx bx-user-plus"></i>
-                        <span key="t-ecommerce">Редактор пользователей</span>
-                    </a>
-                </li>
+                    <li>
+                        <a href="{% url 'excel_table' %}" key="t-p-overview">
+                            <i class="mdi mdi-table-arrow-down"></i>
+                            <span key="t-ecommerce">Отчеты</span>
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="{% url 'tasks-tasklist' %}">
-                        <i class="bx bx-task"></i>
-                        <span key="t-task-list">Архив</span>
-                    </a>
-                </li>
+
+                    <li>
+                        <a href="{% url 'analyzes_results' %}" key="t-create-new">
+                            <i class="mdi mdi-beaker-check-outline"></i>
+                            <span key="t-ecommerce">Результаты</span>
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="{% url 'accounts-users' %}">
+                            <i class="bx bx-user-plus"></i>
+                            <span key="t-ecommerce">Редактор пользователей</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="{% url 'tasks-tasklist' %}">
+                            <i class="bx bx-task"></i>
+                            <span key="t-task-list">Архив</span>
+                        </a>
+                    </li>
 
                 {% endif %}
             </ul>
