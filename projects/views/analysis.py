@@ -104,7 +104,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             hardness_magnesium=hardness_magnesium,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site1_task(form, water_type, responsible_id=3)
@@ -125,7 +126,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             suspended_solids=suspended_solids,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site2_task(form, water_type, responsible_id=3)
@@ -162,7 +164,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             ph=ph,
             plant_unit_id=self.request.POST.get('plant_unit'),
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site3_task(form, water_type, responsible_id=3)
@@ -197,7 +200,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             iron=iron,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site4_task(form, water_type, responsible_id=5)
@@ -232,7 +236,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             iron=iron,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site5_task(form, water_type, responsible_id=5)
@@ -269,7 +274,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             iron=iron,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site6_task(form, water_type, responsible_id=5)
@@ -300,7 +306,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             iron=iron,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site7_task(form, water_type, responsible_id=6)
@@ -335,7 +342,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             salt=salt,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site8_task(form, water_type, responsible_id=6)
@@ -370,7 +378,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             salt=salt,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site9_task(form, water_type, responsible_id=6)
@@ -391,7 +400,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             salt=salt,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site10_task(form, water_type, responsible_id=6)
@@ -408,7 +418,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             suspended_solids=suspended_solids,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site11_task(form, water_type, responsible_id=6)
@@ -435,7 +446,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             ammonium=ammonium,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site12_task(form, water_type, responsible_id=7)
@@ -476,7 +488,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             nitrite=nitrite,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site13_task(form, water_type, responsible_id=7)
@@ -501,7 +514,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             chlorine=chlorine,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site14_task(form, water_type, responsible_id=7)
@@ -528,7 +542,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             oxygen_bio=oxygen_bio,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site15_task(form, water_type, responsible_id=7)
@@ -555,7 +570,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             oxygen_bio=oxygen_bio,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
-            water_type_id=water_type
+            water_type_id=water_type,
+            user=self.request.user
         )
         task_create = TaskCreate()
         task_create.site16_task(form, water_type, responsible_id=7)
