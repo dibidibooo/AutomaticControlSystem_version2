@@ -35,7 +35,7 @@
             </div>
             <div class="mb-3">
                 <label for="id_user" class="form-label"><b>Исполнитель</b></label>
-                <select id="id_user" class="form-select" name="user">
+                <select id="id_user" class="form-select" name="user" required>
                     {% if not task.user %}
                         <option value="" selected>-----------</option>
                     {% endif %}
@@ -46,7 +46,7 @@
             </div>
             <div class="mb-3">
                 <label for="id_task_responsible" class="form-label"><b>Ответственный</b></label>
-                <p id="task_responsible">{{ task.responsible.first_name }} {{ task.responsible.last_name }}</p>
+                <p id="task_responsible">{{ task.responsible.name }}</p>
             </div>
             <input id="save-btn" type="submit" value="Сохранить" name="edittask" class="btn btn-primary">
 

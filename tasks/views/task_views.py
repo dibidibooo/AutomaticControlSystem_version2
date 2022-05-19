@@ -159,7 +159,6 @@ class TaskCreate:
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('oil_prod').latest('datetime')['oil_prod']),
@@ -174,7 +173,6 @@ class TaskCreate:
             Task.objects.create(
                 title=ph.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('ph').latest('datetime')['ph']),
@@ -189,7 +187,6 @@ class TaskCreate:
             Task.objects.create(
                 title=ph.recommendation1,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('ph').latest('datetime')['ph']),
@@ -205,7 +202,6 @@ class TaskCreate:
                 Task.objects.create(
                     title=suspended_solids.recommendation2,
                     responsible_id=responsible_id,
-                    user_id=responsible_id,
                     deadline=deadline,
                     comp_title=comp_title,
                     comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
@@ -221,7 +217,6 @@ class TaskCreate:
                 Task.objects.create(
                     title=suspended_solids.recommendation2,
                     responsible_id=responsible_id,
-                    user_id=responsible_id,
                     deadline=deadline,
                     comp_title=comp_title,
                     comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
@@ -236,7 +231,6 @@ class TaskCreate:
             Task.objects.create(
                 title=phosphorus.recommendation1,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('phosphorus').latest('datetime')['phosphorus']),
@@ -251,7 +245,6 @@ class TaskCreate:
             Task.objects.create(
                 title=alkalinity.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('alkalinity').latest('datetime')['alkalinity']),
@@ -266,7 +259,6 @@ class TaskCreate:
             Task.objects.create(
                 title=salt.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('salt').latest('datetime')['salt']),
@@ -281,7 +273,6 @@ class TaskCreate:
             Task.objects.create(
                 title=chlorides.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('chlorides').latest('datetime')['chlorides']),
@@ -296,7 +287,6 @@ class TaskCreate:
             Task.objects.create(
                 title=sulfates.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('sulfates').latest('datetime')['sulfates']),
@@ -320,7 +310,6 @@ class TaskCreate:
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('oil_prod').latest('datetime')['oil_prod']),
@@ -335,7 +324,6 @@ class TaskCreate:
             Task.objects.create(
                 title=ph.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('ph').latest('datetime')['ph']),
@@ -350,7 +338,6 @@ class TaskCreate:
             Task.objects.create(
                 title=ph.recommendation1,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('ph').latest('datetime')['ph']),
@@ -365,7 +352,6 @@ class TaskCreate:
             Task.objects.create(
                 title=suspended_solids.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(
@@ -394,7 +380,6 @@ class TaskCreate:
             Task.objects.create(
                 title=suspended_subst.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_subst').latest('datetime')['suspended_subst']),
@@ -409,7 +394,6 @@ class TaskCreate:
             Task.objects.create(
                 title=ph.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('ph').latest('datetime')['ph']),
@@ -424,7 +408,6 @@ class TaskCreate:
             Task.objects.create(
                 title=ph.recommendation1,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('ph').latest('datetime')['ph']),
@@ -439,7 +422,6 @@ class TaskCreate:
             Task.objects.create(
                 title=alkalinity.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('alkalinity').latest('datetime')['alkalinity']),
@@ -454,7 +436,6 @@ class TaskCreate:
             Task.objects.create(
                 title=salt.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('salt').latest('datetime')['salt']),
@@ -469,7 +450,6 @@ class TaskCreate:
             Task.objects.create(
                 title=chlorides.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('chlorides').latest('datetime')['chlorides']),
@@ -484,7 +464,6 @@ class TaskCreate:
             Task.objects.create(
                 title=sulfates.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('sulfates').latest('datetime')['sulfates']),
@@ -518,7 +497,6 @@ class TaskCreate:
             Task.objects.create(
                 title=hardness.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('hardness').latest('datetime')['hardness']),
@@ -533,7 +511,6 @@ class TaskCreate:
             Task.objects.create(
                 title=hardness_calcium.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('hardness_calcium').latest('datetime')['hardness_calcium']),
@@ -548,7 +525,6 @@ class TaskCreate:
             Task.objects.create(
                 title=ph.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('ph').latest('datetime')['ph']),
@@ -563,7 +539,6 @@ class TaskCreate:
             Task.objects.create(
                 title=ph.recommendation1,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('ph').latest('datetime')['ph']),
@@ -578,7 +553,6 @@ class TaskCreate:
             Task.objects.create(
                 title=salt.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('salt').latest('datetime')['salt']),
@@ -593,7 +567,6 @@ class TaskCreate:
             Task.objects.create(
                 title=chlorides.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('chlorides').latest('datetime')['chlorides']),
@@ -608,7 +581,6 @@ class TaskCreate:
             Task.objects.create(
                 title=sulfates.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('sulfates').latest('datetime')['sulfates']),
@@ -623,7 +595,6 @@ class TaskCreate:
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('oil_prod').latest('datetime')['oil_prod']),
@@ -638,7 +609,6 @@ class TaskCreate:
             Task.objects.create(
                 title=suspended_subst.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_subst').latest('datetime')['suspended_subst']),
@@ -653,7 +623,6 @@ class TaskCreate:
             Task.objects.create(
                 title=alkalinity.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('alkalinity').latest('datetime')['alkalinity']),
@@ -668,7 +637,6 @@ class TaskCreate:
             Task.objects.create(
                 title=alkalinity.recommendation1,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('alkalinity').latest('datetime')['alkalinity']),
@@ -698,7 +666,6 @@ class TaskCreate:
             Task.objects.create(
                 title=hardness.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('hardness').latest('datetime')['hardness']),
@@ -713,7 +680,6 @@ class TaskCreate:
             Task.objects.create(
                 title=hardness_calcium.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('hardness_calcium').latest('datetime')['hardness_calcium']),
@@ -728,7 +694,6 @@ class TaskCreate:
             Task.objects.create(
                 title=ph.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('ph').latest('datetime')['ph']),
@@ -743,7 +708,6 @@ class TaskCreate:
             Task.objects.create(
                 title=ph.recommendation1,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('ph').latest('datetime')['ph']),
@@ -758,7 +722,6 @@ class TaskCreate:
             Task.objects.create(
                 title=salt.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('salt').latest('datetime')['salt']),
@@ -773,7 +736,6 @@ class TaskCreate:
             Task.objects.create(
                 title=chlorides.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('chlorides').latest('datetime')['chlorides']),
@@ -788,7 +750,6 @@ class TaskCreate:
             Task.objects.create(
                 title=sulfates.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('sulfates').latest('datetime')['sulfates']),
@@ -803,7 +764,6 @@ class TaskCreate:
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('oil_prod').latest('datetime')['oil_prod']),
@@ -818,7 +778,6 @@ class TaskCreate:
             Task.objects.create(
                 title=suspended_subst.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_subst').latest('datetime')['suspended_subst']),
@@ -833,7 +792,6 @@ class TaskCreate:
             Task.objects.create(
                 title=alkalinity.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('alkalinity').latest('datetime')['alkalinity']),
@@ -848,7 +806,6 @@ class TaskCreate:
             Task.objects.create(
                 title=alkalinity.recommendation1,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('alkalinity').latest('datetime')['alkalinity']),
@@ -885,7 +842,6 @@ class TaskCreate:
                 Task.objects.create(
                     title=suspended_solids.recommendation2,
                     responsible_id=responsible_id,
-                    user_id=responsible_id,
                     deadline=deadline,
                     comp_title=comp_title,
                     comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
@@ -901,7 +857,6 @@ class TaskCreate:
                 Task.objects.create(
                     title=suspended_solids.recommendation2,
                     responsible_id=responsible_id,
-                    user_id=responsible_id,
                     deadline=deadline,
                     comp_title=comp_title,
                     comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
@@ -916,7 +871,6 @@ class TaskCreate:
             Task.objects.create(
                 title=chlorides.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('chlorides').latest('datetime')['chlorides']),
@@ -931,7 +885,6 @@ class TaskCreate:
             Task.objects.create(
                 title=sulfates.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('sulfates').latest('datetime')['sulfates']),
@@ -946,7 +899,6 @@ class TaskCreate:
             Task.objects.create(
                 title=ph.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('ph').latest('datetime')['ph']),
@@ -961,7 +913,6 @@ class TaskCreate:
             Task.objects.create(
                 title=ph.recommendation1,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('ph').latest('datetime')['ph']),
@@ -976,7 +927,6 @@ class TaskCreate:
             Task.objects.create(
                 title=phosphorus.recommendation1,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('phosphorus').latest('datetime')['phosphorus']),
@@ -991,7 +941,6 @@ class TaskCreate:
             Task.objects.create(
                 title=alkalinity.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('alkalinity').latest('datetime')['alkalinity']),
@@ -1006,7 +955,6 @@ class TaskCreate:
             Task.objects.create(
                 title=salt.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('salt').latest('datetime')['salt']),
@@ -1030,7 +978,6 @@ class TaskCreate:
             Task.objects.create(
                 title=chlorine.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('chlorine').latest('datetime')['chlorine']),
@@ -1045,7 +992,6 @@ class TaskCreate:
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('oil_prod').latest('datetime')['oil_prod']),
@@ -1060,7 +1006,6 @@ class TaskCreate:
             Task.objects.create(
                 title=salt.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('salt').latest('datetime')['salt']),
@@ -1083,7 +1028,6 @@ class TaskCreate:
                 Task.objects.create(
                     title=suspended_solids.recommendation2,
                     responsible_id=responsible_id,
-                    user_id=responsible_id,
                     deadline=deadline,
                     comp_title=comp_title,
                     comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
@@ -1099,7 +1043,6 @@ class TaskCreate:
                 Task.objects.create(
                     title=suspended_solids.recommendation2,
                     responsible_id=responsible_id,
-                    user_id=responsible_id,
                     deadline=deadline,
                     comp_title=comp_title,
                     comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
@@ -1121,7 +1064,6 @@ class TaskCreate:
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('oil_prod').latest('datetime')['oil_prod']),
@@ -1144,7 +1086,6 @@ class TaskCreate:
             Task.objects.create(
                 title=oil_prod.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('oil_prod').latest('datetime')['oil_prod']),
@@ -1159,7 +1100,6 @@ class TaskCreate:
             Task.objects.create(
                 title=ph.recommendation2,
                 responsible_id=responsible_id,
-                user_id=responsible_id,
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('ph').latest('datetime')['ph']),
