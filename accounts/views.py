@@ -31,12 +31,13 @@ class ProfileView(PermissionRequiredMixin, View):
         if p == None:
             page = int(1)
         page_obj = p.get_page(page)
-        context = {}
+        context = dict()
         context['heading'] = "Пользователи"
         context['pageview'] = "Пользователи"
         context['users'] = users
         context['page_obj'] = page_obj
         context['form'] = ProfileForm()
+        context['groups'] = Group.objects.all()
         if request.GET.get('userid'):
             pk = request.GET.get('userid')
             user_object = User.objects.get(pk=pk)

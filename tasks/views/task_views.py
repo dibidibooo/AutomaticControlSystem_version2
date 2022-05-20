@@ -30,7 +30,6 @@ class TaskDetailView(DetailView):
         context['statuses'] = Status.objects.all()
         context['users'] = User.objects.all()
         context['changes'] = ChangesTracker.objects.filter(task_id=self.object.id)
-        print(User.objects.filter(groups__name=self.object.responsible))
         return context
 
 
