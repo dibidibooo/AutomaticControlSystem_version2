@@ -42,7 +42,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '2da188c804ec.ngrok.io']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '2da188c804ec.ngrok.io', 'vhr.enertek.kz']
 
 
 # Application definition
@@ -119,9 +119,9 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': env.str('NAME'),
-        'USER': env.str('USER'),
+        'USER': 'postgres',
         'PASSWORD': env.str('PASSWORD'),
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         'PORT': '5432',
     }
 }
@@ -203,7 +203,7 @@ ACCOUNT_FORMS = {
     'reset_password_from_key': 'pages.forms.PasswordResetKeyForm'
 }
 
-LOGIN_REDIRECT_URL = '/'    
+LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 # login url
 LOGIN_URL = 'account_login'

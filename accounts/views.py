@@ -1,9 +1,11 @@
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.models import User, Group
+from django.contrib.auth.views import LoginView
 from django.core.paginator import Paginator
 from django.http import HttpResponse
 from django.shortcuts import redirect, render
+from django.urls import reverse
 from django.views import View
 from django.views.generic import DetailView
 
@@ -88,3 +90,16 @@ class ProfileView(PermissionRequiredMixin, View):
                 obj.delete()
                 return HttpResponse()
             return redirect('accounts-users')
+
+
+class CustomLoginView(LoginView):
+    template_name = 'account/login.html'
+
+    def get_success_url(self):
+        if self.request.user.is_superuser:
+            return reverse('analyzes_results')
+        elif self.request.user.profile.role_id == 1:
+            return reverse('dashboard')
+        elif self.request.user.profile.role_id == 4:
+            return reverse('analyzes_create')
+        return reverse('analyzes_results')

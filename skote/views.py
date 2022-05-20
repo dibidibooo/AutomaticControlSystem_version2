@@ -3,14 +3,16 @@ from datetime import datetime
 from django.http import JsonResponse
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views import View
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from allauth.account.views import PasswordSetView, PasswordChangeView
 from django.urls import reverse_lazy
 
 from tasks.models import Task, Comment, ChangesTracker
 
 
-class DashboardView(LoginRequiredMixin, View):
+class DashboardView(PermissionRequiredMixin, View):
+    permission_required = 'sites.view_site'
+
     def get(self, request):
         tasks = Task.objects.all()
         context = {}
@@ -69,7 +71,7 @@ class DashboardView(LoginRequiredMixin, View):
 
     @staticmethod
     def get_escalated_tasks():
-        changes_history = ChangesTracker.objects.filter(text__contains='изменил исполнителя на director')
+        changes_history = ChangesTracker.objects.filter(changed_to__icontains='директор')
         changes_list = []
         for item in changes_history:
             changes_list.append(item.task_id)

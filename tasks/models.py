@@ -1,6 +1,6 @@
 from django.conf import settings
 from django.contrib.auth import get_user_model
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.db import models
 from django.template import loader
 from model_utils import FieldTracker
@@ -12,7 +12,7 @@ class Task(models.Model):
     title = models.CharField(max_length=100, verbose_name='Задача')
     user = models.ForeignKey(get_user_model(), related_name='task_assignee', null=True, blank=True,
                              on_delete=models.PROTECT, verbose_name='Исполнитель')
-    responsible = models.ForeignKey(get_user_model(), related_name='task_responsible',
+    responsible = models.ForeignKey(Group, related_name='task_responsible',
                                     on_delete=models.CASCADE, verbose_name='Ответственный')
     start_date = models.DateTimeField(auto_now_add=True, verbose_name='Дата назначения задачи')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата и время обновления')
