@@ -40,7 +40,9 @@
                         <option value="" selected>-----------</option>
                     {% endif %}
                     {% for user in users %}
-                        <option value="{{ user.pk }}" {% if user == task.user %}selected{% endif %}>{{ user }}</option>
+                        {% if user.username != 'admin' and user.profile.role_id != 4 %}
+                            <option value="{{ user.pk }}" {% if user == task.user %}selected{% endif %}>{{ user }}</option>
+                        {% endif %}
                     {% endfor %}
                 </select>
             </div>
