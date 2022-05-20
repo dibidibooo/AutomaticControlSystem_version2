@@ -1,3 +1,4 @@
+from django.contrib.auth import get_user_model
 from django.db import models
 
 
@@ -76,6 +77,7 @@ class ComponentsSite(models.Model):
     plant_unit = models.ForeignKey('projects.PlantUnit', on_delete=models.CASCADE, related_name='input_component')
     sampling_site = models.ForeignKey('projects.SamplingSite', on_delete=models.CASCADE, related_name='input_component')
     water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component')
+    user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='input_component')
 
 
 class Notification(models.Model):

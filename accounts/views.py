@@ -26,7 +26,6 @@ class ProfileView(PermissionRequiredMixin, View):
 
     def get(self, request):
         users = User.objects.order_by('id')
-        print(Group.objects.all())
         p = Paginator(users, 8)
         page = request.GET.get('page')
         if p == None:
