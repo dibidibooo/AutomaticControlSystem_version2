@@ -21,7 +21,7 @@
                         <!-- task card -->
                         {% for task in tasks %}
                             {% if task.status_id == 1 %}
-                                {% if request.user == task.user or request.user == task.responsible %}
+                                {% if request.user == task.user or request.user.profile.role.id == task.responsible.id %}
                                     <div class="card task-box" id="{{ task.id }}">
                                         <div class="card-body">
                                             <div class="float-end ms-2">
@@ -94,7 +94,7 @@
                         <!-- task card -->
                         {% for task in tasks %}
                             {% if task.status_id == 2 %}
-                                {% if request.user == task.user or request.user == task.responsible %}
+                                {% if request.user == task.user or request.user.profile.role.id == task.responsible.id %}
                                     <div class="card task-box" id="{{ task.id }}">
                                         <div class="card-body">
                                             <div class="float-end ms-2">
@@ -163,7 +163,7 @@
                         <!-- task card -->
                         {% for task in tasks %}
                             {% if task.status_id == 3 %}
-                                {% if request.user == task.user or request.user == task.responsible %}
+                                {% if request.user == task.user or request.user.profile.role.id == task.responsible.id %}
                                     <div class="card task-box" id="{{ task.id }}">
                                         <div class="card-body">
                                             <div class="float-end ms-2">
@@ -232,7 +232,7 @@
                         <!-- task card -->
                         {% for task in tasks %}
                             {% if task.status_id == 4 %}
-                                {% if request.user == task.user or request.user == task.responsible %}
+                                {% if request.user == task.user or request.user.profile.role.id == task.responsible.id %}
                                     <div class="card task-box" id="{{ task.id }}">
                                         <div class="card-body">
                                             <div class="float-end ms-2">
