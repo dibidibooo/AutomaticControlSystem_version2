@@ -53,7 +53,9 @@ class Task(models.Model):
             'plant_unit': self.plant_unit,
         }
         html_message = loader.render_to_string('emails/task_create.html', val)
-        to_email = [self.responsible.email, ]
+        to_email = list()
+        for responsible in User.objects.filter(groups__name=self.responsible):
+            to_email.append(responsible.email)
         subject = f'Назначена новая задача'
 
         if self.pk is None:
@@ -83,7 +85,12 @@ class Comment(models.Model):
             'text': self.text
         }
         html_message = loader.render_to_string('emails/comment_create.html', val)
-        to_email = [self.task.user.email, ]
+
+        to_email = list()
+        to_email.append(self.task.user.email)
+        for responsible in User.objects.filter(groups__name=self.task.responsible):
+            to_email.append(responsible.email)
+
         subject = f'Новый комментарий в задаче #{self.task.id}'
 
         if self.pk is None:

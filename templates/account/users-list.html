@@ -206,7 +206,7 @@
                                     <label for="id_role"><b>Роль пользователя</b></label>
                                     <select class="form-select" name="role" id="id_role">
                                         <option value="" selected="">---------</option>
-                                        {% for group in user.groups.all %}
+                                        {% for group in groups %}
                                             <option value="{{ group.pk }}">{{ group.name }}</option>
                                         {% endfor %}
                                     </select>

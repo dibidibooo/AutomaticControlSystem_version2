@@ -37,6 +37,7 @@ class ProfileView(PermissionRequiredMixin, View):
         context['users'] = users
         context['page_obj'] = page_obj
         context['form'] = ProfileForm()
+        context['groups'] = Group.objects.all()
         if request.GET.get('userid'):
             pk = request.GET.get('userid')
             user_object = User.objects.get(pk=pk)

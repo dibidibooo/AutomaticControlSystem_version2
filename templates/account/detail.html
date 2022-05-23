@@ -21,10 +21,10 @@
         <input class="form-control" type="text" name="position" id="position" placeholder="Должность" value="{{ user_obj.profile.position }}">
     </div>
     <div class="mb-3">
-        <label class="form-label" for="role_id"><b>Роль пользователя</b></label>
-        <select class="form-select" name="role" id="role_id">
-            {% for group in user.groups.all %}
-                <option value="{{ group.pk }}" {% if group == user_obj.profile.role %}selected{% endif %}>{{ group }}</option>
+        <label class="form-label" for="id_role"><b>Роль пользователя</b></label>
+        <select class="form-select" name="role" id="id_role">
+            {% for group in groups %}
+                <option value="{{ group.pk }}" {% if group.pk == user_obj.profile.role_id %}selected{% endif %}>{{ group.name }}</option>
             {% endfor %}
         </select>
     </div>
