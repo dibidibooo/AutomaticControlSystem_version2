@@ -119,7 +119,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             )
             return redirect('tasks-kanbanboard')
         else:
-            # Изменение статуса в бд при перетаскивании карточки задачи
+            # Изменение статуса при перетаскивании (drag and drop) карточки задачи
             status_id = int(request.POST.get('status'))
             task_id = int(request.POST.get('task_id'))
             task = get_object_or_404(Task, pk=task_id)

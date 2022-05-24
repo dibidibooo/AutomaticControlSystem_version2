@@ -1,6 +1,6 @@
 from datetime import datetime
 
-from django.http import JsonResponse
+from django.http import JsonResponse, Http404
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
@@ -26,14 +26,50 @@ class DashboardView(PermissionRequiredMixin, View):
         return render(request, 'dashboard/dashboard.html', context)
 
     def post(self, request):
+        # Редактирование карточки задачи
         if 'edittask' in request.POST:
             id = request.POST['id']
             deadline = request.POST['deadline']
             status = request.POST['status']
             user = request.POST['user']
-            task = Task.objects.filter(id=id)
-            task.update(deadline=deadline, status=status, user_id=int(user))
+            task = Task.objects.get(id=id)
+            task.deadline = deadline
+            task.status_id = int(status)
+            try:
+                task.user_id = int(user)
+            except ValueError:
+                raise Http404('Пользователь не назначен!')
+
+            if task.tracker.has_changed('status_id'):
+                ChangesTracker.objects.create(
+                    task_id=task.id,
+                    text="изменил статус на",
+                    who_changed=request.user,
+                    changed_to=task.status
+                )
+            if task.tracker.has_changed('user_id'):
+                ChangesTracker.objects.create(
+                    task_id=task.id,
+                    text="изменил исполнителя на",
+                    who_changed=request.user,
+                    changed_to=f"{task.user.profile.position}, {task.user.first_name} {task.user.last_name}"
+                )
+            if task.deadline:
+                previous_date = task.tracker.previous('deadline').strftime('%Y-%m-%d %H:%M')
+                current_date = " ".join(task.deadline.split("T"))
+                if task.tracker.has_changed('deadline') and (previous_date != current_date):
+                    ChangesTracker.objects.create(
+                        task_id=task.id,
+                        text="изменил срок исполнения на",
+                        who_changed=request.user,
+                        changed_to=datetime.strptime(task.deadline, '%Y-%m-%dT%H:%M').strftime('%Y-%m-%d %H:%M'),
+                        failure_reason=request.POST['failure_reason']
+                    )
+
+            task.save()
             return redirect('dashboard')
+
+        # Добавление комментариев
         elif 'add_comment_button' in request.POST:
             id = request.POST['id']
             task = Task.objects.get(id=id)
@@ -44,6 +80,7 @@ class DashboardView(PermissionRequiredMixin, View):
             )
             return redirect('dashboard')
         else:
+            # Изменение статуса при перетаскивании (drag and drop) карточки задачи
             status_id = int(request.POST.get('status'))
             task_id = int(request.POST.get('task_id'))
             task = get_object_or_404(Task, pk=task_id)
