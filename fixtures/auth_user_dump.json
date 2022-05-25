@@ -1,288 +1,19 @@
 [
 {
-  "model": "auth.group",
-  "pk": 1,
-  "fields": {
-    "name": "Топ менеджмент",
-    "permissions": [
-      [
-        "view_component",
-        "projects",
-        "component"
-      ],
-      [
-        "view_componentssite1",
-        "projects",
-        "componentssite1"
-      ],
-      [
-        "view_notification",
-        "projects",
-        "notification"
-      ],
-      [
-        "view_plantunit",
-        "projects",
-        "plantunit"
-      ],
-      [
-        "view_samplingsite",
-        "projects",
-        "samplingsite"
-      ],
-      [
-        "change_status",
-        "projects",
-        "status"
-      ],
-      [
-        "view_status",
-        "projects",
-        "status"
-      ],
-      [
-        "view_task",
-        "projects",
-        "task"
-      ],
-      [
-        "view_watertype",
-        "projects",
-        "watertype"
-      ],
-      [
-        "add_comment",
-        "tasks",
-        "comment"
-      ],
-      [
-        "change_comment",
-        "tasks",
-        "comment"
-      ],
-      [
-        "delete_comment",
-        "tasks",
-        "comment"
-      ],
-      [
-        "view_comment",
-        "tasks",
-        "comment"
-      ]
-    ]
-  }
-},
-{
-  "model": "auth.group",
-  "pk": 2,
-  "fields": {
-    "name": "Сотрудники",
-    "permissions": [
-      [
-        "view_component",
-        "projects",
-        "component"
-      ],
-      [
-        "view_componentssite1",
-        "projects",
-        "componentssite1"
-      ],
-      [
-        "view_notification",
-        "projects",
-        "notification"
-      ],
-      [
-        "view_plantunit",
-        "projects",
-        "plantunit"
-      ],
-      [
-        "view_samplingsite",
-        "projects",
-        "samplingsite"
-      ],
-      [
-        "change_status",
-        "projects",
-        "status"
-      ],
-      [
-        "view_status",
-        "projects",
-        "status"
-      ],
-      [
-        "view_task",
-        "projects",
-        "task"
-      ],
-      [
-        "view_watertype",
-        "projects",
-        "watertype"
-      ],
-      [
-        "add_comment",
-        "tasks",
-        "comment"
-      ],
-      [
-        "change_comment",
-        "tasks",
-        "comment"
-      ],
-      [
-        "delete_comment",
-        "tasks",
-        "comment"
-      ],
-      [
-        "view_comment",
-        "tasks",
-        "comment"
-      ]
-    ]
-  }
-},
-{
-  "model": "auth.group",
-  "pk": 3,
-  "fields": {
-    "name": "Начальник установки",
-    "permissions": [
-      [
-        "add_additionalcomponents",
-        "projects",
-        "additionalcomponents"
-      ],
-      [
-        "view_component",
-        "projects",
-        "component"
-      ],
-      [
-        "view_componentssite1",
-        "projects",
-        "componentssite1"
-      ],
-      [
-        "view_notification",
-        "projects",
-        "notification"
-      ],
-      [
-        "view_plantunit",
-        "projects",
-        "plantunit"
-      ],
-      [
-        "view_samplingsite",
-        "projects",
-        "samplingsite"
-      ],
-      [
-        "change_status",
-        "projects",
-        "status"
-      ],
-      [
-        "view_status",
-        "projects",
-        "status"
-      ],
-      [
-        "add_task",
-        "projects",
-        "task"
-      ],
-      [
-        "change_task",
-        "projects",
-        "task"
-      ],
-      [
-        "delete_task",
-        "projects",
-        "task"
-      ],
-      [
-        "view_task",
-        "projects",
-        "task"
-      ],
-      [
-        "view_watertype",
-        "projects",
-        "watertype"
-      ],
-      [
-        "add_comment",
-        "tasks",
-        "comment"
-      ],
-      [
-        "change_comment",
-        "tasks",
-        "comment"
-      ],
-      [
-        "delete_comment",
-        "tasks",
-        "comment"
-      ],
-      [
-        "view_comment",
-        "tasks",
-        "comment"
-      ]
-    ]
-  }
-},
-{
-  "model": "auth.group",
-  "pk": 4,
-  "fields": {
-    "name": "Лаборант",
-    "permissions": [
-      [
-        "add_componentssite1",
-        "projects",
-        "componentssite1"
-      ]
-    ]
-  }
-},
-{
   "model": "auth.user",
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$260000$A0ZsHtgHe2BPhUwLZrLSmE$KnVy1FMUUMlSVc9FdCOVFBtiW3mEHAHvoDuah7gES0s=",
-    "last_login": "2022-05-12T10:31:27.449",
+    "last_login": "2022-05-24T10:22:56.955",
     "is_superuser": true,
     "username": "admin",
     "first_name": "admin",
     "last_name": "adminov",
-    "email": "",
+    "email": "admin@example.com",
     "is_staff": true,
     "is_active": true,
     "date_joined": "2022-03-29T17:34:47",
-    "groups": [
-      [
-        "Топ менеджмент"
-      ],
-      [
-        "Сотрудники"
-      ],
-      [
-        "Начальник установки"
-      ],
-      [
-        "Лаборант"
-      ]
-    ],
+    "groups": [],
     "user_permissions": [
       [
         "add_emailaddress",
@@ -1005,6 +736,134 @@
         "comment"
       ]
     ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 50,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$lPKVNCWRtxmR8euJa1LxLP$lrLJuVFmsvtq9WIVlH7BlNEThYN6dzZZlOr7Zo9PRPk=",
+    "last_login": "2022-05-23T15:18:18.905",
+    "is_superuser": true,
+    "username": "ltsel",
+    "first_name": "ludmila",
+    "last_name": "celuiko",
+    "email": "kia-lts@mail.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-05-17T12:13:51",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 51,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$3ajB28SpYfO0CrlfiYFKZs$dnRvfsR5XmrjWGOR4nDhpFe6kzJ1xvfppfqFNa6KTcM=",
+    "last_login": "2022-05-23T18:39:52.304",
+    "is_superuser": false,
+    "username": "unit_head1",
+    "first_name": "Иван",
+    "last_name": "Иванов",
+    "email": "user@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-05-17T12:37:19",
+    "groups": [
+      [
+        "Начальник установки Водоблок-2"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 52,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$X2yrrEAmZvSjXpHLPyC5ct$QsIdZDLZEGJFsGf91F6J2dlpE80F7wLQTxWzRuCx3iA=",
+    "last_login": "2022-05-23T15:28:36.893",
+    "is_superuser": false,
+    "username": "unit_head2",
+    "first_name": "Petr",
+    "last_name": "Petrov",
+    "email": "user2@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-05-17T12:42:43.877",
+    "groups": [
+      [
+        "Начальник установки БОВ-1, БОВ-2"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 53,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$eDHBRVNj0IHVCeMwgdVdQX$gUFFn7DGRSB1ygrIn8+Gn4FZeyc/fo4CmgnP8ZdR34o=",
+    "last_login": "2022-05-23T15:31:58.783",
+    "is_superuser": false,
+    "username": "dir",
+    "first_name": "dir",
+    "last_name": "dir",
+    "email": "dir@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-05-19T15:01:11.572",
+    "groups": [
+      [
+        "Топ менеджмент"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 54,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$1w9qs2htdODnGnlkoMhrgv$iOBQQvUqa+bflHixjYsN2g18mG8YVakxTKxDo3OTlkw=",
+    "last_login": "2022-05-19T16:06:05.744",
+    "is_superuser": false,
+    "username": "lab",
+    "first_name": "lab",
+    "last_name": "lab",
+    "email": "lab@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-05-19T15:02:12.375",
+    "groups": [
+      [
+        "Лаборант"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 55,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$lNH369SlUCtoVAdLcbAHOX$uMfOtEZkQa54u39Wu/GUlPc5b3IcuOdnt4aSG0ILn8Y=",
+    "last_login": "2022-05-23T15:30:17.959",
+    "is_superuser": false,
+    "username": "cons",
+    "first_name": "consultant",
+    "last_name": "consultant",
+    "email": "cons@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-05-23T15:25:50.893",
+    "groups": [
+      [
+        "Сотрудники"
+      ]
+    ],
+    "user_permissions": []
   }
 }
 ]
