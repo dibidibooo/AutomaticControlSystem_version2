@@ -1,0 +1,869 @@
+[
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$A0ZsHtgHe2BPhUwLZrLSmE$KnVy1FMUUMlSVc9FdCOVFBtiW3mEHAHvoDuah7gES0s=",
+    "last_login": "2022-05-24T10:22:56.955",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "admin",
+    "last_name": "adminov",
+    "email": "admin@example.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-03-29T17:34:47",
+    "groups": [],
+    "user_permissions": [
+      [
+        "add_emailaddress",
+        "account",
+        "emailaddress"
+      ],
+      [
+        "change_emailaddress",
+        "account",
+        "emailaddress"
+      ],
+      [
+        "delete_emailaddress",
+        "account",
+        "emailaddress"
+      ],
+      [
+        "view_emailaddress",
+        "account",
+        "emailaddress"
+      ],
+      [
+        "add_emailconfirmation",
+        "account",
+        "emailconfirmation"
+      ],
+      [
+        "change_emailconfirmation",
+        "account",
+        "emailconfirmation"
+      ],
+      [
+        "delete_emailconfirmation",
+        "account",
+        "emailconfirmation"
+      ],
+      [
+        "view_emailconfirmation",
+        "account",
+        "emailconfirmation"
+      ],
+      [
+        "add_profile",
+        "accounts",
+        "profile"
+      ],
+      [
+        "change_profile",
+        "accounts",
+        "profile"
+      ],
+      [
+        "delete_profile",
+        "accounts",
+        "profile"
+      ],
+      [
+        "view_profile",
+        "accounts",
+        "profile"
+      ],
+      [
+        "add_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "change_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "delete_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "view_logentry",
+        "admin",
+        "logentry"
+      ],
+      [
+        "add_group",
+        "auth",
+        "group"
+      ],
+      [
+        "change_group",
+        "auth",
+        "group"
+      ],
+      [
+        "delete_group",
+        "auth",
+        "group"
+      ],
+      [
+        "view_group",
+        "auth",
+        "group"
+      ],
+      [
+        "add_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "change_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "delete_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "view_permission",
+        "auth",
+        "permission"
+      ],
+      [
+        "add_user",
+        "auth",
+        "user"
+      ],
+      [
+        "change_user",
+        "auth",
+        "user"
+      ],
+      [
+        "delete_user",
+        "auth",
+        "user"
+      ],
+      [
+        "view_user",
+        "auth",
+        "user"
+      ],
+      [
+        "add_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "change_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "delete_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "view_contenttype",
+        "contenttypes",
+        "contenttype"
+      ],
+      [
+        "add_customers",
+        "ecommerce",
+        "customers"
+      ],
+      [
+        "change_customers",
+        "ecommerce",
+        "customers"
+      ],
+      [
+        "delete_customers",
+        "ecommerce",
+        "customers"
+      ],
+      [
+        "view_customers",
+        "ecommerce",
+        "customers"
+      ],
+      [
+        "add_component",
+        "projects",
+        "component"
+      ],
+      [
+        "change_component",
+        "projects",
+        "component"
+      ],
+      [
+        "delete_component",
+        "projects",
+        "component"
+      ],
+      [
+        "view_component",
+        "projects",
+        "component"
+      ],
+      [
+        "add_componentssite1",
+        "projects",
+        "componentssite1"
+      ],
+      [
+        "change_componentssite1",
+        "projects",
+        "componentssite1"
+      ],
+      [
+        "delete_componentssite1",
+        "projects",
+        "componentssite1"
+      ],
+      [
+        "view_componentssite1",
+        "projects",
+        "componentssite1"
+      ],
+      [
+        "add_componentssite10",
+        "projects",
+        "componentssite10"
+      ],
+      [
+        "change_componentssite10",
+        "projects",
+        "componentssite10"
+      ],
+      [
+        "delete_componentssite10",
+        "projects",
+        "componentssite10"
+      ],
+      [
+        "view_componentssite10",
+        "projects",
+        "componentssite10"
+      ],
+      [
+        "add_componentssite11",
+        "projects",
+        "componentssite11"
+      ],
+      [
+        "change_componentssite11",
+        "projects",
+        "componentssite11"
+      ],
+      [
+        "delete_componentssite11",
+        "projects",
+        "componentssite11"
+      ],
+      [
+        "view_componentssite11",
+        "projects",
+        "componentssite11"
+      ],
+      [
+        "add_componentssite12",
+        "projects",
+        "componentssite12"
+      ],
+      [
+        "change_componentssite12",
+        "projects",
+        "componentssite12"
+      ],
+      [
+        "delete_componentssite12",
+        "projects",
+        "componentssite12"
+      ],
+      [
+        "view_componentssite12",
+        "projects",
+        "componentssite12"
+      ],
+      [
+        "add_componentssite13",
+        "projects",
+        "componentssite13"
+      ],
+      [
+        "change_componentssite13",
+        "projects",
+        "componentssite13"
+      ],
+      [
+        "delete_componentssite13",
+        "projects",
+        "componentssite13"
+      ],
+      [
+        "view_componentssite13",
+        "projects",
+        "componentssite13"
+      ],
+      [
+        "add_componentssite14",
+        "projects",
+        "componentssite14"
+      ],
+      [
+        "change_componentssite14",
+        "projects",
+        "componentssite14"
+      ],
+      [
+        "delete_componentssite14",
+        "projects",
+        "componentssite14"
+      ],
+      [
+        "view_componentssite14",
+        "projects",
+        "componentssite14"
+      ],
+      [
+        "add_componentssite2",
+        "projects",
+        "componentssite2"
+      ],
+      [
+        "change_componentssite2",
+        "projects",
+        "componentssite2"
+      ],
+      [
+        "delete_componentssite2",
+        "projects",
+        "componentssite2"
+      ],
+      [
+        "view_componentssite2",
+        "projects",
+        "componentssite2"
+      ],
+      [
+        "add_componentssite3",
+        "projects",
+        "componentssite3"
+      ],
+      [
+        "change_componentssite3",
+        "projects",
+        "componentssite3"
+      ],
+      [
+        "delete_componentssite3",
+        "projects",
+        "componentssite3"
+      ],
+      [
+        "view_componentssite3",
+        "projects",
+        "componentssite3"
+      ],
+      [
+        "add_componentssite4",
+        "projects",
+        "componentssite4"
+      ],
+      [
+        "change_componentssite4",
+        "projects",
+        "componentssite4"
+      ],
+      [
+        "delete_componentssite4",
+        "projects",
+        "componentssite4"
+      ],
+      [
+        "view_componentssite4",
+        "projects",
+        "componentssite4"
+      ],
+      [
+        "add_componentssite5",
+        "projects",
+        "componentssite5"
+      ],
+      [
+        "change_componentssite5",
+        "projects",
+        "componentssite5"
+      ],
+      [
+        "delete_componentssite5",
+        "projects",
+        "componentssite5"
+      ],
+      [
+        "view_componentssite5",
+        "projects",
+        "componentssite5"
+      ],
+      [
+        "add_componentssite6",
+        "projects",
+        "componentssite6"
+      ],
+      [
+        "change_componentssite6",
+        "projects",
+        "componentssite6"
+      ],
+      [
+        "delete_componentssite6",
+        "projects",
+        "componentssite6"
+      ],
+      [
+        "view_componentssite6",
+        "projects",
+        "componentssite6"
+      ],
+      [
+        "add_componentssite7",
+        "projects",
+        "componentssite7"
+      ],
+      [
+        "change_componentssite7",
+        "projects",
+        "componentssite7"
+      ],
+      [
+        "delete_componentssite7",
+        "projects",
+        "componentssite7"
+      ],
+      [
+        "view_componentssite7",
+        "projects",
+        "componentssite7"
+      ],
+      [
+        "add_componentssite8",
+        "projects",
+        "componentssite8"
+      ],
+      [
+        "change_componentssite8",
+        "projects",
+        "componentssite8"
+      ],
+      [
+        "delete_componentssite8",
+        "projects",
+        "componentssite8"
+      ],
+      [
+        "view_componentssite8",
+        "projects",
+        "componentssite8"
+      ],
+      [
+        "add_componentssite9",
+        "projects",
+        "componentssite9"
+      ],
+      [
+        "change_componentssite9",
+        "projects",
+        "componentssite9"
+      ],
+      [
+        "delete_componentssite9",
+        "projects",
+        "componentssite9"
+      ],
+      [
+        "view_componentssite9",
+        "projects",
+        "componentssite9"
+      ],
+      [
+        "add_notification",
+        "projects",
+        "notification"
+      ],
+      [
+        "change_notification",
+        "projects",
+        "notification"
+      ],
+      [
+        "delete_notification",
+        "projects",
+        "notification"
+      ],
+      [
+        "view_notification",
+        "projects",
+        "notification"
+      ],
+      [
+        "add_plantunit",
+        "projects",
+        "plantunit"
+      ],
+      [
+        "change_plantunit",
+        "projects",
+        "plantunit"
+      ],
+      [
+        "delete_plantunit",
+        "projects",
+        "plantunit"
+      ],
+      [
+        "view_plantunit",
+        "projects",
+        "plantunit"
+      ],
+      [
+        "add_samplingsite",
+        "projects",
+        "samplingsite"
+      ],
+      [
+        "change_samplingsite",
+        "projects",
+        "samplingsite"
+      ],
+      [
+        "delete_samplingsite",
+        "projects",
+        "samplingsite"
+      ],
+      [
+        "view_samplingsite",
+        "projects",
+        "samplingsite"
+      ],
+      [
+        "add_status",
+        "projects",
+        "status"
+      ],
+      [
+        "change_status",
+        "projects",
+        "status"
+      ],
+      [
+        "delete_status",
+        "projects",
+        "status"
+      ],
+      [
+        "view_status",
+        "projects",
+        "status"
+      ],
+      [
+        "add_task",
+        "projects",
+        "task"
+      ],
+      [
+        "change_task",
+        "projects",
+        "task"
+      ],
+      [
+        "delete_task",
+        "projects",
+        "task"
+      ],
+      [
+        "view_task",
+        "projects",
+        "task"
+      ],
+      [
+        "add_watertype",
+        "projects",
+        "watertype"
+      ],
+      [
+        "change_watertype",
+        "projects",
+        "watertype"
+      ],
+      [
+        "delete_watertype",
+        "projects",
+        "watertype"
+      ],
+      [
+        "view_watertype",
+        "projects",
+        "watertype"
+      ],
+      [
+        "add_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "change_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "delete_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "view_session",
+        "sessions",
+        "session"
+      ],
+      [
+        "add_site",
+        "sites",
+        "site"
+      ],
+      [
+        "change_site",
+        "sites",
+        "site"
+      ],
+      [
+        "delete_site",
+        "sites",
+        "site"
+      ],
+      [
+        "view_site",
+        "sites",
+        "site"
+      ],
+      [
+        "add_socialaccount",
+        "socialaccount",
+        "socialaccount"
+      ],
+      [
+        "change_socialaccount",
+        "socialaccount",
+        "socialaccount"
+      ],
+      [
+        "delete_socialaccount",
+        "socialaccount",
+        "socialaccount"
+      ],
+      [
+        "view_socialaccount",
+        "socialaccount",
+        "socialaccount"
+      ],
+      [
+        "add_socialapp",
+        "socialaccount",
+        "socialapp"
+      ],
+      [
+        "change_socialapp",
+        "socialaccount",
+        "socialapp"
+      ],
+      [
+        "delete_socialapp",
+        "socialaccount",
+        "socialapp"
+      ],
+      [
+        "view_socialapp",
+        "socialaccount",
+        "socialapp"
+      ],
+      [
+        "add_socialtoken",
+        "socialaccount",
+        "socialtoken"
+      ],
+      [
+        "change_socialtoken",
+        "socialaccount",
+        "socialtoken"
+      ],
+      [
+        "delete_socialtoken",
+        "socialaccount",
+        "socialtoken"
+      ],
+      [
+        "view_socialtoken",
+        "socialaccount",
+        "socialtoken"
+      ],
+      [
+        "add_comment",
+        "tasks",
+        "comment"
+      ],
+      [
+        "change_comment",
+        "tasks",
+        "comment"
+      ],
+      [
+        "delete_comment",
+        "tasks",
+        "comment"
+      ],
+      [
+        "view_comment",
+        "tasks",
+        "comment"
+      ]
+    ]
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 50,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$lPKVNCWRtxmR8euJa1LxLP$lrLJuVFmsvtq9WIVlH7BlNEThYN6dzZZlOr7Zo9PRPk=",
+    "last_login": "2022-05-23T15:18:18.905",
+    "is_superuser": true,
+    "username": "ltsel",
+    "first_name": "ludmila",
+    "last_name": "celuiko",
+    "email": "kia-lts@mail.ru",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2022-05-17T12:13:51",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 51,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$3ajB28SpYfO0CrlfiYFKZs$dnRvfsR5XmrjWGOR4nDhpFe6kzJ1xvfppfqFNa6KTcM=",
+    "last_login": "2022-05-23T18:39:52.304",
+    "is_superuser": false,
+    "username": "unit_head1",
+    "first_name": "Иван",
+    "last_name": "Иванов",
+    "email": "user@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-05-17T12:37:19",
+    "groups": [
+      [
+        "Начальник установки Водоблок-2"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 52,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$X2yrrEAmZvSjXpHLPyC5ct$QsIdZDLZEGJFsGf91F6J2dlpE80F7wLQTxWzRuCx3iA=",
+    "last_login": "2022-05-23T15:28:36.893",
+    "is_superuser": false,
+    "username": "unit_head2",
+    "first_name": "Petr",
+    "last_name": "Petrov",
+    "email": "user2@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-05-17T12:42:43.877",
+    "groups": [
+      [
+        "Начальник установки БОВ-1, БОВ-2"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 53,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$eDHBRVNj0IHVCeMwgdVdQX$gUFFn7DGRSB1ygrIn8+Gn4FZeyc/fo4CmgnP8ZdR34o=",
+    "last_login": "2022-05-23T15:31:58.783",
+    "is_superuser": false,
+    "username": "dir",
+    "first_name": "dir",
+    "last_name": "dir",
+    "email": "dir@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-05-19T15:01:11.572",
+    "groups": [
+      [
+        "Топ менеджмент"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 54,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$1w9qs2htdODnGnlkoMhrgv$iOBQQvUqa+bflHixjYsN2g18mG8YVakxTKxDo3OTlkw=",
+    "last_login": "2022-05-19T16:06:05.744",
+    "is_superuser": false,
+    "username": "lab",
+    "first_name": "lab",
+    "last_name": "lab",
+    "email": "lab@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-05-19T15:02:12.375",
+    "groups": [
+      [
+        "Лаборант"
+      ]
+    ],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 55,
+  "fields": {
+    "password": "pbkdf2_sha256$260000$lNH369SlUCtoVAdLcbAHOX$uMfOtEZkQa54u39Wu/GUlPc5b3IcuOdnt4aSG0ILn8Y=",
+    "last_login": "2022-05-23T15:30:17.959",
+    "is_superuser": false,
+    "username": "cons",
+    "first_name": "consultant",
+    "last_name": "consultant",
+    "email": "cons@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2022-05-23T15:25:50.893",
+    "groups": [
+      [
+        "Сотрудники"
+      ]
+    ],
+    "user_permissions": []
+  }
+}
+]

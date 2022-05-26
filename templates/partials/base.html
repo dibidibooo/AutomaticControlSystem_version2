@@ -1,14 +1,11 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en" >
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>{{heading}} | Automatic Control System</title>
-
     <!-- App favicon -->
     <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
     {% block css %}
@@ -27,8 +24,6 @@
     </style>
     {% endblock css %}
 </head>
-
-
 <body data-sidebar="dark">
     <!-- Begin page -->
 <div id="preloader"> <div id="status"> <div class="spinner-chase"> <div class="chase-dot"></div> <div class="chase-dot"></div> <div class="chase-dot"></div> <div class="chase-dot"></div> <div class="chase-dot"></div> <div class="chase-dot"></div> </div> </div> </div>    <div id="layout-wrapper">
@@ -68,7 +63,6 @@
                     </div>
                     <!-- end page title -->
                     {% block contents %}
-
                     {% endblock %}
                 </div>
                 <!-- container-fluid -->
@@ -83,8 +77,6 @@
     <!-- END layout-wrapper -->
     {% block Subscribe %}
     {% endblock %}
-
-
             {% block javascript %}
             <!-- JAVASCRIPT -->
             <script src="{% static 'libs/jquery/dist/jquery.min.js' %}"></script>
@@ -92,13 +84,9 @@
             <script src="{% static 'libs/metismenu/dist/metisMenu.min.js' %}"></script>
             <script src="{% static 'libs/simplebar/dist/simplebar.min.js' %}"></script>
             <script src="{% static 'libs/node-waves/dist/waves.min.js' %}"></script>
-
-
             {% block extra_javascript %}
             {% endblock %}
-
             <script src="{% static 'js/app.js' %}"></script>
             {% endblock javascript %}
         </body>
-
     </html>
