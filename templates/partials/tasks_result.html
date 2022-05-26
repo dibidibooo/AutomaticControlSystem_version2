@@ -62,7 +62,6 @@
                                             <span class="badge rounded-pill badge-soft-success font-size-12">{{ task.status }}</span>
                                             {% endif %}
                                         </div>
-
                                         <div>
                                             <p class="fw-bold mb-2">
                                                 <a href="{% url 'tasks-kanbanboard' %}" class="text-dark" id="task-name">
@@ -90,7 +89,6 @@
                         </div>
                     </ul>
                 </div>
-
                 <div class="text-center mt-4">
                     <a href="{% url 'tasks-kanbanboard' %}" class="btn btn-primary waves-effect waves-light btn-sm">
                         Перейти в раздел редактирования
@@ -102,8 +100,6 @@
         <!-- end card -->
     </div>
 </div>
-
-
 {% block extra_javascript %}
 <!-- Kanban -->
 <script src="{% static 'js/pages/task-kanban.init.js' %}"></script>

@@ -4,42 +4,6 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from django.views.generic.base import TemplateView
 # Create your views here.
 
-class StarterPageView(LoginRequiredMixin,View):
-    def get(self , request):
-        greeting = {}
-        greeting['heading'] = "Starter Page"
-        greeting['pageview'] = "Utility"
-        return render (request,'utility/utility-starterpage.html',greeting)
-
-class MaintainanceView(LoginRequiredMixin,View):
-    def get(self , request):
-        return render (request,'utility/utility-maintainance.html')  
-
-class ComingSoonView(LoginRequiredMixin,View):
-    def get(self , request):    
-        return render (request,'utility/utility-comingsoon.html')              
-
-class TimeLineView(LoginRequiredMixin,View):
-    def get(self , request):
-        greeting = {}
-        greeting['heading'] = "Timeline"
-        greeting['pageview'] = "Utility"
-        return render (request,'utility/utility-timeline.html',greeting) 
-
-class FaqView(LoginRequiredMixin,View):
-    def get(self , request):
-        greeting = {}
-        greeting['heading'] = "FAQs"
-        greeting['pageview'] = "Utility"
-        return render (request,'utility/utility-faq.html',greeting)  
-
-class PricingView(LoginRequiredMixin,View):
-    def get(self , request):
-        greeting = {}
-        greeting['heading'] = "Pricing"
-        greeting['pageview'] = "Utility"
-        return render (request,'utility/utility-pricing.html',greeting)                       
-
 class ErrorPageView(LoginRequiredMixin,View):
     def get(self , request):    
         return render (request,'utility/utility-404error.html')    
@@ -59,9 +23,6 @@ class AuthRegisterView(LoginRequiredMixin,View):
 class AuthRecoverpwView(LoginRequiredMixin,View):
     def get(self , request):    
         return render (request,'authentication/auth-recoverpw.html')
-class AuthLockScreenView(LoginRequiredMixin,View):
-    def get(self , request):    
-        return render (request,'authentication/auth-lock-screen.html')
 class AuthChangePasswordView(LoginRequiredMixin,View):
     def get(self , request):    
         return render (request,'authentication/auth-password-change.html')

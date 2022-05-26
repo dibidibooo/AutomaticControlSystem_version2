@@ -8,7 +8,6 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views import View
 from django.views.generic import DetailView
-
 from accounts.forms import ProfileForm, ProfileEditForm
 from accounts.models import Profile
 
@@ -36,9 +35,9 @@ class ProfileView(PermissionRequiredMixin, View):
         if p == None:
             page = int(1)
         page_obj = p.get_page(page)
-        context = dict()
-        context['heading'] = "Пользователи"
-        context['pageview'] = "Пользователи"
+        context = {}
+        context['heading'] = "Редактор пользователей"
+        context['pageview'] = "admin"
         context['users'] = users
         context['page_obj'] = page_obj
         context['form'] = ProfileForm()

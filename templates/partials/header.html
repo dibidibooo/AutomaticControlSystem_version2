@@ -13,7 +13,6 @@
                                 <img src="{% static 'images/logo-dark.png' %}" alt="" height="17">
                             </span>
                 </a>
-
                 <a href="{% url 'dashboard' %}" class="logo logo-light">
                             <span class="logo-sm">
                                 <img src="{% static 'images/logo-light.svg' %}" alt="" height="22">
@@ -23,13 +22,10 @@
                             </span>
                 </a>
             </div>
-
             <button type="button" class="btn btn-sm px-3 font-size-16 header-item waves-effect" id="vertical-menu-btn">
                 <i class="fa fa-fw fa-bars"></i>
             </button>
-
         </div>
-
         <div class="d-flex">
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item noti-icon waves-effect" id="page-header-notifications-dropdown"
@@ -68,31 +64,25 @@
                         {% endfor %}
                     </div>
                     <div class="p-2 border-top d-grid">
-                        <a class="btn btn-sm btn-link font-size-14 text-center" href="javascript:void(0)">
+                        <a class="btn btn-sm btn-link font-size-14 text-center" href="{% url 'analyzes_results' %}" key="t-create-new">
                             <i class="mdi mdi-arrow-right-circle me-1"></i> <span key="t-view-more">Подробнее..</span>
                         </a>
                     </div>
                 </div>
             </div>
-
-
             <div class="dropdown d-none d-lg-inline-block ms-1">
                 <button type="button" class="btn header-item noti-icon waves-effect" data-bs-toggle="fullscreen">
                     <i class="bx bx-fullscreen"></i>
                 </button>
             </div>
-
             <div class="dropdown d-inline-block">
                 <button type="button" class="btn header-item waves-effect" id="page-header-user-dropdown"
                         data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="rounded-circle header-profile-user" src="{% static 'images/users/avatar-1.jpg' %}"
-                         alt="Header Avatar">
                     <span class="d-none d-xl-inline-block ms-1">{{user.username}}</span>
                     <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     {% if user.is_authenticated %}
-
                     {% if user.has_usable_password %}
                     <a class="dropdown-item" href="{% url 'account_change_password' %}"><i
                             class="bx bx-key font-size-16 align-middle me-1"></i>Изменить пароль</a>

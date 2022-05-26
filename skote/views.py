@@ -17,7 +17,7 @@ class DashboardView(PermissionRequiredMixin, View):
         tasks = Task.objects.all()
         context = {}
         context['heading'] = "Страница CEO"
-        context['pageview'] = "Dashboards"
+        context['pageview'] = "Главная"
         context['tasks'] = tasks
         context['overdue'] = self.get_overdue_tasks()
         context['on_time'] = self.get_on_time_tasks()

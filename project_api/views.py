@@ -138,7 +138,7 @@ def get_object_statistic(items, object_index):
                 if key in _date_values:
                     _date_values[key].append([item["datetime"], value])
                 else:
-                    _date_values[key] = [[item["datetime"].timestamp(), value], ]
+                    _date_values[key] = [[item["datetime"], value], ]
 
     res = {
         "object_index": object_index,

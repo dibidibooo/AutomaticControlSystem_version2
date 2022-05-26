@@ -79,6 +79,9 @@ class ComponentsSite(models.Model):
     water_type = models.ForeignKey('projects.WaterType', on_delete=models.CASCADE, related_name='input_component')
     user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, related_name='input_component')
 
+    def __str__(self):
+        return f"[{self.id}] '{self.plant_unit.title}' - '{self.sampling_site.title}' ({self.datetime})"
+
 
 class Notification(models.Model):
     title = models.CharField(max_length=500, verbose_name='Уведомление')

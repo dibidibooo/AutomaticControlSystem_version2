@@ -1,4 +1,4 @@
-dragula([document.getElementById("upcoming-task"), document.getElementById("inprogress-task"), document.getElementById("test-task"), document.getElementById("complete-task")])
+//dragula([document.getElementById("upcoming-task"), document.getElementById("inprogress-task"), document.getElementById("test-task"), document.getElementById("complete-task")])
     .on('drag', function(el, container) {
         if (container.id === 'upcoming-task') {
             el.className = el.className.replace(' task_status_1', '');

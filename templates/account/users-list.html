@@ -23,7 +23,6 @@
                     </div>
                     <!-- end col-->
                 </div>
-
                 <div class="table-responsive">
                     <table class="table align-middle table-nowrap" id="customerrecord">
                         <thead>
@@ -36,46 +35,43 @@
                             <th>Должность</th>
                             <th>Роль пользователя</th>
                             <th>Action</th>
-
                         </tr>
                         </thead>
                         <tbody>
-
                         {% for users in page_obj %}
-                            {% if users.username != 'admin' %}
-                                <tr>
-                                    <td>{{ users.id }}</td>
-                                    <td>{{ users.username }}</td>
-                                    <td>{{ users.first_name }} {{ users.last_name }}</td>
-                                    <td>{{ users.email }}</td>
-                                    <td>{{ users.profile.phone }}</td>
-                                    <td>{{ users.profile.position }}</td>
-                                    <td>{{ users.profile.role }}</td>
-                                    <td>
-                                        <div class="dropdown">
-                                            <a href="#" class="dropdown-toggle card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                                                <i class="mdi mdi-dots-horizontal font-size-18"></i>
-                                            </a>
-                                            <ul class="dropdown-menu dropdown-menu-end">
-                                                <li>
-                                                    <a href="#" class="dropdown-item open_edit_modal" data-bs-toggle="modal" data-popup-url="{% url 'accounts-update' users.pk %}" id="{{ users.id }}"
-                                                       onclick="editCustomer(this.id)">
-                                                        <i class="mdi mdi-pencil font-size-16 text-success me-1"></i> Редактировать</a>
-                                                </li>
-                                                <li>
-                                                    <a href="#" class="dropdown-item" id="{{ users.id }}" onclick="sweetDelete(this.id,this)">
-                                                        <i class="mdi mdi-trash-can font-size-16 text-danger me-1"></i> Удалить</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </td>
-                                </tr>
-                            {% endif %}
+                        {% if users.username != 'admin' %}
+                        <tr>
+                            <td>{{ users.id }}</td>
+                            <td>{{ users.username }}</td>
+                            <td>{{ users.first_name }} {{ users.last_name }}</td>
+                            <td>{{ users.email }}</td>
+                            <td>{{ users.profile.phone }}</td>
+                            <td>{{ users.profile.position }}</td>
+                            <td>{{ users.profile.role }}</td>
+                            <td>
+                                <div class="dropdown">
+                                    <a href="#" class="dropdown-toggle card-drop" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="mdi mdi-dots-horizontal font-size-18"></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end">
+                                        <li>
+                                            <a href="#" class="dropdown-item open_edit_modal" data-bs-toggle="modal" data-popup-url="{% url 'accounts-update' users.pk %}" id="{{ users.id }}"
+                                               onclick="editCustomer(this.id)">
+                                                <i class="mdi mdi-pencil font-size-16 text-success me-1"></i> Редактировать</a>
+                                        </li>
+                                        <li>
+                                            <a href="#" class="dropdown-item" id="{{ users.id }}" onclick="sweetDelete(this.id,this)">
+                                                <i class="mdi mdi-trash-can font-size-16 text-danger me-1"></i> Удалить</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endif %}
                         {% endfor %}
                         </tbody>
                     </table>
                 </div>
-
                 <ul class="pagination pagination-rounded justify-content-end mb-2">
                     <li class="page-item">
                         {% if page_obj.has_previous %}
@@ -102,7 +98,6 @@
     </div>
 </div>
 <!-- end row -->
-
 <!-- editProfileModal -->
 <div class="modal fade" id="editProfileModal" tabindex="-1" role="dialog" aria-labelledby="editProfileModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-md" role="document">
@@ -116,8 +111,6 @@
     </div>
 </div>
 <!-- end modal -->
-
-
 <!-- Add User Modal -->
 <div class="modal fade" data-bs-backdrop="static" id="customerModal" tabindex="-1" role="dialog" aria-labelledby="newcustomerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
@@ -126,7 +119,6 @@
             <div class="modal-header border-bottom-0">
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-
             <input type="hidden" name="page_number" value="{{ page_obj.number }}">
             <div class="modal-body">
                 <div id="basic-example">
@@ -169,7 +161,6 @@
                             </div>
                         </div>
                     </section>
-
                     <!-- Personal information -->
                     <h3><b>Персональная информация</b></h3>
                     <section>
@@ -187,7 +178,6 @@
                                 </div>
                             </div>
                         </div>
-
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="mb-3">
@@ -207,27 +197,24 @@
                                     <select class="form-select" name="role" id="id_role">
                                         <option value="" selected="">---------</option>
                                         {% for group in groups %}
-                                            <option value="{{ group.pk }}">{{ group.name }}</option>
+                                        <option value="{{ group.pk }}">{{ group.name }}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
                             </div>
                         </div>
                     </section>
-
-
                     <!-- Confirm Details -->
                     <h3><b>Подтвердить детали</b></h3>
                     <section>
                         {% for error in form.errors %}
                         <div class="alert errors-list error_style" role="alert" style="color: red;">{{ error }}</div>
                         {% endfor %}
-
                         <div class="row justify-content-center">
                             <div class="col-lg-6">
                                 <div class="text-center">
                                     <div class="mb-4">
-                                        <i class="mdi mdi-check-circle-outline text-success display-4"></i>
+                                        <i class="mdi mdi-account-check-outline text-success display-4"></i>
                                     </div>
                                     <div>
                                         <h5><b>Проверьте правильность введенных данных</b></h5>
@@ -237,7 +224,9 @@
                                 </div>
                             </div>
                         </div>
-                        <button style="position: absolute; bottom: 24px; right: 1.8em; z-index: 2; border-radius: 4px; padding: 8px 15px;" role="menuitem" type="submit" class="btn btn-primary" name="addprofile">Завершить</button>
+                        <button style="position: absolute; bottom: 24px; right: 1.8em; z-index: 2; border-radius: 4px; padding: 8px 15px;" role="menuitem" type="submit" class="btn btn-primary"
+                                name="addprofile">Завершить
+                        </button>
                     </section>
                 </div>
             </div>
@@ -245,19 +234,14 @@
     </div>
 </div>
 <!-- end modal -->
-
-
 {% endblock %} {% block extra_javascript %}
 <!-- jquery step -->
 <script src="{% static 'libs/jquery-steps/build/jquery.steps.min.js' %}"></script>
 <!-- form wizard init -->
 <script src="{% static 'js/pages/form-wizard.init.js' %}"></script>
-
-
 <script src="{% static 'libs/inputmask/dist/min/jquery.inputmask.bundle.min.js' %}"></script>
 <!-- form mask init -->
 <script src="{% static 'js/pages/form-mask.init.js' %}"></script>
-
 <script src="{% static 'libs/parsleyjs/dist/parsley.min.js' %}"></script>
 <!-- form validation init -->
 <script src="{% static 'js/pages/form-validation.init.js' %}"></script>
