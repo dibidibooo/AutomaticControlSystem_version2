@@ -8,6 +8,7 @@ from allauth.account.views import PasswordSetView, PasswordChangeView
 from django.urls import reverse_lazy
 
 from tasks.models import Task, Comment, ChangesTracker
+from projects.views.analysis import ResultsView
 
 
 class DashboardView(PermissionRequiredMixin, View):
@@ -23,6 +24,10 @@ class DashboardView(PermissionRequiredMixin, View):
         context['on_time'] = self.get_on_time_tasks()
         context['escalated'] = self.get_escalated_tasks()
         self.get_escalated_tasks()
+
+        # Сравнение показателей с оборотной воды и с подпиточной воды на БОВ-2
+        if ResultsView.unit3_results_comparison() is not None:
+            context['unit_3_warning'] = ResultsView.unit3_results_comparison()
         return render(request, 'dashboard/dashboard.html', context)
 
     def post(self, request):
@@ -94,7 +99,7 @@ class DashboardView(PermissionRequiredMixin, View):
     def get_overdue_tasks():
         overdue = 0
         for task in Task.objects.all():
-            if task.completion_date and (task.completion_date > task.deadline):
+            if datetime.now() > task.deadline:
                 overdue += 1
         return overdue
 
@@ -114,77 +119,6 @@ class DashboardView(PermissionRequiredMixin, View):
             changes_list.append(item.task_id)
         escalated = len(set(changes_list))
         return escalated
-
-
-# Authentication
-# class PagesLoginView(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-login.html')
-#
-#
-# class PagesRegisterView(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-register.html')
-#
-#
-# class PagesRecoverpwView(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-recoverpw.html')
-#
-#
-# class PagesLockscreenView(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-lockscreen.html')
-#
-#
-# class PagesConfirmmailView(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-confirmmail.html')
-#
-#
-# class PagesEmailVerificationView(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-emailverificationmail.html')
-#
-#
-# class PagesTwoStepVerificationView(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-twostepverificationmail.html')
-#
-#
-# class PagesLogin2View(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-login-2.html')
-#
-#
-# class PagesRegister2View(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-register-2.html')
-#
-#
-# class PagesRecoverpw2View(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-recoverpw2.html')
-#
-#
-# class PagesLockscreen2View(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-lockscreen2.html')
-#
-#
-# class PagesConfirmmail2View(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-confirmmail-2.html')
-#
-#
-# class PagesEmailVerification2View(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-emailverificationmail-2.html')
-#
-#
-# class PagesTwoStepVerification2View(View):
-#     def get(self, request):
-#         return render(request, 'authentication/pages-twostepverificationmail-2.html')
 
 
 class MyPasswordChangeView(LoginRequiredMixin, PasswordChangeView):

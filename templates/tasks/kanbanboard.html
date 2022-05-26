@@ -38,7 +38,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                {% elif request.user.is_superuser %}
+                                {% elif request.user.is_superuser or request.user.profile.role.id == 1 %}
                                     <div class="card task-box" id="{{ task.id }}">
                                         <div class="card-body">
                                             <div class="float-end ms-2">
@@ -97,7 +97,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                {% elif request.user.is_superuser %}
+                                {% elif request.user.is_superuser or request.user.profile.role.id == 1 %}
                                     <div class="card task-box" id="{{ task.id }}">
                                         <div class="card-body">
                                             <div class="float-end ms-2">
@@ -156,7 +156,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                {% elif request.user.is_superuser %}
+                                {% elif request.user.is_superuser or request.user.profile.role.id == 1 %}
                                     <div class="card task-box" id="{{ task.id }}">
                                         <div class="card-body">
                                             <div class="float-end ms-2">
@@ -216,7 +216,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                {% elif request.user.is_superuser %}
+                                {% elif request.user.is_superuser or request.user.profile.role.id == 1 %}
                                     <div class="card task-box" id="{{ task.id }}">
                                         <div class="card-body">
                                             <div class="float-end ms-2">
