@@ -2,15 +2,12 @@
 <!-- dragula css -->
 <link href="{% static 'libs/dragula/dist/dragula.min.css' %}" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" type="text/css" href="{% static 'libs/toastr/build/toastr.min.css' %}">
-
 <link href="{% static 'css/preloader.css' %}" rel="stylesheet" type="text/css"/>
 <link href="{% static 'libs/select2/dist/css/select2.min.css'%}" rel="stylesheet" type="text/css"/>
 <link href="{% static 'libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'%}" rel="stylesheet" type="text/css">
 <link href="{% static 'libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css'%}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="{% static 'libs/@chenfengyuan/datepicker/dist/datepicker.min.css'%}" type="text/css"/> {% endblock %} {% block contents %}
-
 {% include 'partials/preloader.html' %}
-
 <div class="row">
     <div class="col-lg-3">
         <div class="card">
@@ -27,7 +24,6 @@
                                             <div class="float-end ms-2">
                                                 <span class="badge rounded-pill badge-soft-secondary font-size-12" id="task-status">{{ task.status }}</span>
                                             </div>
-
                                             <div>
                                                 <p class="fw-bold mb-2">
                                                     <a href="" class="text-dark open_task" id="{{ task.id }}"
@@ -40,7 +36,6 @@
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
                                                 <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
                                             </div>
-
                                         </div>
                                     </div>
                                 {% elif request.user.is_superuser %}
@@ -49,7 +44,6 @@
                                             <div class="float-end ms-2">
                                                 <span class="badge rounded-pill badge-soft-secondary font-size-12" id="task-status">{{ task.status }}</span>
                                             </div>
-
                                             <div>
                                                 <p class="fw-bold mb-2">
                                                     <a href="" class="text-dark open_task" id="{{ task.id }}"
@@ -62,7 +56,6 @@
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
                                                 <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
                                             </div>
-
                                         </div>
                                     </div>
                                 {% endif %}
@@ -101,7 +94,6 @@
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
                                                 <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
-
                                             </div>
                                         </div>
                                     </div>
@@ -122,7 +114,6 @@
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
                                                 <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
-
                                             </div>
                                         </div>
                                     </div>
@@ -162,7 +153,6 @@
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
                                                 <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
-
                                             </div>
                                         </div>
                                     </div>
@@ -183,7 +173,6 @@
                                                 <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
                                                 <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
                                                 <p class="text-muted mb-2">Исполнитель: {% if task.user %}{{ task.user }}{% else %}Не назначен{% endif %}</p>
-
                                             </div>
                                         </div>
                                     </div>
@@ -260,7 +249,6 @@
     <!-- end col -->
 </div>
 <!-- end row -->
-
 <div class="modal fade" id="staticBackdrop"  tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <form action="" method="POST">
@@ -271,8 +259,6 @@
         </form>
     </div>
 </div>
-
-
 {% endblock %} {% block extra_javascript %}
 <!-- Kanban -->
 <script src="{% static 'libs/dragula/dist/dragula.min.js' %}"></script>
@@ -281,14 +267,12 @@
 <script src="{% static 'js/pages/task-form.init.js' %}"></script>
 <script src="{% static 'libs/toastr/build/toastr.min.js' %}"></script>
 <script src="{% static 'js/pages/toastr.init.js' %}"></script>
-
 <script src="{% static 'libs/select2/dist/js/select2.min.js'%}"></script>
 <script src="{% static 'libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'%}"></script>
 <script src="{% static 'libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js'%}"></script>
 <script src="{% static 'libs/@chenfengyuan/datepicker/dist/datepicker.min.js'%}"></script>
 <!-- form advanced init -->
 <script src="{% static 'js/pages/form-advanced.init.js'%}"></script>
-
 <script>
     $(document).on("click", ".open_task", function (e) {
         e.preventDefault();
@@ -298,7 +282,6 @@
           $popup.modal("show");
         });
     });
-
     function editTask(event){
         let task_id = document.getElementById("uid");
         task_id.setAttribute("value", event);
@@ -316,5 +299,4 @@
         });
     }
 </script>
-
 {% endblock %}

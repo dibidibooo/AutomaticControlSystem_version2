@@ -24,11 +24,9 @@
                             <p class="fw-bold mt-3">БОС</p>
                         </a>
                     </div>
-
                     <! -- Результаты ежедневных анализов -->
                     {% include 'partials/everyday_components.html' %}
                 </div>
-
                 <div class="col-xl-9 col-sm-9 p-0">
                     {% for res in results %}
                     <div>
@@ -36,7 +34,6 @@
                         <br>
                     </div>
                     <br> {% endfor %}
-
                     <form class="needs-validation" novalidate method="GET">
                         {% csrf_token %}
                         <div class="tab-content" id="v-pills-tabContent">
@@ -358,7 +355,6 @@
                                                                         <div>
                                                                             <div class="apex-charts" dir="ltr">
                                                                                 <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
-                                                                                    <!-- TODO: рописать ids -->
                                                                                     <button type="button" class="btn btn-light btn-sm " id="one_month-full-chart-1-phosphorus">
                                                                                         1 месяц
                                                                                     </button>
@@ -12424,9 +12420,6 @@
     {% include 'partials/tasks_result.html' %} {% include 'partials/notifications.html' %}
 </div>
 {% endblock %}
-
-<!-- -->
-
 <script>
     $(document).ready(function() {
         $('[data-toggle="tooltip"]').tooltip();

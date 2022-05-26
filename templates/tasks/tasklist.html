@@ -1,19 +1,18 @@
 {% extends 'partials/base.html' %}
 {% load static %}
-
 {% block contents %}
 <div class="d-xl-flex">
     <div class="w-100">
         <div class="d-md-flex">
             <div class="card filemanager-sidebar me-md-2">
                 <div class="card-body">
-
                     <div class="d-flex flex-column h-100">
                         <div class="mb-4">
                             <ul class="list-unstyled categories-list">
                                 <li>
                                     <div class="custom-accordion">
-                                        <a class="text-body fw-medium py-1 d-flex align-items-center" data-bs-toggle="collapse" href="#categories-collapse" role="button" aria-expanded="false" aria-controls="categories-collapse">
+                                        <a class="text-body fw-medium py-1 d-flex align-items-center" data-bs-toggle="collapse" href="#categories-collapse" role="button" aria-expanded="false"
+                                           aria-controls="categories-collapse">
                                             <i class="mdi mdi-folder font-size-16 text-warning me-2"></i> 2022 год <i class="mdi mdi-chevron-up accor-down-icon ms-auto"></i>
                                         </a>
                                         <div class="collapse show" id="categories-collapse">
@@ -30,13 +29,10 @@
                                 </li>
                             </ul>
                         </div>
-
                     </div>
-
                 </div>
             </div>
             <!-- filemanager-leftsidebar -->
-
             <div class="w-100">
                 <div class="card">
                     <div class="card-body">
@@ -45,34 +41,33 @@
                                 <h5 class="font-size-16 me-3"><b>Архив задач</b></h5>
                             </div>
                             <hr class="mt-2">
-
                             <div class="table-responsive">
                                 <table class="table align-middle table-nowrap table-hover mb-0">
                                     <thead>
-                                        <tr>
-                                            <th scope="col">Номер</th>
-                                            <th scope="col">Название</th>
-                                            <th scope="col">Компонент</th>
-                                            <th scope="col">Показатель</th>
-                                            <th scope="col">Установка</th>
-                                            <th scope="col">Место отбора проб</th>
-                                            <th scope="col">Тип воды</th>
-                                            <th scope="col">Дата назначения задачи</th>
-                                        </tr>
+                                    <tr>
+                                        <th scope="col">Номер</th>
+                                        <th scope="col">Название</th>
+                                        <th scope="col">Компонент</th>
+                                        <th scope="col">Показатель</th>
+                                        <th scope="col">Установка</th>
+                                        <th scope="col">Место отбора проб</th>
+                                        <th scope="col">Тип воды</th>
+                                        <th scope="col">Дата назначения задачи</th>
+                                    </tr>
                                     </thead>
                                     <tbody>
-                                        {% for task in tasks %}
-                                            <tr>
-                                                <td>{{ task.id }}</td>
-                                                <td><a href="{% url 'tasks-detail' task.id %}">{{ task.title }}</a></td>
-                                                <td>{{ task.comp_title }}</td>
-                                                <td>{{ task.comp_value }}</td>
-                                                <td>{{ task.plant_unit }}</td>
-                                                <td>{{ task.sampling_site }}</td>
-                                                <td>{{ task.water_type }}</td>
-                                                <td>{{ task.start_date }}</td>
-                                            </tr>
-                                        {% endfor %}
+                                    {% for task in tasks %}
+                                    <tr>
+                                        <td>{{ task.id }}</td>
+                                        <td><a href="{% url 'tasks-detail' task.id %}">{{ task.title }}</a></td>
+                                        <td>{{ task.comp_title }}</td>
+                                        <td>{{ task.comp_value }}</td>
+                                        <td>{{ task.plant_unit }}</td>
+                                        <td>{{ task.sampling_site }}</td>
+                                        <td>{{ task.water_type }}</td>
+                                        <td>{{ task.start_date }}</td>
+                                    </tr>
+                                    {% endfor %}
                                     </tbody>
                                 </table>
                             </div>
@@ -84,11 +79,9 @@
             <!-- end w-100 -->
         </div>
     </div>
-
 </div>
 <!-- end row -->
 {% endblock %}
-
 {% block extra_javascript %}
 <!-- file-manager js -->
 <script src="{% static 'js/pages/file-manager.init.js' %}"></script>

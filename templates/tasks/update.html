@@ -2,7 +2,6 @@
     <h5 class="modal-title" id="staticBackdropLabel" style="max-width: 25em; margin-left: 10px;"><b>#{{ task.id }} - {{ task.title }} для компонента {{ task.comp_title }}</b></h5>
     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 </div>
-
 <div class="row">
     <div class="col-lg-7">
         <div class="modal-body" style="margin-left: 10px" id="task_modal_body1">
@@ -65,11 +64,9 @@
                 <p id="task_responsible">{{ task.responsible }}</p>
             </div>
             <input id="save-btn" type="submit" value="Сохранить" name="edittask" class="btn btn-primary">
-
         </div>
     </div>
 </div>
-
 <!-- Comments -->
 <form action="{% url 'comments-add' task.id %}" id="comment-form-id" onsubmit="overlay()" method="POST">
     {% csrf_token %}
@@ -103,7 +100,6 @@
                 <br>
                 <div class="col-lg-12">
                     <ul class="list-group list-group-flush">
-
                         {% for comment in task.comments.all|dictsortreversed:"created_at" %}
                             <li class="list-group-item py-3">
                                 <div class="d-flex">
@@ -143,7 +139,6 @@
     </div>
 </form>
 <!-- End block -->
-
 {% block extra_javascript %}
     <script>
         $('.modal').show(function () {

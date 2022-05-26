@@ -8,7 +8,6 @@ from django.shortcuts import redirect, render
 from django.urls import reverse
 from django.views import View
 from django.views.generic import DetailView
-
 from accounts.forms import ProfileForm, ProfileEditForm
 from accounts.models import Profile
 
