@@ -90,6 +90,11 @@
         "component"
       ],
       [
+        "view_componentssite",
+        "projects",
+        "componentssite"
+      ],
+      [
         "view_notification",
         "projects",
         "notification"

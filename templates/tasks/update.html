@@ -36,20 +36,33 @@
             </div>
             <div class="mb-3">
                 <label for="id_user" class="form-label"><b>Исполнитель</b></label>
-                <select id="id_user" class="form-select" name="user" required>
-                    {% if not task.user %}
-                        <option value="" selected>-----------</option>
-                    {% endif %}
-                    {% for user in users %}
-                        {% if user.username != 'admin' and user.profile.role_id != 4 %}
-                            <option value="{{ user.pk }}" {% if user == task.user %}selected{% endif %}>{{ user }}</option>
+                {% if request.user.is_superuser or request.user.profile.role.id == 3 or request.user.profile.role.id == 5 or request.user.profile.role.id == 6 or request.user.profile.role.id == 7 %}
+                    <select id="id_user" class="form-select" name="user" required>
+                        {% if not task.user %}
+                            <option value="" selected>-----------</option>
                         {% endif %}
-                    {% endfor %}
-                </select>
+                        {% for user in users %}
+                            {% if user.username != 'admin' and user.profile.role_id != 4 %}
+                                <option value="{{ user.pk }}" {% if user == task.user %}selected{% endif %}>{{ user }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                {% else %}
+                    <select id="id_user" class="form-select" name="user" disabled>
+                        {% if not task.user %}
+                            <option value="" selected>-----------</option>
+                        {% endif %}
+                        {% for user in users %}
+                            {% if user.username != 'admin' and user.profile.role_id != 4 %}
+                                <option value="{{ user.pk }}" {% if user == task.user %}selected{% endif %}>{{ user }}</option>
+                            {% endif %}
+                        {% endfor %}
+                    </select>
+                {% endif %}
             </div>
             <div class="mb-3">
                 <label for="id_task_responsible" class="form-label"><b>Ответственный</b></label>
-                <p id="task_responsible">{{ task.responsible.name }}</p>
+                <p id="task_responsible">{{ task.responsible }}</p>
             </div>
             <input id="save-btn" type="submit" value="Сохранить" name="edittask" class="btn btn-primary">
 
