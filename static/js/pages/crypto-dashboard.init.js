@@ -122,80 +122,153 @@ options = {
     }
 };
 (chart = new ApexCharts(document.querySelector("#area-sparkline-chart-3"), options)).render();
-var walletOptions = {
-    series: [60, 20, 40],
-    chart: {
-        height: 302,
-        type: "radialBar"
-    },
-    plotOptions: {
-        radialBar: {
-            offsetY: 0,
-            startAngle: 0,
-            endAngle: 270,
-            hollow: {
-                margin: 5,
-                size: "35%",
-                background: "transparent",
-                image: void 0
-            },
-            track: {
-                show: !0,
-                startAngle: void 0,
-                endAngle: void 0,
-                background: "#f2f2f2",
-                strokeWidth: "97%",
-                opacity: 1,
-                margin: 12,
-                dropShadow: {
-                    enabled: !1,
-                    top: 0,
-                    left: 0,
-                    blur: 3,
-                    opacity: .5
-                }
-            },
-            dataLabels: {
-                name: {
-                    show: !0,
-                    fontSize: "16px",
-                    fontWeight: 600,
-                    offsetY: -10
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function getValues(){
+    const on_time_data = Number(document.getElementById("on_time_data").innerText)
+    const overdue_data = Number(document.getElementById("overdue_data").innerText)
+    const escalated_data = Number(document.getElementById("escalated_data").innerText)
+
+    const summ = on_time_data + overdue_data + escalated_data
+    console.log(">>> on_time_data", on_time_data*100/summ, overdue_data*100/summ, escalated_data*100/summ);
+    return [on_time_data*100/summ, overdue_data*100/summ, escalated_data*100/summ]
+}
+
+document.addEventListener("DOMContentLoaded",() => {
+    const on_time_data = Number(document.getElementById("on_time_data").innerText)
+    const overdue_data = Number(document.getElementById("overdue_data").innerText)
+    const total = on_time_data + overdue_data
+
+    const _chart_series = getValues()
+    var walletOptions = {
+        series: _chart_series,
+        chart: {
+            height: 302,
+            type: "radialBar"
+        },
+        plotOptions: {
+            radialBar: {
+                offsetY: 0,
+                startAngle: 0,
+                endAngle: 270,
+                hollow: {
+                    margin: 5,
+                    size: "35%",
+                    background: "transparent",
+                    image: void 0
                 },
-                value: {
+                track: {
                     show: !0,
-                    fontSize: "14px",
-                    offsetY: 4,
-                    formatter: function(e) {
-                        return e + "%"
+                    startAngle: void 0,
+                    endAngle: void 0,
+                    background: "#f2f2f2",
+                    strokeWidth: "97%",
+                    opacity: 1,
+                    margin: 12,
+                    dropShadow: {
+                        enabled: !1,
+                        top: 0,
+                        left: 0,
+                        blur: 3,
+                        opacity: .5
                     }
                 },
-                total: {
-                    show: !0,
-                    label: "В общем",
-                    color: "#373d3f",
-                    fontSize: "16px",
-                    fontFamily: void 0,
-                    fontWeight: 600,
-                    formatter: function(e) {
-                        return e.globals.seriesTotals.reduce(function(e, t) {
-                            return e + t
-                        }, 0)
+                dataLabels: {
+                    name: {
+                        show: !0,
+                        fontSize: "16px",
+                        fontWeight: 600,
+                        offsetY: -10
+                    },
+                    value: {
+                        show: !0,
+                        fontSize: "14px",
+                        offsetY: 4,
+                        formatter: function(e) {
+                            return e + "%"
+                        }
+                    },
+                    total: {
+                        show: !0,
+                        label: "В общем",
+                        color: "#373d3f",
+                        fontSize: "16px",
+                        fontFamily: void 0,
+                        fontWeight: 600,
+                        formatter: function(e) {
+                            return e.globals.seriesTotals.reduce(function(e, t) {
+                                return total
+                            }, 0)
+                        }
                     }
                 }
             }
+        },
+        stroke: {
+            lineCap: "round"
+        },
+        colors: ["#3452e1", "#f1b44c", "#50a5f1"],
+        labels: ["Выполнено в срок", "Просрочено", "Эскалировано"],
+        legend: {
+            show: !1
         }
-    },
-    stroke: {
-        lineCap: "round"
-    },
-    colors: ["#3452e1", "#f1b44c", "#50a5f1"],
-    labels: ["Выполнено в срок", "Просрочено", "Эскалировано"],
-    legend: {
-        show: !1
-    }
-};
-(chart = new ApexCharts(document.querySelector("#wallet-balance-chart"), walletOptions)).render();
+    };
+    (chart = new ApexCharts(document.getElementById("wallet-balance-chart"), walletOptions)).render();
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 options = {
     series: [{
         name: "Компонент",

@@ -4,8 +4,6 @@
 {% load socialaccount %}
 {% block title %}Login{% endblock title %}
 {% block content %}
-
-
 <body class="auth-image">
 <div class="account-pages my-5 pt-sm-5">
     <div class="container">
@@ -16,8 +14,8 @@
                         <div class="row">
                             <div class="col-7">
                                 <div class="text-primary p-4">
-                                    <h5 class="text-primary"><b>С вовращением!</b></h5>
-                                    <p>Войдите, чтобы продолжить работу.</p>
+                                    <h5 class="text-primary"><b>Добро пожаловать!</b></h5>
+                                    <p>Войдите, чтобы начать работу.</p>
                                 </div>
                             </div>
                             <div class="col-5 align-self-end">
@@ -35,7 +33,6 @@
                                             </span>
                                 </div>
                             </a>
-
                             <a href="{% url 'dashboard' %}" class="auth-logo-dark">
                                 <div class="avatar-md profile-user-wid mb-4">
                                             <span class="avatar-title rounded-circle bg-light">
@@ -54,28 +51,22 @@
                                     <strong>{{ message }}</strong>
                                 </div>
                                 {% endfor %}
-
                                 {{ form|crispy}}
-
                                 <div class="mt-3 d-grid">
                                     <button class="btn btn-primary waves-effect waves-light" type="submit">Войти
                                     </button>
                                 </div>
                                 <div>
-
                                 </div>
-
                                 <div class="mt-4 text-center">
                                     <a href="{% url 'account_reset_password' %}" class="text-muted"><i
                                             class="mdi mdi-lock me-1"></i>Забыли свой пароль?</a>
                                 </div>
                             </form>
                         </div>
-
                     </div>
                 </div>
                 <div class="mt-4 text-center">
-
                     <div>
                         <p>©
                             <script>document.write(new Date().getFullYear())</script>
@@ -83,12 +74,10 @@
                         </p>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
 </div>
 </body>
 <!-- end account-pages -->
-
 {% endblock content %}

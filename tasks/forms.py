@@ -16,3 +16,9 @@ class TaskForm(ModelForm):
     class Meta:
         model = Task
         fields = ('status', 'user', 'deadline', )
+
+
+class DatesFrom(forms.Form):
+    from_date = forms.DateField()
+    to_date = forms.DateField()
+
