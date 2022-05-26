@@ -327,10 +327,10 @@ class AdditionalAnalysisForm(forms.ModelForm):
         model = AdditionalComponents
         exclude = ['plant_unit']
         widgets = {
-            'recycled_water_consumption': forms.NumberInput(attrs={'class': 'form-control mb-3'}),
-            'running_water_consumption': forms.NumberInput(attrs={'class': 'form-control mb-3'}),
-            'purge_flow': forms.NumberInput(attrs={'class': 'form-control mb-3'}),
-            'hot_water_temp': forms.NumberInput(attrs={'class': 'form-control mb-3'}),
-            'cold_water_temp': forms.NumberInput(attrs={'class': 'form-control mb-3'}),
-            'total_microbial_number': forms.NumberInput(attrs={'class': 'form-control mb-3'}),
+            'recycled_water_consumption': forms.NumberInput(attrs={'class': 'form-control mb-3', 'required': 'True'}),
+            'running_water_consumption': forms.NumberInput(attrs={'class': 'form-control mb-3', 'required': 'True'}),
+            'purge_flow': forms.NumberInput(attrs={'class': 'form-control mb-3', 'required': 'True'}),
+            'hot_water_temp': forms.NumberInput(attrs={'class': 'form-control mb-3', 'required': 'True'}),
+            'cold_water_temp': forms.NumberInput(attrs={'class': 'form-control mb-3', 'required': 'True'}),
+            'total_microbial_number': forms.NumberInput(attrs={'class': 'form-control mb-3', 'required': 'True'}),
         }
