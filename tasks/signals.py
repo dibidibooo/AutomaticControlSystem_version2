@@ -21,7 +21,7 @@ def task_send_email(sender, instance, created, **kwargs):
             'prev_status': Status.objects.get(id=instance.tracker.previous("status_id")),
         }
         from_email = settings.EMAIL_HOST_USER
-        to_email = [instance.user.email, ]
+        to_email = [task.user.email, ]
         subject = f'Изменения в задаче #{instance.id}'
         body = f"""В задаче №{instance.id} - {instance.title} для компонента {instance.comp_title}
 (Место отбора проб: {instance.sampling_site}. Установка: {instance.plant_unit}.):"""
