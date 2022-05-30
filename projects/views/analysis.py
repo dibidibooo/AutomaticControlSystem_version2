@@ -1,5 +1,5 @@
 from datetime import datetime
-
+import datetime
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
@@ -713,11 +713,28 @@ class ExcelTableView(PermissionRequiredMixin, View):
     permission_required = ['tasks.view_task']
 
     def get(self, request):
+        task_list = Task.objects.order_by('start_date')
+
+        # date from
+        date_from_str = None
+        if "date_from" in  request.GET and request.GET["date_from"]:
+            date_from_str = request.GET["date_from"]
+            date_from = datetime.datetime.strptime(date_from_str, "%Y-%m-%d").date()
+            task_list= task_list.filter(deadline__date__gte=date_from)
+
+        # date to
+        date_to_str = None
+        if "date_to" in request.GET and request.GET["date_to"]:
+            date_to_str = request.GET["date_to"]
+            date_to = datetime.datetime.strptime(date_to_str, "%Y-%m-%d").date()
+            task_list= task_list.filter(deadline__date__lte=date_to)
+
         context = {
             'heading': "Отчеты",
             'pageview': "Результаты",
-            'tasks': Task.objects.order_by('start_date'),
+            'tasks': task_list,
             'results': ComponentsSite.objects.order_by('datetime'),
+            'date_filters': {"from": date_from_str, "to": date_to_str}
         }
         return render(request, 'projects/excel_table.html', context)
 
