@@ -1,6 +1,11 @@
 {% extends 'partials/base.html' %}
 {% load static %}
 {% block extra_css %}
+<link href="{% static 'libs/select2/dist/css/select2.min.css'%}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'%}" rel="stylesheet" type="text/css">
+<link href="{% static 'libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css'%}" rel="stylesheet" type="text/css">
+<link href="{% static 'libs/spectrum-colorpicker2/dist/spectrum.min.css'%}" rel="stylesheet" type="text/css">
+<link href="{% static 'libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css'%}" rel="stylesheet" type="text/css"/>
 <link rel="stylesheet" href="{% static 'libs/@chenfengyuan/datepicker/dist/datepicker.min.css'%}" type="text/css"/>
 {% endblock %}
 {% block contents %}
@@ -12,6 +17,14 @@
                 <p class="card-title-desc">Здесь вы можете просмотреть данные с таблицы, скачать их в формате excel.
                     Есть режим поиска и сортировки, а также таблица разделена на страницы.
                 </p>
+                <div class="mb-4">
+                    <label>Month View</label>
+                    <div class="position-relative" id="datepicker4">
+                        <input type="text" class="form-control" data-date-container='#datepicker4' data-provide="datepicker"
+                               data-date-format="MM yyyy" data-date-min-view-mode="1">
+                    </div>
+
+                </div>
                 <ul>
                     <div class="mb-4">
                         <form action=".">
@@ -100,7 +113,6 @@
 <!-- Responsive examples -->
 <script src="{% static 'libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
 <script src="{% static 'libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
-
 <!-- Календарь examples -->
 <script src="{% static 'libs/select2/dist/js/select2.min.js'%}"></script>
 <script src="{% static 'libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'%}"></script>
@@ -109,6 +121,8 @@
 <script src="{% static 'libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js'%}"></script>
 <script src="{% static 'libs/bootstrap-maxlength/dist/bootstrap-maxlength.min.js'%}"></script>
 <script src="{% static 'libs/@chenfengyuan/datepicker/dist/datepicker.min.js'%}"></script>
+<!-- form advanced init -->
+<script src="{% static 'js/pages/form-advanced.init.js'%}"></script>
 
 <!-- Datatable init js -->
 <script src="{% static 'js/pages/datatables.init.js' %}"></script>
