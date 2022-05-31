@@ -87,13 +87,14 @@ class Comment(models.Model):
         html_message = loader.render_to_string('emails/comment_create.html', val)
 
         to_email = list()
-        to_email.append(self.task.user.email)
+        if self.task.user:
+            to_email.append(self.task.user.email)
         for responsible in User.objects.filter(groups__name=self.task.responsible):
             to_email.append(responsible.email)
 
         subject = f'Новый комментарий в задаче #{self.task.id}'
 
-        if self.pk is None:
+        if to_email and self.pk is None:
             send_html_mail(subject=subject, html_content=html_message, recipient_list=to_email, sender=from_email)
         return super().save(*args, **kwargs)
 
