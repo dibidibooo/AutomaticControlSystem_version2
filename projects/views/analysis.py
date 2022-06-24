@@ -599,7 +599,7 @@ class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
         unit = get_object_or_404(PlantUnit, pk=unit_id)
         form.instance.plant_unit = unit
         form.save()
-        if int(unit_id) in range(5, 7):
+        if int(unit_id) in range(1, 5):
             formula = AdditionalCalc()
             formula.calculations(unit=int(unit_id))
         return super().form_valid(form)
@@ -684,6 +684,7 @@ class AdditionalCalc:
 
     @staticmethod
     def sampling_site_recycled_water(unit: int) -> int:
+        # Получение ID МОП в зависимости от типа воды
         smpl_site_recycled = 0
         if unit == 1:
             smpl_site_recycled = 1
