@@ -684,30 +684,31 @@ class AdditionalCalc:
 
     @staticmethod
     def sampling_site_recycled_water(unit: int) -> int:
-        # Получение ID МОП в зависимости от типа воды
-        smpl_site_recycled = 0
+        # Получение ID МОП, если тип воды - оборотный
+        smpl_site = 0
         if unit == 1:
-            smpl_site_recycled = 1
+            smpl_site = 1
         elif unit == 2:
-            smpl_site_recycled = 5
+            smpl_site = 5
         elif unit == 3:
-            smpl_site_recycled = 6
+            smpl_site = 6
         elif unit == 4:
-            smpl_site_recycled = 8
-        return smpl_site_recycled
+            smpl_site = 8
+        return smpl_site
 
     @staticmethod
     def sampling_site_running_water(unit: int) -> int:
-        smpl_site_running = 0
+        # Получение ID МОП, если тип воды - подпиточный
+        smpl_site = 0
         if unit == 1:
-            smpl_site_running = 3
+            smpl_site = 3
         elif unit == 2:
-            smpl_site_running = 4
+            smpl_site = 4
         elif unit == 3:
-            smpl_site_running = 6
+            smpl_site = 6
         elif unit == 4:
-            smpl_site_running = 9
-        return smpl_site_running
+            smpl_site = 9
+        return smpl_site
 
 
 class ExcelTableView(PermissionRequiredMixin, View):
@@ -821,12 +822,13 @@ class ResultsView(PermissionRequiredMixin, View):
                     results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite.objects.filter(
                     sampling_site_id=site_id).values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
+                if key != 'id' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
         except ComponentsSite.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
 
+    # Отображение результатов основных анализов для МОП №6
     @staticmethod
     def get_results_2(site_id: int, water_type_id: int) -> dict:
         results_site = {}
@@ -843,7 +845,7 @@ class ResultsView(PermissionRequiredMixin, View):
                     results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite.objects.filter(
                     sampling_site_id=site_id, water_type_id=water_type_id).values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
+                if key != 'id' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
         except ComponentsSite.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
