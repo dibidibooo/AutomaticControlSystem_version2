@@ -17,33 +17,35 @@
                 <div id="task-2">
                     <div id="inprogress-task" class="pb-1 task-list">
                         <!-- task card -->
-                        {% for task in tasks %} {% if task.status_id == 2 and task.user.profile.role_id == 1 %}
-                        <div class="card task-box" id="{{ task.id }}">
-                            <div class="card-body">
-                                <div class="float-end ms-2">
-                                    <span class="badge rounded-pill badge-soft-primary font-size-12" id="task-status">{{ task.status }}</span>
-                                </div>
-                                <div>
-                                    <p class="fw-bold mb-2">
-                                        <a href="" class="text-dark open_task" id="{{ task.id }}"
-                                           data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
-                                            {{ task.title }} для компонента '{{ task.comp_title }}'
-                                        </a>
-                                    </p>
-                                    <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
-                                    <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
-                                    <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
-                                </div>
-                                <div class="avatar-group float-start task-assigne">
-                                    <div class="avatar-group-item">
-                                        <a href="javascript: void(0);" class="d-inline-block" value="member-1">
-                                            <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
-                                        </a>
+                        {% for task in tasks %}
+                            {% if task.status_id == 2 and task.user.profile.role_id == 1 %}
+                                <div class="card task-box" id="{{ task.id }}">
+                                    <div class="card-body">
+                                        <div class="float-end ms-2">
+                                            <span class="badge rounded-pill badge-soft-primary font-size-12" id="task-status">{{ task.status }}</span>
+                                        </div>
+                                        <div>
+                                            <p class="fw-bold mb-2">
+                                                <a href="" class="text-dark open_task" id="{{ task.id }}"
+                                                   data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
+                                                    {{ task.title }} для компонента '{{ task.comp_title }}'
+                                                </a>
+                                            </p>
+                                            <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
+                                            <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
+                                            <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
+                                        </div>
+                                        <div class="avatar-group float-start task-assigne">
+                                            <div class="avatar-group-item">
+                                                <a href="javascript: void(0);" class="d-inline-block" value="member-1">
+                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        {% endif %} {% endfor %}
+                            {% endif %}
+                        {% endfor %}
                         <!-- end task card -->
                     </div>
                 </div>
@@ -58,33 +60,35 @@
                 <div id="task-2">
                     <div id="test-task" class="pb-1 task-list">
                         <!-- task card -->
-                        {% for task in tasks %} {% if task.status_id == 3 and task.user.profile.role_id == 1 %}
-                        <div class="card task-box" id="{{ task.id }}">
-                            <div class="card-body">
-                                <div class="float-end ms-2">
-                                    <span class="badge rounded-pill badge-soft-warning font-size-12" id="task-status">{{ task.status }}</span>
-                                </div>
-                                <div>
-                                    <p class="fw-bold mb-2">
-                                        <a href="" class="text-dark open_task" id="{{ task.id }}"
-                                           data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
-                                            {{ task.title }} для компонента '{{ task.comp_title }}'
-                                        </a>
-                                    </p>
-                                    <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
-                                    <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
-                                    <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
-                                </div>
-                                <div class="avatar-group float-start task-assigne">
-                                    <div class="avatar-group-item">
-                                        <a href="javascript: void(0);" class="d-inline-block" value="member-1">
-                                            <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
-                                        </a>
+                        {% for task in tasks %}
+                            {% if task.status_id == 3 and task.user.profile.role_id == 1 %}
+                                <div class="card task-box" id="{{ task.id }}">
+                                    <div class="card-body">
+                                        <div class="float-end ms-2">
+                                            <span class="badge rounded-pill badge-soft-warning font-size-12" id="task-status">{{ task.status }}</span>
+                                        </div>
+                                        <div>
+                                            <p class="fw-bold mb-2">
+                                                <a href="" class="text-dark open_task" id="{{ task.id }}"
+                                                   data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
+                                                    {{ task.title }} для компонента '{{ task.comp_title }}'
+                                                </a>
+                                            </p>
+                                            <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
+                                            <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
+                                            <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
+                                        </div>
+                                        <div class="avatar-group float-start task-assigne">
+                                            <div class="avatar-group-item">
+                                                <a href="javascript: void(0);" class="d-inline-block" value="member-1">
+                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
+                                                </a>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                        {% endif %} {% endfor %}
+                            {% endif %}
+                        {% endfor %}
                         <!-- end task card -->
                     </div>
                 </div>
@@ -188,13 +192,17 @@
                                             <div class="d-flex">
                                                 <div class="flex-shrink-0 me-2">
                                                     <h5 class="font-size-14">
-                                                        {{ task.start_date|date:"d M" }}<i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                                        {{ task.start_date|date:"d M" }}
+                                                        <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
                                                     </h5>
                                                 </div>
                                                 <div class="flex-grow-1">
-                                                    <div class="text-danger">
-                                                        Задача #{{ task.id }} просрочена
-                                                    </div>
+                                                    <a href="" class="open_task"  id="{{ task.id }}" data-popup-url="{% url 'tasks-update' task.id %}"
+                                                       onclick="editTask(this.id)">
+                                                        <div class="text-danger">
+                                                            Задача #{{ task.id }} просрочена
+                                                        </div>
+                                                    </a>
                                                 </div>
                                             </div>
                                         </li>
@@ -215,7 +223,7 @@
 <div class="modal fade" id="staticBackdrop" data-bs-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
         <form action="" method="POST">
-            <input type="hidden" name="id" id="uid" data-url="{% url 'tasks-kanbanboard' %}">
+            <input type="hidden" name="id" id="uid">
             {% csrf_token %}
             <div class="modal-content form">
             </div>
