@@ -86,7 +86,8 @@
                     </div>
                     <div class="col">
                         <div class="position-relative">
-                            <input type="text" class="form-control rounded chat-input" required placeholder="Введите комментарий..." name="text">
+                            <input type="text" class="form-control rounded chat-input" required placeholder="Введите комментарий..."
+                                   name="text" id="comment_input">
                         </div>
                     </div>
                     <div class="col-auto">
@@ -161,5 +162,22 @@
         }
         document.getElementById("save-btn").addEventListener('click', overlay);
         document.getElementById("comment-form-id").addEventListener('submit', overlay);
+    </script>
+    <script type="text/javascript">
+        let comment_input = $('#comment_input');
+        $('#comment-form-id').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: 'kanbanboard/{{ task.id }}',
+                data: {
+                    'comment_text': comment_input.val(),
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+                },
+                success: function (data) {
+                    {#$('.list-group list-group-flush').prepend(data)#}
+                }
+             });
+        });
     </script>
 {% endblock %}
