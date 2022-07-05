@@ -1,5 +1,5 @@
 from datetime import datetime
-import datetime
+
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse_lazy
@@ -204,7 +204,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             user=self.request.user
         )
         task_create = TaskCreate()
-        task_create.site4_task(form, water_type, responsible_id=5)
+        task_create.site4_task(form, water_type, responsible_id=3)
         return HttpResponseRedirect(self.success_url)
 
     # БОВ-1 | Аналитическая точка выкид насосов Р-01А/В/С/Д
@@ -240,7 +240,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             user=self.request.user
         )
         task_create = TaskCreate()
-        task_create.site5_task(form, water_type, responsible_id=5)
+        task_create.site5_task(form, water_type, responsible_id=3)
         return HttpResponseRedirect(self.success_url)
 
     # БОВ-2 | Аналитическая точка насосов Р-01А/В/С/Д
@@ -278,7 +278,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             user=self.request.user
         )
         task_create = TaskCreate()
-        task_create.site6_task(form, water_type, responsible_id=5)
+        task_create.site6_task(form, water_type, responsible_id=3)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | Аналитическая точка насосов Р-01А/В/С/Д
@@ -310,7 +310,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             user=self.request.user
         )
         task_create = TaskCreate()
-        task_create.site7_task(form, water_type, responsible_id=6)
+        task_create.site7_task(form, water_type, responsible_id=5)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | Выход из ёмкости 77-ТК-103 77-SN-004
@@ -346,7 +346,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             user=self.request.user
         )
         task_create = TaskCreate()
-        task_create.site8_task(form, water_type, responsible_id=6)
+        task_create.site8_task(form, water_type, responsible_id=5)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | На входе в боковой фильтр позиции 77-Z-003 77-SN-006
@@ -382,7 +382,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             user=self.request.user
         )
         task_create = TaskCreate()
-        task_create.site9_task(form, water_type, responsible_id=6)
+        task_create.site9_task(form, water_type, responsible_id=5)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | Подача на градирню в районе 77-ТI-205 77-SN-007
@@ -404,7 +404,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             user=self.request.user
         )
         task_create = TaskCreate()
-        task_create.site10_task(form, water_type, responsible_id=6)
+        task_create.site10_task(form, water_type, responsible_id=5)
         return HttpResponseRedirect(self.success_url)
 
     # УГОВ | На выходе с бокового фильтра 77-Z-003, 77-SN-008
@@ -422,7 +422,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             user=self.request.user
         )
         task_create = TaskCreate()
-        task_create.site11_task(form, water_type, responsible_id=6)
+        task_create.site11_task(form, water_type, responsible_id=5)
         return HttpResponseRedirect(self.success_url)
 
     # МОС -> Очистные сооружения поз.119. С колодца промстоков №1 (точка №4 вход)
@@ -450,7 +450,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             user=self.request.user
         )
         task_create = TaskCreate()
-        task_create.site12_task(form, water_type, responsible_id=7)
+        task_create.site12_task(form, water_type, responsible_id=6)
         return HttpResponseRedirect(self.success_url)
 
     # БОС -> Пробоотборник 001 перед БОС / А1–SN-001
@@ -599,7 +599,7 @@ class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
         unit = get_object_or_404(PlantUnit, pk=unit_id)
         form.instance.plant_unit = unit
         form.save()
-        if int(unit_id) in range(5, 7):
+        if int(unit_id) in range(1, 5):
             formula = AdditionalCalc()
             formula.calculations(unit=int(unit_id))
         return super().form_valid(form)
@@ -684,57 +684,42 @@ class AdditionalCalc:
 
     @staticmethod
     def sampling_site_recycled_water(unit: int) -> int:
-        smpl_site_recycled = 0
+        # Получение ID МОП, если тип воды - оборотный
+        smpl_site = 0
         if unit == 1:
-            smpl_site_recycled = 1
+            smpl_site = 1
         elif unit == 2:
-            smpl_site_recycled = 5
+            smpl_site = 5
         elif unit == 3:
-            smpl_site_recycled = 6
+            smpl_site = 6
         elif unit == 4:
-            smpl_site_recycled = 8
-        return smpl_site_recycled
+            smpl_site = 8
+        return smpl_site
 
     @staticmethod
     def sampling_site_running_water(unit: int) -> int:
-        smpl_site_running = 0
+        # Получение ID МОП, если тип воды - подпиточный
+        smpl_site = 0
         if unit == 1:
-            smpl_site_running = 3
+            smpl_site = 3
         elif unit == 2:
-            smpl_site_running = 4
+            smpl_site = 4
         elif unit == 3:
-            smpl_site_running = 6
+            smpl_site = 6
         elif unit == 4:
-            smpl_site_running = 9
-        return smpl_site_running
+            smpl_site = 9
+        return smpl_site
 
 
 class ExcelTableView(PermissionRequiredMixin, View):
     permission_required = ['tasks.view_task']
 
     def get(self, request):
-        task_list = Task.objects.order_by('start_date')
-
-        # date from
-        date_from_str = None
-        if "date_from" in  request.GET and request.GET["date_from"]:
-            date_from_str = request.GET["date_from"]
-            date_from = datetime.datetime.strptime(date_from_str, "%Y-%m-%d").date()
-            task_list= task_list.filter(deadline__date__gte=date_from)
-
-        # date to
-        date_to_str = None
-        if "date_to" in request.GET and request.GET["date_to"]:
-            date_to_str = request.GET["date_to"]
-            date_to = datetime.datetime.strptime(date_to_str, "%Y-%m-%d").date()
-            task_list= task_list.filter(deadline__date__lte=date_to)
-
         context = {
             'heading': "Отчеты",
             'pageview': "Результаты",
-            'tasks': task_list,
+            'tasks': Task.objects.order_by('start_date'),
             'results': ComponentsSite.objects.order_by('datetime'),
-            'date_filters': {"from": date_from_str, "to": date_to_str}
         }
         return render(request, 'projects/excel_table.html', context)
 
@@ -837,12 +822,13 @@ class ResultsView(PermissionRequiredMixin, View):
                     results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite.objects.filter(
                     sampling_site_id=site_id).values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
+                if key != 'id' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
         except ComponentsSite.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
         return results_site
 
+    # Отображение результатов основных анализов для МОП №6
     @staticmethod
     def get_results_2(site_id: int, water_type_id: int) -> dict:
         results_site = {}
@@ -859,7 +845,7 @@ class ResultsView(PermissionRequiredMixin, View):
                     results_site['no_recom'] = 'В пределах нормы'
             for key, value in ComponentsSite.objects.filter(
                     sampling_site_id=site_id, water_type_id=water_type_id).values().latest('datetime').items():
-                if key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id':
+                if key != 'id' and key != 'sampling_site_id' and key != 'water_type_id':
                     results_site[key] = value
         except ComponentsSite.DoesNotExist:
             results_site['no_data'] = 'Нет данных'
