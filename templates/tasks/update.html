@@ -99,8 +99,8 @@
                     </div>
                 </div>
                 <br>
-                <div class="col-lg-12">
-                    <ul class="list-group list-group-flush">
+                <div class="col-lg-12" id="all_comments_div">
+                    <ul class="list-group list-group-flush" id="all_comments_list">
                         {% for comment in task.comments.all|dictsortreversed:"created_at" %}
                             <li class="list-group-item py-3">
                                 <div class="d-flex">
@@ -153,7 +153,35 @@
                     deadline.attr('readonly', true);
                 }
             });
-        })
+        });
+
+        // Отправка формы комментариев
+        let comment_input = $('#comment_input');
+        let all_comments = $('.list-group list-group-flush');
+        $('#comment-form-id').on('submit', function (e) {
+            e.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: '{% url "comments-add" task.id %}',
+                data: {
+                    'comment_text': comment_input.val(),
+                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+                },
+                dataType: 'text',
+                success: function (data) {
+                    comment_input.val('')
+                    setTimeout(updateDiv, 120)
+                },
+                error: function (e) {
+                    console.log('Error:', e);
+                }
+             });
+        });
+
+        // Обновление части HTML без перезагрузки страницы. Не работает :(
+        function updateDiv() {
+            $('#all_comments_list').load(window.location.href + ' #all_comments_list');
+        }
 
         function overlay(event){
             // event.preventDefault();
@@ -162,22 +190,5 @@
         }
         document.getElementById("save-btn").addEventListener('click', overlay);
         document.getElementById("comment-form-id").addEventListener('submit', overlay);
-    </script>
-    <script type="text/javascript">
-        let comment_input = $('#comment_input');
-        $('#comment-form-id').on('submit', function (e) {
-            e.preventDefault();
-            $.ajax({
-                type: 'POST',
-                url: 'kanbanboard/{{ task.id }}',
-                data: {
-                    'comment_text': comment_input.val(),
-                    csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
-                },
-                success: function (data) {
-                    {#$('.list-group list-group-flush').prepend(data)#}
-                }
-             });
-        });
     </script>
 {% endblock %}
