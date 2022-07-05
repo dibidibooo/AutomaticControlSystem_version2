@@ -1,4 +1,5 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
+from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import View
@@ -34,9 +35,9 @@ class CommentCreateView(LoginRequiredMixin, View):
         comment = Comment()
         comment.task = task
         comment.author = request.user
-        comment.text = request.POST.get('comment_text')
+        comment.text = request.POST['comment_text']
         comment.save()
-        return render(request, 'comments/detail.html', {'comment': comment})
+        return HttpResponse(comment)
 
 
 # class CommentDetailView(View):
