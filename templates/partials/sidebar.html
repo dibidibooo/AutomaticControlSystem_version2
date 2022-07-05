@@ -44,6 +44,12 @@
                         <span key="t-ecommerce">Загрузка анализов</span>
                     </a>
                 </li>
+                <li>
+                    <a href="{% url 'analyzes_results' %}" key="t-create-new">
+                        <i class="mdi mdi-beaker-check-outline"></i>
+                        <span key="t-ecommerce">Результаты</span>
+                    </a>
+                </li>
                 {% elif not perms.projects.add_componentssite %}
                 <li class="menu-title" key="t-apps">Приложения</li>
                 {% if perms.projects.add_additionalcomponents %}
