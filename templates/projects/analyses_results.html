@@ -78,7 +78,6 @@
                                                                                 <p class="text-muted text-truncate mb-0">
                                                                                     {{ component.measurement }}
                                                                                 </p>
-                                                                                <p>{{ results1.datetime|date:"d.m.Y H:i" }}</p>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-7">
@@ -2326,6 +2325,30 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Фосфор' not in results1 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results1.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results1.items %} {% if key == 'Фосфор' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -9049,7 +9072,7 @@
                                                             <div class="card">
                                                                 <div class="card-body">
                                                                     <p class="text-muted mb-4">
-                                                                        <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Общие взвешенные твердые частицы
+                                                                        <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Общие взвешенные твёрдые частицы
                                                                     </p>
                                                                     <div class="row">
                                                                         <div class="col-5">

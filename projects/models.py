@@ -46,6 +46,21 @@ class Component(models.Model):
     def __str__(self):
         return self.title
 
+class ComponentFormula(models.Model):
+    title = models.CharField(max_length=100, verbose_name='Название компонента')
+    measurement = models.CharField(verbose_name='Единица измерения', max_length=50)
+    limit_lo = models.CharField(verbose_name='Допустимые нормы не ниже', max_length=50, null=True, blank=True)
+    limit_hi = models.CharField(verbose_name='Допустимые нормы не более', max_length=50, null=True, blank=True)
+    recommendation1 = models.CharField(verbose_name='Рекомендация выше нормы', max_length=200, null=True, blank=True)
+    recommendation2 = models.CharField(verbose_name='Рекомендация ниже нормы', max_length=200, null=True, blank=True)
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = 'ComponentFormula'
+        verbose_name_plural = 'ComponentFormula'
+
 
 class ComponentsSite(models.Model):
     active_subst = models.FloatField(null=True, blank=True, verbose_name='Поверхностно-активные вещества (АПАВ)')
