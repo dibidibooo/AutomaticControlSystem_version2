@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import logging
 
 from django.contrib.auth.models import User
 from django.http import JsonResponse, Http404
@@ -17,6 +18,9 @@ from tasks.forms import TaskForm
 from tasks.models import Task, Comment, ChangesTracker
 
 
+user_logger = logging.getLogger('users_interactions')
+
+
 class TaskDetailView(DetailView):
     model = Task
     template_name = 'tasks/detail.html'
@@ -30,6 +34,8 @@ class TaskDetailView(DetailView):
         context['statuses'] = Status.objects.all()
         context['users'] = User.objects.all()
         context['changes'] = ChangesTracker.objects.filter(task_id=self.object.id)
+        user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+                         f'(@{self.request.user}) был на странице детального просмотра задачи.')
         return context
 
 
@@ -60,6 +66,8 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             'users': User.objects.all(),
         }
         archive_task()
+        user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+                         f'(@{self.request.user}) был на странице управления задачами.')
         return render(request, 'tasks/kanbanboard.html', context)
 
     def post(self, request):
@@ -1137,10 +1145,6 @@ class ArchiveTaskListView(PermissionRequiredMixin, View):
             'unit5': Task.objects.filter(plant_unit_id=5, status_id=5),
             'unit6': Task.objects.filter(plant_unit_id=6, status_id=5),
         }
+        user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+                         f'(@{self.request.user}) был на странице архивных задач.')
         return render(request, 'tasks/tasklist.html', context)
-
-
-
-
-
-

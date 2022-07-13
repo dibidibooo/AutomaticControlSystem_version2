@@ -1,4 +1,5 @@
 from datetime import datetime
+import logging
 
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
@@ -39,6 +40,9 @@ from projects.models import (
 from projects.multiforms import MultiFormsView
 
 
+user_logger = logging.getLogger('users_interactions')
+
+
 class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
     permission_required = ('projects.add_componentssite',)
     template_name = "projects/analyses_create.html"
@@ -69,6 +73,8 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         context['pageview'] = 'Анализы'
         context['components'] = Component.objects.all()
         context['tasks'] = Task.objects.all()
+        user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+                         f'(@{self.request.user}) был на странице загрузки анализов.')
         return context
 
     # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
@@ -592,6 +598,8 @@ class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
         context['heading'] = "Загрузка ежедневных анализов"
         context['pageview'] = "Анализы"
         context['plant_units'] = PlantUnit.objects.all()
+        user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+                         f'(@{self.request.user}) был на странице загрузки ежедневных анализов.')
         return context
 
     def form_valid(self, form):
@@ -721,6 +729,8 @@ class ExcelTableView(PermissionRequiredMixin, View):
             'tasks': Task.objects.order_by('start_date'),
             'results': ComponentsSite.objects.order_by('datetime'),
         }
+        user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+                         f'(@{self.request.user}) был на странице отчетов.')
         return render(request, 'projects/excel_table.html', context)
 
 
@@ -771,6 +781,8 @@ class ResultsView(PermissionRequiredMixin, View):
         if self.unit3_results_comparison() is not None:
             context['unit_3_warning'] = self.unit3_results_comparison()
 
+        user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+                         f'(@{self.request.user}) был на странице результатов.')
         return render(request, 'projects/analyses_results.html', context)
 
     @staticmethod
