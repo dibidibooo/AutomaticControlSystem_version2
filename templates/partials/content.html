@@ -13,10 +13,19 @@
 {% block contents %}
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title mb-3">Действия пользователей</h4>
-        {% for i in log %}
-            <div>{{ i }}</div>
-        {% endfor %}
+        <h4 class="card-title">Действия пользователей</h4>
+        <p><b>Дата - Время</b></p>
+        <div class="table-responsive">
+            <table class="table table-nowrap table-hover mb-0">
+                <tbody data-simplebar class="mt-3" style="max-height: 300px;">
+                {% for i in log %}
+                <tr>
+                    <td>{{ i }}</td>
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
     </div>
 </div>
 
@@ -29,33 +38,33 @@
                     <div id="inprogress-task" class="pb-1 task-list">
                         <!-- task card -->
                         {% for task in tasks %}
-                            {% if task.status_id == 2 and task.user.profile.role_id == 1 %}
-                                <div class="card task-box" id="{{ task.id }}">
-                                    <div class="card-body">
-                                        <div class="float-end ms-2">
-                                            <span class="badge rounded-pill badge-soft-primary font-size-12" id="task-status">{{ task.status }}</span>
-                                        </div>
-                                        <div>
-                                            <p class="fw-bold mb-2">
-                                                <a href="" class="text-dark open_task" id="{{ task.id }}"
-                                                   data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
-                                                    {{ task.title }} для компонента '{{ task.comp_title }}'
-                                                </a>
-                                            </p>
-                                            <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
-                                            <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
-                                            <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
-                                        </div>
-                                        <div class="avatar-group float-start task-assigne">
-                                            <div class="avatar-group-item">
-                                                <a href="javascript: void(0);" class="d-inline-block" value="member-1">
-                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
-                                                </a>
-                                            </div>
-                                        </div>
+                        {% if task.status_id == 2 and task.user.profile.role_id == 1 %}
+                        <div class="card task-box" id="{{ task.id }}">
+                            <div class="card-body">
+                                <div class="float-end ms-2">
+                                    <span class="badge rounded-pill badge-soft-primary font-size-12" id="task-status">{{ task.status }}</span>
+                                </div>
+                                <div>
+                                    <p class="fw-bold mb-2">
+                                        <a href="" class="text-dark open_task" id="{{ task.id }}"
+                                           data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
+                                            {{ task.title }} для компонента '{{ task.comp_title }}'
+                                        </a>
+                                    </p>
+                                    <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
+                                    <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
+                                    <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
+                                </div>
+                                <div class="avatar-group float-start task-assigne">
+                                    <div class="avatar-group-item">
+                                        <a href="javascript: void(0);" class="d-inline-block" value="member-1">
+                                            <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
+                                        </a>
                                     </div>
                                 </div>
-                            {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
                         {% endfor %}
                         <!-- end task card -->
                     </div>
@@ -72,33 +81,33 @@
                     <div id="test-task" class="pb-1 task-list">
                         <!-- task card -->
                         {% for task in tasks %}
-                            {% if task.status_id == 3 and task.user.profile.role_id == 1 %}
-                                <div class="card task-box" id="{{ task.id }}">
-                                    <div class="card-body">
-                                        <div class="float-end ms-2">
-                                            <span class="badge rounded-pill badge-soft-warning font-size-12" id="task-status">{{ task.status }}</span>
-                                        </div>
-                                        <div>
-                                            <p class="fw-bold mb-2">
-                                                <a href="" class="text-dark open_task" id="{{ task.id }}"
-                                                   data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
-                                                    {{ task.title }} для компонента '{{ task.comp_title }}'
-                                                </a>
-                                            </p>
-                                            <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
-                                            <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
-                                            <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
-                                        </div>
-                                        <div class="avatar-group float-start task-assigne">
-                                            <div class="avatar-group-item">
-                                                <a href="javascript: void(0);" class="d-inline-block" value="member-1">
-                                                    <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
-                                                </a>
-                                            </div>
-                                        </div>
+                        {% if task.status_id == 3 and task.user.profile.role_id == 1 %}
+                        <div class="card task-box" id="{{ task.id }}">
+                            <div class="card-body">
+                                <div class="float-end ms-2">
+                                    <span class="badge rounded-pill badge-soft-warning font-size-12" id="task-status">{{ task.status }}</span>
+                                </div>
+                                <div>
+                                    <p class="fw-bold mb-2">
+                                        <a href="" class="text-dark open_task" id="{{ task.id }}"
+                                           data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
+                                            {{ task.title }} для компонента '{{ task.comp_title }}'
+                                        </a>
+                                    </p>
+                                    <p class="text-muted mb-2" style="line-height: 15px;">Место отбора проб: {{ task.sampling_site.title }}</p>
+                                    <p class="text-muted mb-2" style="line-height: 15px;">Установка: {{ task.plant_unit.title }}</p>
+                                    <p class="text-muted mb-2">Выполнить до: {{ task.deadline }}</p>
+                                </div>
+                                <div class="avatar-group float-start task-assigne">
+                                    <div class="avatar-group-item">
+                                        <a href="javascript: void(0);" class="d-inline-block" value="member-1">
+                                            <img src="{% static 'images/users/avatar-1.jpg'%}" alt="" class="rounded-circle avatar-xs">
+                                        </a>
                                     </div>
                                 </div>
-                            {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
                         {% endfor %}
                         <!-- end task card -->
                     </div>
@@ -157,68 +166,68 @@
                     <div data-simplebar class="mt-2" style="max-height: 800px;">
                         <ul class="verti-timeline list-unstyled">
                             {% if unit_3_warning %}
-                                <li class="event-list active">
-                                    <div class="event-timeline-dot">
-                                        <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
-                                    </div>
-                                    <div class="d-flex">
-                                        <div class="flex-grow-1">
-                                            <div class="text-danger">
-                                                {{ unit_3_warning }}
-                                            </div>
+                            <li class="event-list active">
+                                <div class="event-timeline-dot">
+                                    <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="flex-grow-1">
+                                        <div class="text-danger">
+                                            {{ unit_3_warning }}
                                         </div>
                                     </div>
-                                </li>
+                                </div>
+                            </li>
                             {% endif %}
                             {% for task in tasks %}
-                                {% if 'директор' in task.user.profile.position %}
-                                    <li class="event-list active">
-                                        <div class="event-timeline-dot">
-                                            <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
+                            {% if 'директор' in task.user.profile.position %}
+                            <li class="event-list active">
+                                <div class="event-timeline-dot">
+                                    <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0 me-3">
+                                        <h5 class="font-size-14">
+                                            {{ task.start_date|date:"d M" }}
+                                            <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                        </h5>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <div>
+                                            Компонент '{{ task.comp_title }}'
+                                            <br>{{ task.notification }}
                                         </div>
-                                        <div class="d-flex">
-                                            <div class="flex-shrink-0 me-3">
-                                                <h5 class="font-size-14">
-                                                    {{ task.start_date|date:"d M" }}
-                                                    <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
-                                                </h5>
-                                            </div>
-                                            <div class="flex-grow-1">
-                                                <div>
-                                                    Компонент '{{ task.comp_title }}'
-                                                    <br>{{ task.notification }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                {% endif %}
+                                    </div>
+                                </div>
+                            </li>
+                            {% endif %}
 
-                                {% now "d.m.Y H:i" as datetime_now %}
-                                {% with task.deadline|date:"d.m.Y H:i" as datetime_deadline %}
-                                    {% if datetime_now > datetime_deadline %}
-                                        <li class="event-list active pb-3">
-                                            <div class="event-timeline-dot">
-                                                <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
+                            {% now "d.m.Y H:i" as datetime_now %}
+                            {% with task.deadline|date:"d.m.Y H:i" as datetime_deadline %}
+                            {% if datetime_now > datetime_deadline %}
+                            <li class="event-list active pb-3">
+                                <div class="event-timeline-dot">
+                                    <i class="bx bxs-right-arrow-circle font-size-18 bx-fade-right"></i>
+                                </div>
+                                <div class="d-flex">
+                                    <div class="flex-shrink-0 me-2">
+                                        <h5 class="font-size-14">
+                                            {{ task.start_date|date:"d M" }}
+                                            <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
+                                        </h5>
+                                    </div>
+                                    <div class="flex-grow-1">
+                                        <a href="" class="open_task" id="{{ task.id }}" data-popup-url="{% url 'tasks-update' task.id %}"
+                                           onclick="editTask(this.id)">
+                                            <div class="text-danger">
+                                                Задача #{{ task.id }} просрочена
                                             </div>
-                                            <div class="d-flex">
-                                                <div class="flex-shrink-0 me-2">
-                                                    <h5 class="font-size-14">
-                                                        {{ task.start_date|date:"d M" }}
-                                                        <i class="bx bx-right-arrow-alt font-size-16 text-primary align-middle ms-2"></i>
-                                                    </h5>
-                                                </div>
-                                                <div class="flex-grow-1">
-                                                    <a href="" class="open_task"  id="{{ task.id }}" data-popup-url="{% url 'tasks-update' task.id %}"
-                                                       onclick="editTask(this.id)">
-                                                        <div class="text-danger">
-                                                            Задача #{{ task.id }} просрочена
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    {% endif %}
-                                {% endwith %}
+                                        </a>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endif %}
+                            {% endwith %}
                             {% endfor %}
 
                         </ul>
@@ -258,6 +267,7 @@
     $('#modal').on('hidden.bs.modal',function(e){
         targetModalContent.html(' ');
     });
+
 </script>
 <!-- Kanban -->
 <script src="{% static 'libs/dragula/dist/dragula.min.js' %}"></script>
@@ -302,5 +312,6 @@
             }
         });
     }
+
 </script>
 {% endblock %}

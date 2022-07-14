@@ -91,7 +91,7 @@ $(function() {
 $(function() {
     $('#componentcard31').hide();
     $('#unit').change(function() {
-        if ($('#plant_unit3').val() === '6' && $('#water_type3').val() === '1') {
+        if ($('#plant_unit3').val() === '6') {
             $('#componentcard31').show();
         } else {
             $('#componentcard31').hide();
@@ -99,16 +99,6 @@ $(function() {
     });
 });
 
-$(function() {
-    $('#componentcard32').hide();
-    $('#unit').change(function() {
-        if ($('#plant_unit3').val() === '6' && $('#water_type3').val() === '2') {
-            $('#componentcard32').show();
-        } else {
-            $('#componentcard32').hide();
-        }
-    });
-});
 
 $(function() {
     $('#componentcard33').hide();
