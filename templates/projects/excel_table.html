@@ -1,6 +1,13 @@
 {% extends 'partials/base.html' %}
 {% load static %}
-{% block extra_css %}{% endblock %}
+{% block extra_css %}
+<link href="{% static 'libs/select2/dist/css/select2.min.css'%}" rel="stylesheet" type="text/css"/>
+<link href="{% static 'libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css'%}" rel="stylesheet" type="text/css">
+<link href="{% static 'libs/bootstrap-timepicker/css/bootstrap-timepicker.min.css'%}" rel="stylesheet" type="text/css">
+<link href="{% static 'libs/spectrum-colorpicker2/dist/spectrum.min.css'%}" rel="stylesheet" type="text/css">
+<link href="{% static 'libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.css'%}" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" href="{% static 'libs/@chenfengyuan/datepicker/dist/datepicker.min.css'%}" type="text/css"/>
+{% endblock %}
 {% block contents %}
 <div class="row">
     <div class="col-12">
@@ -10,43 +17,26 @@
                 <p class="card-title-desc">Здесь вы можете просмотреть данные с таблицы, скачать их в формате excel.
                     Есть режим поиска и сортировки, а также таблица разделена на страницы.
                 </p>
-                <!--                <form action="">-->
-                <!--                    <input type="date" name="from_date">-->
-                <!--                    <input type="date" name="to_date">-->
-                <!--                    <button type="submit">send</button>-->
-                <!--                </form>-->
-                <form class="row gy-2 gx-3 align-items-center">
-                    <div class="col-lg-2">
-                        <label class="visually-hidden" for="autoSizingSelect"></label>
-                        <select class="form-select" id="autoSizingSelect">
-                            <option selected>Выберите год...</option>
-                            <option value="1">2022</option>
-                            <option value="2">2021</option>
-                            <option value="3">2020</option>
-                        </select>
+                <div class="mb-4">
+                    <label>Month View</label>
+                    <div class="position-relative" id="datepicker4">
+                        <input type="text" class="form-control" data-date-container='#datepicker4' data-provide="datepicker"
+                               data-date-format="MM yyyy" data-date-min-view-mode="1">
                     </div>
-                    <div class="col-lg-2">
-                        <label class="visually-hidden" for="autoSizingSelect"></label>
-                        <select class="form-select" id="autoSizingSelect">
-                            <option selected>Выберите месяц...</option>
-                            <option value="1">Январь</option>
-                            <option value="2">Февраль</option>
-                            <option value="3">Март</option>
-                            <option value="4">Апрель</option>
-                            <option value="5">Май</option>
-                            <option value="6">Июнь</option>
-                            <option value="7">Июль</option>
-                            <option value="8">Август</option>
-                            <option value="9">Сентябрь</option>
-                            <option value="10">Октябрь</option>
-                            <option value="11">Ноябрь</option>
-                            <option value="12">Декабрь</option>
-                        </select>
+                </div>
+                <ul>
+                    <div class="mb-4">
+                        <form action=".">
+                            <div class="input-daterange input-group" id="datepicker_excel" data-date-format="dd M, yyyy" data-date-autoclose="true" data-provide="datepicker"
+                                 data-date-container='#datepicker6'>
+                                <input type="date" class="form-control" name="date_from" value="{{ date_filters.from }}" placeholder="Start Date"/>
+                                <input type="date" class="form-control" name="date_to" value="{{ date_filters.to  }}" placeholder="End Date"/>
+                                <button type="submit">Применить</button>
+                            </div>
+                        </form>
                     </div>
-                    <!--                    <div class="col-lg-4">-->
-                    <!--                        <button id="datable1" type="submit" class="btn btn-primary w-md">Скачать Excel</button>-->
-                    <!--                    </div>-->
-                </form>
+                </ul>
+
                 <div class="mt-3">
                     <table id="datatable-buttons" class="table text-center table-bordered dt-responsive nowrap w-100">
                         <thead>
@@ -93,320 +83,7 @@
                             </td>
                         </tr>
                         {% endfor %}
-                        {% for item in results %}
-                        {% if item.oil_prod %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Нефтепродукт</td>
-                            <td>{{ item.oil_prod }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.suspended_solids %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Общие взвешенные твердые частицы</td>
-                            <td>{{ item.suspended_solids }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.ph %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Значение pH</td>
-                            <td>{{ item.ph }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.phosphorus %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Фосфор</td>
-                            <td>{{ item.phosphorus }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.alkalinity %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Щёлочность общая</td>
-                            <td>{{ item.alkalinity }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.hardness %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Жёсткость общая</td>
-                            <td>{{ item.hardness }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.salt %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Солесодержание</td>
-                            <td>{{ item.salt }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.chlorides %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Хлориды</td>
-                            <td>{{ item.chlorides }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.sulfates %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Сульфаты</td>
-                            <td>{{ item.sulfates }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.iron %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Железо</td>
-                            <td>{{ item.iron }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.hardness_calcium %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Жёсткость кальциевая</td>
-                            <td>{{ item.hardness_calcium }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.hardness_magnesium %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Жёсткость магниевая</td>
-                            <td>{{ item.hardness_magnesium }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.suspended_subst %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Взвешенные вещества</td>
-                            <td>{{ item.suspended_subst }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.dry_residue %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Сухой остаток</td>
-                            <td>{{ item.dry_residue }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.alkalinity_phenols %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Щёлочность по фенолу</td>
-                            <td>{{ item.alkalinity_phenols }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.chlorine %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Остаточный хлор</td>
-                            <td>{{ item.chlorine }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.oxygen_chem %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Химическая потребность в кислороде (ХПК)</td>
-                            <td>{{ item.oxygen_chem }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.active_subst %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Поверхностно-активные вещества (АПАВ)</td>
-                            <td>{{ item.active_subst }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.ammonium %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Аммонийный азот</td>
-                            <td>{{ item.ammonium }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.oxygen_bio %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Биологическая потребность в кислороде (БПК5)</td>
-                            <td>{{ item.oxygen_bio }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.phenols %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Фенолы</td>
-                            <td>{{ item.phenols }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.nitrate %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Азот нитратов</td>
-                            <td>{{ item.nitrate }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.nitrite %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Азот нитритов</td>
-                            <td>{{ item.nitrite }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% if item.oxidability %}
-                        <tr>
-                            <td>{{ item.sampling_site.location }}</td>
-                            <td>{{ item.sampling_site }}</td>
-                            <td>{{ item.water_type }}</td>
-                            <td>Окисляемость</td>
-                            <td>{{ item.oxidability }}</td>
-                            <td></td>
-                            <td>{{ item.datetime|date:"d.m.Y, H:i" }}</td>
-                            <td></td>
-                            <td></td>
-                        </tr>
-                        {% endif %}
-                        {% endfor %}
+
                         </tbody>
                     </table>
                 </div>
@@ -435,6 +112,17 @@
 <!-- Responsive examples -->
 <script src="{% static 'libs/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
 <script src="{% static 'libs/datatables.net-responsive-bs4/js/responsive.bootstrap4.min.js' %}"></script>
+<!-- Календарь examples -->
+<script src="{% static 'libs/select2/dist/js/select2.min.js'%}"></script>
+<script src="{% static 'libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js'%}"></script>
+<script src="{% static 'libs/spectrum-colorpicker2/dist/spectrum.min.js'%}"></script>
+<script src="{% static 'libs/bootstrap-timepicker/js/bootstrap-timepicker.min.js'%}"></script>
+<script src="{% static 'libs/bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min.js'%}"></script>
+<script src="{% static 'libs/bootstrap-maxlength/dist/bootstrap-maxlength.min.js'%}"></script>
+<script src="{% static 'libs/@chenfengyuan/datepicker/dist/datepicker.min.js'%}"></script>
+<!-- form advanced init -->
+<script src="{% static 'js/pages/form-advanced.init.js'%}"></script>
+
 <!-- Datatable init js -->
 <script src="{% static 'js/pages/datatables.init.js' %}"></script>
 <script>$('.hide_item:empty').parent().hide()</script>

@@ -59,7 +59,7 @@
                                 <div class="card mt-2">
                                     <div id="componentcard11" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 1</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results1.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[1|1] Нефтепродукт' %}
@@ -78,7 +78,6 @@
                                                                                 <p class="text-muted text-truncate mb-0">
                                                                                     {{ component.measurement }}
                                                                                 </p>
-                                                                                <p>{{ results1.datetime|date:"d.m.Y H:i" }}</p>
                                                                             </div>
                                                                         </div>
                                                                         <div class="col-7">
@@ -1093,7 +1092,7 @@
                                     </div>
                                     <div id="componentcard12" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 2</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results2.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[1|2] Нефтепродукт' %}
@@ -1360,7 +1359,7 @@
                                     </div>
                                     <div id="componentcard13" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 3</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results3.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[1|3] Взвешенные вещества' %}
@@ -2328,6 +2327,30 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Фосфор' not in results1 %}
+                                                            <div class="card-body bg-success bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+                                                                    <p><b>{{ results1.no_recom }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %} {% for key, value in results1.items %} {% if key == 'Фосфор' %}
+                                                            <div class="card-body bg-danger bg-soft">
+                                                                <p class="text-muted mb-4">
+                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                </p>
+                                                                <div class="col-12">
+
+                                                                    <p><b>{{ value }}</b></p>
+                                                                </div>
+                                                            </div>
+                                                            {% endif %}{% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xl-6">
@@ -2448,7 +2471,7 @@
                                 <div class="card mt-2">
                                     <div id="componentcard21" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 4</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results4.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[2|1] Жесткость общая' %}
@@ -3308,7 +3331,7 @@
                                     </div>
                                     <div id="componentcard22" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 5</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results5.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[2|2] Жесткость общая' %}
@@ -4316,7 +4339,7 @@
                                 <div class="card mt-2">
                                     <div id="componentcard31" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 6</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results6.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[3|1] Жесткость общая' %}
@@ -5261,7 +5284,7 @@
                                     </div>
                                     <div id="componentcard32" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 6</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results6_2.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[3|1] Жесткость общая' %}
@@ -6353,7 +6376,7 @@
                                 <div class="card mt-2">
                                     <div id="componentcard41" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 7</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results7.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[4|1] Общие взвешенные твердые частицы' %}
@@ -7045,7 +7068,7 @@
                                     </div>
                                     <div id="componentcard42" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 8</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results8.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[4|2] Общие взвешенные твердые частицы' %}
@@ -7909,7 +7932,7 @@
                                     </div>
                                     <div id="componentcard43" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 9</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results9.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[4|3] Общие взвешенные твёрдые частицы' %}
@@ -8773,7 +8796,7 @@
                                     </div>
                                     <div id="componentcard44" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 10</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results10.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[4|4] Остаточный хлор' %}
@@ -9039,10 +9062,10 @@
                                     </div>
                                     <div id="componentcard45" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 11</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results11.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
-                                                {% for component in components %} {% if component.title == '[4|5] Общие взвешенные твёрдые частицы' %}
+                                                {% for component in components %} {% if component.title == '[4|5] Общие взвешенные твердые частицы' %}
                                                 <div class="row">
                                                     <div class="col-xl-6">
                                                         <a data-bs-toggle="modal" data-bs-target=".modal-component-100">
@@ -9271,7 +9294,7 @@
                                 <div class="card mt-2">
                                     <div id="componentcard51" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 12</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results12.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[5|1] Нефтепродукт' %}
@@ -9814,7 +9837,7 @@
                                 <div class="card mt-2">
                                     <div id="componentcard61" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 13</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results13.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[6|1] Значение рН' %}
@@ -10934,7 +10957,7 @@
                                     </div>
                                     <div id="componentcard62" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 14</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results14.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[6|2] Щёлочность общая' %}
@@ -11370,7 +11393,7 @@
                                     </div>
                                     <div id="componentcard63" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 15</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results15.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[6|3] Взвешенные вещества' %}
@@ -11891,7 +11914,7 @@
                                     </div>
                                     <div id="componentcard64" class="card-body">
                                         <div class="col-xl-12">
-                                            <h4 class="card-title">Контролируемые показатели 16</h4>
+                                            <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results16.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
                                                 {% for component in components %} {% if component.title == '[6|4] Взвешенные вещества' %}
