@@ -1,6 +1,7 @@
 from datetime import datetime
+from time import sleep
 
-from django.http import JsonResponse, Http404
+from django.http import JsonResponse, Http404, HttpResponse
 from django.shortcuts import redirect, render, get_object_or_404
 from django.views import View
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
@@ -23,6 +24,8 @@ class DashboardView(PermissionRequiredMixin, View):
         context['overdue'] = self.get_overdue_tasks()
         context['on_time'] = self.get_on_time_tasks()
         context['escalated'] = self.get_escalated_tasks()
+
+        context['log'] = GetUserInteractionsLog.get_log_info()  # Вывод данных с лог файла
         self.get_escalated_tasks()
 
         # Сравнение показателей с оборотной воды и с подпиточной воды на БОВ-2
@@ -127,3 +130,15 @@ class MyPasswordChangeView(LoginRequiredMixin, PasswordChangeView):
 
 class MyPasswordSetView(LoginRequiredMixin, PasswordSetView):
     success_url = reverse_lazy('dashboard')
+
+
+class GetUserInteractionsLog:
+    @staticmethod
+    def get_log_info():
+        with open('users_interactions.log') as f:
+            log_items_list = [i.strip('\n') for i in f.readlines()]
+            # return log_items_list[:10:-1]
+            return log_items_list[::-1]
+        #     while True:
+        #         yield f.readlines()
+                # sleep(1)

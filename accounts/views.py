@@ -1,3 +1,4 @@
+import logging
 from django.contrib.auth import get_user_model
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.contrib.auth.models import User, Group
@@ -10,6 +11,9 @@ from django.views import View
 from django.views.generic import DetailView
 from accounts.forms import ProfileForm, ProfileEditForm
 from accounts.models import Profile
+
+
+user_logger = logging.getLogger('users_interactions')
 
 
 class ProfileDetailView(DetailView):
@@ -46,6 +50,9 @@ class ProfileView(PermissionRequiredMixin, View):
             pk = request.GET.get('userid')
             user_object = User.objects.get(pk=pk)
             context['user_object'] = user_object
+
+        user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+                         f'(@{self.request.user}) был на странице редактирования пользователей.')
         return render(request, 'account/users-list.html', context)
 
     def post(self, request):
@@ -99,6 +106,12 @@ class ProfileView(PermissionRequiredMixin, View):
 
 class CustomLoginView(LoginView):
     template_name = 'account/login.html'
+
+    # def dispatch(self, request, *args, **kwargs):
+    #     if request.method == 'GET':
+    #         user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+    #                          f'(@{self.request.user}) авторизовался.')
+    #     return super().dispatch(request, *args, **kwargs)
 
     def get_success_url(self):
         if self.request.user.is_superuser:
