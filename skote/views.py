@@ -135,10 +135,6 @@ class MyPasswordSetView(LoginRequiredMixin, PasswordSetView):
 class GetUserInteractionsLog:
     @staticmethod
     def get_log_info():
-        with open('users_interactions.log') as f:
+        with open('users_interactions.log', encoding='utf-8') as f:
             log_items_list = [i.strip('\n') for i in f.readlines()]
-            # return log_items_list[:10:-1]
             return log_items_list[::-1]
-        #     while True:
-        #         yield f.readlines()
-                # sleep(1)

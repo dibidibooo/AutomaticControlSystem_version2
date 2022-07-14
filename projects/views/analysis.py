@@ -263,7 +263,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         alkalinity = form.cleaned_data.get('alkalinity')
         iron = form.cleaned_data.get('iron')
         form_name = form.cleaned_data.get('action')
-        water_type = self.request.POST.get('water_type')
+        water_type = 1
         smpl_site = form.cleaned_data.get('smpl_site')
 
         ComponentsSite.objects.create(
@@ -789,13 +789,13 @@ class ResultsView(PermissionRequiredMixin, View):
     def unit3_results_comparison():
         dict1 = {}
         dict2 = {}
-        if ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=1) and \
-                ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=2):
+        if ComponentsSite.objects.filter(sampling_site_id=6) and \
+                ComponentsSite.objects.filter(sampling_site_id=4):
 
-            a = ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=1).values().latest('datetime')
-            b = ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=2).values().latest('datetime')
+            a = ComponentsSite.objects.filter(sampling_site_id=6).values().latest('datetime')
+            b = ComponentsSite.objects.filter(sampling_site_id=4).values().latest('datetime')
             for key, value in a.items():
-                if value is not None and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit':
+                if value is not None and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit' and key != 'alkalinity_phenols':
                     dict1[key] = value
             for key, value in b.items():
                 if value is not None and key is not None and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit':
@@ -804,7 +804,7 @@ class ResultsView(PermissionRequiredMixin, View):
         diffkeys = [key for key in dict1 if dict1[key] < dict2[key]]
         if diffkeys:
             return """
-            Показатели компонентов БОВ-2 с оборотной воды ниже показателей с подпиточной воды.
+            Показатели компонентов БОВ-2 с оборотной воды ниже показателей компонентов БОВ-1 с подпиточной воды.
             Пожалуйста, обратите внимание!
             """
         else:
