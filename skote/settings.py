@@ -180,7 +180,7 @@ DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 # Internationalization
 # https://docs.djangoproject.com/en/3.1/topics/i18n/
 
-LANGUAGE_CODE = 'ru-ru'
+LANGUAGE_CODE = 'ru-RU'
 
 TIME_ZONE = 'Asia/Almaty'
 

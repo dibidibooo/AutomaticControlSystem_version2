@@ -41,7 +41,7 @@ class Site2Form(MultipleForm):
     oil_prod = forms.FloatField(widget=forms.NumberInput(
         attrs={'class': 'form-control mb-3'}), label="Нефтепродукт")
     ph = forms.FloatField(widget=forms.NumberInput(
-        attrs={'class': 'form-control mb-3', 'max': 12}), label="Значение pH")
+        attrs={'class': 'form-control mb-3', 'max': 12, 'type': 'number'}), label="Значение pH")
     suspended_solids = forms.FloatField(widget=forms.NumberInput(
         attrs={'class': 'form-control mb-3'}), label="Общие взвешенные твердые частицы")
 
