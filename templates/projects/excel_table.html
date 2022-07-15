@@ -17,25 +17,18 @@
                 <p class="card-title-desc">Здесь вы можете просмотреть данные с таблицы, скачать их в формате excel.
                     Есть режим поиска и сортировки, а также таблица разделена на страницы.
                 </p>
-                <div class="mb-4">
-                    <label>Month View</label>
-                    <div class="position-relative" id="datepicker4">
-                        <input type="text" class="form-control" data-date-container='#datepicker4' data-provide="datepicker"
-                               data-date-format="MM yyyy" data-date-min-view-mode="1">
-                    </div>
-                </div>
-                <ul>
-                    <div class="mb-4">
-                        <form action=".">
-                            <div class="input-daterange input-group" id="datepicker_excel" data-date-format="dd M, yyyy" data-date-autoclose="true" data-provide="datepicker"
-                                 data-date-container='#datepicker6'>
-                                <input type="date" class="form-control" name="date_from" value="{{ date_filters.from }}" placeholder="Start Date"/>
-                                <input type="date" class="form-control" name="date_to" value="{{ date_filters.to  }}" placeholder="End Date"/>
-                                <button type="submit">Применить</button>
-                            </div>
-                        </form>
-                    </div>
-                </ul>
+<!--                <div class="mb-4">-->
+<!--                    <label>Month View</label>-->
+<!--                    <div class="position-relative" id="datepicker4">-->
+<!--                        <input type="text" class="form-control" data-date-container='#datepicker4' data-provide="datepicker"-->
+<!--                               data-date-format="MM yyyy" data-date-min-view-mode="1">-->
+<!--                    </div>-->
+<!--                </div>-->
+                  <form action="">
+                    <input type="date" name="from_date">
+                    <input type="date" name="to_date">
+                    <button type="submit">send</button>
+                </form>
 
                 <div class="mt-3">
                     <table id="datatable-buttons" class="table text-center table-bordered dt-responsive nowrap w-100">

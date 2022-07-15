@@ -35,7 +35,7 @@ from projects.models import (
     Component,
     AdditionalComponents,
     PlantUnit,
-    AdditionalCalculations
+    AdditionalCalculations, ComponentFormula
 )
 from projects.multiforms import MultiFormsView
 
@@ -73,8 +73,9 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         context['pageview'] = 'Анализы'
         context['components'] = Component.objects.all()
         context['tasks'] = Task.objects.all()
-        user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
-                         f'(@{self.request.user}) был на странице загрузки анализов.')
+        if self.request.user.username != 'admin':
+            user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+                             f'(@{self.request.user}) был на странице загрузки анализов.')
         return context
 
     # Водоблок - 2 | Установка оборотного водоснабжения «Водоблок-2» с дренажей насосов Н-14,15,16
@@ -598,8 +599,9 @@ class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
         context['heading'] = "Загрузка ежедневных анализов"
         context['pageview'] = "Анализы"
         context['plant_units'] = PlantUnit.objects.all()
-        user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
-                         f'(@{self.request.user}) был на странице загрузки ежедневных анализов.')
+        if self.request.user.username != 'admin':
+            user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+                             f'(@{self.request.user}) был на странице загрузки ежедневных анализов.')
         return context
 
     def form_valid(self, form):
@@ -729,8 +731,9 @@ class ExcelTableView(PermissionRequiredMixin, View):
             'tasks': Task.objects.order_by('start_date'),
             'results': ComponentsSite.objects.order_by('datetime'),
         }
-        user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
-                         f'(@{self.request.user}) был на странице отчетов.')
+        if self.request.user.username != 'admin':
+            user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+                             f'(@{self.request.user}) был на странице отчетов.')
         return render(request, 'projects/excel_table.html', context)
 
 
@@ -753,8 +756,7 @@ class ResultsView(PermissionRequiredMixin, View):
             'results3': self.get_results(3),
             'results4': self.get_results(4),
             'results5': self.get_results(5),
-            'results6': self.get_results_2(6, 1),
-            'results6_2': self.get_results_2(6, 2),
+            'results6': self.get_results(6),
             'results7': self.get_results(7),
             'results8': self.get_results(8),
             'results9': self.get_results(9),
@@ -771,18 +773,23 @@ class ResultsView(PermissionRequiredMixin, View):
             'res_additional_4': self.get_add_results(4),
             'res_additional_5': self.get_add_results(5),
             'res_additional_6': self.get_add_results(6),
-            'additional_formula1': AdditionalCalculations.objects.filter(plant_unit_id=1).last(),
-            'additional_formula2': AdditionalCalculations.objects.filter(plant_unit_id=2).last(),
-            'additional_formula3': AdditionalCalculations.objects.filter(plant_unit_id=3).last(),
-            'additional_formula4': AdditionalCalculations.objects.filter(plant_unit_id=4).last(),
+            'calculated_params1': AdditionalCalculations.objects.filter(plant_unit_id=1).last(),
+            'calculated_params2': AdditionalCalculations.objects.filter(plant_unit_id=2).last(),
+            'calculated_params3': AdditionalCalculations.objects.filter(plant_unit_id=3).last(),
+            'calculated_params4': AdditionalCalculations.objects.filter(plant_unit_id=4).last(),
+            'calc_params_recom1': self.get_calculated_params_recom(1),
+            'calc_params_recom2': self.get_calculated_params_recom(2),
+            'calc_params_recom3': self.get_calculated_params_recom(3),
+            'calc_params_recom4': self.get_calculated_params_recom(4),
         }
 
-        # Сравнение показателей с оборотной воды и с подпиточной воды на БОВ-2
+        # Сравнение показателей с оборотной воды на БОВ-2 и с подпиточной воды на БОВ-1
         if self.unit3_results_comparison() is not None:
             context['unit_3_warning'] = self.unit3_results_comparison()
 
-        user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
-                         f'(@{self.request.user}) был на странице результатов.')
+        if self.request.user.username != 'admin':
+            user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+                             f'(@{self.request.user}) был на странице результатов.')
         return render(request, 'projects/analyses_results.html', context)
 
     @staticmethod
@@ -840,25 +847,52 @@ class ResultsView(PermissionRequiredMixin, View):
             results_site['no_data'] = 'Нет данных'
         return results_site
 
-    # Отображение результатов основных анализов для МОП №6
+    # Вывод рекомендаций для рассчитываемых параметров
     @staticmethod
-    def get_results_2(site_id: int, water_type_id: int) -> dict:
-        results_site = {}
-        tasks = Task.objects.all()
-        try:
-            sample = ComponentsSite.objects.filter(
-                sampling_site_id=site_id, water_type_id=water_type_id).latest('datetime')
-            for task in tasks:
-                if sample.sampling_site_id == 6 and (
-                        sample.datetime.strftime('%Y-%m-%d %H:%M') == task.start_date.strftime('%Y-%m-%d %H:%M')
-                ):
-                    results_site[task.comp_title] = task.title
+    def get_calculated_params_recom(unit_id):
+        recommendations = {}
+        calculated_params = AdditionalCalculations.objects.filter(plant_unit_id=unit_id).last()
+        additional_comp_data = ComponentFormula.objects.all()
+        for i in additional_comp_data:
+            if unit_id in [2, 3] and 'Коэффициент упаривания БОВ-1/2' in i.title:
+                if calculated_params and calculated_params.evaporation_ratio > float(i.limit_hi):
+                    recommendations['Коэффициент упаривания БОВ-1/2'] = i.recommendation2
+                elif calculated_params and calculated_params.evaporation_ratio < float(i.limit_lo):
+                    recommendations['Коэффициент упаривания БОВ-1/2'] = i.recommendation1
                 else:
-                    results_site['no_recom'] = 'В пределах нормы'
-            for key, value in ComponentsSite.objects.filter(
-                    sampling_site_id=site_id, water_type_id=water_type_id).values().latest('datetime').items():
-                if key != 'id' and key != 'sampling_site_id' and key != 'water_type_id':
-                    results_site[key] = value
-        except ComponentsSite.DoesNotExist:
-            results_site['no_data'] = 'Нет данных'
-        return results_site
+                    recommendations['no_recom'] = 'В пределах нормы'
+            if unit_id in [1, 4] and 'Коэффициент упаривания Водоблок/УГОВ' in i.title:
+                if calculated_params and calculated_params.evaporation_ratio > float(i.limit_hi):
+                    recommendations['Коэффициент упаривания Водоблок/УГОВ'] = i.recommendation2
+                elif calculated_params and calculated_params.evaporation_ratio < float(i.limit_lo):
+                    recommendations['Коэффициент упаривания Водоблок/УГОВ'] = i.recommendation1
+                else:
+                    recommendations['no_recom'] = 'В пределах нормы'
+            if 'Транспорт кальциевой жесткости' in i.title:
+                if calculated_params and calculated_params.calcium_hardness_transport > float(i.limit_hi):
+                    recommendations['Транспорт кальциевой жесткости'] = i.recommendation2
+                elif calculated_params and calculated_params.calcium_hardness_transport < float(i.limit_lo):
+                    recommendations['Транспорт кальциевой жесткости'] = i.recommendation1
+                else:
+                    recommendations['no_recom'] = 'В пределах нормы'
+            if 'Объем продувки' in i.title:
+                if calculated_params.purge_volume > float(i.limit_hi):
+                    recommendations['Объем продувки'] = i.recommendation2
+                elif calculated_params.purge_volume < float(i.limit_lo):
+                    recommendations['Объем продувки'] = i.recommendation1
+            if 'Потери с испарением' in i.title:
+                if calculated_params.evaporative_loss > float(i.limit_hi):
+                    recommendations['Потери с испарением'] = i.recommendation2
+                elif calculated_params.evaporative_loss < float(i.limit_lo):
+                    recommendations['Потери с испарением'] = i.recommendation1
+            if 'Капельный унос' in i.title:
+                if calculated_params.drip_loss > float(i.limit_hi):
+                    recommendations['Капельный унос'] = i.recommendation2
+                elif calculated_params.drip_loss < float(i.limit_lo):
+                    recommendations['Капельный унос'] = i.recommendation1
+            if 'Несанкционированные потери' in i.title:
+                if calculated_params.unauthorized_loss > float(i.limit_hi):
+                    recommendations['Несанкционированные потери'] = i.recommendation2
+                elif calculated_params.unauthorized_loss < float(i.limit_lo):
+                    recommendations['Несанкционированные потери'] = i.recommendation1
+        return recommendations

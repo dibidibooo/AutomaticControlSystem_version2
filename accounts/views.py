@@ -51,8 +51,9 @@ class ProfileView(PermissionRequiredMixin, View):
             user_object = User.objects.get(pk=pk)
             context['user_object'] = user_object
 
-        user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
-                         f'(@{self.request.user}) был на странице редактирования пользователей.')
+        if self.request.user.username != 'admin':
+            user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
+                             f'(@{self.request.user}) был на странице редактирования пользователей.')
         return render(request, 'account/users-list.html', context)
 
     def post(self, request):
