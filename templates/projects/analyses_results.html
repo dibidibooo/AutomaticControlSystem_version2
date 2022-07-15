@@ -2279,25 +2279,29 @@
                                                     <div class="col-xl-6">
                                                         <div class="card">
                                                             {% if 'Значение рН' not in results3 %}
-                                                            <div class="card-body bg-success bg-soft">
-                                                                <p class="text-muted mb-4">
-                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
-                                                                </p>
-                                                                <div class="col-12">
-                                                                    <p><b>{{ results3.no_recom }}</b></p>
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                        <b>Рекомендация</b>
+                                                                    </p>
+                                                                    <div class="col-12">
+                                                                        <p><b>{{ results3.no_recom }}</b></p>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            {% endif %} {% for key, value in results3.items %} {% if key == 'Значение рН' %}
-                                                            <div class="card-body bg-danger bg-soft">
-                                                                <p class="text-muted mb-4">
-                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
-                                                                </p>
-                                                                <div class="col-12">
-
-                                                                    <p><b>{{ value }}</b></p>
-                                                                </div>
-                                                            </div>
-                                                            {% endif %}{% endfor %}
+                                                            {% endif %}
+                                                            {% for key, value in results3.items %}
+                                                                {% if key == 'Значение рН' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2320,7 +2324,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula1.evaporation_ratio }}</h5>
+                                                                            <h5>{{ calculated_params1.evaporation_ratio }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -2329,26 +2333,29 @@
                                                     </div>
                                                     <div class="col-xl-6">
                                                         <div class="card">
-                                                            {% if 'Фосфор' not in results1 %}
-                                                            <div class="card-body bg-success bg-soft">
-                                                                <p class="text-muted mb-4">
-                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
-                                                                </p>
-                                                                <div class="col-12">
-                                                                    <p><b>{{ results1.no_recom }}</b></p>
+                                                            {% if 'Коэффициент упаривания Водоблок/УГОВ' not in calc_params_recom1 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    <div class="col-12">
+                                                                        <p><b>{{ calc_params_recom1.no_recom }}</b></p>
+                                                                    </div>
                                                                 </div>
-                                                            </div>
-                                                            {% endif %} {% for key, value in results1.items %} {% if key == 'Фосфор' %}
-                                                            <div class="card-body bg-danger bg-soft">
-                                                                <p class="text-muted mb-4">
-                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
-                                                                </p>
-                                                                <div class="col-12">
-
-                                                                    <p><b>{{ value }}</b></p>
-                                                                </div>
-                                                            </div>
-                                                            {% endif %}{% endfor %}
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom1.items %}
+                                                                {% if key == 'Коэффициент упаривания Водоблок/УГОВ' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2362,11 +2369,38 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula1.calcium_hardness_transport }}</h5>
+                                                                            <h5>{{ calculated_params1.calcium_hardness_transport }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Транспорт кальциевой жесткости' not in calc_params_recom1 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    <div class="col-12">
+                                                                        <p><b>{{ calc_params_recom1.no_recom }}</b></p>
+                                                                    </div>
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom1.items %}
+                                                                {% if key == 'Транспорт кальциевой жесткости' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2380,7 +2414,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula1.purge_volume }}</h5>
+                                                                            <h5>{{ calculated_params1.purge_volume }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -2398,7 +2432,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula1.evaporative_loss }}</h5>
+                                                                            <h5>{{ calculated_params1.evaporative_loss }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -2416,7 +2450,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula1.drip_loss }}</h5>
+                                                                            <h5>{{ calculated_params1.drip_loss }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -2434,7 +2468,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula1.unauthorized_loss }}</h5>
+                                                                            <h5>{{ calculated_params1.unauthorized_loss }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -4204,7 +4238,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula2.evaporation_ratio }}</h5>
+                                                                            <h5>{{ calculated_params2.evaporation_ratio }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -4222,7 +4256,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula2.calcium_hardness_transport }}</h5>
+                                                                            <h5>{{ calculated_params2.calcium_hardness_transport }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -4240,7 +4274,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula2.purge_volume }}</h5>
+                                                                            <h5>{{ calculated_params2.purge_volume }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -4258,7 +4292,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula2.evaporative_loss }}</h5>
+                                                                            <h5>{{ calculated_params2.evaporative_loss }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -4276,7 +4310,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula2.drip_loss }}</h5>
+                                                                            <h5>{{ calculated_params2.drip_loss }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -4294,7 +4328,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula2.unauthorized_loss }}</h5>
+                                                                            <h5>{{ calculated_params2.unauthorized_loss }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -6242,7 +6276,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula3.evaporation_ratio }}</h5>
+                                                                            <h5>{{ calculated_params3.evaporation_ratio }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -6260,7 +6294,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula3.calcium_hardness_transport }}</h5>
+                                                                            <h5>{{ calculated_params3.calcium_hardness_transport }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -6278,7 +6312,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula3.purge_volume }}</h5>
+                                                                            <h5>{{ calculated_params3.purge_volume }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -6296,7 +6330,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula3.evaporative_loss }}</h5>
+                                                                            <h5>{{ calculated_params3.evaporative_loss }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -6314,7 +6348,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula3.drip_loss }}</h5>
+                                                                            <h5>{{ calculated_params3.drip_loss }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -6332,7 +6366,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula3.unauthorized_loss }}</h5>
+                                                                            <h5>{{ calculated_params3.unauthorized_loss }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -9170,7 +9204,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula4.evaporation_ratio }}</h5>
+                                                                            <h5>{{ calculated_params4.evaporation_ratio }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -9188,7 +9222,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula4.calcium_hardness_transport }}</h5>
+                                                                            <h5>{{ calculated_params4.calcium_hardness_transport }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -9206,7 +9240,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula4.purge_volume }}</h5>
+                                                                            <h5>{{ calculated_params4.purge_volume }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -9224,7 +9258,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula4.evaporative_loss }}</h5>
+                                                                            <h5>{{ calculated_params4.evaporative_loss }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -9242,7 +9276,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula4.drip_loss }}</h5>
+                                                                            <h5>{{ calculated_params4.drip_loss }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>
@@ -9260,7 +9294,7 @@
                                                                 <div class="row">
                                                                     <div class="col-5">
                                                                         <div>
-                                                                            <h5>{{ additional_formula4.unauthorized_loss }}</h5>
+                                                                            <h5>{{ calculated_params4.unauthorized_loss }}</h5>
                                                                         </div>
                                                                     </div>
                                                                 </div>

@@ -46,6 +46,7 @@ class Component(models.Model):
     def __str__(self):
         return self.title
 
+
 class ComponentFormula(models.Model):
     title = models.CharField(max_length=100, verbose_name='Название компонента')
     measurement = models.CharField(verbose_name='Единица измерения', max_length=50)
@@ -59,7 +60,7 @@ class ComponentFormula(models.Model):
 
     class Meta:
         verbose_name = 'ComponentFormula'
-        verbose_name_plural = 'ComponentFormula'
+        verbose_name_plural = 'ComponentFormulas'
 
 
 class ComponentsSite(models.Model):
