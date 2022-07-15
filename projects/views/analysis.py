@@ -890,36 +890,36 @@ class ResultsView(PermissionRequiredMixin, View):
             if 'Объем продувки' in i.title:
                 if not calculated_params:
                     recommendations['no_data'] = 'Нет данных'
-                if calculated_params.purge_volume > float(i.limit_hi):
+                if calculated_params and calculated_params.purge_volume > float(i.limit_hi):
                     recommendations['Объем продувки'] = i.recommendation2
-                elif calculated_params.purge_volume < float(i.limit_lo):
+                elif calculated_params and calculated_params.purge_volume < float(i.limit_lo):
                     recommendations['Объем продувки'] = i.recommendation1
                 else:
                     recommendations['no_recom'] = 'В пределах нормы'
             if 'Потери с испарением' in i.title:
                 if not calculated_params:
                     recommendations['no_data'] = 'Нет данных'
-                if calculated_params.evaporative_loss > float(i.limit_hi):
+                if calculated_params and calculated_params.evaporative_loss > float(i.limit_hi):
                     recommendations['Потери с испарением'] = i.recommendation2
-                elif calculated_params.evaporative_loss < float(i.limit_lo):
+                elif calculated_params and calculated_params.evaporative_loss < float(i.limit_lo):
                     recommendations['Потери с испарением'] = i.recommendation1
                 else:
                     recommendations['no_recom'] = 'В пределах нормы'
             if 'Капельный унос' in i.title:
                 if not calculated_params:
                     recommendations['no_data'] = 'Нет данных'
-                if calculated_params.drip_loss > float(i.limit_hi):
+                if calculated_params and calculated_params.drip_loss > float(i.limit_hi):
                     recommendations['Капельный унос'] = i.recommendation2
-                elif calculated_params.drip_loss < float(i.limit_lo):
+                elif calculated_params and calculated_params.drip_loss < float(i.limit_lo):
                     recommendations['Капельный унос'] = i.recommendation1
                 else:
                     recommendations['no_recom'] = 'В пределах нормы'
             if 'Несанкционированные потери' in i.title:
                 if not calculated_params:
                     recommendations['no_data'] = 'Нет данных'
-                if calculated_params.unauthorized_loss > float(i.limit_hi):
+                if calculated_params and calculated_params.unauthorized_loss > float(i.limit_hi):
                     recommendations['Несанкционированные потери'] = i.recommendation2
-                elif calculated_params.unauthorized_loss < float(i.limit_lo):
+                elif calculated_params and calculated_params.unauthorized_loss < float(i.limit_lo):
                     recommendations['Несанкционированные потери'] = i.recommendation1
                 else:
                     recommendations['no_recom'] = 'В пределах нормы'
