@@ -2338,9 +2338,14 @@
                                                                     <p class="text-muted mb-4">
                                                                         <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
                                                                     </p>
-                                                                    <div class="col-12">
-                                                                        <p><b>{{ calc_params_recom1.no_recom }}</b></p>
-                                                                    </div>
+                                                                    {% if calc_params_recom1.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom1.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
                                                                 </div>
                                                             {% endif %}
                                                             {% for key, value in calc_params_recom1.items %}
@@ -8254,6 +8259,38 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Коэффициент упаривания Водоблок/УГОВ' not in calc_params_recom4 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom4.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom4.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom4.items %}
+                                                                {% if key == 'Коэффициент упаривания Водоблок/УГОВ' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
                                                         </div>
                                                     </div>
                                                 </div>
