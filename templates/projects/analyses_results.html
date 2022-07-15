@@ -41,7 +41,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
                                                     <select class="form-select" id="plant_unit1" name="plant_unit1">
@@ -2426,6 +2426,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Объем продувки' not in calc_params_recom1 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom1.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom1.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom1.items %}
+                                                                {% if key == 'Объем продувки' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xl-6">
@@ -2442,6 +2474,38 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Потери с испарением' not in calc_params_recom1 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom1.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom1.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom1.items %}
+                                                                {% if key == 'Потери с испарением' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -2462,6 +2526,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Капельный унос' not in calc_params_recom1 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom1.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom1.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom1.items %}
+                                                                {% if key == 'Капельный унос' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xl-6">
@@ -2480,6 +2576,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Несанкционированные потери' not in calc_params_recom1 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom1.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom1.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom1.items %}
+                                                                {% if key == 'Несанкционированные потери' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </form>
                                         </div>
@@ -2490,7 +2618,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
                                                     <select class="form-select" id="plant_unit2" name="plant_unit2">
@@ -4250,6 +4378,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Коэффициент упаривания БОВ-1/2' not in calc_params_recom2 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom2.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom2.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom2.items %}
+                                                                {% if key == 'Коэффициент упаривания' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xl-6">
@@ -4266,6 +4426,38 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Транспорт кальциевой жесткости' not in calc_params_recom2 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom2.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom2.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom2.items %}
+                                                                {% if key == 'Транспорт кальциевой жесткости' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -4286,6 +4478,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Объем продувки' not in calc_params_recom2 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom2.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom2.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom2.items %}
+                                                                {% if key == 'Объем продувки' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xl-6">
@@ -4302,6 +4526,38 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Потери с испарением' not in calc_params_recom2 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom2.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom2.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom2.items %}
+                                                                {% if key == 'Потери с испарением' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -4322,6 +4578,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Капельный унос' not in calc_params_recom2 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom2.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom2.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom2.items %}
+                                                                {% if key == 'Капельный унос' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xl-6">
@@ -4340,6 +4628,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Несанкционированные потери' not in calc_params_recom2 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom2.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom2.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom2.items %}
+                                                                {% if key == 'Несанкционированные потери' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </form>
                                         </div>
@@ -4350,7 +4670,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row" id="unit" name="unit">
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
                                                     <select class="form-select" id="plant_unit3" name="plant_unit3">
@@ -4359,16 +4679,6 @@
                                                             Точка насосов Р-01А/В/С/Д
                                                         </option>
                                                         <option value="6.1">Рассчитываемые параметры</option>
-                                                    </select>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6">
-                                                <div class="mb-3">
-                                                    <h4 class="card-title">Контролируемая вода</h4>
-                                                    <select class="form-select" id="water_type3" name="water_type3">
-                                                        <option selected>Выбрать..</option>
-                                                        <option value="1">Оборотная</option>
-                                                        <option value="2">Приточная</option>
                                                     </select>
                                                 </div>
                                             </div>
@@ -6288,6 +6598,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Коэффициент упаривания БОВ-1/2' not in calc_params_recom3 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom3.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom3.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom3.items %}
+                                                                {% if key == 'Коэффициент упаривания' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xl-6">
@@ -6304,6 +6646,38 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Транспорт кальциевой жесткости' not in calc_params_recom3 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom3.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom3.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom3.items %}
+                                                                {% if key == 'Транспорт кальциевой жесткости' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -6324,6 +6698,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Объем продувки' not in calc_params_recom3 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom3.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom3.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom3.items %}
+                                                                {% if key == 'Объем продувки' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xl-6">
@@ -6340,6 +6746,38 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Потери с испарением' not in calc_params_recom3 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom3.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom3.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom3.items %}
+                                                                {% if key == 'Потери с испарением' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -6360,6 +6798,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Капельный унос' not in calc_params_recom3 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom3.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom3.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom3.items %}
+                                                                {% if key == 'Капельный унос' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xl-6">
@@ -6378,6 +6848,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Несанкционированные потери' not in calc_params_recom3 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom3.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom3.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom3.items %}
+                                                                {% if key == 'Несанкционированные потери' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </form>
                                         </div>
@@ -6388,7 +6890,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
                                                     <select class="form-select" id="plant_unit4" name="plant_unit4">
@@ -9266,6 +9768,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Транспорт кальциевой жесткости' not in calc_params_recom4 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom4.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom4.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom4.items %}
+                                                                {% if key == 'Транспорт кальциевой жесткости' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xl-6">
@@ -9282,6 +9816,38 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Объем продувки' not in calc_params_recom4 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom4.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom4.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom4.items %}
+                                                                {% if key == 'Объем продувки' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -9302,6 +9868,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Потери с испарением' not in calc_params_recom4 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom4.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom4.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom4.items %}
+                                                                {% if key == 'Потери с испарением' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                                 <div class="row">
                                                     <div class="col-xl-6">
@@ -9318,6 +9916,38 @@
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Капельный унос' not in calc_params_recom4 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom4.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom4.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom4.items %}
+                                                                {% if key == 'Капельный унос' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -9338,6 +9968,38 @@
                                                             </div>
                                                         </div>
                                                     </div>
+                                                    <div class="col-xl-6">
+                                                        <div class="card">
+                                                            {% if 'Несанкционированные потери' not in calc_params_recom4 %}
+                                                                <div class="card-body bg-success bg-soft">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
+                                                                    </p>
+                                                                    {% if calc_params_recom4.no_data %}
+                                                                         <div class="col-12">
+                                                                         </div>
+                                                                    {% else %}
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ calc_params_recom4.no_recom }}</b></p>
+                                                                        </div>
+                                                                    {% endif %}
+                                                                </div>
+                                                            {% endif %}
+                                                            {% for key, value in calc_params_recom4.items %}
+                                                                {% if key == 'Несанкционированные потери' %}
+                                                                    <div class="card-body bg-danger bg-soft">
+                                                                        <p class="text-muted mb-4">
+                                                                            <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i>
+                                                                            <b>Рекомендация</b>
+                                                                        </p>
+                                                                        <div class="col-12">
+                                                                            <p><b>{{ value }}</b></p>
+                                                                        </div>
+                                                                    </div>
+                                                                {% endif %}
+                                                            {% endfor %}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </form>
                                         </div>
@@ -9348,7 +10010,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
                                                     <select class="form-select" id="plant_unit5" name="plant_unit5">
@@ -9890,7 +10552,7 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <div class="row">
-                                            <div class="col-lg-6">
+                                            <div class="col-lg-12">
                                                 <div class="mb-3">
                                                     <h4 class="card-title">Место отбора проб</h4>
                                                     <select class="form-select" id="plant_unit6" name="plant_unit6">
