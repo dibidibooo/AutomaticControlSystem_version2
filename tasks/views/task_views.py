@@ -1132,7 +1132,6 @@ class TaskCreate:
     def site16_task(self, form, water_type: int, responsible_id: int) -> None:
         pass
 
-
 class ArchiveTaskListView(PermissionRequiredMixin, View):
     permission_required = ['tasks.view_task']
 
@@ -1148,7 +1147,6 @@ class ArchiveTaskListView(PermissionRequiredMixin, View):
             'unit5': Task.objects.filter(plant_unit_id=5, status_id=5),
             'unit6': Task.objects.filter(plant_unit_id=6, status_id=5),
         }
-
         if self.request.user.username != 'admin':
             user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
                              f'(@{self.request.user}) был на странице архивных задач.')

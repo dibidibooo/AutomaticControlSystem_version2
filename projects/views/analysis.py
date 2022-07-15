@@ -623,32 +623,10 @@ class AdditionalCalc:
         smpl_site_running = self.sampling_site_running_water(unit)
 
         # Коэффициент упаривания
-        if smpl_site_recycled == 6 and smpl_site_running == 6:
-            chlorides_recycled_water = ComponentsSite.objects.filter(
-                sampling_site_id=smpl_site_recycled, plant_unit_id=unit, water_type_id=1).last().chlorides
-            chlorides_running_water = ComponentsSite.objects.filter(
-                sampling_site_id=smpl_site_running, plant_unit_id=unit, water_type_id=2).last().chlorides
-        else:
-            chlorides_recycled_water = ComponentsSite.objects.filter(
-                sampling_site_id=smpl_site_recycled, plant_unit_id=unit).last().chlorides
-            chlorides_running_water = ComponentsSite.objects.filter(
-                sampling_site_id=smpl_site_running, plant_unit_id=unit).last().chlorides
-        evaporation_ratio = chlorides_recycled_water / chlorides_running_water
-        evaporation_ratio = round(evaporation_ratio, 3)
+        evaporation_ratio = self.evaporation_ratio(unit, smpl_site_recycled, smpl_site_running)
 
         # Транспорт кальциевой жесткости
-        if smpl_site_recycled == 6 and smpl_site_running == 6:
-            calcium_recycled_water = ComponentsSite.objects.filter(
-                sampling_site_id=smpl_site_recycled, plant_unit_id=unit, water_type_id=1).last().hardness_calcium
-            calcium_running_water = ComponentsSite.objects.filter(
-                sampling_site_id=smpl_site_running, plant_unit_id=unit, water_type_id=2).last().hardness_calcium
-        else:
-            calcium_recycled_water = ComponentsSite.objects.filter(
-                sampling_site_id=smpl_site_recycled, plant_unit_id=unit).last().hardness_calcium
-            calcium_running_water = ComponentsSite.objects.filter(
-                sampling_site_id=smpl_site_running, plant_unit_id=unit).last().hardness_calcium
-        tr_ca = (calcium_recycled_water * 100) / (calcium_running_water * evaporation_ratio)
-        tr_ca = round(tr_ca, 3)
+        tr_ca = self.transport_ca(unit, smpl_site_recycled, smpl_site_running, evaporation_ratio)
 
         # Объем продувки
         running_water_consumption = AdditionalComponents.objects.all().last().running_water_consumption
@@ -693,8 +671,36 @@ class AdditionalCalc:
         )
 
     @staticmethod
+    def evaporation_ratio(unit, smpl_site_recycled, smpl_site_running):
+        chlorides_recycled_water = ComponentsSite.objects.filter(
+            sampling_site_id=smpl_site_recycled, plant_unit_id=unit).last().chlorides
+        if smpl_site_recycled == 6 and smpl_site_running == 4:
+            chlorides_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running, plant_unit_id=2).last().chlorides
+        else:
+            chlorides_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running, plant_unit_id=unit).last().chlorides
+        evaporation_ratio = chlorides_recycled_water / chlorides_running_water
+        evaporation_ratio = round(evaporation_ratio, 3)
+        return evaporation_ratio
+
+    @staticmethod
+    def transport_ca(unit, smpl_site_recycled, smpl_site_running, evaporation_ratio):
+        calcium_recycled_water = ComponentsSite.objects.filter(
+            sampling_site_id=smpl_site_recycled, plant_unit_id=unit).last().hardness_calcium
+        if smpl_site_recycled == 6 and smpl_site_running == 4:
+            calcium_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running, plant_unit_id=2).last().hardness_calcium
+        else:
+            calcium_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running, plant_unit_id=unit).last().hardness_calcium
+        tr_ca = (calcium_recycled_water * 100) / (calcium_running_water * evaporation_ratio)
+        tr_ca = round(tr_ca, 3)
+        return tr_ca
+
+    @staticmethod
     def sampling_site_recycled_water(unit: int) -> int:
-        # Получение ID МОП, если тип воды - оборотный
+        # Получение ID МОП, если тип воды - оборотная
         smpl_site = 0
         if unit == 1:
             smpl_site = 1
@@ -708,14 +714,14 @@ class AdditionalCalc:
 
     @staticmethod
     def sampling_site_running_water(unit: int) -> int:
-        # Получение ID МОП, если тип воды - подпиточный
+        # Получение ID МОП, если тип воды - подпиточная
         smpl_site = 0
         if unit == 1:
             smpl_site = 3
         elif unit == 2:
             smpl_site = 4
         elif unit == 3:
-            smpl_site = 6
+            smpl_site = 4
         elif unit == 4:
             smpl_site = 9
         return smpl_site
@@ -855,6 +861,8 @@ class ResultsView(PermissionRequiredMixin, View):
         additional_comp_data = ComponentFormula.objects.all()
         for i in additional_comp_data:
             if unit_id in [2, 3] and 'Коэффициент упаривания БОВ-1/2' in i.title:
+                if not calculated_params:
+                    recommendations['no_data'] = 'Нет данных'
                 if calculated_params and calculated_params.evaporation_ratio > float(i.limit_hi):
                     recommendations['Коэффициент упаривания БОВ-1/2'] = i.recommendation2
                 elif calculated_params and calculated_params.evaporation_ratio < float(i.limit_lo):
@@ -862,6 +870,8 @@ class ResultsView(PermissionRequiredMixin, View):
                 else:
                     recommendations['no_recom'] = 'В пределах нормы'
             if unit_id in [1, 4] and 'Коэффициент упаривания Водоблок/УГОВ' in i.title:
+                if not calculated_params:
+                    recommendations['no_data'] = 'Нет данных'
                 if calculated_params and calculated_params.evaporation_ratio > float(i.limit_hi):
                     recommendations['Коэффициент упаривания Водоблок/УГОВ'] = i.recommendation2
                 elif calculated_params and calculated_params.evaporation_ratio < float(i.limit_lo):
@@ -869,6 +879,8 @@ class ResultsView(PermissionRequiredMixin, View):
                 else:
                     recommendations['no_recom'] = 'В пределах нормы'
             if 'Транспорт кальциевой жесткости' in i.title:
+                if not calculated_params:
+                    recommendations['no_data'] = 'Нет данных'
                 if calculated_params and calculated_params.calcium_hardness_transport > float(i.limit_hi):
                     recommendations['Транспорт кальциевой жесткости'] = i.recommendation2
                 elif calculated_params and calculated_params.calcium_hardness_transport < float(i.limit_lo):
@@ -876,23 +888,39 @@ class ResultsView(PermissionRequiredMixin, View):
                 else:
                     recommendations['no_recom'] = 'В пределах нормы'
             if 'Объем продувки' in i.title:
+                if not calculated_params:
+                    recommendations['no_data'] = 'Нет данных'
                 if calculated_params.purge_volume > float(i.limit_hi):
                     recommendations['Объем продувки'] = i.recommendation2
                 elif calculated_params.purge_volume < float(i.limit_lo):
                     recommendations['Объем продувки'] = i.recommendation1
+                else:
+                    recommendations['no_recom'] = 'В пределах нормы'
             if 'Потери с испарением' in i.title:
+                if not calculated_params:
+                    recommendations['no_data'] = 'Нет данных'
                 if calculated_params.evaporative_loss > float(i.limit_hi):
                     recommendations['Потери с испарением'] = i.recommendation2
                 elif calculated_params.evaporative_loss < float(i.limit_lo):
                     recommendations['Потери с испарением'] = i.recommendation1
+                else:
+                    recommendations['no_recom'] = 'В пределах нормы'
             if 'Капельный унос' in i.title:
+                if not calculated_params:
+                    recommendations['no_data'] = 'Нет данных'
                 if calculated_params.drip_loss > float(i.limit_hi):
                     recommendations['Капельный унос'] = i.recommendation2
                 elif calculated_params.drip_loss < float(i.limit_lo):
                     recommendations['Капельный унос'] = i.recommendation1
+                else:
+                    recommendations['no_recom'] = 'В пределах нормы'
             if 'Несанкционированные потери' in i.title:
+                if not calculated_params:
+                    recommendations['no_data'] = 'Нет данных'
                 if calculated_params.unauthorized_loss > float(i.limit_hi):
                     recommendations['Несанкционированные потери'] = i.recommendation2
                 elif calculated_params.unauthorized_loss < float(i.limit_lo):
                     recommendations['Несанкционированные потери'] = i.recommendation1
+                else:
+                    recommendations['no_recom'] = 'В пределах нормы'
         return recommendations
