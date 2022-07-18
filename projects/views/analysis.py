@@ -190,6 +190,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         suspended_subst = form.cleaned_data.get('suspended_subst')
         alkalinity = form.cleaned_data.get('alkalinity')
         iron = form.cleaned_data.get('iron')
+        phosphorus = form.cleaned_data.get('phosphorus')
         form_name = form.cleaned_data.get('action')
         smpl_site = form.cleaned_data.get('smpl_site')
         water_type = 2
@@ -205,6 +206,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             suspended_subst=suspended_subst,
             alkalinity=alkalinity,
             iron=iron,
+            phosphorus=phosphorus,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
             water_type_id=water_type,
@@ -226,6 +228,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         suspended_subst = form.cleaned_data.get('suspended_subst')
         alkalinity = form.cleaned_data.get('alkalinity')
         iron = form.cleaned_data.get('iron')
+        phosphorus = form.cleaned_data.get('phosphorus')
         form_name = form.cleaned_data.get('action')
         smpl_site = form.cleaned_data.get('smpl_site')
         water_type = 1
@@ -241,6 +244,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             suspended_subst=suspended_subst,
             alkalinity=alkalinity,
             iron=iron,
+            phosphorus=phosphorus,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
             water_type_id=water_type,
@@ -263,6 +267,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         alkalinity_phenols = form.cleaned_data.get('alkalinity_phenols')
         alkalinity = form.cleaned_data.get('alkalinity')
         iron = form.cleaned_data.get('iron')
+        phosphorus = form.cleaned_data.get('phosphorus')
         form_name = form.cleaned_data.get('action')
         water_type = 1
         smpl_site = form.cleaned_data.get('smpl_site')
@@ -279,6 +284,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             alkalinity_phenols=alkalinity_phenols,
             alkalinity=alkalinity,
             iron=iron,
+            phosphorus=phosphorus,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
             water_type_id=water_type,
