@@ -486,7 +486,39 @@ class TaskCreate:
 
     # 2|1 БОВ-1
     def site4_task(self, form, water_type: int, responsible_id: int) -> None:
-        pass
+        phosphorus = Component.objects.get(title__contains='[2|1] Фосфор')
+        smpl_site = 4
+        unit = 2
+
+        if float(form.cleaned_data['phosphorus']) < float(phosphorus.limit_lo):
+            comp_title = phosphorus.title[6:]
+            deadline = datetime.now() + timedelta(days=3)
+            Task.objects.create(
+                title=phosphorus.recommendation1,
+                responsible_id=responsible_id,
+                deadline=deadline,
+                comp_title=comp_title,
+                comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('phosphorus').latest('datetime')['phosphorus']),
+                sampling_site_id=smpl_site,
+                notification_id=2,
+                plant_unit_id=unit,
+                water_type_id=water_type
+            )
+
+        if float(form.cleaned_data['phosphorus']) > float(phosphorus.limit_hi):
+            comp_title = phosphorus.title[6:]
+            deadline = datetime.now() + timedelta(days=3)
+            Task.objects.create(
+                title=phosphorus.recommendation2,
+                responsible_id=responsible_id,
+                deadline=deadline,
+                comp_title=comp_title,
+                comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('phosphorus').latest('datetime')['phosphorus']),
+                sampling_site_id=smpl_site,
+                notification_id=1,
+                plant_unit_id=unit,
+                water_type_id=water_type
+            )
 
     # 2|2 БОВ-1
     def site5_task(self, form, water_type: int, responsible_id: int) -> None:
