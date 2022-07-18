@@ -139,10 +139,6 @@ LOGGING = {
     },
 
     'handlers': {
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'main_format',
-        },
         'file': {
             'class': 'logging.FileHandler',
             'formatter': 'main_format',
@@ -152,7 +148,7 @@ LOGGING = {
 
     'loggers': {
         'users_interactions': {
-            'handlers': ['console', 'file'],
+            'handlers': ['file'],
             'level': 'INFO',
         },
     },

@@ -94,6 +94,8 @@ class Site4Form(MultipleForm):
         attrs={'class': 'form-control mb-3'}), label="Щёлочность общая")
     iron = forms.FloatField(widget=forms.NumberInput(
         attrs={'class': 'form-control mb-3'}), label="Железо")
+    phosphorus = forms.FloatField(widget=forms.NumberInput(
+        attrs={'class': 'form-control mb-3'}), label="Фосфор")
 
 
 # БОВ-1 | Аналитическая точка выкид насосов Р-01А/В/С/Д
@@ -118,6 +120,8 @@ class Site5Form(MultipleForm):
         attrs={'class': 'form-control mb-3'}), label="Щёлочность общая")
     iron = forms.FloatField(widget=forms.NumberInput(
         attrs={'class': 'form-control mb-3'}), label="Железо")
+    phosphorus = forms.FloatField(widget=forms.NumberInput(
+        attrs={'class': 'form-control mb-3'}), label="Фосфор")
 
 
 # БОВ-2 | Аналитическая точка насосов Р-01А/В/С/Д
@@ -144,6 +148,8 @@ class Site6Form(MultipleForm):
         attrs={'class': 'form-control mb-3'}), label="Щёлочность общая")
     iron = forms.FloatField(widget=forms.NumberInput(
         attrs={'class': 'form-control mb-3'}), label="Железо")
+    phosphorus = forms.FloatField(widget=forms.NumberInput(
+        attrs={'class': 'form-control mb-3'}), label="Фосфор")
 
 
 # УГОВ | Аналитическая точка насосов Р-01А/В/С/Д
