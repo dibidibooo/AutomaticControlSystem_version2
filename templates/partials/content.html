@@ -11,23 +11,20 @@
 {% endblock %}
 
 {% block contents %}
+
+
 <div class="card">
     <div class="card-body">
-        <h4 class="card-title">Действия пользователей</h4>
+        <h4 class="card-title mb-3">Действия пользователей</h4>
         <p><b>Дата - Время</b></p>
-        <div class="table-responsive">
-            <table class="table table-nowrap table-hover mb-0">
-                <tbody data-simplebar class="mt-3" style="max-height: 300px;">
-                {% for i in log %}
-                <tr>
-                    <td>{{ i }}</td>
-                </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+        <div data-simplebar style="max-height: 300px;">
+            {% for i in log %}
+            <div style="margin-bottom: 10px">{{ i }}</div>
+            {% endfor %}
         </div>
     </div>
 </div>
+
 
 <div class="row">
     <div class="col-lg-3">
@@ -268,6 +265,7 @@
         targetModalContent.html(' ');
     });
 
+
 </script>
 <!-- Kanban -->
 <script src="{% static 'libs/dragula/dist/dragula.min.js' %}"></script>
@@ -312,6 +310,7 @@
             }
         });
     }
+
 
 </script>
 {% endblock %}
