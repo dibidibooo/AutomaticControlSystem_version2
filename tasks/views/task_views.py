@@ -151,7 +151,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
 class TaskCreate:
     """Создание задач в случае отклонений показателей от норм"""
 
-    # 1|1
+    # 1|1 Водоблок-2
     def site1_task(self, form, water_type: int, responsible_id: int) -> None:
         oil_prod = Component.objects.get(title__contains='[1|1] Нефтепродукт')
         ph = Component.objects.get(title__contains='[1|1] Значение рН')
@@ -307,7 +307,7 @@ class TaskCreate:
                 water_type_id=water_type
             )
 
-    # 1|2
+    # 1|2 Водоблок-2
     def site2_task(self, form, water_type: int, responsible_id: int) -> None:
         oil_prod = Component.objects.get(title__contains='[1|2] Нефтепродукт')
         ph = Component.objects.get(title__contains='[1|2] Значение рН')
@@ -374,7 +374,7 @@ class TaskCreate:
                 water_type_id=water_type
             )
 
-    # 1|3
+    # 1|3 Водоблок-2
     def site3_task(self, form, water_type: int, responsible_id: int) -> None:
         ph = Component.objects.get(title__contains='[1|3] Значение рН')
         suspended_subst = Component.objects.get(title__contains='[1|3] Взвешенные вещества')
@@ -484,11 +484,11 @@ class TaskCreate:
                 water_type_id=water_type
             )
 
-    # 2|1
+    # 2|1 БОВ-1
     def site4_task(self, form, water_type: int, responsible_id: int) -> None:
         pass
 
-    # 2|2
+    # 2|2 БОВ-1
     def site5_task(self, form, water_type: int, responsible_id: int) -> None:
         hardness = Component.objects.get(title__contains='[2|2] Жесткость общая')
         hardness_calcium = Component.objects.get(title__contains='[2|2] Жесткость кальциевая')
@@ -499,6 +499,7 @@ class TaskCreate:
         oil_prod = Component.objects.get(title__contains='[2|2] Нефтепродукт')
         suspended_subst = Component.objects.get(title__contains='[2|2] Взвешенные вещества')
         alkalinity = Component.objects.get(title__contains='[2|2] Щелочность общая')
+        phosphorus = Component.objects.get(title__contains='[2|2] Фосфор')
         smpl_site = 5
         unit = 2
 
@@ -657,7 +658,37 @@ class TaskCreate:
                 water_type_id=water_type
             )
 
-    # 3|1
+        if float(form.cleaned_data['phosphorus']) < float(phosphorus.limit_lo):
+            comp_title = phosphorus.title[6:]
+            deadline = datetime.now() + timedelta(days=3)
+            Task.objects.create(
+                title=phosphorus.recommendation1,
+                responsible_id=responsible_id,
+                deadline=deadline,
+                comp_title=comp_title,
+                comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('phosphorus').latest('datetime')['phosphorus']),
+                sampling_site_id=smpl_site,
+                notification_id=2,
+                plant_unit_id=unit,
+                water_type_id=water_type
+            )
+
+        if float(form.cleaned_data['phosphorus']) > float(phosphorus.limit_hi):
+            comp_title = phosphorus.title[6:]
+            deadline = datetime.now() + timedelta(days=3)
+            Task.objects.create(
+                title=phosphorus.recommendation2,
+                responsible_id=responsible_id,
+                deadline=deadline,
+                comp_title=comp_title,
+                comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('phosphorus').latest('datetime')['phosphorus']),
+                sampling_site_id=smpl_site,
+                notification_id=1,
+                plant_unit_id=unit,
+                water_type_id=water_type
+            )
+
+    # 3|1 БОВ-2
     def site6_task(self, form, water_type: int, responsible_id: int) -> None:
         hardness = Component.objects.get(title__contains='[3|1] Жесткость общая')
         hardness_calcium = Component.objects.get(title__contains='[3|1] Жесткость кальциевая')
@@ -668,6 +699,7 @@ class TaskCreate:
         oil_prod = Component.objects.get(title__contains='[3|1] Нефтепродукт')
         suspended_subst = Component.objects.get(title__contains='[3|1] Взвешенные вещества')
         alkalinity = Component.objects.get(title__contains='[3|1] Щелочность общая')
+        phosphorus = Component.objects.get(title__contains='[3|1] Фосфор')
         smpl_site = 6
         unit = 3
 
@@ -822,6 +854,36 @@ class TaskCreate:
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('alkalinity').latest('datetime')['alkalinity']),
                 sampling_site_id=smpl_site,
                 notification_id=2,
+                plant_unit_id=unit,
+                water_type_id=water_type
+            )
+
+        if float(form.cleaned_data['phosphorus']) < float(phosphorus.limit_lo):
+            comp_title = phosphorus.title[6:]
+            deadline = datetime.now() + timedelta(days=3)
+            Task.objects.create(
+                title=phosphorus.recommendation1,
+                responsible_id=responsible_id,
+                deadline=deadline,
+                comp_title=comp_title,
+                comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('phosphorus').latest('datetime')['phosphorus']),
+                sampling_site_id=smpl_site,
+                notification_id=2,
+                plant_unit_id=unit,
+                water_type_id=water_type
+            )
+
+        if float(form.cleaned_data['phosphorus']) > float(phosphorus.limit_hi):
+            comp_title = phosphorus.title[6:]
+            deadline = datetime.now() + timedelta(days=3)
+            Task.objects.create(
+                title=phosphorus.recommendation2,
+                responsible_id=responsible_id,
+                deadline=deadline,
+                comp_title=comp_title,
+                comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('phosphorus').latest('datetime')['phosphorus']),
+                sampling_site_id=smpl_site,
+                notification_id=1,
                 plant_unit_id=unit,
                 water_type_id=water_type
             )
@@ -1131,6 +1193,7 @@ class TaskCreate:
     # 6|4
     def site16_task(self, form, water_type: int, responsible_id: int) -> None:
         pass
+
 
 class ArchiveTaskListView(PermissionRequiredMixin, View):
     permission_required = ['tasks.view_task']
