@@ -20,6 +20,13 @@
                                     <div class="flex-grow-1">
                                         <div class="text-danger">
                                             {{ unit_3_warning }}
+                                            {% for k1, v1 in dd.items %}
+                                                <br>
+                                                <br>
+                                                БОВ-1 (подпиточная) - {{ k1 }} ({{ v1.0 }})
+                                                <br>
+                                                БОВ-2 (оборотная) - {{ k1 }} ({{ v1.1 }})
+                                            {% endfor %}
                                         </div>
                                     </div>
                                 </div>
