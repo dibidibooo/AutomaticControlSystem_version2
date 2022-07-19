@@ -29,8 +29,12 @@ class DashboardView(PermissionRequiredMixin, View):
         self.get_escalated_tasks()
 
         # Сравнение показателей с оборотной воды и с подпиточной воды на БОВ-2
-        if ResultsView.unit3_results_comparison() is not None:
-            context['unit_3_warning'] = ResultsView.unit3_results_comparison()
+        res = ResultsView()
+        unit3_comparison = res.unit3_results_comparison()
+        if unit3_comparison:
+            context['unit_3_warning'] = unit3_comparison[0]
+            context['dd'] = unit3_comparison[1]
+
         return render(request, 'dashboard/dashboard.html', context)
 
     def post(self, request):
