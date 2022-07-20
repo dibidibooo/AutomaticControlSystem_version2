@@ -20,6 +20,13 @@
                                     <div class="flex-grow-1">
                                         <div class="text-danger">
                                             {{ unit_3_warning }}
+                                            {% for k1, v1 in dd.items %}
+                                                <br>
+                                                <br>
+                                                БОВ-1 (подпиточная) - {{ k1 }} ({{ v1.0 }})
+                                                <br>
+                                                БОВ-2 (оборотная) - {{ k1 }} ({{ v1.1 }})
+                                            {% endfor %}
                                         </div>
                                     </div>
                                 </div>
@@ -39,10 +46,13 @@
                                         </div>
                                         <div class="flex-grow-1">
                                             <div>
-                                                #{{ task.id }} - {{ task.plant_unit }}
-                                                <br>{{ task.sampling_site|truncatechars:20 }}
-                                                <br>'{{ task.comp_title }}'
-                                                <br>{{ task.notification }}
+                                                <a href="" class="text-dark open_task" id="{{ task.id }}"
+                                                   data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
+                                                    #{{ task.id }} - {{ task.plant_unit }}
+                                                    <br>{{ task.sampling_site|truncatechars:20 }}
+                                                    <br>'{{ task.comp_title }}'
+                                                    <br>{{ task.notification }}
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -62,7 +72,10 @@
                                                 </div>
                                                 <div class="flex-grow-1">
                                                     <div class="text-danger">
-                                                        Задача #{{ task.id }} просрочена
+                                                        <a href="" class="text-dark open_task" id="{{ task.id }}"
+                                                           data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
+                                                            Задача #{{ task.id }} просрочена
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -82,10 +95,13 @@
                                         </div>
                                         <div class="flex-grow-1">
                                             <div>
-                                                #{{ task.id }} - {{ task.plant_unit }}
-                                                <br>{{ task.sampling_site|truncatechars:20 }}
-                                                <br>'{{ task.comp_title }}'
-                                                <br>{{ task.notification }}
+                                                <a href="" class="text-dark open_task" id="{{ task.id }}"
+                                                   data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
+                                                    #{{ task.id }} - {{ task.plant_unit }}
+                                                    <br>{{ task.sampling_site|truncatechars:20 }}
+                                                    <br>'{{ task.comp_title }}'
+                                                    <br>{{ task.notification }}
+                                                </a>
                                             </div>
                                         </div>
                                     </div>
@@ -105,7 +121,10 @@
                                                 </div>
                                                 <div class="flex-grow-1">
                                                     <div class="text-danger">
-                                                        Задача #{{ task.id }} просрочена
+                                                        <a href="" class="text-dark open_task" id="{{ task.id }}"
+                                                           data-popup-url="{% url 'tasks-update' task.pk %}" onclick="editTask(this.id)">
+                                                            Задача #{{ task.id }} просрочена
+                                                        </a>
                                                     </div>
                                                 </div>
                                             </div>

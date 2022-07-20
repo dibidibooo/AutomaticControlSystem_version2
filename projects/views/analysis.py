@@ -1,14 +1,15 @@
 from datetime import datetime
 import logging
+from collections import defaultdict
 
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect, JsonResponse, Http404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import View
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic import CreateView
 
-from tasks.models import Task
+from tasks.models import Task, Comment, ChangesTracker
 from tasks.views.task_views import TaskCreate
 
 from projects.forms import (
@@ -795,39 +796,140 @@ class ResultsView(PermissionRequiredMixin, View):
             'calc_params_recom4': self.get_calculated_params_recom(4),
         }
 
-        # Сравнение показателей с оборотной воды на БОВ-2 и с подпиточной воды на БОВ-1
-        if self.unit3_results_comparison() is not None:
-            context['unit_3_warning'] = self.unit3_results_comparison()
+        unit3_comparison = self.unit3_results_comparison()
+        if unit3_comparison:
+            context['unit_3_warning'] = unit3_comparison[0]
+            context['dd'] = unit3_comparison[1]
 
         if self.request.user.username != 'admin':
             user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
                              f'(@{self.request.user}) был на странице результатов.')
         return render(request, 'projects/analyses_results.html', context)
 
-    @staticmethod
-    def unit3_results_comparison():
+    def post(self, request):
+        # Редактирование карточки задачи
+        if 'edittask' in request.POST:
+            task_id = request.POST['id']
+            deadline = request.POST.get('deadline')
+            status = request.POST['status']
+            user = request.POST['user']
+            task = Task.objects.get(id=task_id)
+            task.deadline = deadline
+            task.status_id = int(status)
+            try:
+                task.user_id = int(user)
+            except ValueError:
+                raise Http404('Пользователь не назначен!')
+            if task.status_id == 4:
+                task.completion_date = datetime.now()
+
+            if task.tracker.has_changed('status_id'):
+                ChangesTracker.objects.create(
+                    task_id=task.id,
+                    text="изменил статус на",
+                    who_changed=request.user,
+                    changed_to=task.status
+                )
+            if task.tracker.has_changed('user_id'):
+                ChangesTracker.objects.create(
+                    task_id=task.id,
+                    text="изменил исполнителя на",
+                    who_changed=request.user,
+                    changed_to=f"{task.user.profile.position}, {task.user.first_name} {task.user.last_name}"
+                )
+
+            if task.deadline:
+                previous_date = task.tracker.previous('deadline').strftime('%Y-%m-%d %H:%M')
+                current_date = " ".join(task.deadline.split("T"))
+                if task.tracker.has_changed('deadline') and (previous_date != current_date):
+                    ChangesTracker.objects.create(
+                        task_id=task.id,
+                        text="изменил срок исполнения на",
+                        who_changed=request.user,
+                        changed_to=datetime.strptime(task.deadline, '%Y-%m-%dT%H:%M').strftime('%Y-%m-%d %H:%M'),
+                        failure_reason=request.POST['failure_reason']
+                    )
+            task.save()
+            return redirect('analyzes_results')
+
+        # Добавление комментариев
+        elif 'add_comment_button' in request.POST:
+            task_id = request.POST['id']
+            task = Task.objects.get(id=task_id)
+            comment = Comment.objects.create(
+                text=request.POST.get('text'),
+                task=task,
+                author=self.request.user
+            )
+            return redirect('analyzes_results')
+        return JsonResponse({"message": "success"})
+
+    # Сравнение показателей с оборотной воды на БОВ-2 и с подпиточной воды на БОВ-1
+    def unit3_results_comparison(self):
         dict1 = {}
         dict2 = {}
         if ComponentsSite.objects.filter(sampling_site_id=6) and \
                 ComponentsSite.objects.filter(sampling_site_id=4):
 
-            a = ComponentsSite.objects.filter(sampling_site_id=6).values().latest('datetime')
-            b = ComponentsSite.objects.filter(sampling_site_id=4).values().latest('datetime')
+            a = ComponentsSite.objects.filter(sampling_site_id=4).values().latest('datetime')
+            b = ComponentsSite.objects.filter(sampling_site_id=6).values().latest('datetime')
             for key, value in a.items():
-                if value is not None and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit' and key != 'alkalinity_phenols':
+                if value and key and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit':
                     dict1[key] = value
             for key, value in b.items():
-                if value is not None and key is not None and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit':
+                if value and key and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit' and key != 'alkalinity_phenols':
                     dict2[key] = value
 
-        diffkeys = [key for key in dict1 if dict1[key] < dict2[key]]
+        diffkeys = [key for key in dict1 if dict1[key] > dict2[key]]
+        bov1_dict = {}
+        bov2_dict = {}
+
+        for key in diffkeys:
+            bov1_dict[key] = dict1[key]
+            bov2_dict[key] = dict2[key]
+
+        dd = defaultdict(list)
+        for d in (bov1_dict, bov2_dict):
+            for key, value in d.items():
+                dd[key].append(value)
+
+        compared_results = self.translate_comp_titles(dict(dd))
+
         if diffkeys:
-            return """
+            warning_text = """
             Показатели компонентов БОВ-2 с оборотной воды ниже показателей компонентов БОВ-1 с подпиточной воды.
             Пожалуйста, обратите внимание!
             """
+            return warning_text, compared_results
         else:
             return None
+
+    # Перевод названия компонентов на русский (т.к. названия берутся из названия столбцов в таблице)
+    @staticmethod
+    def translate_comp_titles(compared_dict):
+        if 'phosphorus' in compared_dict:
+            compared_dict['Фосфор'] = compared_dict.pop('phosphorus')
+        if 'chlorides' in compared_dict:
+            compared_dict['Хлориды'] = compared_dict.pop('chlorides')
+        if 'iron' in compared_dict:
+            compared_dict['Железо'] = compared_dict.pop('iron')
+        if 'hardness_calcium' in compared_dict:
+            compared_dict['Жёсткость кальциевая'] = compared_dict.pop('hardness_calcium')
+        if 'hardness' in compared_dict:
+            compared_dict['Жёсткость общая'] = compared_dict.pop('hardness')
+        if 'alkalinity' in compared_dict:
+            compared_dict['Щёлочность общая'] = compared_dict.pop('alkalinity')
+        if 'ph' in compared_dict:
+            compared_dict['Значение pH'] = compared_dict.pop('ph')
+        if 'salt' in compared_dict:
+            compared_dict['Солесодержание'] = compared_dict.pop('salt')
+        if 'sulfates' in compared_dict:
+            compared_dict['Сульфаты'] = compared_dict.pop('sulfates')
+        if 'oil_prod' in compared_dict:
+            compared_dict['Нефтепродукт'] = compared_dict.pop('oil_prod')
+        if 'suspended_subst' in compared_dict:
+            compared_dict['Общие взвешенные вещества'] = compared_dict.pop('suspended_subst')
+        return compared_dict
 
     # Отображение результатов анализов доп. компонентов
     @staticmethod
