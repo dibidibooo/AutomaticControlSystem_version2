@@ -2,14 +2,14 @@ from datetime import datetime
 import logging
 from collections import defaultdict
 
-from django.http import HttpResponseRedirect
-from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponseRedirect, JsonResponse, Http404
+from django.shortcuts import render, get_object_or_404, redirect
 from django.urls import reverse_lazy
 from django.views import View
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic import CreateView
 
-from tasks.models import Task
+from tasks.models import Task, Comment, ChangesTracker
 from tasks.views.task_views import TaskCreate
 
 from projects.forms import (
@@ -796,7 +796,6 @@ class ResultsView(PermissionRequiredMixin, View):
             'calc_params_recom4': self.get_calculated_params_recom(4),
         }
 
-        # Сравнение показателей с оборотной воды на БОВ-2 и с подпиточной воды на БОВ-1
         unit3_comparison = self.unit3_results_comparison()
         if unit3_comparison:
             context['unit_3_warning'] = unit3_comparison[0]
@@ -807,6 +806,65 @@ class ResultsView(PermissionRequiredMixin, View):
                              f'(@{self.request.user}) был на странице результатов.')
         return render(request, 'projects/analyses_results.html', context)
 
+    def post(self, request):
+        # Редактирование карточки задачи
+        if 'edittask' in request.POST:
+            task_id = request.POST['id']
+            deadline = request.POST.get('deadline')
+            status = request.POST['status']
+            user = request.POST['user']
+            task = Task.objects.get(id=task_id)
+            task.deadline = deadline
+            task.status_id = int(status)
+            try:
+                task.user_id = int(user)
+            except ValueError:
+                raise Http404('Пользователь не назначен!')
+            if task.status_id == 4:
+                task.completion_date = datetime.now()
+
+            if task.tracker.has_changed('status_id'):
+                ChangesTracker.objects.create(
+                    task_id=task.id,
+                    text="изменил статус на",
+                    who_changed=request.user,
+                    changed_to=task.status
+                )
+            if task.tracker.has_changed('user_id'):
+                ChangesTracker.objects.create(
+                    task_id=task.id,
+                    text="изменил исполнителя на",
+                    who_changed=request.user,
+                    changed_to=f"{task.user.profile.position}, {task.user.first_name} {task.user.last_name}"
+                )
+
+            if task.deadline:
+                previous_date = task.tracker.previous('deadline').strftime('%Y-%m-%d %H:%M')
+                current_date = " ".join(task.deadline.split("T"))
+                if task.tracker.has_changed('deadline') and (previous_date != current_date):
+                    ChangesTracker.objects.create(
+                        task_id=task.id,
+                        text="изменил срок исполнения на",
+                        who_changed=request.user,
+                        changed_to=datetime.strptime(task.deadline, '%Y-%m-%dT%H:%M').strftime('%Y-%m-%d %H:%M'),
+                        failure_reason=request.POST['failure_reason']
+                    )
+            task.save()
+            return redirect('analyzes_results')
+
+        # Добавление комментариев
+        elif 'add_comment_button' in request.POST:
+            task_id = request.POST['id']
+            task = Task.objects.get(id=task_id)
+            comment = Comment.objects.create(
+                text=request.POST.get('text'),
+                task=task,
+                author=self.request.user
+            )
+            return redirect('analyzes_results')
+        return JsonResponse({"message": "success"})
+
+    # Сравнение показателей с оборотной воды на БОВ-2 и с подпиточной воды на БОВ-1
     def unit3_results_comparison(self):
         dict1 = {}
         dict2 = {}
@@ -846,6 +904,7 @@ class ResultsView(PermissionRequiredMixin, View):
         else:
             return None
 
+    # Перевод названия компонентов на русский (т.к. названия берутся из названия столбцов в таблице)
     @staticmethod
     def translate_comp_titles(compared_dict):
         if 'phosphorus' in compared_dict:
