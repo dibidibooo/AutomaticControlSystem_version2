@@ -55,16 +55,6 @@ class Results1ViewSet(viewsets.ModelViewSet):
     serializer_class = Results1Serializer
 
 
-# class Results2ViewSet(viewsets.ModelViewSet):
-#     queryset = ComponentsSite2.objects.all()
-#     serializer_class = Results2Serializer
-#
-#
-# class Results3ViewSet(viewsets.ModelViewSet):
-#     queryset = ComponentsSite3.objects.all()
-#     serializer_class = Results3Serializer
-
-
 def is_data(name):
     """
     filter not data fields
