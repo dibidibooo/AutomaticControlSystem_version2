@@ -71,6 +71,7 @@ class ComponentsSite(models.Model):
     chlorides = models.FloatField(null=True, blank=True, verbose_name='Хлориды')
     chlorine = models.FloatField(null=True, blank=True, verbose_name='Остаточный хлор')
     dry_residue = models.FloatField(null=True, blank=True, verbose_name='Сухой остаток')
+    halogen = models.FloatField(null=True, blank=True, verbose_name='Остаточный галоген')
     hardness = models.FloatField(null=True, blank=True, verbose_name='Жёсткость общая')
     hardness_calcium = models.FloatField(null=True, blank=True, verbose_name='Жёсткость кальциевая')
     hardness_magnesium = models.FloatField(null=True, blank=True, verbose_name='Жёсткость магниевая')
