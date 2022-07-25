@@ -96,8 +96,6 @@ class Site4Form(MultipleForm):
         attrs={'class': 'form-control mb-3'}), label="Железо")
     phosphorus = forms.FloatField(widget=forms.NumberInput(
         attrs={'class': 'form-control mb-3'}), label="Фосфор")
-    halogen = forms.FloatField(widget=forms.NumberInput(
-        attrs={'class': 'form-control mb-3'}), label="Остаточный галоген")
 
 
 # БОВ-1 | Аналитическая точка выкид насосов Р-01А/В/С/Д
