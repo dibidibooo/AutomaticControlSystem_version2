@@ -192,7 +192,6 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         alkalinity = form.cleaned_data.get('alkalinity')
         iron = form.cleaned_data.get('iron')
         phosphorus = form.cleaned_data.get('phosphorus')
-        halogen = form.cleaned_data.get('halogen')
         form_name = form.cleaned_data.get('action')
         smpl_site = form.cleaned_data.get('smpl_site')
         water_type = 2
@@ -209,7 +208,6 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             alkalinity=alkalinity,
             iron=iron,
             phosphorus=phosphorus,
-            halogen=halogen,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
             water_type_id=water_type,
@@ -880,13 +878,15 @@ class ResultsView(PermissionRequiredMixin, View):
             a = ComponentsSite.objects.filter(sampling_site_id=4).values().latest('datetime')
             b = ComponentsSite.objects.filter(sampling_site_id=6).values().latest('datetime')
             for key, value in a.items():
-                if value and key and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit':
+                if value and key and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and \
+                        key != 'water_type_id' and key != 'plant_unit' and key != 'halogen':
                     dict1[key] = value
             for key, value in b.items():
-                if value and key and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and key != 'water_type_id' and key != 'plant_unit' and key != 'alkalinity_phenols':
+                if value and key and key != 'id' and key != 'datetime' and key != 'sampling_site_id' and \
+                        key != 'water_type_id' and key != 'plant_unit' and key != 'alkalinity_phenols' and key != 'halogen':
                     dict2[key] = value
 
-        diffkeys = [key for key in dict1 if dict1[key] > dict2[key]]
+        diffkeys = [key for key in dict1 if dict1.get(key) == dict2.get(key) and dict1[key] > dict2[key]]
         bov1_dict = {}
         bov2_dict = {}
 

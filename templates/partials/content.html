@@ -292,30 +292,5 @@
 <!-- crypto dash init js -->
 <script src="{% static 'js/pages/crypto-dashboard.init.js'%}"></script>
 <!-- edit task -->
-<script>
-    $(document).on("click", ".open_task", function (e) {
-        e.preventDefault();
-        let $popup = $("#staticBackdrop");
-        let popup_url = $(this).data("popup-url");
-        $(".modal-content", $popup).load(popup_url, function () {
-          $popup.modal("show");
-        });
-    });
-    function editTask(event){
-        let task_id = document.getElementById("uid");
-        task_id.setAttribute("value", event);
-        $.ajax({
-            type: 'GET',
-            data: {
-                'taskid': event
-            },
-            success: function (result) {
-                console.log('Success!');
-            },
-            error: function (result) {
-                console.log('Error!');
-            }
-        });
-    }
-</script>
+<script src="{% static 'js/task_modal.js' %}"></script>
 {% endblock %}

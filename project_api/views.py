@@ -114,12 +114,12 @@ def get_results2(request):
     """
     data_dic = {
         "data": [
-            get_object_statistic(AdditionalComponents.objects.filter(unit_id=1).order_by("id"), 17),
-            get_object_statistic(AdditionalComponents.objects.filter(unit_id=2).order_by("id"), 18),
-            get_object_statistic(AdditionalComponents.objects.filter(unit_id=3).order_by("id"), 19),
-            get_object_statistic(AdditionalComponents.objects.filter(unit_id=4).order_by("id"), 20),
-            get_object_statistic(AdditionalComponents.objects.filter(unit_id=5).order_by("id"), 21),
-            get_object_statistic(AdditionalComponents.objects.filter(unit_id=6).order_by("id"), 22)
+            get_object_statistic(AdditionalComponents.objects.filter(plant_unit_id=1).order_by("id"), 17),
+            get_object_statistic(AdditionalComponents.objects.filter(plant_unit_id=2).order_by("id"), 18),
+            get_object_statistic(AdditionalComponents.objects.filter(plant_unit_id=3).order_by("id"), 19),
+            get_object_statistic(AdditionalComponents.objects.filter(plant_unit_id=4).order_by("id"), 20),
+            get_object_statistic(AdditionalComponents.objects.filter(plant_unit_id=5).order_by("id"), 21),
+            get_object_statistic(AdditionalComponents.objects.filter(plant_unit_id=6).order_by("id"), 22)
         ]
     }
     return JsonResponse(data_dic, json_dumps_params={'ensure_ascii': False})
