@@ -7,30 +7,14 @@ from rest_framework import viewsets
 from project_api.serializers import (
     TasksSerializer,
     Results1Serializer,
-    # Results2Serializer,
-    # Results3Serializer,
+    Results2Serializer,
     UserSerializer,
     ComponentSerializer
 )
 from projects.models import (
-    # ComponentsSite1,
-    # ComponentsSite2,
-    # ComponentsSite3,
-    # ComponentsSite4,
-    # ComponentsSite5,
-    # ComponentsSite6,
-    # ComponentsSite7,
-    # ComponentsSite8,
-    # ComponentsSite9,
-    # ComponentsSite10,
-    # ComponentsSite11,
-    # ComponentsSite12,
-    # ComponentsSite13,
-    # ComponentsSite14,
-    # ComponentsSite15,
-    # ComponentsSite16,
     ComponentsSite,
     Component,
+    AdditionalComponents
 )
 from tasks.models import Task
 
@@ -53,6 +37,10 @@ class ComponentViewSet(viewsets.ModelViewSet):
 class Results1ViewSet(viewsets.ModelViewSet):
     queryset = ComponentsSite.objects.all()
     serializer_class = Results1Serializer
+
+class Results2ViewSet(viewsets.ModelViewSet):
+    queryset = AdditionalComponents.objects.all()
+    serializer_class = Results2Serializer
 
 
 def is_data(name):
@@ -92,8 +80,7 @@ def get_results1(request):
             get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=3).order_by("id"), 3),
             get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=4).order_by("id"), 4),
             get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=5).order_by("id"), 5),
-            get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=1).order_by("id"), 6),
-            get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=6, water_type_id=2).order_by("id"), 61),
+            get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=6).order_by("id"), 6),
             get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=7).order_by("id"), 7),
             get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=8).order_by("id"), 8),
             get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=9).order_by("id"), 9),
@@ -104,10 +91,38 @@ def get_results1(request):
             get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=14).order_by("id"), 14),
             get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=15).order_by("id"), 15),
             get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=16).order_by("id"), 16),
+
         ]
     }
     return JsonResponse(data_dict, json_dumps_params={'ensure_ascii': False})
 
+
+def get_results2(request):
+    """
+    api:
+        data = [
+            {
+                "object_index": 1,
+                "values":[
+                    {
+                        "name": "oil_prod",
+                        "values": [1, 2, 3, 4, 5, 6, 7, 8, 9],
+                    }
+                ]
+            },
+        ]
+    """
+    data_dic = {
+        "data": [
+            get_object_statistic(AdditionalComponents.objects.filter(unit_id=1).order_by("id"), 17),
+            get_object_statistic(AdditionalComponents.objects.filter(unit_id=2).order_by("id"), 18),
+            get_object_statistic(AdditionalComponents.objects.filter(unit_id=3).order_by("id"), 19),
+            get_object_statistic(AdditionalComponents.objects.filter(unit_id=4).order_by("id"), 20),
+            get_object_statistic(AdditionalComponents.objects.filter(unit_id=5).order_by("id"), 21),
+            get_object_statistic(AdditionalComponents.objects.filter(unit_id=6).order_by("id"), 22)
+        ]
+    }
+    return JsonResponse(data_dic, json_dumps_params={'ensure_ascii': False})
 
 def get_object_statistic(items, object_index):
     # Component

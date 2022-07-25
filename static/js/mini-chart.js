@@ -25,6 +25,7 @@ function getInfo(url, success_function)
 
 // start function
 getInfo("/api/get_results1", createAllCharts)
+getInfo("/api/get_results2", createAllCharts)
 
 
 // create all charts on data from API

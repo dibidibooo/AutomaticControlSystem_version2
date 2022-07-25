@@ -599,7 +599,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
 
 
 class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
-    """Загрузка ежедневных анализов"""
+    """Загрузка ежедневных параметров"""
 
     model = AdditionalComponents
     form_class = AdditionalAnalysisForm
@@ -609,12 +609,12 @@ class AdditionalAnalysisCreateView(PermissionRequiredMixin, CreateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['heading'] = "Загрузка ежедневных анализов"
+        context['heading'] = "Загрузка ежедневных параметров"
         context['pageview'] = "Анализы"
         context['plant_units'] = PlantUnit.objects.all()
         if self.request.user.username != 'admin':
             user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
-                             f'(@{self.request.user}) был на странице загрузки ежедневных анализов.')
+                             f'(@{self.request.user}) был на странице загрузки ежедневных параметров.')
         return context
 
     def form_valid(self, form):

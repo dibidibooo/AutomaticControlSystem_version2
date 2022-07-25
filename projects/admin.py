@@ -7,7 +7,8 @@ from .models import (
     Component,
     ComponentFormula,
     AdditionalComponents,
-    ComponentsSite
+    ComponentsSite,
+AdditionalCalculations
 )
 
 
@@ -20,3 +21,4 @@ admin.site.register(Component)
 admin.site.register(ComponentFormula)
 admin.site.register(ComponentsSite)
 admin.site.register(AdditionalComponents)
+admin.site.register(AdditionalCalculations)
