@@ -1,3 +1,5 @@
+{% load static %}
+
 <div class="card">
     <div class="card-body">
         <div class="text-left">
@@ -6,8 +8,9 @@
         <div class="mt-2">
             {% if res_additional_1 %}
             <div id="add_unit1" class="mt-3 add_unit">
+                <h6>{{ res_additional_1.datetime|date:"d.m.Y" }}</h6>
                 <div class="card border shadow-none mb-2">
-                    <h6>{{ res_additional_1.datetime|date:"d.m.Y" }}</h6>
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-156">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -18,9 +21,43 @@
                                 </div>
                             </div>
                         </div>
+                    </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-156" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход оборотной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-17-recycled_water_consumption">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-17-recycled_water_consumption">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-17-recycled_water_consumption">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-17-recycled_water_consumption">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-17-recycled_water_consumption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-157">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -33,8 +70,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-157" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход подпиточной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-17-running_water_consumption">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-17-running_water_consumption">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-17-running_water_consumption">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-17-running_water_consumption">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-17-running_water_consumption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-158">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -47,8 +117,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-158" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход продувки</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-17-purge_flow">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-17-purge_flow">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-17-purge_flow">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-17-purge_flow">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-17-purge_flow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-159">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -61,8 +164,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-159" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Температура горячей оборотной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-17-hot_water_temp">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-17-hot_water_temp">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-17-hot_water_temp">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-17-hot_water_temp">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-17-hot_water_temp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-160">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -75,8 +211,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-160" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Температура охлажденной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-17-cold_water_temp">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-17-cold_water_temp">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-17-cold_water_temp">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-17-cold_water_temp">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-17-cold_water_temp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-161">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -89,13 +258,46 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-161" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Общее микробное число</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-17-total_microbial_number">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-17-total_microbial_number">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-17-total_microbial_number">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-17-total_microbial_number">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-17-total_microbial_number"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
             </div>
             {% endif %}
             {% if res_additional_2 %}
             <div id="add_unit2" style="display:none;" class="mt-3 add_unit">
+                <h6>{{ res_additional_2.datetime|date:"d.m.Y" }}</h6>
                 <div class="card border shadow-none mb-2">
-                    <h6>{{ res_additional_2.datetime|date:"d.m.Y" }}</h6>
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-162">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -108,8 +310,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-162" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход оборотной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-18-recycled_water_consumption">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-18-recycled_water_consumption">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-18-recycled_water_consumption">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-18-recycled_water_consumption">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-18-recycled_water_consumption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-163">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -122,8 +357,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-163" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход подпиточной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-18-running_water_consumption">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-18-running_water_consumption">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-18-running_water_consumption">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-18-running_water_consumption">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-18-running_water_consumption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-164">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -136,8 +404,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-164" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход продувки</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-18-purge_flow">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-18-purge_flow">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-18-purge_flow">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-18-purge_flow">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-18-purge_flow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-165">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -150,8 +451,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-165" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Температура горячей оборотной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-18-hot_water_temp">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-18-hot_water_temp">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-18-hot_water_temp">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-18-hot_water_temp">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-18-hot_water_temp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-166">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -164,8 +498,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-166" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Температура охлажденной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-18-cold_water_temp">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-18-cold_water_temp">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-18-cold_water_temp">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-18-cold_water_temp">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-18-cold_water_temp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-167">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -178,13 +545,46 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-167" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Общее микробное число</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-18-total_microbial_number">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-18-total_microbial_number">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-18-total_microbial_number">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-18-total_microbial_number">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-18-total_microbial_number"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
             </div>
             {% endif %}
             {% if res_additional_3 %}
             <div id="add_unit3" style="display:none;" class="mt-3 add_unit">
+                <h6>{{ res_additional_3.datetime|date:"d.m.Y" }}</h6>
                 <div class="card border shadow-none mb-2">
-                    <h6>{{ res_additional_3.datetime|date:"d.m.Y" }}</h6>
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-168">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -197,8 +597,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-168" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход оборотной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-19-recycled_water_consumption">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-19-recycled_water_consumption">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-19-recycled_water_consumption">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-19-recycled_water_consumption">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-19-recycled_water_consumption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-169">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -211,8 +644,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-169" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход подпиточной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-19-running_water_consumption">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-19-running_water_consumption">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-19-running_water_consumption">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-19-running_water_consumption">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-19-running_water_consumption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-170">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -225,8 +691,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-170" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход продувки</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-19-purge_flow">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-19-purge_flow">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-19-purge_flow">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-19-purge_flow">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-19-purge_flow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-171">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -239,8 +738,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-171" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Температура горячей оборотной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-19-hot_water_temp">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-19-hot_water_temp">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-19-hot_water_temp">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-19-hot_water_temp">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-19-hot_water_temp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-172">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -253,8 +785,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-172" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Температура охлажденной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-19-cold_water_temp">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-19-cold_water_temp">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-19-cold_water_temp">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-19-cold_water_temp">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-19-cold_water_temp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-173">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -267,13 +832,46 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-173" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Общее микробное число</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-19-total_microbial_number">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-19-total_microbial_number">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-19-total_microbial_number">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-19-total_microbial_number">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-19-total_microbial_number"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
             </div>
             {% endif %}
             {% if res_additional_4 %}
             <div id="add_unit4" style="display:none;" class="mt-3 add_unit">
+                <h6>{{ res_additional_4.datetime|date:"d.m.Y" }}</h6>
                 <div class="card border shadow-none mb-2">
-                    <h6>{{ res_additional_4.datetime|date:"d.m.Y" }}</h6>
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-174">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -286,8 +884,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-174" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход оборотной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-20-recycled_water_consumption">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-20-recycled_water_consumption">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-20-recycled_water_consumption">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-20-recycled_water_consumption">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-20-recycled_water_consumption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-175">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -300,8 +931,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-175" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход подпиточной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-20-running_water_consumption">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-20-running_water_consumption">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-20-running_water_consumption">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-20-running_water_consumption">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-20-running_water_consumption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-176">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -314,8 +978,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-176" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход продувки</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-20-purge_flow">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-20-purge_flow">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-20-purge_flow">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-20-purge_flow">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-20-purge_flow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-177">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -328,8 +1025,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-177" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Температура горячей оборотной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-20-hot_water_temp">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-20-hot_water_temp">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-20-hot_water_temp">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-20-hot_water_temp">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-20-hot_water_temp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-178">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -342,8 +1072,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-178" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Температура охлажденной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-20-cold_water_temp">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-20-cold_water_temp">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-20-cold_water_temp">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-20-cold_water_temp">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-20-cold_water_temp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-179">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -356,13 +1119,46 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-179" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Общее микробное число</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-20-total_microbial_number">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-20-total_microbial_number">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-20-total_microbial_number">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-20-total_microbial_number">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-20-total_microbial_number"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
             </div>
             {% endif %}
             {% if res_additional_5 %}
             <div id="add_unit5" style="display:none;" class="mt-3 add_unit">
+                <h6>{{ res_additional_5.datetime|date:"d.m.Y" }}</h6>
                 <div class="card border shadow-none mb-2">
-                    <h6>{{ res_additional_5.datetime|date:"d.m.Y" }}</h6>
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-180">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -375,8 +1171,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-180" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход оборотной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-21-recycled_water_consumption">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-21-recycled_water_consumption">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-21-recycled_water_consumption">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-21-recycled_water_consumption">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-21-recycled_water_consumption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-181">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -389,8 +1218,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-181" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход подпиточной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-21-running_water_consumption">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-21-running_water_consumption">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-21-running_water_consumption">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-21-running_water_consumption">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-21-running_water_consumption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-182">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -403,8 +1265,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-182" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход продувки</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-21-purge_flow">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-21-purge_flow">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-21-purge_flow">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-21-purge_flow">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-21-purge_flow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-183">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -417,8 +1312,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-183" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Температура горячей оборотной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-21-hot_water_temp">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-21-hot_water_temp">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-21-hot_water_temp">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-21-hot_water_temp">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-21-hot_water_temp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-184">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -431,8 +1359,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-184" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Температура охлажденной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-21-cold_water_temp">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-21-cold_water_temp">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-21-cold_water_temp">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-21-cold_water_temp">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-21-cold_water_temp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-185">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -445,13 +1406,46 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-185" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Общее микробное число</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-21-total_microbial_number">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-21-total_microbial_number">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-21-total_microbial_number">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-21-total_microbial_number">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-21-total_microbial_number"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
             </div>
             {% endif %}
             {% if res_additional_6 %}
             <div id="add_unit6" style="display:none;" class="mt-3 add_unit">
+                <h6>{{ res_additional_6.datetime|date:"d.m.Y" }}</h6>
                 <div class="card border shadow-none mb-2">
-                    <h6>{{ res_additional_6.datetime|date:"d.m.Y" }}</h6>
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-186">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -464,8 +1458,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-186" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход оборотной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-22-recycled_water_consumption">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-22-recycled_water_consumption">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-22-recycled_water_consumption">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-22-recycled_water_consumption">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-22-recycled_water_consumption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-187">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -478,8 +1505,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-187" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход подпиточной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-22-running_water_consumption">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-22-running_water_consumption">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-22-running_water_consumption">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-22-running_water_consumption">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-22-running_water_consumption"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-188">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -492,8 +1552,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-188" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Расход продувки</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-22-purge_flow">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-22-purge_flow">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-22-purge_flow">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-22-purge_flow">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-22-purge_flow"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-189">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -506,8 +1599,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-189" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Температура горячей оборотной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-22-hot_water_temp">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-22-hot_water_temp">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-22-hot_water_temp">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-22-hot_water_temp">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-22-hot_water_temp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-190">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -520,8 +1646,41 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-190" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Температура охлажденной воды</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-22-cold_water_temp">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-22-cold_water_temp">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-22-cold_water_temp">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-22-cold_water_temp">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-22-cold_water_temp"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
                 <div class="card border shadow-none mb-2">
-                    <a href="javascript: void(0);" class="text-body">
+                    <a data-bs-toggle="modal" data-bs-target=".modal-component-191">
                         <div class="p-2">
                             <div class="d-flex">
                                 <div class="overflow-hidden me-auto">
@@ -534,6 +1693,39 @@
                         </div>
                     </a>
                 </div>
+                <!-- modal -->
+                <div class="modal fade modal-component-191" tabindex="-1" role="dialog" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title">Общее микробное число</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div>
+                                    <div class="apex-charts" dir="ltr">
+                                        <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                            <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-22-total_microbial_number">
+                                                1 месяц
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-22-total_microbial_number">
+                                                6 месяцев
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-22-total_microbial_number">
+                                                1 год
+                                            </button>
+                                            <button type="button" class="btn btn-light btn-sm" id="all-full-chart-22-total_microbial_number">
+                                                Все время
+                                            </button>
+                                        </div>
+                                        <div id="full-chart-22-total_microbial_number"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- /.modal -->
             </div>
             {% endif %}
         </div>
