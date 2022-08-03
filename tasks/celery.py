@@ -3,7 +3,8 @@ from celery import Celery
 
 # set the default Django settings module for the 'celery' program.
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'skote.settings')
-app = Celery('skote')
+app = Celery('tasks')
+
 
 # Using a string here means the worker will not have to
 # pickle the object when using Windows.

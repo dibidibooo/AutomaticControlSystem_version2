@@ -11,6 +11,7 @@ from .models import Task
 
 @receiver(signals.post_save, sender=Task)
 def task_send_email(sender, instance, created, **kwargs):
+    # Отправка email уведомлений при изменениях в задачах
     task = Task.objects.get(id=instance.id)
 
     if instance.user and instance.user.email and (

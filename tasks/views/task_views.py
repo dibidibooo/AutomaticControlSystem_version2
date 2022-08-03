@@ -7,7 +7,6 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.views import View
 from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.views.generic import DetailView
-from tasks.tasks import archive_task
 
 from projects.models import (
     Status,
@@ -15,6 +14,7 @@ from projects.models import (
     ComponentsSite
 )
 from tasks.forms import TaskForm
+from tasks.helpers import archive_task, send_email_to_director
 from tasks.models import Task, Comment, ChangesTracker
 
 
@@ -67,6 +67,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             'users': User.objects.all(),
         }
         archive_task()
+        # send_email_to_director()
 
         if self.request.user.username != 'admin':
             user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '
@@ -514,34 +515,6 @@ class TaskCreate:
                 deadline=deadline,
                 comp_title=comp_title,
                 comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('phosphorus').latest('datetime')['phosphorus']),
-                sampling_site_id=smpl_site,
-                notification_id=1,
-                plant_unit_id=unit,
-                water_type_id=water_type
-            )
-        if float(form.cleaned_data['halogen']) < float(halogen.limit_lo):
-            comp_title = halogen.title[6:]
-            deadline = datetime.now() + timedelta(days=3)
-            Task.objects.create(
-                title=halogen.recommendation1,
-                responsible_id=responsible_id,
-                deadline=deadline,
-                comp_title=comp_title,
-                comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('halogen').latest('datetime')['halogen']),
-                sampling_site_id=smpl_site,
-                notification_id=2,
-                plant_unit_id=unit,
-                water_type_id=water_type
-            )
-        if float(form.cleaned_data['halogen']) > float(halogen.limit_hi):
-            comp_title = halogen.title[6:]
-            deadline = datetime.now() + timedelta(days=3)
-            Task.objects.create(
-                title=halogen.recommendation2,
-                responsible_id=responsible_id,
-                deadline=deadline,
-                comp_title=comp_title,
-                comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('halogen').latest('datetime')['halogen']),
                 sampling_site_id=smpl_site,
                 notification_id=1,
                 plant_unit_id=unit,
