@@ -5,4 +5,4 @@ class TasksConfig(AppConfig):
     name = 'tasks'
 
     def ready(self):
-        from tasks import signals
+        from tasks import signals, celery
