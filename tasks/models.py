@@ -44,6 +44,7 @@ class Task(models.Model):
     )
     status = models.ForeignKey('projects.Status', related_name='task_assign', on_delete=models.CASCADE, default=1)
     tracker = FieldTracker(fields=['user_id', 'deadline', 'status_id', ])
+    notified = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
         # Отправка email уведомлений при создании задач
