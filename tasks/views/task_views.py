@@ -67,7 +67,7 @@ class KanbanBoardView(PermissionRequiredMixin, View):
             'users': User.objects.all(),
         }
         archive_task()
-        # send_email_to_director()
+        send_email_to_director()
 
         if self.request.user.username != 'admin':
             user_logger.info(f'Пользователь {self.request.user.first_name} {self.request.user.last_name} '

@@ -21,9 +21,10 @@ def send_email_to_director():
     # Отправка email уведомлений Директору, если задача не была назначена 2 или более дней
     for task in Task.objects.all():
         no_changes_in_2_days = task.start_date + timedelta(days=2)
-        if task.status_id == 1 and no_changes_in_2_days <= datetime.now():
+        if task.status_id == 1 and no_changes_in_2_days <= datetime.now() and task.notified is False:
             from_email = settings.EMAIL_HOST_USER
             val = {
+                'task_id': task.pk,
                 'task_title': task.title,
                 'component': task.comp_title,
                 'sampling_site': task.sampling_site,
@@ -37,3 +38,5 @@ def send_email_to_director():
             subject = f'Задача не назначена'
 
             send_html_mail(subject=subject, html_content=html_message, recipient_list=to_email, sender=from_email)
+            task.notified = True
+            task.save()
