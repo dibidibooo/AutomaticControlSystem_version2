@@ -1025,7 +1025,7 @@ class TaskCreate:
                     comp_title=comp_title,
                     comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('suspended_solids').latest('datetime')['suspended_solids']),
                     sampling_site_id=smpl_site,
-                    notification_id=1,
+                    notification_id=2,
                     plant_unit_id=unit,
                     water_type_id=water_type
                 )
@@ -1136,6 +1136,20 @@ class TaskCreate:
         smpl_site = 10
         unit = 4
 
+        if float(form.cleaned_data['chlorine']) < float(chlorine.limit_lo):
+            comp_title = chlorine.title[6:]
+            deadline = datetime.now() + timedelta(days=3)
+            Task.objects.create(
+                title=chlorine.recommendation1,
+                responsible_id=responsible_id,
+                deadline=deadline,
+                comp_title=comp_title,
+                comp_value=int(ComponentsSite.objects.filter(sampling_site_id=smpl_site).values('chlorine').latest('datetime')['chlorine']),
+                sampling_site_id=smpl_site,
+                notification_id=2,
+                plant_unit_id=unit,
+                water_type_id=water_type
+            )
         if float(form.cleaned_data['chlorine']) > float(chlorine.limit_hi):
             comp_title = chlorine.title[6:]
             deadline = datetime.now() + timedelta(days=3)
