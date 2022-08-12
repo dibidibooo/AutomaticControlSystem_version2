@@ -5,6 +5,7 @@ from django.db import models
 from django.template import loader
 from model_utils import FieldTracker
 
+from accounts.models import Profile
 from projects.helpers import send_html_mail
 
 
@@ -43,8 +44,10 @@ class Task(models.Model):
     )
     status = models.ForeignKey('projects.Status', related_name='task_assign', on_delete=models.CASCADE, default=1)
     tracker = FieldTracker(fields=['user_id', 'deadline', 'status_id', ])
+    notified = models.BooleanField(default=False)
 
     def save(self, *args, **kwargs):
+        # Отправка email уведомлений при создании задач
         from_email = settings.EMAIL_HOST_USER
         val = {
             'task_title': self.title,
@@ -56,6 +59,14 @@ class Task(models.Model):
         to_email = list()
         for responsible in User.objects.filter(groups__name=self.responsible):
             to_email.append(responsible.email)
+
+        profiles = Profile.objects.all()
+        for profile in profiles:
+            if profile.position == 'Заместитель начальника цеха ОВиВ':
+                to_email.append(profile.user.email)
+            if profile.position == 'Инженер-технолог':
+                to_email.append(profile.user.email)
+
         subject = f'Назначена новая задача'
 
         if self.pk is None:

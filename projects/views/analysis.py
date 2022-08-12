@@ -633,43 +633,39 @@ class AdditionalCalc:
         smpl_site_recycled = self.sampling_site_recycled_water(unit)
         smpl_site_running = self.sampling_site_running_water(unit)
 
+        running_water_consumption = AdditionalComponents.objects.all().last().running_water_consumption
+        recycled_water_consumption = AdditionalComponents.objects.all().last().recycled_water_consumption
+
         # Коэффициент упаривания
         evaporation_ratio = self.evaporation_ratio(unit, smpl_site_recycled, smpl_site_running)
 
         # Транспорт кальциевой жесткости
         tr_ca = self.transport_ca(unit, smpl_site_recycled, smpl_site_running, evaporation_ratio)
 
-        # Объем продувки
-        running_water_consumption = AdditionalComponents.objects.all().last().running_water_consumption
+        # Объем продувки фактический
         p3 = running_water_consumption / evaporation_ratio
-        p3 = round(p3, 3)
+        p3 = round(p3, 1)
 
         # Потери с испарением
-        hot_water_temp = AdditionalComponents.objects.all().last().hot_water_temp
-        cold_water_temp = AdditionalComponents.objects.all().last().cold_water_temp
-        delta_temp = hot_water_temp - cold_water_temp
-
-        k = 0
-        today = datetime.today()
-        if today.month in range(6, 9):
-            k = 1
-        elif today.month in range(1, 3) or today.month == 12:
-            k = 0.5
-        elif today.month in range(3, 6) or today.month in range(9, 12):
-            k = 0.75
-
-        x = (delta_temp * k) / 100
-        recycled_water_consumption = AdditionalComponents.objects.all().last().recycled_water_consumption
-        p1 = x * recycled_water_consumption
-        p1 = round(p1, 3)
+        p1 = self.evaporation_loss(recycled_water_consumption)
 
         # Капельный унос
         p2 = recycled_water_consumption * 0.002
-        p2 = round(p2, 3)
+        p2 = round(p2, 1)
+
+        # Объем продувки расчетный (теоретический)
+        if unit == 4:
+            salt_running_water = ComponentsSite.objects.filter(sampling_site_id=8).last().salt
+        else:
+            salt_running_water = ComponentsSite.objects.filter(sampling_site_id=smpl_site_running).last().salt
+        x = (2000 / salt_running_water) - 1
+        p3_calculated = (p1 / x) - p2
+        p3_calculated = round(p3_calculated, 1)
 
         # Несанкционированные потери
-        unauthorized_loss = running_water_consumption - p1 - p2 - p3
-        unauthorized_loss = round(unauthorized_loss, 3)
+        purge_flow = AdditionalComponents.objects.all().last().purge_flow
+        unauthorized_loss = running_water_consumption - p1 - p2 - purge_flow
+        unauthorized_loss = round(unauthorized_loss, 1)
 
         AdditionalCalculations.objects.create(
             evaporation_ratio=evaporation_ratio,
@@ -683,16 +679,47 @@ class AdditionalCalc:
 
     @staticmethod
     def evaporation_ratio(unit, smpl_site_recycled, smpl_site_running):
-        chlorides_recycled_water = ComponentsSite.objects.filter(
-            sampling_site_id=smpl_site_recycled, plant_unit_id=unit).last().chlorides
-        if smpl_site_recycled == 6 and smpl_site_running == 4:
-            chlorides_running_water = ComponentsSite.objects.filter(
-                sampling_site_id=smpl_site_running, plant_unit_id=2).last().chlorides
+        # chlorides_recycled_water = ComponentsSite.objects.filter(
+        #     sampling_site_id=smpl_site_recycled, plant_unit_id=unit
+        # ).last().chlorides
+        # if smpl_site_recycled == 6 and smpl_site_running == 4:
+        #     chlorides_running_water = ComponentsSite.objects.filter(
+        #         sampling_site_id=smpl_site_running, plant_unit_id=2
+        #     ).last().chlorides
+        # else:
+        #     chlorides_running_water = ComponentsSite.objects.filter(
+        #         sampling_site_id=smpl_site_running, plant_unit_id=unit
+        #     ).last().chlorides
+        # evaporation_ratio = chlorides_recycled_water / chlorides_running_water
+
+        if unit == 1:
+            hardness_magnesium_recycled_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_recycled, plant_unit_id=unit
+            ).last().hardness_magnesium
+            hardness_magnesium_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running, plant_unit_id=unit
+            ).last().hardness_magnesium
         else:
-            chlorides_running_water = ComponentsSite.objects.filter(
-                sampling_site_id=smpl_site_running, plant_unit_id=unit).last().chlorides
-        evaporation_ratio = chlorides_recycled_water / chlorides_running_water
-        evaporation_ratio = round(evaporation_ratio, 3)
+            # Расчет Магниевой жесткости
+            hardness_recycled_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_recycled, plant_unit_id=unit
+            ).last().hardness
+            hardness_calcium_recycled_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_recycled, plant_unit_id=unit
+            ).last().hardness_calcium
+            hardness_magnesium_recycled_water = hardness_recycled_water - hardness_calcium_recycled_water
+
+            hardness_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running
+            ).last().hardness
+            hardness_calcium_running_water = ComponentsSite.objects.filter(
+                sampling_site_id=smpl_site_running
+            ).last().hardness_calcium
+            hardness_magnesium_running_water = hardness_running_water - hardness_calcium_running_water
+
+        evaporation_ratio = hardness_magnesium_recycled_water / hardness_magnesium_running_water
+
+        evaporation_ratio = round(evaporation_ratio, 1)
         return evaporation_ratio
 
     @staticmethod
@@ -706,8 +733,28 @@ class AdditionalCalc:
             calcium_running_water = ComponentsSite.objects.filter(
                 sampling_site_id=smpl_site_running, plant_unit_id=unit).last().hardness_calcium
         tr_ca = (calcium_recycled_water * 100) / (calcium_running_water * evaporation_ratio)
-        tr_ca = round(tr_ca, 3)
+        tr_ca = round(tr_ca, 1)
         return tr_ca
+
+    @staticmethod
+    def evaporation_loss(recycled_water_consumption):
+        hot_water_temp = AdditionalComponents.objects.all().last().hot_water_temp
+        cold_water_temp = AdditionalComponents.objects.all().last().cold_water_temp
+        delta_temp = hot_water_temp - cold_water_temp
+
+        k = 0
+        today = datetime.today()
+        if today.month in range(6, 9):
+            k = 0.15
+        elif today.month in range(1, 3) or today.month == 12:
+            k = 0.07
+        elif today.month in range(3, 6) or today.month in range(9, 12):
+            k = 0.1
+
+        x = (delta_temp * k) / 100
+        p1 = x * recycled_water_consumption
+        p1 = round(p1, 1)
+        return p1
 
     @staticmethod
     def sampling_site_recycled_water(unit: int) -> int:
@@ -720,7 +767,7 @@ class AdditionalCalc:
         elif unit == 3:
             smpl_site = 6
         elif unit == 4:
-            smpl_site = 8
+            smpl_site = 9
         return smpl_site
 
     @staticmethod
@@ -734,7 +781,7 @@ class AdditionalCalc:
         elif unit == 3:
             smpl_site = 4
         elif unit == 4:
-            smpl_site = 9
+            smpl_site = 7
         return smpl_site
 
 
