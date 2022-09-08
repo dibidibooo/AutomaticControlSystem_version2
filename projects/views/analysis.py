@@ -309,6 +309,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
         hardness_calcium = form.cleaned_data.get('hardness_calcium')
         hardness = form.cleaned_data.get('hardness')
         iron = form.cleaned_data.get('iron')
+        salt = form.cleaned_data.get('salt')
         form_name = form.cleaned_data.get('action')
         smpl_site = form.cleaned_data.get('smpl_site')
         water_type = 1
@@ -322,6 +323,7 @@ class AnalysisCreateView(PermissionRequiredMixin, MultiFormsView):
             hardness_calcium=hardness_calcium,
             hardness=hardness,
             iron=iron,
+            salt=salt,
             plant_unit_id=self.request.POST['plant_unit'],
             sampling_site_id=smpl_site,
             water_type_id=water_type,

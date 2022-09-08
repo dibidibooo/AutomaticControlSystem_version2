@@ -174,6 +174,8 @@ class Site7Form(MultipleForm):
         attrs={'class': 'form-control mb-3'}), label="Жесткость общая")
     iron = forms.FloatField(widget=forms.NumberInput(
         attrs={'class': 'form-control mb-3'}), label="Железо общее")
+    salt = forms.FloatField(widget=forms.NumberInput(
+        attrs={'class': 'form-control mb-3'}), label="Солесодержание")
 
 
 # УГОВ | Выход из ёмкости 77-ТК-103 77-SN-004

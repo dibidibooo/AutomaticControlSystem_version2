@@ -3239,7 +3239,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {% endif %} {% if component.title == '[2|1] Общие взвешенные вещества' %}
+                                                {% endif %} {% if component.title == '[2|1] Взвешенные вещества' %}
                                                 <div class="row">
                                                     <div class="col-xl-6">
                                                         <a data-bs-toggle="modal" data-bs-target=".modal-component-34">
@@ -3482,92 +3482,6 @@
                                                                 </div>
                                                             </div>
                                                             {% endif %} {% for key, value in results4.items %} {% if key == 'Фосфор' %}
-                                                            <div class="card-body bg-danger bg-soft">
-                                                                <p class="text-muted mb-4">
-                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
-                                                                </p>
-                                                                <div class="col-12">
-
-                                                                    <p><b>{{ value }}</b></p>
-                                                                </div>
-                                                            </div>
-                                                            {% endif %}{% endfor %}
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                {% endif %}
-                                                {% if component.title == '[2|1] Остаточный галоген' %}
-                                                <div class="row">
-                                                    <div class="col-xl-6">
-                                                        <a data-bs-toggle="modal" data-bs-target=".modal-component-153">
-                                                            <div class="card">
-                                                                <div class="card-body">
-                                                                    <p class="text-muted mb-4">
-                                                                        <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i>Остаточный галоген</p>
-                                                                    <div class="row">
-                                                                        <div class="col-5">
-                                                                            <div>
-                                                                                <h5>{{ results4.halogen }}</h5>
-                                                                                <p class="text-muted text-truncate mb-0">
-                                                                                    {{ component.measurement }}
-                                                                                </p>
-                                                                            </div>
-                                                                        </div>
-                                                                        <div class="col-7">
-                                                                            <div>
-                                                                                <div id="mini-chart-4-halogen" class="apex-charts"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </a>
-                                                        <!-- modal -->
-                                                        <div class="modal fade modal-component-153" tabindex="-1" role="dialog" aria-hidden="true">
-                                                            <div class="modal-dialog modal-dialog-centered">
-                                                                <div class="modal-content">
-                                                                    <div class="modal-header">
-                                                                        <h5 class="modal-title">Остаточный галоген</h5>
-                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                                    </div>
-                                                                    <div class="modal-body">
-                                                                        <div>
-                                                                            <div class="apex-charts" dir="ltr">
-                                                                                <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
-                                                                                    <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-4-halogen">
-                                                                                        1 месяц
-                                                                                    </button>
-                                                                                    <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-4-halogen">
-                                                                                        6 месяцев
-                                                                                    </button>
-                                                                                    <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-4-halogen">
-                                                                                        1 год
-                                                                                    </button>
-                                                                                    <button type="button" class="btn btn-light btn-sm" id="all-full-chart-4-halogen">
-                                                                                        Все время
-                                                                                    </button>
-                                                                                </div>
-                                                                                <div id="full-chart-4-halogen"></div>
-                                                                            </div>
-                                                                        </div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <!-- /.modal -->
-                                                    </div>
-                                                    <div class="col-xl-6">
-                                                        <div class="card">
-                                                            {% if 'Остаточный галоген' not in results4 %}
-                                                            <div class="card-body bg-success bg-soft">
-                                                                <p class="text-muted mb-4">
-                                                                    <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
-                                                                </p>
-                                                                <div class="col-12">
-                                                                    <p><b>{{ results4.no_recom }}</b></p>
-                                                                </div>
-                                                            </div>
-                                                            {% endif %} {% for key, value in results4.items %} {% if key == 'Остаточный галоген' %}
                                                             <div class="card-body bg-danger bg-soft">
                                                                 <p class="text-muted mb-4">
                                                                     <i class="bx bx-message-alt-dots h2 text-warning align-middle mb-0 me-3"></i> <b>Рекомендация</b>
@@ -4272,7 +4186,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {% endif %} {% if component.title == '[2|2] Общие взвешенные вещества' %}
+                                                {% endif %} {% if component.title == '[2|2] Взвешенные вещества' %}
                                                 <div class="row">
                                                     <div class="col-xl-6">
                                                         <a data-bs-toggle="modal" data-bs-target=".modal-component-44">
@@ -5635,7 +5549,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {% endif %} {% if component.title == '[3|1] Общие взвешенные вещества' %}
+                                                {% endif %} {% if component.title == '[3|1] Взвешенные вещества' %}
                                                 <div class="row">
                                                     <div class="col-xl-6">
                                                         <a data-bs-toggle="modal" data-bs-target=".modal-component-54">
@@ -7094,7 +7008,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {% endif %} {% if component.title == '[4|1] Железо общее' %}
+                                                {% endif %}{% if component.title == '[4|1] Железо' %}
                                                 <div class="row">
                                                     <div class="col-xl-6">
                                                         <a data-bs-toggle="modal" data-bs-target=".modal-component-76">
@@ -7177,6 +7091,67 @@
                                                             </div>
                                                             {% endif %}{% endfor %}
                                                         </div>
+                                                    </div>
+                                                </div>
+                                                {% endif %}  {% if component.title == '[4|1] Солесодержание' %}
+                                                <div class="row">
+                                                    <div class="col-xl-6">
+                                                        <a data-bs-toggle="modal" data-bs-target=".modal-component-137">
+                                                            <div class="card">
+                                                                <div class="card-body">
+                                                                    <p class="text-muted mb-4">
+                                                                        <i class="bx bx-copy-alt h2 text-warning align-middle mb-0 me-3"></i> Солесодержание</p>
+                                                                    <div class="row">
+                                                                        <div class="col-5">
+                                                                            <div>
+                                                                                <h5>{{ results7.salt }}</h5>
+                                                                                <p class="text-muted text-truncate mb-0">
+                                                                                    {{ component.measurement }}
+                                                                                </p>
+                                                                            </div>
+                                                                        </div>
+                                                                        <div class="col-7">
+                                                                            <div>
+                                                                                <div id="mini-chart-7-salt" class="apex-charts"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </a>
+                                                        <!-- modal -->
+                                                        <div class="modal fade modal-component-137" tabindex="-1" role="dialog" aria-hidden="true">
+                                                            <div class="modal-dialog modal-dialog-centered">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <h5 class="modal-title">Солесодержание</h5>
+                                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                    </div>
+                                                                    <div class="modal-body">
+                                                                        <div>
+                                                                            <div class="apex-charts" dir="ltr">
+                                                                                <div class="toolbar d-flex flex-wrap gap-2 justify-content-center">
+                                                                                    <button type="button" class="btn btn-light btn-sm" id="one_month-full-chart-7-salt">
+                                                                                        1 месяц
+                                                                                    </button>
+                                                                                    <button type="button" class="btn btn-light btn-sm" id="six_months-full-chart-7-salt">
+                                                                                        6 месяцев
+                                                                                    </button>
+                                                                                    <button type="button" class="btn btn-light btn-sm active" id="one_year-full-chart-7-salt">
+                                                                                        1 год
+                                                                                    </button>
+                                                                                    <button type="button" class="btn btn-light btn-sm" id="all-full-chart-7-salt">
+                                                                                        Все время
+                                                                                    </button>
+                                                                                </div>
+                                                                                <div id="full-chart-7-salt"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <!-- /.modal -->
                                                     </div>
                                                 </div>
                                                 {% endif %} {% endfor %}
@@ -7872,7 +7847,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {% endif %} {% if component.title == '[4|2] Железо общее' %}
+                                                {% endif %} {% if component.title == '[4|2] Железо' %}
                                                 <div class="row">
                                                     <div class="col-xl-6">
                                                         <a data-bs-toggle="modal" data-bs-target=".modal-component-85">
@@ -8052,7 +8027,7 @@
                                             <h4 class="card-title">Контролируемые показатели | Дата загрузки - {{ results9.datetime|date:"d.m.Y H:i" }}</h4>
                                             <p class="card-title-desc"></p>
                                             <form class="needs-validation" novalidate>
-                                                {% for component in components %} {% if component.title == '[4|3] Общие взвешенные твёрдые частицы' %}
+                                                {% for component in components %} {% if component.title == '[4|3] Общие взвешенные твердые частицы' %}
                                                 <div class="row">
                                                     <div class="col-xl-6">
                                                         <a data-bs-toggle="modal" data-bs-target=".modal-component-87">
@@ -8481,7 +8456,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {% endif %} {% if component.title == '[4|3] Щелочность' %}
+                                                {% endif %} {% if component.title == '[4|3] Щелочность общая' %}
                                                 <div class="row">
                                                     <div class="col-xl-6">
                                                         <a data-bs-toggle="modal" data-bs-target=".modal-component-92">
@@ -8736,7 +8711,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                {% endif %} {% if component.title == '[4|3] Железо общее' %}
+                                                {% endif %} {% if component.title == '[4|3] Железо' %}
                                                 <div class="row">
                                                     <div class="col-xl-6">
                                                         <a data-bs-toggle="modal" data-bs-target=".modal-component-95">
