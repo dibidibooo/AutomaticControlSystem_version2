@@ -91,7 +91,6 @@ def get_results1(request):
             get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=14).order_by("id"), 14),
             get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=15).order_by("id"), 15),
             get_object_statistic(ComponentsSite.objects.filter(sampling_site_id=16).order_by("id"), 16),
-
         ]
     }
     return JsonResponse(data_dict, json_dumps_params={'ensure_ascii': False})
@@ -123,6 +122,7 @@ def get_results2(request):
         ]
     }
     return JsonResponse(data_dic, json_dumps_params={'ensure_ascii': False})
+
 
 def get_object_statistic(items, object_index):
     # Component

@@ -10,7 +10,6 @@ from project_api.views import (
     ComponentViewSet,
     get_results1,
     get_results2
-
 )
 
 router = routers.DefaultRouter()
